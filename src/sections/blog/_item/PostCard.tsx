@@ -35,8 +35,12 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
 
   return (
     <Card
+      component={RouterLink}
+      href={detailsHref}
       sx={[
         {
+          display: 'block',
+          textDecoration: 'none',
           // 🟢 ESTILO GLASSMORPHISM AVANÇADO
           bgcolor: alpha('#020817', 0.6),
           backdropFilter: 'blur(20px)',
@@ -110,19 +114,18 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
           {fDate(post.createdAt)}
         </Typography>
 
-        <Link
-          component={RouterLink}
-          href={detailsHref}
-          color="inherit"
+        <Typography
           variant="subtitle2"
           sx={{
             ...theme.mixins.maxLine({ line: 2, persistent: theme.typography.subtitle2 }),
             fontFamily: "'Orbitron', sans-serif", // Toque futurista no título do card
+            color: 'inherit',
+            transition: theme.transitions.create(['color']),
             '&:hover': { color: 'primary.light' },
           }}
         >
           {post.title}
-        </Link>
+        </Typography>
 
         <InfoBlock
           totalViews={post.totalViews}
@@ -149,7 +152,11 @@ export function PostItemLatest({ post, index, detailsHref }: PostItemLatestProps
 
   return (
     <Card
+      component={RouterLink}
+      href={detailsHref}
       sx={{
+        display: 'block',
+        textDecoration: 'none',
         bgcolor: 'transparent',
         border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
         transition: theme.transitions.create(['transform', 'box-shadow']),
@@ -198,10 +205,7 @@ export function PostItemLatest({ post, index, detailsHref }: PostItemLatestProps
           {fDate(post.createdAt)}
         </Typography>
 
-        <Link
-          component={RouterLink}
-          href={detailsHref}
-          color="inherit"
+        <Typography
           variant={postSmall ? 'subtitle2' : 'h5'}
           sx={{
             ...theme.mixins.maxLine({
@@ -210,10 +214,11 @@ export function PostItemLatest({ post, index, detailsHref }: PostItemLatestProps
             }),
             fontFamily: "'Orbitron', sans-serif",
             textShadow: '0 2px 4px rgba(0,0,0,0.8)',
+            color: 'inherit',
           }}
         >
           {post.title}
-        </Link>
+        </Typography>
 
         <InfoBlock
           totalViews={post.totalViews}
