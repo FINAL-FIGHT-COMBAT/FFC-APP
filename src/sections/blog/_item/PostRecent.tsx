@@ -6,6 +6,7 @@ import type { IPostItem } from 'src/types/blog';
 import { useState } from 'react';
 import { m } from 'framer-motion';
 
+import { kebabCase } from 'es-toolkit';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -72,7 +73,7 @@ export function PostRecent({ posts: postsFromProps }: Props) {
           {posts.slice(0, viewLimit).map((post) => (
             <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <m.div variants={varFade('inUp')}>
-                <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || post.title)} />
+                <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
               </m.div>
             </Grid>
           ))}

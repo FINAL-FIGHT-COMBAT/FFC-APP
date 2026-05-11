@@ -3,7 +3,7 @@
 import type { IPostItem } from 'src/types/blog';
 
 import { m } from 'framer-motion';
-
+import { kebabCase } from 'es-toolkit';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
@@ -28,7 +28,9 @@ type Props = {
 export function PostCategoryItem({ category, posts }: Props) {
   const theme = useTheme();
 
-  const viewPosts = posts.filter(post => post.category === category);
+  const viewPosts = posts.filter(
+    (post) => post.category.toLowerCase() === category.toLowerCase()
+  );
 
   // Se não houver posts, o grid não renderizará a seção.
   if (viewPosts.length === 0) return null;
@@ -101,7 +103,7 @@ export function PostCategoryItem({ category, posts }: Props) {
       <Grid container spacing={4}>
         {/* Desktop: Destaques (Primeiros 3) */}
         {viewPosts.slice(0, 3).map((post: any, index: number) => {
-          const isEconomy = category === 'Economia';
+          const isEconomy = category.toLowerCase() === 'economia';
           const economyLabels = ['Ignorar', 'Criptomoedas', 'Moedas Fiat'];
 
           return (
@@ -145,7 +147,7 @@ export function PostCategoryItem({ category, posts }: Props) {
                   <PostItemLatest
                     post={post}
                     index={index}
-                    detailsHref={paths.post.details(post.slug)}
+                    detailsHref={paths.post.details(post.slug || kebabCase(post.title))}
                   />
                 </Box>
               </m.div>
@@ -162,7 +164,7 @@ export function PostCategoryItem({ category, posts }: Props) {
           >
             <m.div variants={varFade('inUp')}>
               <Box sx={cardStyle}>
-                <PostCard post={post} detailsHref={paths.post.details(post.slug)} />
+                <PostCard post={post} detailsHref={paths.post.details(post.slug || kebabCase(post.title))} />
               </Box>
             </m.div>
           </Grid>
@@ -170,7 +172,7 @@ export function PostCategoryItem({ category, posts }: Props) {
 
         {/* Lista Restante */}
         {viewPosts.slice(3, 7).map((post: any, index: number) => {
-          const isEconomy = category === 'Economia';
+          const isEconomy = category.toLowerCase() === 'economia';
           const economyLabels = ['Commodities', 'Metais', 'Petróleo', 'Mercado Imobiliário'];
           const economyColors: any[] = ['warning', 'info', 'error', 'primary'];
 
@@ -203,7 +205,7 @@ export function PostCategoryItem({ category, posts }: Props) {
                       {economyLabels[index]}
                     </Label>
                   )}
-                  <PostCard post={post} detailsHref={paths.post.details(post.slug)} />
+                  <PostCard post={post} detailsHref={paths.post.details(post.slug || kebabCase(post.title))} />
                 </Box>
               </m.div>
             </Grid>

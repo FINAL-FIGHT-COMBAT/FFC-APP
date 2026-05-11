@@ -1,6 +1,7 @@
 'use client';
 
 import { m } from 'framer-motion';
+import { kebabCase } from 'es-toolkit';
 
 import type { IPostItem } from 'src/types/blog';
 
@@ -142,7 +143,7 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
               <PostItemLatest
                 post={post as any}
                 index={index}
-                detailsHref={paths.post.details((post as any).slug || post.title)}
+                detailsHref={paths.post.details((post as any).slug || (post as any).title)}
               />
             </m.div>
           </Grid>
@@ -156,7 +157,7 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           >
             <m.div variants={varFade('inUp')}>
-              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || post.title)} />
+              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || (post as any).title)} />
             </m.div>
           </Grid>
         ))}
@@ -165,7 +166,7 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
         {viewPosts.slice(3, 7).map((post, index) => (
           <Grid key={`${post.id}-${index}-rest`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <m.div variants={varFade('inUp')}>
-              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || post.title)} />
+              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || (post as any).title)} />
             </m.div>
           </Grid>
         ))}

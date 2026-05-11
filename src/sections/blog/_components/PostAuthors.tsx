@@ -38,8 +38,6 @@ export function PostAuthors({ posts }: Props) {
   const renderAuthorCard = (author: (typeof AUTHORS)[0], index: number, rowIndex: number) => (
     <Stack
       key={`${rowIndex}-${index}-${author.id}`}
-      component={RouterLink}
-      href={paths.post.details(author.name)}
       direction="row"
       alignItems="center"
       spacing={2}
@@ -47,8 +45,6 @@ export function PostAuthors({ posts }: Props) {
         p: 2,
         minWidth: 280,
         borderRadius: 2,
-        cursor: 'pointer',
-        textDecoration: 'none',
         position: 'relative',
         overflow: 'hidden',
         // 🟢 FUNDO DEEP SPACE SCIFI
@@ -105,12 +101,17 @@ export function PostAuthors({ posts }: Props) {
         <Typography
           variant="subtitle2"
           noWrap
+          component={RouterLink}
+          href={paths.post.root} // Redireciona para o feed por enquanto, ou profile se existir
           sx={{
             color: 'common.white',
             fontFamily: "'Orbitron', sans-serif",
             fontSize: 13,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
+            textDecoration: 'none',
+            transition: theme.transitions.create(['color']),
+            '&:hover': { color: 'primary.main' },
           }}
         >
           {author.name}

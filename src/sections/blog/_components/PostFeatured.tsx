@@ -7,6 +7,7 @@ import type { IPostItem } from 'src/types/blog';
 import Autoplay from 'embla-carousel-autoplay';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
@@ -133,26 +134,19 @@ function PostItem({ post }: { post: any }) {
       }}
     >
       <Card
-        component={RouterLink}
-        href={paths.post.details(slug || title)}
         sx={{
-            width: 1,
-            display: 'flex',
-            overflow: 'hidden',
-            textDecoration: 'none',
-            flexDirection: { xs: 'column', md: 'row' },
-            position: 'relative',
-            // 🟢 ESTILO DEEP SPACE
-            bgcolor: alpha('#020817', 0.6),
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            transition: theme.transitions.create(['transform', 'background-color']),
-            '&:hover': {
-                bgcolor: alpha('#020817', 0.85),
-                transform: 'scale(1.005)',
-            },
-            // 💎 BORDA REATIVA DE 1PX
-            '&::before': {
+          width: 1,
+          display: 'flex',
+          overflow: 'hidden',
+          flexDirection: { xs: 'column', md: 'row' },
+          position: 'relative',
+          // 🟢 ESTILO DEEP SPACE
+          bgcolor: alpha('#020817', 0.6),
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          transition: theme.transitions.create(['transform', 'background-color']),
+          // 💎 BORDA REATIVA DE 1PX
+          '&::before': {
             content: '""',
             position: 'absolute',
             inset: 0,
@@ -220,19 +214,26 @@ function PostItem({ post }: { post: any }) {
               fontWeight: 900,
               fontFamily: "'Orbitron', sans-serif",
               textTransform: 'uppercase',
-              color: 'common.white',
-              textDecoration: 'none',
               letterSpacing: '0.02em',
               textShadow: `0 0 15px ${alpha(theme.palette.primary.main, 0.35)}`,
-              transition: theme.transitions.create(['color']),
-              '&:hover': { color: 'primary.light' },
               display: '-webkit-box',
               WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
               overflow: 'hidden',
             }}
           >
-            {title}
+            <Link
+              component={RouterLink}
+              href={paths.post.details(slug || title)}
+              color="inherit"
+              sx={{
+                textDecoration: 'none',
+                transition: theme.transitions.create(['color']),
+                '&:hover': { color: 'primary.light' },
+              }}
+            >
+              {title}
+            </Link>
           </Typography>
 
           <Typography

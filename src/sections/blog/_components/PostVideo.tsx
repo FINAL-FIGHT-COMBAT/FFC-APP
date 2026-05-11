@@ -121,16 +121,14 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
     <Box
       sx={{
         position: 'relative',
-        cursor: 'pointer',
         borderRadius: 2,
         overflow: 'hidden',
         bgcolor: alpha(theme.palette.grey[900], 0.4),
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         border: `1px solid ${alpha(theme.palette.primary.main, 0.15)}`,
-        transition: theme.transitions.create(['box-shadow', 'transform', 'background-color']),
+        transition: theme.transitions.create(['box-shadow', 'background-color']),
         '&:hover': {
-          transform: 'translateY(-6px)',
           bgcolor: alpha(theme.palette.grey[900], 0.6),
           boxShadow: `0 12px 24px 0 ${alpha(theme.palette.primary.main, 0.25)}`,
           borderColor: alpha(theme.palette.primary.main, 0.4),
@@ -139,7 +137,13 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
         },
       }}
     >
-      <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+      <Box 
+        component="a"
+        href={`https://www.youtube.com/watch?v=${video.id}`}
+        target="_blank"
+        rel="noopener"
+        sx={{ position: 'relative', overflow: 'hidden', display: 'block' }}
+      >
         <Image
           className="video-img"
           alt={video.title}
@@ -205,6 +209,10 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
       <Box sx={{ p: 2, color: 'common.white' }}>
         <Typography
           variant="subtitle2"
+          component="a"
+          href={`https://www.youtube.com/watch?v=${video.id}`}
+          target="_blank"
+          rel="noopener"
           sx={{
             mb: 1.5,
             height: 44,
@@ -214,6 +222,9 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
             overflow: 'hidden',
             lineHeight: 1.4,
             fontWeight: 700,
+            textDecoration: 'none',
+            color: 'inherit',
+            transition: theme.transitions.create(['color']),
             '&:hover': { color: 'primary.light' },
           }}
         >
