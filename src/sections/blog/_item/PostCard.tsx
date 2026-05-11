@@ -145,23 +145,27 @@ type PostItemLatestProps = {
   post: IPostItem;
   index: number;
   detailsHref: string;
+  sx?: CardProps['sx'];
 };
 
-export function PostItemLatest({ post, index, detailsHref }: PostItemLatestProps) {
+export function PostItemLatest({ post, index, detailsHref, sx }: PostItemLatestProps) {
   const theme = useTheme();
   const postSmall = index === 1 || index === 2;
 
   return (
     <Card
-      sx={{
-        bgcolor: 'transparent',
-        border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
-        transition: theme.transitions.create(['transform', 'box-shadow']),
-        '&:hover': {
-          transform: 'scale(1.02)',
-          boxShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.3)}`,
+      sx={[
+        {
+          bgcolor: 'transparent',
+          border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+          transition: theme.transitions.create(['transform', 'box-shadow']),
+          '&:hover': {
+            transform: 'scale(1.02)',
+            boxShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.3)}`,
+          },
         },
-      }}
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
     >
       <Avatar
         alt={post.author.name}

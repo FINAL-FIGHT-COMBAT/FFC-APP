@@ -117,61 +117,60 @@ export function PostCategoryItem({ category, posts }: Props) {
                 lg: index === 0 ? 6 : 3,
               }}
             >
-              <m.div variants={varFade('inUp')}>
-                <Box sx={{ ...cardStyle, position: 'relative' }}>
-                  {/* Badge para Categorias (cards menores desktop) */}
-                  {(isEconomy || 
-                    category.toLowerCase() === 'meio ambiente' || 
-                    category.toLowerCase() === 'tecnologia' || 
-                    category.toLowerCase() === 'geopolitica') && index > 0 && (
-                    <Label
-                      variant="filled"
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        zIndex: 10,
-                        fontWeight: 900,
-                        fontSize: '0.65rem',
-                        fontFamily: "'Orbitron', sans-serif",
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                        borderRadius: 0.75,
-                        bgcolor: alpha(theme.palette[
-                          isEconomy ? (index === 1 ? 'secondary' : 'success') : 
-                          category.toLowerCase() === 'tecnologia' ? 'info' :
-                          category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
-                        ].main, 0.15),
-                        color: theme.palette[
-                          isEconomy ? (index === 1 ? 'secondary' : 'success') : 
-                          category.toLowerCase() === 'tecnologia' ? 'info' :
-                          category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
-                        ].light,
-                        border: `1px solid ${alpha(theme.palette[
-                          isEconomy ? (index === 1 ? 'secondary' : 'success') : 
-                          category.toLowerCase() === 'tecnologia' ? 'info' :
-                          category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
-                        ].main, 0.5)}`,
-                        backdropFilter: 'blur(8px)',
-                        boxShadow: `0 0 10px ${alpha(theme.palette[
-                          isEconomy ? (index === 1 ? 'secondary' : 'success') : 
-                          category.toLowerCase() === 'tecnologia' ? 'info' :
-                          category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
-                        ].main, 0.2)}`,
-                      }}
-                    >
-                      {isEconomy ? economyLabels[index] : 
-                       category.toLowerCase() === 'tecnologia' ? ['Ignorar', 'Web3', 'Segurança'][index] :
-                       category.toLowerCase() === 'geopolitica' ? ['Ignorar', 'Global', 'Futuro'][index] :
-                       ['Ignorar', 'Energia Limpa', 'Créditos Carbono'][index]}
-                    </Label>
-                  )}
-                  <PostItemLatest
-                    post={post}
-                    index={index}
-                    detailsHref={paths.post.details(post.slug || kebabCase(post.title))}
-                  />
-                </Box>
+              <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
+                {/* Badge para Categorias (cards menores desktop) */}
+                {(isEconomy || 
+                  category.toLowerCase() === 'meio ambiente' || 
+                  category.toLowerCase() === 'tecnologia' || 
+                  category.toLowerCase() === 'geopolitica') && index > 0 && (
+                  <Label
+                    variant="filled"
+                    sx={{
+                      position: 'absolute',
+                      top: 16,
+                      right: 16,
+                      zIndex: 30, // 🔴 AUMENTADO PARA FICAR ACIMA DE TUDO
+                      fontWeight: 900,
+                      fontSize: '0.65rem',
+                      fontFamily: "'Orbitron', sans-serif",
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      borderRadius: 0.75,
+                      bgcolor: alpha(theme.palette[
+                        isEconomy ? (index === 1 ? 'secondary' : 'success') : 
+                        category.toLowerCase() === 'tecnologia' ? 'info' :
+                        category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
+                      ].main, 0.15),
+                      color: theme.palette[
+                        isEconomy ? (index === 1 ? 'secondary' : 'success') : 
+                        category.toLowerCase() === 'tecnologia' ? 'info' :
+                        category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
+                      ].light,
+                      border: `1px solid ${alpha(theme.palette[
+                        isEconomy ? (index === 1 ? 'secondary' : 'success') : 
+                        category.toLowerCase() === 'tecnologia' ? 'info' :
+                        category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
+                      ].main, 0.5)}`,
+                      backdropFilter: 'blur(8px)',
+                      boxShadow: `0 0 10px ${alpha(theme.palette[
+                        isEconomy ? (index === 1 ? 'secondary' : 'success') : 
+                        category.toLowerCase() === 'tecnologia' ? 'info' :
+                        category.toLowerCase() === 'geopolitica' ? 'warning' : 'success'
+                      ].main, 0.2)}`,
+                    }}
+                  >
+                    {isEconomy ? economyLabels[index] : 
+                      category.toLowerCase() === 'tecnologia' ? ['Ignorar', 'Web3', 'Segurança'][index] :
+                      category.toLowerCase() === 'geopolitica' ? ['Ignorar', 'Global', 'Futuro'][index] :
+                      ['Ignorar', 'Energia Limpa', 'Créditos Carbono'][index]}
+                  </Label>
+                )}
+                <PostItemLatest
+                  post={post}
+                  index={index}
+                  detailsHref={paths.post.details(post.slug || kebabCase(post.title))}
+                  sx={cardStyle}
+                />
               </m.div>
             </Grid>
           );
@@ -185,9 +184,11 @@ export function PostCategoryItem({ category, posts }: Props) {
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           >
             <m.div variants={varFade('inUp')}>
-              <Box sx={cardStyle}>
-                <PostCard post={post} detailsHref={paths.post.details(post.slug || kebabCase(post.title))} />
-              </Box>
+              <PostCard 
+                post={post} 
+                detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
+                sx={cardStyle}
+              />
             </m.div>
           </Grid>
         ))}
@@ -200,61 +201,63 @@ export function PostCategoryItem({ category, posts }: Props) {
 
           return (
             <Grid key={`${categoryId}-list-${post.id}-${index}`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <m.div variants={varFade('inUp')}>
-                <Box sx={{ ...cardStyle, position: 'relative' }}>
-                  {/* Badge para os 4 cards da lista (Todas as categorias definidas) */}
-                  {(isEconomy || 
-                    category.toLowerCase() === 'meio ambiente' || 
-                    category.toLowerCase() === 'tecnologia' || 
-                    category.toLowerCase() === 'geopolitica') && (
-                    <Label
-                      variant="filled"
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        zIndex: 10,
-                        fontWeight: 900,
-                        fontSize: '0.65rem',
-                        fontFamily: "'Orbitron', sans-serif",
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                        borderRadius: 0.75,
-                        bgcolor: alpha(theme.palette[(
-                          isEconomy ? economyColors[index] : 
-                          category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
-                          category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
-                          ['success', 'info', 'warning', 'success'][index]
-                        ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.15),
-                        color: theme.palette[(
-                          isEconomy ? economyColors[index] : 
-                          category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
-                          category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
-                          ['success', 'info', 'warning', 'success'][index]
-                        ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].light,
-                        border: `1px solid ${alpha(theme.palette[(
-                          isEconomy ? economyColors[index] : 
-                          category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
-                          category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
-                          ['success', 'info', 'warning', 'success'][index]
-                        ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.5)}`,
-                        backdropFilter: 'blur(8px)',
-                        boxShadow: `0 0 10px ${alpha(theme.palette[(
-                          isEconomy ? economyColors[index] : 
-                          category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
-                          category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
-                          ['success', 'info', 'warning', 'success'][index]
-                        ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.2)}`,
-                      }}
-                    >
-                      {isEconomy ? economyLabels[index] : 
-                       category.toLowerCase() === 'tecnologia' ? ['Blockchain', 'IA', 'FinTech', 'DID'][index] :
-                       category.toLowerCase() === 'geopolitica' ? ['BRICS', 'Regulação', 'Soberania', 'Moeda'][index] :
-                       ['Agro Sustentável', 'Preservação', 'Natureza', 'ESG'][index]}
-                    </Label>
-                  )}
-                  <PostCard post={post} detailsHref={paths.post.details(post.slug || kebabCase(post.title))} />
-                </Box>
+              <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
+                {/* Badge para os 4 cards da lista (Todas as categorias definidas) */}
+                {(isEconomy || 
+                  category.toLowerCase() === 'meio ambiente' || 
+                  category.toLowerCase() === 'tecnologia' || 
+                  category.toLowerCase() === 'geopolitica') && (
+                  <Label
+                    variant="filled"
+                    sx={{
+                      position: 'absolute',
+                      top: 16,
+                      right: 16,
+                      zIndex: 30,
+                      fontWeight: 900,
+                      fontSize: '0.65rem',
+                      fontFamily: "'Orbitron', sans-serif",
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      borderRadius: 0.75,
+                      bgcolor: alpha(theme.palette[(
+                        isEconomy ? economyColors[index] : 
+                        category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
+                        category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
+                        ['success', 'info', 'warning', 'success'][index]
+                      ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.15),
+                      color: theme.palette[(
+                        isEconomy ? economyColors[index] : 
+                        category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
+                        category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
+                        ['success', 'info', 'warning', 'success'][index]
+                      ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].light,
+                      border: `1px solid ${alpha(theme.palette[(
+                        isEconomy ? economyColors[index] : 
+                        category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
+                        category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
+                        ['success', 'info', 'warning', 'success'][index]
+                      ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.5)}`,
+                      backdropFilter: 'blur(8px)',
+                      boxShadow: `0 0 10px ${alpha(theme.palette[(
+                        isEconomy ? economyColors[index] : 
+                        category.toLowerCase() === 'tecnologia' ? ['info', 'primary', 'secondary', 'info'][index] :
+                        category.toLowerCase() === 'geopolitica' ? ['warning', 'error', 'warning', 'primary'][index] :
+                        ['success', 'info', 'warning', 'success'][index]
+                      ) as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.2)}`,
+                    }}
+                  >
+                    {isEconomy ? economyLabels[index] : 
+                      category.toLowerCase() === 'tecnologia' ? ['Blockchain', 'IA', 'FinTech', 'DID'][index] :
+                      category.toLowerCase() === 'geopolitica' ? ['BRICS', 'Regulação', 'Soberania', 'Moeda'][index] :
+                      ['Agro Sustentável', 'Preservação', 'Natureza', 'ESG'][index]}
+                  </Label>
+                )}
+                <PostCard 
+                  post={post} 
+                  detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
+                  sx={cardStyle}
+                />
               </m.div>
             </Grid>
           );
