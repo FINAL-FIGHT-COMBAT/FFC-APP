@@ -228,6 +228,8 @@ function PostItem({ post }: { post: any }) {
               color="inherit"
               sx={{
                 textDecoration: 'none',
+                position: 'relative',
+                zIndex: 10,
                 transition: theme.transitions.create(['color']),
                 '&:hover': { color: 'primary.light' },
               }}

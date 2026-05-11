@@ -117,8 +117,10 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
           variant="subtitle2"
           sx={{
             ...theme.mixins.maxLine({ line: 2, persistent: theme.typography.subtitle2 }),
-            fontFamily: "'Orbitron', sans-serif", // Toque futurista no título do card
+            fontFamily: "'Orbitron', sans-serif",
             textDecoration: 'none',
+            position: 'relative',
+            zIndex: 20, // 🔴 GARANTE O CLIQUE ACIMA DE QUALQUER DECORAÇÃO
             transition: theme.transitions.create(['color']),
             '&:hover': { color: 'primary.light' },
           }}
@@ -213,6 +215,8 @@ export function PostItemLatest({ post, index, detailsHref }: PostItemLatestProps
             fontFamily: "'Orbitron', sans-serif",
             textShadow: '0 2px 4px rgba(0,0,0,0.8)',
             textDecoration: 'none',
+            position: 'relative',
+            zIndex: 20, // 🔴 GARANTE O CLIQUE NO DESTAQUE
           }}
         >
           {post.title}
