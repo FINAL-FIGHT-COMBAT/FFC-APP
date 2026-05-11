@@ -13,6 +13,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 
+import { GlassCard } from 'src/components/glass-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 import { PostCard, PostItemLatest } from './PostCard';
@@ -140,11 +141,13 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
             }}
           >
             <m.div variants={varFade('inUp')}>
-              <PostItemLatest
-                post={post as any}
-                index={index}
-                detailsHref={paths.post.details((post as any).slug || (post as any).title)}
-              />
+              <GlassCard>
+                <PostItemLatest
+                  post={post as any}
+                  index={index}
+                  detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))}
+                />
+              </GlassCard>
             </m.div>
           </Grid>
         ))}
@@ -157,7 +160,9 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           >
             <m.div variants={varFade('inUp')}>
-              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || (post as any).title)} />
+              <GlassCard>
+                <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
+              </GlassCard>
             </m.div>
           </Grid>
         ))}
@@ -166,7 +171,9 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
         {viewPosts.slice(3, 7).map((post, index) => (
           <Grid key={`${post.id}-${index}-rest`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <m.div variants={varFade('inUp')}>
-              <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || (post as any).title)} />
+              <GlassCard>
+                <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
+              </GlassCard>
             </m.div>
           </Grid>
         ))}
