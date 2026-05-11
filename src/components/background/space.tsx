@@ -57,13 +57,18 @@ export const SpaceAtmosphere = memo(() => (
 ));
 
 /* ================================
-   Componente Completo com Canvas
+   Componente Completo com Canvas Otimizado
 ================================ */
 export const SpaceScene = memo(() => (
   <Space>
     <Canvas
       camera={{ position: [0, 0, 10], fov: 75 }}
-      gl={{ antialias: true, alpha: true }}
+      dpr={[1, 1.5]} // 🟢 OTIMIZAÇÃO: Limita resolução em telas de alta densidade
+      frameloop="demand" // 🟢 OTIMIZAÇÃO: Só renderiza quando necessário (economiza muita CPU/GPU)
+      gl={{ 
+        antialias: false, // 🟢 OTIMIZAÇÃO: Desativa suavização desnecessária para pontos de luz
+        alpha: true 
+      }}
       // Estilo inline para garantir que o canvas não intercepte o mouse
       style={{ pointerEvents: 'none' }}
     >
