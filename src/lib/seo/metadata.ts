@@ -17,7 +17,7 @@ export function constructMetadata({
   image = '/logo/logo-512x512.png',
   noIndex = false,
 }: MetadataProps): Metadata {
-  const customTitle = `${title} | ASPPIBRA-DAO`;
+  const customTitle = `${title} | FFC`;
 
   return {
     title: customTitle,
@@ -40,7 +40,7 @@ export function constructMetadata({
       title: customTitle,
       description,
       images: [image.startsWith('http') ? image : `${APP_URL}${image}`],
-      creator: '@asppibradao',
+      creator: '@ffc',
     },
     metadataBase: new URL(APP_URL),
     alternates: {

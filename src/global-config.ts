@@ -42,7 +42,7 @@ export const CONFIG: ConfigValue = {
   /**
    * NOME DA APLICAÇÃO
    */
-  appName: 'ASPPIBRA',
+  appName: 'FFC',
 
   appVersion: packageJson.version,
 
@@ -50,21 +50,21 @@ export const CONFIG: ConfigValue = {
    * BACKEND API URL
    * Local de onde os dados de produção e usuários são consumidos.
    */
-  serverUrl: (process.env.NEXT_PUBLIC_HOST_API ?? 'https://api.asppibra.com').replace(/\/$/, ''),
+  serverUrl: (process.env.NEXT_PUBLIC_HOST_API ?? '').replace(/\/$/, ''),
 
   /**
    * FRONTEND SITE URL
    * SSOT para Metadados, Sitemaps e Links Canônicos.
    * FIX: Bloqueado rigorosamente contra fallbacks da Vercel (Mirroring Penalty).
    */
-  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.asppibra.com').replace(/\/$/, ''),
+  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? '').replace(/\/$/, ''),
 
   /**
    * CLOUDFLARE R2 PUBLIC URL
    * Esta é a URL do seu bucket 'governance-system-assets'.
    * Se você configurou um subdomínio no Cloudflare, use ele aqui.
    */
-  r2PublicUrl: (process.env.NEXT_PUBLIC_R2_URL ?? 'https://assets.asppibra.com').replace(/\/$/, ''),
+  r2PublicUrl: (process.env.NEXT_PUBLIC_R2_URL ?? '').replace(/\/$/, ''),
 
   /**
    * ASSETS DIRECTORY
@@ -83,8 +83,8 @@ export const CONFIG: ConfigValue = {
    */
   assets: {
     fallback: {
-      avatar: 'https://api.asppibra.com/api/platform/storage/public/avatars/fallback.jpg',
-      banner: 'https://api.asppibra.com/api/platform/storage/public/covers/banner-fallback.png',
+      avatar: `${process.env.NEXT_PUBLIC_HOST_API ?? ''}/api/platform/storage/public/avatars/fallback.jpg`,
+      banner: `${process.env.NEXT_PUBLIC_HOST_API ?? ''}/api/platform/storage/public/covers/banner-fallback.png`,
     },
   },
 
@@ -105,9 +105,9 @@ export const CONFIG: ConfigValue = {
    * REDES SOCIAIS OFICIAIS
    */
   socials: {
-    facebook: 'https://www.facebook.com/asppibra',
-    instagram: 'https://www.instagram.com/asppibra',
-    linkedin: 'https://www.linkedin.com/company/asppibra',
-    twitter: 'https://www.twitter.com/asppibra',
+    facebook: 'https://www.facebook.com/ffc',
+    instagram: 'https://www.instagram.com/ffc',
+    linkedin: 'https://www.linkedin.com/company/ffc',
+    twitter: 'https://www.twitter.com/ffc',
   },
 };

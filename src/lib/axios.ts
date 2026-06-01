@@ -19,7 +19,7 @@ import { JWT_STORAGE_KEY } from 'src/auth/context/constant';
  * Sincronizado com NEXT_PUBLIC_HOST_API para suportar múltiplos ambientes (Dev/Prod).
  */
 const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_HOST_API || 'https://api.asppibra.com',
+  baseURL: process.env.NEXT_PUBLIC_HOST_API || '',
   headers: {
     'Content-Type': 'application/json',
   },

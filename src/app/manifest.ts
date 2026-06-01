@@ -10,18 +10,17 @@ import { CONFIG } from 'src/global-config';
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `Digital World - ${CONFIG.appName} Governance`,
-    short_name: 'ASPPIBRA-DAO',
+    name: `Final Fight Combat — ${CONFIG.appName}`,
+    short_name: 'FFC',
     description:
-      'Infraestrutura de Governança Digital e RWA: Integração nativa com DeFi, storage IPFS descentralizado e IA aplicada à gestão de ativos tokenizados em Blockchain.',
+      'Plataforma oficial de inscrições e campeonatos de Jiu-Jitsu Brasileiro — categorias por faixa e peso segundo tabela CBJJ oficial.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0A192F', // Azul Profundo: Transmite segurança e tecnologia avançada
-    theme_color: '#00A15D', // Verde Sustentabilidade: O equilíbrio entre Agro e Web3
+    background_color: '#0A0F1E',
+    theme_color: '#EAB308',
     orientation: 'portrait' as const,
 
-    // Categorias estratégicas para ranqueamento em diretórios de investidores e tech
-    categories: ['finance', 'business', 'productivity', 'utilities'],
+    categories: ['sports', 'lifestyle', 'health & fitness'],
 
     icons: [
       {

@@ -31,7 +31,7 @@ export function generateArticleSchema({
     ],
     publisher: {
       '@type': 'Organization',
-      name: 'ASPPIBRA-DAO',
+      name: 'Final Fight Combat',
       logo: {
         '@type': 'ImageObject',
         url: `${CONFIG.siteUrl}/logo/logo-512x512.png`,
