@@ -71,6 +71,7 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
         </Typography>
       </Stack>
 
+      {/* Botão CTA */}
       <m.div variants={varFade('inRight', { distance: 24 })}>
         <Button
           component={RouterLink}
@@ -85,35 +86,82 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
             color: 'common.white',
             border: 'none',
             position: 'relative',
-            bgcolor: alpha('#020817', 0.6),
+            bgcolor: alpha(theme.palette.warning.main, 0.15),
             backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
             transition: theme.transitions.create(['all']),
-            // BOTÃO CRYSTAL (BORDA CIANO)
             '&::before': {
               content: '""',
               position: 'absolute',
               inset: 0,
               borderRadius: 'inherit',
               padding: '1px',
-              background: `linear-gradient(180deg, 
-                ${alpha(theme.palette.info.main, 1)} 0%, 
-                ${alpha(theme.palette.info.main, 0.1)} 50%, 
-                ${alpha(theme.palette.info.main, 0.6)} 100%
+              background: `linear-gradient(180deg,
+                ${alpha(theme.palette.warning.main, 1)} 0%,
+                ${alpha(theme.palette.warning.main, 0.2)} 50%,
+                ${alpha(theme.palette.warning.main, 0.8)} 100%
               )`,
               WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               WebkitMaskComposite: 'xor',
               maskComposite: 'exclude',
             },
             '&:hover': {
-              bgcolor: alpha(theme.palette.info.main, 0.08),
+              bgcolor: alpha(theme.palette.warning.main, 0.25),
               transform: 'scale(1.05)',
-              boxShadow: `0 0 20px 0 ${alpha(theme.palette.info.main, 0.3)}`,
+              boxShadow: `0 0 24px 0 ${alpha(theme.palette.warning.main, 0.4)}`,
             },
           }}
         >
-          {t('cta.button') || 'Explorar Agora'}
+          {t('cta.button') || 'INSCREVER-SE AGORA'}
         </Button>
+      </m.div>
+
+      {/* Data e Local */}
+      <m.div variants={varFade('inUp', { distance: 16 })}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.5,
+            mt: 0.5,
+          }}
+        >
+          <Iconify
+            icon="solar:calendar-date-bold"
+            width={16}
+            sx={{ color: alpha(theme.palette.warning.main, 0.8) }}
+          />
+          <Box
+            component="span"
+            sx={{
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: '0.15em',
+              color: alpha(theme.palette.warning.main, 0.9),
+            }}
+          >
+            {t('cta.event_date') || '20 DE DEZEMBRO'}
+          </Box>
+          <Box
+            component="span"
+            sx={{ color: alpha('#fff', 0.2), fontSize: 12 }}
+          >
+            ·
+          </Box>
+          <Box
+            component="span"
+            sx={{
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: '0.12em',
+              color: alpha('#fff', 0.5),
+            }}
+          >
+            {t('cta.event_venue') || 'GINÁSIO DO IBIRAPUERA'}
+          </Box>
+        </Box>
       </m.div>
     </Stack>
   );
@@ -122,16 +170,16 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
     <m.div variants={varFade('inUp')}>
       <Box
         component={m.img}
-        animate={{ y: [-15, 0, -15] }}
+        animate={{ y: [-12, 0, -12] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-        alt="Rocket"
-        src={`${CONFIG.assetsDir}/assets/illustrations/illustration-rocket-large.webp`}
+        alt="FFC Final Fight Combat"
+        src={`${CONFIG.assetsDir}/assets/illustrations/ffc-logo-cta.webp`}
         sx={{
           zIndex: 9,
-          width: { xs: 240, md: 360 },
+          width: { xs: 200, md: 300 },
           aspectRatio: '1/1',
           position: 'relative',
-          filter: `drop-shadow(0 0 40px ${alpha(theme.palette.info.main, 0.3)})`,
+          filter: `drop-shadow(0 0 48px ${alpha(theme.palette.warning.main, 0.5)})`,
         }}
       />
     </m.div>

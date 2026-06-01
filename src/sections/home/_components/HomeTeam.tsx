@@ -34,6 +34,37 @@ import { varFade, MotionViewport } from 'src/components/animate';
 import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
+// Fallback estático — usado quando o locale não tem o array members
+// ----------------------------------------------------------------------
+
+const MEMBERS_FALLBACK = [
+  {
+    id: 'member-1',
+    name: 'Sandro',
+    role: 'CEO & Founder',
+    avatarUrl: 'https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-1.webp',
+  },
+  {
+    id: 'member-2',
+    name: 'Lucian Obrien',
+    role: 'CTO',
+    avatarUrl: 'https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-2.webp',
+  },
+  {
+    id: 'member-3',
+    name: 'Deja Brady',
+    role: 'Project Coordinator',
+    avatarUrl: 'https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-3.webp',
+  },
+  {
+    id: 'member-4',
+    name: 'Harrison Stein',
+    role: 'Team Leader',
+    avatarUrl: 'https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-4.webp',
+  },
+];
+
+// ----------------------------------------------------------------------
 
 export function HomeTeam({ sx, ...other }: BoxProps) {
   const theme = useTheme();
@@ -45,12 +76,9 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
     slidesToShow: { xs: 1, sm: 2, md: 3, lg: 4 },
   });
 
-  const members = t('team.members', { returnObjects: true }) as {
-    id: string;
-    name: string;
-    role: string;
-    avatarUrl: string;
-  }[];
+  const membersRaw = t('team.members', { returnObjects: true });
+  const members: { id: string; name: string; role: string; avatarUrl: string }[] =
+    Array.isArray(membersRaw) ? membersRaw : MEMBERS_FALLBACK;
 
   return (
     <Box
@@ -104,29 +132,6 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
                   {t('team.badge')}
                 </Typography>
               </Box>
-            </m.div>
-
-            {/* TÍTULO HIERÁRQUICO */}
-            <m.div variants={varFade('inUp')}>
-              <Typography
-                component="h2"
-                sx={{
-                  fontFamily: "'Orbitron', sans-serif",
-                  fontWeight: 900,
-                  fontSize: { xs: '2.2rem', md: '3rem' },
-                  letterSpacing: '0.08em',
-                  lineHeight: 1.2,
-                  textTransform: 'uppercase',
-                }}
-              >
-                <Box component="span" sx={{ color: 'common.white' }}>
-                  {t('team.title')}
-                </Box>
-                <br />
-                <Box component="span" sx={{ color: 'warning.main' }}>
-                  {t('team.title_highlight')}
-                </Box>
-              </Typography>
             </m.div>
           </Box>
 
@@ -187,17 +192,16 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
           <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
 
           <Carousel carousel={carousel} sx={{ px: 0.5 }}>
-            {Array.isArray(members) &&
-              members.map((member) => (
-                <Box
-                  key={member.id}
-                  component={m.div}
-                  variants={varFade('in')}
-                  sx={{ py: { xs: 4, md: 5 } }}
-                >
-                  <MemberCard member={member} />
-                </Box>
-              ))}
+            {members.map((member) => (
+              <Box
+                key={member.id}
+                component={m.div}
+                variants={varFade('in')}
+                sx={{ py: { xs: 4, md: 5 } }}
+              >
+                <MemberCard member={member} />
+              </Box>
+            ))}
           </Carousel>
         </Box>
       </Container>
@@ -276,7 +280,10 @@ function MemberCard({
         sx={{
           mb: 2.5,
           fontFamily: "'Public Sans', sans-serif",
-          fontWeight: 500,
+          fontWeight: 700,
+          fontSize: 11,
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
           color: '#919EAB',
         }}
       >
@@ -288,6 +295,8 @@ function MemberCard({
           alt={member.name}
           src={member.avatarUrl}
           ratio="1/1"
+          visibleByDefault
+          disablePlaceholder
           sx={{
             borderRadius: 2,
             border: `1px solid ${alpha(theme.palette.common.white, 0.05)}`,

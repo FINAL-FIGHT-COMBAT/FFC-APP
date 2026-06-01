@@ -6,7 +6,7 @@ import { paths } from 'src/routes/paths';
 
 export const navData: NavMainProps['data'] = [
   { title: 'Home', path: '/' },
-  { title: 'Ecosystem', path: '/#ecosystem' },
+  { title: 'Categorias', path: '/#categorias' },
   { title: 'Community', path: '/#community' },
   { title: 'Team', path: '/#team' },
   { title: 'Roadmap', path: '/#roadmap' },

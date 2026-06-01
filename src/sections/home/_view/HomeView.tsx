@@ -14,7 +14,7 @@ import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 
 // Componentes Críticos (Immediate Loading para LCP)
 import { HomeHero } from '../_components/HomeHero';
-import { HomeEcosystem } from '../_components/HomeEcosystem';
+import { Categorias } from '../_components/Categorias';
 
 // ✅ Lazy Loading Otimizado para Produção (SSR: false para componentes com Browser APIs)
 const HomeIntegrations = dynamic(
@@ -60,7 +60,7 @@ export function HomeView() {
 
         <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
           <LazyRender minHeight={800}>
-            <HomeEcosystem />
+            <Categorias />
           </LazyRender>
 
           <LazyRender minHeight={950}>

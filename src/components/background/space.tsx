@@ -12,22 +12,17 @@ import Box from '@mui/material/Box';
 // ----------------------------------------------------------------------
 
 const STARS_CONFIG = {
-  radius: 120,
-  depth: 60,
-  count: 6000,
+  radius: 80,
+  depth: 40,
+  count: 3000,
   factor: 4,
   fade: true,
-};
-
-const LIGHT_CONFIG = {
-  ambientIntensity: 0.5,
-  pointPosition: [-3, 2, 5] as [number, number, number],
-  pointIntensity: 1.2,
+  saturation: 0,
 };
 
 /* ================================
    Componente de Fundo (Layout)
-   Ajustado para servir como base profunda (Layer 0)
+   Posicionado atrás de todo o conteúdo (Layer 0)
 ================================ */
 export const Space = memo(({ children }: PropsWithChildren) => (
   <Box
@@ -35,44 +30,51 @@ export const Space = memo(({ children }: PropsWithChildren) => (
     sx={{
       position: 'fixed',
       inset: 0,
-      zIndex: -1, // Crucial: Coloca o fundo atrás de todo o conteúdo (inclusive o header)
-      background: '#010411', // Cor base do espaço profundo
+      zIndex: -1,
+      background: '#010411',
       overflow: 'hidden',
-      pointerEvents: 'none', // Garante que o fundo não "roube" cliques de botões ou links
+      pointerEvents: 'none',
     }}
   >
     {children}
   </Box>
 ));
 
+Space.displayName = 'Space';
+
 /* ================================
-   Atmosfera 3D (Cena)
+   Atmosfera 3D — apenas estrelas estáticas
+   Sem luzes (Stars usam BasicMaterial, não reagem a luz)
 ================================ */
 export const SpaceAtmosphere = memo(() => (
   <Suspense fallback={null}>
     <Stars {...STARS_CONFIG} />
-    <ambientLight intensity={LIGHT_CONFIG.ambientIntensity} />
-    <pointLight position={LIGHT_CONFIG.pointPosition} intensity={LIGHT_CONFIG.pointIntensity} />
   </Suspense>
 ));
 
+SpaceAtmosphere.displayName = 'SpaceAtmosphere';
+
 /* ================================
-   Componente Completo com Canvas Otimizado
+   Cena completa com Canvas otimizado
+   Usada nos layouts Main e Blog como fundo fixo
 ================================ */
 export const SpaceScene = memo(() => (
   <Space>
     <Canvas
-      camera={{ position: [0, 0, 10], fov: 75 }}
-      dpr={[1, 1.5]} // 🟢 OTIMIZAÇÃO: Limita resolução em telas de alta densidade
-      frameloop="demand" // 🟢 OTIMIZAÇÃO: Só renderiza quando necessário (economiza muita CPU/GPU)
-      gl={{ 
-        antialias: false, // 🟢 OTIMIZAÇÃO: Desativa suavização desnecessária para pontos de luz
-        alpha: true 
+      frameloop="demand"
+      dpr={[1, 1.5]}
+      gl={{
+        antialias: false,
+        alpha: true,
+        powerPreference: 'high-performance',
+        stencil: false,
+        depth: false,
       }}
-      // Estilo inline para garantir que o canvas não intercepte o mouse
       style={{ pointerEvents: 'none' }}
     >
       <SpaceAtmosphere />
     </Canvas>
   </Space>
 ));
+
+SpaceScene.displayName = 'SpaceScene';

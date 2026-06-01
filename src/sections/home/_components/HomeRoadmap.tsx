@@ -31,6 +31,7 @@ type RoadmapPhase = {
   title: string;
   description: string;
   color: 'info' | 'secondary' | 'error' | 'warning';
+  progress: number; // 0-100
 };
 
 export function HomeRoadmap({ sx, ...other }: BoxProps) {
@@ -45,6 +46,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
         title: t('roadmap.phases.p1.title'),
         description: t('roadmap.phases.p1.description'),
         color: 'info',
+        progress: 20,
       },
       {
         phase: t('roadmap.phases.p2.label'),
@@ -52,6 +54,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
         title: t('roadmap.phases.p2.title'),
         description: t('roadmap.phases.p2.description'),
         color: 'secondary',
+        progress: 0,
       },
       {
         phase: t('roadmap.phases.p3.label'),
@@ -59,6 +62,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
         title: t('roadmap.phases.p3.title'),
         description: t('roadmap.phases.p3.description'),
         color: 'error',
+        progress: 0,
       },
       {
         phase: t('roadmap.phases.p4.label'),
@@ -66,6 +70,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
         title: t('roadmap.phases.p4.title'),
         description: t('roadmap.phases.p4.description'),
         color: 'warning',
+        progress: 0,
       },
     ],
     [t]
@@ -166,9 +171,9 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
           <Grid
             container
             display="grid"
-            gridTemplateColumns={{ xs: '1fr', md: '1fr 64px 1fr' }}
-            rowGap={{ xs: 6, md: 8 }}
-            columnGap={6}
+            gridTemplateColumns={{ xs: '1fr', md: '1fr 16px 1fr' }}
+            rowGap={{ xs: 3, md: 4 }}
+            columnGap={3}
             sx={{ mt: { xs: 8, md: 10 } }}
           >
             {ROADMAP_PHASES.map((item, index) => {
@@ -191,6 +196,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                         width: '100%',
                         maxWidth: 400,
                         position: 'relative',
+                        textAlign: 'left',
                         bgcolor: alpha('#020817', 0.8),
                         backdropFilter: 'blur(12px)',
                         WebkitBackdropFilter: 'blur(12px)',
@@ -272,6 +278,66 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                       >
                         {item.description}
                       </Typography>
+
+                      {/* ── BARRA DE PROGRESSO ── */}
+                      <Box sx={{ mt: 3, position: 'relative', zIndex: 3 }}>
+                        {/* Label + % */}
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            mb: 0.8,
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "'Orbitron', sans-serif",
+                              fontSize: 10,
+                              fontWeight: 700,
+                              letterSpacing: '0.18em',
+                              textTransform: 'uppercase',
+                              color: alpha(cardColor, 0.8),
+                            }}
+                          >
+                            PROGRESSO
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontFamily: "'Orbitron', sans-serif",
+                              fontSize: 11,
+                              fontWeight: 800,
+                              color: cardColor,
+                            }}
+                          >
+                            {item.progress}%
+                          </Typography>
+                        </Box>
+
+                        {/* Track */}
+                        <Box
+                          sx={{
+                            width: '100%',
+                            height: 6,
+                            borderRadius: 99,
+                            bgcolor: alpha(cardColor, 0.12),
+                            overflow: 'hidden',
+                            position: 'relative',
+                          }}
+                        >
+                          {/* Fill */}
+                          <Box
+                            sx={{
+                              height: '100%',
+                              width: `${item.progress}%`,
+                              borderRadius: 99,
+                              background: `linear-gradient(90deg, ${alpha(cardColor, 0.6)} 0%, ${cardColor} 100%)`,
+                              boxShadow: `0 0 10px 2px ${alpha(cardColor, 0.5)}`,
+                              transition: 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                            }}
+                          />
+                        </Box>
+                      </Box>
                     </Card>
                   </m.div>
                 </Grid>

@@ -39,7 +39,7 @@ export const supportedLngs = ['en', 'pt', 'es', 'ar', 'cn', 'fr', 'ru'] as const
 export type LangCode = (typeof supportedLngs)[number];
 
 // Fallback and default namespace
-export const fallbackLng: LangCode = 'en';
+export const fallbackLng: LangCode = 'pt';
 export const defaultNS = 'common';
 
 // Storage config

@@ -1,11 +1,9 @@
 {
   "_comment": "Configuração de conteúdo da landing page — versão PT-BR. Estruturado por blocos de UI para facilitar i18n, CMS e componentização.",
-
   "demo": {
     "_comment": "Configurações globais de idioma e ambiente de demonstração.",
     "lang": "Português"
   },
-
   "hero": {
     "_comment": "Seção principal (above the fold). Contém proposta de valor, headline modular e CTAs primários.",
     "badge": "Gênesis",
@@ -19,7 +17,6 @@
       "ecossistema": "Ecossistema"
     }
   },
-
   "ecosystem": {
     "_comment": "Seção de apresentação da arquitetura do ecossistema. Estruturada em pilares tecnológicos e operacionais.",
     "badge": "Ecossistema",
@@ -27,7 +24,6 @@
     "title_bridge": "Digital de",
     "title_highlight": "Nova Geração",
     "description": "Arquiteturas seguras e interoperáveis projetadas para escalar governança técnica, eficiência operacional e impacto econômico na era Web3.",
-
     "items": {
       "_comment": "Pilares do ecossistema exibidos como cards ou grid.",
       "tech": {
@@ -47,21 +43,18 @@
         "description": "Tokenização de ativos reais conectando a liquidez do DeFi ao valor do mundo físico."
       }
     },
-
     "cta": {
       "_comment": "CTA secundário da seção de ecossistema.",
       "label": "Explorar Ecossistema",
       "target": "ecosystem"
     }
   },
-
   "integrations": {
     "_comment": "Seção de telemetria e conectividade global. Exibe métricas em tempo real da rede, blockchain e infraestrutura.",
     "badge": "Conectividade",
     "title": "Sistema de",
     "title_bridge": "Rede e Ativos",
     "title_highlight": "Global",
-
     "panels": {
       "_comment": "Painéis visuais estilo dashboard.",
       "chain": {
@@ -81,7 +74,6 @@
         "label": "NETWORK_TOPOLOGY"
       }
     },
-
     "metrics": {
       "_comment": "Métricas exibidas dentro dos painéis.",
       "block": "ÚLTIMO BLOCO",
@@ -94,7 +86,6 @@
       "downstream": "DOWNSTREAM"
     }
   },
-
   "community": {
     "_comment": "Seção de capital social, governança e escala de ativos sob gestão.",
     "badge": "Comunidade",
@@ -102,63 +93,54 @@
     "title_bridge": "Mercado &",
     "title_highlight": "Escalabilidade",
     "description": "A ASPPIBRA-DAO provê infraestrutura para gestão de ativos de alto valor, como cadeias de café agroecológico, garantindo segurança jurídica e liquidez on-chain por meio de governança descentralizada.",
-
     "metrics": {
       "_comment": "Indicadores de escala do ecossistema. Ideal para dados dinâmicos.",
       "members": "Network Stewards",
       "area": "Hectares Geridos",
       "aum": "Ativos Sob Soberania"
     },
-
     "hub": {
       "_comment": "Bloco institucional de sinergia e integração de parceiros.",
       "title": "Sinergia de Rede",
       "description": "Governança que integra corporações, cooperativas e produtores em um ecossistema de liquidez global orientado à valorização de ativos reais tangíveis."
     },
-
     "buttons": {
       "_comment": "Chaves sincronizadas com as chamadas t() do componente HomeCommunity.",
       "governance": "Acessar Governança",
       "data": "Dados On-chain"
     }
   },
-
   "team": {
     "_comment": "Seção de apresentação da equipe e conselho da DAO.",
     "badge": "Time",
-    "title": "Unindo",
-    "title_bridge": "Expertise &",
-    "title_highlight": "Inovação",
-    "description": "A equipe ASPPIBRA-DAO combina décadas de experiência em agroecologia com especialistas em tecnologia blockchain e governança institucional para transformar o setor rural.",
     "button": "Ver Todos os Membros",
     "members": [
       {
         "id": "member-1",
-        "name": "Sandro",
-        "role": "CEO & Founder",
-        "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-1.webp"
+        "name": "Orgelio André Correia",
+        "role": "Coordenador",
+        "avatarUrl": "/assets/images/avatars/team/orgelio-andre-correia.webp"
       },
       {
         "id": "member-2",
-        "name": "Lucian Obrien",
-        "role": "CTO",
-        "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-2.webp"
+        "name": "Sandro Antunes",
+        "role": "CEO",
+        "avatarUrl": "/assets/images/avatars/team/sandro-antunes.webp"
       },
       {
         "id": "member-3",
-        "name": "Deja Brady",
-        "role": "Project Coordinator",
-        "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-3.webp"
+        "name": "Ana Carolina",
+        "role": "Coordenadora",
+        "avatarUrl": "/assets/images/avatars/team/ana-carolina.webp"
       },
       {
         "id": "member-4",
-        "name": "Harrison Stein",
-        "role": "Team Leader",
-        "avatarUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/portrait/portrait-4.webp"
+        "name": "Roberto Chamberlain",
+        "role": "Coordenador",
+        "avatarUrl": "/assets/images/avatars/team/roberto-chamberlain-barbosa.webp"
       }
     ]
   },
-  
   "news": {
     "_comment": "Seção de blog e atualizações do ecossistema.",
     "badge": "Últimas Notícias",
@@ -188,7 +170,6 @@
       }
     ]
   },
-
   "roadmap": {
     "_comment": "Cronograma estratégico de evolução da ASPPIBRA-DAO.",
     "badge": "Roadmap",
@@ -199,37 +180,35 @@
     "phases": {
       "p1": {
         "label": "Fase 01",
-        "time": "Q1-Q2 2024",
-        "title": "Fundação & Compliance",
-        "description": "Estabelecimento da estrutura jurídica da DAO, governança institucional e registro oficial (CAR) dos primeiros produtores rurais."
+        "time": "Jun–Jul 2026",
+        "title": "Setup Digital & Lista de Espera",
+        "description": "Homologação do sistema próprio, fechamento do ginásio e lançamento da campanha Save The Date para captação estratégica de equipes e atletas."
       },
       "p2": {
         "label": "Fase 02",
-        "time": "Q3-Q4 2024",
-        "title": "Tokenização RWA (MVP)",
-        "description": "Lançamento do Identity Provider (IdP) soberano e primeira tokenização de ativos reais focada na produção de café agroecológico."
+        "time": "Ago 2026",
+        "title": "Lançamento & Lote Early Bird",
+        "description": "Inscrições abertas com valores exclusivos do Lote Promocional. Garanta sua vaga com antecedência e aproveite o menor preço da competição."
       },
       "p3": {
         "label": "Fase 03",
-        "time": "Q1-Q2 2025",
-        "title": "Escala & Binance Listing",
-        "description": "Expansão do ecossistema de crédito agrícola via IA e submissão do processo de listagem do token em exchanges globais."
+        "time": "Nov 2026",
+        "title": "Reta Final & Fechamento",
+        "description": "Encerramento das inscrições com o Lote Final. Divulgação das chaves e cronograma oficial para todos os atletas confirmados."
       },
       "p4": {
         "label": "Fase 04",
-        "time": "2025+",
-        "title": "Ecossistema Global Agro",
-        "description": "Plena integração de ativos RWA internacionais e rede global de agroecologia sustentada pela infraestrutura ASPPIBRA-DAO."
+        "time": "Dez 2026",
+        "title": "Dia D — A Seletiva",
+        "description": "Oito áreas de luta, chaves definidas e sistema em tempo real. Uma experiência de alto nível para cada atleta que subir ao tatame."
       }
     }
-  },  
-
+  },
   "faqs": {
     "_comment": "Bloco de perguntas frequentes. Estrutura compatível com componentes accordion.",
     "title": "FAQs",
     "heading": "Temos as",
     "heading_highlight": "Respostas",
-
     "items": [
       {
         "question": "Como posso obter atualizações sobre o projeto?",
@@ -249,17 +228,17 @@
       }
     ]
   },
-
   "cta": {
-    "_comment": "Banner de fechamento (CTA Final) antes do footer.",
-    "badge": "Próximo Passo",
-    "title": "Pronto para",
-    "title_bridge": "Começar a",
-    "title_highlight": "Evoluir?",
-    "description": "Junte-se à revolução dos ativos reais. Explore nossa governança, acompanhe a liquidez on-chain e faça parte de um ecossistema de impacto global.",
-    "button": "Explorar Agora"
+    "_comment": "Banner CTA Final — FFC.",
+    "badge": "Final Fight Combat",
+    "title": "PREPARE-SE PARA",
+    "title_bridge": "O CONFRONTO",
+    "title_highlight": "FINAL",
+    "description": "Inscrições abertas e venda de ingressos limitados.",
+    "event_date": "20 DE DEZEMBRO",
+    "event_venue": "GINÁSIO DO IBIRAPUERA",
+    "button": "INSCREVER-SE AGORA"
   },
-
   "about": {
     "mission": {
       "title": "Nossa Missão",
