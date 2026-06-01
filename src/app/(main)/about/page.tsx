@@ -15,7 +15,7 @@ export default function AboutPage() {
     '@type': 'Organization',
     name: 'ASPPIBRA-DAO',
     url: 'https://asppibra-dao.org/about',
-    logo: 'https://asppibra-dao.org/logo/logo-512x512.png',
+    logo: 'https://www.ffc.com/logo/logo-512x512.png',
     sameAs: [
       'https://twitter.com/asppibra',
       'https://linkedin.com/company/asppibra'

@@ -42,12 +42,12 @@ export function Logo({
       }}
     >
       <Image
-        alt="ASPPIBRA-DAO Icon"
-        src="/logo/Logo-Fallback.png"
+        alt="FFC Logo"
+        src="/logo/logo-512x512.png"
         width={40}
         height={40}
         style={{ objectFit: 'contain' }}
-        priority // Consideramos a logo crítica (LCP helper)
+        priority
       />
     </Box>
   );
@@ -82,11 +82,11 @@ export function Logo({
             lineHeight: 1,
             fontSize: '1.1rem',
             textTransform: 'uppercase',
-            color: 'text.primary', // Preto no Light / Branco no Dark
+            color: 'text.primary',
             letterSpacing: '-0.5px',
           }}
         >
-          DEX
+          FFC
         </Typography>
 
         <Typography
@@ -95,11 +95,11 @@ export function Logo({
             fontWeight: 500,
             lineHeight: 1,
             fontSize: '0.75rem',
-            color: 'text.secondary', // Cinza
+            color: 'text.secondary',
             mt: 0.3,
           }}
         >
-          World
+          Final Fight Combat
         </Typography>
       </Box>
     </Box>
