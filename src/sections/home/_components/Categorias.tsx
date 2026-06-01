@@ -19,7 +19,7 @@ import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
-// Cores oficiais das faixas BJJ — ordem: Branca → Azul → Roxa → Marrom → Preta
+// Cores oficiais das faixas BJJ — Branca → Azul → Roxa → Marrom → Preta
 const FAIXA_CONFIG: Record<string, { bg: string; border?: string; glow: string; label: string }> = {
   Branca: { bg: '#FFFFFF', glow: 'rgba(255,255,255,0.5)', label: 'Branca' },
   Azul:   { bg: '#1D4ED8', glow: 'rgba(29,78,216,0.7)',   label: 'Azul'   },
@@ -32,30 +32,30 @@ const FAIXAS_ORDER = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] as const;
 type Faixa = (typeof FAIXAS_ORDER)[number];
 
 
-// 9 categorias de peso oficiais CBJJ — Masculino
+// 9 categorias de peso — Adulto Masculino (CBJJ + Absoluto)
 const PESO_MASCULINO = [
-  { id: 'm-galo',         peso: 'GALO (-57,5KG)'           },
-  { id: 'm-pluma',        peso: 'PLUMA (-64,0KG)'          },
-  { id: 'm-pena',         peso: 'PENA (-70,0KG)'           },
-  { id: 'm-leve',         peso: 'LEVE (-76,0KG)'           },
-  { id: 'm-medio',        peso: 'MÉDIO (-82,3KG)'          },
-  { id: 'm-meio-pesado',  peso: 'MEIO-PESADO (-88,3KG)'    },
-  { id: 'm-pesado',       peso: 'PESADO (-94,3KG)'         },
-  { id: 'm-super-pesado', peso: 'SUPER-PESADO (-100,5KG)'  },
-  { id: 'm-pesadissimo',  peso: 'PESADÍSSIMO (SEM LIMITE)' },
+  { id: 'm-galo',         peso: 'GALO (-57,5KG)'          },
+  { id: 'm-pluma',        peso: 'PLUMA (-64,0KG)'         },
+  { id: 'm-pena',         peso: 'PENA (-70,0KG)'          },
+  { id: 'm-leve',         peso: 'LEVE (-76,0KG)'          },
+  { id: 'm-medio',        peso: 'MÉDIO (-82,3KG)'         },
+  { id: 'm-meio-pesado',  peso: 'MEIO-PESADO (-88,3KG)'   },
+  { id: 'm-pesado',       peso: 'PESADO (-94,3KG)'        },
+  { id: 'm-super-pesado', peso: 'SUPER-PESADO (-100,5KG)' },
+  { id: 'm-absoluto',     peso: 'ABSOLUTO (OPEN WEIGHT)'  },
 ];
 
-// 9 categorias de peso oficiais CBJJ — Feminino
+// 9 categorias de peso — Adulto Feminino (CBJJ + Absoluto)
 const PESO_FEMININO = [
-  { id: 'f-galo',         peso: 'GALO (-48,5KG)'           },
-  { id: 'f-pluma',        peso: 'PLUMA (-53,5KG)'          },
-  { id: 'f-pena',         peso: 'PENA (-58,5KG)'           },
-  { id: 'f-leve',         peso: 'LEVE (-64,0KG)'           },
-  { id: 'f-medio',        peso: 'MÉDIO (-69,0KG)'          },
-  { id: 'f-meio-pesado',  peso: 'MEIO-PESADO (-74,0KG)'    },
-  { id: 'f-pesado',       peso: 'PESADO (-79,3KG)'         },
-  { id: 'f-super-pesado', peso: 'SUPER-PESADO (-84,3KG)'   },
-  { id: 'f-pesadissimo',  peso: 'PESADÍSSIMO (SEM LIMITE)' },
+  { id: 'f-galo',         peso: 'GALO (-48,5KG)'          },
+  { id: 'f-pluma',        peso: 'PLUMA (-53,5KG)'         },
+  { id: 'f-pena',         peso: 'PENA (-58,5KG)'          },
+  { id: 'f-leve',         peso: 'LEVE (-64,0KG)'          },
+  { id: 'f-medio',        peso: 'MÉDIO (-69,0KG)'         },
+  { id: 'f-meio-pesado',  peso: 'MEIO-PESADO (-74,0KG)'   },
+  { id: 'f-pesado',       peso: 'PESADO (-79,3KG)'        },
+  { id: 'f-super-pesado', peso: 'SUPER-PESADO (-84,3KG)'  },
+  { id: 'f-absoluto',     peso: 'ABSOLUTO (OPEN WEIGHT)'  },
 ];
 
 type SlotData = {
@@ -65,122 +65,72 @@ type SlotData = {
   status: 'disponivel' | 'esgotado';
 };
 
-// Dados de vagas/status por faixa × categoria de peso
+// Dados reais do evento FFC — Adulto Masculino (todos iniciam 0/16)
 const FAIXA_DATA: Record<string, SlotData[]> = {
   Branca: [
-    { vagasOcupadas: 8,  vagasTotal: 20, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 10, vagasTotal: 20, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 12, vagasTotal: 20, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 18, vagasTotal: 20, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 10, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 5,  vagasTotal: 12, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 3,  vagasTotal: 12, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' }, // Absoluto
   ],
   Azul: [
-    { vagasOcupadas: 14, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 16, vagasTotal: 16, valor: 'R$ 170,00', status: 'esgotado'   },
-    { vagasOcupadas: 10, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 16, vagasTotal: 16, valor: 'R$ 170,00', status: 'esgotado'   },
-    { vagasOcupadas: 8,  vagasTotal: 12, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 12, vagasTotal: 12, valor: 'R$ 170,00', status: 'esgotado'   },
-    { vagasOcupadas: 6,  vagasTotal: 12, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' }, // Absoluto
   ],
   Roxa: [
-    { vagasOcupadas: 6,  vagasTotal: 12, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 12, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 12, vagasTotal: 12, valor: 'R$ 190,00', status: 'esgotado'   },
-    { vagasOcupadas: 10, vagasTotal: 12, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8,  valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8,  valor: 'R$ 190,00', status: 'esgotado'   },
-    { vagasOcupadas: 5,  vagasTotal: 8,  valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 3,  vagasTotal: 8,  valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8,  valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' }, // Absoluto
   ],
   Marrom: [
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8, valor: 'R$ 200,00', status: 'esgotado'   },
-    { vagasOcupadas: 5,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 3,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 7,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' }, // Absoluto
   ],
   Preta: [
-    { vagasOcupadas: 3,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8, valor: 'R$ 220,00', status: 'esgotado'   },
-    { vagasOcupadas: 6,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 5,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 7,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
+    { vagasOcupadas: 0, vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' }, // Absoluto
   ],
 };
 
-// Dados femininos por faixa
+// Adulto Feminino — aguardando dados reais
 const FAIXA_DATA_F: Record<string, SlotData[]> = {
-  Branca: [
-    { vagasOcupadas: 6,  vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 9,  vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 14, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 16, vagasTotal: 16, valor: 'R$ 150,00', status: 'esgotado'   },
-    { vagasOcupadas: 5,  vagasTotal: 12, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 12, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 7,  vagasTotal: 12, valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8,  valor: 'R$ 150,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8,  valor: 'R$ 150,00', status: 'disponivel' },
-  ],
-  Azul: [
-    { vagasOcupadas: 8,  vagasTotal: 12, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 12, vagasTotal: 12, valor: 'R$ 170,00', status: 'esgotado'   },
-    { vagasOcupadas: 10, vagasTotal: 12, valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'esgotado'   },
-    { vagasOcupadas: 5,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8,  valor: 'R$ 170,00', status: 'disponivel' },
-  ],
-  Roxa: [
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8, valor: 'R$ 190,00', status: 'esgotado'   },
-    { vagasOcupadas: 5,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 3,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 7,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 190,00', status: 'disponivel' },
-  ],
-  Marrom: [
-    { vagasOcupadas: 3,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 5,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8, valor: 'R$ 200,00', status: 'esgotado'   },
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 2,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 200,00', status: 'disponivel' },
-  ],
-  Preta: [
-    { vagasOcupadas: 2,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 4,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 6,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 8,  vagasTotal: 8, valor: 'R$ 220,00', status: 'esgotado'   },
-    { vagasOcupadas: 3,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 5,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 1,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-    { vagasOcupadas: 0,  vagasTotal: 8, valor: 'R$ 220,00', status: 'disponivel' },
-  ],
+  Branca: Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' as const }),
+  Azul:   Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' as const }),
+  Roxa:   Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' as const }),
+  Marrom: Array(9).fill({ vagasOcupadas: 0, vagasTotal: 8,  valor: 'R$ 200,00', status: 'disponivel' as const }),
+  Preta:  Array(9).fill({ vagasOcupadas: 0, vagasTotal: 8,  valor: 'R$ 220,00', status: 'disponivel' as const }),
 };
 
 type Genero = 'M' | 'F';
