@@ -9,7 +9,7 @@ interface MetadataProps {
   noIndex?: boolean;
 }
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.asppibra.com';
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.ffc.com';
 
 export function constructMetadata({
   title,
