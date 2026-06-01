@@ -17,6 +17,14 @@ import { HomeHero } from '../_components/HomeHero';
 import { Categorias } from '../_components/Categorias';
 
 // ✅ Lazy Loading Otimizado para Produção (SSR: false para componentes com Browser APIs)
+const HomeAthletes = dynamic(
+  () => import('../_components/HomeAthletes').then((m) => m.HomeAthletes),
+  { ssr: false }
+);
+const HomePrizes = dynamic(
+  () => import('../_components/HomePrizes').then((m) => m.HomePrizes),
+  { ssr: false }
+);
 const HomeIntegrations = dynamic(
   () => import('../_components/HomeIntegrations').then((m) => m.HomeIntegrations),
   { ssr: false }
@@ -61,6 +69,14 @@ export function HomeView() {
         <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
           <LazyRender minHeight={800}>
             <Categorias />
+          </LazyRender>
+
+          <LazyRender minHeight={900}>
+            <HomeAthletes />
+          </LazyRender>
+
+          <LazyRender minHeight={600}>
+            <HomePrizes />
           </LazyRender>
 
           <LazyRender minHeight={950}>

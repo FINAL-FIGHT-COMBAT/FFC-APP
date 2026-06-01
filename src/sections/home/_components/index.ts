@@ -1,3 +1,5 @@
+export * from './HomePrizes';
+export * from './HomeAthletes';
 export * from './HomeHero';
 export * from './HomeHeroSvg';
 export * from './HomeCommunity';
