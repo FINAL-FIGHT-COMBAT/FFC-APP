@@ -54,7 +54,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'LEVE (-76KG)',
     city: 'São Paulo, SP',
     titles: ['Campeão Mundial IBJJF', 'Pan Americano 3x', 'Brasileiro 5x'],
-    photoUrl: '/assets/images/avatars/synthetic/rafael_costa.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -67,7 +67,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'MÉDIO (-82KG)',
     city: 'Brasília, DF',
     titles: ['Campeão Mundial ADCC', 'Campeão Mundial IBJJF 4x'],
-    photoUrl: '/assets/images/avatars/synthetic/thiago_mendes.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -80,7 +80,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'PENA (-58KG)',
     city: 'Manaus, AM',
     titles: ['Campeã Mundial IBJJF 7x', 'Pan Americano 4x'],
-    photoUrl: '/assets/images/avatars/synthetic/carolina_alves.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -93,7 +93,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'PESADO (-94KG)',
     city: 'Rio de Janeiro, RJ',
     titles: ['Campeão Mundial IBJJF 2x', 'ADCC Campeão'],
-    photoUrl: '/assets/images/avatars/synthetic/leonardo_ferraz.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -106,7 +106,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'SUPER-PESADO (-84KG)',
     city: 'Fortaleza, CE',
     titles: ['Campeã Mundial IBJJF 3x', 'Abu Dhabi Champion'],
-    photoUrl: '/assets/images/avatars/synthetic/helena_moraes.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -119,7 +119,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'PLUMA (-64KG)',
     city: 'Curitiba, PR',
     titles: ['Campeão Mundial IBJJF', 'Pan Americano 2x'],
-    photoUrl: '/assets/images/avatars/synthetic/arthur_guimaraes.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -132,7 +132,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'LEVE (-76KG)',
     city: 'Manaus, AM',
     titles: ['Campeão Brasileiro', 'Campeão Europeu'],
-    photoUrl: '/assets/images/avatars/synthetic/rafael_melo.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
   {
@@ -145,7 +145,7 @@ const ATHLETES: Athlete[] = [
     weightClass: 'GALO (-48KG)',
     city: 'Rio de Janeiro, RJ',
     titles: ['Campeã Mundial IBJJF 4x', 'Pan Americano 3x'],
-    photoUrl: '/assets/images/avatars/synthetic/alice_martins.png',
+    photoUrl: '/assets/images/convidados/fallback.png',
     isGP: true,
   },
 ];
@@ -167,13 +167,37 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
           height: '100%',
           borderRadius: 3,
           overflow: 'hidden',
-          bgcolor: '#0D1117',
-          border: `1px solid ${alpha('#fff', 0.07)}`,
+          bgcolor: alpha('#020817', 0.8),
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
           position: 'relative',
-          transition: theme.transitions.create(['box-shadow', 'border-color']),
+          transition: theme.transitions.create(['all'], {
+            duration: theme.transitions.duration.standard,
+          }),
+
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 'inherit',
+            padding: '1px',
+            background: `linear-gradient(180deg, 
+              ${alpha(theme.palette.info.main, 0.9)} 0%, 
+              ${alpha(theme.palette.common.white, 0.05)} 50%, 
+              ${alpha(theme.palette.warning.main, 0.9)} 100%
+            )`,
+            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            WebkitMaskComposite: 'xor',
+            maskComposite: 'exclude',
+            zIndex: 2,
+            pointerEvents: 'none',
+          },
+
+          boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.5)}`,
+
           '&:hover': {
-            borderColor: alpha(accentColor, 0.4),
-            boxShadow: `0 20px 60px ${alpha(accentColor, 0.12)}`,
+            bgcolor: alpha('#020817', 0.95),
+            boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
           },
         }}
       >
