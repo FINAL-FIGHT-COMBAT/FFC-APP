@@ -8,9 +8,13 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
+
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
@@ -43,112 +47,19 @@ const BELT_COLOR: Record<string, string> = {
 // ----------------------------------------------------------------------
 // DADOS DOS ATLETAS — atualize com os convidados reais do evento
 // ----------------------------------------------------------------------
-const ATHLETES: Athlete[] = [
-  {
-    id: 'athlete-1',
-    name: 'Carlos "Formiga" Silva',
-    nickname: 'FORMIGA',
-    team: 'Alliance BJJ',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'LEVE (-76KG)',
-    city: 'São Paulo, SP',
-    titles: ['Campeão Mundial IBJJF', 'Pan Americano 3x', 'Brasileiro 5x'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-2',
-    name: 'André "Galvão" Pereira',
-    nickname: 'GALVÃO',
-    team: 'Atos Jiu-Jitsu',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'MÉDIO (-82KG)',
-    city: 'Brasília, DF',
-    titles: ['Campeão Mundial ADCC', 'Campeão Mundial IBJJF 4x'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-3',
-    name: 'Beatriz "Bia" Mesquita',
-    nickname: 'BIA',
-    team: 'Gracie Barra',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'PENA (-58KG)',
-    city: 'Manaus, AM',
-    titles: ['Campeã Mundial IBJJF 7x', 'Pan Americano 4x'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-4',
-    name: 'Felipe "Pena" Costa',
-    nickname: 'PENA',
-    team: 'Checkmat BJJ',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'PESADO (-94KG)',
-    city: 'Rio de Janeiro, RJ',
-    titles: ['Campeão Mundial IBJJF 2x', 'ADCC Campeão'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-5',
-    name: 'Gabrieli "Gabi" Pessanha',
-    nickname: 'GABI',
-    team: 'Fight Sports',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'SUPER-PESADO (-84KG)',
-    city: 'Fortaleza, CE',
-    titles: ['Campeã Mundial IBJJF 3x', 'Abu Dhabi Champion'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-6',
-    name: 'Lucas "Lepri" Martins',
-    nickname: 'LEPRI',
-    team: 'Alliance BJJ',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'PLUMA (-64KG)',
-    city: 'Curitiba, PR',
-    titles: ['Campeão Mundial IBJJF', 'Pan Americano 2x'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-7',
-    name: 'Micael "Mica" Galvão',
-    nickname: 'MICA',
-    team: 'Melqui Galvão',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'LEVE (-76KG)',
-    city: 'Manaus, AM',
-    titles: ['Campeão Brasileiro', 'Campeão Europeu'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-  {
-    id: 'athlete-8',
-    name: 'Mayssa Bastos',
-    nickname: 'MAYSSA',
-    team: 'Unity Jiu-Jitsu',
-    belt: 'Preta',
-    beltColor: BELT_COLOR.Preta,
-    weightClass: 'GALO (-48KG)',
-    city: 'Rio de Janeiro, RJ',
-    titles: ['Campeã Mundial IBJJF 4x', 'Pan Americano 3x'],
-    photoUrl: '/assets/images/convidados/fallback.png',
-    isGP: true,
-  },
-];
+const ATHLETES: Athlete[] = Array.from({ length: 8 }).map((_, index) => ({
+  id: `athlete-${index + 1}`,
+  name: 'Atleta Convidado',
+  nickname: 'EM BREVE',
+  team: 'Equipe a confirmar',
+  belt: 'Preta',
+  beltColor: BELT_COLOR.Preta,
+  weightClass: 'A DEFINIR',
+  city: 'Local a confirmar',
+  titles: ['Aguardando confirmação do atleta'],
+  photoUrl: '/assets/images/convidados/fallback.png',
+  isGP: true,
+}));
 
 // ----------------------------------------------------------------------
 
@@ -350,6 +261,8 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
 // ----------------------------------------------------------------------
 
 export function HomeAthletes({ sx, ...other }: BoxProps) {
+  const theme = useTheme();
+
   return (
     <Box
       id="atletas"
@@ -364,73 +277,107 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
         <Container sx={{ position: 'relative', zIndex: 1 }}>
 
           {/* ── HEADER ── */}
-          <m.div variants={varFade('inUp')}>
-            <Stack sx={{ mb: 8, alignItems: { xs: 'flex-start', md: 'center' }, textAlign: { xs: 'left', md: 'center' } }}>
+          <Stack
+            direction={{ xs: 'column', md: 'row' }}
+            alignItems={{ md: 'flex-end' }}
+            justifyContent="space-between"
+            sx={{ mb: 8, gap: 4 }}
+          >
+            <m.div variants={varFade('inUp')}>
+              <Stack sx={{ alignItems: 'flex-start', textAlign: 'left' }}>
+                {/* Badge */}
+                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
+                  <Box sx={{ border: '1px solid rgba(234,179,8,0.6)', borderRadius: 2, px: 1.5, py: 0.5 }}>
+                    <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EAB308' }}>
+                      GRAND PRIX
+                    </Typography>
+                  </Box>
+                  <Box sx={{ border: '1px solid rgba(239,68,68,0.5)', borderRadius: 2, px: 1.5, py: 0.5, display: 'flex', alignItems: 'center', gap: 0.75 }}>
+                    <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#EF4444', animation: 'pulse 1.5s infinite' }} />
+                    <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EF4444' }}>
+                      AO VIVO
+                    </Typography>
+                  </Box>
+                </Stack>
 
-              {/* Badge */}
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
-                <Box sx={{ border: '1px solid rgba(234,179,8,0.6)', borderRadius: 2, px: 1.5, py: 0.5 }}>
-                  <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EAB308' }}>
-                    GRAND PRIX
-                  </Typography>
-                </Box>
-                <Box sx={{ border: '1px solid rgba(239,68,68,0.5)', borderRadius: 2, px: 1.5, py: 0.5, display: 'flex', alignItems: 'center', gap: 0.75 }}>
-                  <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#EF4444', animation: 'pulse 1.5s infinite' }} />
-                  <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EF4444' }}>
-                    AO VIVO
-                  </Typography>
-                </Box>
+                {/* Título */}
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                    fontWeight: 900,
+                    fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3rem' },
+                    color: '#fff',
+                    lineHeight: 1.1,
+                    textTransform: 'uppercase',
+                    mb: 2,
+                  }}
+                >
+                  Atletas e{' '}
+                  <Box component="span" sx={{ color: '#EAB308' }}>
+                    Convidados
+                  </Box>
+                </Typography>
+
+                <Typography sx={{ fontSize: '1rem', color: alpha('#fff', 0.5), maxWidth: 560, lineHeight: 1.7 }}>
+                  Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo
+                  <Box component="span" sx={{ color: '#EAB308', fontWeight: 700 }}> prêmio em dinheiro</Box>.
+                  Não perca!
+                </Typography>
               </Stack>
+            </m.div>
 
-              {/* Título */}
-              <Typography
-                variant="h2"
+            {/* BOTÃO: VER TODAS AS CHAVES */}
+            <m.div variants={varFade('inRight')}>
+              <Button
+                component={RouterLink}
+                href="#"
+                endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
                 sx={{
-                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                  fontWeight: 900,
-                  fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3rem' },
-                  color: '#fff',
-                  lineHeight: 1.1,
+                  height: 56,
+                  px: 4,
+                  borderRadius: 1.5,
+                  fontFamily: "'Orbitron', sans-serif",
+                  fontWeight: 700,
                   textTransform: 'uppercase',
-                  mb: 2,
+                  color: 'common.white',
+                  border: 'none',
+                  position: 'relative',
+                  bgcolor: alpha('#020817', 0.6),
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  transition: theme.transitions.create(['all']),
+
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    inset: 0,
+                    borderRadius: 'inherit',
+                    padding: '1px',
+                    background: `linear-gradient(180deg, 
+                      ${alpha(theme.palette.info.main, 1)} 0%, 
+                      ${alpha(theme.palette.info.main, 0.1)} 50%, 
+                      ${alpha(theme.palette.info.main, 0.6)} 100%
+                    )`,
+                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    maskComposite: 'exclude',
+                  },
+
+                  '&:hover': {
+                    bgcolor: alpha(theme.palette.info.main, 0.08),
+                    transform: 'scale(1.05)',
+                    boxShadow: `0 0 20px 0 ${alpha(theme.palette.info.main, 0.3)}`,
+                    '& .MuiButton-endIcon': {
+                      transform: 'translateX(4px)',
+                    },
+                  },
                 }}
               >
-                Atletas{' '}
-                <Box component="span" sx={{ color: '#EAB308' }}>
-                  Convidados
-                </Box>
-              </Typography>
-
-              <Typography sx={{ fontSize: '1rem', color: alpha('#fff', 0.5), maxWidth: 560, lineHeight: 1.7 }}>
-                Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo
-                <Box component="span" sx={{ color: '#EAB308', fontWeight: 700 }}> prêmio em dinheiro</Box>.
-                Não perca!
-              </Typography>
-
-              {/* Prize Pool Destaque */}
-              <Box
-                sx={{
-                  mt: 4,
-                  px: 4, py: 2.5,
-                  borderRadius: 3,
-                  bgcolor: alpha('#EAB308', 0.08),
-                  border: '1px solid rgba(234,179,8,0.3)',
-                  textAlign: 'center',
-                }}
-              >
-                <Typography sx={{ fontSize: 11, fontWeight: 700, color: alpha('#EAB308', 0.7), letterSpacing: '0.2em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', mb: 0.5 }}>
-                  Prize Pool Total
-                </Typography>
-                <Typography sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 900, color: '#EAB308', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', lineHeight: 1 }}>
-                  R$ 10.000
-                </Typography>
-                <Typography sx={{ fontSize: 11, color: alpha('#fff', 0.35), mt: 0.5, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  Distribuído entre os campeões
-                </Typography>
-              </Box>
-
-            </Stack>
-          </m.div>
+                VER TODAS AS CHAVES
+              </Button>
+            </m.div>
+          </Stack>
 
           {/* ── GRID DE CARDS ── */}
           <Grid container spacing={2.5} justifyContent="center">
