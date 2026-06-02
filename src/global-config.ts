@@ -50,14 +50,14 @@ export const CONFIG: ConfigValue = {
    * BACKEND API URL
    * Local de onde os dados de produção e usuários são consumidos.
    */
-  serverUrl: (process.env.NEXT_PUBLIC_HOST_API ?? 'https://api.ffc.com').replace(/\/$/, ''),
+  serverUrl: (process.env.NEXT_PUBLIC_HOST_API ?? 'https://api.finalfightcombat.xyz').replace(/\/$/, ''),
 
   /**
    * FRONTEND SITE URL
    * SSOT para Metadados, Sitemaps e Links Canônicos.
    * FIX: Bloqueado rigorosamente contra fallbacks da Vercel (Mirroring Penalty).
    */
-  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.ffc.com').replace(/\/$/, ''),
+  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.finalfightcombat.xyz').replace(/\/$/, ''),
 
   /**
    * CLOUDFLARE R2 PUBLIC URL
