@@ -48,6 +48,17 @@ export function HomeSponsors() {
             title="PATROCINADORES OFICIAIS"
             description="Empresas e marcas que fortalecem o esporte e tornam o Final Fight Combat o maior evento do Brasil."
             sx={{ mb: { xs: 6, md: 10 } }}
+            slotProps={{
+              title: { 
+                sx: { 
+                  color: 'common.white', 
+                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                  textTransform: 'uppercase'
+                } 
+              },
+              caption: { sx: { color: 'warning.main', fontWeight: 700, letterSpacing: 2 } },
+              description: { sx: { color: 'grey.400' } }
+            }}
           />
         </m.div>
 
@@ -153,7 +164,7 @@ export function HomeSponsors() {
                 >
                   <Typography
                     variant="caption"
-                    sx={{ color: 'text.secondary', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}
+                    sx={{ color: 'warning.main', mb: 2, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 700 }}
                   >
                     Cota {sponsor.tier}
                   </Typography>
@@ -161,14 +172,14 @@ export function HomeSponsors() {
                   <Iconify
                     icon={sponsor.icon as any}
                     width={48}
-                    sx={{ color: 'text.secondary', mb: 2 }}
+                    sx={{ color: 'warning.main', opacity: 0.8, mb: 2 }}
                   />
 
                   <Typography
                     variant="h6"
                     sx={{
                       fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                      color: 'text.primary',
+                      color: 'common.white',
                     }}
                   >
                     {sponsor.name}
@@ -188,10 +199,20 @@ export function HomeSponsors() {
               sx={{
                 color: theme.palette.warning.main,
                 borderColor: alpha(theme.palette.warning.main, 0.4),
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                fontWeight: 700,
+                letterSpacing: 1,
+                textTransform: 'uppercase',
+                bgcolor: alpha('#020817', 0.6),
+                backdropFilter: 'blur(8px)',
+                px: 4,
                 '&:hover': {
                   borderColor: theme.palette.warning.main,
-                  bgcolor: alpha(theme.palette.warning.main, 0.08),
+                  bgcolor: alpha(theme.palette.warning.main, 0.12),
+                  boxShadow: `0 0 24px ${alpha(theme.palette.warning.main, 0.3)}`,
+                  transform: 'translateY(-2px)'
                 },
+                transition: theme.transitions.create(['all']),
               }}
             >
               Seja um Patrocinador
