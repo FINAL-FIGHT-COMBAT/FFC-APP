@@ -20,7 +20,7 @@ export const paths = {
   about: '/about-us',
   contact: '/contact-us',
   team: '/team',
-  whitepaper: '/whitepaper',
+  documentos: '/documentos',
   ecosystem: '/ecosystem',
   privacy: '/privacy',
   terms: '/terms',

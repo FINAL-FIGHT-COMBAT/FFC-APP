@@ -275,7 +275,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
               {/* Secundário — Outline */}
               <Button
                 component={RouterLink}
-                href="/#categorias"
+                href="/documentos"
                 sx={{
                   height: 52,
                   px: 4,
@@ -296,7 +296,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                   },
                 }}
               >
-                SAIBA MAIS
+                DOCUMENTOS
               </Button>
             </Stack>
 

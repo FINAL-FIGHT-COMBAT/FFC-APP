@@ -8,8 +8,6 @@ export * from './HomeFaqs';
 export * from './HomeRoadmap';
 export * from './HomeTeam';
 export * from './HomeLatestNews';
-export * from './HomeIntegrations';
-export * from './HomeIntegrationsDiagram';
 export * from './HomeCtaBanner';
 export * from './HomeSectionTitle';
 export * from './HomeCountdownDialog';

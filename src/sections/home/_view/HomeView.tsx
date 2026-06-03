@@ -25,10 +25,7 @@ const HomePrizes = dynamic(
   () => import('../_components/HomePrizes').then((m) => m.HomePrizes),
   { ssr: false }
 );
-const HomeIntegrations = dynamic(
-  () => import('../_components/HomeIntegrations').then((m) => m.HomeIntegrations),
-  { ssr: false }
-);
+
 const HomeCommunity = dynamic(() => import('../_components/HomeCommunity').then((m) => m.HomeCommunity), {
   ssr: false,
 });
@@ -79,9 +76,6 @@ export function HomeView() {
             <HomePrizes />
           </LazyRender>
 
-          <LazyRender minHeight={950}>
-            <HomeIntegrations />
-          </LazyRender>
 
           <LazyRender minHeight={800}>
             <HomeCommunity />
