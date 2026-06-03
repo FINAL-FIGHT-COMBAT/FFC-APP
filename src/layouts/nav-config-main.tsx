@@ -6,11 +6,10 @@ import { paths } from 'src/routes/paths';
 
 export const navData: NavMainProps['data'] = [
   { title: 'Home', path: '/' },
-  { title: 'Categorias', path: '/#categorias' },
   { title: 'Atletas GP', path: '/#atletas' },
-  { title: 'Community', path: '/#community' },
-  { title: 'Team', path: '/#team' },
-  { title: 'Roadmap', path: '/#roadmap' },
+  { title: 'Categorias', path: '/#categorias' },
+  { title: 'Cronograma', path: '/#roadmap' },
+  { title: 'Comunidade', path: '/#community' },
   { title: 'FAQ', path: '/#faqs' },
-  { title: 'News', path: paths.news.root },
+  { title: 'Documentos', path: paths.documentos },
 ];

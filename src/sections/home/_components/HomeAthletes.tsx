@@ -331,7 +331,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
             <m.div variants={varFade('inRight')}>
               <Button
                 component={RouterLink}
-                href="#"
+                href={paths.chaves}
                 endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
                 sx={{
                   height: 56,

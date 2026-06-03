@@ -12,3 +12,4 @@ export * from './HomeCtaBanner';
 export * from './HomeSectionTitle';
 export * from './HomeCountdownDialog';
 export * from './HomeSvgElements';
+export * from './HomeSponsors';

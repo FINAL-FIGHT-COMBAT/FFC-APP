@@ -41,6 +41,9 @@ const HomeFAQs = dynamic(() => import('../_components/HomeFaqs').then((m) => m.H
 const HomeCtaBanner = dynamic(() => import('../_components/HomeCtaBanner').then((m) => m.CtaBanner), {
   ssr: false,
 });
+const HomeSponsors = dynamic(() => import('../_components/HomeSponsors').then((m) => m.HomeSponsors), {
+  ssr: false,
+});
 const HomeCountdownDialog = dynamic(() => import('../_components/HomeCountdownDialog'), {
   ssr: false,
 });
@@ -64,33 +67,36 @@ export function HomeView() {
         <HomeHero />
 
         <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
+          <LazyRender minHeight={900}>
+            <HomeAthletes />
+          </LazyRender>
+
           <LazyRender minHeight={800}>
             <Categorias />
           </LazyRender>
 
           <LazyRender minHeight={900}>
-            <HomeAthletes />
+            <HomeRoadmap />
           </LazyRender>
 
           <LazyRender minHeight={600}>
             <HomePrizes />
           </LazyRender>
 
-
           <LazyRender minHeight={800}>
             <HomeCommunity />
           </LazyRender>
 
-          <LazyRender minHeight={800}>
-            <HomeTeam />
+          <LazyRender minHeight={600}>
+            <HomeSponsors />
           </LazyRender>
 
           <LazyRender minHeight={800}>
             <HomeLatestNews />
           </LazyRender>
 
-          <LazyRender minHeight={900}>
-            <HomeRoadmap />
+          <LazyRender minHeight={800}>
+            <HomeTeam />
           </LazyRender>
 
           <LazyRender minHeight={600}>
