@@ -119,7 +119,7 @@ export function DocumentosView() {
                   overflow: 'hidden',
                   '&:hover': {
                     borderColor: alpha(theme.palette.warning.main, 0.6),
-                    boxShadow: \`0 0 40px \${alpha(theme.palette.warning.main, 0.15)}\`,
+                    boxShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
                     transform: 'translateY(-4px)',
                     '& .doc-icon': {
                       transform: 'scale(1.1) rotate(-5deg)',
@@ -136,7 +136,7 @@ export function DocumentosView() {
                     right: -50,
                     width: 150,
                     height: 150,
-                    background: \`radial-gradient(circle, \${alpha(theme.palette.warning.main, 0.1)} 0%, transparent 70%)\`,
+                    background: `radial-gradient(circle, ${alpha(theme.palette.warning.main, 0.1)} 0%, transparent 70%)`,
                     borderRadius: '50%',
                     pointerEvents: 'none',
                   }}
@@ -158,7 +158,7 @@ export function DocumentosView() {
                       flexShrink: 0,
                     }}
                   >
-                    <Iconify icon="solar:document-text-bold-duotone" width={32} />
+                    <Iconify icon={"solar:document-text-bold-duotone" as any} width={32} />
                   </Box>
 
                   <Stack spacing={1} flexGrow={1}>
@@ -202,7 +202,7 @@ export function DocumentosView() {
                   rel="noopener noreferrer"
                   fullWidth
                   variant="outlined"
-                  endIcon={<Iconify icon="solar:download-minimalistic-bold" />}
+                  endIcon={<Iconify icon={"solar:download-minimalistic-bold" as any} />}
                   sx={{
                     mt: 'auto',
                     py: 1.5,
