@@ -5,8 +5,8 @@ import { HomeView } from 'src/sections/home/_view/HomeView';
 // ----------------------------------------------------------------------
 
 /**
- * LANDING PAGE PRINCIPAL - ASPPIBRA-DAO
- * Foco: Atração de investidores RWA, produtores e parceiros estratégicos.
+ * LANDING PAGE PRINCIPAL - FINAL FIGHT COMBAT (FFC)
+ * Foco: Atração de atletas de Jiu-Jitsu, MMA e engajamento com patrocinadores.
  */
 
 // ✅ BLINDAGEM OBRIGATÓRIA:
@@ -15,23 +15,25 @@ import { HomeView } from 'src/sections/home/_view/HomeView';
 export const runtime = 'nodejs';
 
 export const metadata: Metadata = {
-  title: 'ASPPIBRA - Governança Digital e Infraestrutura de Ativos Reais (RWA)',
+  title: 'Final Fight Combat (FFC) - O Futuro do Esporte de Combate',
   description:
-    'Liderando a tokenização no agronegócio. Conectamos pequenos produtores ao mercado de capitais através de Blockchain, IA e storage descentralizado IPFS.',
+    'Acompanhe o maior circuito de Jiu-Jitsu Brasileiro e Grand Prix de lutas. Inscreva-se como atleta, acompanhe as chaves ao vivo e faça parte do ecossistema FFC.',
   keywords: [
-    'ASPPIBRA',
-    'RWA',
-    'Real World Assets',
-    'Tokenização de Ativos',
-    'Blockchain Agro',
-    'Governança Digital',
-    'Agroecologia Paraty',
-    'Investimento Sustentável',
+    'FFC',
+    'Final Fight Combat',
+    'Artes Marciais',
+    'Jiu-Jitsu Brasileiro',
+    'CBJJ',
+    'Grand Prix',
+    'Lutas',
+    'Esportes de Combate',
+    'Inscrição Atletas',
+    'Torneio',
   ],
   openGraph: {
-    title: 'ASPPIBRA - O Futuro do Agronegócio é Digital',
+    title: 'FFC - Final Fight Combat',
     description:
-      'Plataforma de Governança e Tokenização de Ativos Reais para o produtor brasileiro.',
+      'O maior palco para atletas de Jiu-Jitsu e MMA do Brasil. Acompanhe os combates ao vivo.',
   },
 };
 

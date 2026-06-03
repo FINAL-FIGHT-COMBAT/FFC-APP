@@ -5,8 +5,8 @@ import { CONFIG } from 'src/global-config';
 // ----------------------------------------------------------------------
 
 /**
- * MANIFESTO ESTRATÉGICO DE GOVERNANÇA DIGITAL - PRODUÇÃO 2026
- * Foco: Atração de Venture Capital e posicionamento em ecossistemas Web3/RWA.
+ * MANIFESTO OFICIAL FFC (PWA) - PRODUÇÃO 2026
+ * Foco: Instalação Mobile para atletas e fãs acompanharem o evento.
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {

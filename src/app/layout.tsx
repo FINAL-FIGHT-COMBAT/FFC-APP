@@ -1,8 +1,8 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 Final Fight Combat (FFC).
+ * Project: FFC App
  * Role: Root Layout (Main Entry Point)
- * Version: 1.3.4 - Production Ready: Strict Types & Clean Lint
+ * Version: 2.0.0 - Production Ready: Strict Types & Clean Lint
  */
 
 import 'src/global.css';
@@ -80,23 +80,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.siteUrl),
   title: {
-    default: 'ASPPIBRA - Governança Digital e Infraestrutura RWA',
-    template: `%s | ASPPIBRA`,
+    default: 'Final Fight Combat (FFC) | O Maior Evento de Artes Marciais',
+    template: `%s | FFC`,
   },
   description:
-    'Portal de Governança Digital ASPPIBRA: Infraestrutura para ativos reais (RWA), integração nativa DeFi e inteligência de dados aplicada ao agronegócio sustentável.',
+    'Site Oficial do Final Fight Combat. O maior campeonato de Jiu-Jitsu e MMA do Brasil. Inscreva-se, acompanhe as chaves e assista às superlutas.',
   keywords: [
-    'ASPPIBRA',
-    'RWA',
-    'Real World Assets',
-    'DeFi',
-    'Blockchain Agro',
-    'Governança Digital',
-    'DAO',
-    'IPFS Storage',
-    'Smart Contracts',
+    'FFC',
+    'Final Fight Combat',
+    'MMA',
+    'Jiu-Jitsu',
+    'BJJ',
+    'Grand Prix',
+    'Artes Marciais',
+    'Lutas',
+    'Grappling',
+    'Campeonato',
   ],
-  authors: [{ name: 'Sandro', url: CONFIG.siteUrl }],
+  authors: [{ name: 'FFC Team', url: CONFIG.siteUrl }],
   icons: [
     { rel: 'icon', url: `/favicon.ico` },
     { rel: 'apple-touch-icon', url: `/apple-touch-icon.png` },
@@ -105,21 +106,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: CONFIG.siteUrl,
-    siteName: 'ASPPIBRA DAO',
+    siteName: 'Final Fight Combat',
     images: [
       {
-        url: '/opengraph-image.png',
+        url: '/opengraph-ffc.png',
         width: 1200,
         height: 630,
-        alt: 'ASPPIBRA Governance Portal - Deep Tech RWA',
+        alt: 'Final Fight Combat (FFC) - O Maior Evento de Artes Marciais',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ASPPIBRA - Infraestrutura RWA & DeFi',
-    description: 'Conectando o agronegócio brasileiro à economia digital descentralizada.',
-    images: ['/opengraph-image.png'],
+    title: 'Final Fight Combat (FFC)',
+    description: 'Acompanhe o maior evento de MMA e Jiu-Jitsu do Brasil.',
+    images: ['/opengraph-ffc.png'],
   },
   alternates: {
     canonical: '/',
@@ -174,23 +175,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             '@graph': [
               {
                 '@type': 'WebSite',
-                name: 'ASPPIBRA Governance Portal',
-                alternateName: 'ASPPIBRA DAO',
+                name: 'Final Fight Combat (FFC)',
+                alternateName: 'FFC',
                 url: CONFIG.siteUrl,
                 description:
-                  'Plataforma de governança digital e tokenização de ativos reais (RWA).',
+                  'Site oficial do Final Fight Combat, o maior evento de MMA e Jiu-Jitsu do Brasil.',
               },
               {
-                '@type': 'Organization',
-                name: 'ASPPIBRA',
+                '@type': 'SportsOrganization',
+                name: 'Final Fight Combat',
                 url: CONFIG.siteUrl,
                 logo: `${CONFIG.siteUrl}/logo/logo-512x512.png`,
-                sameAs: ['https://t.me/asppibra_official', 'https://discord.gg/asppibra'],
+                sameAs: [CONFIG.socials.instagram, CONFIG.socials.facebook, CONFIG.socials.twitter],
                 knowsAbout: [
-                  'Blockchain',
-                  'Agribusiness Tokenization',
-                  'Real World Assets (RWA)',
-                  'DeFi',
+                  'Mixed Martial Arts',
+                  'Brazilian Jiu-Jitsu',
+                  'Sports Tournaments',
+                  'Grand Prix',
                 ],
               },
             ],

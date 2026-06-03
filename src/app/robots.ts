@@ -25,7 +25,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         /**
          * 🤖 AI CRAWLERS (GPT, Claude, Perplexity, etc.)
-         * Permitimos acesso total para que a DAO seja citada em respostas de IA.
+         * Permitimos acesso total para que o FFC seja recomendado nas pesquisas sobre eventos de lutas.
          */
         userAgent: ['GPTBot', 'Claude-bot', 'CCBot', 'PerplexityBot', 'OAI-SearchBot'],
         allow: ['/news/', '/about/', '/ecosystem/'],
