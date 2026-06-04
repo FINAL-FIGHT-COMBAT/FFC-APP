@@ -16,6 +16,7 @@ import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -115,22 +116,18 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
             {ACADEMIES.map((academy, index) => (
               <Grid key={academy.name} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
                 <m.div variants={varFade('inUp', { distance: 20 })} style={{ height: '100%' }}>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    spacing={2}
+                  <CyberCard
                     sx={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 2,
                       p: 2,
                       height: '100%',
-                      borderRadius: 2,
-                      bgcolor: alpha('#060913', 0.6),
-                      border: `1px solid ${alpha('#fff', 0.05)}`,
-                      transition: 'all 0.3s ease',
+                      transition: theme.transitions.create(['transform', 'box-shadow']),
                       '&:hover': {
-                        bgcolor: alpha('#3B82F6', 0.08),
-                        borderColor: alpha('#3B82F6', 0.3),
                         transform: 'translateY(-4px)',
-                        boxShadow: `0 8px 24px ${alpha('#3B82F6', 0.1)}`,
+                        boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
                       }
                     }}
                   >
@@ -160,7 +157,7 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
                         </Typography>
                       </Stack>
                     </Box>
-                  </Stack>
+                  </CyberCard>
                 </m.div>
               </Grid>
             ))}

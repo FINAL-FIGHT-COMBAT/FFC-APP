@@ -26,6 +26,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import { useTranslate } from 'src/locales'; // Corrigido erro Module '"src/locales"' has no exported member 'useLocales'
 
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -139,39 +140,21 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               const isOpen = expanded === item.question;
 
               return (
-                <Accordion
-                  key={item.question}
-                  disableGutters
-                  expanded={isOpen}
-                  onChange={handleChange(item.question)}
-                  sx={{
-                    borderRadius: 2,
-                    // 5. Padronização de Glassmorphism (blur(10px))
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: `1.5px solid ${alpha(theme.palette.info.main, isOpen ? 0.7 : 0.2)}`, // Espessura 1.5px padronizada
-                    bgcolor: alpha(theme.palette.grey[900], isOpen ? 0.55 : 0.25),
-                    boxShadow: isOpen
-                      ? `0 0 25px ${alpha(theme.palette.info.main, 0.35)}`
-                      : `0 0 12px ${alpha(theme.palette.info.main, 0.18)}`,
-                    transition: theme.transitions.create([
-                      'border-color',
-                      'box-shadow',
-                      'background-color',
-                    ]),
-                    '&:before': { display: 'none' },
-                    '& .MuiAccordionSummary-content': { margin: 0 },
-                    '& .MuiAccordionSummary-root': { padding: FAQ_PADDING, minHeight: 'unset' },
-                    '& .MuiAccordionDetails-root': { padding: FAQ_PADDING },
-
-                    // 6. Feedback Visual Hover
-                    '&:hover': {
-                      borderColor: theme.palette.info.main,
-                      bgcolor: alpha(theme.palette.grey[900], 0.4),
-                      boxShadow: `0 0 22px ${alpha(theme.palette.info.main, 0.3)}`,
-                    },
-                  }}
-                >
+                <CyberCard key={item.question} sx={{ p: 0 }}>
+                  <Accordion
+                    disableGutters
+                    expanded={isOpen}
+                    onChange={handleChange(item.question)}
+                    sx={{
+                      bgcolor: 'transparent',
+                      backgroundImage: 'none',
+                      boxShadow: 'none',
+                      '&:before': { display: 'none' },
+                      '& .MuiAccordionSummary-content': { margin: 0 },
+                      '& .MuiAccordionSummary-root': { padding: FAQ_PADDING, minHeight: 'unset' },
+                      '& .MuiAccordionDetails-root': { padding: FAQ_PADDING },
+                    }}
+                  >
                   <AccordionSummary
                     expandIcon={
                       <Iconify
@@ -204,7 +187,8 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                   >
                     {item.answer}
                   </AccordionDetails>
-                </Accordion>
+                  </Accordion>
+                </CyberCard>
               );
             })}
           </Stack>

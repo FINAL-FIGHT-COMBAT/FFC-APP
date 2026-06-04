@@ -10,7 +10,7 @@ import { m } from 'framer-motion';
 // MUI
 // ----------------------------------------------------------------------
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
+import { CyberCard } from 'src/components/cyber-card';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -188,45 +188,17 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                   sx={{ textAlign: { xs: 'center', md: isEven ? 'right' : 'left' } }}
                 >
                   <m.div variants={isEven ? varFade('inRight') : varFade('inLeft')}>
-                    <Card
+                    <CyberCard
                       sx={{
                         p: 4,
-                        borderRadius: 3,
                         display: 'inline-block',
                         width: '100%',
                         maxWidth: 400,
-                        position: 'relative',
                         textAlign: 'left',
-                        bgcolor: alpha('#020817', 0.8),
-                        backdropFilter: 'blur(12px)',
-                        WebkitBackdropFilter: 'blur(12px)',
-                        transition: theme.transitions.create(['all']),
-
-                        // BORDA REATIVA COLORIDA (BASEADA NA FASE)
-                        '&::before': {
-                          content: '""',
-                          position: 'absolute',
-                          inset: 0,
-                          borderRadius: 'inherit',
-                          padding: '1px',
-                          background: `linear-gradient(180deg, 
-                            ${alpha(cardColor, 0.8)} 0%, 
-                            ${alpha(theme.palette.common.white, 0.05)} 50%, 
-                            ${alpha(cardColor, 0.8)} 100%
-                          )`,
-                          WebkitMask:
-                            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                          WebkitMaskComposite: 'xor',
-                          maskComposite: 'exclude',
-                          zIndex: 2,
-                        },
-
-                        boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.4)}`,
-
+                        transition: theme.transitions.create(['transform', 'box-shadow']),
                         '&:hover': {
                           transform: 'translateY(-8px)',
-                          boxShadow: `0 0 25px 0 ${alpha(cardColor, 0.3)}`,
-                          bgcolor: alpha('#020817', 0.95),
+                          boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
                         },
                       }}
                     >
@@ -338,7 +310,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                           />
                         </Box>
                       </Box>
-                    </Card>
+                    </CyberCard>
                   </m.div>
                 </Grid>
               );

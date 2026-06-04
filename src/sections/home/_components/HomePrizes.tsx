@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -57,7 +58,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
       id="premiacao"
       component="section"
       sx={[
-        { position: 'relative', py: { xs: 8, md: 15 }, bgcolor: '#060913', overflow: 'hidden' },
+        { position: 'relative', py: { xs: 8, md: 15 }, bgcolor: 'transparent', overflow: 'hidden' },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...other}
@@ -93,20 +94,16 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
             {PRIZES.map((prize, index) => (
               <Grid key={prize.title} size={{ xs: 12, md: 6 }}>
                 <m.div variants={varFade('inUp', { distance: 40 })} style={{ height: '100%' }}>
-                  <Stack
+                  <CyberCard
                     sx={{
                       height: '100%',
                       p: { xs: 3, md: 5 },
-                      borderRadius: 4,
-                      position: 'relative',
-                      bgcolor: '#0A0F1E',
-                      border: `1px solid ${alpha(prize.accentColor, prize.isMain ? 0.3 : 0.1)}`,
-                      boxShadow: prize.isMain ? `0 24px 64px ${alpha(prize.accentColor, 0.1)}` : 'none',
-                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: theme.transitions.create(['transform', 'box-shadow']),
                       '&:hover': {
                         transform: 'translateY(-8px)',
-                        boxShadow: `0 32px 80px ${alpha(prize.accentColor, 0.2)}`,
-                        borderColor: alpha(prize.accentColor, 0.5),
+                        boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
                       }
                     }}
                   >
@@ -211,7 +208,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                       ))}
                     </Stack>
 
-                  </Stack>
+                  </CyberCard>
                 </m.div>
               </Grid>
             ))}

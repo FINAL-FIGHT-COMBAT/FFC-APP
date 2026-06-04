@@ -15,6 +15,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -153,17 +154,14 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
   const isFaixaPreta = faixa === 'Preta';
 
   return (
-    <Stack
+    <CyberCard
       sx={{
-        borderRadius: 2,
-        overflow: 'hidden',
-        bgcolor: '#111827',
-        border: `1px solid ${alpha('#fff', 0.08)}`,
-        transition: theme.transitions.create(['box-shadow', 'transform', 'border-color']),
+        display: 'flex',
+        flexDirection: 'column',
+        transition: theme.transitions.create(['transform', 'box-shadow']),
         '&:hover': {
           transform: 'translateY(-4px)',
-          borderColor: alpha(faixaCfg.bg, isFaixaPreta ? 0.3 : 0.4),
-          boxShadow: `0 12px 40px ${alpha(faixaCfg.bg, 0.15)}`,
+          boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
         },
       }}
     >
@@ -256,7 +254,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
           {isDisponivel ? 'INSCREVER VIA APP' : 'LISTA DE ESPERA'}
         </Button>
       </Box>
-    </Stack>
+    </CyberCard>
   );
 }
 

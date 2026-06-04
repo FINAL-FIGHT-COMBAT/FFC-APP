@@ -9,6 +9,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { varFade, MotionViewport } from 'src/components/animate';
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { SectionTitle } from './HomeSectionTitle';
 
 // ----------------------------------------------------------------------
@@ -65,29 +66,20 @@ export function HomeSponsors() {
         <Stack spacing={4}>
           {/* Master Sponsor */}
           <m.div variants={varFade('inUp')}>
-            <Box
+            <CyberCard
               sx={{
                 width: '100%',
                 maxWidth: 800,
                 mx: 'auto',
                 p: { xs: 4, md: 6 },
-                borderRadius: 3,
-                bgcolor: 'rgba(10, 10, 10, 0.65)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid',
-                borderColor: alpha(theme.palette.warning.main, 0.4),
-                boxShadow: `0 0 60px ${alpha(theme.palette.warning.main, 0.15)}`,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 textAlign: 'center',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: theme.transitions.create(['all']),
+                transition: theme.transitions.create(['transform', 'box-shadow']),
                 '&:hover': {
-                  borderColor: alpha(theme.palette.warning.main, 0.8),
-                  boxShadow: `0 0 80px ${alpha(theme.palette.warning.main, 0.3)}`,
+                  boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
                   transform: 'translateY(-4px)',
                 },
               }}
@@ -125,7 +117,7 @@ export function HomeSponsors() {
               >
                 {MASTER_SPONSOR.name}
               </Typography>
-            </Box>
+            </CyberCard>
           </m.div>
 
           {/* Secondary Sponsors Grid */}
@@ -142,22 +134,16 @@ export function HomeSponsors() {
           >
             {SECONDARY_SPONSORS.map((sponsor, index) => (
               <m.div key={index} variants={varFade('inUp')}>
-                <Box
+                <CyberCard
                   sx={{
                     p: 4,
-                    borderRadius: 2,
-                    bgcolor: 'rgba(255, 255, 255, 0.02)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,0.08)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
                     textAlign: 'center',
-                    transition: theme.transitions.create(['all']),
+                    transition: theme.transitions.create(['transform']),
                     '&:hover': {
-                      bgcolor: 'rgba(255, 255, 255, 0.05)',
-                      borderColor: 'rgba(255,255,255,0.2)',
                       transform: 'translateY(-4px)',
                     },
                   }}
@@ -184,7 +170,7 @@ export function HomeSponsors() {
                   >
                     {sponsor.name}
                   </Typography>
-                </Box>
+                </CyberCard>
               </m.div>
             ))}
           </Box>
