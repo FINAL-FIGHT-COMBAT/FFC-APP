@@ -18,6 +18,7 @@ import { RouterLink } from 'src/routes/components';
 
 import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -73,41 +74,16 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
       transition={{ duration: 0.25, ease: 'easeOut' }}
       style={{ height: '100%' }}
     >
-      <Stack
+      <CyberCard
         sx={{
           height: '100%',
-          borderRadius: 3,
-          overflow: 'hidden',
-          bgcolor: alpha('#020817', 0.8),
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
           transition: theme.transitions.create(['all'], {
             duration: theme.transitions.duration.standard,
           }),
-
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            borderRadius: 'inherit',
-            padding: '1px',
-            background: `linear-gradient(180deg, 
-              ${alpha(theme.palette.info.main, 0.9)} 0%, 
-              ${alpha(theme.palette.common.white, 0.05)} 50%, 
-              ${alpha(theme.palette.warning.main, 0.9)} 100%
-            )`,
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-            zIndex: 2,
-            pointerEvents: 'none',
-          },
-
           boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.5)}`,
-
           '&:hover': {
-            bgcolor: alpha('#020817', 0.95),
             boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
           },
         }}
@@ -253,7 +229,7 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
             </Stack>
           </Box>
         </Stack>
-      </Stack>
+      </CyberCard>
     </m.div>
   );
 }
