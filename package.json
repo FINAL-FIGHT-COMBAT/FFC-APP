@@ -46,7 +46,7 @@
     "accept-language": "^3.0.20",
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.13.4",
-    "dayjs": "^1.11.19",
+    "dayjs": "^1.11.21",
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
