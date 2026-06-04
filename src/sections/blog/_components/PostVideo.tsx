@@ -45,7 +45,7 @@ export function PostVideo({ videos }: Props) {
             textTransform: 'uppercase',
             color: 'common.white',
             letterSpacing: '0.05em',
-            textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+            textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
           }}
         >
           {title}
@@ -64,7 +64,7 @@ export function PostVideo({ videos }: Props) {
         {/* SEÇÃO 1: BRASIL */}
         {videos.brazil.length > 0 && (
           <Box sx={{ mb: 8 }}>
-            {renderSectionHeader('Comunidade Brasileira', 'Insights do mercado nacional')}
+            {renderSectionHeader('Nocautes Nacionais', 'Melhores momentos e highlights do Brasil')}
 
             <Box
               sx={{
@@ -89,7 +89,7 @@ export function PostVideo({ videos }: Props) {
         {/* SEÇÃO 2: INTERNACIONAL */}
         {videos.international.length > 0 && (
           <Box>
-            {renderSectionHeader('Comunidade Internacional', 'O que está acontecendo no mundo')}
+            {renderSectionHeader('Destaques Globais', 'Análises, lutas e entrevistas ao redor do mundo')}
 
             <Box
               sx={{
@@ -123,15 +123,15 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
         position: 'relative',
         borderRadius: 2,
         overflow: 'hidden',
-        bgcolor: alpha(theme.palette.grey[900], 0.4),
+        bgcolor: alpha(theme.palette.info.darker, 0.4),
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        border: `1px solid ${alpha(theme.palette.primary.main, 0.15)}`,
-        transition: theme.transitions.create(['box-shadow', 'background-color']),
+        border: `1px solid ${alpha(theme.palette.warning.main, 0.15)}`,
+        transition: theme.transitions.create(['box-shadow', 'background-color', 'border-color']),
         '&:hover': {
-          bgcolor: alpha(theme.palette.grey[900], 0.6),
-          boxShadow: `0 12px 24px 0 ${alpha(theme.palette.primary.main, 0.25)}`,
-          borderColor: alpha(theme.palette.primary.main, 0.4),
+          bgcolor: alpha(theme.palette.info.darker, 0.6),
+          boxShadow: `0 12px 24px 0 ${alpha(theme.palette.warning.main, 0.25)}`,
+          borderColor: alpha(theme.palette.warning.main, 0.4),
           '& .play-button': { opacity: 1, transform: 'scale(1.1)' },
           '& .video-img': { transform: 'scale(1.1)' },
         },
@@ -194,11 +194,11 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
               color: 'common.white',
               backdropFilter: 'blur(10px)',
               WebkitBackdropFilter: 'blur(10px)',
-              bgcolor: alpha(theme.palette.primary.main, 0.8),
+              bgcolor: alpha(theme.palette.warning.main, 0.8),
               opacity: 0,
               transform: 'scale(0.8)',
               transition: theme.transitions.create(['opacity', 'transform']),
-              boxShadow: `0 0 20px ${theme.palette.primary.main}`,
+              boxShadow: `0 0 20px ${theme.palette.warning.main}`,
             }}
           >
             <Iconify icon={'solar:play-bold' as any} width={24} />
@@ -225,7 +225,7 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
             textDecoration: 'none',
             color: 'inherit',
             transition: theme.transitions.create(['color']),
-            '&:hover': { color: 'primary.light' },
+            '&:hover': { color: 'warning.light' },
           }}
         >
           {video.title}
@@ -235,7 +235,7 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
           <Typography
             variant="caption"
             sx={{
-              color: 'primary.light',
+              color: 'warning.main',
               fontWeight: 800,
               textTransform: 'uppercase',
               fontSize: 10,
@@ -248,7 +248,7 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
               width: 4,
               height: 4,
               borderRadius: '50%',
-              bgcolor: alpha(theme.palette.primary.main, 0.5),
+              bgcolor: alpha(theme.palette.info.main, 0.5),
             }}
           />
           <Typography variant="caption" sx={{ color: 'grey.500' }}>

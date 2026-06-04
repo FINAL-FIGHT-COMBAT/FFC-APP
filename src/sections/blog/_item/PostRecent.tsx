@@ -17,7 +17,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 
-import { GlassCard } from 'src/components/glass-card';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 import { PostCard } from './PostCard';
@@ -62,11 +62,11 @@ export function PostRecent({ posts: postsFromProps }: Props) {
                   textTransform: 'uppercase',
                   color: 'common.white',
                   textAlign: { xs: 'center', md: 'left' },
-                  // 🟢 EFEITO GLOW PADRONIZADO
-                  textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+                  // 🟢 EFEITO GLOW PADRONIZADO FFC
+                  textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
                 }}
               >
-                Artigos Recentes
+                Últimas do Octógono
               </Typography>
             </m.div>
           </Grid>
@@ -74,9 +74,9 @@ export function PostRecent({ posts: postsFromProps }: Props) {
           {posts.slice(0, viewLimit).map((post) => (
             <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <m.div variants={varFade('inUp')}>
-                <GlassCard>
+                <CyberCard>
                   <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
-                </GlassCard>
+                </CyberCard>
               </m.div>
             </Grid>
           ))}
@@ -98,22 +98,22 @@ export function PostRecent({ posts: postsFromProps }: Props) {
                   color: 'common.white',
                   borderRadius: 1.5,
                   textTransform: 'uppercase',
-                  // 🟢 ESTILO NEON GLASS
+                  // 🟢 ESTILO NEON GLASS FFC
                   backdropFilter: 'blur(10px)',
                   WebkitBackdropFilter: 'blur(10px)',
-                  borderColor: alpha(theme.palette.primary.main, 0.4),
-                  bgcolor: alpha(theme.palette.primary.main, 0.05),
+                  borderColor: alpha(theme.palette.info.main, 0.4),
+                  bgcolor: alpha(theme.palette.info.main, 0.05),
                   transition: theme.transitions.create(['all']),
-                  boxShadow: `0 0 12px ${alpha(theme.palette.primary.main, 0.2)}`,
+                  boxShadow: `0 0 12px ${alpha(theme.palette.info.main, 0.2)}`,
                   '&:hover': {
-                    borderColor: theme.palette.primary.main,
-                    bgcolor: alpha(theme.palette.primary.main, 0.15),
-                    boxShadow: `0 0 25px ${alpha(theme.palette.primary.main, 0.4)}`,
+                    borderColor: theme.palette.info.main,
+                    bgcolor: alpha(theme.palette.info.main, 0.15),
+                    boxShadow: `0 0 25px ${alpha(theme.palette.info.main, 0.4)}`,
                     transform: 'translateY(-2px)',
                   },
                 }}
               >
-                Carregar mais artigos
+                Carregar mais notícias
               </Button>
             </m.div>
           </Stack>
@@ -127,73 +127,73 @@ export function PostRecent({ posts: postsFromProps }: Props) {
 const staticRecentPosts = [
   {
     id: 'rec-1',
-    title: 'Governança em DAOs: Lições aprendidas com os maiores protocolos',
-    category: 'Tecnologia',
+    title: 'Pesagem Oficial FFC 10: Encaradas tensas e promessa de nocaute',
+    category: 'Eventos',
     coverUrl: '/assets/images/mock/cover/cover-12.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-12.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-12.webp' },
     createdAt: new Date(),
-    duration: '10 min de leitura',
+    duration: '5 min de leitura',
   },
   {
     id: 'rec-2',
-    title: 'Staking de Ethereum: Riscos e Recompensas após a atualização Shanghai',
-    category: 'Economia',
+    title: 'Análise Técnica: O jogo de chão que pode decidir o cinturão peso-médio',
+    category: 'Técnicas',
     coverUrl: '/assets/images/mock/cover/cover-13.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-13.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-13.webp' },
     createdAt: new Date(),
     duration: '8 min de leitura',
   },
   {
     id: 'rec-3',
-    title: 'Criptomoedas e privacidade: Uma análise de Monero, Zcash e Grin',
-    category: 'Tecnologia',
+    title: 'De volta ao octógono: A recuperação incrível de Marcos "Marreta"',
+    category: 'Atletas',
     coverUrl: '/assets/images/mock/cover/cover-14.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-14.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-14.webp' },
     createdAt: new Date(),
-    duration: '9 min de leitura',
+    duration: '6 min de leitura',
   },
   {
     id: 'rec-4',
-    title: 'O impacto da Web3 na indústria da música e direitos autorais',
-    category: 'Economia',
+    title: 'Bastidores do Grand Prix: A rotina de corte de peso dos lutadores de elite',
+    category: 'Bastidores',
     coverUrl: '/assets/images/mock/cover/cover-15.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-15.webp' },
-    createdAt: new Date(),
-    duration: '7 min de leitura',
-  },
-  {
-    id: 'rec-5',
-    title: 'Ameaças de segurança em contratos inteligentes: Hacks e Prevenção',
-    category: 'Tecnologia',
-    coverUrl: '/assets/images/mock/cover/cover-16.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-16.webp' },
-    createdAt: new Date(),
-    duration: '11 min de leitura',
-  },
-  {
-    id: 'rec-6',
-    title: 'Finanças Regenerativas (ReFi): Um novo paradigma para o desenvolvimento sustentável',
-    category: 'Meio Ambiente',
-    coverUrl: '/assets/images/mock/cover/cover-17.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-17.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-15.webp' },
     createdAt: new Date(),
     duration: '10 min de leitura',
   },
   {
-    id: 'rec-7',
-    title: 'A competição entre as soluções de Camada 2: Optimism vs. Arbitrum',
-    category: 'Tecnologia',
-    coverUrl: '/assets/images/mock/cover/cover-18.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-18.webp' },
+    id: 'rec-5',
+    title: 'Novas Regras da Comissão Atlética: O que muda na avaliação dos juízes',
+    category: 'Eventos',
+    coverUrl: '/assets/images/mock/cover/cover-16.webp',
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-16.webp' },
     createdAt: new Date(),
-    duration: '12 min de leitura',
+    duration: '4 min de leitura',
+  },
+  {
+    id: 'rec-6',
+    title: 'Preparação Física: O segredo do condicionamento para lutas de 5 rounds',
+    category: 'Técnicas',
+    coverUrl: '/assets/images/mock/cover/cover-17.webp',
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-17.webp' },
+    createdAt: new Date(),
+    duration: '7 min de leitura',
+  },
+  {
+    id: 'rec-7',
+    title: 'Entrevista Exclusiva: "Vou arrancar a cabeça dele no primeiro assalto"',
+    category: 'Atletas',
+    coverUrl: '/assets/images/mock/cover/cover-18.webp',
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-18.webp' },
+    createdAt: new Date(),
+    duration: '5 min de leitura',
   },
   {
     id: 'rec-8',
-    title: 'A geopolítica da mineração de Bitcoin: Onde estão os maiores players?',
-    category: 'Geopolítica',
+    title: 'O impacto econômico do Final Fight Combat na cidade-sede',
+    category: 'Bastidores',
     coverUrl: '/assets/images/mock/cover/cover-19.webp',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-19.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-19.webp' },
     createdAt: new Date(),
     duration: '9 min de leitura',
   },

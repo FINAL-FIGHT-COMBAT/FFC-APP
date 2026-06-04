@@ -149,10 +149,10 @@ export function PostCommunity({ communities }: Props) {
                   textTransform: 'uppercase',
                   color: 'common.white',
                   letterSpacing: '0.05em',
-                  textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+                  textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
                 }}
               >
-                Comunidades Cripto
+                Ligas e Academias Parceiras
               </Typography>
             </m.div>
 
@@ -166,8 +166,7 @@ export function PostCommunity({ communities }: Props) {
                   fontFamily: "'Public Sans', sans-serif",
                 }}
               >
-                Monitorizamos os principais ecossistemas globais em tempo real para trazer insights
-                exclusivos.
+                Acompanhamos e interagimos com os maiores nomes do MMA global, desde as bases até o topo do ranking.
               </Typography>
             </m.div>
           </Stack>

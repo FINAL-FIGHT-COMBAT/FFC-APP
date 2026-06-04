@@ -12,7 +12,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 
-import { GlassCard } from 'src/components/glass-card';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 import { Label } from 'src/components/label';
@@ -64,7 +64,7 @@ export function PostCategoryItem({ category, posts }: Props) {
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: 'common.white',
-            textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+            textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
           }}
         >
           {category}
@@ -74,9 +74,6 @@ export function PostCategoryItem({ category, posts }: Props) {
       <Grid container spacing={4}>
         {/* Desktop: Destaques (Primeiros 3) */}
         {viewPosts.slice(0, 3).map((post: any, index: number) => {
-          const isEconomy = category.toLowerCase() === 'economia';
-          const economyLabels = ['Ignorar', 'Criptomoedas', 'Moedas Fiat'];
-
           return (
             <Grid
               key={`${categoryId}-top-${post.id}-${index}`}
@@ -89,9 +86,9 @@ export function PostCategoryItem({ category, posts }: Props) {
               }}
             >
               <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
-                <GlassCard>
-                  {/* Badge apenas para os cards menores de Economia (índice 1 e 2) */}
-                  {isEconomy && index > 0 && (
+                <CyberCard>
+                  {/* Badge para destaques (ex: Eventos recebe tags específicas) */}
+                  {category.toLowerCase() === 'eventos' && index > 0 && (
                     <Label
                       variant="filled"
                       sx={{
@@ -105,14 +102,14 @@ export function PostCategoryItem({ category, posts }: Props) {
                         letterSpacing: '0.05em',
                         textTransform: 'uppercase',
                         borderRadius: 0.75,
-                        bgcolor: alpha(theme.palette[index === 1 ? 'secondary' : 'success'].main, 0.15),
-                        color: theme.palette[index === 1 ? 'secondary' : 'success'].light,
-                        border: `1px solid ${alpha(theme.palette[index === 1 ? 'secondary' : 'success'].main, 0.5)}`,
+                        bgcolor: alpha(theme.palette[index === 1 ? 'warning' : 'info'].main, 0.15),
+                        color: theme.palette[index === 1 ? 'warning' : 'info'].light,
+                        border: `1px solid ${alpha(theme.palette[index === 1 ? 'warning' : 'info'].main, 0.5)}`,
                         backdropFilter: 'blur(8px)',
-                        boxShadow: `0 0 10px ${alpha(theme.palette[index === 1 ? 'secondary' : 'success'].main, 0.2)}`,
+                        boxShadow: `0 0 10px ${alpha(theme.palette[index === 1 ? 'warning' : 'info'].main, 0.2)}`,
                       }}
                     >
-                      {economyLabels[index]}
+                      {['Ignorar', 'Card Principal', 'Card Preliminar'][index]}
                     </Label>
                   )}
                   <PostItemLatest
@@ -120,7 +117,7 @@ export function PostCategoryItem({ category, posts }: Props) {
                     index={index}
                     detailsHref={paths.post.details(post.slug || kebabCase(post.title))}
                   />
-                </GlassCard>
+                </CyberCard>
               </m.div>
             </Grid>
           );
@@ -134,28 +131,26 @@ export function PostCategoryItem({ category, posts }: Props) {
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           >
             <m.div variants={varFade('inUp')}>
-              <GlassCard>
+              <CyberCard>
                 <PostCard 
                   post={post} 
                   detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
                 />
-              </GlassCard>
+              </CyberCard>
             </m.div>
           </Grid>
         ))}
 
         {/* Lista Restante */}
         {viewPosts.slice(3, 7).map((post: any, index: number) => {
-          const isEconomy = category.toLowerCase() === 'economia';
-          const economyLabels = ['Commodities', 'Metais', 'Petróleo', 'Mercado Imobiliário'];
-          const economyColors: any[] = ['warning', 'info', 'error', 'primary'];
+          const ffcColors: any[] = ['warning', 'info', 'error', 'primary'];
 
           return (
             <Grid key={`${categoryId}-list-${post.id}-${index}`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
-                <GlassCard>
-                  {/* Badge para os 4 cards da lista de Economia */}
-                  {isEconomy && (
+                <CyberCard>
+                  {/* Badge secundário para lista */}
+                  {category.toLowerCase() === 'eventos' && (
                     <Label
                       variant="filled"
                       sx={{
@@ -169,21 +164,21 @@ export function PostCategoryItem({ category, posts }: Props) {
                         letterSpacing: '0.05em',
                         textTransform: 'uppercase',
                         borderRadius: 0.75,
-                        bgcolor: alpha(theme.palette[economyColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.15),
-                        color: theme.palette[economyColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].light,
-                        border: `1px solid ${alpha(theme.palette[economyColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.5)}`,
+                        bgcolor: alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.15),
+                        color: theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].light,
+                        border: `1px solid ${alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.5)}`,
                         backdropFilter: 'blur(8px)',
-                        boxShadow: `0 0 10px ${alpha(theme.palette[economyColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.2)}`,
+                        boxShadow: `0 0 10px ${alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.2)}`,
                       }}
                     >
-                      {economyLabels[index]}
+                      {['Resultados', 'Luta da Noite', 'Performance', 'Bônus'][index] || 'Destaque'}
                     </Label>
                   )}
                   <PostCard 
                     post={post} 
                     detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
                   />
-                </GlassCard>
+                </CyberCard>
               </m.div>
             </Grid>
           );

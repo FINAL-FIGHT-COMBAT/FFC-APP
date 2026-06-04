@@ -10,9 +10,9 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 export const metadata = {
-  title: 'Digital World: Monitorização e Notícias Cripto',
+  title: 'Notícias de Lutas e MMA | Final Fight Combat',
   description:
-    'Acompanhe as principais comunidades, vídeos e tendências do mercado blockchain em tempo real.',
+    'Acompanhe as principais notícias de eventos, análises de técnicas, bastidores e cobertura em tempo real das lutas.',
 };
 
 export default async function PostListPage() {

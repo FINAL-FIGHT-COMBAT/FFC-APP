@@ -135,7 +135,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
         sx={(theme) => ({
           bgcolor: alpha('#020817', 0.9), // 🟢 Fundo escuro premium para leitura
           backdropFilter: 'blur(10px)',
-          borderTop: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+          borderTop: `1px solid ${alpha(theme.palette.warning.main, 0.2)}`,
           pt: 5,
           pb: 8,
           position: 'relative',
@@ -158,7 +158,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
                   color: 'text.secondary',
                   fontStyle: 'italic',
                   lineHeight: 1.8,
-                  borderLeft: `4px solid ${theme.palette.primary.main}`,
+                  borderLeft: `4px solid ${theme.palette.warning.main}`,
                   pl: 2.5,
                   fontFamily: "'Public Sans', sans-serif",
                 })}
@@ -207,7 +207,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
                   },
                   '& strong': { color: 'text.primary', fontWeight: 700 },
                   '& blockquote': {
-                    borderLeft: `4px solid ${theme.palette.primary.main}`,
+                    borderLeft: `4px solid ${theme.palette.warning.main}`,
                     pl: 2.5,
                     py: 0.5,
                     my: 3,
@@ -232,7 +232,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
                     borderRadius: 0.75,
                     fontSize: 14,
                     bgcolor: 'action.selected',
-                    color: 'primary.main',
+                    color: 'warning.main',
                     fontFamily: 'monospace',
                   },
                   '& pre': {
@@ -335,7 +335,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 color: 'common.white',
-                textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+                textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
               }}
             >
               Artigos Relacionados

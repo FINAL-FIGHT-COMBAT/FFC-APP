@@ -8,23 +8,23 @@ import type { NavMainProps } from './main/nav/types';
 
 export const navData: NavMainProps['data'] = [
   {
-    title: 'ECONOMIA',
-    path: `${paths.news.root}#economia`,
-    icon: <Iconify width={22} icon={'solar:economy-bold-duotone' as any} />,
+    title: 'EVENTOS',
+    path: `${paths.news.root}#eventos`,
+    icon: <Iconify width={22} icon={'solar:calendar-bold-duotone' as any} />,
   },
   {
-    title: 'TECNOLOGIA',
-    path: `${paths.news.root}#tecnologia`,
-    icon: <Iconify width={22} icon={'solar:laptop-bold-duotone' as any} />,
+    title: 'ATLETAS',
+    path: `${paths.news.root}#atletas`,
+    icon: <Iconify width={22} icon={'solar:user-bold-duotone' as any} />,
   },
   {
-    title: 'MEIO AMBIENTE',
-    path: `${paths.news.root}#meio-ambiente`,
-    icon: <Iconify width={22} icon={'solar:leaf-bold-duotone' as any} />,
+    title: 'TÉCNICAS',
+    path: `${paths.news.root}#tecnicas`,
+    icon: <Iconify width={22} icon={'solar:shield-bold-duotone' as any} />,
   },
   {
-    title: 'GEOPOLÍTICA',
-    path: `${paths.news.root}#geopolitica`,
-    icon: <Iconify width={22} icon={'solar:map-bold-duotone' as any} />,
+    title: 'BASTIDORES',
+    path: `${paths.news.root}#bastidores`,
+    icon: <Iconify width={22} icon={'solar:camera-bold-duotone' as any} />,
   },
 ];

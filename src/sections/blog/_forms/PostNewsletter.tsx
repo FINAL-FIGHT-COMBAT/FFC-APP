@@ -38,10 +38,10 @@ export function PostNewsletter() {
           textAlign: 'center',
           color: 'common.white',
           
-          // 🟢 GLASSMORPHISM ELITE
-          bgcolor: alpha('#020817', 0.6),
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
+          // 🟢 GLASSMORPHISM ELITE (Mais imersivo)
+          bgcolor: alpha('#020817', 0.45),
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
           
           // 💎 BORDA DE CRISTAL REATIVA
           '&::before': {
@@ -49,14 +49,14 @@ export function PostNewsletter() {
             position: 'absolute',
             inset: 0,
             borderRadius: 'inherit',
-            padding: '1px',
-            background: `linear-gradient(135deg, ${alpha('#FA541C', 0.5)}, transparent 50%, ${alpha('#00B8D9', 0.3)})`,
+            padding: '2px', // Borda mais grossa para mais impacto
+            background: `linear-gradient(135deg, ${alpha(theme.palette.warning.main, 0.8)}, transparent 50%, ${alpha(theme.palette.info.main, 0.6)})`,
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
             maskComposite: 'exclude',
             zIndex: 2,
           },
-          boxShadow: `0 20px 40px -10px ${alpha('#000', 0.5)}, 0 0 30px ${alpha('#FA541C', 0.1)}`,
+          boxShadow: `0 30px 60px -15px ${alpha('#000', 0.8)}, 0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
         }}
       >
         {/* 🕸️ GRID PATTERN OVERLAY */}
@@ -65,38 +65,47 @@ export function PostNewsletter() {
             position: 'absolute',
             inset: 0,
             opacity: 0.1,
-            zIndex: 1,
-            backgroundImage: `linear-gradient(${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px)`,
             backgroundSize: '30px 30px',
           }}
         />
 
-        {/* 🎆 NEBULOSAS INTERNAS */}
+        {/* 🎆 NEBULOSAS INTERNAS ANIMADAS */}
         <Box
+          component={m.div}
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
           sx={{
-            top: -100,
-            right: -100,
-            width: 300,
-            height: 300,
-            opacity: 0.2,
+            top: -150,
+            right: -150,
+            width: 400,
+            height: 400,
             borderRadius: '50%',
             position: 'absolute',
-            filter: 'blur(80px)',
-            bgcolor: '#FA541C',
+            filter: 'blur(100px)',
+            bgcolor: 'warning.main',
             zIndex: 0,
           }}
         />
         <Box
+          component={m.div}
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.15, 0.3, 0.15],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
           sx={{
-            bottom: -80,
-            left: -80,
-            width: 250,
-            height: 250,
-            opacity: 0.15,
+            bottom: -150,
+            left: -150,
+            width: 350,
+            height: 350,
             borderRadius: '50%',
             position: 'absolute',
-            filter: 'blur(60px)',
-            bgcolor: '#00B8D9',
+            filter: 'blur(100px)',
+            bgcolor: 'info.main',
             zIndex: 0,
           }}
         />
@@ -115,15 +124,15 @@ export function PostNewsletter() {
                 justifyContent: 'center',
                 borderRadius: '20px',
                 position: 'relative',
-                bgcolor: alpha('#FA541C', 0.1),
-                border: `1px solid ${alpha('#FA541C', 0.2)}`,
-                boxShadow: `0 0 20px ${alpha('#FA541C', 0.2)}`,
+                bgcolor: alpha(theme.palette.warning.main, 0.1),
+                border: `1px solid ${alpha(theme.palette.warning.main, 0.2)}`,
+                boxShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.2)}`,
               }}
             >
               <Iconify
                 icon={"solar:letter-bold-duotone" as any}
                 width={40}
-                sx={{ color: '#FA541C' }}
+                sx={{ color: 'warning.main' }}
               />
             </Box>
           </m.div>
@@ -138,14 +147,14 @@ export function PostNewsletter() {
                 letterSpacing: '0.05em',
                 fontSize: { xs: '1.5rem', md: '2.25rem' },
                 lineHeight: 1.2,
-                background: `linear-gradient(to bottom, #FFF, ${alpha(theme.palette.common.white, 0.7)})`,
+                background: `linear-gradient(135deg, ${theme.palette.common.white} 0%, ${alpha(theme.palette.warning.main, 0.8)} 100%)`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                textShadow: `0 0 30px ${alpha('#FA541C', 0.3)}`,
-              }}
-            >
-              Mantenha-se à Frente
-            </Typography>
+              textShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.5)}`,
+            }}
+          >
+            Sempre no Octógono
+          </Typography>
           </m.div>
 
           <m.div variants={varFade('inUp')}>
@@ -156,11 +165,11 @@ export function PostNewsletter() {
                 color: 'grey.300',
                 fontSize: { xs: 15, md: 17 },
                 lineHeight: 1.6,
-                fontWeight: 500
-              }}
-            >
-              Receba inteligência de mercado e insights exclusivos diretamente no seu e-mail.
-            </Typography>
+              fontWeight: 500
+            }}
+          >
+            Receba resultados de lutas, entrevistas exclusivas e alertas de eventos no seu e-mail.
+          </Typography>
           </m.div>
         </Stack>
 
@@ -180,8 +189,8 @@ export function PostNewsletter() {
                   bgcolor: alpha(theme.palette.common.white, 0.03),
                   borderRadius: 1.5,
                   '& fieldset': { borderColor: alpha(theme.palette.common.white, 0.1) },
-                  '&:hover fieldset': { borderColor: alpha('#FA541C', 0.4) },
-                  '&.Mui-focused fieldset': { borderColor: '#FA541C' },
+                  '&:hover fieldset': { borderColor: alpha(theme.palette.warning.main, 0.4) },
+                  '&.Mui-focused fieldset': { borderColor: theme.palette.warning.main },
                   '& input': {
                     color: 'common.white',
                     fontFamily: "'Public Sans', sans-serif",
@@ -201,17 +210,29 @@ export function PostNewsletter() {
                 px: 4,
                 fontSize: 14,
                 fontWeight: 900,
-                fontFamily: "'Orbitron', sans-serif",
-                textTransform: 'uppercase',
-                bgcolor: '#FA541C',
+                // CRYSTAL BUTTON EFFECT
+                bgcolor: alpha(theme.palette.warning.main, 0.15),
                 color: 'common.white',
+                border: 'none',
+                position: 'relative',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: 'inherit',
+                  padding: '1px',
+                  background: `linear-gradient(135deg, ${theme.palette.warning.main}, ${alpha(theme.palette.warning.main, 0.2)})`,
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude',
+                },
                 borderRadius: 1.5,
-                boxShadow: `0 10px 20px -5px ${alpha('#FA541C', 0.5)}`,
-                transition: 'all 0.3s ease',
+                boxShadow: `0 10px 20px -5px ${alpha(theme.palette.warning.main, 0.3)}`,
+                transition: theme.transitions.create(['all']),
                 '&:hover': {
-                  bgcolor: '#FF6B3D',
-                  boxShadow: `0 15px 30px -5px ${alpha('#FA541C', 0.6)}`,
-                  transform: 'translateY(-2px)',
+                  bgcolor: alpha(theme.palette.warning.main, 0.3),
+                  boxShadow: `0 15px 30px -5px ${alpha(theme.palette.warning.main, 0.7)}`,
+                  transform: 'translateY(-3px)',
                 },
               }}
             >
@@ -222,7 +243,7 @@ export function PostNewsletter() {
 
         <m.div variants={varFade('inUp')}>
           <Typography variant="caption" sx={{ opacity: 0.4, zIndex: 9, display: 'block', mt: 2 }}>
-            Sem spam. Apenas tecnologia e mercado.
+            Sem spam. Apenas artes marciais e conteúdo raiz.
           </Typography>
         </m.div>
       </Stack>

@@ -13,7 +13,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 
-import { GlassCard } from 'src/components/glass-card';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 import { PostCard, PostItemLatest } from './PostCard';
@@ -23,66 +23,66 @@ import { PostCard, PostItemLatest } from './PostCard';
 const staticTrendingPosts = [
   {
     id: 'trend-1',
-    title: 'Como a Prova de Conhecimento Zero (ZKP) está revolucionando a privacidade',
-    category: 'Tecnologia',
+    title: 'Nocaute do Ano: O chute giratório que chocou o mundo',
+    category: 'Técnicas',
     coverUrl: '/assets/images/mock/cover/cover-5.webp',
     createdAt: new Date(),
     duration: '10 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-5.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-5.webp' },
   },
   {
     id: 'trend-2',
-    title: 'Adoção institucional de cripto: O que esperar em 2026?',
-    category: 'Economia',
+    title: 'Aposentadoria de Lenda do MMA gera comoção entre fãs',
+    category: 'Atletas',
     coverUrl: '/assets/images/mock/cover/cover-6.webp',
     createdAt: new Date(),
     duration: '12 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-6.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-6.webp' },
   },
   {
     id: 'trend-3',
-    title: 'NFTs Dinâmicos: A próxima evolução dos colecionáveis digitais',
-    category: 'Tecnologia',
+    title: 'A evolução do treinamento em altitude para lutadores',
+    category: 'Técnicas',
     coverUrl: '/assets/images/mock/cover/cover-7.webp',
     createdAt: new Date(),
     duration: '8 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-7.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-7.webp' },
   },
   {
     id: 'trend-4',
-    title: 'A tokenização de ativos do mundo real (RWA) e o futuro do mercado',
-    category: 'Economia',
+    title: 'Contratos e Patrocínios: A nova era de ouro dos atletas de MMA',
+    category: 'Bastidores',
     coverUrl: '/assets/images/mock/cover/cover-8.webp',
     createdAt: new Date(),
     duration: '9 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-8.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-8.webp' },
   },
   {
     id: 'trend-5',
-    title: 'BRICS e a desdolarização: O papel das moedas digitais',
-    category: 'Geopolítica',
+    title: 'A rivalidade histórica reacendida: FFC anuncia revanche épica',
+    category: 'Eventos',
     coverUrl: '/assets/images/mock/cover/cover-9.webp',
     createdAt: new Date(),
     duration: '11 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-9.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-9.webp' },
   },
   {
     id: 'trend-6',
-    title: 'Redes de energia descentralizadas e o impacto no meio ambiente',
-    category: 'Meio Ambiente',
+    title: 'Como a psicologia esportiva forma campeões invictos',
+    category: 'Técnicas',
     coverUrl: '/assets/images/mock/cover/cover-10.webp',
     createdAt: new Date(),
     duration: '10 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-10.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-10.webp' },
   },
   {
     id: 'trend-7',
-    title: 'A Regulamentação da IA na União Europeia e seus impactos globais',
-    category: 'Geopolítica',
+    title: 'O que rola nos vestiários minutos antes do Main Event',
+    category: 'Bastidores',
     coverUrl: '/assets/images/mock/cover/cover-11.webp',
     createdAt: new Date(),
     duration: '12 min de leitura',
-    author: { name: 'Equipe DEX', avatarUrl: '/assets/images/mock/avatar/avatar-11.webp' },
+    author: { name: 'Equipe FFC', avatarUrl: '/assets/images/mock/avatar/avatar-11.webp' },
   },
 ];
 
@@ -119,11 +119,11 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
                 textTransform: 'uppercase',
                 color: 'common.white',
                 textAlign: { xs: 'center', md: 'left' },
-                // 🟢 EFEITO GLOW PADRONIZADO
-                textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+                // 🟢 EFEITO GLOW PADRONIZADO FFC
+                textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
               }}
             >
-              Artigos em Alta
+              Lutas em Destaque
             </Typography>
           </m.div>
         </Grid>
@@ -141,13 +141,13 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
             }}
           >
             <m.div variants={varFade('inUp')}>
-              <GlassCard>
+              <CyberCard>
                 <PostItemLatest
                   post={post as any}
                   index={index}
                   detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))}
                 />
-              </GlassCard>
+              </CyberCard>
             </m.div>
           </Grid>
         ))}
@@ -160,9 +160,9 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
             size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           >
             <m.div variants={varFade('inUp')}>
-              <GlassCard>
+              <CyberCard>
                 <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
-              </GlassCard>
+              </CyberCard>
             </m.div>
           </Grid>
         ))}
@@ -171,9 +171,9 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
         {viewPosts.slice(3, 7).map((post, index) => (
           <Grid key={`${post.id}-${index}-rest`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <m.div variants={varFade('inUp')}>
-              <GlassCard>
+              <CyberCard>
                 <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
-              </GlassCard>
+              </CyberCard>
             </m.div>
           </Grid>
         ))}

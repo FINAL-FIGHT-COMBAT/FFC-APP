@@ -60,9 +60,9 @@ export function PostAuthors({ posts }: Props) {
           borderRadius: 'inherit',
           padding: '1px',
           background: `linear-gradient(180deg, 
-            ${alpha(theme.palette.primary.main, 0.4)} 0%, 
+            ${alpha(theme.palette.warning.main, 0.4)} 0%, 
             ${alpha(theme.palette.common.white, 0.05)} 50%, 
-            ${alpha(theme.palette.primary.main, 0.2)} 100%
+            ${alpha(theme.palette.info.main, 0.2)} 100%
           )`,
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
@@ -73,13 +73,13 @@ export function PostAuthors({ posts }: Props) {
         transition: theme.transitions.create(['all']),
         '&:hover': {
           transform: 'translateY(-4px)',
-          bgcolor: alpha(theme.palette.primary.main, 0.08),
+          bgcolor: alpha(theme.palette.warning.main, 0.08),
           boxShadow: `0 10px 20px ${alpha('#000', 0.4)}`,
           '&::before': {
             background: `linear-gradient(180deg, 
-              ${theme.palette.primary.main} 0%, 
+              ${theme.palette.warning.main} 0%, 
               ${alpha(theme.palette.common.white, 0.3)} 50%, 
-              ${theme.palette.primary.main} 100%
+              ${theme.palette.info.main} 100%
             )`,
           },
         },
@@ -92,8 +92,8 @@ export function PostAuthors({ posts }: Props) {
           width: 52,
           height: 52,
           zIndex: 3,
-          border: `2px solid ${alpha(theme.palette.primary.main, 0.3)}`,
-          boxShadow: `0 0 15px ${alpha(theme.palette.primary.main, 0.15)}`,
+          border: `2px solid ${alpha(theme.palette.warning.main, 0.3)}`,
+          boxShadow: `0 0 15px ${alpha(theme.palette.warning.main, 0.15)}`,
         }}
       />
 
@@ -111,7 +111,7 @@ export function PostAuthors({ posts }: Props) {
             textTransform: 'uppercase',
             textDecoration: 'none',
             transition: theme.transitions.create(['color']),
-            '&:hover': { color: 'primary.main' },
+            '&:hover': { color: 'warning.main' },
           }}
         >
           {author.name}
@@ -184,7 +184,7 @@ export function PostAuthors({ posts }: Props) {
             inset: 0,
             opacity: 0.05,
             zIndex: 0,
-            backgroundImage: `linear-gradient(${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px)`,
             backgroundSize: '40px 40px',
           }}
         />
@@ -201,10 +201,10 @@ export function PostAuthors({ posts }: Props) {
               color: 'common.white',
               letterSpacing: '0.1em',
               fontSize: { xs: '1.5rem', md: '2rem' },
-              textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.35)}`,
+              textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
             }}
           >
-            Nossos Criadores
+            Equipe Editorial
           </Typography>
         </m.div>
 

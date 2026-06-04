@@ -22,6 +22,7 @@ import { AvatarShape } from 'src/assets/illustrations';
 
 import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 
 // ----------------------------------------------------------------------
 
@@ -34,39 +35,16 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
   const theme = useTheme();
 
   return (
-    <Card
+    <CyberCard
       sx={[
         {
-          // 🟢 ESTILO GLASSMORPHISM AVANÇADO
-          bgcolor: alpha('#020817', 0.6),
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          position: 'relative',
-          overflow: 'hidden',
-          transition: theme.transitions.create(['transform', 'box-shadow', 'background-color']),
-
-          // 💎 BORDA REATIVA DE 1PX (Assinatura Elite)
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            borderRadius: 'inherit',
-            padding: '1px',
-            background: `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0.5)}, transparent 50%, ${alpha(theme.palette.primary.main, 0.3)})`,
-            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
-            zIndex: 2,
-            transition: 'all 0.4s ease-in-out',
-          },
-
+          transition: theme.transitions.create(['transform', 'box-shadow']),
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
           '&:hover': {
             transform: 'translateY(-6px)',
-            bgcolor: alpha('#020817', 0.8),
-            boxShadow: `0 12px 24px 0 ${alpha(theme.palette.primary.main, 0.25)}`,
-            '&::before': {
-              background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${alpha(theme.palette.primary.main, 0.8)})`,
-            },
+            boxShadow: `0 12px 24px 0 ${alpha(theme.palette.info.main, 0.25)}`,
           },
         },
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -94,7 +72,7 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
             zIndex: 9,
             bottom: -24,
             position: 'absolute',
-            border: `2px solid ${theme.palette.primary.main}`,
+            border: `2px solid ${theme.palette.warning.main}`,
           }}
         />
 
@@ -122,7 +100,7 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
             position: 'relative',
             zIndex: 20, // 🔴 GARANTE O CLIQUE ACIMA DE QUALQUER DECORAÇÃO
             transition: theme.transitions.create(['color']),
-            '&:hover': { color: 'primary.light' },
+            '&:hover': { color: 'warning.main' },
           }}
         >
           {post.title}
@@ -135,7 +113,7 @@ export function PostCard({ post, detailsHref, sx, ...other }: PostItemProps) {
           sx={{ color: alpha(theme.palette.common.white, 0.5) }}
         />
       </CardContent>
-    </Card>
+    </CyberCard>
   );
 }
 
@@ -153,15 +131,16 @@ export function PostItemLatest({ post, index, detailsHref, sx }: PostItemLatestP
   const postSmall = index === 1 || index === 2;
 
   return (
-    <Card
+    <CyberCard
       sx={[
         {
-          bgcolor: 'transparent',
-          border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
           transition: theme.transitions.create(['transform', 'box-shadow']),
           '&:hover': {
             transform: 'scale(1.02)',
-            boxShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.3)}`,
+            boxShadow: `0 0 20px ${alpha(theme.palette.info.main, 0.3)}`,
           },
         },
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -175,7 +154,7 @@ export function PostItemLatest({ post, index, detailsHref, sx }: PostItemLatestP
           left: 24,
           zIndex: 9,
           position: 'absolute',
-          border: `2px solid ${theme.palette.primary.main}`,
+          border: `2px solid ${theme.palette.warning.main}`,
         }}
       />
 
@@ -233,7 +212,7 @@ export function PostItemLatest({ post, index, detailsHref, sx }: PostItemLatestP
           sx={{ opacity: 0.64, color: 'common.white' }}
         />
       </CardContent>
-    </Card>
+    </CyberCard>
   );
 }
 

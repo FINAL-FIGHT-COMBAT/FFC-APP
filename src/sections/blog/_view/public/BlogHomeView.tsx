@@ -59,9 +59,9 @@ export function BlogHomeView({ posts, communities, videos }: Props) {
           <PostRecent posts={posts} />
         </Box>
 
-        {/* 5. ECONOMIA */}
-        <Box key="view-section-economia" sx={{ bgcolor: 'transparent' }}>
-          <PostCategoryItem category="Economia" posts={posts} />
+        {/* 5. EVENTOS */}
+        <Box key="view-section-eventos" sx={{ bgcolor: 'transparent' }}>
+          <PostCategoryItem category="Eventos" posts={posts} />
         </Box>
 
         {/* 6. VÍDEOS */}
@@ -69,9 +69,9 @@ export function BlogHomeView({ posts, communities, videos }: Props) {
           <PostVideo videos={videos} />
         </Box>
 
-        {/* 7. TECNOLOGIA */}
-        <Box key="view-section-tecnologia" sx={{ bgcolor: 'transparent' }}>
-          <PostCategoryItem category="Tecnologia" posts={posts} />
+        {/* 7. ATLETAS */}
+        <Box key="view-section-atletas" sx={{ bgcolor: 'transparent' }}>
+          <PostCategoryItem category="Atletas" posts={posts} />
         </Box>
 
         {/* 8. ANÚNCIO */}
@@ -79,14 +79,14 @@ export function BlogHomeView({ posts, communities, videos }: Props) {
           <PostAdvertisement />
         </Box>
 
-        {/* 9. GEOPOLÍTICA */}
-        <Box key="view-section-geopolitica" sx={{ bgcolor: 'transparent' }}>
-          <PostCategoryItem category="Geopolítica" posts={posts} />
+        {/* 9. TÉCNICAS */}
+        <Box key="view-section-tecnicas" sx={{ bgcolor: 'transparent' }}>
+          <PostCategoryItem category="Técnicas" posts={posts} />
         </Box>
 
-        {/* 10. MEIO AMBIENTE */}
-        <Box key="view-section-meio-ambiente" sx={{ bgcolor: 'transparent' }}>
-          <PostCategoryItem category="Meio Ambiente" posts={posts} />
+        {/* 10. BASTIDORES */}
+        <Box key="view-section-bastidores" sx={{ bgcolor: 'transparent' }}>
+          <PostCategoryItem category="Bastidores" posts={posts} />
         </Box>
 
         {/* 11. AUTORES */}

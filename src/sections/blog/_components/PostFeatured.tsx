@@ -66,17 +66,17 @@ export function PostFeatured({ posts, sx }: { posts: IPostItem[]; sx?: SxProps<T
           zIndex: 9,
           px: { xs: 1, md: 5 },
           position: 'absolute',
-          color: theme.palette.primary.main,
+          color: theme.palette.warning.main,
           justifyContent: 'space-between',
           transform: 'translateY(-50%)',
           '& button': {
             bgcolor: alpha('#000', 0.5),
             backdropFilter: 'blur(8px)',
-            border: `1px solid ${alpha(theme.palette.primary.main, 0.3)}`,
+            border: `1px solid ${alpha(theme.palette.warning.main, 0.3)}`,
             '&:hover': {
-              bgcolor: alpha(theme.palette.primary.main, 0.8),
+              bgcolor: alpha(theme.palette.warning.main, 0.8),
               color: '#fff',
-              boxShadow: `0 0 15px ${theme.palette.primary.main}`,
+              boxShadow: `0 0 15px ${theme.palette.warning.main}`,
             },
           },
         }}
@@ -91,7 +91,7 @@ export function PostFeatured({ posts, sx }: { posts: IPostItem[]; sx?: SxProps<T
           display: 'flex',
           position: 'absolute',
           justifyContent: 'center',
-          color: theme.palette.primary.main,
+          color: theme.palette.warning.main,
           '& .MuiButtonBase-root': {
             width: 8,
             height: 8,
@@ -100,8 +100,8 @@ export function PostFeatured({ posts, sx }: { posts: IPostItem[]; sx?: SxProps<T
             '&.Mui-selected': {
               width: 24,
               borderRadius: 8,
-              bgcolor: theme.palette.primary.main,
-              boxShadow: `0 0 10px ${theme.palette.primary.main}`,
+              bgcolor: theme.palette.warning.main,
+              boxShadow: `0 0 10px ${theme.palette.warning.main}`,
             },
           },
         }}
@@ -145,7 +145,7 @@ function PostItem({ post }: { post: any }) {
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           transition: theme.transitions.create(['transform', 'background-color']),
-          // 💎 BORDA REATIVA DE 1PX
+          // 💎 BORDA REATIVA DE 1PX (FFC STYLE)
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -153,9 +153,9 @@ function PostItem({ post }: { post: any }) {
             borderRadius: 'inherit',
             padding: '1px',
             background: `linear-gradient(180deg, 
-              ${alpha(theme.palette.primary.main, 0.8)} 0%, 
+              ${alpha(theme.palette.warning.main, 0.8)} 0%, 
               ${alpha(theme.palette.common.white, 0.05)} 50%, 
-              ${alpha(theme.palette.primary.main, 0.4)} 100%
+              ${alpha(theme.palette.info.main, 0.4)} 100%
             )`,
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
@@ -194,7 +194,7 @@ function PostItem({ post }: { post: any }) {
             sx={{
               mb: 3,
               typography: 'caption',
-              color: 'primary.main',
+              color: 'info.main',
               fontWeight: 800,
               fontFamily: "'Public Sans', sans-serif",
             }}
@@ -215,7 +215,7 @@ function PostItem({ post }: { post: any }) {
               fontFamily: "'Orbitron', sans-serif",
               textTransform: 'uppercase',
               letterSpacing: '0.02em',
-              textShadow: `0 0 15px ${alpha(theme.palette.primary.main, 0.35)}`,
+              textShadow: `0 0 15px ${alpha(theme.palette.warning.main, 0.35)}`,
               display: '-webkit-box',
               WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
@@ -231,7 +231,7 @@ function PostItem({ post }: { post: any }) {
                 position: 'relative',
                 zIndex: 10,
                 transition: theme.transitions.create(['color']),
-                '&:hover': { color: 'primary.light' },
+                '&:hover': { color: 'warning.main' },
               }}
             >
               {title}
@@ -259,8 +259,8 @@ function PostItem({ post }: { post: any }) {
               src={author?.avatarUrl}
               alt={author?.name}
               sx={{
-                border: `2px solid ${theme.palette.primary.main}`,
-                boxShadow: `0 0 10px ${alpha(theme.palette.primary.main, 0.3)}`,
+                border: `2px solid ${theme.palette.info.main}`,
+                boxShadow: `0 0 10px ${alpha(theme.palette.info.main, 0.3)}`,
               }}
             />
             <Stack spacing={0.5}>
@@ -272,9 +272,9 @@ function PostItem({ post }: { post: any }) {
               </Typography>
               <Typography
                 variant="caption"
-                sx={{ color: 'primary.main', fontWeight: 800, letterSpacing: 1 }}
+                sx={{ color: 'warning.main', fontWeight: 800, letterSpacing: 1 }}
               >
-                EQUIPE EDITORIAL
+                EQUIPE FFC
               </Typography>
             </Stack>
           </Stack>

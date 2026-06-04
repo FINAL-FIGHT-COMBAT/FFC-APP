@@ -27,8 +27,8 @@ type Props = {
  * Banner atualizado para o padrão Deep Space / Crystal 2026.
  */
 export function PostAdvertisement({
-  title = 'Anuncie no Maior Portal Cripto',
-  description = 'Alcance milhares de investidores e entusiastas do ecossistema blockchain todos os dias.',
+  title = 'Anuncie no Final Fight Combat',
+  description = 'Associe sua marca ao esporte que mais cresce no mundo e alcance milhões de fãs.',
   imageUrl = '/assets/illustrations/illustration-crypto-ads.svg',
   ctaText = 'Saiba Mais',
   ctaHref = '#',
@@ -67,16 +67,16 @@ export function PostAdvertisement({
               borderRadius: 'inherit',
               padding: '1px',
               background: `linear-gradient(180deg, 
-                ${alpha(theme.palette.primary.main, 1)} 0%, 
+                ${alpha(theme.palette.warning.main, 1)} 0%, 
                 ${alpha(theme.palette.common.white, 0.05)} 50%, 
-                ${alpha(theme.palette.primary.main, 0.6)} 100%
+                ${alpha(theme.palette.info.main, 0.6)} 100%
               )`,
               WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
               WebkitMaskComposite: 'xor',
               maskComposite: 'exclude',
               zIndex: 2,
             },
-            boxShadow: `0 0 40px ${alpha(theme.palette.primary.main, 0.15)}`,
+            boxShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
           }}
         >
           {/* 🕸️ GRID PATTERN OVERLAY */}
@@ -86,7 +86,7 @@ export function PostAdvertisement({
               inset: 0,
               opacity: 0.1,
               zIndex: 1,
-              backgroundImage: `linear-gradient(${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.primary.main, 0.2)} 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px)`,
               backgroundSize: '30px 30px',
             }}
           />
@@ -109,7 +109,7 @@ export function PostAdvertisement({
                   textTransform: 'uppercase',
                   letterSpacing: '0.02em',
                   fontSize: { xs: '1.75rem', md: '2.5rem' },
-                  textShadow: `0 0 15px ${alpha(theme.palette.primary.main, 0.35)}`,
+                  textShadow: `0 0 15px ${alpha(theme.palette.warning.main, 0.35)}`,
                 }}
               >
                 {title}
@@ -146,7 +146,7 @@ export function PostAdvertisement({
                   borderRadius: 1.5,
                   position: 'relative',
                   // Fundo translúcido para efeito de vidro no botão
-                  bgcolor: alpha(theme.palette.primary.main, 0.1),
+                  bgcolor: alpha(theme.palette.warning.main, 0.1),
                   color: 'common.white',
                   border: 'none',
                   // Borda reativa de 1px interna ao botão
@@ -156,15 +156,15 @@ export function PostAdvertisement({
                     inset: 0,
                     borderRadius: 'inherit',
                     padding: '1px',
-                    background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${alpha(theme.palette.primary.main, 0.2)})`,
+                    background: `linear-gradient(135deg, ${theme.palette.warning.main}, ${alpha(theme.palette.warning.main, 0.2)})`,
                     WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
                     WebkitMaskComposite: 'xor',
                     maskComposite: 'exclude',
                   },
                   transition: theme.transitions.create(['all']),
                   '&:hover': {
-                    bgcolor: alpha(theme.palette.primary.main, 0.2),
-                    boxShadow: `0 0 25px ${alpha(theme.palette.primary.main, 0.5)}`,
+                    bgcolor: alpha(theme.palette.warning.main, 0.2),
+                    boxShadow: `0 0 25px ${alpha(theme.palette.warning.main, 0.5)}`,
                     transform: 'translateY(-2px)',
                   },
                 }}
@@ -182,7 +182,7 @@ export function PostAdvertisement({
               mt: { xs: 5, md: 0 },
               width: { xs: 240, md: 320 },
               zIndex: 9,
-              filter: `drop-shadow(0 0 25px ${alpha(theme.palette.primary.main, 0.3)})`,
+              filter: `drop-shadow(0 0 25px ${alpha(theme.palette.warning.main, 0.3)})`,
             }}
           >
             <Image alt="Publicidade" src={imageUrl} />
@@ -198,7 +198,7 @@ export function PostAdvertisement({
               opacity: 0.2,
               borderRadius: '50%',
               position: 'absolute',
-              bgcolor: 'primary.main',
+              bgcolor: 'warning.main',
               filter: 'blur(100px)',
               zIndex: 0,
             }}
