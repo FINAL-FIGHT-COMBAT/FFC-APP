@@ -27,6 +27,7 @@ import { useTranslate } from 'src/locales';
 import { CONFIG } from 'src/global-config';
 
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -179,27 +180,9 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
           width: { xs: 200, md: 300 },
           aspectRatio: '1/1',
           position: 'relative',
-          filter: `drop-shadow(0 0 48px ${alpha(theme.palette.warning.main, 0.5)})`,
         }}
       />
     </m.div>
-  );
-
-  const renderBlur = () => (
-    <Box
-      component="span"
-      sx={{
-        top: 0,
-        right: 0,
-        zIndex: 7,
-        width: 1,
-        opacity: 0.3,
-        maxWidth: 420,
-        aspectRatio: '1/1',
-        position: 'absolute',
-        backgroundImage: `radial-gradient(farthest-side at top right, ${theme.palette.info.main} 0%, ${alpha(theme.palette.info.main, 0.08)} 75%, transparent 90%)`,
-      }}
-    />
   );
 
   return (
@@ -218,7 +201,7 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 9 }}>
-          <Box
+          <CyberCard
             sx={{
               ...theme.mixins.bgGradient({
                 images: [
@@ -230,42 +213,24 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
               }),
               py: { xs: 6, md: 10 },
               px: { xs: 3, md: 10 },
-              borderRadius: 3,
-              display: 'flex',
-              overflow: 'hidden',
-              bgcolor: alpha('#020817', 0.8), // Fundo Navy Profundo Padronizado
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              position: 'relative',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              textAlign: { xs: 'center', md: 'left' },
-              flexDirection: { xs: 'column', md: 'row-reverse' },
-              border: 'none',
-
-              // BORDA REATIVA DO BANNER (CIANO -> ÂMBAR)
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                inset: 0,
-                borderRadius: 'inherit',
-                padding: '1px',
-                background: `linear-gradient(180deg, 
-                  ${alpha(theme.palette.info.main, 0.9)} 0%, 
-                  ${alpha(theme.palette.common.white, 0.05)} 50%, 
-                  ${alpha(theme.palette.warning.main, 0.9)} 100%
-                )`,
-                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                WebkitMaskComposite: 'xor',
-                maskComposite: 'exclude',
-                zIndex: 2,
-              },
             }}
           >
-            {renderImage()}
-            {renderDescription()}
-            {renderBlur()}
-          </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                textAlign: { xs: 'center', md: 'left' },
+                flexDirection: { xs: 'column', md: 'row-reverse' },
+                gap: 4,
+                position: 'relative',
+                zIndex: 9,
+              }}
+            >
+              {renderImage()}
+              {renderDescription()}
+            </Box>
+          </CyberCard>
         </Container>
       </MotionViewport>
     </Box>

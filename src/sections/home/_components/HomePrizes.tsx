@@ -38,7 +38,7 @@ const PRIZES = [
     accentColor: '#EAB308', // Dourado
     icon: 'solar:cup-star-bold',
     isMain: true,
-    prizeMoney: 'R$ 10.000',
+    prizeMoney: 'R$ 100.000',
     items: [
       { text: 'Cinturão de Campeão GP FFC', icon: 'solar:shield-check-bold' },
       { text: 'Premiação em Dinheiro (Pix na hora)', icon: 'solar:wad-of-money-bold' },
@@ -94,20 +94,17 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
             {PRIZES.map((prize, index) => (
               <Grid key={prize.title} size={{ xs: 12, md: 6 }}>
                 <m.div variants={varFade('inUp', { distance: 40 })} style={{ height: '100%' }}>
-                  <CyberCard
-                    sx={{
+                  <Box 
+                    sx={{ 
+                      position: 'relative', 
                       height: '100%',
-                      p: { xs: 3, md: 5 },
-                      display: 'flex',
-                      flexDirection: 'column',
-                      transition: theme.transitions.create(['transform', 'box-shadow']),
+                      transition: theme.transitions.create(['transform']),
                       '&:hover': {
                         transform: 'translateY(-8px)',
-                        boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
                       }
                     }}
                   >
-                    {/* Badge "Main Event" para o GP */}
+                    {/* Badge "Main Event" para o GP movido para fora do CyberCard para evitar o overflow: hidden */}
                     {prize.isMain && (
                       <Box
                         sx={{
@@ -115,6 +112,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                           top: 0,
                           left: '50%',
                           transform: 'translate(-50%, -50%)',
+                          zIndex: 20,
                           bgcolor: prize.accentColor,
                           px: 2,
                           py: 0.5,
@@ -131,6 +129,19 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                         MAIN EVENT
                       </Box>
                     )}
+
+                    <CyberCard
+                      sx={{
+                        height: '100%',
+                        p: { xs: 3, md: 5 },
+                        display: 'flex',
+                        flexDirection: 'column',
+                        transition: theme.transitions.create(['box-shadow']),
+                        '&:hover': {
+                          boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
+                        }
+                      }}
+                    >
 
                     {/* Icon Header */}
                     <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 3 }}>
@@ -209,6 +220,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                     </Stack>
 
                   </CyberCard>
+                  </Box>
                 </m.div>
               </Grid>
             ))}

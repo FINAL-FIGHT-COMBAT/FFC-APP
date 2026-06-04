@@ -65,7 +65,17 @@ export function CyberCard({ sx, children, ...other }: CyberCardProps) {
     >
 
       {/* CONTEÚDO DO CARD */}
-      <Box sx={{ position: 'relative', zIndex: 9, width: 1, height: 1 }}>
+      <Box sx={{ 
+        position: 'relative', 
+        zIndex: 9, 
+        width: 1, 
+        height: 1,
+        display: 'inherit',
+        flexDirection: 'inherit',
+        alignItems: 'inherit',
+        justifyContent: 'inherit',
+        gap: 'inherit'
+      }}>
         {children}
       </Box>
     </Box>
