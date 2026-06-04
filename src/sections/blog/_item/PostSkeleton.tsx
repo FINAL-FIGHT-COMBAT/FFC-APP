@@ -19,18 +19,19 @@ export function PostSkeleton({
   variant = 'vertical',
   ...other
 }: PostItemSkeletonProps) {
-  // Estilo Glassmorphism comum para os skeletons
+  // Estilo CyberCard para os skeletons de carregamento
   const glassStyle = (theme: any) => ({
     display: 'flex',
     borderRadius: 2,
-    bgcolor: alpha(theme.palette.grey[900], 0.2), // Transparência estratégica
-    backdropFilter: 'blur(10px)',
-    border: `solid 1px ${alpha(theme.palette.primary.main, 0.08)}`,
-    // Ajuste da cor da animação do pulso para combinar com o tema Space
+    bgcolor: alpha('#020817', 0.6),
+    backdropFilter: 'blur(20px)',
+    border: `solid 1px ${alpha(theme.palette.warning.main, 0.15)}`,
+    boxShadow: `0 8px 16px 0 ${alpha(theme.palette.warning.main, 0.05)}`,
+    // Ajuste da cor da animação do pulso para o CyberTheme
     '& .MuiSkeleton-root': {
-      bgcolor: alpha(theme.palette.common.white, 0.05),
+      bgcolor: alpha(theme.palette.warning.main, 0.08),
       '&::after': {
-        background: `linear-gradient(90deg, transparent, ${alpha(theme.palette.primary.main, 0.05)}, transparent)`,
+        background: `linear-gradient(90deg, transparent, ${alpha(theme.palette.warning.main, 0.15)}, transparent)`,
       },
     },
   });
@@ -130,7 +131,10 @@ export function PostDetailsSkeleton({ sx, ...other }: BoxProps) {
         {
           bgcolor: 'transparent',
           '& .MuiSkeleton-root': {
-            bgcolor: (theme) => alpha(theme.palette.common.white, 0.05),
+            bgcolor: (theme) => alpha(theme.palette.warning.main, 0.08),
+            '&::after': {
+              background: (theme) => `linear-gradient(90deg, transparent, ${alpha(theme.palette.warning.main, 0.15)}, transparent)`,
+            },
           },
         },
         ...(Array.isArray(sx) ? sx : [sx]),

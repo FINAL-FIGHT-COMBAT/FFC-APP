@@ -34,44 +34,44 @@ interface Tier {
 
 const SEED_TIERS: Tier[] = [
   {
-    id: 'semente',
-    label: 'SEMENTE',
-    price: '100',
-    color: '#91E391',
-    benefits: 'Reserva de @arroba comum',
-    limit: 5000,
+    id: 'arquibancada',
+    label: 'ARQUIBANCADA',
+    price: '90',
+    color: '#00B8D9', // info.main aprox
+    benefits: 'Visão panorâmica do evento',
+    limit: 2500,
   },
   {
-    id: 'bronze',
-    label: 'BRONZE',
-    price: '1.000',
-    color: '#CD7F32',
-    benefits: 'Reserva @arroba + Ganhos 2x',
-    limit: 100,
+    id: 'premium',
+    label: 'CADEIRA PREMIUM',
+    price: '150',
+    color: '#36B37E', // success
+    benefits: 'Assento marcado + Bares exclusivos',
+    limit: 800,
   },
   {
-    id: 'prata',
-    label: 'PRATA',
+    id: 'vip',
+    label: 'ÁREA VIP',
+    price: '350',
+    color: '#FFAB00', // warning.main
+    benefits: 'Open bar + Pôster autografado',
+    limit: 300,
+  },
+  {
+    id: 'octagon',
+    label: 'OCTAGON SIDE',
+    price: '800',
+    color: '#FF5630', // error.main
+    benefits: 'Visão colada na grade + Meet & Greet',
+    limit: 50,
+  },
+  {
+    id: 'camarote',
+    label: 'CAMAROTE (10X)',
     price: '5.000',
-    color: '#C0C0C0',
-    benefits: 'Prioridade Alpha + Ganhos 3x',
-    limit: 100,
-  },
-  {
-    id: 'ouro',
-    label: 'OURO',
-    price: '10.000',
-    color: '#FFD700',
-    benefits: 'Acesso Antecipado + Ganhos 5x',
-    limit: 100,
-  },
-  {
-    id: 'diamante',
-    label: 'DIAMANTE',
-    price: '50.000',
-    color: '#B9F2FF',
-    benefits: 'Participação Direta nos Lucros',
-    limit: 20,
+    color: '#B9F2FF', // diamond/ice
+    benefits: 'Espaço privativo + Open Food Premium',
+    limit: 10,
   },
 ];
 
@@ -226,10 +226,24 @@ export default function HomeCountdownDialog({
           height: 640,
           maxWidth: 'calc(100% - 32px)',
           overflow: 'hidden',
-          borderRadius: 3,
-          bgcolor: '#0B0F13',
-          backgroundImage: `radial-gradient(circle at top right, ${alpha('#00A76F', 0.15)}, transparent)`,
-          border: `1px solid ${alpha(theme.palette.common.white, 0.08)}`,
+          // Padrão Global CyberCard
+          bgcolor: alpha('#020817', 0.6),
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: 'none',
+          boxShadow: `0 30px 60px -15px ${alpha('#000', 0.8)}, 0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 'inherit',
+            padding: '2px', // Borda
+            background: `linear-gradient(135deg, ${alpha(theme.palette.warning.main, 0.8)}, transparent 50%, ${alpha(theme.palette.info.main, 0.6)})`,
+            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            WebkitMaskComposite: 'xor',
+            maskComposite: 'exclude',
+            zIndex: 0,
+          },
           color: 'common.white',
           position: 'relative',
           zIndex: (muiTheme) => muiTheme.zIndex.modal + 1,
@@ -297,8 +311,8 @@ export default function HomeCountdownDialog({
                         width: 6,
                         height: 6,
                         borderRadius: '50%',
-                        bgcolor: '#00E599',
-                        filter: 'drop-shadow(0 0 5px #00E599)',
+                        bgcolor: theme.palette.warning.main,
+                        filter: `drop-shadow(0 0 5px ${theme.palette.warning.main})`,
                         animation: `${pulseAnimation} 2s infinite`,
                       }}
                     />
@@ -310,9 +324,9 @@ export default function HomeCountdownDialog({
                         letterSpacing: 0.5,
                       }}
                     >
-                      Digital WORLD:{' '}
+                      FFC GP:{' '}
                       <Box component="span" sx={{ color: 'common.white' }}>
-                        $0.0423
+                        R$ 100K
                       </Box>
                     </Typography>
                   </Stack>
@@ -321,19 +335,19 @@ export default function HomeCountdownDialog({
                       py: 0.3,
                       px: 0.8,
                       borderRadius: 0.5,
-                      bgcolor: alpha('#00E599', 0.1),
+                      bgcolor: alpha(theme.palette.warning.main, 0.1),
                       display: 'flex',
                       alignItems: 'center',
                       gap: 0.5,
                     }}
                   >
                     <Iconify
-                      icon="solar:double-alt-arrow-up-bold-duotone"
+                      icon={"solar:cup-star-bold-duotone" as any}
                       width={12}
-                      sx={{ color: '#00E599' }}
+                      sx={{ color: theme.palette.warning.main }}
                     />
-                    <Typography sx={{ fontSize: '0.7rem', fontWeight: 800, color: '#00E599' }}>
-                      +12.5%
+                    <Typography sx={{ fontSize: '0.7rem', fontWeight: 800, color: theme.palette.warning.main }}>
+                      PREMIAÇÃO
                     </Typography>
                   </Box>
                 </Stack>
@@ -343,12 +357,12 @@ export default function HomeCountdownDialog({
                   variant="h3"
                   sx={{ mb: 2, fontWeight: 900, letterSpacing: -1 }}
                 >
-                  RESERVE SEU{' '}
+                  GARANTA SEU{' '}
                   <Box
                     component="span"
-                    sx={{ color: '#00E599', textShadow: '0 0 20px rgba(0, 229, 153, 0.3)' }}
+                    sx={{ color: theme.palette.warning.main, textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.5)}` }}
                   >
-                    @ARROBA
+                    LUGAR
                   </Box>
                 </Typography>
 
@@ -363,9 +377,7 @@ export default function HomeCountdownDialog({
                     px: 1,
                   }}
                 >
-                  Membros da DAO serão os primeiros beneficiados no sistema de remuneração. Garanta
-                  seu <strong>@arroba exclusivo</strong> na gênese da <strong>Digital World</strong>{' '}
-                  e posicione-se agora.
+                  Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando rapidamente. Garanta seu <strong>assento no evento principal</strong> da <strong>FFC 10</strong> e prepare-se para a guerra.
                 </Typography>
 
                 <Stack direction="row" justifyContent="center" spacing={1.5} sx={{ mb: 4 }}>
@@ -380,9 +392,9 @@ export default function HomeCountdownDialog({
                 <Button
                   fullWidth
                   onClick={() => setViewMode('TIERS')}
-                  sx={getCrystalButtonStyle('#00E599')}
+                  sx={getCrystalButtonStyle(theme.palette.warning.main)}
                 >
-                  RESERVAR MEU PERFIL
+                  COMPRAR INGRESSO
                 </Button>
                 <Box
                   sx={{
@@ -396,7 +408,7 @@ export default function HomeCountdownDialog({
                     variant="caption"
                     sx={{ color: alpha('#FFAB00', 0.8), fontWeight: 700 }}
                   >
-                    ⚠️ Nomes de usuário curtos estão esgotando
+                    ⚠️ Lotes virando em breve!
                   </Typography>
                 </Box>
               </Stack>
@@ -422,10 +434,10 @@ export default function HomeCountdownDialog({
                 }}
               >
                 <Typography variant="h4" sx={{ mb: 1, fontWeight: 900 }}>
-                  PLANOS SEED
+                  SETORES DO EVENTO
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'grey.500', mb: 4 }}>
-                  Arraste para escolher seu nível
+                  Arraste para escolher seu assento
                 </Typography>
 
                 <Stack
@@ -582,10 +594,10 @@ export default function HomeCountdownDialog({
                 }}
               >
                 <Typography variant="h4" sx={{ mb: 1, fontWeight: 900 }}>
-                  CHECKOUT SEED
+                  CHECKOUT
                 </Typography>
                 <Typography variant="subtitle2" sx={{ color: selectedTier.color, mb: 3 }}>
-                  Plano {selectedTier.label}
+                  Setor: {selectedTier.label}
                 </Typography>
 
                 <Tabs
@@ -594,11 +606,11 @@ export default function HomeCountdownDialog({
                   variant="fullWidth"
                   sx={{
                     mb: 3,
-                    '& .MuiTabs-indicator': { bgcolor: '#00E599' },
+                    '& .MuiTabs-indicator': { bgcolor: theme.palette.warning.main },
                     '& .MuiTab-root': {
                       color: 'grey.600',
                       fontWeight: 700,
-                      '&.Mui-selected': { color: '#00E599' },
+                      '&.Mui-selected': { color: theme.palette.warning.main },
                     },
                   }}
                 >
@@ -639,7 +651,7 @@ export default function HomeCountdownDialog({
                     startIcon={
                       <Iconify icon={copied ? 'solar:check-circle-bold' : 'solar:copy-bold'} />
                     }
-                    sx={getCrystalButtonStyle('#00E599')}
+                    sx={getCrystalButtonStyle(theme.palette.warning.main)}
                   >
                     {paymentTab === 0 ? 'PIX COPIA E COLA' : 'COPIAR ENDEREÇO'}
                   </Button>
@@ -655,7 +667,7 @@ export default function HomeCountdownDialog({
                     '&:hover': { color: 'common.white', bgcolor: 'transparent' },
                   }}
                 >
-                  Alterar Plano
+                  Alterar Setor
                 </Button>
               </Stack>
             </m.div>
