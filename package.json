@@ -1,8 +1,8 @@
 {
-  "name": "@dao/frontend",
-  "author": "Minimals",
-  "version": "7.5.0",
-  "description": "Next & TypeScript",
+  "name": "@ffc/frontend",
+  "author": "Final Fight Combat",
+  "version": "2.0.0",
+  "description": "FFC Official App",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8082 --turbopack",

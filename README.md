@@ -1,7 +1,7 @@
-# 🌐 Mundo Digital: ASPPIBRA DAO Ecosystem
-## 🏛️ A Ponte Definitiva entre Ativos Reais e Governança Descentralizada
+# 🥊 Final Fight Combat (FFC) Ecosystem
+## 🏟️ A Plataforma Definitiva de Esportes de Combate e Artes Marciais
 
-> **Infraestrutura de Elite focada em SEO e Experiência do Usuário, conectando o público ao ecossistema ASPPIBRA DAO com máxima performance e autoridade digital.**
+> **Infraestrutura de Elite focada em SEO e Experiência do Usuário, conectando fãs, atletas e patrocinadores ao ecossistema do Final Fight Combat com máxima performance e autoridade digital.**
 
 ---
 
@@ -17,28 +17,28 @@
 
 ---
 
-## 🏛️ Arquitetura de Consumo (Public Frontend)
+## 🏟️ Arquitetura de Consumo (Public Frontend)
 
-> **Este repositório foi otimizado para atuar como o portal público da ASPPIBRA DAO. Toda a complexidade administrativa, gestão de Smart Contracts e Governança foi delegada ao [App Dashboard](https://app.asppibra.com).**
+> **Este repositório foi otimizado para atuar como o portal principal do Final Fight Combat (FFC). Toda a complexidade administrativa de gerenciamento de chaves, atletas e ingressos foi delegada ao [App Dashboard](https://app.finalfightcombat.com).**
 
 ### 1. 📰 Portal de Notícias (Blog Engine)
-Sistema de alto desempenho para entrega de conteúdo editorial:
+Sistema de alto desempenho para entrega de conteúdo editorial sobre lutas, bastidores e cobertura ao vivo:
 *   **Arquitetura Diamante:** Estrutura modular escalável com separação estrita de camadas.
 *   **Rotas Dinâmicas:** `/news`, `/news/[slug]`, `/news/category/[slug]`.
 *   **SEO Dinâmico:** Geração automática de Metadados, RSS Feed, Sitemap e OG Images.
 *   **Performance:** Renderização Híbrida (SSR/ISR) com suporte a Turbopack.
 
 ### 2. 🌍 Ecossistema de Internacionalização (i18n)
-Pronto para a expansão global da DAO:
+Pronto para a expansão global de transmissões (Pay-Per-View):
 *   **Engine:** `i18next` com detecção automática de região.
-*   **Estrutura:** Dicionários JSON organizados por módulos para suporte Multi-idioma.
+*   **Estrutura:** Dicionários JSON organizados por módulos para suporte Multi-idioma (Português, Inglês, Espanhol).
 
 ## 🧠 Ecossistema de SEO & AI (Sinais de Autoridade)
 
-Este projeto foi projetado com uma arquitetura **AI-First**, garantindo que o conteúdo seja facilmente consumível por buscadores tradicionais (Google) e modelos de linguagem modernos (GPT, Claude, Perplexity).
+Este projeto foi projetado com uma arquitetura **AI-First**, garantindo que o conteúdo seja facilmente consumível por buscadores tradicionais (Google) e modelos de linguagem modernos (GPT, Claude, Perplexity), consolidando o FFC como o principal hub de artes marciais.
 
 ### 📂 Mapa Técnico de SEO
-Abaixo estão os arquivos e diretórios que compõem o motor de autoridade digital (E-E-A-T) da ASPPIBRA DAO:
+Abaixo estão os arquivos e diretórios que compõem o motor de autoridade digital (E-E-A-T) do FFC:
 
 ```text
 frontend/
@@ -49,34 +49,33 @@ frontend/
 │   │   ├── breadcrumb.json
 │   │   ├── organization.json
 │   │   └── website.json
-│   ├── ads.txt                      # Verificação para crawlers de anúncios
+│   ├── ads.txt                      # Verificação para crawlers de anunciantes e patrocinadores
 │   ├── favicon.ico                  # Identidade visual nos resultados de busca
 │   └── humans.txt                   # Transparência e autoria (SEO indireto)
 ├── src/
 │   ├── app/
 │   │   ├── (main)/
-│   │   │   ├── authors/             # Páginas de autor (Sinal de E-E-A-T)
-│   │   │   ├── editorial-policy/    # Políticas editoriais (Sinal de confiança)
-│   │   │   ├── fact-checking/       # Verificação de fatos (Sinal de autoridade)
-│   │   │   └── methodology/         # Transparência metodológica (E-E-A-T)
+│   │   │   ├── authors/             # Páginas dos redatores/jornalistas (Sinal de E-E-A-T)
+│   │   │   ├── editorial-policy/    # Políticas editoriais do portal FFC
+│   │   │   ├── fact-checking/       # Verificação de fatos e resultados de lutas
+│   │   │   └── methodology/         # Metodologia de rankeamento e regras (E-E-A-T)
 │   │   ├── news/
 │   │   │   └── [slug]/
 │   │   │       ├── opengraph-image.tsx # OG Image dinâmica para notícias
 │   │   │       └── twitter-image.tsx   # Twitter Card dinâmico para notícias
 │   │   ├── rss/
-│   │   │   └── route.ts             # Feed para indexação rápida em agregadores
+│   │   │   └── route.ts             # Feed para indexação rápida em agregadores de esportes
 │   │   ├── apple-icon.tsx           # SEO Mobile / Favicons
-│   │   ├── manifest.ts              # Web App Manifest (SEO Mobile/PWA)
-│   │   ├── opengraph-image.tsx      # Imagem de compartilhamento global
+│   │   ├── manifest.ts              # Web App Manifest (Instalação PWA para fãs)
+│   │   ├── opengraph-image.tsx      # Imagem estática de compartilhamento global (Fallback)
 │   │   ├── robots.ts                # Geração dinâmica do robots.txt (AI Optimized)
-│   │   ├── sitemap.ts               # Geração dinâmica do sitemap.xml
-│   │   └── twitter-image.tsx        # Imagem do Twitter Card global
+│   │   └── sitemap.ts               # Geração dinâmica do sitemap.xml
 │   ├── components/
 │   │   └── seo/                     # Componentes reutilizáveis de SEO
-│   │       ├── analytics.tsx        # Rastreamento de performance
+│   │       ├── analytics.tsx        # Rastreamento de performance e métricas
 │   │       ├── breadcrumb.tsx       # Navegação estruturada para o Google
-│   │       ├── canonical.tsx        # Tags para evitar conteúdo duplicado
-│   │       └── json-ld.tsx          # Injeção de dados estruturados (Schema.org)
+│   │       ├── canonical.tsx        # Tags para evitar conteúdo duplicado nas lutas
+│   │       └── json-ld.tsx          # Injeção de dados estruturados (Schema SportsOrganization)
 │   ├── lib/
 │   │   └── seo/                     # Lógica e utilitários de SEO
 │   │       ├── metadata.ts          # Gerador central de meta tags (AI Snippets)
@@ -84,12 +83,12 @@ frontend/
 │   │       ├── robots.ts            # Lógica de permissões de crawlers
 │   │       └── schema.ts            # Builders de JSON-LD
 │   ├── next.config.ts               # Headers de Segurança (HSTS/XSS)
-│   └── .lighthouserc.js             # Automação de auditoria de Performance
+│   └── .lighthouserc.js             # Automação de auditoria de Performance (Fãs Mobile)
 ```
 
 ### 🎨 Ecossistema Tecnológico do Blog (Padrão Diamante)
 
-Este projeto utiliza o **Padrão Diamante de Organização Modular (Elite 2026)**, garantindo que o motor de notícias seja isolado, performático e fácil de manter.
+Este projeto utiliza o **Padrão Diamante de Organização Modular (Elite 2026)**, garantindo que o motor de notícias (cobertura do evento) seja isolado, performático e fácil de manter.
 
 ```text
 frontend/
@@ -100,137 +99,139 @@ frontend/
 │               └── ic-blog.svg             # Ícone visual do menu de navegação
 ├── src/
 │   ├── _mock/
-│   │   └── blog.mock.ts                    # Dados fakes isolados (Padrão .mock.ts)
+│   │   └── blog.mock.ts                    # Dados fakes de notícias (Padrão .mock.ts)
 │   ├── actions/
 │   │   ├── mappers/
-│   │   │   └── blog-mapper.ts              # Transformação de dados brutos da API
+│   │   │   └── blog-mapper.ts              # Transformação de dados de API (Matérias)
 │   │   ├── blog-queries.ts                 # Leitura Server-Side (Queries/SEO)
-│   │   └── blog-actions.ts                 # Escrita/Interações (Mutations/Forms)
+│   │   └── blog-actions.ts                 # Escrita/Interações
 │   ├── app/
 │   │   ├── (main)/
-│   │   │   ├── authors/                    # Páginas de E-E-A-T (Autores)
+│   │   │   ├── authors/                    # Páginas de E-E-A-T (Colunistas do FFC)
 │   │   │   │   ├── [slug]/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── page.tsx
-│   │   │   └── tag/                        # Taxonomias dinâmicas
+│   │   │   └── tag/                        # Taxonomias dinâmicas (ex: /tag/jiu-jitsu)
 │   │   │       └── [slug]/
 │   │   │           └── page.tsx
-│   │   ├── news/                           # CORE do Blog (App Router)
-│   │   │   ├── [slug]/                     # Página Interna do Artigo
+│   │   ├── news/                           # CORE do Portal (App Router)
+│   │   │   ├── [slug]/                     # Página Interna da Notícia
 │   │   │   │   ├── error.tsx
 │   │   │   │   ├── loading.tsx
-│   │   │   │   ├── opengraph-image.tsx     # OG Image Dinâmica
+│   │   │   │   ├── opengraph-image.tsx     
 │   │   │   │   ├── page.tsx
-│   │   │   │   └── twitter-image.tsx       # Twitter Card Dinâmico
-│   │   │   ├── category/                   # Verticais de Conteúdo
+│   │   │   │   └── twitter-image.tsx       
+│   │   │   ├── category/                   # Verticais de Conteúdo (MMA, Submission)
 │   │   │   │   └── [slug]/
 │   │   │   │       └── page.tsx
 │   │   │   ├── error.tsx
 │   │   │   ├── layout.tsx
 │   │   │   ├── loading.tsx
-│   │   │   └── page.tsx                    # Orquestrador Home (Usa BlogHomeView)
+│   │   │   └── page.tsx                    # Orquestrador Home de Notícias
 │   │   └── rss/
-│   │       └── route.ts                    # Feed RSS para Indexação IA
+│   │       └── route.ts                    # Feed RSS Esportivo
 │   ├── hooks/
-│   │   └── use-blog.ts                     # Hooks de estado e filtros do blog
+│   │   └── use-blog.ts                     # Hooks de estado e filtros do portal
 │   ├── layouts/
-│   │   ├── blog/                           # Wrappers de Layout
+│   │   ├── blog/                           # Wrappers de Layout do Blog
 │   │   │   ├── index.ts
 │   │   │   └── layout.tsx
-│   │   ├── nav-config-blog.tsx             # Navegação específica
-│   │   └── nav-config-main.tsx             # Registro no Menu Global
+│   │   ├── nav-config-blog.tsx             # Navegação específica das Notícias
+│   │   └── nav-config-main.tsx             # Registro no Menu Global FFC
 │   ├── schemas/
-│   │   └── blog-zod.ts                     # Validação Zod (Comentários/News)
+│   │   └── blog-zod.ts                     # Validação Zod
 │   ├── sections/
 │   │   └── blog/                           # MOTOR VISUAL (Private Modular)
 │   │       ├── _components/                # Sub-componentes (Privados)
-│   │       │   ├── PostAdvertisement.tsx
+│   │       │   ├── PostAdvertisement.tsx   # Espaços de Patrocinadores
 │   │       │   ├── PostAuthors.tsx
 │   │       │   ├── PostCommunity.tsx
 │   │       │   ├── PostFeatured.tsx
 │   │       │   ├── PostSearch.tsx
 │   │       │   ├── PostSort.tsx
-│   │       │   └── PostVideo.tsx
-│   │       ├── _details/                   # Seções Internas do Post
+│   │       │   └── PostVideo.tsx           # Destaques de Luta (VOD)
+│   │       ├── _details/                   # Seções Internas
 │   │       │   ├── PostCommentItem.tsx
 │   │       │   ├── PostCommentList.tsx
 │   │       │   └── PostDetailsHero.tsx
-│   │       ├── _forms/                     # Formulários de Conversão
+│   │       ├── _forms/                     # Formulários
 │   │       │   ├── PostNewsletter.tsx
 │   │       │   └── PostCommentForm.tsx
-│   │       ├── _item/                      # Cards e Listas Atômicas
-│   │       │   ├── PostCategoryItem.tsx
+│   │       ├── _item/                      # Cards
 │   │       │   ├── PostCardHorizontal.tsx
-│   │       │   ├── PostCard.tsx            # Card principal (antigo item.tsx)
-│   │       │   ├── PostListHorizontal.tsx
-│   │       │   ├── PostList.tsx
-│   │       │   ├── PostRecent.tsx          # Seção cronológica
+│   │       │   ├── PostCard.tsx            
+│   │       │   ├── PostRecent.tsx          
 │   │       │   ├── PostSkeleton.tsx
-│   │       │   └── PostTrending.tsx        # Seção de tendências
+│   │       │   └── PostTrending.tsx        # Mais Lidas
 │   │       ├── _view/                      # Orquestradores de Página
 │   │       │   ├── public/                 
 │   │       │   │   ├── PostDetailsHomeView.tsx
-│   │       │   │   └── BlogHomeView.tsx    # Orquestrador da Home do Blog
+│   │       │   │   └── BlogHomeView.tsx    
 │   │       │   └── index.ts
-│   │       ├── ARCHITECTURE.md             # Docs da Infraestrutura
-│   │       └── constants.ts                # Configurações globais do blog
+│   │       ├── ARCHITECTURE.md             
+│   │       └── constants.ts                
 │   └── types/
-│       └── blog.ts                         # Interfaces e Contratos TS
+│       └── blog.ts                         # Interfaces TS
 ```
 
-### 🏛️ Ecossistema Institucional & Landing Page (Padrão Diamante)
+### 🏆 Ecossistema Institucional & Landing Page (Padrão Diamante)
 
-A estrutura institucional foi reconstruída para garantir máxima autoridade de marca e transparência governamental (E-E-A-T).
+A estrutura institucional do FFC foi construída para garantir atração máxima de patrocínios, engajamento de fãs e registro simplificado de atletas.
 
 ```text
 frontend/
 ├── src/
 │   ├── _mock/
-│   │   └── institutional.mock.ts           # Dados dinâmicos (Time, Missão, FAQs)
+│   │   └── institutional.mock.ts           # Dados dinâmicos (Lutadores, Card, Patrocinadores)
 │   ├── app/
 │   │   ├── (home)/
-│   │   │   └── page.tsx                    # HOME: Landing Page (Entry Point)
+│   │   │   └── page.tsx                    # HOME FFC: Landing Page Oficial
 │   │   ├── (main)/
-│   │   │   ├── about/                      # Página Quem Somos (Ativa)
-│   │   │   ├── contact/                    # Página de Atendimento (Ativa)
-│   │   │   ├── ecosystem/                  # Explicação RWA/DAO (Ativa)
-│   │   │   ├── team/                       # Vitrine de Governança (Ativa)
-│   │   │   ├── whitepaper/                 # Tese Técnica (Ativa)
-│   │   │   ├── editorial-policy/           # Sinal E-E-A-T (Ativa)
-│   │   │   ├── fact-checking/              # Sinal E-E-A-T (Ativa)
-│   │   │   ├── methodology/                # Sinal E-E-A-T (Ativa)
-│   │   │   └── (legal)/                    # Compliance Jurídico (Ativa)
+│   │   │   ├── about/                      # Página Sobre o FFC
+│   │   │   ├── contact/                    # Atendimento aos Fãs e Atletas
+│   │   │   ├── chaves/                     # Brackets interativos do Torneio (NOVO)
+│   │   │   ├── ecosystem/                  # Plataforma Tecnológica de Tickets
+│   │   │   ├── team/                       # Equipe de Organização do FFC
+│   │   │   ├── editorial-policy/           # Regras do Portal (E-E-A-T)
+│   │   │   ├── fact-checking/              
+│   │   │   ├── methodology/                
+│   │   │   └── (legal)/                    # Compliance Jurídico e Regras do Evento
 │   ├── sections/
-│   │   ├── home/                           # MÓDULO: LANDING PAGE (DIAMANTE)
-│   │   │   ├── _components/                # Blocos PascalCase & Privados
-│   │   │   │   ├── HomeHero.tsx
-│   │   │   │   ├── HomeCommunity.tsx
-│   │   │   │   ├── HomeEcosystem.tsx
-│   │   │   │   ├── HomeFaqs.tsx
-│   │   │   │   ├── HomeRoadmap.tsx
-│   │   │   │   ├── HomeTeam.tsx
-│   │   │   │   ├── HomeLatestNews.tsx
-│   │   │   │   └── HomeCtaBanner.tsx
+│   │   ├── home/                           # MÓDULO: LANDING PAGE FFC (DIAMANTE)
+│   │   │   ├── _components/                # Blocos de Ação (UI/UX)
+│   │   │   │   ├── HomeHero.tsx            # Chamada Principal do Card
+│   │   │   │   ├── HomeCommunity.tsx       
+│   │   │   │   ├── HomeEcosystem.tsx       
+│   │   │   │   ├── HomeFaqs.tsx            
+│   │   │   │   ├── HomeRoadmap.tsx         # Programação das Lutas
+│   │   │   │   ├── HomeAthletes.tsx        # Carrossel de Atletas em Destaque (NOVO)
+│   │   │   │   ├── HomeSponsors.tsx        # Área Dourada VIP para Patrocinadores (NOVO)
+│   │   │   │   ├── HomeLatestNews.tsx      
+│   │   │   │   └── HomeCtaBanner.tsx       # Botão de Inscrição Magnético
 │   │   │   └── _view/
 │   │   │       └── HomeView.tsx            # Orquestrador da Landing Page
+│   │   ├── chaves/                         # MÓDULO: CHAVES DO CAMPEONATO
+│   │   │   └── _view/
+│   │   │       ├── ChavesView.tsx          # Árvore/Pirâmide do Torneio
+│   │   │       └── BracketMatch.tsx        # Card Responsivo de Lutas
 │   │   ├── about/                          # MÓDULO: SOBRE A INSTITUIÇÃO
 │   │   │   └── _view/AboutView.tsx
 │   │   ├── contact/                        # MÓDULO: ATENDIMENTO
 │   │   │   └── _view/ContactView.tsx
-│   │   ├── team/                           # MÓDULO: GOVERNANÇA & TIME
+│   │   ├── team/                           # MÓDULO: ORGANIZAÇÃO
 │   │   │   └── _view/TeamView.tsx
-│   │   ├── ecosystem/                      # MÓDULO: RWA & DAO
+│   │   ├── ecosystem/                      # MÓDULO: TECNOLOGIA FFC
 │   │   │   └── _view/EcosystemView.tsx
-│   │   └── legal/                          # MÓDULO: COMPLIANCE & POLICIES
+│   │   └── legal/                          # MÓDULO: REGRAS E COMPLIANCE
 │   │       └── _view/
-│   │           ├── LegalView.tsx           # Reutilizável (Termos/Privacidade)
-│   │           └── PolicyView.tsx          # Reutilizável (E-E-A-T)
+│   │           ├── LegalView.tsx           # Regulamentos Gerais
+│   │           └── PolicyView.tsx          
 ```
 
-### 4. 🔐 Ponte de Identidade (Auth Bridge)
-Integração transparente com o ecossistema administrativo:
-*   **Session Sync:** O `AuthProvider` lê o cookie compartilhado (`daoAccessToken`) para reconhecer o cidadão logado.
-*   **Web3 Access:** Suporte a carteiras (Wagmi/Viem) para reconhecimento de permissões on-chain.
+### 4. 🎟️ Ponte de Identidade (Auth Bridge)
+Integração transparente com o ecossistema para fãs e atletas:
+*   **Session Sync:** O `AuthProvider` central reconhece se é um Atleta, Administrador ou Fã através do JWT.
+*   **Acesso VIP (Web3):** Suporte nativo a carteiras (Wagmi/Viem) para verificação on-chain de Colecionáveis FFC e Passes VIP Tokenizados (Integração RWA Herdada).
 
 ---
 
@@ -240,31 +241,32 @@ Integração transparente com o ecossistema administrativo:
 /src/
 ├── app/               # Rotas Públicas, SEO e App Router CORE
 ├── auth/              # Lógica de Reconhecimento de Sessão e JWT Bridge
-├── components/        # UI Kit Global (Animações, Backgrounds, Iconify)
-├── layouts/           # Orquestradores de Frame (Header/Footer/Nav)
+├── components/        # UI Kit Global (Iconify, Lazy Images, Glassmorphism)
+├── layouts/           # Orquestradores de Frame (Header Cyber-Sports/Footer)
 ├── locales/           # Dicionários de Tradução Multi-idioma (i18n)
-├── actions/           # Camada de Dados (Queries e Server Actions)
-└── sections/          # Features Modulares (Padrão Diamante: Blog, Home, Institucional)
+├── actions/           # Camada de Dados (Integração com API de Lutas e Inscrições)
+└── sections/          # Features Modulares (Blog, Chaves de Luta, Home, Institucional)
 ```
 
 ---
 
 ## 🛠️ Guia de Manutenção Técnica
 
-1.  **Build & Performance**: Utilize sempre `pnpm build` para validar a árvore de dependências. O projeto está limpo de "peso morto" (charts, editors, etc).
-2.  **Sincronização de Cookies**: A sessão depende do cookie `daoAccessToken` no domínio `.asppibra.com`.
-3.  **Ambiente de Dev**: `pnpm dev` roda na porta 8082 com suporte a Turbopack.
+1.  **Build & Performance**: Utilize sempre `pnpm build` para validar a árvore de dependências. O projeto está extremamente leve após a exclusão de bibliotecas mortas (ThreeGlobe, TipTap, ApexCharts).
+2.  **Sincronização**: O frontend consome os dados centralizados em `src/global-config.ts` (variáveis `serverUrl` e `siteUrl`).
+3.  **Ambiente de Dev**: O comando `pnpm dev` roda o servidor Turbopack ultra-rápido na porta `8082`.
 
 ---
 
-## 🏁 Roadmap de Evolução (Frontend)
+## 🏁 Roadmap de Evolução (Frontend FFC)
 
-- [x] **Migração de Responsabilidade**: Administração movida para o App Dashboard.
-- [x] **Limpeza Profunda**: Remoção de componentes de UI e pacotes não utilizados.
-- [x] **SEO Enterprise**: Automação total de Sitemaps e Meta Tags.
-- [ ] **Fase 4 - Comentários**: Sistema de interação social para cidadãos logados.
-- [ ] **Fase 5 - Newsletter**: Conexão do formulário com o Backend Cloudflare.
-- [ ] **Fase 6 - Analytics**: Tracking detalhado de comportamento do usuário.
+- [x] **Construção do Bracket**: Nova UI do Torneio em formato piramidal com responsividade avançada.
+- [x] **Identidade Visual Cyber-Sports**: Aplicação de Glassmorphism, Fontes Orbitron e cores de aviso (Amber/Gold) na Home e Patrocinadores.
+- [x] **Limpeza Profunda**: Auditoria de `depcheck` com remoção de mais de 30 pacotes Zumbis e redução drástica do bundle (Junho 2026).
+- [x] **Migração de SEO para FFC**: Reestruturação do App Router Metadata, OpenGraph e `robots.txt` para engajamento de artes marciais.
+- [ ] **Otimização de Ícones**: Migrar pacotes `@iconify` de carregamento online (CDN) para leitura offline (Evitar flickering).
+- [ ] **Integração de API Dinâmica**: Substituir mockups de atletas (`ATHLETES`) e cardápio de lutas pelos dados reais vindos do Backend.
+- [ ] **Sistema de Inscrições**: Fluxo completo de formulário Hook-Form para cadastramento seguro dos lutadores.
 
 ---
-> **ASPPIBRA DAO: A Revolução da Posse e Governança.** 🚀🛡️💎
+> **Final Fight Combat (FFC) - O palco onde a tecnologia encontra a tradição das artes marciais.** 🥋⚔️🏆

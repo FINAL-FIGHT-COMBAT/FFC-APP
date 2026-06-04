@@ -7,8 +7,8 @@ import packageJson from '../package.json';
 export type ConfigValue = {
   appName: string;
   appVersion: string;
-  serverUrl: string; // Backend API (Dados RWA e Governança)
-  siteUrl: string; // Frontend (Base para SEO 2026)
+  serverUrl: string; // Backend API (Dados de Lutas e Ingressos)
+  siteUrl: string; // Frontend (Base para SEO)
   assetsDir: string;
   r2PublicUrl: string;
   isStaticExport: boolean;
@@ -61,7 +61,7 @@ export const CONFIG: ConfigValue = {
 
   /**
    * CLOUDFLARE R2 PUBLIC URL
-   * Esta é a URL do seu bucket 'governance-system-assets'.
+   * Esta é a URL do seu bucket 'ffc-assets'.
    * Se você configurou um subdomínio no Cloudflare, use ele aqui.
    */
   r2PublicUrl: (process.env.NEXT_PUBLIC_R2_URL ?? '').replace(/\/$/, ''),
