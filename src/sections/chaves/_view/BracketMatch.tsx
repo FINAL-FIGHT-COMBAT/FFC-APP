@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 
 type PlayerProps = {
   name: string;
@@ -19,11 +20,11 @@ type BracketMatchProps = {
   isSmall?: boolean;
 };
 
-export function BracketMatch({ 
-  player1, 
-  player2, 
-  matchTitle, 
-  subtitle = 'GRAND PRIX ABSOLUTO', 
+export function BracketMatch({
+  player1,
+  player2,
+  matchTitle,
+  subtitle = 'GRAND PRIX ABSOLUTO',
   isFinal = false,
   isSmall = false
 }: BracketMatchProps) {
@@ -43,32 +44,36 @@ export function BracketMatch({
     const isWinner = player.isWinner;
 
     return (
-      <Box
+      <CyberCard
         sx={{
           width: cardWidth,
           height: cardHeight,
-          bgcolor: 'rgba(255,255,255,0.05)',
-          border: `2px solid ${isWinner ? theme.palette.warning.main : alpha('#fff', 0.1)}`,
-          borderRadius: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          position: 'relative',
           transition: 'all 0.3s ease',
-          boxShadow: isWinner ? `0 0 20px ${alpha(theme.palette.warning.main, 0.4)}` : 'none',
+          // O CyberCard já possui o fundo dark blur, border mask e gloss overlay globais.
+          // Aqui aplicamos apenas os overrides para o estado de Vencedor e Hover
+          ...(isWinner && {
+            boxShadow: `0 0 30px ${alpha(theme.palette.warning.main, 0.4)}`,
+            '&::before': {
+              padding: '3px !important',
+              background: `${theme.palette.warning.main} !important`,
+            },
+          }),
           '&:hover': {
-            borderColor: alpha(theme.palette.success.main, 0.5),
             transform: 'translateY(-4px)',
+            boxShadow: `0 0 30px ${alpha(theme.palette.warning.main, 0.2)}`,
+            '&::before': {
+              background: `linear-gradient(135deg, ${alpha(theme.palette.warning.main, 0.8)}, transparent 50%, ${alpha(theme.palette.info.main, 0.6)}) !important`,
+              padding: '2px !important',
+            }
           },
         }}
       >
-        <Box 
-          component="img" 
-          src={player.photo || '/assets/images/convidados/Fallback%20atleta.png'} 
-          sx={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+        <Box
+          component="img"
+          src={player.photo || '/assets/images/convidados/Fallback%20atleta.png'}
+          sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
-        
+
         {/* Placeholder flag corner (like the reference image) */}
         <Box
           sx={{
@@ -81,7 +86,7 @@ export function BracketMatch({
             borderRadius: 0.5,
           }}
         />
-      </Box>
+      </CyberCard>
     );
   };
 
@@ -91,7 +96,8 @@ export function BracketMatch({
         {renderPhoto(player1)}
         {renderPhoto(p2)}
       </Stack>
-      
+
+      {/* TEXTO OCULTADO PARA ABRIR ESPAÇO PARA AS LINHAS CONECTORAS DA ÁRVORE
       <Stack spacing={0.5} alignItems="center">
         <Typography
           variant="subtitle2"
@@ -121,6 +127,7 @@ export function BracketMatch({
           {subtitle}
         </Typography>
       </Stack>
+      */}
     </Stack>
   );
 }

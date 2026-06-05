@@ -109,10 +109,11 @@ export const metadata: Metadata = {
     siteName: 'Final Fight Combat',
     images: [
       {
-        url: '/opengraph-ffc.png',
+        url: '/opengraph-ffc.jpg',
         width: 1200,
         height: 630,
         alt: 'Final Fight Combat (FFC) - O Maior Evento de Artes Marciais',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -120,7 +121,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Final Fight Combat (FFC)',
     description: 'Acompanhe o maior evento de MMA e Jiu-Jitsu do Brasil.',
-    images: ['/opengraph-ffc.png'],
+    images: ['/opengraph-ffc.jpg'],
   },
   alternates: {
     canonical: '/',

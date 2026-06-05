@@ -85,7 +85,7 @@ export function ChavesView() {
                 gap: 8, // Space between rows (levels of the pyramid)
               }}
             >
-              
+
               {/* LEVEL 4: THE GRAND FINAL */}
               <Stack alignItems="center" spacing={4}>
                 {/* Glowing Trophy Box */}
@@ -115,25 +115,25 @@ export function ChavesView() {
                   </Typography>
                 </Box>
 
-                <BracketMatch 
-                  player1={{ name: '' }} 
-                  player2={{ name: '' }} 
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
                   matchTitle="CINTURÃO ABSOLUTO"
                   subtitle="TITLE MATCH / NO-GI"
-                  isFinal 
+                  isFinal
                 />
               </Stack>
 
               {/* LEVEL 3: SEMI FINALS */}
               <Stack direction="row" spacing={12}>
-                <BracketMatch 
-                  player1={{ name: '' }} 
-                  player2={{ name: '' }} 
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
                   matchTitle="SEMI FINAL 1"
                 />
-                <BracketMatch 
-                  player1={{ name: '' }} 
-                  player2={{ name: '' }} 
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
                   matchTitle="SEMI FINAL 2"
                 />
               </Stack>
@@ -159,7 +159,6 @@ export function ChavesView() {
                 <BracketMatch {...getMatch(4, 5)} matchTitle="OITAVAS 3" isSmall />
                 <BracketMatch {...getMatch(6, 7)} matchTitle="OITAVAS 4" isSmall />
               </Stack>
-
               {/* LEVEL 1A: ROUND OF 16 (PARTE 1 - BASE) */}
               <Stack direction="row" spacing={4}>
                 <BracketMatch {...getMatch(8, 9)} matchTitle="OITAVAS 5" isSmall />
