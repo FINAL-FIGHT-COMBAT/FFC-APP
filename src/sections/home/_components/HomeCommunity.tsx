@@ -168,7 +168,7 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
             <Stack alignItems="center" sx={{ mt: { xs: 6, md: 8 } }}>
               <Button
                 component={RouterLink}
-                href={paths.contact}
+                href={`${paths.inscricao}?tab=academia`}
                 size="large"
                 variant="outlined"
                 endIcon={<Iconify icon="solar:users-group-rounded-bold" />}

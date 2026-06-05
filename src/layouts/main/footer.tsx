@@ -34,19 +34,12 @@ const pulse = keyframes`
 // MIDDLE LINKS REMOVIDOS A PEDIDO DO USUÁRIO (Ecossistema, Associação, Documentação)
 
 const CUSTOM_SOCIALS = [
-  { name: 'Twitter', href: 'https://x.com/ASPPIBRA_ORG', icon: 'ri:twitter-x-fill' },
-  { name: 'Instagram', href: 'https://www.instagram.com/asppibra/', icon: 'ri:instagram-fill' },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/asppibra-dao/',
-    icon: 'ri:linkedin-fill',
-  },
-  { name: 'GitHub', href: 'https://github.com/DIGITAL-WORLD-ECOSYSTEM', icon: 'ri:github-fill' },
-  { name: 'Telegram (BR)', href: 'https://t.me/Mundo_Digital_BR', icon: 'ic:baseline-telegram' },
-  { name: 'Telegram (EUA)', href: 'https://t.me/Mundo_Digital_EUA', icon: 'ic:baseline-telegram' },
+  { name: 'Instagram', href: 'https://www.instagram.com/ffc.combat/', icon: 'ri:instagram-fill' },
+  { name: 'GitHub', href: 'https://github.com/FINAL-FIGHT-COMBAT', icon: 'ri:github-fill' },
+  { name: 'Telegram', href: 'https://t.me/FFC_Combat', icon: 'ic:baseline-telegram' },
   {
     name: 'Crunchbase',
-    href: 'https://www.crunchbase.com/organization/sandro',
+    href: 'https://www.crunchbase.com/organization/final-fight-combat-ffc',
     icon: 'simple-icons:crunchbase',
   },
 ];

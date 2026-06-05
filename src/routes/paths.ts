@@ -22,6 +22,7 @@ export const paths = {
   team: '/team',
   documentos: '/documentos',
   chaves: '/chaves',
+  inscricao: '/inscricao',
   ecosystem: '/ecosystem',
   privacy: '/privacy',
   terms: '/terms',

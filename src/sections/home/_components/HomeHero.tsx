@@ -13,6 +13,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
+import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { Iconify } from 'src/components/iconify';
@@ -248,7 +249,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
               {/* Primário — Dourado */}
               <Button
                 component={RouterLink}
-                href="/#categorias"
+                href={paths.inscricao}
                 endIcon={<Iconify icon={"solar:arrow-right-bold" as any} />}
                 sx={{
                   height: 52,

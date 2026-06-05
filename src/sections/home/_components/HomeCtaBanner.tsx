@@ -76,7 +76,7 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
       <m.div variants={varFade('inRight', { distance: 24 })}>
         <Button
           component={RouterLink}
-          href={paths.dashboard.root}
+          href={paths.inscricao}
           endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
           sx={{
             height: 56,
