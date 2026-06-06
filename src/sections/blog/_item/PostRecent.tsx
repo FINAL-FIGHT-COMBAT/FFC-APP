@@ -19,6 +19,7 @@ import { paths } from 'src/routes/paths';
 
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 import { PostCard } from './PostCard';
 
@@ -85,36 +86,12 @@ export function PostRecent({ posts: postsFromProps }: Props) {
         {posts.length > viewLimit && (
           <Stack sx={{ mt: 8, alignItems: 'center' }}>
             <m.div variants={varFade('inUp')}>
-              <Button
-                size="large"
-                variant="outlined"
+              <CyberButton
                 onClick={handleLoadMore}
-                sx={{
-                  height: 56,
-                  px: 5,
-                  fontSize: 15,
-                  fontWeight: 700,
-                  fontFamily: "'Orbitron', sans-serif",
-                  color: 'common.white',
-                  borderRadius: 1.5,
-                  textTransform: 'uppercase',
-                  // 🟢 ESTILO NEON GLASS FFC
-                  backdropFilter: 'blur(10px)',
-                  WebkitBackdropFilter: 'blur(10px)',
-                  borderColor: alpha(theme.palette.info.main, 0.4),
-                  bgcolor: alpha(theme.palette.info.main, 0.05),
-                  transition: theme.transitions.create(['all']),
-                  boxShadow: `0 0 12px ${alpha(theme.palette.info.main, 0.2)}`,
-                  '&:hover': {
-                    borderColor: theme.palette.info.main,
-                    bgcolor: alpha(theme.palette.info.main, 0.15),
-                    boxShadow: `0 0 25px ${alpha(theme.palette.info.main, 0.4)}`,
-                    transform: 'translateY(-2px)',
-                  },
-                }}
+                glowColor="info"
               >
                 Carregar mais notícias
-              </Button>
+              </CyberButton>
             </m.div>
           </Stack>
         )}

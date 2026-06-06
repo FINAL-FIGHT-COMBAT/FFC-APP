@@ -21,6 +21,7 @@ import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -317,53 +318,14 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
 
             {/* BOTÃO: VER TODAS AS CHAVES */}
             <m.div variants={varFade('inRight')}>
-              <Button
+              <CyberButton
                 component={RouterLink}
                 href={paths.chaves}
                 endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
-                sx={{
-                  height: 56,
-                  px: 4,
-                  borderRadius: 1.5,
-                  fontFamily: "'Orbitron', sans-serif",
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  color: 'common.white',
-                  border: 'none',
-                  position: 'relative',
-                  bgcolor: alpha('#020817', 0.6),
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  transition: theme.transitions.create(['all']),
-
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    inset: 0,
-                    borderRadius: 'inherit',
-                    padding: '1px',
-                    background: `linear-gradient(180deg, 
-                      ${alpha(theme.palette.info.main, 1)} 0%, 
-                      ${alpha(theme.palette.info.main, 0.1)} 50%, 
-                      ${alpha(theme.palette.info.main, 0.6)} 100%
-                    )`,
-                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'xor',
-                    maskComposite: 'exclude',
-                  },
-
-                  '&:hover': {
-                    bgcolor: alpha(theme.palette.info.main, 0.08),
-                    transform: 'scale(1.05)',
-                    boxShadow: `0 0 20px 0 ${alpha(theme.palette.info.main, 0.3)}`,
-                    '& .MuiButton-endIcon': {
-                      transform: 'translateX(4px)',
-                    },
-                  },
-                }}
+                glowColor="info"
               >
                 VER TODAS AS CHAVES
-              </Button>
+              </CyberButton>
             </m.div>
           </Stack>
 

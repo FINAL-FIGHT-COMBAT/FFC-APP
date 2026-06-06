@@ -11,6 +11,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -202,42 +203,9 @@ export function PostNewsletter() {
           </m.div>
 
           <m.div variants={varFade('inRight')}>
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                height: 54,
-                px: 4,
-                fontSize: 14,
-                fontWeight: 900,
-                // CRYSTAL BUTTON EFFECT
-                bgcolor: alpha(theme.palette.warning.main, 0.15),
-                color: 'common.white',
-                border: 'none',
-                position: 'relative',
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  inset: 0,
-                  borderRadius: 'inherit',
-                  padding: '1px',
-                  background: `linear-gradient(135deg, ${theme.palette.warning.main}, ${alpha(theme.palette.warning.main, 0.2)})`,
-                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                  WebkitMaskComposite: 'xor',
-                  maskComposite: 'exclude',
-                },
-                borderRadius: 1.5,
-                boxShadow: `0 10px 20px -5px ${alpha(theme.palette.warning.main, 0.3)}`,
-                transition: theme.transitions.create(['all']),
-                '&:hover': {
-                  bgcolor: alpha(theme.palette.warning.main, 0.3),
-                  boxShadow: `0 15px 30px -5px ${alpha(theme.palette.warning.main, 0.7)}`,
-                  transform: 'translateY(-3px)',
-                },
-              }}
-            >
+            <CyberButton glowColor="warning">
               Subscrever
-            </Button>
+            </CyberButton>
           </m.div>
         </Stack>
 

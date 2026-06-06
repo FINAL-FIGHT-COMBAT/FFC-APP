@@ -29,6 +29,7 @@ import { CONFIG } from 'src/global-config';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -74,47 +75,14 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
 
       {/* Botão CTA */}
       <m.div variants={varFade('inRight', { distance: 24 })}>
-        <Button
+        <CyberButton
           component={RouterLink}
           href={paths.inscricao}
           endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
-          sx={{
-            height: 56,
-            px: 4,
-            fontFamily: "'Orbitron', sans-serif",
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            color: 'common.white',
-            border: 'none',
-            position: 'relative',
-            bgcolor: alpha(theme.palette.warning.main, 0.15),
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            transition: theme.transitions.create(['all']),
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              inset: 0,
-              borderRadius: 'inherit',
-              padding: '1px',
-              background: `linear-gradient(180deg,
-                ${alpha(theme.palette.warning.main, 1)} 0%,
-                ${alpha(theme.palette.warning.main, 0.2)} 50%,
-                ${alpha(theme.palette.warning.main, 0.8)} 100%
-              )`,
-              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-              WebkitMaskComposite: 'xor',
-              maskComposite: 'exclude',
-            },
-            '&:hover': {
-              bgcolor: alpha(theme.palette.warning.main, 0.25),
-              transform: 'scale(1.05)',
-              boxShadow: `0 0 24px 0 ${alpha(theme.palette.warning.main, 0.4)}`,
-            },
-          }}
+          glowColor="primary"
         >
           {t('cta.button') || 'INSCREVER-SE AGORA'}
-        </Button>
+        </CyberButton>
       </m.div>
 
       {/* Data e Local */}

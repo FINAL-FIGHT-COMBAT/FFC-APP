@@ -11,6 +11,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { Image } from 'src/components/image';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -131,46 +132,13 @@ export function PostAdvertisement({
 
             <m.div variants={varFade('inUp')}>
               {/* 🟢 BOTÃO ESTILO CRYSTAL ESMERALDA (REATIVO) */}
-              <Button
-                variant="contained"
-                size="large"
+              <CyberButton
                 href={ctaHref}
-                sx={{
-                  alignSelf: { xs: 'center', md: 'flex-start' },
-                  height: 54,
-                  px: 4,
-                  fontSize: 15,
-                  fontWeight: 800,
-                  fontFamily: "'Orbitron', sans-serif",
-                  textTransform: 'uppercase',
-                  borderRadius: 1.5,
-                  position: 'relative',
-                  // Fundo translúcido para efeito de vidro no botão
-                  bgcolor: alpha(theme.palette.warning.main, 0.1),
-                  color: 'common.white',
-                  border: 'none',
-                  // Borda reativa de 1px interna ao botão
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    inset: 0,
-                    borderRadius: 'inherit',
-                    padding: '1px',
-                    background: `linear-gradient(135deg, ${theme.palette.warning.main}, ${alpha(theme.palette.warning.main, 0.2)})`,
-                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'xor',
-                    maskComposite: 'exclude',
-                  },
-                  transition: theme.transitions.create(['all']),
-                  '&:hover': {
-                    bgcolor: alpha(theme.palette.warning.main, 0.2),
-                    boxShadow: `0 0 25px ${alpha(theme.palette.warning.main, 0.5)}`,
-                    transform: 'translateY(-2px)',
-                  },
-                }}
+                glowColor="warning"
+                sx={{ alignSelf: { xs: 'center', md: 'flex-start' } }}
               >
                 {ctaText}
-              </Button>
+              </CyberButton>
             </m.div>
           </Stack>
 

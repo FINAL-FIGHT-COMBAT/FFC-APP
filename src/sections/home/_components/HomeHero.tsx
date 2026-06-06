@@ -17,6 +17,7 @@ import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { Iconify, type IconifyName } from 'src/components/iconify';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -223,60 +224,25 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             {/* Botões CTA */}
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 3, sm: 1.5 }} sx={{ width: { xs: '100%', sm: 'auto' } }}>
               {/* Primário — Dourado */}
-              <Button
+              <CyberButton
                 component={RouterLink}
                 href={paths.inscricao}
                 endIcon={<Iconify icon="eva:arrow-forward-fill" />}
-                sx={{
-                  width: { xs: '100%', sm: 'auto' },
-                  height: 52,
-                  px: 4,
-                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                  fontWeight: 800,
-                  fontSize: 12,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  bgcolor: GOLD,
-                  color: '#0A0A0A',
-                  borderRadius: 1,
-                  transition: theme.transitions.create(['all']),
-                  '&:hover': {
-                    bgcolor: GOLD_DARK,
-                    boxShadow: `0 0 28px ${alpha(GOLD, 0.55)}`,
-                    transform: 'translateY(-2px)',
-                  },
-                }}
+                glowColor="primary"
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
                 INSCREVA-SE AGORA
-              </Button>
+              </CyberButton>
 
               {/* Secundário — Outline */}
-              <Button
+              <CyberButton
                 component={RouterLink}
                 href="/documentos"
-                sx={{
-                  width: { xs: '100%', sm: 'auto' },
-                  height: 52,
-                  px: 4,
-                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                  fontWeight: 800,
-                  fontSize: 12,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  bgcolor: 'rgba(255,255,255,0.06)',
-                  color: '#fff',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  borderRadius: 1,
-                  transition: theme.transitions.create(['all']),
-                  '&:hover': {
-                    bgcolor: 'rgba(255,255,255,0.12)',
-                    borderColor: 'rgba(255,255,255,0.4)',
-                    transform: 'translateY(-2px)',
-                  },
-                }}
+                glowColor="info"
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
                 DOCUMENTOS
-              </Button>
+              </CyberButton>
             </Stack>
 
           </Stack>

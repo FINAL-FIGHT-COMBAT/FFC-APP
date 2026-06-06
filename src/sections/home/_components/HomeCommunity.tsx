@@ -18,6 +18,7 @@ import { RouterLink } from 'src/routes/components';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -166,28 +167,14 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
           {/* CTA SEJA PARCEIRO */}
           <m.div variants={varFade('inUp')}>
             <Stack alignItems="center" sx={{ mt: { xs: 6, md: 8 } }}>
-              <Button
+              <CyberButton
                 component={RouterLink}
                 href={`${paths.inscricao}?tab=academia`}
-                size="large"
-                variant="outlined"
                 endIcon={<Iconify icon="solar:users-group-rounded-bold" />}
-                sx={{
-                  color: '#fff',
-                  borderColor: alpha('#fff', 0.2),
-                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  px: 4,
-                  py: 1.5,
-                  '&:hover': {
-                    borderColor: '#3B82F6',
-                    bgcolor: alpha('#3B82F6', 0.08),
-                  }
-                }}
+                glowColor="success"
               >
-                Cadastre sua Academia
-              </Button>
+                CADASTRE SUA ACADEMIA
+              </CyberButton>
             </Stack>
           </m.div>
 

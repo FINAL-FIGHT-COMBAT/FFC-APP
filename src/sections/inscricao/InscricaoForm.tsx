@@ -19,6 +19,7 @@ import { toast } from 'src/components/snackbar';
 import { Form, Field } from 'src/components/hook-form';
 import { CyberCard } from 'src/components/cyber-card';
 import { Iconify } from 'src/components/iconify';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 // CONSTANTES DE OPÇÕES
@@ -157,28 +158,13 @@ function FormularioAtleta() {
         <Field.Text name="team" label="Nome da Academia / Equipe" sx={inputStyle} />
 
         <Stack alignItems="flex-end" sx={{ mt: 3 }}>
-          <Button
+          <CyberButton
             type="submit"
-            variant="contained"
-            size="large"
             disabled={isSubmitting}
-            sx={{
-              bgcolor: theme.palette.warning.main,
-              color: '#000',
-              fontWeight: 'bold',
-              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-              px: 5,
-              py: 1.5,
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                bgcolor: theme.palette.warning.dark,
-                boxShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.6)}`,
-                transform: 'scale(1.05)',
-              },
-            }}
+            glowColor="warning"
           >
             {isSubmitting ? 'Enviando...' : 'INSCREVER ATLETA'}
-          </Button>
+          </CyberButton>
         </Stack>
       </Stack>
     </Form>
@@ -237,28 +223,13 @@ function FormularioAcademia() {
         </Box>
 
         <Stack alignItems="flex-end" sx={{ mt: 3 }}>
-          <Button
+          <CyberButton
             type="submit"
-            variant="contained"
-            size="large"
             disabled={isSubmitting}
-            sx={{
-              bgcolor: theme.palette.info.main,
-              color: '#000',
-              fontWeight: 'bold',
-              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-              px: 5,
-              py: 1.5,
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                bgcolor: theme.palette.info.dark,
-                boxShadow: `0 0 20px ${alpha(theme.palette.info.main, 0.6)}`,
-                transform: 'scale(1.05)',
-              },
-            }}
+            glowColor="info"
           >
             {isSubmitting ? 'Enviando...' : 'CADASTRAR ACADEMIA'}
-          </Button>
+          </CyberButton>
         </Stack>
       </Stack>
     </Form>

@@ -9,6 +9,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { HomeBackground } from 'src/components/background';
 import { Iconify } from 'src/components/iconify';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -196,28 +197,17 @@ export function DocumentosView() {
                   </Stack>
                 </Stack>
 
-                <Button
+                <CyberButton
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   fullWidth
-                  variant="outlined"
+                  glowColor="warning"
                   endIcon={<Iconify icon={"solar:download-minimalistic-bold" as any} />}
-                  sx={{
-                    mt: 'auto',
-                    py: 1.5,
-                    borderStyle: 'dashed',
-                    borderColor: 'rgba(255,255,255,0.2)',
-                    color: '#fff',
-                    '&:hover': {
-                      borderColor: theme.palette.warning.main,
-                      color: theme.palette.warning.main,
-                      bgcolor: alpha(theme.palette.warning.main, 0.08),
-                    },
-                  }}
+                  sx={{ mt: 'auto', height: 44, fontSize: 13 }}
                 >
                   Baixar PDF
-                </Button>
+                </CyberButton>
               </Stack>
             ))}
           </Box>

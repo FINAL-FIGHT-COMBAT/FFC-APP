@@ -17,6 +17,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
@@ -239,20 +240,14 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
 
       {/* ── BOTÃO ── */}
       <Box sx={{ px: 2, pb: 2 }}>
-        <Button
+        <CyberButton
           fullWidth
-          sx={{
-            height: 44, borderRadius: 1,
-            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-            fontWeight: 800, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase',
-            transition: theme.transitions.create(['all']),
-            ...(isDisponivel
-              ? { bgcolor: '#fff', color: '#0A0F1E', '&:hover': { bgcolor: alpha('#fff', 0.88), boxShadow: `0 0 20px ${alpha('#fff', 0.15)}` } }
-              : { bgcolor: alpha('#fff', 0.08), color: alpha('#fff', 0.4), pointerEvents: 'none' }),
-          }}
+          glowColor="info"
+          disabled={!isDisponivel}
+          sx={{ height: 44, fontSize: 11 }}
         >
           {isDisponivel ? 'INSCREVER VIA APP' : 'LISTA DE ESPERA'}
-        </Button>
+        </CyberButton>
       </Box>
     </CyberCard>
   );

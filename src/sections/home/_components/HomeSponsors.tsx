@@ -10,6 +10,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
+import { CyberButton } from 'src/components/cyber-button';
 import { SectionTitle } from './HomeSectionTitle';
 
 // ----------------------------------------------------------------------
@@ -178,31 +179,12 @@ export function HomeSponsors() {
 
         <Stack alignItems="center" sx={{ mt: 8 }}>
           <m.div variants={varFade('inUp')}>
-            <Button
-              size="large"
-              variant="outlined"
+            <CyberButton
               href="#contato"
-              sx={{
-                color: theme.palette.warning.main,
-                borderColor: alpha(theme.palette.warning.main, 0.4),
-                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                fontWeight: 700,
-                letterSpacing: 1,
-                textTransform: 'uppercase',
-                bgcolor: alpha('#020817', 0.6),
-                backdropFilter: 'blur(8px)',
-                px: 4,
-                '&:hover': {
-                  borderColor: theme.palette.warning.main,
-                  bgcolor: alpha(theme.palette.warning.main, 0.12),
-                  boxShadow: `0 0 24px ${alpha(theme.palette.warning.main, 0.3)}`,
-                  transform: 'translateY(-2px)'
-                },
-                transition: theme.transitions.create(['all']),
-              }}
+              glowColor="warning"
             >
-              Seja um Patrocinador
-            </Button>
+              SEJA UM PATROCINADOR
+            </CyberButton>
           </m.div>
         </Stack>
       </Container>
