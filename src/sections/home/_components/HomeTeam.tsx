@@ -12,6 +12,7 @@ import { m } from 'framer-motion';
 // ----------------------------------------------------------------------
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -75,7 +76,7 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
   const carousel = useCarousel({
     align: 'start',
     slideSpacing: '24px',
-    slidesToShow: { xs: 1, sm: 2, md: 3, lg: 4 },
+    slidesToShow: { xs: 1, sm: 2, md: 3 },
   });
 
   const membersRaw = t('team.members', { returnObjects: true });
@@ -150,22 +151,35 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
           </m.div>
         </Stack>
 
-        {/* CAROUSEL */}
-        <Box sx={{ position: 'relative' }}>
+        {/* ── CAROUSEL (Mobile & Tablet: xs, sm) ── */}
+        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'relative' }}>
           <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
 
-          <Carousel carousel={carousel} sx={{ px: 0.5 }}>
+          <Carousel carousel={carousel} sx={{ px: 0.5, py: 2 }}>
             {members.map((member) => (
               <Box
                 key={member.id}
                 component={m.div}
                 variants={varFade('in')}
-                sx={{ py: { xs: 4, md: 5 } }}
+                sx={{ py: { xs: 2, md: 3 } }}
               >
                 <MemberCard member={member} />
               </Box>
             ))}
           </Carousel>
+        </Box>
+
+        {/* ── GRID DE CARDS (Desktop: md, lg, xl) ── */}
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Grid container spacing={2.5} justifyContent="center">
+            {members.map((member) => (
+              <Grid key={member.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
+                  <MemberCard member={member} />
+                </m.div>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </Container>
     </Box>
@@ -186,6 +200,7 @@ function MemberCard({
       sx={{
         textAlign: 'center',
         height: '100%',
+        minHeight: { xs: 420, md: 480 },
         display: 'flex',
         flexDirection: 'column',
         transition: theme.transitions.create(['transform', 'box-shadow'], {
@@ -193,77 +208,96 @@ function MemberCard({
         }),
         boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.5)}`,
         '&:hover': {
-          transform: 'translateY(-10px)',
+          transform: 'translateY(-6px)',
           boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
         },
       }}
     >
-      <Typography
-        variant="subtitle1"
-        sx={{
-          mt: 3,
-          mb: 0.5,
-          fontFamily: "'Orbitron', sans-serif",
-          fontWeight: 700,
-          textTransform: 'uppercase',
-          color: 'common.white',
-          letterSpacing: '0.05em',
-        }}
-      >
-        {member.name}
-      </Typography>
-
-      <Typography
-        variant="body2"
-        sx={{
-          mb: 2.5,
-          fontFamily: "'Public Sans', sans-serif",
-          fontWeight: 700,
-          fontSize: 11,
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-          color: '#919EAB',
-        }}
-      >
-        {member.role}
-      </Typography>
-
-      <Box sx={{ px: 2.5, pb: 1 }}>
+      {/* ── FOTO ── */}
+      <Box sx={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', bgcolor: '#161B22' }}>
         <Image
           alt={member.name}
           src={member.avatarUrl}
-          ratio="1/1"
-          visibleByDefault
-          disablePlaceholder
           sx={{
-            borderRadius: 2,
-            border: `1px solid ${alpha(theme.palette.common.white, 0.05)}`,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            transition: 'transform 0.4s ease',
+            '&:hover': { transform: 'scale(1.05)' },
+          }}
+        />
+
+        {/* Gradient bottom overlay para transição suave */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: '55%',
+            background: 'linear-gradient(to top, #0D1117 0%, transparent 100%)',
           }}
         />
       </Box>
 
-      <Box sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5 }}>
-        {[
-          { value: 'facebook', icon: 'eva:facebook-fill', path: CONFIG.socials.facebook },
-          { value: 'instagram', icon: 'ant-design:instagram-filled', path: CONFIG.socials.instagram },
-          { value: 'linkedin', icon: 'eva:linkedin-fill', path: CONFIG.socials.linkedin },
-          { value: 'twitter', icon: 'bi:twitter-x', path: CONFIG.socials.twitter },
-        ].map((social) => (
-          <IconButton
-            key={social.value}
-            onClick={() => window.open(social.path, '_blank')}
+      {/* ── INFO ── */}
+      <Stack sx={{ p: 2, gap: 1, flex: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+        <Box>
+          <Typography
+            noWrap
             sx={{
-              color: '#919EAB',
-              '&:hover': {
-                color: theme.palette.info.main,
-                bgcolor: alpha(theme.palette.info.main, 0.1),
-              },
+              fontSize: '1.1rem',
+              fontWeight: 900,
+              color: '#fff',
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+              lineHeight: 1.1,
+              textTransform: 'uppercase',
             }}
           >
-            <Iconify icon={social.icon as any} />
-          </IconButton>
-        ))}
-      </Box>
+            {member.name}
+          </Typography>
+          
+          <Typography
+            noWrap
+            sx={{
+              mt: 0.5,
+              fontSize: 11,
+              fontWeight: 700,
+              color: theme.palette.info.main,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              fontFamily: "'Public Sans', sans-serif",
+            }}
+          >
+            {member.role}
+          </Typography>
+        </Box>
+
+        {/* ── SOCIAL ICONS ── */}
+        <Box sx={{ mt: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5 }}>
+          {[
+            { value: 'facebook', icon: 'eva:facebook-fill', path: CONFIG.socials.facebook },
+            { value: 'instagram', icon: 'ant-design:instagram-filled', path: CONFIG.socials.instagram },
+            { value: 'linkedin', icon: 'eva:linkedin-fill', path: CONFIG.socials.linkedin },
+            { value: 'twitter', icon: 'bi:twitter-x', path: CONFIG.socials.twitter },
+          ].map((social) => (
+            <IconButton
+              key={social.value}
+              onClick={() => window.open(social.path, '_blank')}
+              sx={{
+                color: '#919EAB',
+                '&:hover': {
+                  color: theme.palette.info.main,
+                  bgcolor: alpha(theme.palette.info.main, 0.1),
+                },
+              }}
+            >
+              <Iconify icon={social.icon as any} />
+            </IconButton>
+          ))}
+        </Box>
+      </Stack>
     </CyberCard>
   );
 }

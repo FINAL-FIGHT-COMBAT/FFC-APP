@@ -18,6 +18,7 @@ import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { CyberButton } from 'src/components/cyber-button';
+import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 
@@ -159,6 +160,8 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
       sx={{
         display: 'flex',
         flexDirection: 'column',
+        minHeight: { xs: 380, sm: 400, md: 'auto' },
+        justifyContent: 'space-between',
         transition: theme.transitions.create(['transform', 'box-shadow']),
         '&:hover': {
           transform: 'translateY(-4px)',
@@ -339,6 +342,12 @@ export function Categorias({ sx, ...other }: BoxProps) {
   const [selectedGenero, setSelectedGenero] = useState<Genero>('M');
   const [selectedFaixa, setSelectedFaixa] = useState<string>('Branca');
 
+  const carousel = useCarousel({
+    align: 'start',
+    slideSpacing: '24px',
+    slidesToShow: { xs: 1, sm: 2, md: 3 },
+  });
+
   const pesoList    = selectedGenero === 'M' ? PESO_MASCULINO : PESO_FEMININO;
   const faixaSource = selectedGenero === 'M' ? FAIXA_DATA     : FAIXA_DATA_F;
   const generoLabel = selectedGenero === 'M' ? 'Categoria Masculina' : 'Categoria Feminina';
@@ -398,29 +407,58 @@ export function Categorias({ sx, ...other }: BoxProps) {
             </Stack>
           </m.div>
 
-          {/* ── GRID DE CARDS COM ANIMAÇÃO DE TROCA ── */}
-          <AnimatePresence mode="wait">
-            <m.div
-              key={`${selectedGenero}-${selectedFaixa}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-            >
-              <Grid container spacing={2.5}>
-                {currentCards.map((card) => (
-                  <Grid key={card.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                    <CategoryCard
-                      peso={card.peso}
-                      faixa={selectedFaixa}
-                      slot={card.slot}
-                      genero={generoLabel}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </m.div>
-          </AnimatePresence>
+          {/* ── CAROUSEL (Mobile & Tablet: xs, sm) ── */}
+          <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'relative' }}>
+            <AnimatePresence mode="wait">
+              <m.div
+                key={`${selectedGenero}-${selectedFaixa}-carousel`}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+              >
+                <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
+                <Carousel carousel={carousel} sx={{ px: 0.5, py: 2 }}>
+                  {currentCards.map((card) => (
+                    <Box key={card.id} sx={{ py: 1 }}>
+                      <CategoryCard
+                        peso={card.peso}
+                        faixa={selectedFaixa}
+                        slot={card.slot}
+                        genero={generoLabel}
+                      />
+                    </Box>
+                  ))}
+                </Carousel>
+              </m.div>
+            </AnimatePresence>
+          </Box>
+
+          {/* ── GRID DE CARDS COM ANIMAÇÃO DE TROCA (Desktop: md, lg, xl) ── */}
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+            <AnimatePresence mode="wait">
+              <m.div
+                key={`${selectedGenero}-${selectedFaixa}-grid`}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+              >
+                <Grid container spacing={2.5}>
+                  {currentCards.map((card) => (
+                    <Grid key={card.id} size={{ xs: 12, sm: 6, md: 4 }}>
+                      <CategoryCard
+                        peso={card.peso}
+                        faixa={selectedFaixa}
+                        slot={card.slot}
+                        genero={generoLabel}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              </m.div>
+            </AnimatePresence>
+          </Box>
 
         </Container>
       </MotionViewport>
