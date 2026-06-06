@@ -73,21 +73,18 @@ const baseTypography: TypographyVariantsOptions = {
 export const typography: TypographyVariantsOptions = {
   ...baseTypography,
   h1: {
-    fontFamily: secondaryFont,
     fontWeight: baseTypography.fontWeightExtraBold,
     lineHeight: 80 / 64,
     fontSize: pxToRem(40),
     ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
   },
   h2: {
-    fontFamily: secondaryFont,
     fontWeight: baseTypography.fontWeightExtraBold,
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
     ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h3: {
-    fontFamily: secondaryFont,
     fontWeight: baseTypography.fontWeightBold,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
@@ -112,24 +109,29 @@ export const typography: TypographyVariantsOptions = {
     ...responsiveFontSizes({ sm: 18 }),
   },
   subtitle1: {
+    fontFamily: secondaryFont,
     fontWeight: baseTypography.fontWeightSemiBold,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
   },
   subtitle2: {
+    fontFamily: secondaryFont,
     fontWeight: baseTypography.fontWeightSemiBold,
     lineHeight: 22 / 14,
     fontSize: pxToRem(14),
   },
   body1: {
+    fontFamily: secondaryFont,
     lineHeight: 1.5,
     fontSize: pxToRem(16),
   },
   body2: {
+    fontFamily: secondaryFont,
     lineHeight: 22 / 14,
     fontSize: pxToRem(14),
   },
   caption: {
+    fontFamily: secondaryFont,
     lineHeight: 1.5,
     fontSize: pxToRem(12),
   },

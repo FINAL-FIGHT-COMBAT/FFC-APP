@@ -38,8 +38,8 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: 'var(--font-public-sans), "Public Sans", sans-serif',
-    secondary: 'var(--font-barlow), "Barlow", sans-serif',
+    primary: 'var(--font-orbitron), "Orbitron", sans-serif',
+    secondary: 'var(--font-public-sans), "Public Sans", sans-serif',
   },
   /** **************************************
    * Palette

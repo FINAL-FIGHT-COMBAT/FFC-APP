@@ -9,19 +9,12 @@ import 'src/global.css';
 
 import type { Metadata, Viewport } from 'next';
 
-import { Barlow, Orbitron, Public_Sans } from 'next/font/google';
+import { Orbitron, Public_Sans } from 'next/font/google';
 
 const publicSans = Public_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-public-sans',
-  display: 'swap',
-});
-
-const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-barlow',
   display: 'swap',
 });
 
@@ -199,7 +192,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body className={`${publicSans.variable} ${barlow.variable} ${orbitron.variable}`}>
+      <body className={`${publicSans.variable} ${orbitron.variable}`}>
         <InitColorSchemeScript
           modeStorageKey={themeConfig.modeStorageKey}
           attribute={themeConfig.cssVariables.colorSchemeSelector}
