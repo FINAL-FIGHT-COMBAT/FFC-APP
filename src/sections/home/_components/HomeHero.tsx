@@ -34,8 +34,8 @@ const mdKey: Breakpoint = 'md';
 
 const STATS = [
   { value: '+300', label: 'ATLETAS', icon: 'solar:users-group-rounded-bold' },
-  { value: '8', label: 'TATAMES', icon: 'solar:map-bold' },
-  { value: '2', label: 'MODALIDADES', icon: 'solar:medal-ribbons-star-bold' },
+  { value: '8', label: 'TATAMES', icon: 'solar:map-point-bold' },
+  { value: '2', label: 'MODALIDADES', icon: 'solar:medal-star-bold' },
   { value: 'R$ 100K', label: 'EM PRÊMIOS', icon: 'solar:cup-star-bold' },
 ];
 
@@ -79,8 +79,8 @@ function CountdownBlock({ value, label }: { value: number; label: string }) {
     <Stack alignItems="center" spacing={1}>
       <Box
         sx={{
-          width: { xs: 72, sm: 88, md: 104 },
-          height: { xs: 72, sm: 88, md: 104 },
+          width: { xs: 64, sm: 88, md: 104 },
+          height: { xs: 64, sm: 88, md: 104 },
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -133,11 +133,12 @@ export function HomeHero({ sx, ...other }: BoxProps) {
       sx={[
         {
           position: 'relative',
-          minHeight: '100vh',
+          minHeight: { xs: '100svh', md: '100vh' },
           display: 'flex',
           flexDirection: 'column',
           bgcolor: 'transparent',
           overflow: 'hidden',
+          mt: 'calc(var(--layout-header-mobile-height) * -1)',
           [theme.breakpoints.up(mdKey)]: {
             mt: `calc(var(--layout-header-desktop-height) * -1)`,
           },
@@ -166,12 +167,12 @@ export function HomeHero({ sx, ...other }: BoxProps) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          pt: { xs: 12, md: 10 },
-          pb: 4,
+          pt: { xs: 10, md: 10 },
+          pb: 2,
         }}
       >
         <Container maxWidth="lg">
-          <Stack alignItems="center" spacing={{ xs: 2.5, md: 3 }}>
+          <Stack alignItems="center" spacing={{ xs: 2, md: 3 }}>
 
             {/* Badge — Fase do Evento */}
             <Box
@@ -245,13 +246,14 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             </Stack>
 
             {/* Botões CTA */}
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ width: { xs: '100%', sm: 'auto' } }}>
               {/* Primário — Dourado */}
               <Button
                 component={RouterLink}
                 href={paths.inscricao}
                 endIcon={<Iconify icon={"solar:arrow-right-bold" as any} />}
                 sx={{
+                  width: { xs: '100%', sm: 'auto' },
                   height: 52,
                   px: 4,
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
@@ -278,6 +280,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 component={RouterLink}
                 href="/documentos"
                 sx={{
+                  width: { xs: '100%', sm: 'auto' },
                   height: 52,
                   px: 4,
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
@@ -313,7 +316,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
           borderTop: `2px solid ${alpha(GOLD, 0.5)}`,
           bgcolor: 'transparent',
           boxShadow: `0 -1px 40px ${alpha(GOLD, 0.08)}`,
-          py: { xs: 3, md: 4 },
+          py: { xs: 2, md: 4 },
         }}
       >
         <Container>
