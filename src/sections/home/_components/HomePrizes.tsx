@@ -24,6 +24,8 @@ const PRIZES = [
     description: 'A premiação para os campeões de cada categoria de peso nas seletivas abertas.',
     accentColor: '#3B82F6', // Azul
     icon: 'solar:medal-ribbons-star-bold',
+    isMain: true,
+    prizeMoney: 'R$ 00.000', // Edite o valor aqui
     items: [
       { text: 'Medalha Exclusiva FFC (Ouro, Prata, Bronze)', icon: 'solar:medal-ribbons-star-bold' },
       { text: 'Kit de Suplementação Oficial', icon: 'solar:box-minimalistic-bold' },

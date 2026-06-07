@@ -9,6 +9,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { HomeBackground } from 'src/components/background';
 import { Iconify } from 'src/components/iconify';
+import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
@@ -105,15 +106,13 @@ export function DocumentosView() {
             }}
           >
             {DOCUMENTS.map((doc) => (
-              <Stack
+              <CyberCard
                 key={doc.id}
-                spacing={3}
                 sx={{
                   p: 4,
-                  borderRadius: 2,
-                  bgcolor: 'rgba(10, 10, 10, 0.55)',
-                  backdropFilter: 'blur(12px)',
-                  border: '1px solid',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 3,
                   borderColor: alpha(theme.palette.warning.main, 0.2),
                   transition: theme.transitions.create(['all']),
                   position: 'relative',
@@ -208,7 +207,7 @@ export function DocumentosView() {
                 >
                   Baixar PDF
                 </CyberButton>
-              </Stack>
+              </CyberCard>
             ))}
           </Box>
         </Container>
