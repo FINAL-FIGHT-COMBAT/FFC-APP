@@ -14,6 +14,8 @@ import { paths } from 'src/routes/paths';
 
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
+import { useCarousel } from 'src/components/carousel';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 import { Label } from 'src/components/label';
 
@@ -28,6 +30,12 @@ type Props = {
 
 export function PostCategoryItem({ category, posts }: Props) {
   const theme = useTheme();
+
+  const carousel = useCarousel({
+    align: 'start',
+    slideSpacing: '24px',
+    slidesToShow: { xs: 1, sm: 2 },
+  });
 
   const viewPosts = posts.filter(
     (post) => post.category.toLowerCase() === category.toLowerCase()
@@ -72,22 +80,18 @@ export function PostCategoryItem({ category, posts }: Props) {
       </m.div>
 
       <Grid container spacing={4}>
-        {/* Desktop: Destaques (Primeiros 3) */}
-        {viewPosts.slice(0, 3).map((post: any, index: number) => {
-          return (
-            <Grid
-              key={`${categoryId}-top-${post.id}-${index}`}
-              sx={{ display: { xs: 'none', lg: 'block' } }}
-              size={{
-                xs: 12,
-                sm: 6,
-                md: 4,
-                lg: index === 0 ? 6 : 3,
-              }}
-            >
+        {/* Top 3 Destaques */}
+        <Grid size={12}>
+          <ResponsiveCarouselGrid
+            data={viewPosts.slice(0, 3)}
+            carousel={carousel}
+            gridColumns={{ md: 'repeat(4, 1fr)' }}
+            getGridItemProps={(post, index) => ({
+              gridColumn: { md: index === 0 ? 'span 2' : 'span 1' },
+            })}
+            renderItem={(post: any, index) => (
               <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
-                <CyberCard>
-                  {/* Badge para destaques (ex: Eventos recebe tags específicas) */}
+                <CyberCard sx={{ height: '100%' }}>
                   {category.toLowerCase() === 'eventos' && index > 0 && (
                     <Label
                       variant="filled"
@@ -119,27 +123,9 @@ export function PostCategoryItem({ category, posts }: Props) {
                   />
                 </CyberCard>
               </m.div>
-            </Grid>
-          );
-        })}
-
-        {/* Mobile/Tablet: Destaques (Primeiros 3) */}
-        {viewPosts.slice(0, 3).map((post: any, index: number) => (
-          <Grid
-            key={`${categoryId}-mb-${post.id}-${index}`}
-            sx={{ display: { lg: 'none' } }}
-            size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
-          >
-            <m.div variants={varFade('inUp')}>
-              <CyberCard>
-                <PostCard 
-                  post={post} 
-                  detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
-                />
-              </CyberCard>
-            </m.div>
-          </Grid>
-        ))}
+            )}
+          />
+        </Grid>
 
         {/* Lista Restante */}
         {viewPosts.slice(3, 7).map((post: any, index: number) => {

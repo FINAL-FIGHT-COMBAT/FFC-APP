@@ -11,6 +11,7 @@ import { varFade, MotionViewport } from 'src/components/animate';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
+import { Marquee } from 'src/components/marquee';
 import { SectionTitle } from './HomeSectionTitle';
 
 // ----------------------------------------------------------------------
@@ -121,59 +122,51 @@ export function HomeSponsors() {
             </CyberCard>
           </m.div>
 
-          {/* Secondary Sponsors Grid */}
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: {
-                xs: 'repeat(1, 1fr)',
-                sm: 'repeat(2, 1fr)',
-                md: 'repeat(4, 1fr)',
-              },
-              gap: 3,
-            }}
-          >
-            {SECONDARY_SPONSORS.map((sponsor, index) => (
-              <m.div key={index} variants={varFade('inUp')}>
-                <CyberCard
-                  sx={{
-                    p: 4,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center',
-                    transition: theme.transitions.create(['transform']),
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                    },
-                  }}
-                >
-                  <Typography
-                    variant="caption"
-                    sx={{ color: 'warning.main', mb: 2, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 700 }}
-                  >
-                    Cota {sponsor.tier}
-                  </Typography>
-
-                  <Iconify
-                    icon={sponsor.icon as any}
-                    width={48}
-                    sx={{ color: 'warning.main', opacity: 0.8, mb: 2 }}
-                  />
-
-                  <Typography
-                    variant="h6"
+          {/* Secondary Sponsors Marquee */}
+          <Box sx={{ mt: 4 }}>
+            <Marquee duration={50} reverse>
+              {SECONDARY_SPONSORS.map((sponsor, index) => (
+                <Box key={index} sx={{ width: 280 }}>
+                  <CyberCard
                     sx={{
-                      fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                      color: 'common.white',
+                      p: 4,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      transition: theme.transitions.create(['transform']),
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                      },
                     }}
                   >
-                    {sponsor.name}
-                  </Typography>
-                </CyberCard>
-              </m.div>
-            ))}
+                    <Typography
+                      variant="caption"
+                      sx={{ color: 'warning.main', mb: 2, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 700 }}
+                    >
+                      Cota {sponsor.tier}
+                    </Typography>
+
+                    <Iconify
+                      icon={sponsor.icon as any}
+                      width={48}
+                      sx={{ color: 'warning.main', opacity: 0.8, mb: 2 }}
+                    />
+
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                        color: 'common.white',
+                      }}
+                    >
+                      {sponsor.name}
+                    </Typography>
+                  </CyberCard>
+                </Box>
+              ))}
+            </Marquee>
           </Box>
         </Stack>
 

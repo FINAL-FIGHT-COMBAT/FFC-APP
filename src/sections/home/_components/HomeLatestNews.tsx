@@ -152,10 +152,10 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
           <ResponsiveCarouselGrid
             data={displayPosts}
             carousel={carousel}
-            gridColumns={{ md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+            gridColumns={{ md: 'repeat(4, 1fr)' }}
             gridGap={4}
             getGridItemProps={(post, index) => ({
-              gridColumn: { lg: index === 0 ? 'span 2' : 'span 1' },
+              gridColumn: { md: index === 0 ? 'span 2' : 'span 1' },
             })}
             renderItem={(post: any, index) => (
               <m.div variants={varFade('inUp')} transition={{ delay: index * 0.2 }} style={{ height: '100%' }}>

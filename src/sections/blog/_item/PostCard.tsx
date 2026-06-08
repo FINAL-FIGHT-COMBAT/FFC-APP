@@ -162,7 +162,6 @@ export function PostItemLatest({ post, index, detailsHref, sx }: PostItemLatestP
         alt={post.title}
         src={post.coverUrl}
         ratio="4/3"
-        sx={{ height: 360 }}
         slotProps={{
           overlay: {
             sx: (overlayTheme) => ({

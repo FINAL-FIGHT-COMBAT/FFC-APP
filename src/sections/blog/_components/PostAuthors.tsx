@@ -12,6 +12,7 @@ import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { varFade, MotionViewport } from 'src/components/animate';
+import { Marquee } from 'src/components/marquee';
 
 import type { IPostItem } from 'src/types/blog';
 
@@ -135,36 +136,9 @@ export function PostAuthors({ posts }: Props) {
   );
 
   const renderMarqueeRow = (data: typeof AUTHORS, reverse = false, rowIndex: number) => (
-    <Box
-      sx={{
-        display: 'flex',
-        overflow: 'hidden',
-        position: 'relative',
-        py: 2,
-        // 🟢 MÁSCARA MAIS SUAVE (5%) PARA MELHOR VISIBILIDADE
-        maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
-        WebkitMaskImage:
-          'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
-      }}
-    >
-      {Array.from({ length: 4 }).map((_, i) => (
-        <Stack
-          key={i}
-          component={m.div}
-          direction="row"
-          spacing={3}
-          sx={{ px: 1.5, flexShrink: 0 }}
-          animate={{ x: reverse ? ['-100%', '0%'] : ['0%', '-100%'] }}
-          transition={{
-            duration: 60, // Velocidade otimizada
-            ease: 'linear',
-            repeat: Infinity,
-          }}
-        >
-          {data.map((author, idx) => renderAuthorCard(author, idx, rowIndex))}
-        </Stack>
-      ))}
-    </Box>
+    <Marquee reverse={reverse} duration={60} sx={{ py: 2 }}>
+      {data.map((author, idx) => renderAuthorCard(author, idx, rowIndex))}
+    </Marquee>
   );
 
   return (

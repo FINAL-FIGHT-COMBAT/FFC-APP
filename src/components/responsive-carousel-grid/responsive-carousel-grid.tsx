@@ -57,6 +57,7 @@ export function ResponsiveCarouselGrid<T>({
             key={index} 
             sx={{ 
               height: '100%',
+              minWidth: 0, // 🟢 PREVINE QUE O CONTEÚDO ESTOURE A COLUNA DO CSS GRID
               ...(getGridItemProps ? getGridItemProps(item, index) : {})
             }}
           >
