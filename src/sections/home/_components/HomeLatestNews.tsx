@@ -31,6 +31,8 @@ import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { CyberButton } from 'src/components/cyber-button';
+import { useCarousel } from 'src/components/carousel';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------
 
@@ -41,6 +43,12 @@ import { BLOG_MOCK } from 'src/_mock/blog.mock';
 export function HomeLatestNews({ sx, ...other }: BoxProps) {
   const theme = useTheme();
   const { t } = useTranslate();
+
+  const carousel = useCarousel({
+    align: 'start',
+    slideSpacing: '24px',
+    slidesToShow: { xs: 1, sm: 2 },
+  });
 
   // 1. Tenta pegar das traduções
   const translateItems = t('news.items', { returnObjects: true });
@@ -140,103 +148,104 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
             </m.div>
           </Stack>
 
-          {/* GRID COM BORDAS REATIVAS NOS CARDS */}
-          <Grid container spacing={4}>
-            {displayPosts.map((post, index) => (
-              <Grid
-                key={post.id}
-                size={{
-                  xs: 12,
-                  sm: 6,
-                  md: 4,
-                  lg: index === 0 ? 6 : 3,
-                }}
-              >
-                <m.div variants={varFade('inUp')} transition={{ delay: index * 0.2 }}>
-                  <Link
-                    component={RouterLink}
-                    href={paths.post.details((post as any).slug || post.title)}
-                    underline="none"
+          {/* GRID E CAROUSEL DE NOTÍCIAS */}
+          <ResponsiveCarouselGrid
+            data={displayPosts}
+            carousel={carousel}
+            gridColumns={{ md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+            gridGap={4}
+            getGridItemProps={(post, index) => ({
+              gridColumn: { lg: index === 0 ? 'span 2' : 'span 1' },
+            })}
+            renderItem={(post: any, index) => (
+              <m.div variants={varFade('inUp')} transition={{ delay: index * 0.2 }} style={{ height: '100%' }}>
+                <Link
+                  component={RouterLink}
+                  href={paths.post.details(post.slug || post.title)}
+                  underline="none"
+                  sx={{ display: 'block', height: '100%' }}
+                >
+                  <CyberCard
+                    sx={{
+                      height: '100%',
+                      minHeight: 420,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: theme.transitions.create(['all'], {
+                        duration: theme.transitions.duration.standard,
+                      }),
+                      boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.5)}`,
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
+                        '& img': { transform: 'scale(1.1)' },
+                      },
+                    }}
                   >
-                    <CyberCard
+                    <Box
+                      component="img"
+                      src={post.coverUrl}
+                      alt={post.title}
                       sx={{
-                        height: 420,
-                        cursor: 'pointer',
-                        transition: theme.transitions.create(['all'], {
-                          duration: theme.transitions.duration.standard,
-                        }),
-                        boxShadow: `0 8px 32px 0 ${alpha(theme.palette.common.black, 0.5)}`,
-                        '&:hover': {
-                          transform: 'translateY(-8px)',
-                          boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
-                          '& img': { transform: 'scale(1.1)' },
-                        },
+                        position: 'absolute',
+                        inset: 0,
+                        width: 1,
+                        height: 1,
+                        objectFit: 'cover',
+                        transition: 'transform 0.6s ease',
+                      }}
+                    />
+
+                    {/* Overlay para profundidade e legibilidade */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        inset: 0,
+                        zIndex: 1,
+                        background: `linear-gradient(180deg, transparent 40%, ${alpha('#020817', 0.95)} 100%)`,
+                      }}
+                    />
+
+                    <Stack
+                      spacing={1.5}
+                      sx={{
+                        position: 'absolute',
+                        bottom: 0,
+                        p: 4,
+                        width: 1,
+                        zIndex: 4,
                       }}
                     >
-                      <Box
-                        component="img"
-                        src={post.coverUrl}
-                        alt={post.title}
+                      <Typography
+                        variant="caption"
                         sx={{
-                          position: 'absolute',
-                          inset: 0,
-                          width: 1,
-                          height: 1,
-                          objectFit: 'cover',
-                          transition: 'transform 0.6s ease',
-                        }}
-                      />
-
-                      {/* Overlay para profundidade e legibilidade */}
-                      <Box
-                        sx={{
-                          position: 'absolute',
-                          inset: 0,
-                          zIndex: 1,
-                          background: `linear-gradient(180deg, transparent 40%, ${alpha('#020817', 0.95)} 100%)`,
-                        }}
-                      />
-
-                      <Stack
-                        spacing={1.5}
-                        sx={{
-                          position: 'absolute',
-                          bottom: 0,
-                          p: 4,
-                          width: 1,
-                          zIndex: 4,
+                          color: '#919EAB', // Texto Secundário padronizado
+                          fontFamily: "'Public Sans', sans-serif",
+                          fontWeight: 600,
                         }}
                       >
-                        <Typography
-                          variant="caption"
-                          sx={{
-                            color: '#919EAB', // Texto Secundário padronizado
-                            fontFamily: "'Public Sans', sans-serif",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {fDate(post.createdAt)}
-                        </Typography>
+                        {fDate(post.createdAt)}
+                      </Typography>
 
-                        <Typography
-                          sx={{
-                            fontWeight: 800,
-                            fontSize: index === 0 ? 24 : 18,
-                            color: 'common.white',
-                            lineHeight: 1.2,
-                            fontFamily: "'Orbitron', sans-serif",
-                            textTransform: 'uppercase', // Estética Scifi
-                          }}
-                        >
-                          {post.title}
-                        </Typography>
-                      </Stack>
-                    </CyberCard>
-                  </Link>
-                </m.div>
-              </Grid>
-            ))}
-          </Grid>
+                      <Typography
+                        sx={{
+                          fontWeight: 800,
+                          fontSize: { xs: 18, lg: index === 0 ? 28 : 18 },
+                          color: 'common.white',
+                          lineHeight: 1.2,
+                          fontFamily: "'Orbitron', sans-serif",
+                          textTransform: 'uppercase', // Estética Scifi
+                        }}
+                      >
+                        {post.title}
+                      </Typography>
+                    </Stack>
+                  </CyberCard>
+                </Link>
+              </m.div>
+            )}
+          />
         </Container>
       </MotionViewport>
     </Box>

@@ -188,32 +188,39 @@ frontend/
 │   │   │   └── page.tsx                    # HOME FFC: Landing Page Oficial
 │   │   ├── (main)/
 │   │   │   ├── about/                      # Página Sobre o FFC
-│   │   │   ├── contact/                    # Atendimento aos Fãs e Atletas
 │   │   │   ├── chaves/                     # Brackets interativos do Torneio (NOVO)
-│   │   │   ├── ecosystem/                  # Plataforma Tecnológica de Tickets
+│   │   │   ├── contact/                    # Atendimento aos Fãs e Atletas
+│   │   │   ├── documentos/                 # Área restrita / Validações
+│   │   │   ├── ecosystem/                  # Plataforma Tecnológica
+│   │   │   ├── inscricao/                  # Formulário Oficial de Registro de Atletas
 │   │   │   ├── team/                       # Equipe de Organização do FFC
 │   │   │   ├── editorial-policy/           # Regras do Portal (E-E-A-T)
-│   │   │   ├── fact-checking/              
-│   │   │   ├── methodology/                
+│   │   │   ├── fact-checking/              # Checagem de Resultados (E-E-A-T)
+│   │   │   ├── methodology/                # Metodologia Esportiva (E-E-A-T)
 │   │   │   └── (legal)/                    # Compliance Jurídico e Regras do Evento
 │   ├── sections/
 │   │   ├── home/                           # MÓDULO: LANDING PAGE FFC (DIAMANTE)
 │   │   │   ├── _components/                # Blocos de Ação (UI/UX)
-│   │   │   │   ├── HomeHero.tsx            # Chamada Principal do Card
+│   │   │   │   ├── Categorias.tsx          # Seletivas e Chaves (Grid/Carousel Global)
+│   │   │   │   ├── HomeAthletes.tsx        # Atletas Convidados (Grid/Carousel Global)
 │   │   │   │   ├── HomeCommunity.tsx       
-│   │   │   │   ├── HomeEcosystem.tsx       
+│   │   │   │   ├── HomeCountdownDialog.tsx # Modal de Contagem Regressiva
+│   │   │   │   ├── HomeCtaBanner.tsx       # Botão de Inscrição Magnético
 │   │   │   │   ├── HomeFaqs.tsx            
-│   │   │   │   ├── HomeRoadmap.tsx         # Programação das Lutas
-│   │   │   │   ├── HomeAthletes.tsx        # Carrossel de Atletas em Destaque (NOVO)
-│   │   │   │   ├── HomeSponsors.tsx        # Área Dourada VIP para Patrocinadores (NOVO)
-│   │   │   │   ├── HomeLatestNews.tsx      
-│   │   │   │   └── HomeCtaBanner.tsx       # Botão de Inscrição Magnético
+│   │   │   │   ├── HomeHero.tsx            # Chamada Principal do Card
+│   │   │   │   ├── HomeLatestNews.tsx      # Últimas Notícias (Grid/Carousel Global)
+│   │   │   │   ├── HomePrizes.tsx          # Premiação do Evento
+│   │   │   │   ├── HomeRoadmap.tsx         # Programação das Lutas (Grid/Carousel Global)
+│   │   │   │   ├── HomeSponsors.tsx        # Área Dourada VIP para Patrocinadores
+│   │   │   │   └── HomeTeam.tsx            # Organização do FFC (Grid/Carousel Global)
 │   │   │   └── _view/
 │   │   │       └── HomeView.tsx            # Orquestrador da Landing Page
 │   │   ├── chaves/                         # MÓDULO: CHAVES DO CAMPEONATO
 │   │   │   └── _view/
 │   │   │       ├── ChavesView.tsx          # Árvore/Pirâmide do Torneio
 │   │   │       └── BracketMatch.tsx        # Card Responsivo de Lutas
+│   │   ├── inscricao/                      # MÓDULO: INSCRIÇÕES E REGISTRO
+│   │   ├── documentos/                     # MÓDULO: GESTÃO DE DOCUMENTOS
 │   │   ├── about/                          # MÓDULO: SOBRE A INSTITUIÇÃO
 │   │   │   └── _view/AboutView.tsx
 │   │   ├── contact/                        # MÓDULO: ATENDIMENTO
@@ -232,6 +239,14 @@ frontend/
 Integração transparente com o ecossistema para fãs e atletas:
 *   **Session Sync:** O `AuthProvider` central reconhece se é um Atleta, Administrador ou Fã através do JWT.
 *   **Acesso VIP (Web3):** Suporte nativo a carteiras (Wagmi/Viem) para verificação on-chain de Colecionáveis FFC e Passes VIP Tokenizados (Integração RWA Herdada).
+
+### 5. 🎨 Design System & Padrões Globais (UI/UX)
+Para manter a consistência visual "Premium/Cyber-Sports" em todas as telas, implementamos um sistema rígido de padronização onde **o design é concebido primeiro como um estilo robusto dedicado ao Desktop** e inteligentemente convertido/adaptado para múltiplos tamanhos de tela (Mobile e Tablet).
+
+* **Tipografia Global:** `Orbitron` para Títulos, Destaques e Botões (Estética Sci-Fi/Luta). `Public Sans` para parágrafos e leitura longa (Maior legibilidade).
+* **Componentes Visuais Core:** Uso extensivo e padronizado do `CyberCard` (Cards com blur, glow e neon effects) e `CyberButton` (Botões de Call to Action magnéticos).
+* **Animações Fluidas:** Utilizamos `framer-motion` acoplado ao nosso utilitário estrito `varFade()` (ex: `varFade('inUp')`), garantindo que a rolagem (scroll) revele todos os elementos do ecossistema FFC com a mesma cadência.
+* **Arquitetura de Responsividade Híbrida (`ResponsiveCarouselGrid`):** Como regra de ouro arquitetural, seções que exibem coleções de itens (Atletas, Últimas Notícias, Organização, Roadmap, Categorias de Peso) utilizam nosso componente global de otimização de cards. No Desktop (monitores largos), a interface renderiza um **Grid Avançado Assimétrico ou Simétrico**. Em Mobile/Tablets, para preservar o conforto do usuário, a estrutura se converte automaticamente em um **Carrossel Interativo (Swipe)**. Essa abordagem previne rolagens verticais exaustivas e unifica a experiência premium independente do dispositivo de acesso.
 
 ---
 

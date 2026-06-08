@@ -33,8 +33,9 @@ import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
-import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
+import { useCarousel } from 'src/components/carousel';
 import { CyberButton } from 'src/components/cyber-button';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------
 // Fallback estático — usado quando o locale não tem o array members
@@ -151,36 +152,18 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
           </m.div>
         </Stack>
 
-        {/* ── CAROUSEL (Mobile & Tablet: xs, sm) ── */}
-        <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'relative' }}>
-          <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
-
-          <Carousel carousel={carousel} sx={{ px: 0.5, py: 2 }}>
-            {members.map((member) => (
-              <Box
-                key={member.id}
-                component={m.div}
-                variants={varFade('in')}
-                sx={{ py: { xs: 2, md: 3 } }}
-              >
-                <MemberCard member={member} />
-              </Box>
-            ))}
-          </Carousel>
-        </Box>
-
-        {/* ── GRID DE CARDS (Desktop: md, lg, xl) ── */}
-        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-          <Grid container spacing={2.5} justifyContent="center">
-            {members.map((member) => (
-              <Grid key={member.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
-                  <MemberCard member={member} />
-                </m.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        {/* ── GRID E CAROUSEL ── */}
+        <ResponsiveCarouselGrid
+          data={members}
+          carousel={carousel}
+          gridColumns={{ md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
+          gridGap={2.5}
+          renderItem={(member: any) => (
+            <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
+              <MemberCard member={member} />
+            </m.div>
+          )}
+        />
       </Container>
     </Box>
   );

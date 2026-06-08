@@ -19,6 +19,10 @@ export type IconifyProps = React.ComponentProps<typeof IconRoot> &
     icon: IconifyName;
   };
 
+// Register icons immediately when the module is imported to avoid hydration flicker
+// and prevent state updates during the render phase.
+registerIcons();
+
 export function Iconify({ className, icon, width = 20, height, sx, ...other }: IconifyProps) {
   const uniqueId = useId();
 
@@ -31,8 +35,6 @@ export function Iconify({ className, icon, width = 20, height, sx, ...other }: I
       ].join('\n')
     );
   }
-
-  registerIcons();
 
   return (
     <IconRoot

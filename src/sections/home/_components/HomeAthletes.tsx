@@ -20,8 +20,9 @@ import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
-import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
+import { useCarousel } from 'src/components/carousel';
 import { CyberButton } from 'src/components/cyber-button';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------
 
@@ -69,8 +70,21 @@ const ATHLETES: Athlete[] = [
     photoUrl: '/assets/images/convidados/João Freitas.png',
     isGP: true,
   },
-  ...Array.from({ length: 7 }).map((_, index) => ({
-    id: `athlete-${index + 2}`,
+  {
+    id: 'athlete-2',
+    name: 'Vitor Pantoja de Oliveira',
+    nickname: 'Pantoja',
+    team: 'CheckMat',
+    belt: 'Roxa',
+    beltColor: BELT_COLOR.Roxa,
+    weightClass: 'MEIO-PESADO',
+    city: 'Brasil',
+    titles: ['Campeão Brasileiro Sem Kimono IBJJF', 'Campeão Internacional CBJJE'],
+    photoUrl: '/assets/images/convidados/Vitor Pantoja.png',
+    isGP: true,
+  },
+  ...Array.from({ length: 6 }).map((_, index) => ({
+    id: `athlete-${index + 3}`,
     name: 'Atleta Convidado',
     nickname: 'EM BREVE',
     team: 'Equipe a confirmar',
@@ -356,35 +370,18 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
             </m.div>
           </Stack>
 
-          {/* ── CAROUSEL (Mobile & Tablet: xs, sm) ── */}
-          <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'relative' }}>
-            <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
-            <Carousel carousel={carousel} sx={{ px: 0.5, py: 2 }}>
-              {ATHLETES.map((athlete) => (
-                <Box
-                  key={athlete.id}
-                  component={m.div}
-                  variants={varFade('in')}
-                  sx={{ py: { xs: 2, md: 3 } }}
-                >
-                  <AthleteCard athlete={athlete} />
-                </Box>
-              ))}
-            </Carousel>
-          </Box>
-
-          {/* ── GRID DE CARDS (Desktop: md, lg, xl) ── */}
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Grid container spacing={2.5} justifyContent="center">
-              {ATHLETES.map((athlete) => (
-                <Grid key={athlete.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                  <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
-                    <AthleteCard athlete={athlete} />
-                  </m.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
+          {/* ── GRID E CAROUSEL ── */}
+          <ResponsiveCarouselGrid
+            data={ATHLETES}
+            carousel={carousel}
+            gridColumns={{ md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }}
+            gridGap={3}
+            renderItem={(athlete) => (
+              <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
+                <AthleteCard athlete={athlete} />
+              </m.div>
+            )}
+          />
 
           {/* ── NOTA INFERIOR ── */}
           <m.div variants={varFade('inUp')}>

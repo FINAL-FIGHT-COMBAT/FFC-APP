@@ -22,6 +22,8 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { useTranslate } from 'src/locales';
 
 import { varFade, MotionViewport } from 'src/components/animate';
+import { useCarousel } from 'src/components/carousel';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------
 
@@ -37,6 +39,12 @@ type RoadmapPhase = {
 export function HomeRoadmap({ sx, ...other }: BoxProps) {
   const theme = useTheme();
   const { t } = useTranslate();
+
+  const carousel = useCarousel({
+    align: 'start',
+    slideSpacing: '24px',
+    slidesToShow: { xs: 1, sm: 2 },
+  });
 
   const ROADMAP_PHASES: RoadmapPhase[] = useMemo(
     () => [
@@ -167,33 +175,25 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
             </Typography>
           </m.div>
 
-          {/* Grid de Fases com Bordas Reativas */}
-          <Grid
-            container
-            display="grid"
-            gridTemplateColumns={{ xs: '1fr', md: '1fr 16px 1fr' }}
-            rowGap={{ xs: 3, md: 4 }}
-            columnGap={3}
-            sx={{ mt: { xs: 8, md: 10 } }}
-          >
-            {ROADMAP_PHASES.map((item, index) => {
-              const isEven = index % 2 === 0;
-              const cardColor = theme.palette[item.color].main;
+          {/* ── GRID E CAROUSEL DE FASES ── */}
+          <Box sx={{ mt: { xs: 8, md: 10 } }}>
+            <ResponsiveCarouselGrid
+              data={ROADMAP_PHASES}
+              carousel={carousel}
+              gridColumns={{ md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+              gridGap={3}
+              renderItem={(item, index) => {
+                const cardColor = theme.palette[item.color].main;
 
-              return (
-                <Grid
-                  key={item.title}
-                  gridColumn={{ xs: '1 / -1', md: isEven ? '1 / 2' : '3 / 4' }}
-                  gridRow={{ md: index + 1 }}
-                  sx={{ textAlign: { xs: 'center', md: isEven ? 'right' : 'left' } }}
-                >
-                  <m.div variants={isEven ? varFade('inRight') : varFade('inLeft')}>
+                return (
+                  <m.div variants={varFade('inUp', { distance: 24 })} style={{ height: '100%' }}>
                     <CyberCard
                       sx={{
                         p: 4,
-                        display: 'inline-block',
-                        width: '100%',
-                        maxWidth: 400,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100%',
+                        minHeight: 340,
                         textAlign: 'left',
                         transition: theme.transitions.create(['transform', 'box-shadow']),
                         '&:hover': {
@@ -246,6 +246,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                           color: '#919EAB',
                           zIndex: 3,
                           position: 'relative',
+                          flexGrow: 1,
                         }}
                       >
                         {item.description}
@@ -312,10 +313,10 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                       </Box>
                     </CyberCard>
                   </m.div>
-                </Grid>
-              );
-            })}
-          </Grid>
+                );
+              }}
+            />
+          </Box>
         </Container>
       </MotionViewport>
     </Box>

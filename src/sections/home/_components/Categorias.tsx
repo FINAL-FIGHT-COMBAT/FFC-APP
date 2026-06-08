@@ -18,7 +18,8 @@ import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { CyberButton } from 'src/components/cyber-button';
-import { Carousel, useCarousel, CarouselArrowFloatButtons } from 'src/components/carousel';
+import { useCarousel } from 'src/components/carousel';
+import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------
 
@@ -407,58 +408,31 @@ export function Categorias({ sx, ...other }: BoxProps) {
             </Stack>
           </m.div>
 
-          {/* ── CAROUSEL (Mobile & Tablet: xs, sm) ── */}
-          <Box sx={{ display: { xs: 'block', md: 'none' }, position: 'relative' }}>
-            <AnimatePresence mode="wait">
-              <m.div
-                key={`${selectedGenero}-${selectedFaixa}-carousel`}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
-              >
-                <CarouselArrowFloatButtons {...carousel.arrows} options={carousel.options} />
-                <Carousel carousel={carousel} sx={{ px: 0.5, py: 2 }}>
-                  {currentCards.map((card) => (
-                    <Box key={card.id} sx={{ py: 1 }}>
-                      <CategoryCard
-                        peso={card.peso}
-                        faixa={selectedFaixa}
-                        slot={card.slot}
-                        genero={generoLabel}
-                      />
-                    </Box>
-                  ))}
-                </Carousel>
-              </m.div>
-            </AnimatePresence>
-          </Box>
-
-          {/* ── GRID DE CARDS COM ANIMAÇÃO DE TROCA (Desktop: md, lg, xl) ── */}
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-            <AnimatePresence mode="wait">
-              <m.div
-                key={`${selectedGenero}-${selectedFaixa}-grid`}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
-              >
-                <Grid container spacing={2.5}>
-                  {currentCards.map((card) => (
-                    <Grid key={card.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                      <CategoryCard
-                        peso={card.peso}
-                        faixa={selectedFaixa}
-                        slot={card.slot}
-                        genero={generoLabel}
-                      />
-                    </Grid>
-                  ))}
-                </Grid>
-              </m.div>
-            </AnimatePresence>
-          </Box>
+          {/* ── GRID E CAROUSEL COM ANIMAÇÃO DE TROCA ── */}
+          <AnimatePresence mode="wait">
+            <m.div
+              key={`${selectedGenero}-${selectedFaixa}-container`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+            >
+              <ResponsiveCarouselGrid
+                data={currentCards}
+                carousel={carousel}
+                gridColumns={{ md: 'repeat(3, 1fr)' }}
+                gridGap={2.5}
+                renderItem={(card: any) => (
+                  <CategoryCard
+                    peso={card.peso}
+                    faixa={selectedFaixa}
+                    slot={card.slot}
+                    genero={generoLabel}
+                  />
+                )}
+              />
+            </m.div>
+          </AnimatePresence>
 
         </Container>
       </MotionViewport>
