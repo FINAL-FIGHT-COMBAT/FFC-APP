@@ -24,6 +24,7 @@ export const paths = {
   pdfViewer: (id: string) => `/pdf-viewer/${id}`,
   chaves: '/chaves',
   inscricao: '/inscricao',
+  contratoAtleta: '/contrato-atleta',
   ecosystem: '/ecosystem',
   privacy: '/privacy',
   terms: '/terms',
