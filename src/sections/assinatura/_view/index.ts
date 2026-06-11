@@ -1,0 +1,1 @@
+export { AssinaturaView } from './AssinaturaView';

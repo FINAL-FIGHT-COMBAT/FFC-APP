@@ -19,11 +19,11 @@ export function InscricaoView() {
         sx={{
           position: 'relative',
           zIndex: 1,
-          pt: { xs: 15, md: 20 },
-          pb: { xs: 10, md: 15 },
+          pt: { xs: 8, sm: 9, md: 10 },
+          pb: { xs: 5, sm: 6, md: 8 },
           minHeight: '100vh',
           display: 'flex',
-          alignItems: 'center',
+          flexDirection: 'column',
         }}
       >
         <Container maxWidth="md">

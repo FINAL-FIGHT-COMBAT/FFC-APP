@@ -3,18 +3,21 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { z as zod } from 'zod';
-import { useForm } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 import { toast } from 'src/components/snackbar';
 import { Form, Field } from 'src/components/hook-form';
 import { CyberCard } from 'src/components/cyber-card';
@@ -44,32 +47,88 @@ const BELTS = [
   'Preta',
   'Coral',
   'Vermelha',
-  'Grappling (N/A)',
 ];
+
+const INFLUENCERS = [
+  'N/A',
+  'FFC Oficial',
+];
+
+// ----------------------------------------------------------------------
+// FUNÇÕES DE MÁSCARA (AUTO-FORMATAÇÃO)
+// ----------------------------------------------------------------------
+
+function formatDocument(value: string) {
+  if (!value) return '';
+  const v = value.replace(/\D/g, ''); // Remove tudo que não for dígito
+  if (v.length <= 11) {
+    // Máscara CPF: 000.000.000-00
+    return v
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d{1,2})/, '$1-$2');
+  }
+  // Máscara CNPJ: 00.000.000/0001-00
+  return v
+    .slice(0, 14)
+    .replace(/(\d{2})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1/$2')
+    .replace(/(\d{4})(\d{1,2})/, '$1-$2');
+}
+
+function formatPhone(value: string) {
+  if (!value) return '';
+  const v = value.replace(/\D/g, '');
+  if (v.length > 10) {
+    // Celular: (00) 00000-0000
+    return v.slice(0, 11).replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+  } else if (v.length > 6) {
+    // Fixo: (00) 0000-0000
+    return v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+  } else if (v.length > 2) {
+    return v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+  } else if (v.length > 0) {
+    return v.replace(/^(\d{0,2})/, '($1');
+  }
+  return v;
+}
 
 // ----------------------------------------------------------------------
 // SCHEMAS E TIPOS (ZOD)
 // ----------------------------------------------------------------------
 
+// Regex exige o formato final mascarado
+const phoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+const docRegex = /(^\d{3}\.\d{3}\.\d{3}-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$)/;
+
 const AtletaSchema = zod.object({
-  fullName: zod.string().min(1, { message: 'Nome completo é obrigatório' }),
-  email: zod.string().min(1, { message: 'E-mail é obrigatório' }).email({ message: 'E-mail inválido' }),
-  phone: zod.string().min(1, { message: 'Telefone/WhatsApp é obrigatório' }),
-  document: zod.string().min(1, { message: 'CPF ou RG é obrigatório' }),
+  fullName: zod.string().trim().min(3, { message: 'Nome completo deve ter pelo menos 3 caracteres' }),
+  email: zod.string().trim().min(1, { message: 'E-mail é obrigatório' }).email({ message: 'E-mail inválido' }),
+  phone: zod.string().trim().regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
+  document: zod.string().trim().regex(docRegex, { message: 'Digite um CPF ou CNPJ válido' }),
   category: zod.string().min(1, { message: 'Selecione uma categoria de peso' }),
   belt: zod.string().min(1, { message: 'Selecione a sua faixa/graduação' }),
-  team: zod.string().min(1, { message: 'Nome da academia ou equipe é obrigatório' }),
+  team: zod.string().trim().min(2, { message: 'Nome da academia ou equipe é obrigatório' }),
+  acceptTerms: zod.literal(true, {
+    errorMap: () => ({ message: 'Você precisa aceitar os termos de ativação.' }),
+  }),
+  referralCode: zod.string().trim().optional(),
 });
 
 type AtletaSchemaType = zod.infer<typeof AtletaSchema>;
 
 const AcademiaSchema = zod.object({
-  academyName: zod.string().min(1, { message: 'Nome da academia é obrigatório' }),
-  headCoach: zod.string().min(1, { message: 'Nome do professor é obrigatório' }),
-  email: zod.string().min(1, { message: 'E-mail comercial é obrigatório' }).email({ message: 'E-mail inválido' }),
-  phone: zod.string().min(1, { message: 'Telefone comercial é obrigatório' }),
-  document: zod.string().min(1, { message: 'CNPJ ou CPF do responsável é obrigatório' }),
+  academyName: zod.string().trim().min(2, { message: 'Nome da academia é obrigatório' }),
+  headCoach: zod.string().trim().min(3, { message: 'Nome do professor é obrigatório' }),
+  email: zod.string().trim().min(1, { message: 'E-mail comercial é obrigatório' }).email({ message: 'E-mail inválido' }),
+  phone: zod.string().trim().regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
+  document: zod.string().trim().regex(docRegex, { message: 'Digite um CPF ou CNPJ válido' }),
   coachBelt: zod.string().min(1, { message: 'Selecione a graduação do professor' }),
+  acceptTerms: zod.literal(true, {
+    errorMap: () => ({ message: 'Você precisa aceitar os termos de ativação.' }),
+  }),
+  referralCode: zod.string().trim().optional(),
 });
 
 type AcademiaSchemaType = zod.infer<typeof AcademiaSchema>;
@@ -103,71 +162,133 @@ const getInputStyle = (theme: any) => ({
 // COMPONENTE: FORMULÁRIO DO ATLETA
 // ----------------------------------------------------------------------
 
-function FormularioAtleta() {
+function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
   const theme = useTheme();
   const inputStyle = getInputStyle(theme);
 
   const methods = useForm<AtletaSchemaType>({
     resolver: zodResolver(AtletaSchema),
-    defaultValues: { fullName: '', email: '', phone: '', document: '', category: '', belt: '', team: '' },
+    defaultValues: { fullName: '', email: '', phone: '', document: '', category: '', belt: '', team: '', acceptTerms: undefined as any, referralCode: '' },
   });
 
-  const { reset, handleSubmit, formState: { isSubmitting } } = methods;
+  const { reset, handleSubmit, watch, setValue, formState: { isSubmitting } } = methods;
+  const searchParams = useSearchParams();
+
+  // Preenchimento Automático do Código de Indicação (Link de Afiliado)
+  useEffect(() => {
+    const ref = searchParams.get('ref');
+    if (ref) {
+      setValue('referralCode', ref, { shouldValidate: true, shouldDirty: true });
+    }
+  }, [searchParams, setValue]);
+
+  // Monitores para aplicar a máscara em tempo real
+  const phoneVal = watch('phone');
+  const docVal = watch('document');
+
+  useEffect(() => {
+    if (phoneVal) {
+      const formatted = formatPhone(phoneVal);
+      if (phoneVal !== formatted) {
+        setValue('phone', formatted, { shouldValidate: true, shouldDirty: true });
+      }
+    }
+  }, [phoneVal, setValue]);
+
+  useEffect(() => {
+    if (docVal) {
+      const formatted = formatDocument(docVal);
+      if (docVal !== formatted) {
+        setValue('document', formatted, { shouldValidate: true, shouldDirty: true });
+      }
+    }
+  }, [docVal, setValue]);
 
   const onSubmit = handleSubmit(async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.info('INSCRIÇÃO DE ATLETA', data);
-      toast.success('Inscrição do Atleta enviada com sucesso!');
-      reset();
+      console.info('CADASTRO DE ATLETA', data);
+      onSuccess();
     } catch (error) {
       toast.error('Erro ao enviar. Tente novamente.');
     }
   });
 
   return (
-    <Form methods={methods} onSubmit={onSubmit}>
-      <Stack spacing={3} sx={{ mt: 4 }}>
-        <Box
-          sx={{
-            display: 'grid',
-            rowGap: 3,
-            columnGap: 2,
-            gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
-          }}
-        >
-          <Field.Text name="fullName" label="Nome do Atleta" sx={inputStyle} />
-          <Field.Text name="document" label="CPF ou RG" sx={inputStyle} />
-          
-          <Field.Text name="email" label="E-mail do Atleta" sx={inputStyle} />
-          <Field.Text name="phone" label="Telefone / WhatsApp" sx={inputStyle} />
-          
-          <Field.Select name="category" label="Categoria de Peso" sx={inputStyle}>
-            {CATEGORIES.map((cat) => (
-              <MenuItem key={cat} value={cat}>{cat}</MenuItem>
-            ))}
-          </Field.Select>
-
-          <Field.Select name="belt" label="Faixa / Graduação" sx={inputStyle}>
-            {BELTS.map((belt) => (
-              <MenuItem key={belt} value={belt}>{belt}</MenuItem>
-            ))}
-          </Field.Select>
-        </Box>
-
-        <Field.Text name="team" label="Nome da Academia / Equipe" sx={inputStyle} />
-
-        <Stack alignItems="flex-end" sx={{ mt: 3 }}>
-          <CyberButton
-            type="submit"
-            disabled={isSubmitting}
-            glowColor="warning"
+    <FormProvider {...methods}>
+      <Form methods={methods} onSubmit={onSubmit}>
+        <Stack spacing={3} sx={{ mt: 4 }}>
+          <Box
+            sx={{
+              display: 'grid',
+              rowGap: 3,
+              columnGap: 2,
+              gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
+            }}
           >
-            {isSubmitting ? 'Enviando...' : 'INSCREVER ATLETA'}
-          </CyberButton>
+            <Field.Text name="fullName" label="Nome do Atleta" sx={inputStyle} />
+            <Field.Text name="document" label="CPF" sx={inputStyle} type="tel" />
+
+            <Field.Text name="email" label="E-mail" sx={inputStyle} type="email" />
+            <Field.Text name="phone" label="Telefone / WhatsApp" sx={inputStyle} type="tel" />
+
+            <Field.Select name="category" label="Categoria de Peso" sx={inputStyle}>
+              {CATEGORIES.map((cat) => (
+                <MenuItem key={cat} value={cat}>{cat}</MenuItem>
+              ))}
+            </Field.Select>
+
+            <Field.Select name="belt" label="Faixa / Graduação" sx={inputStyle}>
+              {BELTS.map((belt) => (
+                <MenuItem key={belt} value={belt}>{belt}</MenuItem>
+              ))}
+            </Field.Select>
+            <Field.Text name="team" label="Nome da Equipe" sx={inputStyle} />
+          </Box>
+
+          <Box sx={{ mt: 1 }}>
+            <Field.Autocomplete
+              name="referralCode"
+              label="Código de Indicação"
+              placeholder="Ex: SANDRO20 ou Mica Galvão"
+              options={INFLUENCERS}
+              freeSolo
+              sx={inputStyle}
+            />
+          </Box>
+
+          <Box sx={{ mt: 3, mb: 2 }}>
+            <Field.Checkbox
+              name="acceptTerms"
+              label={
+                <>
+                  Li e aceito os{' '}
+                  <Link component={RouterLink} href={paths.terms} target="_blank" rel="noopener" color="warning.main" underline="always">
+                    Termos de Uso
+                  </Link>{' '}
+                  e o pagamento da taxa de ativação da conta.
+                </>
+              }
+              sx={{
+                color: 'grey.300',
+                '& .MuiTypography-root': { fontSize: '0.875rem' }
+              }}
+            />
+          </Box>
+
+          <Stack alignItems="flex-end" sx={{ mt: 3 }}>
+            <CyberButton
+              type="submit"
+              disabled={isSubmitting}
+              glowColor="warning"
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
+            >
+              {isSubmitting ? 'PROCESSANDO...' : 'SOLICITAR ACESSO'}
+            </CyberButton>
+          </Stack>
         </Stack>
-      </Stack>
-    </Form>
+      </Form>
+    </FormProvider>
   );
 }
 
@@ -175,64 +296,127 @@ function FormularioAtleta() {
 // COMPONENTE: FORMULÁRIO DA ACADEMIA
 // ----------------------------------------------------------------------
 
-function FormularioAcademia() {
+function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
   const theme = useTheme();
   const inputStyle = getInputStyle(theme);
 
   const methods = useForm<AcademiaSchemaType>({
     resolver: zodResolver(AcademiaSchema),
-    defaultValues: { academyName: '', headCoach: '', email: '', phone: '', document: '', coachBelt: '' },
+    defaultValues: { academyName: '', headCoach: '', email: '', phone: '', document: '', coachBelt: '', acceptTerms: undefined as any, referralCode: '' },
   });
 
-  const { reset, handleSubmit, formState: { isSubmitting } } = methods;
+  const { reset, handleSubmit, watch, setValue, formState: { isSubmitting } } = methods;
+  const searchParams = useSearchParams();
+
+  // Preenchimento Automático do Código de Indicação (Link de Afiliado)
+  useEffect(() => {
+    const ref = searchParams.get('ref');
+    if (ref) {
+      setValue('referralCode', ref, { shouldValidate: true, shouldDirty: true });
+    }
+  }, [searchParams, setValue]);
+
+  // Monitores para aplicar a máscara em tempo real
+  const phoneVal = watch('phone');
+  const docVal = watch('document');
+
+  useEffect(() => {
+    if (phoneVal) {
+      const formatted = formatPhone(phoneVal);
+      if (phoneVal !== formatted) {
+        setValue('phone', formatted, { shouldValidate: true, shouldDirty: true });
+      }
+    }
+  }, [phoneVal, setValue]);
+
+  useEffect(() => {
+    if (docVal) {
+      const formatted = formatDocument(docVal);
+      if (docVal !== formatted) {
+        setValue('document', formatted, { shouldValidate: true, shouldDirty: true });
+      }
+    }
+  }, [docVal, setValue]);
 
   const onSubmit = handleSubmit(async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.info('CADASTRO DE ACADEMIA', data);
-      toast.success('Academia cadastrada com sucesso! Bem-vindos ao FFC.');
-      reset();
+      onSuccess();
     } catch (error) {
       toast.error('Erro ao enviar cadastro. Tente novamente.');
     }
   });
 
   return (
-    <Form methods={methods} onSubmit={onSubmit}>
-      <Stack spacing={3} sx={{ mt: 4 }}>
-        <Box
-          sx={{
-            display: 'grid',
-            rowGap: 3,
-            columnGap: 2,
-            gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
-          }}
-        >
-          <Field.Text name="academyName" label="Nome da Academia / Franquia" sx={inputStyle} />
-          <Field.Text name="document" label="CNPJ ou CPF do Responsável" sx={inputStyle} />
-          
-          <Field.Text name="headCoach" label="Nome do Professor Responsável" sx={inputStyle} />
-          <Field.Select name="coachBelt" label="Graduação do Professor" sx={inputStyle}>
-            {BELTS.map((belt) => (
-              <MenuItem key={belt} value={belt}>{belt}</MenuItem>
-            ))}
-          </Field.Select>
-
-          <Field.Text name="email" label="E-mail Comercial" sx={inputStyle} />
-          <Field.Text name="phone" label="Telefone / WhatsApp Comercial" sx={inputStyle} />
-        </Box>
-
-        <Stack alignItems="flex-end" sx={{ mt: 3 }}>
-          <CyberButton
-            type="submit"
-            disabled={isSubmitting}
-            glowColor="info"
+    <FormProvider {...methods}>
+      <Form methods={methods} onSubmit={onSubmit}>
+        <Stack spacing={3} sx={{ mt: 4 }}>
+          <Box
+            sx={{
+              display: 'grid',
+              rowGap: 3,
+              columnGap: 2,
+              gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
+            }}
           >
-            {isSubmitting ? 'Enviando...' : 'CADASTRAR ACADEMIA'}
-          </CyberButton>
+            <Field.Text name="academyName" label="Nome da Academia" sx={inputStyle} />
+            <Field.Text name="document" label="CNPJ ou CPF" sx={inputStyle} type="tel" />
+
+            <Field.Text name="headCoach" label="Nome do Professor" sx={inputStyle} />
+            <Field.Select name="coachBelt" label="Graduação do Professor" sx={inputStyle}>
+              {BELTS.map((belt) => (
+                <MenuItem key={belt} value={belt}>{belt}</MenuItem>
+              ))}
+            </Field.Select>
+
+            <Field.Text name="email" label="E-mail" sx={inputStyle} type="email" />
+            <Field.Text name="phone" label="Telefone / WhatsApp" sx={inputStyle} type="tel" />
+          </Box>
+
+          <Box sx={{ mt: 1 }}>
+            <Field.Autocomplete
+              name="referralCode"
+              label="Código de Indicação"
+              placeholder="Ex: SANDRO20 ou Mica Galvão"
+              options={INFLUENCERS}
+              freeSolo
+              sx={inputStyle}
+            />
+          </Box>
+
+          <Box sx={{ mt: 3, mb: 2 }}>
+            <Field.Checkbox
+              name="acceptTerms"
+              label={
+                <>
+                  Li e aceito os{' '}
+                  <Link component={RouterLink} href={paths.terms} target="_blank" rel="noopener" color="info.main" underline="always">
+                    Termos de Uso
+                  </Link>{' '}
+                  e o pagamento da taxa de registro da academia.
+                </>
+              }
+              sx={{
+                color: 'grey.300',
+                '& .MuiTypography-root': { fontSize: '0.875rem' }
+              }}
+            />
+          </Box>
+
+          <Stack alignItems="flex-end" sx={{ mt: 3 }}>
+            <CyberButton
+              type="submit"
+              disabled={isSubmitting}
+              glowColor="info"
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
+            >
+              {isSubmitting ? 'PROCESSANDO...' : 'SOLICITAR ACESSO'}
+            </CyberButton>
+          </Stack>
         </Stack>
-      </Stack>
-    </Form>
+      </Form>
+    </FormProvider>
   );
 }
 
@@ -243,8 +427,9 @@ function FormularioAcademia() {
 export function InscricaoForm() {
   const theme = useTheme();
   const searchParams = useSearchParams();
-  
+
   const [currentTab, setCurrentTab] = useState(0);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Lê a URL logo na montagem para ver se deve forçar a aba de Academia
   useEffect(() => {
@@ -257,9 +442,36 @@ export function InscricaoForm() {
     setCurrentTab(newValue);
   };
 
+  // TELA DE SUCESSO (PÓS-ENVIO)
+  if (isSuccess) {
+    return (
+      <CyberCard sx={{ p: { xs: 3, md: 5 }, textAlign: 'center', maxWidth: 800, mx: 'auto', width: '100%' }}>
+        <Iconify icon="solar:check-circle-bold" width={80} sx={{ color: 'success.main', mb: 3 }} />
+
+        <Typography variant="h3" sx={{ color: 'common.white', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', mb: 2 }}>
+          SOLICITAÇÃO RECEBIDA!
+        </Typography>
+
+        <Typography variant="body1" sx={{ color: 'grey.400', mb: 4, px: { xs: 0, md: 5 } }}>
+          Seu cadastro foi realizado com sucesso! Para garantir o seu acesso ao Aplicativo FFC, enviamos o seu comprovante de inscrição junto com o boleto de ativação da conta diretamente para o seu <strong>WhatsApp</strong> e E-mail.
+          <br /><br />
+          Assim que o pagamento for confirmado, seu perfil será liberado!
+        </Typography>
+
+        <CyberButton
+          glowColor="success"
+          onClick={() => window.location.href = '/'} // Redireciona para Home
+          sx={{ mt: 2, width: { xs: '100%', sm: 'auto' } }}
+        >
+          VOLTAR PARA A HOME
+        </CyberButton>
+      </CyberCard>
+    );
+  }
+
   return (
     <CyberCard sx={{ p: { xs: 3, md: 5 }, maxWidth: 800, mx: 'auto', width: '100%' }}>
-      
+
       {/* CABEÇALHO */}
       <Typography
         variant="h4"
@@ -275,14 +487,14 @@ export function InscricaoForm() {
       >
         PORTAL DE INSCRIÇÃO
       </Typography>
-      <Typography variant="body2" sx={{ color: 'grey.500', textAlign: 'center', mb: 4 }}>
+      <Typography variant="body2" sx={{ color: 'grey.400', textAlign: 'center', mb: 4 }}>
         Selecione se você quer se registrar individualmente ou registrar a sua matriz.
       </Typography>
 
       {/* SELETOR DE MODOS (TABS) */}
-      <Tabs 
-        value={currentTab} 
-        onChange={handleChangeTab} 
+      <Tabs
+        value={currentTab}
+        onChange={handleChangeTab}
         variant="fullWidth"
         sx={{
           '& .MuiTabs-indicator': {
@@ -291,10 +503,10 @@ export function InscricaoForm() {
           },
         }}
       >
-        <Tab 
-          icon={<Iconify icon={"solar:user-bold" as any} width={24} />} 
+        <Tab
+          icon={<Iconify icon={"solar:user-bold" as any} width={24} />}
           iconPosition="start"
-          label="SOU ATLETA" 
+          label="SOU ATLETA"
           sx={{
             fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
             fontWeight: 'bold',
@@ -302,10 +514,10 @@ export function InscricaoForm() {
             '&.Mui-selected': { color: theme.palette.warning.main },
           }}
         />
-        <Tab 
-          icon={<Iconify icon={"solar:buildings-bold" as any} width={24} />} 
+        <Tab
+          icon={<Iconify icon={"solar:buildings-bold" as any} width={24} />}
           iconPosition="start"
-          label="SOU ACADEMIA" 
+          label="SOU ACADEMIA"
           sx={{
             fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
             fontWeight: 'bold',
@@ -316,9 +528,9 @@ export function InscricaoForm() {
       </Tabs>
 
       {/* RENDERIZAÇÃO CONDICIONAL */}
-      {currentTab === 0 && <FormularioAtleta />}
-      {currentTab === 1 && <FormularioAcademia />}
-      
+      {currentTab === 0 && <FormularioAtleta onSuccess={() => setIsSuccess(true)} />}
+      {currentTab === 1 && <FormularioAcademia onSuccess={() => setIsSuccess(true)} />}
+
     </CyberCard>
   );
 }

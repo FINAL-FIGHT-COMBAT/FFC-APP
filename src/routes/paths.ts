@@ -21,6 +21,7 @@ export const paths = {
   contact: '/contact-us',
   team: '/team',
   documentos: '/documentos',
+  pdfViewer: (id: string) => `/pdf-viewer/${id}`,
   chaves: '/chaves',
   inscricao: '/inscricao',
   ecosystem: '/ecosystem',
@@ -110,5 +111,7 @@ export const paths = {
     governance: `${ROOTS.DASHBOARD}/governance`,
     treasury: `${ROOTS.DASHBOARD}/treasury`,
     bounties: `${ROOTS.DASHBOARD}/bounties`,
+    // ASSINATURA DIGITAL (IPFS/FaceID)
+    assinatura: (id: string) => `${ROOTS.DASHBOARD}/assinatura/${id}`,
   },
 };

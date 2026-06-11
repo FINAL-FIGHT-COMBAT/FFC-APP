@@ -2,10 +2,13 @@
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
+
+import { useRouter } from 'src/routes/hooks';
+import { paths } from 'src/routes/paths';
+import { useAuthContext } from 'src/auth/hooks';
 
 import { HomeBackground } from 'src/components/background';
 import { Iconify } from 'src/components/iconify';
@@ -14,14 +17,27 @@ import { CyberButton } from 'src/components/cyber-button';
 
 // ----------------------------------------------------------------------
 
-const DOCUMENTS = [
+type DocumentType = 'pdf' | 'sign';
+
+interface IDocument {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  size: string;
+  url: string;
+  type: DocumentType;
+}
+
+const DOCUMENTS: IDocument[] = [
   {
     id: 'doc-1',
     title: 'Regulamento Oficial FFC',
     category: 'Geral',
     description: 'Regras detalhadas de combate, critérios de pontuação, faltas e chaveamento do Grand Prix.',
     size: '2.4 MB',
-    url: '#',
+    url: '/assets/docs/regulamento-oficial.pdf', // Exemplo estático
+    type: 'pdf',
   },
   {
     id: 'doc-2',
@@ -29,7 +45,8 @@ const DOCUMENTS = [
     category: 'Atletas',
     description: 'Cronograma oficial de pesagem, trajes permitidos, tolerância de peso e punições.',
     size: '1.1 MB',
-    url: '#',
+    url: '/assets/docs/manual-pesagem.pdf', // Exemplo estático
+    type: 'pdf',
   },
   {
     id: 'doc-3',
@@ -38,6 +55,7 @@ const DOCUMENTS = [
     description: 'Documento obrigatório de aptidão física e liberação de direitos de imagem para o evento.',
     size: '850 KB',
     url: '#',
+    type: 'sign',
   },
   {
     id: 'doc-4',
@@ -45,7 +63,8 @@ const DOCUMENTS = [
     category: 'Academias',
     description: 'Regras para inscrição de equipes completas, alojamento e distribuição de lucros/PPV.',
     size: '3.2 MB',
-    url: '#',
+    url: '/assets/docs/guia-academias.pdf', // Exemplo estático
+    type: 'pdf',
   },
 ];
 
@@ -53,6 +72,24 @@ const DOCUMENTS = [
 
 export function DocumentosView() {
   const theme = useTheme();
+  const router = useRouter();
+  const { authenticated } = useAuthContext();
+
+  const handleDocumentAction = (doc: IDocument) => {
+    if (doc.type === 'pdf') {
+      // Abre o leitor interno estilo PDF (Folha A4)
+      router.push(paths.pdfViewer(doc.id));
+    } else if (doc.type === 'sign') {
+      // Requer autenticação para assinatura biométrica
+      if (!authenticated) {
+        // Redireciona para o login e depois volta
+        router.push(`${paths.auth.signIn}?returnTo=${paths.documentos}`);
+      } else {
+        // Envia para o dashboard de assinatura IPFS/FaceID
+        router.push(paths.dashboard.assinatura(doc.id));
+      }
+    }
+  };
 
   return (
     <>
@@ -113,17 +150,17 @@ export function DocumentosView() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 3,
-                  borderColor: alpha(theme.palette.warning.main, 0.2),
+                  borderColor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.2),
                   transition: theme.transitions.create(['all']),
                   position: 'relative',
                   overflow: 'hidden',
                   '&:hover': {
-                    borderColor: alpha(theme.palette.warning.main, 0.6),
-                    boxShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
+                    borderColor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.6),
+                    boxShadow: `0 0 40px ${alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.15)}`,
                     transform: 'translateY(-4px)',
                     '& .doc-icon': {
                       transform: 'scale(1.1) rotate(-5deg)',
-                      color: theme.palette.warning.main,
+                      color: theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main,
                     },
                   },
                 }}
@@ -136,7 +173,7 @@ export function DocumentosView() {
                     right: -50,
                     width: 150,
                     height: 150,
-                    background: `radial-gradient(circle, ${alpha(theme.palette.warning.main, 0.1)} 0%, transparent 70%)`,
+                    background: `radial-gradient(circle, ${alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.1)} 0%, transparent 70%)`,
                     borderRadius: '50%',
                     pointerEvents: 'none',
                   }}
@@ -152,13 +189,16 @@ export function DocumentosView() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       borderRadius: 1.5,
-                      bgcolor: alpha(theme.palette.warning.main, 0.1),
-                      color: alpha(theme.palette.warning.main, 0.7),
+                      bgcolor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.1),
+                      color: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.7),
                       transition: theme.transitions.create(['all']),
                       flexShrink: 0,
                     }}
                   >
-                    <Iconify icon={"solar:document-text-bold-duotone" as any} width={32} />
+                    <Iconify 
+                      icon={(doc.type === 'sign' ? "solar:pen-new-round-bold-duotone" : "solar:document-text-bold-duotone") as any} 
+                      width={32} 
+                    />
                   </Box>
 
                   <Stack spacing={1} flexGrow={1}>
@@ -166,7 +206,7 @@ export function DocumentosView() {
                       <Typography
                         variant="caption"
                         sx={{
-                          color: theme.palette.warning.main,
+                          color: theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main,
                           fontWeight: 700,
                           letterSpacing: 1,
                           textTransform: 'uppercase',
@@ -197,15 +237,13 @@ export function DocumentosView() {
                 </Stack>
 
                 <CyberButton
-                  href={doc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => handleDocumentAction(doc)}
                   fullWidth
-                  glowColor="warning"
-                  endIcon={<Iconify icon={"solar:download-minimalistic-bold" as any} />}
+                  glowColor={doc.type === 'sign' ? 'info' : 'warning'}
+                  endIcon={<Iconify icon={(doc.type === 'sign' ? "solar:face-scan-bold" : "solar:document-add-bold") as any} />}
                   sx={{ mt: 'auto', height: 44, fontSize: 13 }}
                 >
-                  Baixar PDF
+                  {doc.type === 'sign' ? 'ASSINAR TERMO' : 'LER REGULAMENTO'}
                 </CyberButton>
               </CyberCard>
             ))}
