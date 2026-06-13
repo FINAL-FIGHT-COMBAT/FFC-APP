@@ -13,7 +13,6 @@ import { Iconify } from 'src/components/iconify';
 import { HomeBackground } from 'src/components/background';
 
 import {
-  DocumentViewer,
   A4Page,
   DocumentTitle,
   SectionTitle,
@@ -117,8 +116,6 @@ export function ContratoAtletaView() {
             }
           }}
         >
-          <DocumentViewer>
-        
         <A4Page pageNumber={1}>
             <DocumentTitle>
               INSTRUMENTO PARTICULAR DE CONTRATO
@@ -461,8 +458,6 @@ export function ContratoAtletaView() {
             <DigitalSignature title="ASSINATURA DIGITAL - ASPPIBRA" name="Cofundador e Líder de Desenvolvimento e Parcerias: Sandro Antunes" color="success" />
             <DigitalSignature title="ASSINATURA DIGITAL - ATLETA" name="Assinatura eletrônica autenticada via Plataforma FFC" color="info" />
           </A4Page>
-
-      </DocumentViewer>
         </Box>
       </Box>
     </>
