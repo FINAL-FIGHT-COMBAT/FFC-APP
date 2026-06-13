@@ -6,14 +6,15 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { useRouter } from 'src/routes/hooks';
 import { paths } from 'src/routes/paths';
-import { useAuthContext } from 'src/auth/hooks';
+import { useRouter } from 'src/routes/hooks';
 
-import { HomeBackground } from 'src/components/background';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
+import { HomeBackground } from 'src/components/background';
+
+import { useAuthContext } from 'src/auth/hooks';
 
 // ----------------------------------------------------------------------
 

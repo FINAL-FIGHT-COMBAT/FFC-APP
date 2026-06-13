@@ -1,6 +1,6 @@
 import { getPosts } from 'src/actions/blog-queries';
+import { VIDEOS_MOCK, COMMUNITIES_MOCK } from 'src/_mock/blog.mock';
 
-import { BLOG_MOCK, COMMUNITIES_MOCK, VIDEOS_MOCK } from 'src/_mock/blog.mock';
 import { BlogHomeView } from 'src/sections/blog/_view/public/BlogHomeView';
 
 // ✅ CORREÇÃO DO ERRO DA VERCEL: Força a renderização dinâmica no servidor (SSR)

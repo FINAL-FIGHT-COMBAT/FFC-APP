@@ -1,6 +1,6 @@
 'use client';
 
-/* eslint-disable react/no-unknown-property */
+ 
 import type { PropsWithChildren } from 'react';
 
 import { memo, Suspense } from 'react';

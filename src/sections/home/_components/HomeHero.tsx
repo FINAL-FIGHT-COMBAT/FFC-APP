@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -16,8 +15,8 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-import { Iconify, type IconifyName } from 'src/components/iconify';
 import { CyberButton } from 'src/components/cyber-button';
+import { Iconify, type IconifyName } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 

@@ -1,19 +1,20 @@
 'use client';
 
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
+import Avatar from '@mui/material/Avatar';
 import { alpha } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 import { useTranslate } from 'src/locales';
 import { CONFIG } from 'src/global-config';
-import { HomeBackground } from 'src/components/background';
+
 import { Iconify } from 'src/components/iconify';
+import { HomeBackground } from 'src/components/background';
 
 // ----------------------------------------------------------------------
 

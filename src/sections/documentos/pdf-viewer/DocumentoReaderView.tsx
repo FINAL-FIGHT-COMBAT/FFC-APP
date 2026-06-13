@@ -2,15 +2,16 @@
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 
 import { useRouter } from 'src/routes/hooks';
-import { Iconify } from 'src/components/iconify';
 
 import { MOCK_PDF_DOCUMENTS } from 'src/_mock/_documents';
+
+import { Iconify } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 

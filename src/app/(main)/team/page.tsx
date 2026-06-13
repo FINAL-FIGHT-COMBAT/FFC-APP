@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { TeamView } from 'src/sections/team/_view';
 
 // ----------------------------------------------------------------------

@@ -1,9 +1,9 @@
 'use client';
 
-import { WagmiProvider, createConfig, http } from 'wagmi';
-import { mainnet, polygon, bsc } from 'wagmi/chains';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
+import { bsc, mainnet, polygon } from 'wagmi/chains';
+import { http, createConfig, WagmiProvider } from 'wagmi';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // ----------------------------------------------------------------------
 

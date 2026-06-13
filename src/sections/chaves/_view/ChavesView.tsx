@@ -6,8 +6,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { HomeBackground } from 'src/components/background';
 import { Iconify } from 'src/components/iconify';
+import { HomeBackground } from 'src/components/background';
+
 import { BracketMatch } from './BracketMatch';
 
 // ----------------------------------------------------------------------

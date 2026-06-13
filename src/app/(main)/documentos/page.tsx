@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { DocumentosView } from 'src/sections/documentos/_view';
 
 // ----------------------------------------------------------------------

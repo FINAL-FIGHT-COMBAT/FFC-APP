@@ -1,5 +1,4 @@
 import { CONFIG } from 'src/global-config';
-
 import { BLOG_MOCK } from 'src/_mock/blog.mock';
 
 import { mapToPostItem, mapToPostList } from './mappers/blog-mapper';

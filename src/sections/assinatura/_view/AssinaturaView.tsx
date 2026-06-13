@@ -6,10 +6,10 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { useSettingsContext } from 'src/components/settings';
+import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
-import { Iconify } from 'src/components/iconify';
+import { useSettingsContext } from 'src/components/settings';
 
 // ----------------------------------------------------------------------
 

@@ -1,11 +1,12 @@
 'use client';
 
+import type { SWRConfiguration } from 'swr';
+import type { ICitizenItem, IMembershipCard } from 'src/types/citizen';
+
+import useSWR from 'swr';
 import { useMemo } from 'react';
-import useSWR, { SWRConfiguration } from 'swr';
 
 import axiosInstance, { fetcher, endpoints } from 'src/lib/axios';
-
-import type { ICitizenItem, IMembershipCard } from 'src/types/citizen';
 
 // ----------------------------------------------------------------------
 

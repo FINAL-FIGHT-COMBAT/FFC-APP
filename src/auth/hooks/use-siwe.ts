@@ -16,9 +16,10 @@ import { useState, useCallback } from 'react';
 import { useAccount, useSignMessage } from 'wagmi';
 
 import { paths } from 'src/routes/paths';
-import axios, { endpoints } from 'src/lib/axios';
 
 import { CONFIG } from 'src/global-config';
+import axios, { endpoints } from 'src/lib/axios';
+
 import { setSession } from 'src/auth/context/utils';
 
 // ---------------------------------------------------------------------------

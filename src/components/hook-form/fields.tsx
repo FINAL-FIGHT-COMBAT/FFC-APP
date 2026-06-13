@@ -1,6 +1,5 @@
 import RHFCode from './rhf-code';
 import { RHFRating } from './rhf-rating';
-
 import { RHFSlider } from './rhf-slider';
 import { RHFTextField } from './rhf-text-field';
 import { RHFRadioGroup } from './rhf-radio-group';

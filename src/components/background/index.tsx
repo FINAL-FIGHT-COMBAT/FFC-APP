@@ -1,9 +1,9 @@
 'use client';
 
-/* eslint-disable react/no-unknown-property */
+ 
 
-import { Canvas } from '@react-three/fiber';
 import { memo, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
 
 import { Space, SpaceAtmosphere } from './space';
 

@@ -1,8 +1,7 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
-import { Iconify } from 'src/components/iconify';
+
 import { CyberCard } from 'src/components/cyber-card';
 
 type PlayerProps = {

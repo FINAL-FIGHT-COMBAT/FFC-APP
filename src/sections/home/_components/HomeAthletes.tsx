@@ -5,10 +5,7 @@ import type { BoxProps } from '@mui/material/Box';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme, keyframes } from '@mui/material/styles';
@@ -19,9 +16,9 @@ import { RouterLink } from 'src/routes/components';
 import { Image } from 'src/components/image';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
-import { varFade, MotionViewport } from 'src/components/animate';
 import { useCarousel } from 'src/components/carousel';
 import { CyberButton } from 'src/components/cyber-button';
+import { varFade, MotionViewport } from 'src/components/animate';
 import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------

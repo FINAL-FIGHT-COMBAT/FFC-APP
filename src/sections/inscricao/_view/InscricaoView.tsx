@@ -1,10 +1,12 @@
 'use client';
 
 import { Suspense } from 'react';
+
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
 import { HomeBackground } from 'src/components/background';
+
 import { InscricaoForm } from '../InscricaoForm';
 
 // ----------------------------------------------------------------------

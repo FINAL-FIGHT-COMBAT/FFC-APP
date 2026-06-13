@@ -6,8 +6,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 
-import { varFade, MotionViewport } from 'src/components/animate';
-
 import { PostRecent } from '../../_item/PostRecent';
 import { PostVideo } from '../../_components/PostVideo';
 import { PostTrending } from '../../_item/PostTrending';

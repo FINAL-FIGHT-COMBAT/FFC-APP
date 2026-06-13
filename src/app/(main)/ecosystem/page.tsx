@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { EcosystemView } from 'src/sections/ecosystem/_view';
 
 // ----------------------------------------------------------------------

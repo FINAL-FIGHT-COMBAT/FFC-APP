@@ -1,5 +1,7 @@
 'use client';
 
+import type { IPostItem } from 'src/types/blog';
+
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
@@ -11,10 +13,8 @@ import { alpha, useTheme } from '@mui/material/styles';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-import { varFade, MotionViewport } from 'src/components/animate';
 import { Marquee } from 'src/components/marquee';
-
-import type { IPostItem } from 'src/types/blog';
+import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 

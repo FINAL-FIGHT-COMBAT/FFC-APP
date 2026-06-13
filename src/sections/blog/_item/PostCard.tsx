@@ -4,10 +4,8 @@ import type { BoxProps } from '@mui/material/Box';
 import type { CardProps } from '@mui/material/Card';
 import type { IPostItem } from 'src/types/blog';
 
-import { deletePost } from 'src/actions/blog-actions';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';

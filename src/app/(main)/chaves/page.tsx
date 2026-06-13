@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ChavesView } from 'src/sections/chaves/_view';
 
 // ----------------------------------------------------------------------

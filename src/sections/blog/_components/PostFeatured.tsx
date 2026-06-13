@@ -1,7 +1,6 @@
 'use client';
 
 import type { Theme, SxProps } from '@mui/material/styles';
-
 import type { IPostItem } from 'src/types/blog';
 
 import Autoplay from 'embla-carousel-autoplay';
@@ -11,7 +10,6 @@ import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
@@ -21,7 +19,6 @@ import { RouterLink } from 'src/routes/components';
 import { fDate } from 'src/utils/format-time';
 
 import { Image } from 'src/components/image';
-import { varFade, MotionViewport } from 'src/components/animate';
 import {
   Carousel,
   useCarousel,

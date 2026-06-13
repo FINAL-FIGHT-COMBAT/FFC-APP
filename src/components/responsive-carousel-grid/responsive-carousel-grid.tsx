@@ -1,12 +1,12 @@
 'use client';
 
 import type { BoxProps } from '@mui/material/Box';
+import type { Theme, SxProps } from '@mui/material/styles';
 import type { UseCarouselReturn } from 'src/components/carousel';
 
 import Box from '@mui/material/Box';
-import { Carousel, CarouselArrowFloatButtons } from 'src/components/carousel';
 
-import { Theme, SxProps } from '@mui/material/styles';
+import { Carousel, CarouselArrowFloatButtons } from 'src/components/carousel';
 
 export type ResponsiveCarouselGridProps<T> = BoxProps & {
   data: T[];

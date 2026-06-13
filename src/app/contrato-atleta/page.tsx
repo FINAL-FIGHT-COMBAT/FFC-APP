@@ -1,4 +1,5 @@
 import { CONFIG } from 'src/global-config';
+
 import { ContratoAtletaView } from 'src/sections/contrato-atleta/_view/ContratoAtletaView';
 
 // ----------------------------------------------------------------------

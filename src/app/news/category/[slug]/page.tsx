@@ -12,6 +12,7 @@ import { notFound } from 'next/navigation';
 
 import { CONFIG } from 'src/global-config';
 import { getPosts, getPostsByCategory } from 'src/actions/blog-queries';
+
 import { BlogHomeView } from 'src/sections/blog/_view/public/BlogHomeView';
 
 // ----------------------------------------------------------------------

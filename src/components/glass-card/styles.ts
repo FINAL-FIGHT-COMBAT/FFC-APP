@@ -1,9 +1,9 @@
 'use client';
 
-import { alpha, styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-
 import type { GlassCardProps } from './types';
+
+import Box from '@mui/material/Box';
+import { alpha, styled } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

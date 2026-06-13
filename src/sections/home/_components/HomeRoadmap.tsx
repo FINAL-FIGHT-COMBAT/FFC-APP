@@ -10,8 +10,6 @@ import { m } from 'framer-motion';
 // MUI
 // ----------------------------------------------------------------------
 import Box from '@mui/material/Box';
-import { CyberCard } from 'src/components/cyber-card';
-import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -21,8 +19,9 @@ import { alpha, useTheme } from '@mui/material/styles';
 // ----------------------------------------------------------------------
 import { useTranslate } from 'src/locales';
 
-import { varFade, MotionViewport } from 'src/components/animate';
+import { CyberCard } from 'src/components/cyber-card';
 import { useCarousel } from 'src/components/carousel';
+import { varFade, MotionViewport } from 'src/components/animate';
 import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
 // ----------------------------------------------------------------------

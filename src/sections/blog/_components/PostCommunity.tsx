@@ -10,8 +10,8 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 // components
 import { Image } from 'src/components/image';
-import { varFade, MotionViewport } from 'src/components/animate';
 import { Marquee } from 'src/components/marquee';
+import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 

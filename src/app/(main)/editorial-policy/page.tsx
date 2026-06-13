@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { PolicyView } from 'src/sections/legal/_view';
 
 // ----------------------------------------------------------------------

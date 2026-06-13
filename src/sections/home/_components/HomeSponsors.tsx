@@ -2,16 +2,16 @@ import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { varFade, MotionViewport } from 'src/components/animate';
 import { Iconify } from 'src/components/iconify';
+import { Marquee } from 'src/components/marquee';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
-import { Marquee } from 'src/components/marquee';
+import { varFade, MotionViewport } from 'src/components/animate';
+
 import { SectionTitle } from './HomeSectionTitle';
 
 // ----------------------------------------------------------------------

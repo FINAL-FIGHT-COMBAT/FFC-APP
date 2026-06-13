@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ContactView } from 'src/sections/contact/_view';
 
 // ----------------------------------------------------------------------

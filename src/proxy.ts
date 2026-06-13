@@ -7,8 +7,8 @@
 
 import type { NextRequest } from 'next/server';
 
-import { NextResponse } from 'next/server';
 import { decodeJwt } from 'jose';
+import { NextResponse } from 'next/server';
 
 // --- CONFIGURAÇÃO DE ROTAS ---
 

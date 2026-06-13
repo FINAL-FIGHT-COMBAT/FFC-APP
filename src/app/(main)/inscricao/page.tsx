@@ -1,4 +1,5 @@
 import { CONFIG } from 'src/global-config';
+
 import { InscricaoView } from 'src/sections/inscricao/_view/InscricaoView';
 
 // ----------------------------------------------------------------------
