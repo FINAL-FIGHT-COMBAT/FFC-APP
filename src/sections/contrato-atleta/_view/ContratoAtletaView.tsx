@@ -39,8 +39,15 @@ export function ContratoAtletaView() {
 
       <style type="text/css" media="print">
         {`
-          @page { size: A4 portrait; margin: 1.5cm; }
-          body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          @page { 
+            size: A4 portrait; 
+            margin: 3cm 2cm 2cm 3cm; /* Margens ABNT: Superior 3cm, Direita 2cm, Inferior 2cm, Esquerda 3cm */
+          }
+          body { 
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact; 
+            font-family: "Arial", sans-serif !important;
+          }
         `}
       </style>
 
