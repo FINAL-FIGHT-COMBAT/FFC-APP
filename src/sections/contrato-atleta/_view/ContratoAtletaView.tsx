@@ -41,7 +41,7 @@ export function ContratoAtletaView() {
         {`
           @page { 
             size: A4 portrait; 
-            margin: 3cm 2cm 2cm 3cm; /* Margens ABNT: Superior 3cm, Direita 2cm, Inferior 2cm, Esquerda 3cm */
+            margin: 1cm 2cm 1cm 3cm; /* Top 1cm (Logo), Right 2cm, Bottom 1cm (Footer), Left 3cm */
           }
           body { 
             -webkit-print-color-adjust: exact; 
@@ -99,9 +99,9 @@ export function ContratoAtletaView() {
             <IconButton onClick={() => handlePrint()} sx={{ color: '#fff' }}>
               <Iconify icon={"solar:printer-bold-duotone" as any} />
             </IconButton>
-            <Button 
-              variant="contained" 
-              size="small" 
+            <Button
+              variant="contained"
+              size="small"
               onClick={() => handlePrint()}
               sx={{ bgcolor: '#8ab4f8', color: '#202124', '&:hover': { bgcolor: '#9fbff0' } }}
             >
@@ -110,12 +110,12 @@ export function ContratoAtletaView() {
           </Stack>
         </Box>
 
-        <Box 
-          ref={documentRef} 
-          sx={{ 
-            mt: 7, 
-            width: '100%', 
-            display: 'flex', 
+        <Box
+          ref={documentRef}
+          sx={{
+            mt: 7,
+            width: '100%',
+            display: 'flex',
             justifyContent: 'center',
             '@media print': {
               mt: 0,
@@ -123,7 +123,7 @@ export function ContratoAtletaView() {
             }
           }}
         >
-        <A4Page pageNumber={1}>
+          <A4Page pageNumber={1}>
             <DocumentTitle>
               INSTRUMENTO PARTICULAR DE CONTRATO
             </DocumentTitle>
@@ -135,7 +135,7 @@ export function ContratoAtletaView() {
               Pelo presente instrumento particular, de um lado: <strong>ASPPIBRA – ASSOCIAÇÃO DOS PROPRIETÁRIOS E POSSUIDORES DE IMÓVEIS NO BRASIL</strong>, associação civil sem fins lucrativos, inscrita no CNPJ sob nº 26.325.396/0001-30, com sede em <DataTag text="ENDEREÇO DA SEDE" />, neste ato representada por seu Cofundador e Líder de Desenvolvimento e Parcerias, Sandro Antunes, doravante denominada simplesmente ASPPIBRA ou ORGANIZADORA;
             </ABNTText>
             <ABNTText>
-              e, de outro lado: <strong>ATLETA CONVIDADO:</strong> <DataTag />, <DataTag text="NACIONALIDADE" />, <DataTag text="ESTADO CIVIL" />, <DataTag text="PROFISSÃO" />, portador do CPF nº <DataTag /> e RG nº <DataTag />, residente e domiciliado em <DataTag />, doravante denominado simplesmente ATLETA; 
+              e, de outro lado: <strong>ATLETA CONVIDADO:</strong> <DataTag />, <DataTag text="NACIONALIDADE" />, <DataTag text="ESTADO CIVIL" />, <DataTag text="PROFISSÃO" />, portador do CPF nº <DataTag /> e RG nº <DataTag />, residente e domiciliado em <DataTag />, doravante denominado simplesmente ATLETA;
             </ABNTText>
             <ABNTText>
               quando aplicável: <strong>RESPONSÁVEL LEGAL:</strong> <DataTag />, <DataTag text="NACIONALIDADE" />, <DataTag text="ESTADO CIVIL" />, <DataTag text="PROFISSÃO" />, portador do CPF nº <DataTag /> e RG nº <DataTag />, residente e domiciliado em <DataTag />, na qualidade de pai, mãe, tutor ou responsável legal do ATLETA menor de idade, doravante denominado simplesmente RESPONSÁVEL LEGAL; celebram o presente contrato, mediante as cláusulas e condições seguintes.
@@ -159,7 +159,7 @@ export function ContratoAtletaView() {
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(vii) os demais anexos assinados ou aceitos pelo ATLETA.</ABNTText>
             <Clause text="2.3. Em caso de conflito entre este contrato, seus anexos e o regulamento oficial, prevalecerá a ordem de hierarquia definida no regulamento; na omissão, prevalecerá o texto mais específico e, subsidiariamente, a boa-fé, a finalidade do evento e a legislação aplicável." />
             <Clause text="2.4. Qualquer alteração de regra, valor, agenda, card, categoria, formato ou logística somente produzirá efeitos se formalizada por escrito, por anexo, comunicado oficial ou aceite eletrônico rastreável." />
-          
+
 
             <SectionTitle>CLÁUSULA 3ª – DAS DEFINIÇÕES</SectionTitle>
             <Clause text="3.1. Para fins deste contrato, considera-se:" />
@@ -191,7 +191,7 @@ export function ContratoAtletaView() {
             <Clause text="6.1. As partes reconhecem que a presente relação possui natureza civil-desportiva, eventual e específica, não gerando vínculo empregatício, societário, associativo permanente ou relação de consumo, salvo se a legislação ou a realidade fática impuserem entendimento diverso." />
             <Clause text="6.2. A participação do ATLETA restringe-se ao objeto deste contrato e não caracteriza exclusividade ampla, salvo se houver cláusula específica em anexo relativo a patrocinadores, mídia ou marca do evento." />
             <Clause text="6.3. Eventual prestação de serviços acessórios, quando existente, deverá constar expressamente em instrumento próprio, sem se presumir a partir deste contrato." />
-          
+
 
             <SectionTitle>CLÁUSULA 7ª – DA ELEGIBILIDADE E DAS DECLARAÇÕES DO ATLETA</SectionTitle>
             <Clause text="7.1. O ATLETA declara que todos os dados fornecidos à ORGANIZADORA são verdadeiros, completos e atualizados." />
@@ -219,7 +219,7 @@ export function ContratoAtletaView() {
             <Clause text="10.2. O não envio, o envio incompleto, a divergência documental, a expiração da validade ou a ausência de confirmação poderá impedir a participação do ATLETA, sem prejuízo das demais consequências contratuais." />
             <Clause text="10.3. Os dados de saúde eventualmente fornecidos serão utilizados exclusivamente para segurança, elegibilidade, organização, atendimento e cumprimento de obrigação legal." />
             <Clause text="10.4. A ORGANIZADORA poderá exigir atualização documental a qualquer tempo, sempre que houver alteração relevante de categoria, data, condição clínica, logística ou exigência operacional." />
-          
+
 
             <SectionTitle>CLÁUSULA 11ª – DO SEGURO E DO ATENDIMENTO MÉDICO</SectionTitle>
             <Clause text="11.1. A ORGANIZADORA fornecerá cobertura obrigatória de seguro de vida e de acidentes pessoais compatível com a atividade desportiva de combate para o ATLETA durante sua participação no evento." />
@@ -255,7 +255,7 @@ export function ContratoAtletaView() {
             <Clause text="14.2. O ATLETA deverá adotar postura compatível com a ética esportiva, sendo vedadas condutas agressivas fora do contexto do combate, insultos, ameaças, hostilidade ou qualquer comportamento que comprometa a segurança do evento." />
             <Clause text="14.3. O ATLETA deverá informar à ORGANIZADORA, com antecedência razoável, qualquer patrocínio, vínculo comercial ou conflito de marca que possa interferir em uniforme, mídia ou divulgação." />
             <Clause text="14.4. O ATLETA não poderá assumir compromissos com terceiros que inviabilizem o cumprimento deste contrato sem prévia anuência escrita da ORGANIZADORA." />
-          
+
 
             <SectionTitle>CLÁUSULA 15ª – DAS OBRIGAÇÕES DA ORGANIZADORA</SectionTitle>
             <Clause text="15.1. São obrigações da ORGANIZADORA, dentro dos limites deste contrato e do regulamento oficial:" />
@@ -286,7 +286,7 @@ export function ContratoAtletaView() {
             <Clause text="18.2. A ausência injustificada poderá acarretar advertência, retenção de valor, perda de bônus, descumprimento contratual ou outra penalidade prevista no regulamento." />
             <Clause text="18.3. A ORGANIZADORA poderá ajustar a agenda por razões de segurança, transmissão, logística, autoridade pública ou adequação técnica." />
             <Clause text="18.4. O ATLETA obriga-se a participar apenas das divulgações previamente autorizadas e a não divulgar, por conta própria, informações estratégicas do evento sem anuência da ORGANIZADORA, quando tais informações ainda não forem públicas." />
-          
+
 
             <SectionTitle>CLÁUSULA 19ª – DA CESSÃO DE IMAGEM, VOZ, NOME E PERFORMANCE</SectionTitle>
             <Clause text="19.1. O ATLETA autoriza a ORGANIZADORA a captar, reproduzir, editar, armazenar, retransmitir, publicar e explorar sua imagem, voz, nome, apelido, performance, entrevistas, bastidores e demais registros vinculados ao evento." />
@@ -307,7 +307,7 @@ export function ContratoAtletaView() {
             <Clause text="21.3. A ORGANIZADORA adotará medidas de segurança, controle de acesso, retenção e descarte compatíveis com a natureza dos dados tratados." />
             <Clause text="21.4. O ATLETA poderá exercer os direitos previstos na legislação aplicável por meio dos canais oficiais informados pela ORGANIZADORA." />
             <Clause text="21.5. A organização manterá, em política específica, as informações sobre finalidade, base legal, compartilhamento, retenção e canal de atendimento do titular, observada a legislação de proteção de dados." />
-          
+
 
             <SectionTitle>CLÁUSULA 22ª – DA REMUNERAÇÃO, BOLSA E PREMIAÇÃO</SectionTitle>
             <Clause text="22.1. O ATLETA fará jus exclusivamente ao pagamento da Luva de Participação, cujo valor exato, forma de pagamento, prazo de liberação e incidência de taxas estarão previamente definidos no Anexo III." />
@@ -335,7 +335,7 @@ export function ContratoAtletaView() {
             <Clause text="25.2. É vedada a veiculação de publicidade ou marca não autorizada nos espaços, vídeos, uniformes ou materiais do evento, quando tal restrição estiver prevista no regulamento ou em anexo." />
             <Clause text="25.3. O ATLETA é responsável por obter as autorizações necessárias junto a seus patrocinadores pessoais, se houver conflito com as marcas do evento." />
             <Clause text="25.4. A ORGANIZADORA poderá aprovar, reprovar ou restringir marcas e peças por critério de padronização visual, segurança, transmissão e integridade comercial do evento." />
-          
+
 
             <SectionTitle>CLÁUSULA 26ª – DA RESCISÃO, DESISTÊNCIA E NÃO COMPARECIMENTO</SectionTitle>
             <Clause text="26.1. O ATLETA poderá desistir do contrato por comunicação formal, mas a desistência após a confirmação do convite poderá acarretar perda total ou parcial de valores, bônus ou benefícios, conforme a fase em que ocorrer e o regulamento aplicável." />
@@ -361,7 +361,7 @@ export function ContratoAtletaView() {
             <Clause text="29.3. A ORGANIZADORA não responderá por falhas decorrentes de mau uso de credenciais, perda de senha, aparelho comprometido, conexão instável do usuário ou informação incorreta prestada pelo ATLETA." />
             <Clause text="29.4. Em caso de indício de fraude, invasão, uso irregular ou risco à integridade do sistema, a ORGANIZADORA poderá suspender preventivamente o acesso até apuração." />
             <Clause text="29.5. Sempre que houver comunicação eletrônica relevante, a ORGANIZADORA deverá manter evidência mínima de envio, recebimento ou disponibilização, conforme o meio utilizado." />
-          
+
 
             <SectionTitle>CLÁUSULA 30ª – DA INTEGRIDADE, CONDUTA E PENALIDADES</SectionTitle>
             <Clause text="30.1. Sem prejuízo das demais cláusulas, a violação de deveres de conduta, integridade esportiva, confidencialidade, imagem, pesagem, mídia ou regulamento poderá ensejar advertência, multa, desclassificação, retenção de valores, perda de bônus, exclusão do card e impedimento de participação futura, conforme gravidade e previsão regulamentar." />
@@ -390,7 +390,7 @@ export function ContratoAtletaView() {
             <Clause text="35.1. A ORGANIZADORA manterá os valores vinculados ao Projeto FFC segregados contabilmente, quando aplicável, em centro de custo próprio ou mecanismo equivalente." />
             <Clause text="35.2. As receitas, despesas, pagamentos, reembolsos e retenções vinculados ao ATLETA convidado deverão poder ser conciliados internamente, na forma da governança do Projeto FFC." />
             <Clause text="35.3. A prestação de contas do projeto, quando exigível, observará os documentos, o regulamento e a legislação aplicável à entidade sem fins econômicos." />
-          
+
 
             <SectionTitle>CLÁUSULA 36ª – DA INTEGRIDADE INSTITUCIONAL E CONFLITO DE INTERESSES</SectionTitle>
             <Clause text="36.1. Qualquer conflito de interesse real ou potencial deverá ser comunicado à ORGANIZADORA tão logo identificado." />
@@ -424,7 +424,7 @@ export function ContratoAtletaView() {
             <Clause text="42.1. O presente contrato representa a totalidade do entendimento entre as partes sobre o objeto aqui regulado." />
             <Clause text="42.2. A eventual tolerância de uma parte em relação à outra não importará novação, renúncia, perdão ou alteração tácita de cláusula." />
             <Clause text="42.3. A eventual nulidade de qualquer disposição não invalidará as demais, que permanecerão plenamente eficazes." />
-          
+
 
             <SectionTitle>CLÁUSULA 43ª – DAS COMUNICAÇÕES OFICIAIS</SectionTitle>
             <Clause text="43.1. As notificações, convocações, alterações de card, ajustes de cronograma, pedidos de documento, comunicados de pesagem e demais informações oficiais serão feitas por e-mail, WhatsApp oficial, app, site ou outro canal definido pela ORGANIZADORA." />
@@ -458,10 +458,10 @@ export function ContratoAtletaView() {
             <ABNTText indent={false}><strong>Anexo X</strong> – Matriz de responsabilidades e plano logístico;</ABNTText>
             <ABNTText indent={false}><strong>Anexo XI</strong> – Termo específico de arbitragem, se adotado;</ABNTText>
             <ABNTText indent={false}><strong>Anexo XII</strong> – Documento Financeiro Específico do Evento, se houver premiações gerais.</ABNTText>
-          
+
 
             <SectionTitle>ASSINATURAS E VALIDAÇÃO DIGITAL</SectionTitle>
-            
+
             <DigitalSignature title="ASSINATURA DIGITAL - ASPPIBRA" name="Cofundador e Líder de Desenvolvimento e Parcerias: Sandro Antunes" color="success" />
             <DigitalSignature title="ASSINATURA DIGITAL - ATLETA" name="Assinatura eletrônica autenticada via Plataforma FFC" color="info" />
           </A4Page>
