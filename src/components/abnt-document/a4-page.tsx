@@ -27,6 +27,13 @@ export function A4Page({ children, pageNumber }: A4PageProps) {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
+        '@media print': {
+          boxShadow: 'none',
+          mb: 0,
+          p: 0, // Padding handled by @page margins in the parent
+          width: '100%',
+          minHeight: 'auto',
+        }
       }}
     >
       <Box sx={{ flexGrow: 1, mt: pageNumber > 1 ? '0.5cm' : 0 }}>
