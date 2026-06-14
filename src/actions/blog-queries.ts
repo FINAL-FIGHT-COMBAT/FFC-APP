@@ -26,7 +26,7 @@ export async function getPosts(params?: { category?: string; limit?: number; pag
       return { posts: BLOG_MOCK };
     }
 
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, { next: { revalidate: 60 } });
     
     if (!res.ok) {
        console.warn('⚠️ API de Blog Offline ou Erro. Usando Fallback de Design.');
@@ -60,7 +60,7 @@ export async function getPost(paramSlug: string) {
   try {
     const url = `${API_URL}/api/posts/${paramSlug}`;
 
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, { next: { revalidate: 60 } });
     
     if (!res.ok) {
         // Tenta encontrar no mock se a API falhar
