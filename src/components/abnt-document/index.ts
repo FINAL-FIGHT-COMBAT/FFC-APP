@@ -5,3 +5,7 @@ export * from './section-title';
 export * from './document-title';
 export * from './document-viewer';
 export * from './digital-signature';
+export * from './default-header';
+export * from './default-footer';
+export * from './pdf-viewer-layout';
+export * from './document-context';

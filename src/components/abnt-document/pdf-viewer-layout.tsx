@@ -1,0 +1,103 @@
+import { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import { useRouter } from 'src/routes/hooks';
+import { Iconify } from 'src/components/iconify';
+
+type PdfViewerLayoutProps = {
+  children: React.ReactNode;
+  documentTitle: string;
+};
+
+export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProps) {
+  const router = useRouter();
+  const documentRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = useReactToPrint({
+    contentRef: documentRef,
+    documentTitle,
+    suppressErrors: true,
+  });
+
+  return (
+    <Box
+      sx={{
+        minHeight: '100vh',
+        bgcolor: '#323639',
+        py: { xs: 2, md: 5 },
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '@media print': {
+          bgcolor: 'transparent',
+          py: 0,
+          display: 'block',
+        }
+      }}
+    >
+      {/* Top Bar - Simulating PDF Viewer Controls */}
+      <Box
+        sx={{
+          width: '100%',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          zIndex: 99,
+          bgcolor: '#323639',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
+          px: 2,
+          py: 1,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+          '@media print': { display: 'none' }
+        }}
+      >
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <IconButton onClick={() => router.back()} sx={{ color: '#fff' }}>
+            <Iconify icon={"solar:arrow-left-bold-duotone" as any} />
+          </IconButton>
+          <Typography sx={{ color: '#fff', fontSize: 14, fontWeight: 500, display: { xs: 'none', sm: 'block' } }}>
+            {documentTitle}.pdf
+          </Typography>
+        </Stack>
+
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <IconButton onClick={() => handlePrint()} sx={{ color: '#fff' }}>
+            <Iconify icon={"solar:printer-bold-duotone" as any} />
+          </IconButton>
+          <Button
+            variant="contained"
+            size="small"
+            onClick={() => handlePrint()}
+            sx={{ bgcolor: '#8ab4f8', color: '#202124', '&:hover': { bgcolor: '#9fbff0' } }}
+          >
+            Baixar PDF / Imprimir
+          </Button>
+        </Stack>
+      </Box>
+
+      {/* Document Content Wrapper */}
+      <Box
+        ref={documentRef}
+        sx={{
+          mt: 7,
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          '@media print': {
+            mt: 0,
+            display: 'block',
+          }
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}

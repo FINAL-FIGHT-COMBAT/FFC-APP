@@ -1,12 +1,27 @@
 import Box from '@mui/material/Box';
 import { alpha, useTheme } from '@mui/material/styles';
+import { useDocumentData } from './document-context';
 
 type DataTagProps = {
   text?: string;
+  field?: string;
 };
 
-export function DataTag({ text = 'PREENCHIMENTO AUTOMÁTICO' }: DataTagProps) {
+export function DataTag({ text = 'PREENCHIMENTO AUTOMÁTICO', field }: DataTagProps) {
   const theme = useTheme();
+  const contextData = useDocumentData();
+  
+  const lookupField = field || text;
+  const contextValue = contextData ? contextData[lookupField] : undefined;
+
+  if (contextValue) {
+    return (
+      <Box component="span" sx={{ fontWeight: 'bold', textDecoration: 'underline' }}>
+        {contextValue}
+      </Box>
+    );
+  }
+
   return (
     <Box
       component="span"
