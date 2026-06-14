@@ -8,8 +8,8 @@ import { DOCUMENTS } from 'src/_mock/_documents';
 
 // ----------------------------------------------------------------------
 
-// ✅ Força renderização dinâmica (a API é consultada em cada request do Google Bot)
-export const dynamic = 'force-dynamic';
+// ✅ Otimização SEO: Gera o sitemap e faz cache por 1 hora (evita timeout do Googlebot)
+export const revalidate = 3600;
 
 /**
  * SITEMAP DINÂMICO - PRODUÇÃO 2026
