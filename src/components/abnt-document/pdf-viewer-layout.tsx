@@ -88,6 +88,7 @@ export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProp
         sx={{
           mt: 7,
           width: '100%',
+          overflowX: 'hidden',
           display: 'flex',
           justifyContent: 'center',
           '@media print': {

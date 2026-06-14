@@ -27,15 +27,15 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
       <Paper
         elevation={12}
         sx={{
-          width: '210mm',
-          minHeight: '297mm',
+          width: { xs: '100%', md: '210mm' },
+          minHeight: { xs: 'auto', md: '297mm' },
           flexShrink: 0,
           mx: 'auto',
-          mb: 6,
+          mb: { xs: 0, md: 6 },
           bgcolor: '#FFFFFF',
           borderRadius: 0,
           boxSizing: 'border-box',
-          p: '1.5cm 2cm 2cm 3cm', // Adjusted Top margin for screen reading
+          p: { xs: '1.5rem 1rem', md: '1.5cm 2cm 2cm 3cm' }, // Mobile padding vs ABNT desktop padding
           fontFamily: '"Arial", "Helvetica", sans-serif',
           position: 'relative',
           '@media print': {
