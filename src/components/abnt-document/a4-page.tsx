@@ -35,7 +35,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
           bgcolor: '#FFFFFF',
           borderRadius: 0,
           boxSizing: 'border-box',
-          p: { xs: '1.5rem 1rem', md: '1.5cm 2cm 2cm 3cm' }, // Mobile padding vs ABNT desktop padding
+          p: { xs: '1rem 1rem', md: '0.9cm 2cm 2cm 3cm' }, // Mobile padding vs ABNT desktop padding
           fontFamily: '"Arial", "Helvetica", sans-serif',
           position: 'relative',
           '@media print': {
@@ -65,7 +65,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             }}
           >
             <Box component="tr">
-              <Box component="td" sx={{ pb: 3, '@media print': { pt: '1cm' } }}>
+              <Box component="td" sx={{ pb: 1, '@media print': { pt: '0.9cm' } }}>
                 {headerContent}
               </Box>
             </Box>
@@ -74,7 +74,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
           {/* MAIN CONTENT */}
           <Box component="tbody">
             <Box component="tr">
-              <Box component="td" sx={{ pb: 4, pt: 3 }}>
+              <Box component="td" sx={{ pb: 4, pt: 1 }}>
                 {children}
               </Box>
             </Box>

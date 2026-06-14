@@ -67,17 +67,6 @@ export function BlogLayout({
       ),
       leftArea: (
         <>
-          {/** @slot Nav mobile */}
-          <MenuButton
-            onClick={onOpen}
-            sx={(theme) => ({
-              mr: 1,
-              ml: -1,
-              [theme.breakpoints.up(layoutQuery)]: { display: 'none' },
-            })}
-          />
-          <NavMobile data={navData} open={open} onClose={onClose} />
-
           {/** @slot Logo */}
           <Logo />
         </>
@@ -96,6 +85,16 @@ export function BlogLayout({
           {/** @slot Language popover */}
           <LanguagePopover data={allLangs} />
           {/** @slot Settings button */}
+
+          {/** @slot Nav mobile */}
+          <MenuButton
+            onClick={onOpen}
+            open={open}
+            sx={(theme) => ({
+              [theme.breakpoints.up(layoutQuery)]: { display: 'none' },
+            })}
+          />
+          <NavMobile data={navData} open={open} onClose={onClose} />
         </Box>
       ),
     };

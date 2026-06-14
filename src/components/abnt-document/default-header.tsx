@@ -8,8 +8,8 @@ export function DefaultHeader() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderBottom: '2px solid #000',
-        pb: 1.5
+        borderBottom: '1px solid #000', // Linha mais fina/sutil
+        pb: 0, // Sem nenhum recuo extra, o mais colado possível
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -18,7 +18,7 @@ export function DefaultHeader() {
           src="/logo/android-chrome-512x512.png"
           alt="FFC Logo"
           sx={{
-            height: 70,
+            height: 95,
             width: 'auto',
             objectFit: 'contain',
           }}

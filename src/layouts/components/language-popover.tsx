@@ -41,7 +41,7 @@ export function LanguagePopover({ data = [], sx, ...other }: LanguagePopoverProp
   );
 
   const renderMenuList = () => (
-    <CustomPopover open={open} anchorEl={anchorEl} onClose={onClose}>
+    <CustomPopover open={open} anchorEl={anchorEl} onClose={onClose} disableScrollLock>
       <MenuList sx={{ width: 160, minHeight: 72 }}>
         {data?.map((option) => (
           <MenuItem
@@ -69,9 +69,20 @@ export function LanguagePopover({ data = [], sx, ...other }: LanguagePopoverProp
         sx={[
           (theme) => ({
             p: 0,
-            width: 40,
-            height: 40,
-            ...(open && { bgcolor: theme.vars.palette.action.selected }),
+            width: 44,
+            height: 44,
+            bgcolor: open ? 'rgba(212, 175, 55, 0.08)' : 'rgba(255, 255, 255, 0.03)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid',
+            borderColor: open ? 'rgba(212, 175, 55, 0.3)' : 'rgba(255, 255, 255, 0.08)',
+            boxShadow: open ? '0 0 15px rgba(212, 175, 55, 0.15)' : 'none',
+            borderRadius: '12px',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              bgcolor: 'rgba(212, 175, 55, 0.08)', 
+              borderColor: 'rgba(212, 175, 55, 0.3)',
+              boxShadow: '0 0 15px rgba(212, 175, 55, 0.15)',
+            },
           }),
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}

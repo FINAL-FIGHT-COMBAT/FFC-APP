@@ -61,17 +61,6 @@ export function MainLayout({
       ),
       leftArea: (
         <>
-          {/** @slot Nav mobile */}
-          <MenuButton
-            onClick={onOpen}
-            sx={(theme) => ({
-              mr: 1,
-              ml: -1,
-              [theme.breakpoints.up(layoutQuery)]: { display: 'none' },
-            })}
-          />
-          <NavMobile data={navData} open={open} onClose={onClose} />
-
           {/** @slot Logo */}
           <Logo />
         </>
@@ -89,6 +78,16 @@ export function MainLayout({
         <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 } }}>
           {/** @slot Language popover */}
           <LanguagePopover data={allLangs} />
+
+          {/** @slot Nav mobile */}
+          <MenuButton
+            onClick={onOpen}
+            open={open}
+            sx={(theme) => ({
+              [theme.breakpoints.up(layoutQuery)]: { display: 'none' },
+            })}
+          />
+          <NavMobile data={navData} open={open} onClose={onClose} />
         </Box>
       ),
     };

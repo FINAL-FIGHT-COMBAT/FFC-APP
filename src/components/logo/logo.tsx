@@ -39,6 +39,8 @@ export function Logo({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        transform: 'scale(1.6)', // Aumenta visualmente em 60% sem alterar as dimensões do header
+        transformOrigin: 'center left', // Mantém o alinhamento à esquerda
       }}
     >
       <Image
