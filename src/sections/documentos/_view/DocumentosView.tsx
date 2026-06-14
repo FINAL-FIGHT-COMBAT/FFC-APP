@@ -12,62 +12,12 @@ import { useRouter } from 'src/routes/hooks';
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
-import { HomeBackground } from 'src/components/background';
+import { StandardPageWrapper } from 'src/components/standard-page';
 
 import { useAuthContext } from 'src/auth/hooks';
 
-// ----------------------------------------------------------------------
-
-type DocumentType = 'pdf' | 'sign';
-
-interface IDocument {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  size: string;
-  url: string;
-  type: DocumentType;
-}
-
-const DOCUMENTS: IDocument[] = [
-  {
-    id: 'doc-1',
-    title: 'Regulamento Oficial FFC',
-    category: 'Geral',
-    description: 'Regras detalhadas de combate, critérios de pontuação, faltas e chaveamento do Grand Prix.',
-    size: '2.4 MB',
-    url: '/assets/docs/regulamento-oficial.pdf', // Exemplo estático
-    type: 'pdf',
-  },
-  {
-    id: 'doc-2',
-    title: 'Manual de Pesagem',
-    category: 'Atletas',
-    description: 'Cronograma oficial de pesagem, trajes permitidos, tolerância de peso e punições.',
-    size: '1.1 MB',
-    url: '/assets/docs/manual-pesagem.pdf', // Exemplo estático
-    type: 'pdf',
-  },
-  {
-    id: 'doc-3',
-    title: 'Termo de Responsabilidade Médica',
-    category: 'Atletas',
-    description: 'Documento obrigatório de aptidão física e liberação de direitos de imagem para o evento.',
-    size: '850 KB',
-    url: '#',
-    type: 'sign',
-  },
-  {
-    id: 'doc-4',
-    title: 'Guia de Academias Parceiras',
-    category: 'Academias',
-    description: 'Regras para inscrição de equipes completas, alojamento e distribuição de lucros/PPV.',
-    size: '3.2 MB',
-    url: '/assets/docs/guia-academias.pdf', // Exemplo estático
-    type: 'pdf',
-  },
-];
+import { DOCUMENTS, DOCUMENT_CATEGORIES } from 'src/_mock/_documents';
+import type { IDocumentConfig } from 'src/_mock/_documents';
 
 // ----------------------------------------------------------------------
 
@@ -76,36 +26,17 @@ export function DocumentosView() {
   const router = useRouter();
   const { authenticated } = useAuthContext();
 
-  const handleDocumentAction = (doc: IDocument) => {
-    if (doc.type === 'pdf') {
-      // Abre o leitor interno estilo PDF (Folha A4)
-      router.push(paths.pdfViewer(doc.id));
-    } else if (doc.type === 'sign') {
-      // Requer autenticação para assinatura biométrica
-      if (!authenticated) {
-        // Redireciona para o login e depois volta
-        router.push(`${paths.auth.signIn}?returnTo=${paths.documentos}`);
-      } else {
-        // Envia para o dashboard de assinatura IPFS/FaceID
-        router.push(paths.dashboard.assinatura(doc.id));
-      }
+  const handleDocumentAction = (doc: IDocumentConfig) => {
+    if (doc.isReady && doc.readyUrl) {
+      router.push(doc.readyUrl);
+    } else {
+      router.push(`/documento/${doc.slug}`);
     }
   };
 
   return (
-    <>
-      <HomeBackground />
-
-      <Box
-        component="main"
-        sx={{
-          position: 'relative',
-          zIndex: 1,
-          pt: { xs: 15, md: 20 },
-          pb: { xs: 10, md: 15 },
-        }}
-      >
-        <Container maxWidth="lg">
+    <StandardPageWrapper>
+      <Container maxWidth="lg">
           {/* Header */}
           <Stack spacing={3} sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center' }}>
             <Typography
@@ -118,7 +49,7 @@ export function DocumentosView() {
                 textShadow: '0 4px 40px rgba(0,0,0,0.8)',
               }}
             >
-              Documentos Oficiais
+              Portal de Documentos
             </Typography>
             <Typography
               sx={{
@@ -128,129 +59,142 @@ export function DocumentosView() {
                 fontSize: { xs: 16, md: 18 },
               }}
             >
-              Acesse todos os regulamentos, guias de pesagem e formulários obrigatórios para participação no Final Fight Combat.
+              Acesso centralizado a todos os regulamentos esportivos, políticas de privacidade, termos de saúde e contratos oficiais do ecossistema FFC.
             </Typography>
           </Stack>
 
-          {/* Document Grid */}
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: {
-                xs: 'repeat(1, 1fr)',
-                sm: 'repeat(2, 1fr)',
-              },
-              gap: 4,
-            }}
-          >
-            {DOCUMENTS.map((doc) => (
-              <CyberCard
-                key={doc.id}
-                sx={{
-                  p: 4,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 3,
-                  borderColor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.2),
-                  transition: theme.transitions.create(['all']),
-                  position: 'relative',
-                  overflow: 'hidden',
-                  '&:hover': {
-                    borderColor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.6),
-                    boxShadow: `0 0 40px ${alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.15)}`,
-                    transform: 'translateY(-4px)',
-                    '& .doc-icon': {
-                      transform: 'scale(1.1) rotate(-5deg)',
-                      color: theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main,
-                    },
-                  },
-                }}
-              >
-                {/* Glow Effect on Hover */}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    top: -50,
-                    right: -50,
-                    width: 150,
-                    height: 150,
-                    background: `radial-gradient(circle, ${alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.1)} 0%, transparent 70%)`,
-                    borderRadius: '50%',
-                    pointerEvents: 'none',
-                  }}
-                />
+          {/* Categories Loop */}
+          {DOCUMENT_CATEGORIES.map((cat) => {
+            const categoryDocs = DOCUMENTS.filter((d) => d.category === cat.id);
+            if (categoryDocs.length === 0) return null;
 
-                <Stack direction="row" alignItems="flex-start" spacing={2.5}>
+            return (
+              <Box key={cat.id} sx={{ mb: 8 }}>
+                <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 4 }}>
                   <Box
-                    className="doc-icon"
                     sx={{
-                      width: 56,
-                      height: 56,
+                      width: 48,
+                      height: 48,
+                      borderRadius: 1.5,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      borderRadius: 1.5,
-                      bgcolor: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.1),
-                      color: alpha(theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main, 0.7),
-                      transition: theme.transitions.create(['all']),
-                      flexShrink: 0,
+                      bgcolor: alpha(theme.palette[cat.color].main, 0.1),
+                      color: theme.palette[cat.color].main,
                     }}
                   >
-                    <Iconify 
-                      icon={(doc.type === 'sign' ? "solar:pen-new-round-bold-duotone" : "solar:document-text-bold-duotone") as any} 
-                      width={32} 
-                    />
+                    <Iconify icon={cat.icon as any} width={28} />
                   </Box>
-
-                  <Stack spacing={1} flexGrow={1}>
-                    <Stack direction="row" alignItems="center" justifyContent="space-between">
-                      <Typography
-                        variant="caption"
-                        sx={{
-                          color: theme.palette[doc.type === 'sign' ? 'info' : 'warning'].main,
-                          fontWeight: 700,
-                          letterSpacing: 1,
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        {doc.category}
-                      </Typography>
-                      <Typography variant="caption" sx={{ color: 'text.disabled' }}>
-                        {doc.size}
-                      </Typography>
-                    </Stack>
-
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        color: '#fff',
-                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {doc.title}
-                    </Typography>
-
-                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-                      {doc.description}
-                    </Typography>
-                  </Stack>
+                  <Typography variant="h4" sx={{ color: '#fff', fontWeight: 800 }}>
+                    {cat.title}
+                  </Typography>
                 </Stack>
 
-                <CyberButton
-                  onClick={() => handleDocumentAction(doc)}
-                  fullWidth
-                  glowColor={doc.type === 'sign' ? 'info' : 'warning'}
-                  endIcon={<Iconify icon={(doc.type === 'sign' ? "solar:face-scan-bold" : "solar:document-add-bold") as any} />}
-                  sx={{ mt: 'auto', height: 44, fontSize: 13 }}
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gridTemplateColumns: {
+                      xs: 'repeat(1, 1fr)',
+                      sm: 'repeat(2, 1fr)',
+                      md: 'repeat(3, 1fr)',
+                    },
+                    gap: 3,
+                  }}
                 >
-                  {doc.type === 'sign' ? 'ASSINAR TERMO' : 'LER REGULAMENTO'}
-                </CyberButton>
-              </CyberCard>
-            ))}
-          </Box>
+                  {categoryDocs.map((doc) => (
+                    <CyberCard
+                      key={doc.slug}
+                      sx={{
+                        p: 3,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2,
+                        borderColor: alpha(theme.palette[cat.color].main, 0.2),
+                        transition: theme.transitions.create(['all']),
+                        position: 'relative',
+                        overflow: 'hidden',
+                        '&:hover': {
+                          borderColor: alpha(theme.palette[cat.color].main, 0.6),
+                          boxShadow: `0 0 40px ${alpha(theme.palette[cat.color].main, 0.15)}`,
+                          transform: 'translateY(-4px)',
+                          '& .doc-icon': {
+                            transform: 'scale(1.1) rotate(-5deg)',
+                            color: theme.palette[cat.color].main,
+                          },
+                        },
+                      }}
+                    >
+                      {/* Glow Effect on Hover */}
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          top: -50,
+                          right: -50,
+                          width: 120,
+                          height: 120,
+                          background: `radial-gradient(circle, ${alpha(theme.palette[cat.color].main, 0.1)} 0%, transparent 70%)`,
+                          borderRadius: '50%',
+                          pointerEvents: 'none',
+                        }}
+                      />
+
+                      <Stack direction="row" alignItems="flex-start" spacing={2}>
+                        <Box
+                          className="doc-icon"
+                          sx={{
+                            width: 48,
+                            height: 48,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: 1.5,
+                            bgcolor: alpha(theme.palette[cat.color].main, 0.05),
+                            color: alpha(theme.palette[cat.color].main, 0.5),
+                            transition: theme.transitions.create(['all']),
+                            flexShrink: 0,
+                          }}
+                        >
+                          <Iconify icon={doc.icon as any} width={28} />
+                        </Box>
+
+                        <Stack spacing={0.5} flexGrow={1}>
+                          <Typography variant="caption" sx={{ color: 'text.disabled', textAlign: 'right', display: 'block' }}>
+                            {doc.size}
+                          </Typography>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              color: '#fff',
+                              fontWeight: 700,
+                              lineHeight: 1.3,
+                              minHeight: 44, // Align heights
+                            }}
+                          >
+                            {doc.title}
+                          </Typography>
+                        </Stack>
+                      </Stack>
+
+                      <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.5, flexGrow: 1 }}>
+                        {doc.description}
+                      </Typography>
+
+                      <CyberButton
+                        onClick={() => handleDocumentAction(doc)}
+                        fullWidth
+                        glowColor={cat.color as any}
+                        endIcon={<Iconify icon={(doc.type === 'sign' ? "solar:pen-new-round-bold" : "solar:eye-bold") as any} />}
+                        sx={{ mt: 2, height: 40, fontSize: 12 }}
+                      >
+                        {doc.type === 'sign' ? 'ASSINAR TERMO' : (doc.type === 'model' ? 'VER MODELO' : 'LER DOCUMENTO')}
+                      </CyberButton>
+                    </CyberCard>
+                  ))}
+                </Box>
+              </Box>
+            );
+          })}
         </Container>
-      </Box>
-    </>
+      </StandardPageWrapper>
   );
 }
