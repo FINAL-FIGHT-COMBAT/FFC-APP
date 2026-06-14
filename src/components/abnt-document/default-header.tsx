@@ -15,7 +15,7 @@ export function DefaultHeader() {
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Box
           component="img"
-          src="/logo/logo-512x512.png"
+          src="/logo/android-chrome-512x512.png"
           alt="FFC Logo"
           sx={{
             height: 45,

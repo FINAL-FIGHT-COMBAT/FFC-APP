@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `Final Fight Combat — ${CONFIG.appName}`,
     short_name: 'FFC',
     description:
-      'Plataforma oficial de inscrições e campeonatos de Jiu-Jitsu Brasileiro — categorias por faixa e peso segundo tabela CBJJ oficial.',
+      'Plataforma oficial do Final Fight Combat para inscrições, gestão de atletas, acompanhamento de chaves, rankings, premiações e eventos de artes marciais. Conectando competidores, equipes, patrocinadores e oportunidades em um único ecossistema.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0A0F1E',
