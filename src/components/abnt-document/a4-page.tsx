@@ -15,7 +15,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
         {`
           @page { 
             size: A4 portrait; 
-            margin: 1cm 2cm 1cm 3cm; /* Top 1cm (Logo), Right 2cm, Bottom 1cm (Footer), Left 3cm */
+            margin: 0mm; /* REMOVES BROWSER HEADER/FOOTER (Date, URL) */
           }
           body { 
             -webkit-print-color-adjust: exact; 
@@ -41,7 +41,9 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
           '@media print': {
             boxShadow: 'none',
             mb: 0,
-            p: 0, // Padding handled by @page margins in the parent
+            p: 0,
+            pl: '3cm', // ABNT Left margin
+            pr: '2cm', // ABNT Right margin
             width: '100%',
             minHeight: 'auto',
           }
@@ -63,7 +65,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             }}
           >
             <Box component="tr">
-              <Box component="td" sx={{ pb: 3 }}>
+              <Box component="td" sx={{ pb: 3, '@media print': { pt: '1cm' } }}>
                 {headerContent}
               </Box>
             </Box>
@@ -89,7 +91,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             }}
           >
             <Box component="tr">
-              <Box component="td">
+              <Box component="td" sx={{ '@media print': { pb: '1cm' } }}>
                 {footerContent}
               </Box>
             </Box>
@@ -106,6 +108,10 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
               bottom: 0,
               left: 0,
               right: 0,
+              pl: '3cm',
+              pr: '2cm',
+              pb: '1cm',
+              boxSizing: 'border-box'
             }
           }}
         >
