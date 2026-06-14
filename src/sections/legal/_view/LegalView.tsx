@@ -1,11 +1,8 @@
 'use client';
 
 import Box from '@mui/material/Box';
-import { alpha } from '@mui/material/styles';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-
-import { HomeBackground } from 'src/components/background';
+import { DefaultHeader, PdfViewerLayout, A4Page } from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 
@@ -17,34 +14,32 @@ type Props = {
 
 export function LegalView({ title, content, lastUpdated }: Props) {
   return (
-    <>
-      <HomeBackground />
-
-      <Box component="main" sx={{ position: 'relative', zIndex: 1, py: 12 }}>
-        <Container maxWidth="md">
-          <Box sx={{ mb: 8, textAlign: 'center' }}>
-            <Typography variant="h1" sx={{ mb: 2 }}>{title}</Typography>
-            <Typography variant="body2" sx={{ color: 'text.disabled' }}>
-              Última atualização: {lastUpdated}
-            </Typography>
+    <PdfViewerLayout documentTitle={title}>
+      <A4Page
+        headerContent={<DefaultHeader />}
+        footerContent={
+          <Box sx={{ mt: 2, borderTop: '1px solid #ccc', pt: 1, textAlign: 'center' }}>
+            <Typography variant="caption">Última atualização: {lastUpdated}</Typography>
           </Box>
+        }
+      >
+        <Box sx={{ mb: 4, textAlign: 'center' }}>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#000', mb: 2 }}>{title}</Typography>
+        </Box>
 
-          <Box
-            sx={{
-              p: { xs: 3, md: 8 },
-              borderRadius: 3,
-              bgcolor: (theme) => alpha(theme.palette.grey[900], 0.2),
-              backdropFilter: 'blur(10px)',
-              border: (theme) => `1px solid ${alpha(theme.palette.divider, 0.05)}`,
-              '& h2': { variant: 'h3', mt: 6, mb: 3, color: 'primary.main' },
-              '& p': { variant: 'body1', mb: 3, color: 'text.secondary', lineHeight: 1.8 },
-              '& ul': { mb: 3, pl: 3, color: 'text.secondary' },
-              '& li': { mb: 1 },
-            }}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </Container>
-      </Box>
-    </>
+        <Box
+          sx={{
+            color: '#000',
+            fontFamily: '"Arial", "Helvetica", sans-serif',
+            textAlign: 'justify',
+            '& h2': { fontSize: '1.2rem', fontWeight: 'bold', mt: 4, mb: 2, textTransform: 'uppercase' },
+            '& p': { fontSize: '1rem', mb: 2, lineHeight: 1.5, textIndent: '1.25cm' },
+            '& ul': { mb: 2, pl: '1.25cm' },
+            '& li': { mb: 1, fontSize: '1rem', lineHeight: 1.5 },
+          }}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </A4Page>
+    </PdfViewerLayout>
   );
 }

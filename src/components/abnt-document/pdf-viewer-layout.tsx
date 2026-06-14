@@ -11,9 +11,10 @@ import { Iconify } from 'src/components/iconify';
 type PdfViewerLayoutProps = {
   children: React.ReactNode;
   documentTitle: string;
+  fixedHeader?: boolean;
 };
 
-export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProps) {
+export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }: PdfViewerLayoutProps) {
   const router = useRouter();
   const documentRef = useRef<HTMLDivElement>(null);
 
@@ -43,9 +44,9 @@ export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProp
       <Box
         sx={{
           width: '100%',
-          position: 'fixed',
-          top: 0,
-          left: 0,
+          position: fixedHeader ? 'fixed' : 'relative',
+          top: fixedHeader ? 0 : 'auto',
+          left: fixedHeader ? 0 : 'auto',
           zIndex: 99,
           bgcolor: '#323639',
           borderBottom: '1px solid rgba(255,255,255,0.1)',
@@ -54,7 +55,8 @@ export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProp
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+          boxShadow: fixedHeader ? '0 1px 3px rgba(0,0,0,0.3)' : 'none',
+          mb: fixedHeader ? 0 : 4,
           '@media print': { display: 'none' }
         }}
       >
@@ -86,7 +88,7 @@ export function PdfViewerLayout({ children, documentTitle }: PdfViewerLayoutProp
       <Box
         ref={documentRef}
         sx={{
-          mt: 7,
+          mt: fixedHeader ? 7 : 0,
           width: '100%',
           overflowX: 'hidden',
           display: 'flex',
