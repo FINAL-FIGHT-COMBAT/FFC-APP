@@ -14,7 +14,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.ffc.com';
 export function constructMetadata({
   title,
   description,
-  image = '/logo/logo-512x512.png',
+  image = '/logo/android-chrome-512x512.png',
   noIndex = false,
 }: MetadataProps): Metadata {
   const customTitle = `${title} | FFC`;

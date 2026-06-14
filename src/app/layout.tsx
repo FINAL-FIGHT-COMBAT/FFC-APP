@@ -206,7 +206,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 '@type': 'SportsOrganization',
                 name: 'Final Fight Combat',
                 url: CONFIG.siteUrl,
-                logo: `${CONFIG.siteUrl}/logo/logo-512x512.png`,
+                logo: `${CONFIG.siteUrl}/logo/android-chrome-512x512.png`,
                 sameAs: [CONFIG.socials.instagram, CONFIG.socials.facebook, CONFIG.socials.twitter],
                 knowsAbout: [
                   'Mixed Martial Arts',

@@ -35,7 +35,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
           bgcolor: '#FFFFFF',
           borderRadius: 0,
           boxSizing: 'border-box',
-          p: '3cm 2cm 2cm 3cm', // ABNT Margins for screen reading
+          p: '1.5cm 2cm 2cm 3cm', // Adjusted Top margin for screen reading
           fontFamily: '"Arial", "Helvetica", sans-serif',
           position: 'relative',
           '@media print': {

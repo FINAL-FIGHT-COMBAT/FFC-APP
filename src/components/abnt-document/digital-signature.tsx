@@ -11,22 +11,33 @@ type DigitalSignatureProps = {
 };
 
 export function DigitalSignature({ title, name, color = 'info' }: DigitalSignatureProps) {
-  const theme = useTheme();
+  // Padronização com as cores do logo / Bandeira do Brasil
+  const getBrandColor = (type: string) => {
+    switch (type) {
+      case 'success': return '#0A3B18'; // Verde Escuro Institucional FFC
+      case 'info': return '#002776'; // Azul Marinho Brasil
+      case 'warning': return '#D4AF37'; // Dourado FFC
+      default: return '#0A3B18';
+    }
+  };
+
+  const mainColor = getBrandColor(color);
+
   return (
     <Stack 
       spacing={2} 
       sx={{ 
         mt: 3, 
         p: 3, 
-        bgcolor: alpha(theme.palette[color].main, 0.08), 
-        border: `1px dashed ${theme.palette[color].main}`, 
+        bgcolor: `${mainColor}0D`, // 0D hex = 8% de opacidade
+        border: `2px dashed ${mainColor}`, 
         borderRadius: 2 
       }}
     >
-      <Typography variant="subtitle2" sx={{ color: `${color}.dark`, textTransform: 'uppercase' }}>
+      <Typography variant="subtitle2" sx={{ color: mainColor, textTransform: 'uppercase' }}>
         <DataTag text={title} />
       </Typography>
-      <Typography variant="body2" sx={{ color: '#000000', fontSize: '12pt' }}>
+      <Typography variant="body2" sx={{ color: '#000000', fontSize: '12pt', fontWeight: 'bold' }}>
         {name}
       </Typography>
     </Stack>

@@ -34,7 +34,7 @@ export function generateArticleSchema({
       name: 'Final Fight Combat',
       logo: {
         '@type': 'ImageObject',
-        url: `${CONFIG.siteUrl}/logo/logo-512x512.png`,
+        url: `${CONFIG.siteUrl}/logo/android-chrome-512x512.png`,
       },
     },
     mainEntityOfPage: {

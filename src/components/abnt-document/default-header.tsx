@@ -18,10 +18,9 @@ export function DefaultHeader() {
           src="/logo/android-chrome-512x512.png"
           alt="FFC Logo"
           sx={{
-            height: 45,
+            height: 70,
             width: 'auto',
             objectFit: 'contain',
-            filter: 'grayscale(100%)'
           }}
         />
         <Box>

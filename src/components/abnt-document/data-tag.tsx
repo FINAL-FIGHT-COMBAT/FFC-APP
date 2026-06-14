@@ -32,10 +32,10 @@ export function DataTag({ text = 'PREENCHIMENTO AUTOMÁTICO', field }: DataTagPr
         mx: 0.5,
         borderRadius: 0.5,
         fontSize: '10pt',
-        fontWeight: 'bold',
-        bgcolor: alpha(theme.palette.warning.main, 0.1),
-        color: theme.palette.warning.dark,
-        border: `1px solid ${alpha(theme.palette.warning.main, 0.4)}`,
+        fontWeight: '900',
+        bgcolor: '#D4AF371A', // 1A hex = 10% opacity Gold
+        color: '#B8860B', // Dark Goldenrod for high readability
+        border: '1px solid #D4AF37', // Pure Gold border
         textIndent: '0cm',
       }}
     >

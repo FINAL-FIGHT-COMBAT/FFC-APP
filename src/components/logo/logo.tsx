@@ -43,7 +43,7 @@ export function Logo({
     >
       <Image
         alt="FFC Logo"
-        src="/logo/logo-512x512.png"
+        src="/logo/android-chrome-512x512.png"
         width={40}
         height={40}
         style={{ objectFit: 'contain' }}
