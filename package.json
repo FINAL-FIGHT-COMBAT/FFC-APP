@@ -58,7 +58,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "jose": "^6.2.2",
     "minimal-shared": "^1.1.5",
-    "next": "^16.1.6",
+    "next": "^16.2.9",
     "nprogress": "^0.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
