@@ -14,8 +14,6 @@ import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
 import { StandardPageWrapper } from 'src/components/standard-page';
 
-import { useAuthContext } from 'src/auth/hooks';
-
 import { DOCUMENTS, DOCUMENT_CATEGORIES } from 'src/_mock/_documents';
 import type { IDocumentConfig } from 'src/_mock/_documents';
 
@@ -24,7 +22,6 @@ import type { IDocumentConfig } from 'src/_mock/_documents';
 export function DocumentosView() {
   const theme = useTheme();
   const router = useRouter();
-  const { authenticated } = useAuthContext();
 
   const handleDocumentAction = (doc: IDocumentConfig) => {
     if (doc.isReady && doc.readyUrl) {

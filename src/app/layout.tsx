@@ -41,7 +41,6 @@ import { detectSettings } from 'src/components/settings/server';
 import { defaultSettings, SettingsProvider } from 'src/components/settings';
 
 import { Web3Provider } from 'src/auth/context/web3-provider';
-import { AuthProvider as JwtAuthProvider } from 'src/auth/context';
 
 import App from './app';
 
@@ -58,8 +57,6 @@ type LanguageCode = 'en' | 'pt' | 'es' | 'ar' | 'cn' | 'fr' | 'ru';
  * Node.js runtime obrigatório para suportar a árvore densa de Providers e i18n.
  */
 export const runtime = 'nodejs';
-
-const AuthProvider = JwtAuthProvider;
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -226,21 +223,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           defaultMode={themeConfig.defaultMode}
         />
 
-        {/* ✅ I18nProvider tipado corretamente para evitar erros de build */}
         <I18nProvider lang={appConfig.i18nLang}>
           <Web3Provider>
-            <AuthProvider>
-              <SettingsProvider
-                defaultSettings={defaultSettings}
-                cookieSettings={appConfig.cookieSettings}
-              >
-                <LocalizationProvider>
-                  <AppRouterCacheProvider options={{ key: 'css' }}>
-                    <App>{children}</App>
-                  </AppRouterCacheProvider>
-                </LocalizationProvider>
-              </SettingsProvider>
-            </AuthProvider>
+            <SettingsProvider
+              defaultSettings={defaultSettings}
+              cookieSettings={appConfig.cookieSettings}
+            >
+              <LocalizationProvider>
+                <AppRouterCacheProvider options={{ key: 'css' }}>
+                  <App>{children}</App>
+                </AppRouterCacheProvider>
+              </LocalizationProvider>
+            </SettingsProvider>
           </Web3Provider>
         </I18nProvider>
 

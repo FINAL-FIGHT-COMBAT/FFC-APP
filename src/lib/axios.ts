@@ -9,9 +9,6 @@ import type { AxiosRequestConfig } from 'axios';
 
 import axios from 'axios';
 
-import { setSession } from 'src/auth/context/utils';
-import { JWT_STORAGE_KEY } from 'src/auth/context/constant';
-
 // ----------------------------------------------------------------------
 
 /**
@@ -31,7 +28,7 @@ const axiosInstance = axios.create({
  */
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem(JWT_STORAGE_KEY) : null;
+    const token = typeof window !== 'undefined' ? localStorage.getItem('daoAccessToken') : null;
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -106,9 +103,9 @@ axiosInstance.interceptors.response.use(
      */
     if (status === 401) {
       console.warn('🚨 Token inválido ou expirado. Executando renovação de segurança...');
-      setSession(null);
-
+      
       if (typeof window !== 'undefined') {
+        localStorage.removeItem('daoAccessToken');
         window.dispatchEvent(new CustomEvent('onTokenExpired'));
       }
     }
