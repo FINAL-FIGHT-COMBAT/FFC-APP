@@ -147,26 +147,32 @@
     "title": "Novidades",
     "title_bridge": "&",
     "title_highlight": "Atualizações",
-    "description": "Fique por dentro das novidades, anúncios técnicos e análises estratégicas do ecossistema ASPPIBRA-DAO.",
+    "description": "Acompanhe as atualizações, resultados e bastidores oficiais do Final Fight Combat.",
     "button_view_all": "Ver Tudo",
     "items": [
       {
         "id": "post-1",
-        "title": "Lançamento da DEX V2: Mais Rápida e Segura",
-        "coverUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/cover/cover-4.webp",
-        "createdAt": "2024-05-01T12:00:00Z"
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-15T12:00:00Z"
       },
       {
         "id": "post-2",
-        "title": "Parceria Estratégica: Agroecologia e Web3",
-        "coverUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/cover/cover-5.webp",
-        "createdAt": "2024-04-28T12:00:00Z"
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-14T12:00:00Z"
       },
       {
         "id": "post-3",
-        "title": "O Futuro dos Ativos Reais e a Governança",
-        "coverUrl": "https://api-dev-minimal-v6.vercel.app/assets/images/mock/cover/cover-6.webp",
-        "createdAt": "2024-04-25T12:00:00Z"
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-13T12:00:00Z"
+      },
+      {
+        "id": "post-4",
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-12T12:00:00Z"
       }
     ]
   },

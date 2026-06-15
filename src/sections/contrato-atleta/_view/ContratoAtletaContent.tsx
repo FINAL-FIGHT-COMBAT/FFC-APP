@@ -36,7 +36,7 @@ export function ContratoAtletaContent() {
             <Clause text="2.2. Integram este instrumento, para todos os fins:" />
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(i) o regulamento oficial do evento;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(ii) a programação técnica;</ABNTText>
-            <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(iii) a tabela de bolsa/luva e logística do atleta convidado;</ABNTText>
+            <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(iii) a tabela de Bolsa de Luta e logística do atleta convidado;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(iv) a política de imagem;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(v) a política de privacidade e proteção de dados;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(vi) o termo de saúde e aptidão física; e</ABNTText>
@@ -49,7 +49,7 @@ export function ContratoAtletaContent() {
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>II – <strong>Atleta Convidado:</strong> o participante selecionado pela ORGANIZADORA por convite direto, com condições previamente estabelecidas por escrito;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>III – <strong>Card:</strong> a composição oficial dos confrontos, lutas, apresentações ou exibições do evento;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IV – <strong>Luta Casada:</strong> confronto previamente ajustado entre dois atletas, com categoria, regras e condições definidas;</ABNTText>
-            <ABNTText indent={false} sx={{ pl: '1.25cm' }}>V – <strong>Luva / Bolsa de Participação:</strong> valor contratual pago ao ATLETA convidado pela presença, participação esportiva e obrigações promocionais previstas neste instrumento;</ABNTText>
+            <ABNTText indent={false} sx={{ pl: '1.25cm' }}>V – <strong>Bolsa de Luta / Cachê de Participação:</strong> valor contratual pago ao ATLETA convidado pela presença, participação esportiva e obrigações promocionais previstas neste instrumento;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VI – <strong>Ajuda Logística:</strong> valores, passagens, deslocamentos, hospedagem, alimentação ou outros apoios previstos neste contrato;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VII – <strong>Pesagem:</strong> procedimento oficial de aferição de peso e enquadramento de categoria;</ABNTText>
             <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VIII – <strong>Corner/Staff:</strong> treinador, auxiliar, assessor, médico, massagista, filmador, fotógrafo, acompanhante técnico ou pessoa credenciada para apoio ao ATLETA;</ABNTText>
@@ -134,7 +134,7 @@ export function ContratoAtletaContent() {
             <Clause text="15.1. O ATLETA compromete-se a preservar a lisura e a integridade do evento, sendo vedadas práticas de fraude de peso, manipulação de resultado, combinação prévia indevida, conluio, simulação, uso indevido de substâncias ou métodos proibidos e qualquer conduta lesiva à ética esportiva." />
             <Clause text="15.2. A violação desta cláusula autoriza desclassificação imediata, cancelamento de bônus ou premiação contratada, retenção de valores pendentes e adoção das medidas administrativas, civis e, se cabível, penais." />
             <Clause text="15.3. A ORGANIZADORA poderá, a seu critério técnico, submeter o ATLETA a verificação documental, conferência de identidade, validação de peso e checagem de elegibilidade." />
-            <Clause text="15.4. O ATLETA autoriza a adoção de procedimentos de controle antidopagem e integridade esportiva, observando as diretrizes de agências oficiais, conforme detalhado no regulamento oficial ou exigido pela legislação aplicável." />
+            <Clause text="15.4. O ATLETA autoriza a adoção de procedimentos de controle antidopagem e integridade esportiva, observando as diretrizes da Agência Mundial Antidoping (WADA) e da Autoridade Brasileira de Controle de Dopagem (ABCD), conforme detalhado no regulamento oficial ou exigido pela legislação aplicável." />
             <SectionTitle>CLÁUSULA 16ª – DO CÓDIGO DE CONDUTA, CREDENCIAIS E ACESSO</SectionTitle>
             <Clause text="16.1. O ATLETA, seu corner, staff e acompanhantes credenciados deverão respeitar as áreas de acesso restrito, a arbitragem, a mesa de controle, a equipe médica, a produção e os demais fluxos operacionais do evento." />
             <Clause text="16.2. É vedada interferência indevida na condução do evento, incluindo invasão de área técnica, contato não autorizado com árbitros, tumulto, agressão verbal ou física, ou descumprimento de ordem legítima da organização." />
@@ -148,7 +148,7 @@ export function ContratoAtletaContent() {
             <SectionTitle>CLÁUSULA 18ª – DA CESSÃO DE IMAGEM, VOZ, NOME E PERFORMANCE</SectionTitle>
             <Clause text="18.1. O ATLETA autoriza a ORGANIZADORA a captar, reproduzir, editar, armazenar, retransmitir, publicar e explorar sua imagem, voz, nome, apelido, performance, entrevistas, bastidores e demais registros vinculados ao evento." />
             <Clause text="18.2. A autorização abrange meios físicos, digitais, eletrônicos, audiovisuais, streaming, redes sociais, publicidade institucional, campanhas promocionais, arquivo histórico e prestação de contas de mídia." />
-            <Clause text="18.3. A presente autorização é concedida a título gratuito e oneroso, conforme a especificidade da bolsa e do contrato, pelo prazo de 10 (dez) anos, com abrangência territorial nacional e internacional, para fins de divulgação, memória, promoção, arquivo e exploração institucional do Projeto FFC." />
+            <Clause text="18.3. A cessão dos direitos de arena e transmissão comercial do combate está remunerada e incluída no valor da Bolsa de Luta. A utilização institucional, postagens em redes sociais e captação de bastidores é concedida a título gratuito, pelo prazo de 10 (dez) anos, com abrangência territorial nacional e internacional, para fins de divulgação, memória e arquivo do Projeto FFC." />
             <Clause text="18.4. A autorização aqui prevista é independente de eventual futura constituição de nova pessoa jurídica para o projeto, podendo ser aproveitada pela entidade sucessora na forma da lei e dos instrumentos de cessão, licenciamento ou sucessão aplicáveis." />
             <Clause text="18.5. O ATLETA declara ciência de que a participação em evento público pode resultar em captação por terceiros autorizados ou pelo público, sem que isso gere obrigação adicional à ORGANIZADORA fora dos limites desta cláusula." />
             <SectionTitle>CLÁUSULA 19ª – DA CONFIDENCIALIDADE</SectionTitle>
@@ -163,14 +163,14 @@ export function ContratoAtletaContent() {
             <Clause text="20.4. O ATLETA poderá exercer os direitos previstos na legislação aplicável por meio dos canais oficiais informados pela ORGANIZADORA." />
             <Clause text="20.5. A organização manterá, em política específica, as informações sobre finalidade, base legal, compartilhamento, retenção e canal de atendimento do titular, observada a legislação de proteção de dados." />
             <SectionTitle>CLÁUSULA 21ª – DA REMUNERAÇÃO, BOLSA E PREMIAÇÃO</SectionTitle>
-            <Clause text="21.1. O ATLETA fará jus exclusivamente ao pagamento da Luva de Participação, cujo valor exato, forma de pagamento, prazo de liberação e incidência de taxas estarão previamente definidos no Anexo III." />
+            <Clause text="21.1. O ATLETA fará jus exclusivamente ao pagamento da Bolsa de Luta, cujo valor exato, forma de pagamento, prazo de liberação e incidência de taxas estarão previamente definidos no Anexo III." />
             <Clause text="21.2. O valor bruto, forma de pagamento, prazo de liberação, incidência de taxas, descontos legais, retenções permitidas e condições de pagamento deverão estar claramente definidos antes do evento." />
             <Clause text="21.3. A bolsa não se confunde com participação societária, distribuição de lucro, dividendo ou remuneração de natureza empresarial." />
             <Clause text="21.4. A premiação geral e variável do evento por desempenho, como bônus de luta ou vitória, será disciplinada exclusivamente no Documento Financeiro Específico do Evento, não integrando os valores fixos garantidos neste contrato." />
-            <Clause text="21.5. A luva de participação somente se refere aos valores contratados em favor do ATLETA convidado, não se presumindo qualquer outra vantagem financeira não prevista de forma expressa." />
+            <Clause text="21.5. A Bolsa de Luta somente se refere aos valores contratados em favor do ATLETA convidado, não se presumindo qualquer outra vantagem financeira não prevista de forma expressa." />
             <SectionTitle>CLÁUSULA 22ª – DAS CONDIÇÕES PARA PAGAMENTO</SectionTitle>
             <Clause text="22.1. O pagamento somente será considerado devido após a confirmação das condições contratadas, do comparecimento exigido e da validação documental correspondente." />
-            <Clause text="22.2. Em caso de inaptidão por culpa do ATLETA, abandono injustificado, fraude, ausência sem justificativa idônea ou descumprimento grave das obrigações assumidas, a ORGANIZADORA poderá reter total ou parcialmente valores ainda não pagos. Eventuais multas contratuais e retenções ficam limitadas ao teto máximo de 100% (cem por cento) do valor da Luva de Participação do ATLETA." />
+            <Clause text="22.2. Em caso de inaptidão por culpa do ATLETA, abandono injustificado, fraude, ausência sem justificativa idônea ou descumprimento grave das obrigações assumidas, a ORGANIZADORA poderá reter total ou parcialmente valores ainda não pagos. Eventuais multas contratuais e retenções ficam limitadas ao teto máximo de 100% (cem por cento) do valor da Bolsa de Luta do ATLETA, aplicadas de forma proporcional à gravidade da infração, em observância ao Código Civil." />
             <Clause text="22.3. Eventuais reembolsos, devoluções ou compensações somente ocorrerão nas hipóteses previstas neste contrato, no regulamento ou por determinação legal." />
             <Clause text="22.4. A definição de valores para bolsa, ajuda de custo, reembolso ou bonificação deverá constar em tabela anexa, assinada ou aceita eletronicamente pelo ATLETA." />
             <Clause text="22.5. Quando houver pagamento em etapas, o cronograma de liberação deverá constar em anexo ou comunicado específico." />
@@ -246,7 +246,7 @@ export function ContratoAtletaContent() {
             <SectionTitle>CLÁUSULA 39ª – DAS DISPOSIÇÕES SOBRE ANEXOS</SectionTitle>
             <Clause text="39.1. Os anexos integram este contrato e possuem a mesma força obrigacional do instrumento principal, quando assinados ou aceitos eletronicamente." />
             <Clause text="39.2. A ausência de assinatura em anexo essencial poderá impedir a eficácia da participação do ATLETA até regularização." />
-            <Clause text="39.3. O Anexo III, especialmente, deverá conter a disciplina financeira do atleta convidado, incluindo luva, ajuda logística, transporte, hospedagem e alimentação, sem prejuízo do Documento Financeiro Específico do Evento para premiações gerais." />
+            <Clause text="39.3. O Anexo III, especialmente, deverá conter a disciplina financeira do atleta convidado, incluindo Bolsa de Luta, ajuda logística, transporte, hospedagem e alimentação, sem prejuízo do Documento Financeiro Específico do Evento para premiações gerais." />
             <SectionTitle>CLÁUSULA 40ª – DA INTERPRETAÇÃO E DA BOA-FÉ</SectionTitle>
             <Clause text="40.1. Este contrato será interpretado de maneira sistemática, buscando preservar sua finalidade, a boa-fé objetiva, o equilíbrio contratual e a viabilidade do evento." />
             <Clause text="40.2. As cláusulas deverão ser compreendidas em conjunto, evitando interpretações que esvaziem o objeto principal do convite ou tornem inexequível a operação do evento." />
@@ -276,7 +276,7 @@ export function ContratoAtletaContent() {
             </ABNTText>
             <ABNTText indent={false}><strong>Anexo I</strong> – Convite formal e identificação do atleta convidado;</ABNTText>
             <ABNTText indent={false}><strong>Anexo II</strong> – Regulamento oficial do evento;</ABNTText>
-            <ABNTText indent={false}><strong>Anexo III</strong> – Tabela de bolsa/luva, ajuda logística, transporte, hospedagem e alimentação;</ABNTText>
+            <ABNTText indent={false}><strong>Anexo III</strong> – Tabela de Bolsa de Luta, ajuda logística, transporte, hospedagem e alimentação;</ABNTText>
             <ABNTText indent={false}><strong>Anexo IV</strong> – Termo de saúde, aptidão física e declaração de risco;</ABNTText>
             <ABNTText indent={false}><strong>Anexo V</strong> – Termo de autorização de imagem, voz, nome e performance;</ABNTText>
             <ABNTText indent={false}><strong>Anexo VI</strong> – Termo de uso de comunicações e meios digitais;</ABNTText>
