@@ -12,16 +12,7 @@ import {
 import { ContratoAtletaContent } from './ContratoAtletaContent';
 
 export function ContratoAtletaView() {
-  const mockData = {
-    "NOME COMPLETO": "Sandro Antunes",
-    "NACIONALIDADE": "Brasileiro",
-    "ESTADO CIVIL": "Solteiro",
-    "PROFISSÃO": "Desenvolvedor e Atleta",
-    "CPF": "123.456.789-00",
-    "RG": "MG-12.345.678",
-    "ENDEREÇO COMPLETO": "Rua Fictícia, 123 - Rio de Janeiro, RJ",
-    "ENDEREÇO DA SEDE": "Sede Oficial FFC - Maricá, RJ"
-  };
+  const mockData = {};
 
   return (
     <>
