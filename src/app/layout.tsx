@@ -40,7 +40,7 @@ import { JsonLd } from 'src/components/seo/json-ld';
 import { detectSettings } from 'src/components/settings/server';
 import { defaultSettings, SettingsProvider } from 'src/components/settings';
 
-import { Web3Provider } from 'src/auth/context/web3-provider';
+import { Web3Provider } from 'src/providers/web3-provider';
 
 import App from './app';
 

@@ -34,6 +34,9 @@ export const Space = memo(({ children }: PropsWithChildren) => (
       background: '#010411',
       overflow: 'hidden',
       pointerEvents: 'none',
+      '@media print': {
+        display: 'none',
+      },
     }}
   >
     {children}

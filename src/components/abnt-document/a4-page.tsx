@@ -17,10 +17,16 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             size: A4 portrait; 
             margin: 0mm; /* REMOVES BROWSER HEADER/FOOTER (Date, URL) */
           }
-          body { 
+          html, body { 
+            background: #ffffff !important;
+            color: #000000 !important;
             -webkit-print-color-adjust: exact; 
             print-color-adjust: exact; 
             font-family: "Arial", sans-serif !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
           }
         `}
       </style>

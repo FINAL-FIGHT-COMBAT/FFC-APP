@@ -1,280 +1,66 @@
 'use client';
 
-import type { SWRConfiguration } from 'swr';
+import { useQuery } from '@tanstack/react-query';
 
-import { useMemo } from 'react';
-import useSWR, { mutate } from 'swr';
+import { queryClient } from 'src/lib/react-query';
+import axiosInstance, { endpoints } from 'src/lib/axios';
 
-import { BLOG_MOCK } from 'src/_mock/blog.mock';
-import axios, { fetcher, endpoints } from 'src/lib/axios';
-
-import { mapToPostItem, mapToPostList, mapToCommentList } from './mappers/blog-mapper';
-
-// ----------------------------------------------------------------------
-
-const swrOptions: SWRConfiguration = {
-  revalidateIfStale: false,
-  revalidateOnFocus: false,
-  revalidateOnReconnect: false,
-};
-
-// ----------------------------------------------------------------------
-
-type PostsData = {
-  success: boolean;
-  data: any[];
-  pagination?: {
-    total: number;
-    page: number;
-    limit: number;
-    pages: number;
-  };
-};
-
-export function useGetPosts(params?: { category?: string; status?: string; sortBy?: string; page?: number; limit?: number }) {
-  const query = new URLSearchParams();
-  if (params?.category) query.append('category', params.category);
-  if (params?.status) query.append('status', params.status);
-  if (params?.sortBy) query.append('sortBy', params.sortBy);
-  if (params?.page) query.append('page', String(params.page));
-  if (params?.limit) query.append('limit', String(params.limit));
-
-  const url = `${endpoints.post.root}${query.toString() ? `?${query.toString()}` : ''}`;
-
-  const { data, isLoading, error, isValidating } = useSWR<PostsData>(url, fetcher, swrOptions);
-
-  const posts = useMemo(() => {
-    if (error || (!isLoading && !data?.data?.length)) {
-       return BLOG_MOCK; // Fallback para Mock
-    }
-    return mapToPostList(data?.data || []);
-  }, [data?.data, error, isLoading]);
-
-  return {
-    posts,
-    postsLoading: isLoading,
-    postsError: error,
-    postsValidating: isValidating,
-    postsEmpty: !isLoading && !posts.length,
-    pagination: data?.pagination,
-  };
-}
+import { mapToCommentList } from './mappers/blog-mapper';
 
 // ----------------------------------------------------------------------
 
 /**
- * Busca posts por categoria específica (Ex: DEX, Análise)
+ * Hook para obter comentários de um Post específico usando React Query.
  */
-export function useGetPostsByCategory(category: string) {
-  const url = category ? [endpoints.post.list, { params: { category } }] : '';
-
-  const { data, isLoading, error, isValidating } = useSWR<PostsData>(url, fetcher, swrOptions);
-
-  const posts = useMemo(() => {
-    if (error || (!isLoading && !data?.data?.length)) {
-        return BLOG_MOCK.filter(p => p.category === category);
-    }
-    return mapToPostList(data?.data || []);
-  }, [data?.data, error, isLoading, category]);
-
-  const memoizedValue = useMemo(
-    () => ({
-      posts,
-      postsLoading: isLoading,
-      postsError: error,
-      postsValidating: isValidating,
-      postsEmpty: !isLoading && !posts.length,
-    }),
-    [posts, error, isLoading, isValidating]
-  );
-
-  return memoizedValue;
-}
-
-// ----------------------------------------------------------------------
-
-type PostData = {
-  success: boolean;
-  data: any;
-};
-
-export function useGetPost(slug: string) {
-  const url = slug ? endpoints.post.details(slug) : '';
-
-  const { data, isLoading, error, isValidating } = useSWR<PostData>(url, fetcher, swrOptions);
-
-  const post = useMemo(() => {
-    if (error || (!isLoading && !data?.data)) {
-        return BLOG_MOCK.find(p => p.slug === slug);
-    }
-    return data?.data ? mapToPostItem(data.data) : undefined;
-  }, [data?.data, error, isLoading, slug]);
-
-  const memoizedValue = useMemo(
-    () => ({
-      post,
-      postLoading: isLoading,
-      postError: error,
-      postValidating: isValidating,
-    }),
-    [post, error, isLoading, isValidating]
-  );
-
-  return memoizedValue;
-}
-
-// ----------------------------------------------------------------------
-
-/**
- * Busca posts relacionados (simplificado)
- */
-export function useGetLatestPosts(slug: string) {
-  const url = endpoints.post.list;
-
-  const { data, isLoading, error, isValidating } = useSWR<PostsData>(url, fetcher, swrOptions);
-
-  const posts = useMemo(() => {
-     if (error || (!isLoading && !data?.data?.length)) {
-         return BLOG_MOCK;
-     }
-     return mapToPostList(data?.data || []);
-  }, [data?.data, error, isLoading]);
-
-  const latestPosts = useMemo(
-    () => posts.filter((p) => p.slug !== slug).slice(0, 4),
-    [posts, slug]
-  );
-
-  const memoizedValue = useMemo(
-    () => ({
-      latestPosts,
-      latestPostsLoading: isLoading,
-      latestPostsError: error,
-      latestPostsValidating: isValidating,
-      latestPostsEmpty: !isLoading && !latestPosts.length,
-    }),
-    [latestPosts, error, isLoading, isValidating]
-  );
-
-  return memoizedValue;
-}
-
-// ----------------------------------------------------------------------
-
-/**
- * BUSCA SEMÂNTICA / PESQUISA
- */
-export function useSearchPosts(query: string) {
-  const url = query ? [endpoints.post.search, { params: { q: query } }] : '';
-
-  const { data, isLoading, error, isValidating } = useSWR<PostsData>(url, fetcher, {
-    ...swrOptions,
-    keepPreviousData: true,
+export function useGetPostComments(postId: string) {
+  const { data: comments = [], isLoading, error, isFetching } = useQuery({
+    queryKey: ['post', postId, 'comments'],
+    queryFn: async () => {
+      if (!postId) return [];
+      const url = `${endpoints.post.root}/${postId}/comments`;
+      const res = await axiosInstance.get<{ success: boolean; data: any[] }>(url);
+      return mapToCommentList(res.data.data || []);
+    },
+    enabled: !!postId,
   });
 
-  const searchResults = useMemo(() => mapToPostList(data?.data || []), [data?.data]);
-
-  const memoizedValue = useMemo(
-    () => ({
-      searchResults,
-      searchLoading: isLoading,
-      searchError: error,
-      searchValidating: isValidating,
-      searchEmpty: !isLoading && !isValidating && !searchResults.length,
-    }),
-    [searchResults, error, isLoading, isValidating]
-  );
-
-  return memoizedValue;
-}
-
-// ----------------------------------------------------------------------
-// MUTAÇÕES (DASHBOARD)
-// ----------------------------------------------------------------------
-
-export async function createPost(postData: any) {
-  const res = await axios.post(endpoints.post.list, postData);
-  mutate(endpoints.post.list);
-  return res.data;
-}
-
-export async function updatePost(id: string, postData: any) {
-  const res = await axios.put(`${endpoints.post.list}/${id}`, postData);
-  mutate(endpoints.post.list);
-  if (postData.slug) mutate(endpoints.post.details(postData.slug));
-  return res.data;
-}
-
-export async function deletePost(id: string) {
-  const res = await axios.delete(`${endpoints.post.list}/${id}`);
-  mutate(endpoints.post.list);
-  return res.data;
+  return {
+    comments,
+    commentsLoading: isLoading,
+    commentsError: error,
+    commentsValidating: isFetching,
+    commentsEmpty: !isLoading && !comments.length,
+  };
 }
 
 // ----------------------------------------------------------------------
 
-export function useGetPostComments(postId: string) {
-  const url = postId ? `${endpoints.post.root}/${postId}/comments` : null;
-
-  const { data, isLoading, error, isValidating } = useSWR<{ success: boolean; data: any[] }>(url, fetcher, swrOptions);
-
-  const comments = useMemo(() => {
-    if (error || (!isLoading && !data?.data)) {
-        return []; // Fallback silencioso enquanto não há API real
-    }
-    return mapToCommentList(data?.data || []);
-  }, [data?.data, error, isLoading]);
-
-  const memoizedValue = useMemo(
-    () => ({
-      comments,
-      commentsLoading: isLoading,
-      commentsError: error,
-      commentsValidating: isValidating,
-      commentsEmpty: !isLoading && !data?.data?.length,
-    }),
-    [data, error, isLoading, isValidating]
-  );
-
-  return memoizedValue;
-}
-
+/**
+ * Função para adicionar comentário a um Post específico.
+ */
 export async function addComment(postId: string, commentData: { content: string }) {
   const url = `${endpoints.post.root}/${postId}/comments`;
 
-  const res = await axios.post(url, commentData);
+  const res = await axiosInstance.post(url, commentData);
 
-  mutate(`${endpoints.post.root}/${postId}/comments`);
+  // Invalida o cache de comentários no React Query para forçar recarregamento
+  queryClient.invalidateQueries({ queryKey: ['post', postId, 'comments'] });
 
   return res.data;
 }
+
+// ----------------------------------------------------------------------
+
+/**
+ * Função para favoritar um Post específico.
+ */
 export async function favoritePost(postId: string) {
   const url = `${endpoints.post.root}/${postId}/favorite`;
-  const res = await axios.post(url);
-  // Revalidar o post para atualizar o contador de favoritos
-  mutate((key) => typeof key === 'string' && key.includes(`${endpoints.post.root}/`), undefined, { revalidate: true });
+
+  const res = await axiosInstance.post(url);
+
+  // Invalida o cache do post se necessário
+  queryClient.invalidateQueries({ queryKey: ['post', postId] });
+
   return res.data;
-}
-
-type BlogStatsData = {
-  success: boolean;
-  data: {
-    all: number;
-    published: number;
-    draft: number;
-    review: number;
-    archived: number;
-  };
-};
-
-export function useGetBlogStats() {
-  const url = `${endpoints.post.root}/stats`;
-  const { data, isLoading, error, isValidating } = useSWR<BlogStatsData>(url, fetcher, swrOptions);
-
-  return {
-    stats: data?.data || { all: 0, published: 0, draft: 0, review: 0, archived: 0 },
-    statsLoading: isLoading,
-    statsError: error,
-    statsValidating: isValidating,
-  };
 }

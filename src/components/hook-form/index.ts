@@ -1,7 +1,6 @@
 'use client';
 
 export * from './fields';
-export * from './rhf-code';
 export * from './help-text';
 export * from './rhf-rating';
 export * from './rhf-slider';

@@ -13,7 +13,7 @@
 | **UI Library** | React 19.2.4 | ✅ Stable | ![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat&logo=react&logoColor=black) |
 | **Styling** | Material UI 7.3.7 | ✅ Design System | ![MUI](https://img.shields.io/badge/MUI-7.3.7-007FFF?style=flat&logo=mui&logoColor=white) |
 | **SEO Engine** | Dynamic Sitemap + Robots | ✅ Elite | ![SEO](https://img.shields.io/badge/SEO-Enterprise-green) |
-| **Identity** | Shared Auth Bridge (JWT) | ✅ Integrated | ![Auth](https://img.shields.io/badge/Auth-Bridge-blueviolet) |
+| **Identity** | Web3 Gateway & React Query | ✅ Active | ![Identity](https://img.shields.io/badge/Identity-Web3-blueviolet) |
 
 ---
 
@@ -235,10 +235,10 @@ frontend/
 │   │           └── PolicyView.tsx          
 ```
 
-### 4. 🎟️ Ponte de Identidade (Auth Bridge)
-Integração transparente com o ecossistema para fãs e atletas:
-*   **Session Sync:** O `AuthProvider` central reconhece se é um Atleta, Administrador ou Fã através do JWT.
-*   **Acesso VIP (Web3):** Suporte nativo a carteiras (Wagmi/Viem) para verificação on-chain de Colecionáveis FFC e Passes VIP Tokenizados (Integração RWA Herdada).
+### 4. 🎟️ Provedor Web3 (Gateway Descentralizado)
+Conexão descentralizada com o ecossistema para fãs e atletas:
+*   **Web3 Connection:** Uso do `Web3Provider` (com Wagmi v3/Viem e QueryClient global) para conexões de carteiras on-chain públicas de fãs e atletas, sem sessões de login legadas via API (completamente isoladas no Dashboard).
+*   **Acesso VIP (Web3):** Suporte nativo para leitura on-chain de Colecionáveis FFC e Passes VIP Tokenizados de forma rápida e segura.
 
 ### 5. 🎨 Design System & Padrões Globais (UI/UX)
 Para manter a consistência visual "Premium/Cyber-Sports" em todas as telas, implementamos um sistema rígido de padronização onde **o design é concebido primeiro como um estilo robusto dedicado ao Desktop** e inteligentemente convertido/adaptado para múltiplos tamanhos de tela (Mobile e Tablet).
@@ -255,11 +255,12 @@ Para manter a consistência visual "Premium/Cyber-Sports" em todas as telas, imp
 ```text
 /src/
 ├── app/               # Rotas Públicas, SEO e App Router CORE
-├── auth/              # Lógica de Reconhecimento de Sessão e JWT Bridge
+├── providers/         # Provedores Globais (Web3Provider público)
 ├── components/        # UI Kit Global (Iconify, Lazy Images, Glassmorphism)
 ├── layouts/           # Orquestradores de Frame (Header Cyber-Sports/Footer)
 ├── locales/           # Dicionários de Tradução Multi-idioma (i18n)
-├── actions/           # Camada de Dados (Integração com API de Lutas e Inscrições)
+├── lib/               # Configurações globais de ferramentas (React Query, Axios)
+├── actions/           # Camada de Dados (React Query & Queries unificadas)
 └── sections/          # Features Modulares (Blog, Chaves de Luta, Home, Institucional)
 ```
 
@@ -267,9 +268,11 @@ Para manter a consistência visual "Premium/Cyber-Sports" em todas as telas, imp
 
 ## 🛠️ Guia de Manutenção Técnica
 
-1.  **Build & Performance**: Utilize sempre `pnpm build` para validar a árvore de dependências. O projeto está extremamente leve após a exclusão de bibliotecas mortas (ThreeGlobe, TipTap, ApexCharts).
-2.  **Sincronização**: O frontend consome os dados centralizados em `src/global-config.ts` (variáveis `serverUrl` e `siteUrl`).
-3.  **Ambiente de Dev**: O comando `pnpm dev` roda o servidor Turbopack ultra-rápido na porta `8082`.
+1.  **Build & Performance**: Utilize sempre `pnpm build` para validar a árvore de dependências. O projeto está extremamente leve após a exclusão de bibliotecas mortas (ThreeGlobe, TipTap, ApexCharts, SWR e react-to-print).
+2.  **Unificação de Cache**: O gerenciamento de estado e requisições do Blog foi unificado sob o **React Query** (`@tanstack/react-query`) com uma instância global de `QueryClient` (configurada em `src/lib/react-query.ts`), garantindo cache robusto e sem redundância com o SWR antigo.
+3.  **Fundo Espacial 3D**: O componente espacial `SpaceScene` (Three.js/WebGL) renderiza o campo de estrelas interativo diretamente no cliente, preservando a identidade visual original.
+4.  **SEO Schema**: O bracket possui injeção automática do componente `SportsEventSchema` para enriquecer buscas do Google com dados estruturados.
+5.  **Ambiente de Dev**: O comando `pnpm dev` roda o servidor Turbopack ultra-rápido na porta `8082`.
 
 ---
 
@@ -279,6 +282,7 @@ Para manter a consistência visual "Premium/Cyber-Sports" em todas as telas, imp
 - [x] **Identidade Visual Cyber-Sports**: Aplicação de Glassmorphism, Fontes Orbitron e cores de aviso (Amber/Gold) na Home e Patrocinadores.
 - [x] **Limpeza Profunda**: Auditoria de `depcheck` com remoção de mais de 30 pacotes Zumbis e redução drástica do bundle (Junho 2026).
 - [x] **Migração de SEO para FFC**: Reestruturação do App Router Metadata, OpenGraph e `robots.txt` para engajamento de artes marciais.
+- [x] **Unificação de Cache & Otimizações**: Migração de SWR para React Query e injeção do schema SportsEvent para SEO.
 - [ ] **Otimização de Ícones**: Migrar pacotes `@iconify` de carregamento online (CDN) para leitura offline (Evitar flickering).
 - [ ] **Integração de API Dinâmica**: Substituir mockups de atletas (`ATHLETES`) e cardápio de lutas pelos dados reais vindos do Backend.
 - [ ] **Sistema de Inscrições**: Fluxo completo de formulário Hook-Form para cadastramento seguro dos lutadores.

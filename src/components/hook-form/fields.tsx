@@ -1,4 +1,3 @@
-import RHFCode from './rhf-code';
 import { RHFRating } from './rhf-rating';
 import { RHFSlider } from './rhf-slider';
 import { RHFTextField } from './rhf-text-field';
@@ -12,7 +11,6 @@ import { RHFDatePicker, RHFTimePicker, RHFDateTimePicker } from './rhf-date-pick
 // ----------------------------------------------------------------------
 
 export const Field = {
-  Code: RHFCode,
   Select: RHFSelect,
   Switch: RHFSwitch,
   Slider: RHFSlider,

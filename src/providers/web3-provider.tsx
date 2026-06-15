@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { bsc, mainnet, polygon } from 'wagmi/chains';
 import { http, createConfig, WagmiProvider } from 'wagmi';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+
+import { queryClient } from 'src/lib/react-query';
 
 // ----------------------------------------------------------------------
 
@@ -28,9 +29,6 @@ type Props = {
 };
 
 export function Web3Provider({ children }: Props) {
-  // Inicializa o QueryClient para o portal React Query (necessário para o Wagmi v3)
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>

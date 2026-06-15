@@ -24,8 +24,6 @@ import { useBoolean } from 'src/hooks/use-boolean';
 import { fDate } from 'src/utils/format-time';
 import { fShortenNumber } from 'src/utils/format-number';
 
-import { deletePost } from 'src/actions/blog-actions';
-
 import { Label } from 'src/components/label';
 import { Image } from 'src/components/image';
 import { toast } from 'src/components/snackbar';
@@ -47,14 +45,7 @@ export function PostCardHorizontal({ sx, post, editHref, detailsHref, ...other }
   const confirmDelete = useBoolean();
 
   const handleDelete = async () => {
-    try {
-      await deletePost(post.id);
-      toast.success('Deletado com sucesso!');
-      confirmDelete.onFalse();
-    } catch (error) {
-      console.error(error);
-      toast.error('Erro ao deletar postagem.');
-    }
+    toast.error('Ação não permitida neste ambiente.');
   };
 
   const renderMenuActions = () => (

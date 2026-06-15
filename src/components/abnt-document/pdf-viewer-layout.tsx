@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -16,13 +14,15 @@ type PdfViewerLayoutProps = {
 
 export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }: PdfViewerLayoutProps) {
   const router = useRouter();
-  const documentRef = useRef<HTMLDivElement>(null);
 
-  const handlePrint = useReactToPrint({
-    contentRef: documentRef,
-    documentTitle,
-    suppressErrors: true,
-  });
+  const handlePrint = () => {
+    if (typeof window !== 'undefined') {
+      const originalTitle = document.title;
+      document.title = `${documentTitle}.pdf`;
+      window.print();
+      document.title = originalTitle;
+    }
+  };
 
   return (
     <Box
@@ -86,7 +86,6 @@ export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }:
 
       {/* Document Content Wrapper */}
       <Box
-        ref={documentRef}
         sx={{
           mt: fixedHeader ? 7 : 0,
           width: '100%',
