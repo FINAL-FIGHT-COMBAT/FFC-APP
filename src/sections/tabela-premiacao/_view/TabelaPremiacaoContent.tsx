@@ -24,14 +24,14 @@ export function TabelaPremiacaoContent() {
       <Clause text="1.3. CONTRATOS DE SELETIVAS (GRAND PRIX): Em formatos de chave eliminatória (Grand Prix ou Seletivas), a premiação assumirá caráter progressivo. O atleta acumulará repasses ou percentuais crescentes de bolsa ao avançar por cada fase aguda do torneio (oitavas, quartas, semifinais e final), conforme matriz de valores anexa ao edital da etapa." />
       <Clause text="1.4. RETENÇÕES E PENALIDADES FINANCEIRAS:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.4.1.</strong> A falha no protocolo de pesagem oficial acarretará dedução automática do percentual da Bolsa de Participação fixado no respectivo contrato, valor este que será integralmente repassado ao oponente como compensação (Catchweight penalty).
+        <strong>1.4.1.</strong> A falha no protocolo de pesagem oficial acarretará dedução automática do percentual da Bolsa de Participação fixado no respectivo contrato individual. Na ausência de estipulação contratual específica, a penalidade padrão do FFC será de 30% (trinta por cento) de dedução da bolsa, sendo este montante integralmente repassado ao oponente adimplente na balança como compensação (Catchweight penalty).
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
         <strong>1.4.2.</strong> O cometimento de conduta antidesportiva grave, injúria ou agressão determinará o bloqueio cautelar imediato de todos os pagamentos da bolsa do atleta e da equipe, revertendo o montante para o fundo disciplinar da organização.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO II: PREMIAÇÃO INDIVIDUAL (MEDALHAS E CINTURÕES)</SectionTitle>
-      <Clause text="2.1. ALOCAÇÃO DE MEDALHAS OFICIAIS: A premiação do pódio obedecerá à seguinte distribuição rígida: (a) Medalha de Ouro para o primeiro colocado (Campeão); (b) Medalha de Prata para o segundo colocado (Vice-Campeão); e (c) Medalhas de Bronze para ambos os terceiros colocados (semifinalistas derrotados)." />
+      <Clause text="2.1. ALOCAÇÃO DE MEDALHAS OFICIAIS: A premiação do pódio obedecerá à seguinte distribuição rígida: (a) Medalha de Ouro para o primeiro colocado (Campeão); (b) Medalha de Prata para o segundo colocado (Vice-Campeão); e (c) Medalhas de Bronze para ambos os terceiros colocados (semifinalistas derrotados). Excepcionalmente, categorias compostas por um número reduzido de atletas que adotem o sistema de rodízio de todos contra todos (Nordic Tournament / Nordic System) conferirão apenas 1 (uma) única Medalha de Bronze ao terceiro colocado geral." />
       <Clause text="2.2. DISPUTAS DE CINTURÃO OFICIAL FFC: O Cinturão Oficial é propriedade intelectual e patrimonial do FFC, cuja posse transitória é concedida ao campeão. O detentor obriga-se a defender o título conforme as janelas convocatórias da organização. A inatividade prolongada ou lesão do campeão legitimará a organização a criar disputas por Cinturões Interinos ou a declarar o título vago." />
       <Clause text="2.3. BÔNUS POR PERFORMANCE EXTRA (PRÊMIOS DA NOITE):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
@@ -54,7 +54,7 @@ export function TabelaPremiacaoContent() {
 
       <SectionTitle>CAPÍTULO V: PROCESSAMENTO E LIQUIDAÇÃO FINANCEIRA VIA APP</SectionTitle>
       <Clause text="5.1. CADASTRO DE DADOS FISCAIS E BANCÁRIOS: Para o processamento da bolsa contratual, o atleta compromete-se a validar integralmente seus dados tributários, conta-corrente ou chave PIX diretamente na aba 'Carteira' em seu perfil logado no aplicativo oficial FFC." />
-      <Clause text="5.2. PRAZOS DE LIBERAÇÃO DE VALORES: A janela temporal para a liquidação dos valores obedecerá à compensação estabelecida. O pagamento estará retido temporariamente até a assinatura final e homologação das súmulas de arbitragem e a subsequente liberação por laudos das comissões médicas e de controle antidoping, quando aplicável." />
+      <Clause text="5.2. PRAZOS DE LIBERAÇÃO DE VALORES: A janela temporal para a liquidação dos valores obedecerá à compensação estabelecida. O pagamento estará retido temporariamente até a assinatura final e homologação das súmulas de arbitragem e a subsequente liberação por laudos das comissões médicas e de controle antidoping (quando aplicável), sendo a liquidação final obrigatoriamente processada em até 10 (dez) dias úteis após o encerramento do evento." />
       <Clause text="5.3. AUDITORIA E CONTESTAÇÃO DE PRÊMIOS: Em caso de discrepâncias fiscais, o atleta disporá de canais de suporte técnico direto, via aplicativo, para rever planilhas de rateio, requerer notas fiscais de retenção na fonte ou contestar bloqueios disciplinares, resguardando total transparência ao repasse financeiro." />
 
       <br />
