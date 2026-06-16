@@ -45,6 +45,14 @@ export function ContratoParceriaContent() {
       <SectionTitle>CAPÍTULO VII: DO FORO E RESOLUÇÃO DE DISPUTAS</SectionTitle>
       <Clause text="7.1. CLÁUSULA COMPROMISSÓRIA DE ARBITRAGEM: Visando a celeridade e o sigilo, as Partes concordam que quaisquer litígios, conflitos operacionais, contestações de bônus comerciais ou disputas financeiras emergentes deste Contrato de Parceria Modular não serão levados à jurisdição da Justiça Comum. Toda controvérsia será submetida, julgada e dirimida exclusivamente por meio da Câmara de Arbitragem Legal e Extrajudicial formalmente indicada e homologada no portal corporativo do FFC." />
 
+      <SectionTitle>CAPÍTULO VIII: DA GOVERNANÇA DIGITAL E DO PROGRAMA DE INCUBAÇÃO</SectionTitle>
+      <Clause text="8.1. A PARCEIRA reconhece que o FFC encontra-se em fase de incubação institucional junto à ASPPIBRA, constituindo projeto experimental de inovação, tecnologia esportiva e governança digital." />
+      <Clause text="8.2. Durante a fase de incubação, a participação da PARCEIRA será registrada por meio de indicadores auditáveis de desempenho institucional, esportivo, comercial e tecnológico." />
+      <Clause text="8.3. Serão considerados, entre outros: atletas cadastrados; atletas ativos; inscrições validadas; empresas indicadas; academias afiliadas; participação em eventos; ações promocionais; contribuição técnica; e contribuição comercial." />
+      <Clause text="8.4. Os indicadores poderão compor ranking institucional e sistema de governança digital do ecossistema FFC." />
+      <Clause text="8.5. A participação no programa de governança digital não gera direito societário, participação acionária, distribuição de lucros ou expectativa de remuneração financeira durante a fase de incubação." />
+      <Clause text="8.6. Após a conclusão da fase sandbox e eventual constituição de pessoa jurídica autônoma para exploração econômica do projeto FFC, os indicadores históricos auditados poderão ser considerados como critério para definição de programas de participação, governança ou incentivo, observada a legislação vigente na data da implementação." />
+
       <br />
       <br />
     </>
