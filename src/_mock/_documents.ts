@@ -69,7 +69,7 @@ export const DOCUMENTS: IDocumentConfig[] = [
   { slug: 'regulamento-ffc', title: 'Regulamento FFC', category: 'esportes', description: 'Regras oficiais das lutas e do torneio.', size: '2.4 MB', type: 'model', icon: 'solar:book-bookmark-bold', isReady: true, readyUrl: '/regulamento' },
   { slug: 'guia-de-pesagem', title: 'Guia de Pesagem', category: 'esportes', description: 'Horários, tolerâncias e divisões de peso.', size: '1.1 MB', type: 'model', icon: 'solar:scale-bold', isReady: true, readyUrl: '/pesagem' },
   { slug: 'tabela-de-premiacao', title: 'Tabela de Premiação', category: 'esportes', description: 'Valores de bolsas, bônus e troféus.', size: '900 KB', type: 'model', icon: 'solar:wad-of-money-bold', isReady: true, readyUrl: '/premiacao' },
-  { slug: 'regras-de-corner', title: 'Regras de Córner', category: 'esportes', description: 'Direitos e deveres dos técnicos e equipes.', size: '1.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: false },
+  { slug: 'regras-de-corner', title: 'Regras de Córner', category: 'esportes', description: 'Direitos e deveres dos técnicos e equipes.', size: '1.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: true, readyUrl: '/corner' },
 
   // 🩺 Saúde
   { slug: 'aptidao-fisica', title: 'Aptidão Física', category: 'saude', description: 'Declaração médica de capacidade para lutar.', size: '850 KB', type: 'model', icon: 'solar:health-bold', isReady: false },
