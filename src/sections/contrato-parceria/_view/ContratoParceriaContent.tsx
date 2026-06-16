@@ -4,6 +4,7 @@ import {
   SectionTitle,
   DocumentTitle,
   DataTag,
+  DigitalSignature,
 } from 'src/components/abnt-document';
 
 export function ContratoParceriaContent() {
@@ -26,18 +27,18 @@ export function ContratoParceriaContent() {
       <Clause text="2.2. RESILIÇÃO: Qualquer das partes poderá rescindir o contrato imotivadamente e sem ônus mediante aviso prévio formalizado no painel do aplicativo com antecedência mínima de 30 (trinta) dias. Caso a rescisão imotivada ocorra em prazo inferior, sujeitar-se-á a Parte infratora à multa penal." />
 
       <SectionTitle>CAPÍTULO III: MÓDULO ACADEMIA AFILIADA (ESPORTIVO)</SectionTitle>
-      <Clause text="3.1. CADASTRO DE ATLETAS E OBRIGAÇÕES: A Academia deve observar as diretrizes fixadas no Anexo II (Regulamento Técnico). Obriga-se a manter cota mínima de <DataTag label='MIN_ATLETAS' fallback='[Quantidade Mínima]' /> atletas ativos no sistema, submeter graduações validadas e respeitar as datas de corte de chaveamento (" />
+      <Clause text="3.1. CADASTRO DE ATLETAS E OBRIGAÇÕES: A Academia deve observar as diretrizes fixadas no Anexo II (Regulamento Técnico). Obriga-se a manter cota mínima de <DataTag label='MIN_ATLETAS' fallback='[Quantidade Mínima]' /> atletas ativos no sistema, submeter graduações validadas e respeitar as datas de corte de chaveamento." />
       <Clause text="3.2. RESPONSABILIDADE PELA TRIAGEM PRÉVIA: A Academia exerce Responsabilidade Civil pela triagem documental preliminar de seus afiliados. O Head Coach compromete-se a não aprovar sistemicamente lutadores com pendências visíveis em atestados médicos ou exames exigidos, sendo eximida de culpa, contudo, em caso de falsificação ideológica ou adulteração documental perpetrada exclusivamente pelo atleta de má-fé." />
       <Clause text="3.3. PONTUAÇÃO INSTITUCIONAL: A adesão regular qualifica a Academia a pontuar no Ranking Unificado do ecossistema, habilitando-a ao cômputo institucional aplicável para futuros programas de incentivo no formato Sandbox." />
 
       <SectionTitle>CAPÍTULO IV: MÓDULO EMPRESA PATROCINADORA E FINANCEIRO</SectionTitle>
       <Clause text="4.1. COTAS E CONDIÇÕES DE ATIVAÇÃO: O aporte financeiro ou permuta obedece ao valor de <DataTag label='VALOR_PATROCINIO' fallback='R$ 0,00' />. A ativação comercial na plataforma está estritamente condicionada à liquidação do respectivo boleto/PIX na conta oficial da ASPPIBRA e à regular emissão de Nota Fiscal Eletrônica (NF-e/NFS-e) por prestação de serviço correlata." />
       <Clause text="4.2. INADIMPLÊNCIA E ATRASO: O atraso no pagamento gerará suspensão automática da veiculação publicitária e incidência de juros moratórios de 1% ao mês, além de multa de 2% sobre o montante inadimplido, compensáveis na fatura subsequente." />
-      <Clause text="4.3. TABELA DE ENTREGÁVEIS (ANEXO I): As inserções ("Naming Rights", Banners de App, Lower Thirds, Push Notifications) observarão estritamente a quantidade, formato, dimensões (pixels/centímetros), localização e duração detalhadas no Anexo I. Todo material enviado pela Empresa deve ser submetido com 15 (quinze) dias de antecedência para aprovação prévia de adequação de marca pelo FFC." />
+      <Clause text="4.3. TABELA DE ENTREGÁVEIS (ANEXO I): As inserções ('Naming Rights', Banners de App, Lower Thirds, Push Notifications) observarão estritamente a quantidade, formato, dimensões (pixels/centímetros), localização e duração detalhadas no Anexo I. Todo material enviado pela Empresa deve ser submetido com 15 (quinze) dias de antecedência para aprovação prévia de adequação de marca pelo FFC." />
       <Clause text="4.4. MUDANÇA DE DATA E ESTORNO: Na eventual alteração de cronograma do evento por razões logísticas ou de força maior, as contrapartidas comerciais serão realocadas para a nova data sem custo adicional. Optando a Empresa pela retirada, proceder-se-á o estorno proporcional à mídia não veiculada, sem aplicação de multa recíproca." />
 
       <SectionTitle>CAPÍTULO V: LICENCIAMENTO DE MARCA E PROPRIEDADE INTELECTUAL</SectionTitle>
-      <Clause text="5.1. LIMITES DO USO DA MARCA: O licenciamento recíproco restringe-se ao território nacional, possui vigência idêntica ao contrato principal e destina-se apenas a finalidades promocionais diretas vinculadas ao FFC. Fica proibida a exploração, sublicenciamento ou estampagem da marca FFC em produtos comercializáveis independentes ("merchandising" de prateleira)." />
+      <Clause text="5.1. LIMITES DO USO DA MARCA: O licenciamento recíproco restringe-se ao território nacional, possui vigência idêntica ao contrato principal e destina-se apenas a finalidades promocionais diretas vinculadas ao FFC. Fica proibida a exploração, sublicenciamento ou estampagem da marca FFC em produtos comercializáveis independentes ('merchandising' de prateleira)." />
       <Clause text="5.2. PROTEÇÃO DE LEADS COMERCIAIS: O uso da base de dados (alunos, espectadores e interações digitais do app) para apropriação indevida ou ações de concorrência frontal configura desvio de finalidade, acarretando sanções disciplinares." />
 
       <SectionTitle>CAPÍTULO VI: PROTEÇÃO DE DADOS PESSOAIS (LGPD)</SectionTitle>
@@ -54,12 +55,16 @@ export function ContratoParceriaContent() {
 
       <SectionTitle>CAPÍTULO IX: GOVERNANÇA DIGITAL E O PROGRAMA DE INCUBAÇÃO SANDBOX</SectionTitle>
       <Clause text="9.1. INDICADORES DO SANDBOX: A PARCEIRA anui que sua participação e contribuição formam um histórico digital (Anexo IV - Matriz de Indicadores Sandbox), parametrizado por métricas objetivas: engajamento em mídias, aprovação de atletas, faturamento gerado em patrocínio e adequação técnica." />
-      <Clause text="9.2. VEDAÇÃO A DIREITOS SOCIETÁRIOS: Ratifica-se que a pontuação auferida na governança digital em fase incubadora não garante, promete ou constitui formação de "equity", propriedade intelectual sobre software, debêntures, distribuição de lucros ou direito de voto acionário na ASPPIBRA." />
+      <Clause text="9.2. VEDAÇÃO A DIREITOS SOCIETÁRIOS: Ratifica-se que a pontuação auferida na governança digital em fase incubadora não garante, promete ou constitui formação de 'equity', propriedade intelectual sobre software, debêntures, distribuição de lucros ou direito de voto acionário na ASPPIBRA." />
       <Clause text="9.3. ESTRUTURAÇÃO FUTURA: Apenas ao término da fase de incubação e após auditoria independente dos indicadores, caso ocorra eventual transição para um modelo corporativo de exploração com fins econômicos ( Holding / S.A. ), a matriz histórica poderá balizar a inclusão em futuros conselhos de governança." />
 
       <SectionTitle>CAPÍTULO X: INSTÂNCIA ARBITRAL E FORO</SectionTitle>
       <Clause text="10.1. CLÁUSULA COMPROMISSÓRIA AUTÔNOMA: Qualquer disputa originada deste Contrato-Mãe que não comporte composição amigável poderá ser submetida à Arbitragem, desde que haja manifestação de vontade expressa por meio da assinatura independente do Anexo V (Termo de Cláusula Compromissória), com custos previamente estipulados e partilhados, elegendo-se o idioma Português e a câmara arbitral da Sede Institucional." />
       <Clause text="10.2. FORO CONTRATUAL: Inexistindo a aceitação autônoma para via arbitral, elegem as Partes o foro material da Comarca da sede da ASPPIBRA para dirimir quaisquer contenciosos residuais emergentes deste contrato, não obstante privilégios preexistentes." />
+
+      <SectionTitle>ASSINATURAS E VALIDAÇÃO DIGITAL</SectionTitle>
+      <DigitalSignature title="ASSINATURA DIGITAL - ASPPIBRA" name="Assinatura eletrônica do Representante Legal" color="success" />
+      <DigitalSignature title="ASSINATURA DIGITAL - PARCEIRA" name="Assinatura eletrônica autenticada via Plataforma FFC" color="info" />
 
       <br />
       <br />
