@@ -67,7 +67,7 @@ export const DOCUMENT_CATEGORIES = [
 export const DOCUMENTS: IDocumentConfig[] = [
   // 🥋 Esportivo
   { slug: 'regulamento-ffc', title: 'Regulamento FFC', category: 'esportes', description: 'Regras oficiais das lutas e do torneio.', size: '2.4 MB', type: 'model', icon: 'solar:book-bookmark-bold', isReady: true, readyUrl: '/regulamento' },
-  { slug: 'guia-de-pesagem', title: 'Guia de Pesagem', category: 'esportes', description: 'Horários, tolerâncias e divisões de peso.', size: '1.1 MB', type: 'model', icon: 'solar:scale-bold', isReady: false },
+  { slug: 'guia-de-pesagem', title: 'Guia de Pesagem', category: 'esportes', description: 'Horários, tolerâncias e divisões de peso.', size: '1.1 MB', type: 'model', icon: 'solar:scale-bold', isReady: true, readyUrl: '/pesagem' },
   { slug: 'tabela-de-premiacao', title: 'Tabela de Premiação', category: 'esportes', description: 'Valores de bolsas, bônus e troféus.', size: '900 KB', type: 'model', icon: 'solar:wad-of-money-bold', isReady: false },
   { slug: 'regras-de-corner', title: 'Regras de Córner', category: 'esportes', description: 'Direitos e deveres dos técnicos e equipes.', size: '1.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: false },
 
