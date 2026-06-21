@@ -118,6 +118,16 @@ const nextConfig: NextConfig = {
         destination: '/news/:slug*',
         permanent: true,
       },
+      {
+        source: '/privacy',
+        destination: '/privacidade',
+        permanent: true,
+      },
+      {
+        source: '/terms',
+        destination: '/termos',
+        permanent: true,
+      },
     ];
   },
 

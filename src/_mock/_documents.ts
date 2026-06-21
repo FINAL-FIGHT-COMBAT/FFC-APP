@@ -72,14 +72,14 @@ export const DOCUMENTS: IDocumentConfig[] = [
   { slug: 'regras-de-corner', title: 'Regras de Córner', category: 'esportes', description: 'Direitos e deveres dos técnicos e equipes.', size: '1.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: true, readyUrl: '/corner' },
 
   // 🩺 Saúde
-  { slug: 'aptidao-fisica', title: 'Aptidão Física', category: 'saude', description: 'Declaração médica de capacidade para lutar.', size: '850 KB', type: 'model', icon: 'solar:health-bold', isReady: false },
-  { slug: 'termo-de-risco', title: 'Termo de Risco', category: 'saude', description: 'Consentimento do atleta sobre lesões físicas.', size: '1.1 MB', type: 'model', icon: 'solar:danger-bold', isReady: false },
-  { slug: 'guia-antidoping', title: 'Guia Antidoping', category: 'saude', description: 'Lista de substâncias e condutas proibidas.', size: '1.5 MB', type: 'model', icon: 'solar:test-tube-bold', isReady: false },
-  { slug: 'plano-medico', title: 'Plano Médico', category: 'saude', description: 'Protocolo de primeiros socorros e ambulância.', size: '1.4 MB', type: 'model', icon: 'solar:heart-pulse-bold', isReady: false },
+  { slug: 'aptidao-fisica', title: 'Aptidão Física', category: 'saude', description: 'Declaração médica de capacidade para lutar.', size: '850 KB', type: 'model', icon: 'solar:health-bold', isReady: true, readyUrl: '/aptidao-fisica' },
+  { slug: 'termo-de-risco', title: 'Termo de Risco', category: 'saude', description: 'Consentimento do atleta sobre lesões físicas.', size: '1.1 MB', type: 'model', icon: 'solar:danger-bold', isReady: true, readyUrl: '/termo-de-risco' },
+  { slug: 'guia-antidoping', title: 'Guia Antidoping', category: 'saude', description: 'Lista de substâncias e condutas proibidas.', size: '1.5 MB', type: 'model', icon: 'solar:test-tube-bold', isReady: true, readyUrl: '/guia-antidoping' },
+  { slug: 'plano-medico', title: 'Plano Médico', category: 'saude', description: 'Protocolo de primeiros socorros e ambulância.', size: '1.4 MB', type: 'model', icon: 'solar:heart-pulse-bold', isReady: true, readyUrl: '/plano-medico' },
 
   // ⚖️ Jurídico
-  { slug: 'termos-de-uso', title: 'Termos de Uso', category: 'juridico', description: 'Regras de navegação no aplicativo.', size: '2.1 MB', type: 'model', icon: 'solar:smartphone-update-bold', isReady: false },
-  { slug: 'privacidade', title: 'Privacidade', category: 'juridico', description: 'Uso e proteção de dados (LGPD).', size: '1.8 MB', type: 'model', icon: 'solar:lock-password-bold', isReady: false },
+  { slug: 'termos-de-uso', title: 'Termos de Uso', category: 'juridico', description: 'Regras de navegação no aplicativo.', size: '2.1 MB', type: 'model', icon: 'solar:smartphone-update-bold', isReady: true, readyUrl: '/termos' },
+  { slug: 'privacidade', title: 'Privacidade', category: 'juridico', description: 'Uso e proteção de dados (LGPD).', size: '1.8 MB', type: 'model', icon: 'solar:lock-password-bold', isReady: true, readyUrl: '/privacidade' },
   { slug: 'uso-de-imagem', title: 'Uso de Imagem', category: 'juridico', description: 'Autorização para fotos, vídeos e transmissões.', size: '900 KB', type: 'model', icon: 'solar:camera-bold', isReady: false },
   { slug: 'arbitragem-legal', title: 'Arbitragem Legal', category: 'juridico', description: 'Resolução extrajudicial de disputas e conflitos.', size: '1.1 MB', type: 'model', icon: 'solar:diploma-verified-bold', isReady: false },
 
