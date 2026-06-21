@@ -80,8 +80,8 @@ export const DOCUMENTS: IDocumentConfig[] = [
   // ⚖️ Jurídico
   { slug: 'termos-de-uso', title: 'Termos de Uso', category: 'juridico', description: 'Regras de navegação no aplicativo.', size: '2.1 MB', type: 'model', icon: 'solar:smartphone-update-bold', isReady: true, readyUrl: '/termos' },
   { slug: 'privacidade', title: 'Privacidade', category: 'juridico', description: 'Uso e proteção de dados (LGPD).', size: '1.8 MB', type: 'model', icon: 'solar:lock-password-bold', isReady: true, readyUrl: '/privacidade' },
-  { slug: 'uso-de-imagem', title: 'Uso de Imagem', category: 'juridico', description: 'Autorização para fotos, vídeos e transmissões.', size: '900 KB', type: 'model', icon: 'solar:camera-bold', isReady: false },
-  { slug: 'arbitragem-legal', title: 'Arbitragem Legal', category: 'juridico', description: 'Resolução extrajudicial de disputas e conflitos.', size: '1.1 MB', type: 'model', icon: 'solar:diploma-verified-bold', isReady: false },
+  { slug: 'uso-de-imagem', title: 'Uso de Imagem', category: 'juridico', description: 'Autorização para fotos, vídeos e transmissões.', size: '900 KB', type: 'model', icon: 'solar:camera-bold', isReady: true, readyUrl: '/uso-de-imagem' },
+  { slug: 'arbitragem-legal', title: 'Arbitragem Legal', category: 'juridico', description: 'Resolução extrajudicial de disputas e conflitos.', size: '1.1 MB', type: 'model', icon: 'solar:diploma-verified-bold', isReady: true, readyUrl: '/arbitragem-legal' },
 
   // 📄 Contratos
   { slug: 'contrato-atleta-convidado', title: 'Contrato: Atleta Convidado', category: 'contratos', description: 'Vínculo de luta para atletas do card principal.', size: '3.5 MB', type: 'model', icon: 'solar:user-id-bold', isReady: true, readyUrl: '/contrato-atleta' },
@@ -91,7 +91,7 @@ export const DOCUMENTS: IDocumentConfig[] = [
   { slug: 'termo-de-voluntario', title: 'Termo de Voluntário', category: 'contratos', description: 'Acordo de colaboração voluntária sem vínculo.', size: '800 KB', type: 'model', icon: 'solar:hand-shake-bold', isReady: false },
 
   // 📦 Operacional
-  { slug: 'cronograma', title: 'Cronograma', category: 'operacional', description: 'Horários da pesagem, fotos e início do card.', size: '1.2 MB', type: 'model', icon: 'solar:calendar-date-bold', isReady: false },
-  { slug: 'guia-de-logistica', title: 'Guia de Logística', category: 'operacional', description: 'Informações sobre hotel, passagens e transporte.', size: '1.5 MB', type: 'model', icon: 'solar:bus-bold', isReady: false },
+  { slug: 'cronograma', title: 'Cronograma', category: 'operacional', description: 'Horários da pesagem, fotos e início do card.', size: '1.2 MB', type: 'model', icon: 'solar:calendar-date-bold', isReady: true, readyUrl: '/cronograma' },
+  { slug: 'guia-de-logistica', title: 'Guia de Logística', category: 'operacional', description: 'Informações sobre hotel, passagens e transporte.', size: '1.5 MB', type: 'model', icon: 'solar:bus-bold', isReady: true, readyUrl: '/guia-de-logistica' },
   { slug: 'imprensa', title: 'Imprensa', category: 'operacional', description: 'Regras para credenciamento de fotógrafos e jornalistas.', size: '1.3 MB', type: 'model', icon: 'solar:videocamera-record-bold', isReady: false },
 ];
