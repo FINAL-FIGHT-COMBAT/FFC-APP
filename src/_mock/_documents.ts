@@ -88,10 +88,10 @@ export const DOCUMENTS: IDocumentConfig[] = [
   { slug: 'contrato-atleta-seletiva', title: 'Contrato: Atleta Seletiva', category: 'contratos', description: 'Termo de participação para as fases eliminatórias.', size: '3.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: false },
   { slug: 'contrato-de-parceria', title: 'Contrato de Parceria', category: 'contratos', description: 'Acordo comercial para empresas e academias parceiras.', size: '2.0 MB', type: 'model', icon: 'solar:handshake-bold', isReady: true, readyUrl: '/parcerias' },
   { slug: 'contrato-de-staff', title: 'Contrato de Staff', category: 'contratos', description: 'Prestação de serviço para a equipe de apoio.', size: '1.4 MB', type: 'model', icon: 'solar:users-group-rounded-bold', isReady: false },
-  { slug: 'termo-de-voluntario', title: 'Termo de Voluntário', category: 'contratos', description: 'Acordo de colaboração voluntária sem vínculo.', size: '800 KB', type: 'model', icon: 'solar:hand-shake-bold', isReady: false },
+  { slug: 'termo-de-voluntario', title: 'Termo de Voluntário', category: 'contratos', description: 'Acordo de colaboração voluntária sem vínculo.', size: '800 KB', type: 'model', icon: 'solar:hand-shake-bold', isReady: true, readyUrl: '/termo-de-voluntario' },
 
   // 📦 Operacional
   { slug: 'cronograma', title: 'Cronograma', category: 'operacional', description: 'Horários da pesagem, fotos e início do card.', size: '1.2 MB', type: 'model', icon: 'solar:calendar-date-bold', isReady: true, readyUrl: '/cronograma' },
   { slug: 'guia-de-logistica', title: 'Guia de Logística', category: 'operacional', description: 'Informações sobre hotel, passagens e transporte.', size: '1.5 MB', type: 'model', icon: 'solar:bus-bold', isReady: true, readyUrl: '/guia-de-logistica' },
-  { slug: 'imprensa', title: 'Imprensa', category: 'operacional', description: 'Regras para credenciamento de fotógrafos e jornalistas.', size: '1.3 MB', type: 'model', icon: 'solar:videocamera-record-bold', isReady: false },
+  { slug: 'imprensa', title: 'Imprensa', category: 'operacional', description: 'Regras para credenciamento de fotógrafos e jornalistas.', size: '1.3 MB', type: 'model', icon: 'solar:videocamera-record-bold', isReady: true, readyUrl: '/imprensa' },
 ];

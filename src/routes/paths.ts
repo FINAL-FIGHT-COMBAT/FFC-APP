@@ -33,6 +33,8 @@ export const paths = {
   arbitragemLegal: '/arbitragem-legal',
   cronograma: '/cronograma',
   guiaLogistica: '/guia-de-logistica',
+  imprensa: '/imprensa',
+  termoVoluntario: '/termo-de-voluntario',
   ecosystem: '/ecosystem',
   privacy: '/privacidade',
   terms: '/termos',
