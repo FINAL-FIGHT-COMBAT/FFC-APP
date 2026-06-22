@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
@@ -184,7 +185,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 sx={{
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
-                  fontSize: { xs: '2.2rem', sm: '3.6rem', md: '5.5rem', lg: '7rem' },
+                  fontSize: { xs: '3.05rem', sm: '4.2rem', md: '6rem', lg: '7rem' },
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
                   color: '#fff',
@@ -201,7 +202,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 sx={{
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
-                  fontSize: { xs: '2.2rem', sm: '3.6rem', md: '5.5rem', lg: '7rem' },
+                  fontSize: { xs: '3.05rem', sm: '4.2rem', md: '6rem', lg: '7rem' },
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
                   color: GOLD,
@@ -267,14 +268,17 @@ export function HomeHero({ sx, ...other }: BoxProps) {
         }}
       >
         <Container>
-          <Box
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)' },
-              gap: { xs: 3, sm: 2 },
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
+          <Stack
+            direction="row"
+            justifyContent="space-around"
+            alignItems="center"
+            divider={
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{ borderColor: `${alpha(GOLD, 0.15)}` }}
+              />
+            }
           >
             {STATS.map((stat) => (
               <Stack
@@ -329,7 +333,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 </Typography>
               </Stack>
             ))}
-          </Box>
+          </Stack>
         </Container>
       </Box>
     </Box>
