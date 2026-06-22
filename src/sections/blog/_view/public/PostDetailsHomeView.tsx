@@ -132,10 +132,10 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
 
       {/* ZONA 2: ÁREA DE LEITURA — Fundo sólido para legibilidade */}
       <Box
-        sx={(theme) => ({
+        sx={(themeParam) => ({
           bgcolor: alpha('#020817', 0.9), // 🟢 Fundo escuro premium para leitura
           backdropFilter: 'blur(10px)',
-          borderTop: `1px solid ${alpha(theme.palette.warning.main, 0.2)}`,
+          borderTop: `1px solid ${alpha(themeParam.palette.warning.main, 0.2)}`,
           pt: 5,
           pb: 8,
           position: 'relative',
@@ -153,12 +153,12 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
             {!!description && (
               <Typography
                 variant="h6"
-                sx={(theme) => ({
+                sx={(themeParam) => ({
                   mb: 4,
                   color: 'text.secondary',
                   fontStyle: 'italic',
                   lineHeight: 1.8,
-                  borderLeft: `4px solid ${theme.palette.warning.main}`,
+                  borderLeft: `4px solid ${themeParam.palette.warning.main}`,
                   pl: 2.5,
                   fontFamily: "'Public Sans', sans-serif",
                 })}
@@ -170,7 +170,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
             {/* Corpo do artigo em Markdown */}
             {!!content && (
               <Box
-                sx={(theme) => ({
+                sx={(themeParam) => ({
                   // Tipografia do corpo do artigo
                   '& p': {
                     fontSize: 17,
@@ -207,7 +207,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
                   },
                   '& strong': { color: 'text.primary', fontWeight: 700 },
                   '& blockquote': {
-                    borderLeft: `4px solid ${theme.palette.warning.main}`,
+                    borderLeft: `4px solid ${themeParam.palette.warning.main}`,
                     pl: 2.5,
                     py: 0.5,
                     my: 3,
@@ -253,11 +253,11 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
             {/* Tags e Favoritos */}
             <Stack
               spacing={3}
-              sx={(theme) => ({
+              sx={(themeParam) => ({
                 py: 3,
                 my: 5,
-                borderTop: `dashed 1px ${theme.palette.divider}`,
-                borderBottom: `dashed 1px ${theme.palette.divider}`,
+                borderTop: `dashed 1px ${themeParam.palette.divider}`,
+                borderBottom: `dashed 1px ${themeParam.palette.divider}`,
               })}
             >
               {!!tags.length && (

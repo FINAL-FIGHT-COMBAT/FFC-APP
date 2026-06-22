@@ -1,13 +1,14 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 FFC – Final Fight Combat.
+ * Project: FFC Portal & Documents App
  * Role: API Client Configuration (Axios Instance)
- * Version: 1.2.1 - Fix: SocialFi Endpoints Integration
  */
 
 import type { AxiosRequestConfig } from 'axios';
 
 import axios from 'axios';
+
+import { env } from 'src/lib/env';
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +17,7 @@ import axios from 'axios';
  * Sincronizado com NEXT_PUBLIC_HOST_API para suportar múltiplos ambientes (Dev/Prod).
  */
 const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_HOST_API || '',
+  baseURL: env.NEXT_PUBLIC_HOST_API || '',
   headers: {
     'Content-Type': 'application/json',
   },

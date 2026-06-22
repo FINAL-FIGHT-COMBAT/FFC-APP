@@ -1,4 +1,6 @@
 
+import { env } from 'src/lib/env';
+
 import packageJson from '../package.json';
 
 // ----------------------------------------------------------------------
@@ -49,14 +51,14 @@ export const CONFIG: ConfigValue = {
    * BACKEND API URL
    * Local de onde os dados de produção e usuários são consumidos.
    */
-  serverUrl: (process.env.NEXT_PUBLIC_HOST_API ?? 'https://api.finalfightcombat.xyz').replace(/\/$/, ''),
+  serverUrl: env.NEXT_PUBLIC_HOST_API.replace(/\/$/, ''),
 
   /**
    * FRONTEND SITE URL
    * SSOT para Metadados, Sitemaps e Links Canônicos.
    * FIX: Bloqueado rigorosamente contra fallbacks da Vercel (Mirroring Penalty).
    */
-  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.finalfightcombat.xyz').replace(/\/$/, ''),
+  siteUrl: env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, ''),
 
   /**
    * CLOUDFLARE R2 PUBLIC URL
@@ -82,8 +84,8 @@ export const CONFIG: ConfigValue = {
    */
   assets: {
     fallback: {
-      avatar: `${process.env.NEXT_PUBLIC_HOST_API ?? ''}/api/platform/storage/public/avatars/fallback.jpg`,
-      banner: `${process.env.NEXT_PUBLIC_HOST_API ?? ''}/api/platform/storage/public/covers/banner-fallback.png`,
+      avatar: `${env.NEXT_PUBLIC_HOST_API}/api/platform/storage/public/avatars/fallback.jpg`,
+      banner: `${env.NEXT_PUBLIC_HOST_API}/api/platform/storage/public/covers/banner-fallback.png`,
     },
   },
 

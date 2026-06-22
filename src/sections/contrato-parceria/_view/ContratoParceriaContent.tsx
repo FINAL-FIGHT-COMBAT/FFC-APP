@@ -22,7 +22,7 @@ export function ContratoParceriaContent() {
         celebram o presente contrato-mãe, mediante as cláusulas e condições seguintes.
       </ABNTText>
       <ABNTText>
-        Fica desde logo pactuado que a incubadora do projeto (ASPPIBRA) atua estritamente sob natureza associativa de fins não econômicos, de modo que a presente parceria opera na modalidade "sandbox" (teste/incubação). O ingresso neste ambiente de Governança Digital gera métricas auditáveis e pontuação institucional, não implicando, em nenhuma hipótese atual, promessa de distribuição de lucros, transferência de propriedade intelectual ou emissão de quotas societárias (equity).
+        Fica desde logo pactuado que a incubadora do projeto (ASPPIBRA) atua estritamente sob natureza associativa de fins não econômicos, de modo que a presente parceria opera na modalidade &quot;sandbox&quot; (teste/incubação). O ingresso neste ambiente de Governança Digital gera métricas auditáveis e pontuação institucional, não implicando, em nenhuma hipótese atual, promessa de distribuição de lucros, transferência de propriedade intelectual ou emissão de quotas societárias (equity).
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: SISTEMA CONTRATUAL E PROVA ELETRÔNICA</SectionTitle>

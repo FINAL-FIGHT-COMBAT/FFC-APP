@@ -25,7 +25,7 @@ export function GuiaLogisticaContent() {
         <strong>2.2.1. Acomodação:</strong> Os quartos fornecidos pela organização seguem o padrão duplo compartilhado entre atletas da mesma equipe ou categoria, exceto para os protagonistas das lutas principais (Main Event), que farão jus a quarto privativo de acordo com sua previsão contratual.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.2.2. Custos Extras Proibidos:</strong> A cobertura do FFC limita-se estritamente ao valor da diária de hospedagem e café da manhã (quando incluso). Quaisquer despesas extras — incluindo frigobar, serviço de quarto, lavanderia, chamadas telefônicas, canais de pay-per-view ou danos ao mobiliário do hotel — são de responsabilidade exclusiva do hóspede. O app FFC reterá os bônus da aba 'Carteira' caso o hotel reporte inadimplência ou danos causados pelo atleta ou sua equipe.
+        <strong>2.2.2. Custos Extras Proibidos:</strong> A cobertura do FFC limita-se estritamente ao valor da diária de hospedagem e café da manhã (quando incluso). Quaisquer despesas extras — incluindo frigobar, serviço de quarto, lavanderia, chamadas telefônicas, canais de pay-per-view ou danos ao mobiliário do hotel — são de responsabilidade exclusiva do hóspede. O app FFC reterá os bônus da aba &apos;Carteira&apos; caso o hotel reporte inadimplência ou danos causados pelo atleta ou sua equipe.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO III: DAS PASSAGENS E TRANSPORTE DE LONGO CURSO</SectionTitle>

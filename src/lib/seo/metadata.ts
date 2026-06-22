@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { env } from 'src/lib/env';
+
 import { sharedOpenGraph } from './openGraph';
 
 interface MetadataProps {
@@ -9,7 +11,7 @@ interface MetadataProps {
   noIndex?: boolean;
 }
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://www.ffc.com';
+const APP_URL = env.NEXT_PUBLIC_APP_URL;
 
 export function constructMetadata({
   title,
