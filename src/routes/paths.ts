@@ -35,6 +35,8 @@ export const paths = {
   guiaLogistica: '/guia-de-logistica',
   imprensa: '/imprensa',
   termoVoluntario: '/termo-de-voluntario',
+  contratoStaff: '/contrato-de-staff',
+  contratoAtletaSeletiva: '/contrato-atleta-seletiva',
   ecosystem: '/ecosystem',
   privacy: '/privacidade',
   terms: '/termos',

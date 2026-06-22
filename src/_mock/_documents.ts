@@ -85,9 +85,9 @@ export const DOCUMENTS: IDocumentConfig[] = [
 
   // 📄 Contratos
   { slug: 'contrato-atleta-convidado', title: 'Contrato: Atleta Convidado', category: 'contratos', description: 'Vínculo de luta para atletas do card principal.', size: '3.5 MB', type: 'model', icon: 'solar:user-id-bold', isReady: true, readyUrl: '/contrato-atleta' },
-  { slug: 'contrato-atleta-seletiva', title: 'Contrato: Atleta Seletiva', category: 'contratos', description: 'Termo de participação para as fases eliminatórias.', size: '3.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: false },
+  { slug: 'contrato-atleta-seletiva', title: 'Contrato: Atleta Seletiva', category: 'contratos', description: 'Termo de participação para as fases eliminatórias.', size: '3.2 MB', type: 'model', icon: 'solar:users-group-two-rounded-bold', isReady: true, readyUrl: '/contrato-atleta-seletiva' },
   { slug: 'contrato-de-parceria', title: 'Contrato de Parceria', category: 'contratos', description: 'Acordo comercial para empresas e academias parceiras.', size: '2.0 MB', type: 'model', icon: 'solar:handshake-bold', isReady: true, readyUrl: '/parcerias' },
-  { slug: 'contrato-de-staff', title: 'Contrato de Staff', category: 'contratos', description: 'Prestação de serviço para a equipe de apoio.', size: '1.4 MB', type: 'model', icon: 'solar:users-group-rounded-bold', isReady: false },
+  { slug: 'contrato-de-staff', title: 'Contrato de Staff', category: 'contratos', description: 'Prestação de serviço para a equipe de apoio.', size: '1.4 MB', type: 'model', icon: 'solar:users-group-rounded-bold', isReady: true, readyUrl: '/contrato-de-staff' },
   { slug: 'termo-de-voluntario', title: 'Termo de Voluntário', category: 'contratos', description: 'Acordo de colaboração voluntária sem vínculo.', size: '800 KB', type: 'model', icon: 'solar:hand-shake-bold', isReady: true, readyUrl: '/termo-de-voluntario' },
 
   // 📦 Operacional
