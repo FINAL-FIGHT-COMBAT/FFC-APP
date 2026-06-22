@@ -3,7 +3,26 @@ import Typography from '@mui/material/Typography';
 
 import { Iconify } from 'src/components/iconify';
 
-export function DefaultFooter() {
+import { useDocumentData } from './document-context';
+
+type DefaultFooterProps = {
+  authCode?: string;
+  message?: React.ReactNode;
+  qrCodeIcon?: string;
+};
+
+export function DefaultFooter({ authCode, message, qrCodeIcon = 'mdi:qrcode' }: DefaultFooterProps = {}) {
+  const data = useDocumentData();
+
+  const finalAuthCode = authCode || (data?.authCode as string) || 'FFC-2026-X8Y9Z';
+
+  const finalMessage = message || (data?.message as React.ReactNode) || (
+    <>
+      Este documento foi gerado pelo sistema interno da associação e possui validade <br />
+      jurídica para fins de cadastro interno e prova de vínculo.
+    </>
+  );
+
   return (
     <Box
       sx={{
@@ -12,9 +31,11 @@ export function DefaultFooter() {
         borderTop: '1px solid #E0E0E0',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'flex-start',
+        alignItems: 'flex-end',
         gap: 2,
-        mt: 2
+        mt: 2,
+        minHeight: '2.2cm',
+        boxSizing: 'border-box',
       }}
     >
       {/* MARGIN QR CODE */}
@@ -22,7 +43,7 @@ export function DefaultFooter() {
         sx={{
           position: 'absolute',
           left: '-2.5cm',
-          bottom: 0,
+          top: 0,
           width: '2.2cm',
           height: '2.2cm',
           border: '2px solid #D4AF37', // Gold border
@@ -34,7 +55,7 @@ export function DefaultFooter() {
         }}
       >
         {/* Dark Green QR Code */}
-        <Iconify icon={"mdi:qrcode" as any} width={70} sx={{ color: '#0A3B18' }} />
+        <Iconify icon={qrCodeIcon as any} width={70} sx={{ color: '#0A3B18' }} />
       </Box>
       <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', flex: 1 }}>
 
@@ -43,8 +64,7 @@ export function DefaultFooter() {
             AUTENTICAÇÃO DIGITAL
           </Typography>
           <Typography variant="caption" sx={{ color: '#637381', fontSize: '7pt', lineHeight: 1.2 }}>
-            Este documento foi gerado pelo sistema interno da associação e possui validade <br />
-            jurídica para fins de cadastro interno e prova de vínculo.
+            {finalMessage}
           </Typography>
         </Box>
       </Box>
@@ -54,7 +74,7 @@ export function DefaultFooter() {
           FFC Oficial
         </Typography>
         <Typography variant="caption" sx={{ color: '#0A3B18', fontSize: '7pt', fontFamily: 'monospace', fontWeight: 'bold' }}>
-          Autenticação: FFC-2026-X8Y9Z
+          Autenticação: {finalAuthCode}
         </Typography>
       </Box>
     </Box>

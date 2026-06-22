@@ -41,7 +41,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
           bgcolor: '#FFFFFF',
           borderRadius: 0,
           boxSizing: 'border-box',
-          p: { xs: '1rem 1rem', md: '0.9cm 2cm 2cm 3cm' }, // Mobile padding vs ABNT desktop padding
+          p: { xs: '1rem 1rem', md: '0.9cm 2cm 0.7cm 3cm' }, // Mobile padding vs ABNT desktop padding
           fontFamily: '"Arial", "Helvetica", sans-serif',
           position: 'relative',
           '@media print': {
@@ -97,7 +97,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             }}
           >
             <Box component="tr">
-              <Box component="td" sx={{ '@media print': { pb: '1cm' } }}>
+              <Box component="td" sx={{ '@media print': { pb: '0.7cm' } }}>
                 {footerContent}
               </Box>
             </Box>
@@ -116,7 +116,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
               right: 0,
               pl: '3cm',
               pr: '2cm',
-              pb: '1cm',
+              pb: '0.7cm',
               boxSizing: 'border-box'
             }
           }}
