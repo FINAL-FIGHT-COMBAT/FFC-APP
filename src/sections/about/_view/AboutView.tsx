@@ -16,10 +16,11 @@ import { HomeBackground } from 'src/components/background';
 export function AboutView() {
   const { t } = useTranslate();
 
-  const values = (t('about.values', { returnObjects: true }) as {
-    title: string;
-    description: string;
-  }[]) || [];
+  const values =
+    (t('about.values', { returnObjects: true }) as {
+      title: string;
+      description: string;
+    }[]) || [];
   return (
     <>
       <HomeBackground />
@@ -29,10 +30,14 @@ export function AboutView() {
           {/* HERO SECTION */}
           <Box sx={{ textAlign: 'center', mb: 10 }}>
             <Typography variant="h1" sx={{ mb: 3, fontWeight: 900 }}>
-              Sobre a <Box component="span" sx={{ color: 'primary.main' }}>{t('about.title') || 'FFC'}</Box>
+              Sobre a{' '}
+              <Box component="span" sx={{ color: 'primary.main' }}>
+                {t('about.title') || 'FFC'}
+              </Box>
             </Typography>
             <Typography variant="h4" sx={{ color: 'text.secondary', maxWidth: 800, mx: 'auto' }}>
-              {t('about.subtitle') || 'Conectando o esporte, a tecnologia e a comunidade do combate nacional.'}
+              {t('about.subtitle') ||
+                'Conectando o esporte, a tecnologia e a comunidade do combate nacional.'}
             </Typography>
           </Box>
 

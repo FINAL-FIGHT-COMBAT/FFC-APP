@@ -56,9 +56,13 @@ export function CronogramaContent() {
       <Clause text="1.1. CARÁTER EVOLUTIVO: Devido à natureza viva e dinâmica de um evento de lutas, a programação horária de uma etapa está sujeita a ajustes operacionais de última hora para garantir a fluidez da transmissão, a segurança dos atletas e o cumprimento dos tempos de grade." />
       <Clause text="1.2. SOBERANIA DO APLICATIVO: O cronograma impresso ou divulgado em redes sociais é meramente informativo. A única versão oficial, válida e atualizada em tempo real é a contida na aba 'Cronograma' dentro do aplicativo FFC. Cabe exclusivamente aos atletas, chefes de equipe e córneres monitorarem as notificações push do sistema." />
 
-      <SectionTitle>CAPÍTULO II: PROGRAMAÇÃO DETALHADA DA ETAPA (MATRIZ DE TEMPO PADRÃO)</SectionTitle>
+      <SectionTitle>
+        CAPÍTULO II: PROGRAMAÇÃO DETALHADA DA ETAPA (MATRIZ DE TEMPO PADRÃO)
+      </SectionTitle>
       <ABNTText>
-        Abaixo está a distribuição oficial dos blocos horários que regem o evento. Os horários específicos de cada luta e chamadas de chaves serão atualizados dinamicamente pelo algoritmo do app.
+        Abaixo está a distribuição oficial dos blocos horários que regem o evento. Os horários
+        específicos de cada luta e chamadas de chaves serão atualizados dinamicamente pelo algoritmo
+        do app.
       </ABNTText>
 
       <Box
@@ -73,13 +77,22 @@ export function CronogramaContent() {
       >
         <thead>
           <Box component="tr" sx={{ borderBottom: '2px solid #000000' }}>
-            <Box component="th" sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}>
+            <Box
+              component="th"
+              sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}
+            >
               Bloco Operacional
             </Box>
-            <Box component="th" sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}>
+            <Box
+              component="th"
+              sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}
+            >
               Atividade Técnica e Logística
             </Box>
-            <Box component="th" sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}>
+            <Box
+              component="th"
+              sx={{ textAlign: 'left', p: 1, fontSize: '9pt', fontWeight: 'bold' }}
+            >
               Janela de Duração
             </Box>
           </Box>
@@ -94,13 +107,19 @@ export function CronogramaContent() {
                 bgcolor: index % 2 === 0 ? '#F9FAFB' : '#FFFFFF',
               }}
             >
-              <Box component="td" sx={{ p: 1.2, fontSize: '8.5pt', color: '#1C252C', fontWeight: 'bold' }}>
+              <Box
+                component="td"
+                sx={{ p: 1.2, fontSize: '8.5pt', color: '#1C252C', fontWeight: 'bold' }}
+              >
                 {row.bloco}
               </Box>
               <Box component="td" sx={{ p: 1.2, fontSize: '8.5pt', color: '#1C252C' }}>
                 {row.atividade}
               </Box>
-              <Box component="td" sx={{ p: 1.2, fontSize: '8.5pt', color: '#637381', fontStyle: 'italic' }}>
+              <Box
+                component="td"
+                sx={{ p: 1.2, fontSize: '8.5pt', color: '#637381', fontStyle: 'italic' }}
+              >
                 {row.duracao}
               </Box>
             </Box>
@@ -111,26 +130,39 @@ export function CronogramaContent() {
       <SectionTitle>CAPÍTULO III: PROTOCOLOS OBRIGATÓRIOS POR BLOCO</SectionTitle>
       <Clause text="3.1. BLOCO DE PESAGEM E TRIAGEM MÉDICA:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.1.1. Triagem Antecipada:</strong> O atleta deve passar pela checagem de unhas, cabelos e inspeção dermatológica imediatamente antes de subir à balança.
+        <strong>3.1.1. Triagem Antecipada:</strong> O atleta deve passar pela checagem de unhas,
+        cabelos e inspeção dermatológica imediatamente antes de subir à balança.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.1.2. Fechamento de Balança:</strong> Encerrada a janela de 01 (uma) hora da pesagem oficial, o sistema do aplicativo bloqueia automaticamente novas pesagens. Atletas ausentes serão declarados perdedores por W.O. e excluídos do sistema de chaves.
+        <strong>3.1.2. Fechamento de Balança:</strong> Encerrada a janela de 01 (uma) hora da
+        pesagem oficial, o sistema do aplicativo bloqueia automaticamente novas pesagens. Atletas
+        ausentes serão declarados perdedores por W.O. e excluídos do sistema de chaves.
       </ABNTText>
 
       <Clause text="3.2. BLOCO DE MÍDIA E FOTOS OFICIAIS (MEDIA DAY):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.2.1. Obrigatoriedade:</strong> Todo atleta contratado ou classificado para o Card Principal deve comparecer ao estúdio oficial de fotografia da arena no horário designado no app.
+        <strong>3.2.1. Obrigatoriedade:</strong> Todo atleta contratado ou classificado para o Card
+        Principal deve comparecer ao estúdio oficial de fotografia da arena no horário designado no
+        app.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.2.2. Código de Vestimenta (Dress Code):</strong> É obrigatório realizar a sessão de fotos vestindo o uniforme oficial completo de combate: Kimono oficial limpo (para lutas de Gi) ou o conjunto elástico/rashguard completo (para modalidades No-Gi). É proibido o uso de bonés, chinelos ou óculos escuros nesta etapa.
+        <strong>3.2.2. Código de Vestimenta (Dress Code):</strong> É obrigatório realizar a sessão
+        de fotos vestindo o uniforme oficial completo de combate: Kimono oficial limpo (para lutas
+        de Gi) ou o conjunto elástico/rashguard completo (para modalidades No-Gi). É proibido o uso
+        de bonés, chinelos ou óculos escuros nesta etapa.
       </ABNTText>
 
       <Clause text="3.3. BLOCO DE PESAGEM ALEATÓRIA DE CONTROLE (DAY-OF-FIGHT):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.3.1. Gatilho do App:</strong> O sorteio automatizado escolherá de 2 a 4 atletas por categoria. Os nomes serão disparados via notificação no celular e no telão da área de concentração.
+        <strong>3.3.1. Gatilho do App:</strong> O sorteio automatizado escolherá de 2 a 4 atletas
+        por categoria. Os nomes serão disparados via notificação no celular e no telão da área de
+        concentração.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.3.2. Janela de Tolerância:</strong> A partir do disparo da notificação, o atleta tem exatos 30 minutos para se apresentar à balança oficial e comprovar que não excedeu o limite de 5% de rebote hídrico. O atraso ou falha gera desclassificação imediata via sistema.
+        <strong>3.3.2. Janela de Tolerância:</strong> A partir do disparo da notificação, o atleta
+        tem exatos 30 minutos para se apresentar à balança oficial e comprovar que não excedeu o
+        limite de 5% de rebote hídrico. O atraso ou falha gera desclassificação imediata via
+        sistema.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO IV: REGRAS DE ATRASO, CHAMADA E TOLERÂNCIA (W.O.)</SectionTitle>

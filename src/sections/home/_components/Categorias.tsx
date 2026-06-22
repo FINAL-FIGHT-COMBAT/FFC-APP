@@ -24,40 +24,39 @@ import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid'
 // Cores oficiais das faixas BJJ — Branca → Azul → Roxa → Marrom → Preta
 const FAIXA_CONFIG: Record<string, { bg: string; border?: string; glow: string; label: string }> = {
   Branca: { bg: '#FFFFFF', glow: 'rgba(255,255,255,0.5)', label: 'Branca' },
-  Azul:   { bg: '#1D4ED8', glow: 'rgba(29,78,216,0.7)',   label: 'Azul'   },
-  Roxa:   { bg: '#7C3AED', glow: 'rgba(124,58,237,0.7)',  label: 'Roxa'   },
-  Marrom: { bg: '#92400E', glow: 'rgba(146,64,14,0.7)',   label: 'Marrom' },
-  Preta:  { bg: '#0A0A0A', border: '#6B7280', glow: 'none', label: 'Preta'  },
+  Azul: { bg: '#1D4ED8', glow: 'rgba(29,78,216,0.7)', label: 'Azul' },
+  Roxa: { bg: '#7C3AED', glow: 'rgba(124,58,237,0.7)', label: 'Roxa' },
+  Marrom: { bg: '#92400E', glow: 'rgba(146,64,14,0.7)', label: 'Marrom' },
+  Preta: { bg: '#0A0A0A', border: '#6B7280', glow: 'none', label: 'Preta' },
 };
 
 const FAIXAS_ORDER = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] as const;
 type Faixa = (typeof FAIXAS_ORDER)[number];
 
-
 // 9 categorias de peso — Adulto Masculino (CBJJ + Absoluto)
 const PESO_MASCULINO = [
-  { id: 'm-galo',         peso: 'GALO (-57,5KG)'          },
-  { id: 'm-pluma',        peso: 'PLUMA (-64,0KG)'         },
-  { id: 'm-pena',         peso: 'PENA (-70,0KG)'          },
-  { id: 'm-leve',         peso: 'LEVE (-76,0KG)'          },
-  { id: 'm-medio',        peso: 'MÉDIO (-82,3KG)'         },
-  { id: 'm-meio-pesado',  peso: 'MEIO-PESADO (-88,3KG)'   },
-  { id: 'm-pesado',       peso: 'PESADO (-94,3KG)'        },
+  { id: 'm-galo', peso: 'GALO (-57,5KG)' },
+  { id: 'm-pluma', peso: 'PLUMA (-64,0KG)' },
+  { id: 'm-pena', peso: 'PENA (-70,0KG)' },
+  { id: 'm-leve', peso: 'LEVE (-76,0KG)' },
+  { id: 'm-medio', peso: 'MÉDIO (-82,3KG)' },
+  { id: 'm-meio-pesado', peso: 'MEIO-PESADO (-88,3KG)' },
+  { id: 'm-pesado', peso: 'PESADO (-94,3KG)' },
   { id: 'm-super-pesado', peso: 'SUPER-PESADO (-100,5KG)' },
-  { id: 'm-absoluto',     peso: 'ABSOLUTO (OPEN WEIGHT)'  },
+  { id: 'm-absoluto', peso: 'ABSOLUTO (OPEN WEIGHT)' },
 ];
 
 // 9 categorias de peso — Adulto Feminino (CBJJ + Absoluto)
 const PESO_FEMININO = [
-  { id: 'f-galo',         peso: 'GALO (-48,5KG)'          },
-  { id: 'f-pluma',        peso: 'PLUMA (-53,5KG)'         },
-  { id: 'f-pena',         peso: 'PENA (-58,5KG)'          },
-  { id: 'f-leve',         peso: 'LEVE (-64,0KG)'          },
-  { id: 'f-medio',        peso: 'MÉDIO (-69,0KG)'         },
-  { id: 'f-meio-pesado',  peso: 'MEIO-PESADO (-74,0KG)'   },
-  { id: 'f-pesado',       peso: 'PESADO (-79,3KG)'        },
-  { id: 'f-super-pesado', peso: 'SUPER-PESADO (-84,3KG)'  },
-  { id: 'f-absoluto',     peso: 'ABSOLUTO (OPEN WEIGHT)'  },
+  { id: 'f-galo', peso: 'GALO (-48,5KG)' },
+  { id: 'f-pluma', peso: 'PLUMA (-53,5KG)' },
+  { id: 'f-pena', peso: 'PENA (-58,5KG)' },
+  { id: 'f-leve', peso: 'LEVE (-64,0KG)' },
+  { id: 'f-medio', peso: 'MÉDIO (-69,0KG)' },
+  { id: 'f-meio-pesado', peso: 'MEIO-PESADO (-74,0KG)' },
+  { id: 'f-pesado', peso: 'PESADO (-79,3KG)' },
+  { id: 'f-super-pesado', peso: 'SUPER-PESADO (-84,3KG)' },
+  { id: 'f-absoluto', peso: 'ABSOLUTO (OPEN WEIGHT)' },
 ];
 
 type SlotData = {
@@ -128,11 +127,36 @@ const FAIXA_DATA: Record<string, SlotData[]> = {
 
 // Adulto Feminino — aguardando dados reais
 const FAIXA_DATA_F: Record<string, SlotData[]> = {
-  Branca: Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 150,00', status: 'disponivel' as const }),
-  Azul:   Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 170,00', status: 'disponivel' as const }),
-  Roxa:   Array(9).fill({ vagasOcupadas: 0, vagasTotal: 16, valor: 'R$ 190,00', status: 'disponivel' as const }),
-  Marrom: Array(9).fill({ vagasOcupadas: 0, vagasTotal: 8,  valor: 'R$ 200,00', status: 'disponivel' as const }),
-  Preta:  Array(9).fill({ vagasOcupadas: 0, vagasTotal: 8,  valor: 'R$ 220,00', status: 'disponivel' as const }),
+  Branca: Array(9).fill({
+    vagasOcupadas: 0,
+    vagasTotal: 16,
+    valor: 'R$ 150,00',
+    status: 'disponivel' as const,
+  }),
+  Azul: Array(9).fill({
+    vagasOcupadas: 0,
+    vagasTotal: 16,
+    valor: 'R$ 170,00',
+    status: 'disponivel' as const,
+  }),
+  Roxa: Array(9).fill({
+    vagasOcupadas: 0,
+    vagasTotal: 16,
+    valor: 'R$ 190,00',
+    status: 'disponivel' as const,
+  }),
+  Marrom: Array(9).fill({
+    vagasOcupadas: 0,
+    vagasTotal: 8,
+    valor: 'R$ 200,00',
+    status: 'disponivel' as const,
+  }),
+  Preta: Array(9).fill({
+    vagasOcupadas: 0,
+    vagasTotal: 8,
+    valor: 'R$ 220,00',
+    status: 'disponivel' as const,
+  }),
 };
 
 type Genero = 'M' | 'F';
@@ -145,7 +169,6 @@ type CardProps = {
   slot: SlotData;
   genero: string;
 };
-
 
 function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
   const theme = useTheme();
@@ -169,9 +192,22 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
       }}
     >
       {/* ── TOP: Modalidade + Faixa ── */}
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 2, pt: 2, pb: 1.5 }}>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ px: 2, pt: 2, pb: 1.5 }}
+      >
         <Box sx={{ px: 1.2, py: 0.35, borderRadius: 0.75, bgcolor: '#2563EB' }}>
-          <Typography sx={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.1em', color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+          <Typography
+            sx={{
+              fontSize: 10,
+              fontWeight: 800,
+              letterSpacing: '0.1em',
+              color: '#fff',
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            }}
+          >
             BJJ
           </Typography>
         </Box>
@@ -179,13 +215,24 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
         <Stack direction="row" alignItems="center" spacing={0.75}>
           <Box
             sx={{
-              width: 10, height: 10, borderRadius: '50%',
+              width: 10,
+              height: 10,
+              borderRadius: '50%',
               bgcolor: faixaCfg.bg,
               border: faixaCfg.border ? `1.5px solid ${faixaCfg.border}` : 'none',
               boxShadow: isFaixaPreta ? 'none' : `0 0 7px ${faixaCfg.glow}`,
             }}
           />
-          <Typography sx={{ fontSize: 11, fontWeight: 700, color: alpha('#fff', 0.75), fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+          <Typography
+            sx={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: alpha('#fff', 0.75),
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+            }}
+          >
             {faixa}
           </Typography>
         </Stack>
@@ -193,10 +240,29 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
 
       {/* ── PESO + GÊNERO ── */}
       <Box sx={{ px: 2, pb: 2 }}>
-        <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', textTransform: 'uppercase', lineHeight: 1.2, mb: 0.5 }}>
+        <Typography
+          sx={{
+            fontSize: { xs: '0.95rem', sm: '1rem' },
+            fontWeight: 900,
+            color: '#fff',
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            textTransform: 'uppercase',
+            lineHeight: 1.2,
+            mb: 0.5,
+          }}
+        >
           {peso}
         </Typography>
-        <Typography sx={{ fontSize: 10, fontWeight: 500, color: alpha('#fff', 0.35), letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+        <Typography
+          sx={{
+            fontSize: 10,
+            fontWeight: 500,
+            color: alpha('#fff', 0.35),
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+          }}
+        >
           {genero}
         </Typography>
       </Box>
@@ -207,10 +273,26 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
       {/* ── VAGAS ── */}
       <Box sx={{ px: 2, pt: 2, pb: 1.5 }}>
         <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 0.75 }}>
-          <Typography sx={{ fontSize: 9, fontWeight: 700, color: alpha('#fff', 0.35), letterSpacing: '0.15em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+          <Typography
+            sx={{
+              fontSize: 9,
+              fontWeight: 700,
+              color: alpha('#fff', 0.35),
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            }}
+          >
             Vagas Ocupadas
           </Typography>
-          <Typography sx={{ fontSize: 12, fontWeight: 800, color: alpha('#fff', 0.6), fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+          <Typography
+            sx={{
+              fontSize: 12,
+              fontWeight: 800,
+              color: alpha('#fff', 0.6),
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            }}
+          >
             {slot.vagasOcupadas} / {slot.vagasTotal}
           </Typography>
         </Stack>
@@ -218,8 +300,13 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
           variant="determinate"
           value={progressPercent}
           sx={{
-            height: 5, borderRadius: 3, bgcolor: alpha('#fff', 0.07),
-            '& .MuiLinearProgress-bar': { borderRadius: 3, bgcolor: progressPercent >= 100 ? '#EF4444' : '#EAB308' },
+            height: 5,
+            borderRadius: 3,
+            bgcolor: alpha('#fff', 0.07),
+            '& .MuiLinearProgress-bar': {
+              borderRadius: 3,
+              bgcolor: progressPercent >= 100 ? '#EF4444' : '#EAB308',
+            },
           }}
         />
       </Box>
@@ -228,13 +315,38 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
       <Box sx={{ borderTop: `1px solid ${alpha('#fff', 0.06)}`, mx: 2, mt: 0.5 }} />
 
       {/* ── VALOR + STATUS ── */}
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ px: 2, py: 2 }}>
-        <Typography sx={{ fontSize: 18, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ px: 2, py: 2 }}
+      >
+        <Typography
+          sx={{
+            fontSize: 18,
+            fontWeight: 900,
+            color: '#fff',
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+          }}
+        >
           {slot.valor}
         </Typography>
         <Stack direction="row" alignItems="center" spacing={0.5}>
-          <Iconify icon={isDisponivel ? 'solar:check-circle-bold' : 'solar:close-circle-bold'} width={14} sx={{ color: isDisponivel ? '#22C55E' : '#EF4444' }} />
-          <Typography sx={{ fontSize: 10, fontWeight: 800, color: isDisponivel ? '#22C55E' : '#EF4444', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+          <Iconify
+            icon={isDisponivel ? 'solar:check-circle-bold' : 'solar:close-circle-bold'}
+            width={14}
+            sx={{ color: isDisponivel ? '#22C55E' : '#EF4444' }}
+          />
+          <Typography
+            sx={{
+              fontSize: 10,
+              fontWeight: 800,
+              color: isDisponivel ? '#22C55E' : '#EF4444',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            }}
+          >
             {isDisponivel ? 'DISPONÍVEL' : 'ESGOTADO'}
           </Typography>
         </Stack>
@@ -301,7 +413,11 @@ function SegmentedControl({
               whiteSpace: 'nowrap',
               ...(isActive
                 ? { bgcolor: '#EAB308', color: '#0A0A0A' }
-                : { bgcolor: 'transparent', color: 'rgba(255,255,255,0.45)', '&:hover': { color: 'rgba(255,255,255,0.8)' } }),
+                : {
+                    bgcolor: 'transparent',
+                    color: 'rgba(255,255,255,0.45)',
+                    '&:hover': { color: 'rgba(255,255,255,0.8)' },
+                  }),
             }}
           >
             {opt.dot && (
@@ -326,7 +442,13 @@ function SegmentedControl({
 }
 
 // Adaptador para o seletor de faixas
-function FaixaSelector({ selected, onChange }: { selected: string; onChange: (f: string) => void }) {
+function FaixaSelector({
+  selected,
+  onChange,
+}: {
+  selected: string;
+  onChange: (f: string) => void;
+}) {
   const options = FAIXAS_ORDER.map((faixa) => ({
     value: faixa,
     label: faixa,
@@ -347,8 +469,8 @@ export function Categorias({ sx, ...other }: BoxProps) {
     slidesToShow: { xs: 1, sm: 2, md: 3 },
   });
 
-  const pesoList    = selectedGenero === 'M' ? PESO_MASCULINO : PESO_FEMININO;
-  const faixaSource = selectedGenero === 'M' ? FAIXA_DATA     : FAIXA_DATA_F;
+  const pesoList = selectedGenero === 'M' ? PESO_MASCULINO : PESO_FEMININO;
+  const faixaSource = selectedGenero === 'M' ? FAIXA_DATA : FAIXA_DATA_F;
   const generoLabel = selectedGenero === 'M' ? 'Categoria Masculina' : 'Categoria Feminina';
 
   const currentCards = useMemo(
@@ -372,14 +494,32 @@ export function Categorias({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 1 }}>
-
           {/* ── HEADER ── */}
           <m.div variants={varFade('inUp')}>
             <Stack sx={{ mb: 4 }}>
-
               {/* Linha 1: Badge — tamanho natural */}
-              <Box sx={{ alignSelf: 'flex-start', display: 'inline-block', border: `1px solid rgba(234,179,8,0.6)`, borderRadius: 2, px: 1.5, py: 0.5, mb: 2 }}>
-                <Typography component="span" sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EAB308' }}>
+              <Box
+                sx={{
+                  alignSelf: 'flex-start',
+                  display: 'inline-block',
+                  border: `1px solid rgba(234,179,8,0.6)`,
+                  borderRadius: 2,
+                  px: 1.5,
+                  py: 0.5,
+                  mb: 2,
+                }}
+              >
+                <Typography
+                  component="span"
+                  sx={{
+                    fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                    fontWeight: 700,
+                    fontSize: 11,
+                    letterSpacing: '0.25em',
+                    textTransform: 'uppercase',
+                    color: '#EAB308',
+                  }}
+                >
                   CATEGORIAS
                 </Typography>
               </Box>
@@ -396,13 +536,12 @@ export function Categorias({ sx, ...other }: BoxProps) {
                 <SegmentedControl
                   options={[
                     { value: 'M', label: 'Masculinas' },
-                    { value: 'F', label: 'Femininas'  },
+                    { value: 'F', label: 'Femininas' },
                   ]}
                   selected={selectedGenero}
                   onChange={(v) => setSelectedGenero(v as Genero)}
                 />
               </Stack>
-
             </Stack>
           </m.div>
 
@@ -431,7 +570,6 @@ export function Categorias({ sx, ...other }: BoxProps) {
               />
             </m.div>
           </AnimatePresence>
-
         </Container>
       </MotionViewport>
     </Box>

@@ -1,21 +1,15 @@
-import {
-  Clause,
-  ABNTText,
-  SectionTitle,
-  DocumentTitle,
-} from 'src/components/abnt-document';
+import { Clause, ABNTText, SectionTitle, DocumentTitle } from 'src/components/abnt-document';
 
 export function RegulamentoFFCContent() {
   return (
     <>
-      <DocumentTitle>
-        REGULAMENTO OFICIAL E DIRETRIZES TÉCNICAS
-      </DocumentTitle>
-      <DocumentTitle>
-        FFC GRAPPLING (JUDÔ VS. JIU-JITSU)
-      </DocumentTitle>
+      <DocumentTitle>REGULAMENTO OFICIAL E DIRETRIZES TÉCNICAS</DocumentTitle>
+      <DocumentTitle>FFC GRAPPLING (JUDÔ VS. JIU-JITSU)</DocumentTitle>
       <ABNTText>
-        O presente Regulamento Oficial estabelece as diretrizes técnicas, desportivas e disciplinares que regerão as competições no âmbito do Projeto Final Fight Combat (FFC). Este documento é de leitura e cumprimento obrigatórios por parte de todos os atletas, córneres, técnicos e membros da equipe de arbitragem.
+        O presente Regulamento Oficial estabelece as diretrizes técnicas, desportivas e
+        disciplinares que regerão as competições no âmbito do Projeto Final Fight Combat (FFC). Este
+        documento é de leitura e cumprimento obrigatórios por parte de todos os atletas, córneres,
+        técnicos e membros da equipe de arbitragem.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: DISPOSIÇÕES GERAIS E OBJETO</SectionTitle>
@@ -23,23 +17,36 @@ export function RegulamentoFFCContent() {
       <Clause text="1.2. CÓDIGO DE ÉTICA E FAIR PLAY: Exige-se conduta moral irrepreensível, respeito e desportividade de todos os atletas, córneres e delegações. Ameaças, agressões verbais ou qualquer conduta antidesportiva direcionada a oponentes, árbitros ou público resultarão em punição que pode variar de advertência à expulsão do evento." />
       <Clause text="1.3. UNIFORME OFICIAL (GI / KIMONO):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.3.1.</strong> O kimono deve ser confeccionado em algodão, em bom estado de conservação, nas cores oficiais permitidas pela organização (branco, azul ou preto). Patches de patrocinadores são permitidos desde que não afetem a integridade física do oponente ou a aplicação de pegadas.
+        <strong>1.3.1.</strong> O kimono deve ser confeccionado em algodão, em bom estado de
+        conservação, nas cores oficiais permitidas pela organização (branco, azul ou preto). Patches
+        de patrocinadores são permitidos desde que não afetem a integridade física do oponente ou a
+        aplicação de pegadas.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.3.2.</strong> As medições de lapela, manga e calça poderão ser verificadas pelo instrumento oficial (Sokuteiki) ou pelo avaliador de kimonos antes da entrada na área de combate. Kimonos fora do padrão exigirão substituição imediata.
+        <strong>1.3.2.</strong> As medições de lapela, manga e calça poderão ser verificadas pelo
+        instrumento oficial (Sokuteiki) ou pelo avaliador de kimonos antes da entrada na área de
+        combate. Kimonos fora do padrão exigirão substituição imediata.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.3.3.</strong> É obrigatório o uso de camisa elástica colada ao corpo (rashguard) por baixo do kimono para atletas femininas. Para atletas masculinos, o uso de rashguard por baixo do kimono é opcional, a menos que determinado de forma diversa pelo edital específico da etapa.
+        <strong>1.3.3.</strong> É obrigatório o uso de camisa elástica colada ao corpo (rashguard)
+        por baixo do kimono para atletas femininas. Para atletas masculinos, o uso de rashguard por
+        baixo do kimono é opcional, a menos que determinado de forma diversa pelo edital específico
+        da etapa.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO II: INSCRIÇÕES, CATEGORIAS DE PESO E PESAGEM</SectionTitle>
       <Clause text="2.1. DIVISÕES E CATEGORIAS: O cruzamento das tabelas de peso e classes de idade será gerenciado pelo aplicativo oficial do evento, onde o atleta deverá conferir rigorosamente sua divisão de peso antes do combate." />
       <Clause text="2.2. PROTOCOLO DE PESAGEM OFICIAL:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.2.1.</strong> Os atletas deverão comparecer no local e horários designados. É estritamente proibida a pesagem de atletas menores de idade sem as vestimentas mínimas exigidas por lei (roupas íntimas/sunga/biquíni não configuram nudez esportiva permitida em espaços abertos sem proteção legal).
+        <strong>2.2.1.</strong> Os atletas deverão comparecer no local e horários designados. É
+        estritamente proibida a pesagem de atletas menores de idade sem as vestimentas mínimas
+        exigidas por lei (roupas íntimas/sunga/biquíni não configuram nudez esportiva permitida em
+        espaços abertos sem proteção legal).
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.2.2.</strong> Haverá tolerância de peso conforme a categoria divulgada. A falha técnica no enquadramento de peso na balança acarretará em punições disciplinares ou desclassificação (W.O.), a critério da direção do evento.
+        <strong>2.2.2.</strong> Haverá tolerância de peso conforme a categoria divulgada. A falha
+        técnica no enquadramento de peso na balança acarretará em punições disciplinares ou
+        desclassificação (W.O.), a critério da direção do evento.
       </ABNTText>
       <Clause text="2.3. PESAGEM ALEATÓRIA (DAY-OF-FIGHT): A organização reserva-se o direito de sortear atletas para pesagem de controle no dia da luta, com uma margem de tolerância máxima de 5% sobre o peso da categoria. O descumprimento gera desclassificação automatizada pelo sistema." />
 
@@ -48,30 +55,41 @@ export function RegulamentoFFCContent() {
       <Clause text="3.2. ÁREAS DO TATAME: O tatame será dividido visualmente em três áreas: (i) Área de Combate (interna), (ii) Zona de Passividade ou Alerta (borda colorida indicando o limite de evasão) e (iii) Área de Segurança." />
       <Clause text="3.3. PROTOCOLO DE SAÍDA DE ÁREA (OUT OF BOUNDS):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.3.1.</strong> O árbitro interromperá a luta caso mais de 50% do corpo dos atletas saia da Área de Combate. As posições consolidadas ou de finalização iminente perto da borda seguirão a regra de arrasto para o centro ou reinício na mesma posição, a critério técnico.
+        <strong>3.3.1.</strong> O árbitro interromperá a luta caso mais de 50% do corpo dos atletas
+        saia da Área de Combate. As posições consolidadas ou de finalização iminente perto da borda
+        seguirão a regra de arrasto para o centro ou reinício na mesma posição, a critério técnico.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.3.2.</strong> Fleeing the Mat: A fuga deliberada da área de combate para evitar pontuação adversária ou fugir de finalização será severamente punida, podendo acarretar pontuação automática para o adversário ou desclassificação direta do fujão.
+        <strong>3.3.2.</strong> Fleeing the Mat: A fuga deliberada da área de combate para evitar
+        pontuação adversária ou fugir de finalização será severamente punida, podendo acarretar
+        pontuação automática para o adversário ou desclassificação direta do fujão.
       </ABNTText>
       <Clause text="3.4. POSIÇÕES OFICIAIS DE REINÍCIO (RESTARTS NO CENTRO):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.4.1.</strong> Reinício Neutro: A luta retorna de pé, ao centro, caso os atletas saiam sem posição de domínio estabelecida.
+        <strong>3.4.1.</strong> Reinício Neutro: A luta retorna de pé, ao centro, caso os atletas
+        saiam sem posição de domínio estabelecida.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.4.2.</strong> Reinício nas Guardas: As guardas (Aberta, Fechada, Meia-Guarda) estabilizadas serão reiniciadas na mesma configuração exata no centro do tatame.
+        <strong>3.4.2.</strong> Reinício nas Guardas: As guardas (Aberta, Fechada, Meia-Guarda)
+        estabilizadas serão reiniciadas na mesma configuração exata no centro do tatame.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.4.3.</strong> Reinício em Controle Dominante: Imobilizações Laterais, Montada e Pegada de Costas serão arrastadas ou reposicionadas com exatidão técnica sob comando do Árbitro Central.
+        <strong>3.4.3.</strong> Reinício em Controle Dominante: Imobilizações Laterais, Montada e
+        Pegada de Costas serão arrastadas ou reposicionadas com exatidão técnica sob comando do
+        Árbitro Central.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO IV: SISTEMA DE PONTUAÇÃO HÍBRIDO</SectionTitle>
       <Clause text="4.1. A REGRA DOS 3 SEGUNDOS: Nenhum ponto será computado no placar eletrônico antes que o atleta dominante consolide e estabilize a posição por, no mínimo, 3 (três) segundos contínuos e irrefutáveis." />
       <Clause text="4.2. PONTUAÇÃO DE QUEDAS (TAKEDOWNS):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>4.2.1.</strong> Quedas simples ou raspagens que resultem em transição direta para a dominância concederão 2 (dois) pontos.
+        <strong>4.2.1.</strong> Quedas simples ou raspagens que resultem em transição direta para a
+        dominância concederão 2 (dois) pontos.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>4.2.2.</strong> Projeções de Alta Amplitude e quedas de alta complexidade que aterrissem o oponente de costas no chão de forma clara e contundente concederão 3 (três) pontos.
+        <strong>4.2.2.</strong> Projeções de Alta Amplitude e quedas de alta complexidade que
+        aterrissem o oponente de costas no chão de forma clara e contundente concederão 3 (três)
+        pontos.
       </ABNTText>
       <Clause text="4.3. PONTUAÇÃO DE SOLO E TRANSIÇÕES: O sistema recompensará o domínio no solo. A passagem de guarda estabelecida concederá 3 (três) pontos, e a posição estabilizada de joelho na barriga concederá 2 (dois) pontos." />
       <Clause text="4.4. POSIÇÕES DOMINANTES CLÁSSICAS: Pontuações máximas serão atribuídas à Montada clássica e à Pegada de Costas, concedendo 4 (quatro) pontos cada, condicionadas à inserção correta dos dois ganchos no adversário na pegada de costas." />
@@ -83,13 +101,17 @@ export function RegulamentoFFCContent() {
       <Clause text="5.3. FALTAS GRAVES (ADVERTÊNCIAS E CAUTIONS): É proibido segurar dentro da boca da calça, dentro da manga, aplicar pretexto falso de lesão médica para repouso ou comunicação não autorizada/instrução abusiva do córner durante a luta." />
       <Clause text="5.4. FALTAS GRAVÍSSIMAS (DESCLASSIFICAÇÃO SUMÁRIA - HANSOKU-MAKE):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>5.4.1.</strong> Uso absoluto de impactos, socos, chutes, mordidas, cotoveladas, cabeçadas ou qualquer agressão física intencional.
+        <strong>5.4.1.</strong> Uso absoluto de impactos, socos, chutes, mordidas, cotoveladas,
+        cabeçadas ou qualquer agressão física intencional.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>5.4.2.</strong> Aplicação de chaves cervicais, torções diretas de espinha dorsal, e chaves torcionais de calcanhar (Heel Hooks) em divisões que proíbam tal técnica no kimono.
+        <strong>5.4.2.</strong> Aplicação de chaves cervicais, torções diretas de espinha dorsal, e
+        chaves torcionais de calcanhar (Heel Hooks) em divisões que proíbam tal técnica no kimono.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>5.4.3.</strong> Bate-Estaca (Slams de defesa contra finalização) com projeção do adversário ao solo, e quedas perigosas que atirem intencionalmente o atleta sobre sua cabeça ou pescoço.
+        <strong>5.4.3.</strong> Bate-Estaca (Slams de defesa contra finalização) com projeção do
+        adversário ao solo, e quedas perigosas que atirem intencionalmente o atleta sobre sua cabeça
+        ou pescoço.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO VI: FORMAS DE VITÓRIA E RESOLUÇÃO DE EMPATES</SectionTitle>

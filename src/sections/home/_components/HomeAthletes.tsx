@@ -38,10 +38,10 @@ type Athlete = {
 };
 
 const BELT_COLOR: Record<string, string> = {
-  Preta:  '#6B7280',
+  Preta: '#6B7280',
   Marrom: '#92400E',
-  Roxa:   '#7C3AED',
-  Azul:   '#1D4ED8',
+  Roxa: '#7C3AED',
+  Azul: '#1D4ED8',
   Branca: '#D1D5DB',
 };
 
@@ -140,14 +140,25 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
             }}
           >
             <Iconify icon="solar:cup-star-bold" width={14} sx={{ color: '#0A0F1E' }} />
-            <Typography sx={{ fontSize: 11, fontWeight: 900, color: '#0A0F1E', letterSpacing: '0.15em', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', textTransform: 'uppercase' }}>
+            <Typography
+              sx={{
+                fontSize: 11,
+                fontWeight: 900,
+                color: '#0A0F1E',
+                letterSpacing: '0.15em',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                textTransform: 'uppercase',
+              }}
+            >
               GP
             </Typography>
           </Box>
         )}
 
         {/* ── FOTO ── */}
-        <Box sx={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', bgcolor: '#161B22' }}>
+        <Box
+          sx={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', bgcolor: '#161B22' }}
+        >
           <Image
             alt={athlete.name}
             src={athlete.photoUrl}
@@ -197,10 +208,20 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
                 borderRadius: '50%',
                 bgcolor: athlete.beltColor,
                 border: athlete.belt === 'Preta' ? '1px solid #6B7280' : 'none',
-                boxShadow: athlete.belt !== 'Preta' ? `0 0 6px ${alpha(athlete.beltColor, 0.8)}` : 'none',
+                boxShadow:
+                  athlete.belt !== 'Preta' ? `0 0 6px ${alpha(athlete.beltColor, 0.8)}` : 'none',
               }}
             />
-            <Typography sx={{ fontSize: 9, fontWeight: 700, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <Typography
+              sx={{
+                fontSize: 9,
+                fontWeight: 700,
+                color: '#fff',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
               Faixa {athlete.belt}
             </Typography>
           </Stack>
@@ -208,15 +229,34 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
 
         {/* ── INFO ── */}
         <Stack sx={{ p: 1.5, gap: 1, flex: 1 }}>
-
           {/* Nome e apelido */}
           <Box>
             {athlete.nickname && (
-              <Typography sx={{ fontSize: 9, fontWeight: 700, color: accentColor, letterSpacing: '0.15em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', mb: 0.2 }}>
+              <Typography
+                sx={{
+                  fontSize: 9,
+                  fontWeight: 700,
+                  color: accentColor,
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                  mb: 0.2,
+                }}
+              >
                 &quot;{athlete.nickname}&quot;
               </Typography>
             )}
-            <Typography noWrap sx={{ fontSize: '0.9rem', fontWeight: 900, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', lineHeight: 1.1, textTransform: 'uppercase' }}>
+            <Typography
+              noWrap
+              sx={{
+                fontSize: '0.9rem',
+                fontWeight: 900,
+                color: '#fff',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                lineHeight: 1.1,
+                textTransform: 'uppercase',
+              }}
+            >
               {athlete.name}
             </Typography>
           </Box>
@@ -224,14 +264,38 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
           {/* Team + City */}
           <Stack spacing={0.25}>
             <Stack direction="row" alignItems="center" spacing={0.5}>
-              <Iconify icon="solar:shield-check-bold" width={11} sx={{ color: accentColor, flexShrink: 0 }} />
-              <Typography noWrap sx={{ fontSize: 10, fontWeight: 600, color: alpha('#fff', 0.8), fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif' }}>
+              <Iconify
+                icon="solar:shield-check-bold"
+                width={11}
+                sx={{ color: accentColor, flexShrink: 0 }}
+              />
+              <Typography
+                noWrap
+                sx={{
+                  fontSize: 10,
+                  fontWeight: 600,
+                  color: alpha('#fff', 0.8),
+                  fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif',
+                }}
+              >
                 {athlete.team}
               </Typography>
             </Stack>
             <Stack direction="row" alignItems="center" spacing={0.5}>
-              <Iconify icon="solar:flag-bold" width={11} sx={{ color: accentColor, flexShrink: 0 }} />
-              <Typography noWrap sx={{ fontSize: 10, fontWeight: 500, color: alpha('#fff', 0.6), fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif' }}>
+              <Iconify
+                icon="solar:flag-bold"
+                width={11}
+                sx={{ color: accentColor, flexShrink: 0 }}
+              />
+              <Typography
+                noWrap
+                sx={{
+                  fontSize: 10,
+                  fontWeight: 500,
+                  color: alpha('#fff', 0.6),
+                  fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif',
+                }}
+              >
                 {athlete.city}
               </Typography>
             </Stack>
@@ -240,33 +304,62 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
           {/* Categoria de peso */}
           <Box
             sx={{
-              px: 1.25, py: 0.35, borderRadius: 1,
+              px: 1.25,
+              py: 0.35,
+              borderRadius: 1,
               bgcolor: alpha(athlete.beltColor, 0.1),
               border: `1px solid ${alpha(athlete.beltColor, 0.3)}`,
               display: 'inline-flex',
               alignSelf: 'flex-start',
             }}
           >
-            <Typography sx={{ fontSize: 9, fontWeight: 800, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+            <Typography
+              sx={{
+                fontSize: 9,
+                fontWeight: 800,
+                color: '#fff',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+              }}
+            >
               {athlete.weightClass}
             </Typography>
           </Box>
 
           {/* Títulos */}
           <Box sx={{ borderTop: `1px solid ${alpha('#fff', 0.06)}`, pt: 1.5 }}>
-            <Typography sx={{ fontSize: 8, fontWeight: 700, color: alpha('#fff', 0.3), letterSpacing: '0.15em', textTransform: 'uppercase', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', mb: 0.75 }}>
+            <Typography
+              sx={{
+                fontSize: 8,
+                fontWeight: 700,
+                color: alpha('#fff', 0.3),
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                mb: 0.75,
+              }}
+            >
               Títulos
             </Typography>
             <Stack spacing={0.5} sx={{ minHeight: 32 }}>
               {athlete.titles.slice(0, 2).map((title, i) => (
-                <Stack
-                  key={i}
-                  direction="row"
-                  alignItems="center"
-                  spacing={0.5}
-                >
-                  <Iconify icon="solar:cup-star-bold" width={12} sx={{ color: accentColor, flexShrink: 0 }} />
-                  <Typography noWrap sx={{ fontSize: 9, fontWeight: 600, color: alpha('#fff', 0.9), fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif', lineHeight: 1.2 }}>
+                <Stack key={i} direction="row" alignItems="center" spacing={0.5}>
+                  <Iconify
+                    icon="solar:cup-star-bold"
+                    width={12}
+                    sx={{ color: accentColor, flexShrink: 0 }}
+                  />
+                  <Typography
+                    noWrap
+                    sx={{
+                      fontSize: 9,
+                      fontWeight: 600,
+                      color: alpha('#fff', 0.9),
+                      fontFamily: 'var(--font-public-sans), "Public Sans", sans-serif',
+                      lineHeight: 1.2,
+                    }}
+                  >
                     {title}
                   </Typography>
                 </Stack>
@@ -302,7 +395,6 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 1 }}>
-
           {/* ── HEADER ── */}
           <Stack
             direction={{ xs: 'column', md: 'row' }}
@@ -314,14 +406,57 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
               <Stack sx={{ alignItems: 'flex-start', textAlign: 'left' }}>
                 {/* Badge */}
                 <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
-                  <Box sx={{ border: '1px solid rgba(234,179,8,0.6)', borderRadius: 2, px: 1.5, py: 0.5 }}>
-                    <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EAB308' }}>
+                  <Box
+                    sx={{
+                      border: '1px solid rgba(234,179,8,0.6)',
+                      borderRadius: 2,
+                      px: 1.5,
+                      py: 0.5,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                        fontWeight: 700,
+                        fontSize: 11,
+                        letterSpacing: '0.25em',
+                        textTransform: 'uppercase',
+                        color: '#EAB308',
+                      }}
+                    >
                       GRAND PRIX
                     </Typography>
                   </Box>
-                  <Box sx={{ border: '1px solid rgba(239,68,68,0.5)', borderRadius: 2, px: 1.5, py: 0.5, display: 'flex', alignItems: 'center', gap: 0.75 }}>
-                    <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#EF4444', animation: `${pulseKeyframe} 1.5s infinite` }} />
-                    <Typography sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#EF4444' }}>
+                  <Box
+                    sx={{
+                      border: '1px solid rgba(239,68,68,0.5)',
+                      borderRadius: 2,
+                      px: 1.5,
+                      py: 0.5,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.75,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: '50%',
+                        bgcolor: '#EF4444',
+                        animation: `${pulseKeyframe} 1.5s infinite`,
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                        fontWeight: 700,
+                        fontSize: 11,
+                        letterSpacing: '0.25em',
+                        textTransform: 'uppercase',
+                        color: '#EF4444',
+                      }}
+                    >
                       AO VIVO
                     </Typography>
                   </Box>
@@ -346,10 +481,20 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                   </Box>
                 </Typography>
 
-                <Typography sx={{ fontSize: '1rem', color: alpha('#fff', 0.5), maxWidth: 560, lineHeight: 1.7 }}>
+                <Typography
+                  sx={{
+                    fontSize: '1rem',
+                    color: alpha('#fff', 0.5),
+                    maxWidth: 560,
+                    lineHeight: 1.7,
+                  }}
+                >
                   Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo
-                  <Box component="span" sx={{ color: '#EAB308', fontWeight: 700 }}> prêmio em dinheiro</Box>.
-                  Não perca!
+                  <Box component="span" sx={{ color: '#EAB308', fontWeight: 700 }}>
+                    {' '}
+                    prêmio em dinheiro
+                  </Box>
+                  . Não perca!
                 </Typography>
               </Stack>
             </m.div>
@@ -389,13 +534,17 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
               spacing={1}
               sx={{ mt: 6 }}
             >
-              <Iconify icon="solar:info-circle-bold" width={16} sx={{ color: alpha('#fff', 0.3) }} />
+              <Iconify
+                icon="solar:info-circle-bold"
+                width={16}
+                sx={{ color: alpha('#fff', 0.3) }}
+              />
               <Typography sx={{ fontSize: 12, color: alpha('#fff', 0.35), textAlign: 'center' }}>
-                Lista de atletas sujeita a alterações. Novos confirmados serão anunciados nas redes sociais.
+                Lista de atletas sujeita a alterações. Novos confirmados serão anunciados nas redes
+                sociais.
               </Typography>
             </Stack>
           </m.div>
-
         </Container>
       </MotionViewport>
     </Box>

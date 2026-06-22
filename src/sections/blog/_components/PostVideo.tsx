@@ -61,55 +61,58 @@ export function PostVideo({ videos }: Props) {
 
   return (
     <Box component={MotionViewport} sx={{ py: { xs: 8, md: 12 }, bgcolor: 'transparent' }}>
-        {/* SEÇÃO 1: BRASIL */}
-        {videos.brazil.length > 0 && (
-          <Box sx={{ mb: 8 }}>
-            {renderSectionHeader('Nocautes Nacionais', 'Melhores momentos e highlights do Brasil')}
+      {/* SEÇÃO 1: BRASIL */}
+      {videos.brazil.length > 0 && (
+        <Box sx={{ mb: 8 }}>
+          {renderSectionHeader('Nocautes Nacionais', 'Melhores momentos e highlights do Brasil')}
 
-            <Box
-              sx={{
-                display: 'grid',
-                gap: 4,
-                gridTemplateColumns: {
-                  xs: 'repeat(1, 1fr)',
-                  sm: 'repeat(2, 1fr)',
-                  md: 'repeat(4, 1fr)',
-                },
-              }}
-            >
-              {videos.brazil.map((video) => (
-                <m.div key={video.id} variants={varFade('inUp')}>
-                  <VideoItem video={video} theme={theme} />
-                </m.div>
-              ))}
-            </Box>
+          <Box
+            sx={{
+              display: 'grid',
+              gap: 4,
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(4, 1fr)',
+              },
+            }}
+          >
+            {videos.brazil.map((video) => (
+              <m.div key={video.id} variants={varFade('inUp')}>
+                <VideoItem video={video} theme={theme} />
+              </m.div>
+            ))}
           </Box>
-        )}
+        </Box>
+      )}
 
-        {/* SEÇÃO 2: INTERNACIONAL */}
-        {videos.international.length > 0 && (
-          <Box>
-            {renderSectionHeader('Destaques Globais', 'Análises, lutas e entrevistas ao redor do mundo')}
+      {/* SEÇÃO 2: INTERNACIONAL */}
+      {videos.international.length > 0 && (
+        <Box>
+          {renderSectionHeader(
+            'Destaques Globais',
+            'Análises, lutas e entrevistas ao redor do mundo'
+          )}
 
-            <Box
-              sx={{
-                display: 'grid',
-                gap: 4,
-                gridTemplateColumns: {
-                  xs: 'repeat(1, 1fr)',
-                  sm: 'repeat(2, 1fr)',
-                  md: 'repeat(4, 1fr)',
-                },
-              }}
-            >
-              {videos.international.map((video) => (
-                <m.div key={video.id} variants={varFade('inUp')}>
-                  <VideoItem video={video} theme={theme} />
-                </m.div>
-              ))}
-            </Box>
+          <Box
+            sx={{
+              display: 'grid',
+              gap: 4,
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(4, 1fr)',
+              },
+            }}
+          >
+            {videos.international.map((video) => (
+              <m.div key={video.id} variants={varFade('inUp')}>
+                <VideoItem video={video} theme={theme} />
+              </m.div>
+            ))}
           </Box>
-        )}
+        </Box>
+      )}
     </Box>
   );
 }
@@ -137,7 +140,7 @@ function VideoItem({ video, theme }: { video: VideoItemProps; theme: any }) {
         },
       }}
     >
-      <Box 
+      <Box
         component="a"
         href={`https://www.youtube.com/watch?v=${video.id}`}
         target="_blank"

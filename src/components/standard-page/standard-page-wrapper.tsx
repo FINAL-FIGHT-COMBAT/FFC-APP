@@ -14,11 +14,11 @@ export interface StandardPageWrapperProps extends BoxProps {
   withBackground?: boolean;
 }
 
-export function StandardPageWrapper({ 
-  children, 
-  withBackground = true, 
-  sx, 
-  ...other 
+export function StandardPageWrapper({
+  children,
+  withBackground = true,
+  sx,
+  ...other
 }: StandardPageWrapperProps) {
   return (
     <>

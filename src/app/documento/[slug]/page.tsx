@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: Props) {
   const document = DOCUMENTS.find((doc) => doc.slug === slug);
 
   if (!document) {
-    return constructMetadata({ 
+    return constructMetadata({
       title: 'Documento não encontrado | FFC',
-      description: 'O documento solicitado não existe ou ainda não foi publicado.'
+      description: 'O documento solicitado não existe ou ainda não foi publicado.',
     });
   }
 

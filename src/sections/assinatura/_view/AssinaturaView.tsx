@@ -25,7 +25,10 @@ export function AssinaturaView({ documentId }: Props) {
   return (
     <Container maxWidth="lg">
       <Stack spacing={3} sx={{ mb: 5 }}>
-        <Typography variant="h4" sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}>
+        <Typography
+          variant="h4"
+          sx={{ fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif' }}
+        >
           Assinatura Biométrica Web3
         </Typography>
         <Typography sx={{ color: 'text.secondary' }}>
@@ -45,28 +48,45 @@ export function AssinaturaView({ documentId }: Props) {
         {/* Lado Esquerdo: O Documento */}
         <CyberCard sx={{ p: 4, display: 'flex', flexDirection: 'column', gap: 3 }}>
           <Stack direction="row" alignItems="center" spacing={2}>
-            <Iconify icon={"solar:document-text-bold-duotone" as any} width={32} sx={{ color: 'info.main' }} />
-            <Typography variant="h6" sx={{ color: 'common.white' }}>Termos Legais</Typography>
+            <Iconify
+              icon={'solar:document-text-bold-duotone' as any}
+              width={32}
+              sx={{ color: 'info.main' }}
+            />
+            <Typography variant="h6" sx={{ color: 'common.white' }}>
+              Termos Legais
+            </Typography>
           </Stack>
-          
-          <Box sx={{ flexGrow: 1, p: 3, bgcolor: alpha(theme.palette.grey[900], 0.5), borderRadius: 1, border: `1px solid ${alpha(theme.palette.grey[800], 0.8)}` }}>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              p: 3,
+              bgcolor: alpha(theme.palette.grey[900], 0.5),
+              borderRadius: 1,
+              border: `1px solid ${alpha(theme.palette.grey[800], 0.8)}`,
+            }}
+          >
             <Typography variant="body2" sx={{ color: 'text.secondary', whiteSpace: 'pre-wrap' }}>
-              Pelo presente instrumento, declaro estar ciente de todos os riscos e obrigações envolvidos no evento Final Fight Combat...
+              Pelo presente instrumento, declaro estar ciente de todos os riscos e obrigações
+              envolvidos no evento Final Fight Combat...
               {'\n\n'}
               [TEXTO DO DOCUMENTO OU VISUALIZADOR PDF EMBARCADO AQUI]
               {'\n\n'}
-              Ao prosseguir com o escaneamento facial, concordo que minha assinatura biométrica seja registrada em blockchain via IPFS, possuindo total validade jurídica e irrevogabilidade sobre o aceite destes termos.
+              Ao prosseguir com o escaneamento facial, concordo que minha assinatura biométrica seja
+              registrada em blockchain via IPFS, possuindo total validade jurídica e
+              irrevogabilidade sobre o aceite destes termos.
             </Typography>
           </Box>
         </CyberCard>
 
         {/* Lado Direito: Scanner Biométrico */}
-        <CyberCard 
-          sx={{ 
-            p: 4, 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
+        <CyberCard
+          sx={{
+            p: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             justifyContent: 'center',
             borderColor: alpha(theme.palette.info.main, 0.4),
             boxShadow: `0 0 40px ${alpha(theme.palette.info.main, 0.1)}`,
@@ -98,11 +118,15 @@ export function AssinaturaView({ documentId }: Props) {
                 '0%': { transform: 'scale(0.95)', opacity: 0.5 },
                 '50%': { transform: 'scale(1.05)', opacity: 0.8 },
                 '100%': { transform: 'scale(0.95)', opacity: 0.5 },
-              }
+              },
             }}
           >
-            <Iconify icon={"solar:user-scan-bold-duotone" as any} width={100} sx={{ color: 'info.main', zIndex: 1 }} />
-            
+            <Iconify
+              icon={'solar:user-scan-bold-duotone' as any}
+              width={100}
+              sx={{ color: 'info.main', zIndex: 1 }}
+            />
+
             {/* Scanning Line Animation */}
             <Box
               sx={{
@@ -118,24 +142,26 @@ export function AssinaturaView({ documentId }: Props) {
                 '@keyframes scan': {
                   '0%': { top: '10%' },
                   '100%': { top: '90%' },
-                }
+                },
               }}
             />
           </Box>
 
           <CyberButton
             glowColor="info"
-            endIcon={<Iconify icon={"solar:camera-bold" as any} />}
+            endIcon={<Iconify icon={'solar:camera-bold' as any} />}
             fullWidth
             sx={{ height: 56, fontSize: 16 }}
-            onClick={() => alert('Simulação: Iniciando câmera para captura facial e geração do hash IPFS...')}
+            onClick={() =>
+              alert('Simulação: Iniciando câmera para captura facial e geração do hash IPFS...')
+            }
           >
             INICIAR ASSINATURA FACIAL
           </CyberButton>
 
           <Typography variant="caption" sx={{ mt: 3, color: 'text.disabled', textAlign: 'center' }}>
-            Seu rosto será comparado com a base de dados do seu perfil. <br />
-            O registro será imutável e armazenado na rede descentralizada.
+            Seu rosto será comparado com a base de dados do seu perfil. <br />O registro será
+            imutável e armazenado na rede descentralizada.
           </Typography>
         </CyberCard>
       </Box>

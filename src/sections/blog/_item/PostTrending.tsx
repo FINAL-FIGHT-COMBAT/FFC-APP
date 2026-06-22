@@ -99,7 +99,7 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
   });
 
   // Ordenar posts por visualizações para simular o "Trending" e pegar os top 7
-  const viewPosts = postsFromProps?.length 
+  const viewPosts = postsFromProps?.length
     ? [...postsFromProps].sort((a, b) => (b.totalViews || 0) - (a.totalViews || 0)).slice(0, 7)
     : [];
 
@@ -166,7 +166,10 @@ export function PostTrending({ posts: postsFromProps }: { posts: IPostItem[] }) 
           <Grid key={`${post.id}-${index}-rest`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <m.div variants={varFade('inUp')}>
               <CyberCard>
-                <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
+                <PostCard
+                  post={post as any}
+                  detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))}
+                />
               </CyberCard>
             </m.div>
           </Grid>

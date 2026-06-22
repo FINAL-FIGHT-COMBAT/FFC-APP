@@ -21,7 +21,11 @@ export function PlanoMedicoView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Plano_Medico_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <PlanoMedicoContent />
           </A4Page>
         </PdfViewerLayout>

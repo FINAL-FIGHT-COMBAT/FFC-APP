@@ -21,7 +21,11 @@ export function ImprensaView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Manual_Imprensa_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <ImprensaContent />
           </A4Page>
         </PdfViewerLayout>

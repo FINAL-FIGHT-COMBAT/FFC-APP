@@ -25,8 +25,6 @@ const orbitron = Orbitron({
   display: 'swap',
 });
 
-
-
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
@@ -136,7 +134,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'FFC | Final Fight Combat',
-    description: 'Participe do Final Fight Combat (FFC), o circuito de artes marciais que valoriza atletas através de premiações, superlutas e oportunidades de crescimento profissional.',
+    description:
+      'Participe do Final Fight Combat (FFC), o circuito de artes marciais que valoriza atletas através de premiações, superlutas e oportunidades de crescimento profissional.',
     images: ['/opengraph-ffc.jpg'],
   },
   alternates: {
@@ -236,8 +235,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </SettingsProvider>
           </Web3Provider>
         </I18nProvider>
-
-
       </body>
     </html>
   );

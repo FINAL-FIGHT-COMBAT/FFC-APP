@@ -11,7 +11,7 @@ type DataTagProps = {
 export function DataTag({ text = 'PREENCHIMENTO AUTOMÁTICO', field }: DataTagProps) {
   const theme = useTheme();
   const contextData = useDocumentData();
-  
+
   const lookupField = field || text;
   const contextValue = contextData ? contextData[lookupField] : undefined;
 

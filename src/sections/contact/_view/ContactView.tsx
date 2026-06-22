@@ -21,16 +21,27 @@ export function ContactView() {
       <Box component="main" sx={{ position: 'relative', zIndex: 1, py: 10 }}>
         <Container>
           <Box sx={{ textAlign: 'center', mb: 8 }}>
-            <Typography variant="h1" sx={{ mb: 2 }}>Entre em Contato</Typography>
+            <Typography variant="h1" sx={{ mb: 2 }}>
+              Entre em Contato
+            </Typography>
             <Typography variant="h5" sx={{ color: 'text.secondary' }}>
-              Estamos prontos para ouvir suas propostas e tirar suas dúvidas sobre o ecossistema FFC.
+              Estamos prontos para ouvir suas propostas e tirar suas dúvidas sobre o ecossistema
+              FFC.
             </Typography>
           </Box>
 
           <Grid container spacing={5}>
             {/* CONTACT FORM */}
             <Grid size={{ xs: 12, md: 7 }}>
-              <Box sx={{ p: 4, borderRadius: 3, bgcolor: (theme) => alpha(theme.palette.grey[900], 0.4), backdropFilter: 'blur(10px)', border: (theme) => `1px solid ${alpha(theme.palette.divider, 0.1)}` }}>
+              <Box
+                sx={{
+                  p: 4,
+                  borderRadius: 3,
+                  bgcolor: (theme) => alpha(theme.palette.grey[900], 0.4),
+                  backdropFilter: 'blur(10px)',
+                  border: (theme) => `1px solid ${alpha(theme.palette.divider, 0.1)}`,
+                }}
+              >
                 <Stack spacing={3}>
                   <Grid container spacing={2}>
                     <Grid size={{ xs: 12, sm: 6 }}>
@@ -53,20 +64,27 @@ export function ContactView() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Stack spacing={4}>
                 <Box>
-                  <Typography variant="h4" sx={{ mb: 1 }}>Sede FFC</Typography>
+                  <Typography variant="h4" sx={{ mb: 1 }}>
+                    Sede FFC
+                  </Typography>
                   <Typography variant="body1" color="text.secondary">
-                    São Paulo - SP, Brasil<br />
+                    São Paulo - SP, Brasil
+                    <br />
                     Suporte administrativo e institucional.
                   </Typography>
                 </Box>
                 <Box>
-                  <Typography variant="h4" sx={{ mb: 1 }}>E-mail Institucional</Typography>
+                  <Typography variant="h4" sx={{ mb: 1 }}>
+                    E-mail Institucional
+                  </Typography>
                   <Typography variant="body1" color="text.secondary">
                     contato@finalfightcombat.com.br
                   </Typography>
                 </Box>
                 <Box>
-                  <Typography variant="h4" sx={{ mb: 1 }}>Comunidade On-Chain</Typography>
+                  <Typography variant="h4" sx={{ mb: 1 }}>
+                    Comunidade On-Chain
+                  </Typography>
                   <Typography variant="body1" color="text.secondary">
                     Participe das discussões técnicas em nosso Discord e Telegram oficiais.
                   </Typography>

@@ -21,7 +21,11 @@ export function ArbitragemLegalView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Convencao_Arbitragem_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <ArbitragemLegalContent />
           </A4Page>
         </PdfViewerLayout>

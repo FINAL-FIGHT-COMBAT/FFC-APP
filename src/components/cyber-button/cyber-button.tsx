@@ -16,14 +16,20 @@ export function CyberButton({ glowColor = 'info', sx, children, ...other }: Cybe
   const theme = useTheme();
 
   // Resolve the main color from theme palette or custom hex
-  const mainColor = 
-    glowColor === 'primary' ? theme.palette.primary.main :
-    glowColor === 'secondary' ? theme.palette.secondary.main :
-    glowColor === 'info' ? theme.palette.info.main :
-    glowColor === 'success' ? theme.palette.success.main :
-    glowColor === 'warning' ? theme.palette.warning.main :
-    glowColor === 'error' ? theme.palette.error.main :
-    glowColor;
+  const mainColor =
+    glowColor === 'primary'
+      ? theme.palette.primary.main
+      : glowColor === 'secondary'
+        ? theme.palette.secondary.main
+        : glowColor === 'info'
+          ? theme.palette.info.main
+          : glowColor === 'success'
+            ? theme.palette.success.main
+            : glowColor === 'warning'
+              ? theme.palette.warning.main
+              : glowColor === 'error'
+                ? theme.palette.error.main
+                : glowColor;
 
   return (
     <Button

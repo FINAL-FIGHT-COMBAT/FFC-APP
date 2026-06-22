@@ -1,4 +1,3 @@
-
 import { env } from 'src/lib/env';
 
 import packageJson from '../package.json';

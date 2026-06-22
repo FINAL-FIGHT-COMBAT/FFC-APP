@@ -11,7 +11,11 @@ type DefaultFooterProps = {
   qrCodeIcon?: string;
 };
 
-export function DefaultFooter({ authCode, message, qrCodeIcon = 'mdi:qrcode' }: DefaultFooterProps = {}) {
+export function DefaultFooter({
+  authCode,
+  message,
+  qrCodeIcon = 'mdi:qrcode',
+}: DefaultFooterProps = {}) {
   const data = useDocumentData();
 
   const finalAuthCode = authCode || (data?.authCode as string) || 'FFC-2026-X8Y9Z';
@@ -58,9 +62,17 @@ export function DefaultFooter({ authCode, message, qrCodeIcon = 'mdi:qrcode' }: 
         <Iconify icon={qrCodeIcon as any} width={70} sx={{ color: '#0A3B18' }} />
       </Box>
       <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', flex: 1 }}>
-
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography variant="caption" sx={{ fontWeight: '900', color: '#0A3B18', fontSize: '8pt', mb: 0.5, textTransform: 'uppercase' }}>
+          <Typography
+            variant="caption"
+            sx={{
+              fontWeight: '900',
+              color: '#0A3B18',
+              fontSize: '8pt',
+              mb: 0.5,
+              textTransform: 'uppercase',
+            }}
+          >
             AUTENTICAÇÃO DIGITAL
           </Typography>
           <Typography variant="caption" sx={{ color: '#637381', fontSize: '7pt', lineHeight: 1.2 }}>
@@ -69,11 +81,24 @@ export function DefaultFooter({ authCode, message, qrCodeIcon = 'mdi:qrcode' }: 
         </Box>
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center' }}>
-        <Typography variant="caption" sx={{ fontWeight: '900', color: '#D4AF37', fontSize: '8pt', mb: 0.5 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{ fontWeight: '900', color: '#D4AF37', fontSize: '8pt', mb: 0.5 }}
+        >
           FFC Oficial
         </Typography>
-        <Typography variant="caption" sx={{ color: '#0A3B18', fontSize: '7pt', fontFamily: 'monospace', fontWeight: 'bold' }}>
+        <Typography
+          variant="caption"
+          sx={{ color: '#0A3B18', fontSize: '7pt', fontFamily: 'monospace', fontWeight: 'bold' }}
+        >
           Autenticação: {finalAuthCode}
         </Typography>
       </Box>

@@ -107,10 +107,30 @@ export function PostDetailsHero({
             sx={{ position: 'absolute', bottom: { xs: 32, md: 64 }, right: { xs: 16, md: 24 } }}
           >
             {[
-              { label: 'Facebook', value: 'facebook', icon: 'socials:facebook', path: CONFIG.socials.facebook },
-              { label: 'Instagram', value: 'instagram', icon: 'socials:instagram', path: CONFIG.socials.instagram },
-              { label: 'Linkedin', value: 'linkedin', icon: 'socials:linkedin', path: CONFIG.socials.linkedin },
-              { label: 'Twitter', value: 'twitter', icon: 'socials:twitter', path: CONFIG.socials.twitter },
+              {
+                label: 'Facebook',
+                value: 'facebook',
+                icon: 'socials:facebook',
+                path: CONFIG.socials.facebook,
+              },
+              {
+                label: 'Instagram',
+                value: 'instagram',
+                icon: 'socials:instagram',
+                path: CONFIG.socials.instagram,
+              },
+              {
+                label: 'Linkedin',
+                value: 'linkedin',
+                icon: 'socials:linkedin',
+                path: CONFIG.socials.linkedin,
+              },
+              {
+                label: 'Twitter',
+                value: 'twitter',
+                icon: 'socials:twitter',
+                path: CONFIG.socials.twitter,
+              },
             ].map((social) => (
               <SpeedDialAction
                 key={social.label}

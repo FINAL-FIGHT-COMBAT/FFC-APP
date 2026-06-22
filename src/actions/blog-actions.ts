@@ -13,7 +13,12 @@ import { mapToCommentList } from './mappers/blog-mapper';
  * Hook para obter comentários de um Post específico usando React Query.
  */
 export function useGetPostComments(postId: string) {
-  const { data: comments = [], isLoading, error, isFetching } = useQuery({
+  const {
+    data: comments = [],
+    isLoading,
+    error,
+    isFetching,
+  } = useQuery({
     queryKey: ['post', postId, 'comments'],
     queryFn: async () => {
       if (!postId) return [];

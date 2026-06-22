@@ -21,7 +21,11 @@ export function GuiaAntidopingView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Guia_Antidoping_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <GuiaAntidopingContent />
           </A4Page>
         </PdfViewerLayout>

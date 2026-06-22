@@ -39,20 +39,9 @@ const CATEGORIES = [
   'Absoluto (Sem limite)',
 ];
 
-const BELTS = [
-  'Branca',
-  'Azul',
-  'Roxa',
-  'Marrom',
-  'Preta',
-  'Coral',
-  'Vermelha',
-];
+const BELTS = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta', 'Coral', 'Vermelha'];
 
-const INFLUENCERS = [
-  'N/A',
-  'FFC Oficial',
-];
+const INFLUENCERS = ['N/A', 'FFC Oficial'];
 
 // ----------------------------------------------------------------------
 // FUNÇÕES DE MÁSCARA (AUTO-FORMATAÇÃO)
@@ -103,9 +92,19 @@ const phoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
 const docRegex = /(^\d{3}\.\d{3}\.\d{3}-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$)/;
 
 const AtletaSchema = zod.object({
-  fullName: zod.string().trim().min(3, { message: 'Nome completo deve ter pelo menos 3 caracteres' }),
-  email: zod.string().trim().min(1, { message: 'E-mail é obrigatório' }).email({ message: 'E-mail inválido' }),
-  phone: zod.string().trim().regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
+  fullName: zod
+    .string()
+    .trim()
+    .min(3, { message: 'Nome completo deve ter pelo menos 3 caracteres' }),
+  email: zod
+    .string()
+    .trim()
+    .min(1, { message: 'E-mail é obrigatório' })
+    .email({ message: 'E-mail inválido' }),
+  phone: zod
+    .string()
+    .trim()
+    .regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
   document: zod.string().trim().regex(docRegex, { message: 'Digite um CPF ou CNPJ válido' }),
   category: zod.string().min(1, { message: 'Selecione uma categoria de peso' }),
   belt: zod.string().min(1, { message: 'Selecione a sua faixa/graduação' }),
@@ -121,8 +120,15 @@ type AtletaSchemaType = zod.infer<typeof AtletaSchema>;
 const AcademiaSchema = zod.object({
   academyName: zod.string().trim().min(2, { message: 'Nome da academia é obrigatório' }),
   headCoach: zod.string().trim().min(3, { message: 'Nome do professor é obrigatório' }),
-  email: zod.string().trim().min(1, { message: 'E-mail comercial é obrigatório' }).email({ message: 'E-mail inválido' }),
-  phone: zod.string().trim().regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
+  email: zod
+    .string()
+    .trim()
+    .min(1, { message: 'E-mail comercial é obrigatório' })
+    .email({ message: 'E-mail inválido' }),
+  phone: zod
+    .string()
+    .trim()
+    .regex(phoneRegex, { message: 'Formato inválido. Ex: (11) 99999-9999' }),
   document: zod.string().trim().regex(docRegex, { message: 'Digite um CPF ou CNPJ válido' }),
   coachBelt: zod.string().min(1, { message: 'Selecione a graduação do professor' }),
   acceptTerms: zod.literal(true, {
@@ -168,10 +174,26 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
 
   const methods = useForm<AtletaSchemaType>({
     resolver: zodResolver(AtletaSchema),
-    defaultValues: { fullName: '', email: '', phone: '', document: '', category: '', belt: '', team: '', acceptTerms: undefined as any, referralCode: '' },
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phone: '',
+      document: '',
+      category: '',
+      belt: '',
+      team: '',
+      acceptTerms: undefined as any,
+      referralCode: '',
+    },
   });
 
-  const { reset, handleSubmit, watch, setValue, formState: { isSubmitting } } = methods;
+  const {
+    reset,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { isSubmitting },
+  } = methods;
   const searchParams = useSearchParams();
 
   // Preenchimento Automático do Código de Indicação (Link de Afiliado)
@@ -234,13 +256,17 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
 
             <Field.Select name="category" label="Categoria de Peso" sx={inputStyle}>
               {CATEGORIES.map((cat) => (
-                <MenuItem key={cat} value={cat}>{cat}</MenuItem>
+                <MenuItem key={cat} value={cat}>
+                  {cat}
+                </MenuItem>
               ))}
             </Field.Select>
 
             <Field.Select name="belt" label="Faixa / Graduação" sx={inputStyle}>
               {BELTS.map((belt) => (
-                <MenuItem key={belt} value={belt}>{belt}</MenuItem>
+                <MenuItem key={belt} value={belt}>
+                  {belt}
+                </MenuItem>
               ))}
             </Field.Select>
             <Field.Text name="team" label="Nome da Equipe" sx={inputStyle} />
@@ -263,7 +289,14 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
               label={
                 <>
                   Li e aceito os{' '}
-                  <Link component={RouterLink} href={paths.terms} target="_blank" rel="noopener" color="warning.main" underline="always">
+                  <Link
+                    component={RouterLink}
+                    href={paths.terms}
+                    target="_blank"
+                    rel="noopener"
+                    color="warning.main"
+                    underline="always"
+                  >
                     Termos de Uso
                   </Link>{' '}
                   e o pagamento da taxa de ativação da conta.
@@ -271,7 +304,7 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
               }
               sx={{
                 color: 'grey.300',
-                '& .MuiTypography-root': { fontSize: '0.875rem' }
+                '& .MuiTypography-root': { fontSize: '0.875rem' },
               }}
             />
           </Box>
@@ -302,10 +335,25 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
 
   const methods = useForm<AcademiaSchemaType>({
     resolver: zodResolver(AcademiaSchema),
-    defaultValues: { academyName: '', headCoach: '', email: '', phone: '', document: '', coachBelt: '', acceptTerms: undefined as any, referralCode: '' },
+    defaultValues: {
+      academyName: '',
+      headCoach: '',
+      email: '',
+      phone: '',
+      document: '',
+      coachBelt: '',
+      acceptTerms: undefined as any,
+      referralCode: '',
+    },
   });
 
-  const { reset, handleSubmit, watch, setValue, formState: { isSubmitting } } = methods;
+  const {
+    reset,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { isSubmitting },
+  } = methods;
   const searchParams = useSearchParams();
 
   // Preenchimento Automático do Código de Indicação (Link de Afiliado)
@@ -366,7 +414,9 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
             <Field.Text name="headCoach" label="Nome do Professor" sx={inputStyle} />
             <Field.Select name="coachBelt" label="Graduação do Professor" sx={inputStyle}>
               {BELTS.map((belt) => (
-                <MenuItem key={belt} value={belt}>{belt}</MenuItem>
+                <MenuItem key={belt} value={belt}>
+                  {belt}
+                </MenuItem>
               ))}
             </Field.Select>
 
@@ -391,7 +441,14 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
               label={
                 <>
                   Li e aceito os{' '}
-                  <Link component={RouterLink} href={paths.terms} target="_blank" rel="noopener" color="info.main" underline="always">
+                  <Link
+                    component={RouterLink}
+                    href={paths.terms}
+                    target="_blank"
+                    rel="noopener"
+                    color="info.main"
+                    underline="always"
+                  >
                     Termos de Uso
                   </Link>{' '}
                   e o pagamento da taxa de registro da academia.
@@ -399,7 +456,7 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
               }
               sx={{
                 color: 'grey.300',
-                '& .MuiTypography-root': { fontSize: '0.875rem' }
+                '& .MuiTypography-root': { fontSize: '0.875rem' },
               }}
             />
           </Box>
@@ -445,22 +502,34 @@ export function InscricaoForm() {
   // TELA DE SUCESSO (PÓS-ENVIO)
   if (isSuccess) {
     return (
-      <CyberCard sx={{ p: { xs: 3, md: 5 }, textAlign: 'center', maxWidth: 800, mx: 'auto', width: '100%' }}>
+      <CyberCard
+        sx={{ p: { xs: 3, md: 5 }, textAlign: 'center', maxWidth: 800, mx: 'auto', width: '100%' }}
+      >
         <Iconify icon="solar:check-circle-bold" width={80} sx={{ color: 'success.main', mb: 3 }} />
 
-        <Typography variant="h3" sx={{ color: 'common.white', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', mb: 2 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: 'common.white',
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            mb: 2,
+          }}
+        >
           SOLICITAÇÃO RECEBIDA!
         </Typography>
 
         <Typography variant="body1" sx={{ color: 'grey.400', mb: 4, px: { xs: 0, md: 5 } }}>
-          Seu cadastro foi realizado com sucesso! Para garantir o seu acesso ao Aplicativo FFC, enviamos o seu comprovante de inscrição junto com o boleto de ativação da conta diretamente para o seu <strong>WhatsApp</strong> e E-mail.
-          <br /><br />
+          Seu cadastro foi realizado com sucesso! Para garantir o seu acesso ao Aplicativo FFC,
+          enviamos o seu comprovante de inscrição junto com o boleto de ativação da conta
+          diretamente para o seu <strong>WhatsApp</strong> e E-mail.
+          <br />
+          <br />
           Assim que o pagamento for confirmado, seu perfil será liberado!
         </Typography>
 
         <CyberButton
           glowColor="success"
-          onClick={() => window.location.href = '/'} // Redireciona para Home
+          onClick={() => (window.location.href = '/')} // Redireciona para Home
           sx={{ mt: 2, width: { xs: '100%', sm: 'auto' } }}
         >
           VOLTAR PARA A HOME
@@ -471,7 +540,6 @@ export function InscricaoForm() {
 
   return (
     <CyberCard sx={{ p: { xs: 3, md: 5 }, maxWidth: 800, mx: 'auto', width: '100%' }}>
-
       {/* CABEÇALHO */}
       <Typography
         variant="h4"
@@ -498,13 +566,14 @@ export function InscricaoForm() {
         variant="fullWidth"
         sx={{
           '& .MuiTabs-indicator': {
-            backgroundColor: currentTab === 0 ? theme.palette.warning.main : theme.palette.info.main,
+            backgroundColor:
+              currentTab === 0 ? theme.palette.warning.main : theme.palette.info.main,
             boxShadow: `0 0 10px ${alpha(currentTab === 0 ? theme.palette.warning.main : theme.palette.info.main, 0.5)}`,
           },
         }}
       >
         <Tab
-          icon={<Iconify icon={"solar:user-bold" as any} width={24} />}
+          icon={<Iconify icon={'solar:user-bold' as any} width={24} />}
           iconPosition="start"
           label="SOU ATLETA"
           sx={{
@@ -515,7 +584,7 @@ export function InscricaoForm() {
           }}
         />
         <Tab
-          icon={<Iconify icon={"solar:buildings-bold" as any} width={24} />}
+          icon={<Iconify icon={'solar:buildings-bold' as any} width={24} />}
           iconPosition="start"
           label="SOU ACADEMIA"
           sx={{
@@ -530,7 +599,6 @@ export function InscricaoForm() {
       {/* RENDERIZAÇÃO CONDICIONAL */}
       {currentTab === 0 && <FormularioAtleta onSuccess={() => setIsSuccess(true)} />}
       {currentTab === 1 && <FormularioAcademia onSuccess={() => setIsSuccess(true)} />}
-
     </CyberCard>
   );
 }

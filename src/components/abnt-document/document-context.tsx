@@ -8,10 +8,12 @@ export function useDocumentData() {
   return useContext(DocumentDataContext);
 }
 
-export function DocumentDataProvider({ data, children }: { data: DocumentDataContextValue; children: React.ReactNode }) {
-  return (
-    <DocumentDataContext.Provider value={data}>
-      {children}
-    </DocumentDataContext.Provider>
-  );
+export function DocumentDataProvider({
+  data,
+  children,
+}: {
+  data: DocumentDataContextValue;
+  children: React.ReactNode;
+}) {
+  return <DocumentDataContext.Provider value={data}>{children}</DocumentDataContext.Provider>;
 }

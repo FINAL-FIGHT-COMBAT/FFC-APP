@@ -25,7 +25,9 @@ export function LegalView({ title, content, lastUpdated }: Props) {
         }
       >
         <Box sx={{ mb: 4, textAlign: 'center' }}>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#000', mb: 2 }}>{title}</Typography>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#000', mb: 2 }}>
+            {title}
+          </Typography>
         </Box>
 
         <Box
@@ -33,7 +35,13 @@ export function LegalView({ title, content, lastUpdated }: Props) {
             color: '#000',
             fontFamily: '"Arial", "Helvetica", sans-serif',
             textAlign: 'justify',
-            '& h2': { fontSize: '1.2rem', fontWeight: 'bold', mt: 4, mb: 2, textTransform: 'uppercase' },
+            '& h2': {
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              mt: 4,
+              mb: 2,
+              textTransform: 'uppercase',
+            },
             '& p': { fontSize: '1rem', mb: 2, lineHeight: 1.5, textIndent: '1.25cm' },
             '& ul': { mb: 2, pl: '1.25cm' },
             '& li': { mb: 1, fontSize: '1rem', lineHeight: 1.5 },

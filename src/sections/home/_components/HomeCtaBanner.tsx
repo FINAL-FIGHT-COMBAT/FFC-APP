@@ -111,10 +111,7 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
           >
             {t('cta.event_date') || '20 DE DEZEMBRO'}
           </Box>
-          <Box
-            component="span"
-            sx={{ color: alpha('#fff', 0.2), fontSize: 12 }}
-          >
+          <Box component="span" sx={{ color: alpha('#fff', 0.2), fontSize: 12 }}>
             ·
           </Box>
           <Box

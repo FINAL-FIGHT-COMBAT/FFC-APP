@@ -29,8 +29,7 @@ export function Marquee({
         overflow: 'hidden',
         position: 'relative',
         maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
-        WebkitMaskImage:
-          'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
         py: 1.5,
         ...sx,
       }}

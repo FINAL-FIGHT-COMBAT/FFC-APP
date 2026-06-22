@@ -342,11 +342,17 @@ export default function HomeCountdownDialog({
                     }}
                   >
                     <Iconify
-                      icon={"solar:cup-star-bold-duotone" as any}
+                      icon={'solar:cup-star-bold-duotone' as any}
                       width={12}
                       sx={{ color: theme.palette.warning.main }}
                     />
-                    <Typography sx={{ fontSize: '0.7rem', fontWeight: 800, color: theme.palette.warning.main }}>
+                    <Typography
+                      sx={{
+                        fontSize: '0.7rem',
+                        fontWeight: 800,
+                        color: theme.palette.warning.main,
+                      }}
+                    >
                       PREMIAÇÃO
                     </Typography>
                   </Box>
@@ -360,7 +366,10 @@ export default function HomeCountdownDialog({
                   GARANTA SEU{' '}
                   <Box
                     component="span"
-                    sx={{ color: theme.palette.warning.main, textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.5)}` }}
+                    sx={{
+                      color: theme.palette.warning.main,
+                      textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.5)}`,
+                    }}
                   >
                     LUGAR
                   </Box>
@@ -377,7 +386,9 @@ export default function HomeCountdownDialog({
                     px: 1,
                   }}
                 >
-                  Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando rapidamente. Garanta seu <strong>assento no evento principal</strong> da <strong>FFC 10</strong> e prepare-se para a guerra.
+                  Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando
+                  rapidamente. Garanta seu <strong>assento no evento principal</strong> da{' '}
+                  <strong>FFC 10</strong> e prepare-se para a guerra.
                 </Typography>
 
                 <Stack direction="row" justifyContent="center" spacing={1.5} sx={{ mb: 4 }}>

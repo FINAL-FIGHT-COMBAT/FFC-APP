@@ -22,7 +22,9 @@ export function PolicyView({ title, subtitle, content }: Props) {
       <Box component="main" sx={{ position: 'relative', zIndex: 1, py: 12 }}>
         <Container maxWidth="md">
           <Box sx={{ mb: 10 }}>
-            <Typography variant="h1" sx={{ mb: 3 }}>{title}</Typography>
+            <Typography variant="h1" sx={{ mb: 3 }}>
+              {title}
+            </Typography>
             <Typography variant="h4" sx={{ color: 'primary.main', fontWeight: 400 }}>
               {subtitle}
             </Typography>
@@ -30,8 +32,20 @@ export function PolicyView({ title, subtitle, content }: Props) {
 
           <Box
             sx={{
-              '& h2': { variant: 'h3', mt: 8, mb: 3, borderLeft: (theme) => `4px solid ${theme.palette.primary.main}`, pl: 2 },
-              '& p': { variant: 'body1', mb: 3, color: 'text.secondary', fontSize: 18, lineHeight: 1.8 },
+              '& h2': {
+                variant: 'h3',
+                mt: 8,
+                mb: 3,
+                borderLeft: (theme) => `4px solid ${theme.palette.primary.main}`,
+                pl: 2,
+              },
+              '& p': {
+                variant: 'body1',
+                mb: 3,
+                color: 'text.secondary',
+                fontSize: 18,
+                lineHeight: 1.8,
+              },
               '& strong': { color: 'text.primary' },
             }}
             dangerouslySetInnerHTML={{ __html: content }}

@@ -1,4 +1,10 @@
-import { Clause, ABNTText, SectionTitle, DocumentTitle, DigitalSignature } from 'src/components/abnt-document';
+import {
+  Clause,
+  ABNTText,
+  SectionTitle,
+  DocumentTitle,
+  DigitalSignature,
+} from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +32,8 @@ export function TermoVoluntarioContent() {
         <strong>3.2.2.</strong> Uniforme exclusivo de Staff/Voluntário (camiseta identificadora);
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.2.3.</strong> Seguro de acidentes pessoais coletivo por período de atuação na arena.
+        <strong>3.2.3.</strong> Seguro de acidentes pessoais coletivo por período de atuação na
+        arena.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO IV: DA VINCULAÇÃO REGULAMENTAR E ADEQUAÇÃO TÉCNICA</SectionTitle>

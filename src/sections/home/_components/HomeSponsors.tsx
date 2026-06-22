@@ -52,15 +52,15 @@ export function HomeSponsors() {
             description="Empresas e marcas que fortalecem o esporte e tornam o Final Fight Combat o maior evento do Brasil."
             sx={{ mb: { xs: 6, md: 10 } }}
             slotProps={{
-              title: { 
-                sx: { 
-                  color: 'common.white', 
+              title: {
+                sx: {
+                  color: 'common.white',
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                  textTransform: 'uppercase'
-                } 
+                  textTransform: 'uppercase',
+                },
               },
               caption: { sx: { color: 'warning.main', fontWeight: 700, letterSpacing: 2 } },
-              description: { sx: { color: 'grey.400' } }
+              description: { sx: { color: 'grey.400' } },
             }}
           />
         </m.div>
@@ -143,7 +143,13 @@ export function HomeSponsors() {
                   >
                     <Typography
                       variant="caption"
-                      sx={{ color: 'warning.main', mb: 2, textTransform: 'uppercase', letterSpacing: 1, fontWeight: 700 }}
+                      sx={{
+                        color: 'warning.main',
+                        mb: 2,
+                        textTransform: 'uppercase',
+                        letterSpacing: 1,
+                        fontWeight: 700,
+                      }}
                     >
                       Cota {sponsor.tier}
                     </Typography>
@@ -172,10 +178,7 @@ export function HomeSponsors() {
 
         <Stack alignItems="center" sx={{ mt: 8 }}>
           <m.div variants={varFade('inUp')}>
-            <CyberButton
-              href="#contato"
-              glowColor="warning"
-            >
+            <CyberButton href="#contato" glowColor="warning">
               SEJA UM PATROCINADOR
             </CyberButton>
           </m.div>

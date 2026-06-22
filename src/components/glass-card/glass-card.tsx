@@ -11,9 +11,5 @@ import { GlassCardRoot } from './styles';
  * Centraliza a estética de Glassmorphism e bordas Neon para uso em todo o App.
  */
 export function GlassCard({ children, ...other }: GlassCardProps) {
-  return (
-    <GlassCardRoot {...other}>
-      {children}
-    </GlassCardRoot>
-  );
+  return <GlassCardRoot {...other}>{children}</GlassCardRoot>;
 }

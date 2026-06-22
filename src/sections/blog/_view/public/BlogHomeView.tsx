@@ -30,10 +30,10 @@ export function BlogHomeView({ posts, communities, videos }: Props) {
       spacing={0}
       sx={{
         pb: 10,
-        bgcolor: 'transparent', 
+        bgcolor: 'transparent',
         position: 'relative',
         zIndex: 1,
-        overflowX: 'hidden', 
+        overflowX: 'hidden',
       }}
     >
       <Container maxWidth="lg">

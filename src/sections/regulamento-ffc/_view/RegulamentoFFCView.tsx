@@ -19,7 +19,11 @@ export function RegulamentoFFCView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Regulamento_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <RegulamentoFFCContent />
           </A4Page>
         </PdfViewerLayout>

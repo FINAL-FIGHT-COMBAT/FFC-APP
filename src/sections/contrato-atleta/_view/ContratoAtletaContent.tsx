@@ -10,17 +10,25 @@ import {
 export function ContratoAtletaContent() {
   return (
     <>
-      <DocumentTitle>
-        INSTRUMENTO PARTICULAR DE CONTRATO
-      </DocumentTitle>
+      <DocumentTitle>INSTRUMENTO PARTICULAR DE CONTRATO</DocumentTitle>
       <DocumentTitle>
         PARTICIPAÇÃO DE ATLETA CONVIDADO, CESSÃO DE IMAGEM E OUTRAS AVENÇAS
       </DocumentTitle>
       <ABNTText>
-        Pelo presente instrumento particular, de um lado: <strong>ASPPIBRA – ASSOCIAÇÃO DOS PROPRIETÁRIOS E POSSUIDORES DE IMÓVEIS NO BRASIL</strong>, associação civil sem fins lucrativos, inscrita no CNPJ sob nº 26.325.396/0001-30, com sede em <DataTag text="ENDEREÇO DA SEDE" />, neste ato representada por seu <DataTag text="CARGO DO REPRESENTANTE" />, <DataTag text="NOME DO REPRESENTANTE" />, doravante denominada simplesmente <strong>ASPPIBRA</strong> ou <strong>ORGANIZADORA</strong>;
+        Pelo presente instrumento particular, de um lado:{' '}
+        <strong>ASPPIBRA – ASSOCIAÇÃO DOS PROPRIETÁRIOS E POSSUIDORES DE IMÓVEIS NO BRASIL</strong>,
+        associação civil sem fins lucrativos, inscrita no CNPJ sob nº 26.325.396/0001-30, com sede
+        em <DataTag text="ENDEREÇO DA SEDE" />, neste ato representada por seu{' '}
+        <DataTag text="CARGO DO REPRESENTANTE" />, <DataTag text="NOME DO REPRESENTANTE" />,
+        doravante denominada simplesmente <strong>ASPPIBRA</strong> ou <strong>ORGANIZADORA</strong>
+        ;
       </ABNTText>
       <ABNTText>
-        e, de outro lado: <strong>ATLETA CONVIDADO:</strong> <DataTag text="NOME COMPLETO" />, <DataTag text="NACIONALIDADE" />, <DataTag text="ESTADO CIVIL" />, <DataTag text="PROFISSÃO" />, portador do CPF nº <DataTag text="CPF" /> e RG nº <DataTag text="RG" />, residente e domiciliado em <DataTag text="ENDEREÇO COMPLETO" />, doravante denominado simplesmente <strong>ATLETA</strong>;
+        e, de outro lado: <strong>ATLETA CONVIDADO:</strong> <DataTag text="NOME COMPLETO" />,{' '}
+        <DataTag text="NACIONALIDADE" />, <DataTag text="ESTADO CIVIL" />,{' '}
+        <DataTag text="PROFISSÃO" />, portador do CPF nº <DataTag text="CPF" /> e RG nº{' '}
+        <DataTag text="RG" />, residente e domiciliado em <DataTag text="ENDEREÇO COMPLETO" />,
+        doravante denominado simplesmente <strong>ATLETA</strong>;
       </ABNTText>
       <ABNTText>
         celebram o presente contrato, mediante as cláusulas e condições seguintes.
@@ -34,30 +42,85 @@ export function ContratoAtletaContent() {
       <SectionTitle>CLÁUSULA 2ª – DA AUTORIZAÇÃO INTERNA E DA HIERARQUIA DOCUMENTAL</SectionTitle>
       <Clause text="2.1. A celebração deste contrato foi autorizada por deliberação interna da ASPPIBRA, conforme ata e/ou documento de aprovação arquivado em seus registros." />
       <Clause text="2.2. Integram este instrumento, para todos os fins:" />
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(i) o regulamento oficial do evento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(ii) a programação técnica;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(iii) a tabela de Bolsa de Luta e logística do atleta convidado;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(iv) a política de imagem;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(v) a política de privacidade e proteção de dados;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(vi) o termo de saúde e aptidão física; e</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>(vii) os demais anexos assinados ou aceitos pelo ATLETA.</ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (i) o regulamento oficial do evento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (ii) a programação técnica;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (iii) a tabela de Bolsa de Luta e logística do atleta convidado;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (iv) a política de imagem;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (v) a política de privacidade e proteção de dados;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (vi) o termo de saúde e aptidão física; e
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        (vii) os demais anexos assinados ou aceitos pelo ATLETA.
+      </ABNTText>
       <Clause text="2.3. Em caso de conflito entre este contrato, seus anexos e o regulamento oficial, prevalecerá a ordem de hierarquia definida no regulamento; na omissão, prevalecerá o texto mais específico e, subsidiariamente, a boa-fé, a finalidade do evento e a legislação aplicável." />
       <Clause text="2.4. Qualquer alteração de regra, valor, agenda, card, categoria, formato ou logística somente produzirá efeitos se formalizada por escrito, por anexo, comunicado oficial ou aceite eletrônico rastreável." />
       <SectionTitle>CLÁUSULA 3ª – DAS DEFINIÇÕES</SectionTitle>
       <Clause text="3.1. Para fins deste contrato, considera-se:" />
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>I – <strong>Evento:</strong> a competição, card, luta casada, apresentação, seletiva, exibição, festival ou ação promocional vinculada ao Projeto FFC;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>II – <strong>Atleta Convidado:</strong> o participante selecionado pela ORGANIZADORA por convite direto, com condições previamente estabelecidas por escrito;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>III – <strong>Card:</strong> a composição oficial dos confrontos, lutas, apresentações ou exibições do evento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IV – <strong>Luta Casada:</strong> confronto previamente ajustado entre dois atletas, com categoria, regras e condições definidas;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>V – <strong>Bolsa de Luta / Cachê de Participação:</strong> valor contratual pago ao ATLETA convidado pela presença, participação esportiva e obrigações promocionais previstas neste instrumento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VI – <strong>Ajuda Logística:</strong> valores, passagens, deslocamentos, hospedagem, alimentação ou outros apoios previstos neste contrato;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VII – <strong>Pesagem:</strong> procedimento oficial de aferição de peso e enquadramento de categoria;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VIII – <strong>Corner/Staff:</strong> treinador, auxiliar, assessor, médico, massagista, filmador, fotógrafo, acompanhante técnico ou pessoa credenciada para apoio ao ATLETA;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IX – <strong>Conteúdo:</strong> toda imagem, voz, nome, apelido, performance, entrevista, bastidor, registro audiovisual, fotografia, transmissão e peças de divulgação do evento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>X – <strong>Dados Pessoais:</strong> qualquer informação relacionada a pessoa natural identificada ou identificável;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>XI – <strong>Dados Sensíveis:</strong> dados pessoais de saúde, biometria, imagem e outras informações legalmente protegidas;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>XII – <strong>Regulamento Oficial:</strong> conjunto de regras, comunicados e anexos editados pela ORGANIZADORA para disciplinar o evento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>XIII – <strong>Documento Financeiro Específico do Evento:</strong> tabela ou instrumento apartado que trata das premiações gerais do evento, quando houver, sem integrar este contrato.</ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        I – <strong>Evento:</strong> a competição, card, luta casada, apresentação, seletiva,
+        exibição, festival ou ação promocional vinculada ao Projeto FFC;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        II – <strong>Atleta Convidado:</strong> o participante selecionado pela ORGANIZADORA por
+        convite direto, com condições previamente estabelecidas por escrito;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        III – <strong>Card:</strong> a composição oficial dos confrontos, lutas, apresentações ou
+        exibições do evento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        IV – <strong>Luta Casada:</strong> confronto previamente ajustado entre dois atletas, com
+        categoria, regras e condições definidas;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        V – <strong>Bolsa de Luta / Cachê de Participação:</strong> valor contratual pago ao ATLETA
+        convidado pela presença, participação esportiva e obrigações promocionais previstas neste
+        instrumento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VI – <strong>Ajuda Logística:</strong> valores, passagens, deslocamentos, hospedagem,
+        alimentação ou outros apoios previstos neste contrato;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VII – <strong>Pesagem:</strong> procedimento oficial de aferição de peso e enquadramento de
+        categoria;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VIII – <strong>Corner/Staff:</strong> treinador, auxiliar, assessor, médico, massagista,
+        filmador, fotógrafo, acompanhante técnico ou pessoa credenciada para apoio ao ATLETA;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        IX – <strong>Conteúdo:</strong> toda imagem, voz, nome, apelido, performance, entrevista,
+        bastidor, registro audiovisual, fotografia, transmissão e peças de divulgação do evento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        X – <strong>Dados Pessoais:</strong> qualquer informação relacionada a pessoa natural
+        identificada ou identificável;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        XI – <strong>Dados Sensíveis:</strong> dados pessoais de saúde, biometria, imagem e outras
+        informações legalmente protegidas;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        XII – <strong>Regulamento Oficial:</strong> conjunto de regras, comunicados e anexos
+        editados pela ORGANIZADORA para disciplinar o evento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        XIII – <strong>Documento Financeiro Específico do Evento:</strong> tabela ou instrumento
+        apartado que trata das premiações gerais do evento, quando houver, sem integrar este
+        contrato.
+      </ABNTText>
       <SectionTitle>CLÁUSULA 4ª – DO OBJETO</SectionTitle>
       <Clause text="4.1. O presente contrato tem por objeto a participação do ATLETA, na qualidade de atleta convidado, em evento e/ou ação vinculada ao Projeto FFC, incluindo, conforme o caso: combate, apresentação, card principal, luta casada, participação promocional, pesagem, coletiva, gravações, entrevistas, captações audiovisuais, uso de imagem e demais obrigações previstas neste instrumento." />
       <Clause text="4.2. A condição de atleta convidado decorre de convite direto da ORGANIZADORA e não gera, por si só, direito adquirido a luta específica, adversário determinado, horário imutável, posição fixa no card, pagamento adicional não previsto, premiação automática ou vantagem não expressamente confirmada por escrito." />
@@ -66,7 +129,9 @@ export function ContratoAtletaContent() {
       <SectionTitle>CLÁUSULA 5ª – DO PRAZO E DA VIGÊNCIA</SectionTitle>
       <Clause text="5.1. Este contrato entra em vigor na data de sua assinatura e permanecerá válido até o cumprimento integral das obrigações principais e acessórias assumidas pelas partes." />
       <Clause text="5.2. As cláusulas sobre imagem, confidencialidade, proteção de dados, responsabilidade civil, penalidades, rescisão, uso de conteúdo, logística e solução de controvérsias permanecerão vigentes mesmo após o término do evento, pelo prazo nelas previsto ou, na omissão, pelo prazo necessário à sua finalidade." />
-      <SectionTitle>CLÁUSULA 6ª – DA NATUREZA DA PARTICIPAÇÃO E DA AUSÊNCIA DE VÍNCULO EMPREGATÍCIO</SectionTitle>
+      <SectionTitle>
+        CLÁUSULA 6ª – DA NATUREZA DA PARTICIPAÇÃO E DA AUSÊNCIA DE VÍNCULO EMPREGATÍCIO
+      </SectionTitle>
       <Clause text="6.1. As partes reconhecem que a presente relação possui natureza civil-desportiva, eventual e específica, não gerando vínculo empregatício, societário, associativo permanente ou relação de consumo, salvo se a legislação ou a realidade fática impuserem entendimento diverso." />
       <Clause text="6.2. A participação do ATLETA restringe-se ao objeto deste contrato e não caracteriza exclusividade ampla, salvo se houver cláusula específica em anexo relativo a patrocinadores, mídia ou marca do evento." />
       <Clause text="6.3. Eventual prestação de serviços acessórios, quando existente, deverá constar expressamente em instrumento próprio, sem se presumir a partir deste contrato." />
@@ -106,29 +171,67 @@ export function ContratoAtletaContent() {
       <Clause text="12.4. A ORGANIZADORA poderá recusar a participação caso haja suspeita fundada de manipulação, risco à saúde, inconsistência documental ou descumprimento de prazo obrigatório." />
       <SectionTitle>CLÁUSULA 13ª – DAS OBRIGAÇÕES DO ATLETA</SectionTitle>
       <Clause text="13.1. São obrigações do ATLETA:" />
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>I – comparecer pontualmente às atividades oficiais;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>II – manter conduta respeitosa com organização, arbitragem, adversário, público, imprensa e demais participantes;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>III – observar as regras técnicas e disciplinares;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IV – zelar por seus documentos, equipamentos e pertences;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>V – comunicar imediatamente qualquer impedimento relevante;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VI – cumprir a agenda promocional assumida;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VII – responder pelos atos de seu corner, staff e acompanhantes credenciados;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VIII – preservar a imagem institucional do evento e da ASPPIBRA;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IX – manter contato atualizado para comunicações oficiais;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>X – cumprir as determinações do regulamento e dos responsáveis técnicos.</ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        I – comparecer pontualmente às atividades oficiais;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        II – manter conduta respeitosa com organização, arbitragem, adversário, público, imprensa e
+        demais participantes;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        III – observar as regras técnicas e disciplinares;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        IV – zelar por seus documentos, equipamentos e pertences;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        V – comunicar imediatamente qualquer impedimento relevante;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VI – cumprir a agenda promocional assumida;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VII – responder pelos atos de seu corner, staff e acompanhantes credenciados;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VIII – preservar a imagem institucional do evento e da ASPPIBRA;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        IX – manter contato atualizado para comunicações oficiais;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        X – cumprir as determinações do regulamento e dos responsáveis técnicos.
+      </ABNTText>
       <Clause text="13.2. O ATLETA deverá adotar postura compatível com a ética esportiva, sendo vedadas condutas agressivas fora do contexto do combate, insultos, ameaças, hostilidade ou qualquer comportamento que comprometa a segurança do evento." />
       <Clause text="13.3. O ATLETA deverá informar à ORGANIZADORA, com antecedência razoável, qualquer patrocínio, vínculo comercial ou conflito de marca que possa interferir em uniforme, mídia ou divulgação." />
       <Clause text="13.4. O ATLETA não poderá assumir compromissos com terceiros que inviabilizem o cumprimento deste contrato sem prévia anuência escrita da ORGANIZADORA." />
       <SectionTitle>CLÁUSULA 14ª – DAS OBRIGAÇÕES DA ORGANIZADORA</SectionTitle>
       <Clause text="14.1. São obrigações da ORGANIZADORA, dentro dos limites deste contrato e do regulamento oficial:" />
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>I – fornecer as informações essenciais do evento;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>II – indicar horário, local e condições da participação;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>III – comunicar mudanças relevantes por canal oficial;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>IV – adotar medidas razoáveis de segurança e integridade;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>V – manter a segregação contábil dos valores do projeto, quando aplicável;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VI – realizar os pagamentos contratualmente devidos, quando devidos;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VII – preservar os dados pessoais do ATLETA nos termos da legislação aplicável;</ABNTText>
-      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>VIII – manter canais oficiais para dúvidas, comunicações e exercício de direitos do participante.</ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        I – fornecer as informações essenciais do evento;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        II – indicar horário, local e condições da participação;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        III – comunicar mudanças relevantes por canal oficial;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        IV – adotar medidas razoáveis de segurança e integridade;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        V – manter a segregação contábil dos valores do projeto, quando aplicável;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VI – realizar os pagamentos contratualmente devidos, quando devidos;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VII – preservar os dados pessoais do ATLETA nos termos da legislação aplicável;
+      </ABNTText>
+      <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
+        VIII – manter canais oficiais para dúvidas, comunicações e exercício de direitos do
+        participante.
+      </ABNTText>
       <Clause text="14.2. A ORGANIZADORA poderá suspender, adiar ou alterar a programação por razões técnicas, de segurança, de autoridade pública, de mídia ou de força maior, sem que isso, por si só, caracterize inadimplemento." />
       <SectionTitle>CLÁUSULA 15ª – DA INTEGRIDADE ESPORTIVA E DA PROIBIÇÃO DE FRAUDE</SectionTitle>
       <Clause text="15.1. O ATLETA compromete-se a preservar a lisura e a integridade do evento, sendo vedadas práticas de fraude de peso, manipulação de resultado, combinação prévia indevida, conluio, simulação, uso indevido de substâncias ou métodos proibidos e qualquer conduta lesiva à ética esportiva." />
@@ -213,7 +316,9 @@ export function ContratoAtletaContent() {
       <Clause text="27.2. O ATLETA responderá por danos causados à estrutura, ao patrimônio, à imagem da ORGANIZADORA, a outros participantes ou a terceiros, quando decorrentes de sua conduta dolosa ou culposa." />
       <Clause text="27.3. A ORGANIZADORA responderá pelos danos que lhe forem juridicamente imputáveis, observados os limites legais." />
       <Clause text="27.4. A exclusão ou limitação de responsabilidade prevista neste contrato não se aplica a dolo, fraude, violação legal, descumprimento grave de deveres de segurança ou hipóteses em que a lei proíba a limitação." />
-      <SectionTitle>CLÁUSULA 28ª – DA SEGURANÇA DA INFORMAÇÃO E DAS COMUNICAÇÕES OFICIAIS</SectionTitle>
+      <SectionTitle>
+        CLÁUSULA 28ª – DA SEGURANÇA DA INFORMAÇÃO E DAS COMUNICAÇÕES OFICIAIS
+      </SectionTitle>
       <Clause text="28.1. As comunicações oficiais poderão ser realizadas por e-mail, aplicativo de mensagem, site, plataforma digital, portal do evento ou outro canal formalmente indicado pela ORGANIZADORA." />
       <Clause text="28.2. O ATLETA compromete-se a manter seus contatos atualizados e a verificar regularmente os canais oficiais." />
       <Clause text="28.3. A ORGANIZADORA não responderá por falhas decorrentes de mau uso de credenciais, perda de senha, aparelho comprometido, conexão instável do usuário ou informação incorreta prestada pelo ATLETA." />
@@ -241,7 +346,9 @@ export function ContratoAtletaContent() {
       <Clause text="34.1. A ORGANIZADORA manterá os valores vinculados ao Projeto FFC segregados contabilmente, quando aplicável, em centro de custo próprio ou mecanismo equivalente." />
       <Clause text="34.2. As receitas, despesas, pagamentos, reembolsos e retenções vinculados ao ATLETA convidado deverão poder ser conciliados internamente, na forma da governança do Projeto FFC." />
       <Clause text="34.3. A prestação de contas do projeto, quando exigível, observará os documentos, o regulamento e a legislação aplicável à entidade sem fins econômicos." />
-      <SectionTitle>CLÁUSULA 35ª – DA INTEGRIDADE INSTITUCIONAL E CONFLITO DE INTERESSES</SectionTitle>
+      <SectionTitle>
+        CLÁUSULA 35ª – DA INTEGRIDADE INSTITUCIONAL E CONFLITO DE INTERESSES
+      </SectionTitle>
       <Clause text="35.1. Qualquer conflito de interesse real ou potencial deverá ser comunicado à ORGANIZADORA tão logo identificado." />
       <Clause text="35.2. A pessoa envolvida em conflito de interesses deverá se abster de participar de deliberações sobre o tema, quando aplicável." />
       <Clause text="35.3. A ORGANIZADORA poderá adotar políticas internas de integridade, canal de denúncias e apuração de ocorrências, compatíveis com o porte do Projeto FFC." />
@@ -284,25 +391,57 @@ export function ContratoAtletaContent() {
       <Clause text="44.7. Este contrato é firmado em meio digital validado, para que produza seus jurídicos e legais efeitos." />
 
       <SectionTitle>ANEXOS INTEGRANTES</SectionTitle>
-      <ABNTText>
-        Integram este contrato, para todos os fins:
+      <ABNTText>Integram este contrato, para todos os fins:</ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo I</strong> – Convite formal e identificação do atleta convidado;
       </ABNTText>
-      <ABNTText indent={false}><strong>Anexo I</strong> – Convite formal e identificação do atleta convidado;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo II</strong> – Regulamento oficial do evento;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo III</strong> – Tabela de Bolsa de Luta, ajuda logística, transporte, hospedagem e alimentação;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo IV</strong> – Termo de saúde, aptidão física e declaração de risco;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo V</strong> – Termo de autorização de imagem, voz, nome e performance;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo VI</strong> – Termo de uso de comunicações e meios digitais;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo VII</strong> – Regras de pesagem, categoria e penalidades;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo VIII</strong> – Política de privacidade e proteção de dados;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo IX</strong> – Política de confidencialidade e integridade esportiva;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo X</strong> – Matriz de responsabilidades e plano logístico;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo XI</strong> – Termo específico de arbitragem, se adotado;</ABNTText>
-      <ABNTText indent={false}><strong>Anexo XII</strong> – Documento Financeiro Específico do Evento, se houver premiações gerais.</ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo II</strong> – Regulamento oficial do evento;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo III</strong> – Tabela de Bolsa de Luta, ajuda logística, transporte,
+        hospedagem e alimentação;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo IV</strong> – Termo de saúde, aptidão física e declaração de risco;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo V</strong> – Termo de autorização de imagem, voz, nome e performance;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo VI</strong> – Termo de uso de comunicações e meios digitais;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo VII</strong> – Regras de pesagem, categoria e penalidades;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo VIII</strong> – Política de privacidade e proteção de dados;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo IX</strong> – Política de confidencialidade e integridade esportiva;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo X</strong> – Matriz de responsabilidades e plano logístico;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo XI</strong> – Termo específico de arbitragem, se adotado;
+      </ABNTText>
+      <ABNTText indent={false}>
+        <strong>Anexo XII</strong> – Documento Financeiro Específico do Evento, se houver premiações
+        gerais.
+      </ABNTText>
 
       <SectionTitle>ASSINATURAS E VALIDAÇÃO DIGITAL</SectionTitle>
-      <DigitalSignature title="ASSINATURA DIGITAL - ASPPIBRA" name="Assinatura eletrônica do Representante Legal" color="success" />
-      <DigitalSignature title="ASSINATURA DIGITAL - ATLETA" name="Assinatura eletrônica autenticada via Plataforma FFC" color="info" />
+      <DigitalSignature
+        title="ASSINATURA DIGITAL - ASPPIBRA"
+        name="Assinatura eletrônica do Representante Legal"
+        color="success"
+      />
+      <DigitalSignature
+        title="ASSINATURA DIGITAL - ATLETA"
+        name="Assinatura eletrônica autenticada via Plataforma FFC"
+        color="info"
+      />
     </>
   );
 }

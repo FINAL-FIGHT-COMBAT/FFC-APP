@@ -20,7 +20,14 @@ export function mapToPostItem(apiData: any): IPostItem {
     // Lógica de Categoria com fallback
     category: apiData.category || 'Notícias',
 
-    status: (apiData.status || (typeof apiData.publish === 'boolean' ? (apiData.publish ? 'published' : 'draft') : apiData.publish)) || 'draft',
+    status:
+      apiData.status ||
+      (typeof apiData.publish === 'boolean'
+        ? apiData.publish
+          ? 'published'
+          : 'draft'
+        : apiData.publish) ||
+      'draft',
     createdAt: new Date(apiData.createdAt || apiData.published_at).toISOString(),
 
     // Estatísticas (Garante que sempre sejam números)
@@ -49,7 +56,9 @@ export function mapToPostItem(apiData: any): IPostItem {
           name: comment.name || comment.user?.name || 'Anônimo',
           message: comment.message || comment.content || '',
           avatarUrl: comment.avatarUrl || comment.user?.profile_image || '',
-          postedAt: new Date(comment.postedAt || comment.created_at || comment.createdAt).toISOString(),
+          postedAt: new Date(
+            comment.postedAt || comment.created_at || comment.createdAt
+          ).toISOString(),
           users: comment.users || [],
           replyComment: comment.replyComment || [],
         }))

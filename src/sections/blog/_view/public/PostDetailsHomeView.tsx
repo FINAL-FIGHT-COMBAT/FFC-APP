@@ -143,10 +143,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
         })}
       >
         <Container maxWidth="md">
-          <CustomBreadcrumbs
-            links={breadcrumbs}
-            sx={{ mb: 5, maxWidth: 720, mx: 'auto' }}
-          />
+          <CustomBreadcrumbs links={breadcrumbs} sx={{ mb: 5, maxWidth: 720, mx: 'auto' }} />
 
           <Stack sx={{ maxWidth: 720, mx: 'auto' }}>
             {/* Descrição / Resumo */}
@@ -317,18 +314,18 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
 
       {/* ZONA 3: POSTS RECENTES — Padronizado com o tema Space */}
       {!!recentPosts.length && (
-        <Box 
-          sx={{ 
-            py: 12, 
-            position: 'relative', 
+        <Box
+          sx={{
+            py: 12,
+            position: 'relative',
             zIndex: 1,
-            bgcolor: 'transparent' // 🟢 Libera o fundo Space
+            bgcolor: 'transparent', // 🟢 Libera o fundo Space
           }}
         >
           <Container maxWidth="lg">
-            <Typography 
-              variant="h3" 
-              sx={{ 
+            <Typography
+              variant="h3"
+              sx={{
                 mb: 6,
                 fontWeight: 900,
                 fontFamily: "'Orbitron', sans-serif",

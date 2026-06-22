@@ -25,7 +25,7 @@ export function BracketMatch({
   matchTitle,
   subtitle = 'GRAND PRIX ABSOLUTO',
   isFinal = false,
-  isSmall = false
+  isSmall = false,
 }: BracketMatchProps) {
   const theme = useTheme();
 
@@ -34,7 +34,11 @@ export function BracketMatch({
 
   const name1 = player1.name || 'A DEFINIR';
   const name2 = p2.name || 'A DEFINIR';
-  const displayTitle = matchTitle || (name1 === 'A DEFINIR' || name2 === 'A DEFINIR' ? 'AGUARDANDO OPONENTES' : `${name1} VS ${name2}`);
+  const displayTitle =
+    matchTitle ||
+    (name1 === 'A DEFINIR' || name2 === 'A DEFINIR'
+      ? 'AGUARDANDO OPONENTES'
+      : `${name1} VS ${name2}`);
 
   const cardWidth = isFinal ? 200 : isSmall ? 115 : 140;
   const cardHeight = isFinal ? 280 : isSmall ? 155 : 190;
@@ -63,7 +67,7 @@ export function BracketMatch({
             '&::before': {
               background: `linear-gradient(135deg, ${alpha(theme.palette.warning.main, 0.8)}, transparent 50%, ${alpha(theme.palette.info.main, 0.6)}) !important`,
               padding: '2px !important',
-            }
+            },
           },
         }}
       >

@@ -58,9 +58,11 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 9 }}>
-          
           {/* HEADER */}
-          <Stack spacing={2} sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}>
+          <Stack
+            spacing={2}
+            sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}
+          >
             <m.div variants={varFade('inUp')}>
               <Box
                 sx={{
@@ -100,13 +102,17 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
                   lineHeight: 1.1,
                 }}
               >
-                ACADEMIAS <Box component="span" sx={{ color: '#3B82F6' }}>PARCEIRAS</Box>
+                ACADEMIAS{' '}
+                <Box component="span" sx={{ color: '#3B82F6' }}>
+                  PARCEIRAS
+                </Box>
               </Typography>
             </m.div>
 
             <m.div variants={varFade('inUp')}>
               <Typography sx={{ color: alpha('#fff', 0.6), maxWidth: 600, mx: 'auto', mt: 2 }}>
-                O Final Fight Combat tem o orgulho de contar com o apoio das maiores e mais respeitadas equipes de Jiu-Jitsu do mundo. Juntos, fortalecemos o esporte.
+                O Final Fight Combat tem o orgulho de contar com o apoio das maiores e mais
+                respeitadas equipes de Jiu-Jitsu do mundo. Juntos, fortalecemos o esporte.
               </Typography>
             </m.div>
           </Stack>
@@ -128,7 +134,7 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
                       '&:hover': {
                         transform: 'translateY(-4px)',
                         boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
-                      }
+                      },
                     }}
                   >
                     <Box
@@ -141,17 +147,31 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
                         justifyContent: 'center',
                         bgcolor: alpha('#3B82F6', 0.1),
                         color: '#3B82F6',
-                        flexShrink: 0
+                        flexShrink: 0,
                       }}
                     >
                       <Iconify icon="solar:shield-check-bold" width={24} />
                     </Box>
                     <Box>
-                      <Typography sx={{ fontSize: '0.95rem', fontWeight: 800, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', textTransform: 'uppercase', lineHeight: 1.2, mb: 0.25 }}>
+                      <Typography
+                        sx={{
+                          fontSize: '0.95rem',
+                          fontWeight: 800,
+                          color: '#fff',
+                          fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                          textTransform: 'uppercase',
+                          lineHeight: 1.2,
+                          mb: 0.25,
+                        }}
+                      >
                         {academy.name}
                       </Typography>
                       <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <Iconify icon="solar:flag-bold" width={12} sx={{ color: alpha('#fff', 0.4) }} />
+                        <Iconify
+                          icon="solar:flag-bold"
+                          width={12}
+                          sx={{ color: alpha('#fff', 0.4) }}
+                        />
                         <Typography sx={{ fontSize: 11, color: alpha('#fff', 0.45) }}>
                           {academy.city}
                         </Typography>
@@ -176,7 +196,6 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
               </CyberButton>
             </Stack>
           </m.div>
-
         </Container>
       </MotionViewport>
     </Box>

@@ -6,7 +6,8 @@ import { LegalView } from 'src/sections/legal/_view';
 
 export const metadata = constructMetadata({
   title: 'Política de Cookies | FFC',
-  description: 'Entenda como o aplicativo FFC utiliza cookies, identificadores locais e SDKs para melhorar sua experiência.',
+  description:
+    'Entenda como o aplicativo FFC utiliza cookies, identificadores locais e SDKs para melhorar sua experiência.',
 });
 
 const CONTENT = `
@@ -37,5 +38,7 @@ const CONTENT = `
 `;
 
 export default function CookiesPage() {
-  return <LegalView title="Política de Cookies" content={CONTENT} lastUpdated="14 de Junho de 2026" />;
+  return (
+    <LegalView title="Política de Cookies" content={CONTENT} lastUpdated="14 de Junho de 2026" />
+  );
 }

@@ -48,51 +48,51 @@ export function PostRecent({ posts: postsFromProps }: Props) {
         overflow: 'hidden',
       }}
     >
-        <Grid container spacing={4}>
-          <Grid size={12}>
-            <m.div variants={varFade('inDown')}>
-              <Typography
-                variant="h3"
-                sx={{
-                  mb: 6,
-                  fontWeight: 900,
-                  fontFamily: "'Orbitron', sans-serif",
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                  color: 'common.white',
-                  textAlign: { xs: 'center', md: 'left' },
-                  // 🟢 EFEITO GLOW PADRONIZADO FFC
-                  textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
-                }}
-              >
-                Últimas do Octógono
-              </Typography>
-            </m.div>
-          </Grid>
-
-          {posts.slice(0, viewLimit).map((post) => (
-            <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <m.div variants={varFade('inUp')}>
-                <CyberCard>
-                  <PostCard post={post as any} detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))} />
-                </CyberCard>
-              </m.div>
-            </Grid>
-          ))}
+      <Grid container spacing={4}>
+        <Grid size={12}>
+          <m.div variants={varFade('inDown')}>
+            <Typography
+              variant="h3"
+              sx={{
+                mb: 6,
+                fontWeight: 900,
+                fontFamily: "'Orbitron', sans-serif",
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: 'common.white',
+                textAlign: { xs: 'center', md: 'left' },
+                // 🟢 EFEITO GLOW PADRONIZADO FFC
+                textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
+              }}
+            >
+              Últimas do Octógono
+            </Typography>
+          </m.div>
         </Grid>
 
-        {posts.length > viewLimit && (
-          <Stack sx={{ mt: 8, alignItems: 'center' }}>
+        {posts.slice(0, viewLimit).map((post) => (
+          <Grid key={post.id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
             <m.div variants={varFade('inUp')}>
-              <CyberButton
-                onClick={handleLoadMore}
-                glowColor="info"
-              >
-                Carregar mais notícias
-              </CyberButton>
+              <CyberCard>
+                <PostCard
+                  post={post as any}
+                  detailsHref={paths.post.details((post as any).slug || kebabCase(post.title))}
+                />
+              </CyberCard>
             </m.div>
-          </Stack>
-        )}
+          </Grid>
+        ))}
+      </Grid>
+
+      {posts.length > viewLimit && (
+        <Stack sx={{ mt: 8, alignItems: 'center' }}>
+          <m.div variants={varFade('inUp')}>
+            <CyberButton onClick={handleLoadMore} glowColor="info">
+              Carregar mais notícias
+            </CyberButton>
+          </m.div>
+        </Stack>
+      )}
     </Box>
   );
 }

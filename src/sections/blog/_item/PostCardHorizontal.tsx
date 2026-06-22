@@ -67,11 +67,11 @@ export function PostCardHorizontal({ sx, post, editHref, detailsHref, ...other }
         </MenuItem>
 
         <MenuItem
-            onClick={() => {
-                confirmDelete.onTrue();
-                menuActions.onClose();
-            }}
-            sx={{ color: 'error.main' }}
+          onClick={() => {
+            confirmDelete.onTrue();
+            menuActions.onClose();
+          }}
+          sx={{ color: 'error.main' }}
         >
           <Iconify icon="solar:trash-bin-trash-bold" />
           Excluir
@@ -114,7 +114,13 @@ export function PostCardHorizontal({ sx, post, editHref, detailsHref, ...other }
           >
             <Label
               variant="soft"
-              color={post.status === 'published' ? 'info' : post.status === 'review' ? 'warning' : 'default'}
+              color={
+                post.status === 'published'
+                  ? 'info'
+                  : post.status === 'review'
+                    ? 'warning'
+                    : 'default'
+              }
               sx={{
                 textTransform: 'uppercase',
                 fontFamily: "'Orbitron', sans-serif",

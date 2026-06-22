@@ -12,7 +12,9 @@ export function AptidaoFisicaContent() {
       <Clause text="1.1. GARANTIA DE INTEGRIDADE: Regulamentação do envio obrigatório de comprovações médicas que atestem a plena capacidade física e mental do atleta para competir em modalidades de combate de alto impacto." />
       <Clause text="1.2. ACESSO AO COMBATE: O envio e a aprovação destes documentos são pré-requisitos obrigatórios para a liberação do QRCode de pesagem e participação no card." />
 
-      <SectionTitle>2. DA LISTA DINÂMICA DE EXAMES EXIGIDOS (CLÁUSULA DE MUTABILIDADE)</SectionTitle>
+      <SectionTitle>
+        2. DA LISTA DINÂMICA DE EXAMES EXIGIDOS (CLÁUSULA DE MUTABILIDADE)
+      </SectionTitle>
       <Clause text="2.1. VARIAÇÃO POR ETAPA: O rol de exames médicos complementares e laboratoriais (ex: exames de sangue, sorologia, cardiológicos ou neurológicos) não é estático e poderá variar de acordo com as exigências da cidade-sede, da gravidade do card ou de novas imporções da legislação desportiva." />
       <Clause text="2.2. VINCULAÇÃO AO OUTLINE: A lista exata de exames obrigatórios para cada evento será publicada de forma autônoma no 'Outline/Edital Específico da Etapa' dentro do aplicativo FFC." />
       <Clause text="2.3. DIREITO DE ATUALIZAÇÃO: O FFC reserva-se o direito de alterar, expandir ou adicionar novos exames obrigatórios para as etapas subsequentes, competindo ao atleta e à sua academia consultarem periodicamente as atualizações médicas na plataforma antes de efetuarem novas inscrições." />

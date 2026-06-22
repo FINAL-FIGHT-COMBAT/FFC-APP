@@ -37,12 +37,12 @@ export function PostNewsletter() {
           overflow: 'hidden',
           textAlign: 'center',
           color: 'common.white',
-          
+
           // 🟢 GLASSMORPHISM ELITE (Mais imersivo)
           bgcolor: alpha('#020817', 0.45),
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
-          
+
           // 💎 BORDA DE CRISTAL REATIVA
           '&::before': {
             content: '""',
@@ -130,7 +130,7 @@ export function PostNewsletter() {
               }}
             >
               <Iconify
-                icon={"solar:letter-bold-duotone" as any}
+                icon={'solar:letter-bold-duotone' as any}
                 width={40}
                 sx={{ color: 'warning.main' }}
               />
@@ -150,26 +150,26 @@ export function PostNewsletter() {
                 background: `linear-gradient(135deg, ${theme.palette.common.white} 0%, ${alpha(theme.palette.warning.main, 0.8)} 100%)`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-              textShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.5)}`,
-            }}
-          >
-            Sempre no Octógono
-          </Typography>
+                textShadow: `0 0 40px ${alpha(theme.palette.warning.main, 0.5)}`,
+              }}
+            >
+              Sempre no Octógono
+            </Typography>
           </m.div>
 
           <m.div variants={varFade('inUp')}>
-            <Typography 
-              variant="body1" 
-              sx={{ 
-                opacity: 0.8, 
+            <Typography
+              variant="body1"
+              sx={{
+                opacity: 0.8,
                 color: 'grey.300',
                 fontSize: { xs: 15, md: 17 },
                 lineHeight: 1.6,
-              fontWeight: 500
-            }}
-          >
-            Receba resultados de lutas, entrevistas exclusivas e alertas de eventos no seu e-mail.
-          </Typography>
+                fontWeight: 500,
+              }}
+            >
+              Receba resultados de lutas, entrevistas exclusivas e alertas de eventos no seu e-mail.
+            </Typography>
           </m.div>
         </Stack>
 
@@ -202,9 +202,7 @@ export function PostNewsletter() {
           </m.div>
 
           <m.div variants={varFade('inRight')}>
-            <CyberButton glowColor="warning">
-              Subscrever
-            </CyberButton>
+            <CyberButton glowColor="warning">Subscrever</CyberButton>
           </m.div>
         </Stack>
 

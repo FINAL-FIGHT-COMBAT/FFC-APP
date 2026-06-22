@@ -14,13 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/dashboard/',
-          '/auth/',
-          '/_next/',
-          '/static/',
-        ],
+        disallow: ['/api/', '/dashboard/', '/auth/', '/_next/', '/static/'],
       },
       {
         /**

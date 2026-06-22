@@ -1,21 +1,16 @@
-import {
-  Clause,
-  ABNTText,
-  SectionTitle,
-  DocumentTitle,
-} from 'src/components/abnt-document';
+import { Clause, ABNTText, SectionTitle, DocumentTitle } from 'src/components/abnt-document';
 
 export function TabelaPremiacaoContent() {
   return (
     <>
-      <DocumentTitle>
-        TABELA OFICIAL DE PREMIAÇÃO E REGRAS DE PÓDIO
-      </DocumentTitle>
-      <DocumentTitle>
-        FINAL FIGHT COMBAT (FFC)
-      </DocumentTitle>
+      <DocumentTitle>TABELA OFICIAL DE PREMIAÇÃO E REGRAS DE PÓDIO</DocumentTitle>
+      <DocumentTitle>FINAL FIGHT COMBAT (FFC)</DocumentTitle>
       <ABNTText>
-        O presente documento normatiza os modelos de remuneração financeira, a distribuição de medalhas, a disputa de cinturões e os protocolos disciplinares do pódio para o ecossistema do Final Fight Combat. As diretrizes aqui estabelecidas baseiam-se nos preceitos de compliance esportivo e mérito técnico chancelados pelas grandes federações, garantindo previsibilidade legal e financeira aos atletas e agremiações filiadas.
+        O presente documento normatiza os modelos de remuneração financeira, a distribuição de
+        medalhas, a disputa de cinturões e os protocolos disciplinares do pódio para o ecossistema
+        do Final Fight Combat. As diretrizes aqui estabelecidas baseiam-se nos preceitos de
+        compliance esportivo e mérito técnico chancelados pelas grandes federações, garantindo
+        previsibilidade legal e financeira aos atletas e agremiações filiadas.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: MODELOS DE REMUNERAÇÃO E BOLSAS (PURSES)</SectionTitle>
@@ -24,10 +19,16 @@ export function TabelaPremiacaoContent() {
       <Clause text="1.3. CONTRATOS DE SELETIVAS (GRAND PRIX): Em formatos de chave eliminatória (Grand Prix ou Seletivas), a premiação assumirá caráter progressivo. O atleta acumulará repasses ou percentuais crescentes de bolsa ao avançar por cada fase aguda do torneio (oitavas, quartas, semifinais e final), conforme matriz de valores anexa ao edital da etapa." />
       <Clause text="1.4. RETENÇÕES E PENALIDADES FINANCEIRAS:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.4.1.</strong> A falha no protocolo de pesagem oficial acarretará dedução automática do percentual da Bolsa de Participação fixado no respectivo contrato individual. Na ausência de estipulação contratual específica, a penalidade padrão do FFC será de 30% (trinta por cento) de dedução da bolsa, sendo este montante integralmente repassado ao oponente adimplente na balança como compensação (Catchweight penalty).
+        <strong>1.4.1.</strong> A falha no protocolo de pesagem oficial acarretará dedução
+        automática do percentual da Bolsa de Participação fixado no respectivo contrato individual.
+        Na ausência de estipulação contratual específica, a penalidade padrão do FFC será de 30%
+        (trinta por cento) de dedução da bolsa, sendo este montante integralmente repassado ao
+        oponente adimplente na balança como compensação (Catchweight penalty).
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>1.4.2.</strong> O cometimento de conduta antidesportiva grave, injúria ou agressão determinará o bloqueio cautelar imediato de todos os pagamentos da bolsa do atleta e da equipe, revertendo o montante para o fundo disciplinar da organização.
+        <strong>1.4.2.</strong> O cometimento de conduta antidesportiva grave, injúria ou agressão
+        determinará o bloqueio cautelar imediato de todos os pagamentos da bolsa do atleta e da
+        equipe, revertendo o montante para o fundo disciplinar da organização.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO II: PREMIAÇÃO INDIVIDUAL (MEDALHAS E CINTURÕES)</SectionTitle>
@@ -35,10 +36,14 @@ export function TabelaPremiacaoContent() {
       <Clause text="2.2. DISPUTAS DE CINTURÃO OFICIAL FFC: O Cinturão Oficial é propriedade intelectual e patrimonial do FFC, cuja posse transitória é concedida ao campeão. O detentor obriga-se a defender o título conforme as janelas convocatórias da organização. A inatividade prolongada ou lesão do campeão legitimará a organização a criar disputas por Cinturões Interinos ou a declarar o título vago." />
       <Clause text="2.3. BÔNUS POR PERFORMANCE EXTRA (PRÊMIOS DA NOITE):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.3.1. Finalização da Noite (Submission of the Night):</strong> Bônus discricionário conferido pela Comissão de Arbitragem ao atleta que executar a técnica de submissão mais complexa, esteticamente perfeita ou rápida da etapa.
+        <strong>2.3.1. Finalização da Noite (Submission of the Night):</strong> Bônus discricionário
+        conferido pela Comissão de Arbitragem ao atleta que executar a técnica de submissão mais
+        complexa, esteticamente perfeita ou rápida da etapa.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.3.2. Luta da Noite (Fight of the Night):</strong> Bônus financeiro especial e extraordinário que será dividido igualitariamente entre ambos os atletas protagonistas do combate avaliado como o mais movimentado, dramático e tecnicamente engajador.
+        <strong>2.3.2. Luta da Noite (Fight of the Night):</strong> Bônus financeiro especial e
+        extraordinário que será dividido igualitariamente entre ambos os atletas protagonistas do
+        combate avaliado como o mais movimentado, dramático e tecnicamente engajador.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO III: RANKING E PREMIAÇÃO POR EQUIPES (ACADEMIAS)</SectionTitle>

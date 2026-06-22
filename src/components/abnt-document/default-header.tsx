@@ -8,9 +8,12 @@ type DefaultHeaderProps = {
   logoUrl?: string;
 };
 
-export function DefaultHeader({ title, logoUrl = '/logo/android-chrome-512x512.png' }: DefaultHeaderProps = {}) {
+export function DefaultHeader({
+  title,
+  logoUrl = '/logo/android-chrome-512x512.png',
+}: DefaultHeaderProps = {}) {
   const data = useDocumentData();
-  
+
   const displayTitle = title || (data?.documentTitle as string) || '';
 
   return (
@@ -35,11 +38,17 @@ export function DefaultHeader({ title, logoUrl = '/logo/android-chrome-512x512.p
           }}
         />
         <Box>
-          <Typography variant="body1" sx={{ fontWeight: 'bold', color: '#000', fontFamily: 'Arial, sans-serif' }}>
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: 'bold', color: '#000', fontFamily: 'Arial, sans-serif' }}
+          >
             FFC - FINAL FIGHT COMBAT
           </Typography>
           {displayTitle && (
-            <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', fontSize: '9pt', mt: 0.5 }}>
+            <Typography
+              variant="caption"
+              sx={{ color: 'text.secondary', display: 'block', fontSize: '9pt', mt: 0.5 }}
+            >
               {displayTitle}
             </Typography>
           )}

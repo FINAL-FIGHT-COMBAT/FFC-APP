@@ -3,7 +3,6 @@ import type { IconButtonProps } from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 
-
 // ----------------------------------------------------------------------
 
 export interface MenuButtonProps extends IconButtonProps {
@@ -12,7 +11,7 @@ export interface MenuButtonProps extends IconButtonProps {
 
 export function MenuButton({ open = false, sx, ...other }: MenuButtonProps) {
   return (
-    <IconButton 
+    <IconButton
       sx={[
         {
           width: 44,
@@ -23,13 +22,13 @@ export function MenuButton({ open = false, sx, ...other }: MenuButtonProps) {
           borderRadius: '12px',
           transition: 'all 0.3s ease',
           '&:hover': {
-            bgcolor: 'rgba(212, 175, 55, 0.08)', 
+            bgcolor: 'rgba(212, 175, 55, 0.08)',
             borderColor: 'rgba(212, 175, 55, 0.3)',
             boxShadow: '0 0 15px rgba(212, 175, 55, 0.15)',
           },
         },
         ...(Array.isArray(sx) ? sx : [sx]),
-      ]} 
+      ]}
       {...other}
     >
       <Box
@@ -46,7 +45,7 @@ export function MenuButton({ open = false, sx, ...other }: MenuButtonProps) {
             width: '24px',
             height: '2.5px',
             borderRadius: '40px',
-            bgcolor: '#FFFFFF', 
+            bgcolor: '#FFFFFF',
             transition: 'all 0.3s cubic-bezier(0.37, -1.11, 0.79, 2.02)',
             transformOrigin: 'center',
           },

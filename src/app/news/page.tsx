@@ -25,11 +25,5 @@ export default async function PostListPage() {
   // Garante que apenas dados puros sejam passados para os Client Components
   const posts = JSON.parse(JSON.stringify(rawPosts));
 
-  return (
-    <BlogHomeView 
-        posts={posts} 
-        communities={COMMUNITIES_MOCK} 
-        videos={VIDEOS_MOCK} 
-    />
-  );
+  return <BlogHomeView posts={posts} communities={COMMUNITIES_MOCK} videos={VIDEOS_MOCK} />;
 }

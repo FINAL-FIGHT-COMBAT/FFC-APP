@@ -116,9 +116,9 @@ export function Footer({
                 fontFamily: '"Public Sans", sans-serif',
               }}
             >
-              O <strong>FINAL FIGHT COMBAT (FFC)</strong> é o principal ecossistema de lutas
-              e governança esportiva digital, elevando a transparência, o profissionalismo
-              e a inovação no cenário nacional de artes marciais.
+              O <strong>FINAL FIGHT COMBAT (FFC)</strong> é o principal ecossistema de lutas e
+              governança esportiva digital, elevando a transparência, o profissionalismo e a
+              inovação no cenário nacional de artes marciais.
             </Typography>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>

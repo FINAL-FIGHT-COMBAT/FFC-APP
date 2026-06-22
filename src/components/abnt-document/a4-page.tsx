@@ -52,7 +52,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
             pr: '2cm', // ABNT Right margin
             width: '100%',
             minHeight: 'auto',
-          }
+          },
         }}
       >
         <Box
@@ -93,7 +93,7 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
               display: 'table-footer-group',
               '@media print': {
                 visibility: 'hidden',
-              }
+              },
             }}
           >
             <Box component="tr">
@@ -117,8 +117,8 @@ export function A4Page({ children, headerContent, footerContent, pageNumber }: A
               pl: '3cm',
               pr: '2cm',
               pb: '0.7cm',
-              boxSizing: 'border-box'
-            }
+              boxSizing: 'border-box',
+            },
           }}
         >
           {footerContent}

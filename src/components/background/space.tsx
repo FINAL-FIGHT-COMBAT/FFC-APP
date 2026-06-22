@@ -1,6 +1,5 @@
 'use client';
 
- 
 import type { PropsWithChildren } from 'react';
 
 import { memo, Suspense } from 'react';

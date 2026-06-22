@@ -133,7 +133,8 @@ export function PostDetailsSkeleton({ sx, ...other }: BoxProps) {
           '& .MuiSkeleton-root': {
             bgcolor: (theme) => alpha(theme.palette.warning.main, 0.08),
             '&::after': {
-              background: (theme) => `linear-gradient(90deg, transparent, ${alpha(theme.palette.warning.main, 0.15)}, transparent)`,
+              background: (theme) =>
+                `linear-gradient(90deg, transparent, ${alpha(theme.palette.warning.main, 0.15)}, transparent)`,
             },
           },
         },

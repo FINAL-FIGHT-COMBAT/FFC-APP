@@ -21,7 +21,11 @@ export function AptidaoFisicaView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Diretrizes_Aptidao_Fisica_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <AptidaoFisicaContent />
           </A4Page>
         </PdfViewerLayout>

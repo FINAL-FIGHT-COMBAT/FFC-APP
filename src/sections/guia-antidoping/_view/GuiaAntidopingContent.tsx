@@ -22,7 +22,7 @@ export function GuiaAntidopingContent() {
       <Clause text="2.2. ACESSO DIRETO: Para garantir que você consulte a versão mais recente e atualizada do documento oficial, o FFC disponibiliza o redirecionamento direto para a base de dados do Governo Federal." />
 
       <SectionTitle>3. ACESSO VIA QRCODE (PORTAL DO GOVERNO FEDERAL)</SectionTitle>
-      
+
       <Box
         sx={{
           display: 'flex',
@@ -52,20 +52,35 @@ export function GuiaAntidopingContent() {
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.05)',
           }}
         >
-          <Iconify icon={"mdi:qrcode" as any} width={110} sx={{ color: '#0A3B18' }} />
+          <Iconify icon={'mdi:qrcode' as any} width={110} sx={{ color: '#0A3B18' }} />
         </Box>
-        <Typography variant="subtitle2" sx={{ color: '#0A3B18', fontWeight: 'bold', mb: 1, fontSize: '10pt' }}>
+        <Typography
+          variant="subtitle2"
+          sx={{ color: '#0A3B18', fontWeight: 'bold', mb: 1, fontSize: '10pt' }}
+        >
           PORTAL DA AUTORIDADE BRASILEIRA DE CONTROLE DE DOPAGEM (ABCD)
         </Typography>
-        <Typography variant="caption" sx={{ color: '#637381', mb: 2.5, maxWidth: 440, display: 'block', fontSize: '8pt', lineHeight: 1.3 }}>
-          Aponte a câmera do seu celular para o QR Code acima ou clique no botão abaixo para acessar a lista oficial e atualizada de substâncias proibidas diretamente no portal do Governo Federal (gov.br/abcd).
+        <Typography
+          variant="caption"
+          sx={{
+            color: '#637381',
+            mb: 2.5,
+            maxWidth: 440,
+            display: 'block',
+            fontSize: '8pt',
+            lineHeight: 1.3,
+          }}
+        >
+          Aponte a câmera do seu celular para o QR Code acima ou clique no botão abaixo para acessar
+          a lista oficial e atualizada de substâncias proibidas diretamente no portal do Governo
+          Federal (gov.br/abcd).
         </Typography>
         <Button
           variant="contained"
           href="https://www.gov.br/abcd"
           target="_blank"
           rel="noopener noreferrer"
-          startIcon={<Iconify icon={"solar:link-bold" as any} />}
+          startIcon={<Iconify icon={'solar:link-bold' as any} />}
           sx={{
             bgcolor: '#0A3B18',
             color: '#FFFFFF',

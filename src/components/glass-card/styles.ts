@@ -8,7 +8,8 @@ import { alpha, styled } from '@mui/material/styles';
 // ----------------------------------------------------------------------
 
 export const GlassCardRoot = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'gradientColor' && prop !== 'borderOpacity' && prop !== 'blur',
+  shouldForwardProp: (prop) =>
+    prop !== 'gradientColor' && prop !== 'borderOpacity' && prop !== 'blur',
 })<GlassCardProps>(({ theme, gradientColor = 'info', borderOpacity = 0.8, blur = 12 }) => ({
   position: 'relative',
   borderRadius: (theme.shape.borderRadius as number) * 2,
@@ -17,7 +18,7 @@ export const GlassCardRoot = styled(Box, {
   backdropFilter: `blur(${blur}px)`,
   WebkitBackdropFilter: `blur(${blur}px)`,
   transition: theme.transitions.create(['transform', 'box-shadow', 'background-color']),
-  
+
   // 💎 BORDA NEON (Assinatura Elite)
   '&::before': {
     content: '""',

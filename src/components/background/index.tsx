@@ -1,7 +1,5 @@
 'use client';
 
- 
-
 import { memo, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 

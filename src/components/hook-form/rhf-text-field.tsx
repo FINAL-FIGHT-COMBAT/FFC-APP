@@ -32,13 +32,7 @@ export function RHFTextField({
   // Isso evita erros de 'control is null' durante o build estático do Next.js.
   if (!formContext || !mounted) {
     return (
-      <TextField
-        fullWidth
-        type={type}
-        helperText={helperText}
-        slotProps={slotProps}
-        {...other}
-      />
+      <TextField fullWidth type={type} helperText={helperText} slotProps={slotProps} {...other} />
     );
   }
 

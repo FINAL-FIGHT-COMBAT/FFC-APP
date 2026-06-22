@@ -104,16 +104,14 @@ export const schemaUtils = {
    * Apply for upload single file.
    */
   file: (props?: { message?: string }) =>
-    z
-      .any()
-      .superRefine((value, ctx) => {
-        if (!value || (typeof value === 'string' && !value.length)) {
-          ctx.addIssue({
-            code: 'custom',
-            message: props?.message ?? 'File is required!',
-          });
-        }
-      }),
+    z.any().superRefine((value, ctx) => {
+      if (!value || (typeof value === 'string' && !value.length)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: props?.message ?? 'File is required!',
+        });
+      }
+    }),
   /**
    * Files
    * Apply for upload multiple files.

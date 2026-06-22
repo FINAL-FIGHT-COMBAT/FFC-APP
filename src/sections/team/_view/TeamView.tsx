@@ -82,13 +82,13 @@ export function TeamView() {
                         color="inherit"
                         onClick={() => window.open(CONFIG.socials.linkedin, '_blank')}
                       >
-                        <Iconify icon={"eva:linkedin-fill" as any} />
+                        <Iconify icon={'eva:linkedin-fill' as any} />
                       </IconButton>
                       <IconButton
                         color="inherit"
                         onClick={() => window.open(CONFIG.socials.twitter, '_blank')}
                       >
-                        <Iconify icon={"bi:twitter-x" as any} />
+                        <Iconify icon={'bi:twitter-x' as any} />
                       </IconButton>
                     </Stack>
                   </Card>

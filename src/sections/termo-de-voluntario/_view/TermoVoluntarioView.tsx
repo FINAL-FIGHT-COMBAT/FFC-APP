@@ -21,7 +21,11 @@ export function TermoVoluntarioView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Termo_Voluntariado_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <TermoVoluntarioContent />
           </A4Page>
         </PdfViewerLayout>

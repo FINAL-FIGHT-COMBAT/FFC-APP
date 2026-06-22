@@ -151,44 +151,44 @@ export function PostAuthors({ posts }: Props) {
         overflow: 'hidden',
       }}
     >
-        {/* 🕸️ GRID PATTERN SUTIL */}
-        <Box
+      {/* 🕸️ GRID PATTERN SUTIL */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          opacity: 0.05,
+          zIndex: 0,
+          backgroundImage: `linear-gradient(${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px)`,
+          backgroundSize: '40px 40px',
+        }}
+      />
+
+      <m.div variants={varFade('inDown')}>
+        <Typography
+          variant="h2"
           sx={{
-            position: 'absolute',
-            inset: 0,
-            opacity: 0.05,
-            zIndex: 0,
-            backgroundImage: `linear-gradient(${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px), linear-gradient(90deg, ${alpha(theme.palette.warning.main, 0.2)} 1px, transparent 1px)`,
-            backgroundSize: '40px 40px',
+            mb: 6,
+            textAlign: 'center',
+            fontWeight: 900,
+            fontFamily: "'Orbitron', sans-serif",
+            textTransform: 'uppercase',
+            color: 'common.white',
+            letterSpacing: '0.1em',
+            fontSize: { xs: '1.5rem', md: '2rem' },
+            textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
           }}
-        />
+        >
+          Equipe Editorial
+        </Typography>
+      </m.div>
 
-        <m.div variants={varFade('inDown')}>
-          <Typography
-            variant="h2"
-            sx={{
-              mb: 6,
-              textAlign: 'center',
-              fontWeight: 900,
-              fontFamily: "'Orbitron', sans-serif",
-              textTransform: 'uppercase',
-              color: 'common.white',
-              letterSpacing: '0.1em',
-              fontSize: { xs: '1.5rem', md: '2rem' },
-              textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
-            }}
-          >
-            Equipe Editorial
-          </Typography>
+      <Stack spacing={1}>
+        <m.div variants={varFade('inRight')}>{renderMarqueeRow(AUTHORS, false, 1)}</m.div>
+
+        <m.div variants={varFade('inLeft')}>
+          {renderMarqueeRow([...AUTHORS].reverse(), true, 2)}
         </m.div>
-
-        <Stack spacing={1}>
-          <m.div variants={varFade('inRight')}>{renderMarqueeRow(AUTHORS, false, 1)}</m.div>
-
-          <m.div variants={varFade('inLeft')}>
-            {renderMarqueeRow([...AUTHORS].reverse(), true, 2)}
-          </m.div>
-        </Stack>
+      </Stack>
     </Box>
   );
 }

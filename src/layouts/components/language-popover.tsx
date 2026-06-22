@@ -79,7 +79,7 @@ export function LanguagePopover({ data = [], sx, ...other }: LanguagePopoverProp
             borderRadius: '12px',
             transition: 'all 0.3s ease',
             '&:hover': {
-              bgcolor: 'rgba(212, 175, 55, 0.08)', 
+              bgcolor: 'rgba(212, 175, 55, 0.08)',
               borderColor: 'rgba(212, 175, 55, 0.3)',
               boxShadow: '0 0 15px rgba(212, 175, 55, 0.15)',
             },

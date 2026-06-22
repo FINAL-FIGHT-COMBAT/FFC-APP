@@ -1,13 +1,20 @@
 import Box from '@mui/material/Box';
 
-import { Clause, SectionTitle, DocumentTitle, DigitalSignature } from 'src/components/abnt-document';
+import {
+  Clause,
+  SectionTitle,
+  DocumentTitle,
+  DigitalSignature,
+} from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 
 export function ContratoStaffContent() {
   return (
     <>
-      <DocumentTitle>CONTRATO DE PRESTAÇÃO DE SERVIÇOS OPERACIONAIS E SUPORTE (STAFF)</DocumentTitle>
+      <DocumentTitle>
+        CONTRATO DE PRESTAÇÃO DE SERVIÇOS OPERACIONAIS E SUPORTE (STAFF)
+      </DocumentTitle>
 
       <SectionTitle>CAPÍTULO I: DAS PARTES E DO OBJETO</SectionTitle>
       <Clause text="1.1. CONTRATANTE: A entidade promotora FINAL FIGHT COMBAT, doravante denominada ORGANIZADORA." />
@@ -44,7 +51,9 @@ export function ContratoStaffContent() {
       <Clause text="8.1. ARBITRAGEM EXTRAJUDICIAL: As partes elegem a Câmara de Arbitragem Legal e Extrajudicial indicada no portal corporativo do FFC para dirimir qualquer dúvida ou litígio emergente deste contrato, com renúncia expressa a qualquer outro foro, por mais privilegiado que seja." />
 
       <SectionTitle>ASSINATURAS E ACEITE DIGITAL</SectionTitle>
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 3, my: 3 }}>
+      <Box
+        sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 3, my: 3 }}
+      >
         <DigitalSignature
           title="CONTRATADA (STAFF)"
           name="Aceite eletrônico via aplicativo"

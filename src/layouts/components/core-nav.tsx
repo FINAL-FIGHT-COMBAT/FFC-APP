@@ -24,7 +24,7 @@ export function CoreNav() {
     {
       name: 'Profile',
       icon: 'solar:user-id-bold',
-      onClick: () => window.location.href = 'https://app.finalfightcombat.com/login',
+      onClick: () => (window.location.href = 'https://app.finalfightcombat.com/login'),
     },
     { name: 'GitHub', icon: 'mdi:github', onClick: () => console.info('GitHub') },
     {

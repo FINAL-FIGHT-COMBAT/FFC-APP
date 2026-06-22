@@ -14,7 +14,11 @@ type PdfViewerLayoutProps = {
   fixedHeader?: boolean;
 };
 
-export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }: PdfViewerLayoutProps) {
+export function PdfViewerLayout({
+  children,
+  documentTitle,
+  fixedHeader = true,
+}: PdfViewerLayoutProps) {
   const router = useRouter();
 
   const handlePrint = () => {
@@ -39,7 +43,7 @@ export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }:
           bgcolor: 'transparent',
           py: 0,
           display: 'block',
-        }
+        },
       }}
     >
       {/* Top Bar - Simulating PDF Viewer Controls */}
@@ -59,21 +63,28 @@ export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }:
           alignItems: 'center',
           boxShadow: fixedHeader ? '0 1px 3px rgba(0,0,0,0.3)' : 'none',
           mb: fixedHeader ? 0 : 4,
-          '@media print': { display: 'none' }
+          '@media print': { display: 'none' },
         }}
       >
         <Stack direction="row" alignItems="center" spacing={1}>
           <IconButton onClick={() => router.back()} sx={{ color: '#fff' }}>
-            <Iconify icon={"solar:arrow-left-bold-duotone" as any} />
+            <Iconify icon={'solar:arrow-left-bold-duotone' as any} />
           </IconButton>
-          <Typography sx={{ color: '#fff', fontSize: 14, fontWeight: 500, display: { xs: 'none', sm: 'block' } }}>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: 14,
+              fontWeight: 500,
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
             {documentTitle}.pdf
           </Typography>
         </Stack>
 
         <Stack direction="row" alignItems="center" spacing={1}>
           <IconButton onClick={() => handlePrint()} sx={{ color: '#fff' }}>
-            <Iconify icon={"solar:printer-bold-duotone" as any} />
+            <Iconify icon={'solar:printer-bold-duotone' as any} />
           </IconButton>
           <Button
             variant="contained"
@@ -97,7 +108,7 @@ export function PdfViewerLayout({ children, documentTitle, fixedHeader = true }:
           '@media print': {
             mt: 0,
             display: 'block',
-          }
+          },
         }}
       >
         {children}

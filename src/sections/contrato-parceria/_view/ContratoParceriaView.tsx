@@ -19,7 +19,11 @@ export function ContratoParceriaView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Contrato_Parceria_Afiliacao_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <ContratoParceriaContent />
           </A4Page>
         </PdfViewerLayout>

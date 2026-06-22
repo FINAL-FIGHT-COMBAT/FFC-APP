@@ -17,9 +17,7 @@ export default function AboutPage() {
     name: 'FFC',
     url: 'https://www.finalfightcombat.xyz/about',
     logo: 'https://www.finalfightcombat.xyz/logo/android-chrome-512x512.png',
-    sameAs: [
-      'https://www.instagram.com/ffc.combat/',
-    ]
+    sameAs: ['https://www.instagram.com/ffc.combat/'],
   };
 
   return (

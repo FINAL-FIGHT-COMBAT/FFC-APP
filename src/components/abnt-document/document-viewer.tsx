@@ -22,7 +22,7 @@ export function DocumentViewer({ children }: DocumentViewerProps) {
           pb: 0,
           bgcolor: 'transparent',
           overflowX: 'visible',
-        }
+        },
       }}
     >
       <Box
@@ -36,7 +36,7 @@ export function DocumentViewer({ children }: DocumentViewerProps) {
             py: 0,
             px: 0,
             m: 0,
-          }
+          },
         }}
       >
         {children}

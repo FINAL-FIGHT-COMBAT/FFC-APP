@@ -21,7 +21,11 @@ export function ContratoAtletaSeletivaView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Contrato_Atleta_Seletiva_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <ContratoAtletaSeletivaContent />
           </A4Page>
         </PdfViewerLayout>

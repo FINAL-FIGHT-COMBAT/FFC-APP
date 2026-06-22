@@ -46,7 +46,12 @@ const STATS: Array<{ value: string; label: string; icon: IconifyName }> = [
 type TimeLeft = { dias: number; horas: number; minutos: number; segundos: number };
 
 function useCountdown(target: Date): TimeLeft {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ dias: 0, horas: 0, minutos: 0, segundos: 0 });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    dias: 0,
+    horas: 0,
+    minutos: 0,
+    segundos: 0,
+  });
 
   useEffect(() => {
     const calc = () => {
@@ -173,7 +178,6 @@ export function HomeHero({ sx, ...other }: BoxProps) {
       >
         <Container maxWidth="lg">
           <Stack alignItems="center" spacing={{ xs: 5, md: 4 }}>
-
             {/* Título */}
             <Box sx={{ textAlign: 'center' }}>
               <Typography
@@ -221,7 +225,11 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             </Stack>
 
             {/* Botões CTA */}
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 3, sm: 1.5 }} sx={{ width: { xs: '100%', sm: 'auto' } }}>
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={{ xs: 3, sm: 1.5 }}
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
+            >
               {/* Primário — Dourado */}
               <CyberButton
                 component={RouterLink}
@@ -243,7 +251,6 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 DOCUMENTOS
               </CyberButton>
             </Stack>
-
           </Stack>
         </Container>
       </Box>
@@ -274,7 +281,12 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             }
           >
             {STATS.map((stat) => (
-              <Stack key={stat.label} alignItems="center" spacing={0.75} sx={{ px: { xs: 1, md: 3 } }}>
+              <Stack
+                key={stat.label}
+                alignItems="center"
+                spacing={0.75}
+                sx={{ px: { xs: 1, md: 3 } }}
+              >
                 {/* Ícone */}
                 <Box
                   sx={{
@@ -289,11 +301,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                     mb: 0.5,
                   }}
                 >
-                  <Iconify
-                    icon={stat.icon}
-                    width={18}
-                    sx={{ color: GOLD }}
-                  />
+                  <Iconify icon={stat.icon} width={18} sx={{ color: GOLD }} />
                 </Box>
 
                 {/* Valor */}

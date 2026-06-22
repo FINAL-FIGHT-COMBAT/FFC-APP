@@ -50,9 +50,7 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
   const translateItems = t('news.items', { returnObjects: true });
 
   // 2. Garante que displayPosts seja um array, usando o BLOG_MOCK como fallback supremo
-  const displayPosts = Array.isArray(translateItems) 
-    ? translateItems 
-    : BLOG_MOCK.slice(0, 4); // Pega os primeiros 4 posts do nosso novo mock
+  const displayPosts = Array.isArray(translateItems) ? translateItems : BLOG_MOCK.slice(0, 4); // Pega os primeiros 4 posts do nosso novo mock
 
   return (
     <Box
@@ -154,7 +152,11 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
               gridColumn: { md: index === 0 ? 'span 2' : 'span 1' },
             })}
             renderItem={(post: any, index) => (
-              <m.div variants={varFade('inUp')} transition={{ delay: index * 0.2 }} style={{ height: '100%' }}>
+              <m.div
+                variants={varFade('inUp')}
+                transition={{ delay: index * 0.2 }}
+                style={{ height: '100%' }}
+              >
                 <Link
                   component={RouterLink}
                   href={paths.post.details(post.slug || post.title)}

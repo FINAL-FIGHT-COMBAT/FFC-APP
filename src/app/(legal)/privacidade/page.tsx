@@ -6,7 +6,8 @@ import { LegalView } from 'src/sections/legal/_view';
 
 export const metadata = constructMetadata({
   title: 'Política de Privacidade | FFC',
-  description: 'Saiba como o Final Fight Combat coleta, gerencia e protege os seus dados pessoais, esportivos e de saúde.',
+  description:
+    'Saiba como o Final Fight Combat coleta, gerencia e protege os seus dados pessoais, esportivos e de saúde.',
 });
 
 const CONTENT = `
@@ -47,5 +48,11 @@ const CONTENT = `
 `;
 
 export default function PrivacyPage() {
-  return <LegalView title="Política de Privacidade" content={CONTENT} lastUpdated="15 de Junho de 2026" />;
+  return (
+    <LegalView
+      title="Política de Privacidade"
+      content={CONTENT}
+      lastUpdated="15 de Junho de 2026"
+    />
+  );
 }

@@ -78,8 +78,11 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
   });
 
   const membersRaw = t('team.members', { returnObjects: true });
-  const members: { id: string; name: string; role: string; avatarUrl: string }[] =
-    Array.isArray(membersRaw) ? membersRaw : MEMBERS_FALLBACK;
+  const members: { id: string; name: string; role: string; avatarUrl: string }[] = Array.isArray(
+    membersRaw
+  )
+    ? membersRaw
+    : MEMBERS_FALLBACK;
 
   return (
     <Box
@@ -138,14 +141,14 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
 
           {/* BOTÃO ATUALIZADO: "REATIVA & CRYSTAL" */}
           <m.div variants={varFade('inRight')}>
-              <CyberButton
-                component={RouterLink}
-                href={paths.team}
-                endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
-                glowColor="info"
-              >
-                {t('team.button')}
-              </CyberButton>
+            <CyberButton
+              component={RouterLink}
+              href={paths.team}
+              endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
+              glowColor="info"
+            >
+              {t('team.button')}
+            </CyberButton>
           </m.div>
         </Stack>
 
@@ -194,7 +197,9 @@ function MemberCard({
       }}
     >
       {/* ── FOTO ── */}
-      <Box sx={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', bgcolor: '#161B22' }}>
+      <Box
+        sx={{ position: 'relative', aspectRatio: '1/1', overflow: 'hidden', bgcolor: '#161B22' }}
+      >
         <Image
           alt={member.name}
           src={member.avatarUrl}
@@ -237,7 +242,7 @@ function MemberCard({
           >
             {member.name}
           </Typography>
-          
+
           <Typography
             noWrap
             sx={{
@@ -255,10 +260,22 @@ function MemberCard({
         </Box>
 
         {/* ── SOCIAL ICONS ── */}
-        <Box sx={{ mt: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5 }}>
+        <Box
+          sx={{
+            mt: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 0.5,
+          }}
+        >
           {[
             { value: 'facebook', icon: 'eva:facebook-fill', path: CONFIG.socials.facebook },
-            { value: 'instagram', icon: 'ant-design:instagram-filled', path: CONFIG.socials.instagram },
+            {
+              value: 'instagram',
+              icon: 'ant-design:instagram-filled',
+              path: CONFIG.socials.instagram,
+            },
             { value: 'linkedin', icon: 'eva:linkedin-fill', path: CONFIG.socials.linkedin },
             { value: 'twitter', icon: 'bi:twitter-x', path: CONFIG.socials.twitter },
           ].map((social) => (

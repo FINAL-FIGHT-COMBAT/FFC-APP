@@ -1,13 +1,21 @@
 import Box from '@mui/material/Box';
 
-import { Clause, ABNTText, SectionTitle, DocumentTitle, DigitalSignature } from 'src/components/abnt-document';
+import {
+  Clause,
+  ABNTText,
+  SectionTitle,
+  DocumentTitle,
+  DigitalSignature,
+} from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 
 export function ContratoAtletaSeletivaContent() {
   return (
     <>
-      <DocumentTitle>CONTRATO DE PARTICIPAÇÃO DESPORTIVA – ATLETA DA SELETIVA ELIMINATÓRIA</DocumentTitle>
+      <DocumentTitle>
+        CONTRATO DE PARTICIPAÇÃO DESPORTIVA – ATLETA DA SELETIVA ELIMINATÓRIA
+      </DocumentTitle>
 
       <SectionTitle>CAPÍTULO I: DAS PARTES E DA NATUREZA JURÍDICA</SectionTitle>
       <Clause text="1.1. CONTRATANTE: A entidade promotora FINAL FIGHT COMBAT, doravante denominada ORGANIZADORA." />
@@ -40,13 +48,16 @@ export function ContratoAtletaSeletivaContent() {
       <SectionTitle>CAPÍTULO VII: DA RESCISÃO POR JUSTA CAUSA E SANÇÕES</SectionTitle>
       <Clause text="7.1. INFRAÇÕES GRAVÍSSIMAS: Este contrato será rescindido de pleno direito, com a desclassificação imediata do ATLETA e perda de qualquer prêmio acumulado na carteira virtual, caso seja constatada:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>7.1.1.</strong> Fraude documental ou falsificação de atestados médicos no envio do painel de saúde;
+        <strong>7.1.1.</strong> Fraude documental ou falsificação de atestados médicos no envio do
+        painel de saúde;
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>7.1.2.</strong> Resultado analítico positivo em testes antidoping ou recusa de coleta de amostra;
+        <strong>7.1.2.</strong> Resultado analítico positivo em testes antidoping ou recusa de
+        coleta de amostra;
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>7.1.3.</strong> Agressão física deliberada a árbitros, adversários, público ou membros do staff;
+        <strong>7.1.3.</strong> Agressão física deliberada a árbitros, adversários, público ou
+        membros do staff;
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
         <strong>7.1.4.</strong> Manipulação de resultados ou fraudes em chaves de arbitragem.
@@ -57,7 +68,9 @@ export function ContratoAtletaSeletivaContent() {
       <Clause text="8.1. CLÁUSULA COMPROMISSÓRIA: Visando a celeridade e o sigilo técnico, as Partes concordam que qualquer litígio, conflito operacional ou disputa financeira emergente deste contrato não será levado à Justiça Comum. Toda e qualquer controvérsia será submetida e julgada exclusivamente por meio da Câmara de Arbitragem Legal e Extrajudicial indicada no portal corporativo do FFC, cuja sentença possui força de título executivo judicial nos termos da Lei nº 9.307/1996." />
 
       <SectionTitle>ASSINATURAS E ACEITE DIGITAL</SectionTitle>
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 3, my: 3 }}>
+      <Box
+        sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 3, my: 3 }}
+      >
         <DigitalSignature
           title="CONTRATADA (ATLETA)"
           name="Aceite eletrônico via aplicativo"

@@ -11,7 +11,12 @@ const API_URL = CONFIG.serverUrl;
  * BUSCA PRINCIPAL: Retorna posts com suporte a filtros da API.
  * Se a API falhar, retorna os dados de Mock (Fallback).
  */
-export async function getPosts(params?: { category?: string; limit?: number; page?: number; status?: string }) {
+export async function getPosts(params?: {
+  category?: string;
+  limit?: number;
+  page?: number;
+  status?: string;
+}) {
   try {
     const query = new URLSearchParams();
     if (params?.category) query.append('category', params.category);
@@ -27,10 +32,10 @@ export async function getPosts(params?: { category?: string; limit?: number; pag
     }
 
     const res = await fetch(url, { next: { revalidate: 60 } });
-    
+
     if (!res.ok) {
-       console.warn('⚠️ API de Blog Offline ou Erro. Usando Fallback de Design.');
-       return { posts: BLOG_MOCK }; 
+      console.warn('⚠️ API de Blog Offline ou Erro. Usando Fallback de Design.');
+      return { posts: BLOG_MOCK };
     }
 
     const json = await res.json();
@@ -61,18 +66,18 @@ export async function getPost(paramSlug: string) {
     const url = `${API_URL}/api/posts/${paramSlug}`;
 
     const res = await fetch(url, { next: { revalidate: 60 } });
-    
+
     if (!res.ok) {
-        // Tenta encontrar no mock se a API falhar
-        const mockPost = BLOG_MOCK.find(p => p.slug === paramSlug);
-        return { post: mockPost || null };
+      // Tenta encontrar no mock se a API falhar
+      const mockPost = BLOG_MOCK.find((p) => p.slug === paramSlug);
+      return { post: mockPost || null };
     }
 
     const json = await res.json();
     return { post: json.success ? mapToPostItem(json.data) : null };
   } catch (error) {
     console.error('❌ Erro ao buscar post individual:', error);
-    const mockPost = BLOG_MOCK.find(p => p.slug === paramSlug);
+    const mockPost = BLOG_MOCK.find((p) => p.slug === paramSlug);
     return { post: mockPost || null };
   }
 }
@@ -102,9 +107,9 @@ export async function getPostsByCategory(categoryName: string) {
   try {
     // Delegamos o filtro de categoria para a API
     const { posts } = await getPosts({ category: categoryName });
-    
+
     return { posts };
   } catch (error) {
-    return { posts: BLOG_MOCK.filter(p => p.category === categoryName) };
+    return { posts: BLOG_MOCK.filter((p) => p.category === categoryName) };
   }
 }

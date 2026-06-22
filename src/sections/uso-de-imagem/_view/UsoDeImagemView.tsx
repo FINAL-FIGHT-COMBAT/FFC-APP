@@ -21,7 +21,11 @@ export function UsoDeImagemView() {
       <HomeBackground />
       <DocumentDataProvider data={documentData}>
         <PdfViewerLayout documentTitle="Termo_Cessao_Imagem_FFC">
-          <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
             <UsoDeImagemContent />
           </A4Page>
         </PdfViewerLayout>

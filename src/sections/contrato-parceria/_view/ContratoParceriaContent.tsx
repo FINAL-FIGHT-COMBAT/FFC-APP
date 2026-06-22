@@ -13,16 +13,36 @@ export function ContratoParceriaContent() {
       <DocumentTitle>CONTRATO-MÃE DE PARCERIA INSTITUCIONAL E AFILIAÇÃO</DocumentTitle>
       <DocumentTitle>PROJETO DE INCUBAÇÃO FINAL FIGHT COMBAT (FFC)</DocumentTitle>
       <ABNTText>
-        Pelo presente instrumento particular, de um lado: <strong>ASPPIBRA – ASSOCIAÇÃO DOS PROPRIETÁRIOS E POSSUIDORES DE IMÓVEIS NO BRASIL</strong>, associação civil sem fins lucrativos, inscrita no CNPJ sob nº 26.325.396/0001-30, com sede em <DataTag field="ENDEREÇO DA SEDE" text="[Endereço da Sede]" />, neste ato representada por seu <DataTag field="CARGO DO REPRESENTANTE" text="[Cargo]" />, <DataTag field="NOME DO REPRESENTANTE" text="[Nome do Representante]" />, doravante denominada simplesmente <strong>ASPPIBRA</strong> ou <strong>INCUBADORA</strong>;
+        Pelo presente instrumento particular, de um lado:{' '}
+        <strong>ASPPIBRA – ASSOCIAÇÃO DOS PROPRIETÁRIOS E POSSUIDORES DE IMÓVEIS NO BRASIL</strong>,
+        associação civil sem fins lucrativos, inscrita no CNPJ sob nº 26.325.396/0001-30, com sede
+        em <DataTag field="ENDEREÇO DA SEDE" text="[Endereço da Sede]" />, neste ato representada
+        por seu <DataTag field="CARGO DO REPRESENTANTE" text="[Cargo]" />,{' '}
+        <DataTag field="NOME DO REPRESENTANTE" text="[Nome do Representante]" />, doravante
+        denominada simplesmente <strong>ASPPIBRA</strong> ou <strong>INCUBADORA</strong>;
       </ABNTText>
       <ABNTText>
-        e, de outro lado: <strong>PESSOA JURÍDICA PARCEIRA:</strong> <DataTag field="RAZÃO SOCIAL" text="[Razão Social]" />, nome fantasia <DataTag field="NOME FANTASIA" text="[Nome Fantasia]" />, inscrita no CNPJ sob nº <DataTag field="CNPJ" text="[CNPJ]" />, com sede em <DataTag field="ENDEREÇO COMPLETO DA SEDE" text="[Endereço Completo]" />, com registro de CNAE principal nº <DataTag field="CNAE PRINCIPAL" text="[CNAE]" />, neste ato representada por seu responsável legal <DataTag field="NOME DO REPRESENTANTE LEGAL" text="[Nome do Representante da Parceira]" />, portador do CPF nº <DataTag field="CPF DO REPRESENTANTE" text="[CPF]" />, doravante denominada simplesmente <strong>PARCEIRA</strong>;
+        e, de outro lado: <strong>PESSOA JURÍDICA PARCEIRA:</strong>{' '}
+        <DataTag field="RAZÃO SOCIAL" text="[Razão Social]" />, nome fantasia{' '}
+        <DataTag field="NOME FANTASIA" text="[Nome Fantasia]" />, inscrita no CNPJ sob nº{' '}
+        <DataTag field="CNPJ" text="[CNPJ]" />, com sede em{' '}
+        <DataTag field="ENDEREÇO COMPLETO DA SEDE" text="[Endereço Completo]" />, com registro de
+        CNAE principal nº <DataTag field="CNAE PRINCIPAL" text="[CNAE]" />, neste ato representada
+        por seu responsável legal{' '}
+        <DataTag field="NOME DO REPRESENTANTE LEGAL" text="[Nome do Representante da Parceira]" />,
+        portador do CPF nº <DataTag field="CPF DO REPRESENTANTE" text="[CPF]" />, doravante
+        denominada simplesmente <strong>PARCEIRA</strong>;
       </ABNTText>
       <ABNTText>
         celebram o presente contrato-mãe, mediante as cláusulas e condições seguintes.
       </ABNTText>
       <ABNTText>
-        Fica desde logo pactuado que a incubadora do projeto (ASPPIBRA) atua estritamente sob natureza associativa de fins não econômicos, de modo que a presente parceria opera na modalidade &quot;sandbox&quot; (teste/incubação). O ingresso neste ambiente de Governança Digital gera métricas auditáveis e pontuação institucional, não implicando, em nenhuma hipótese atual, promessa de distribuição de lucros, transferência de propriedade intelectual ou emissão de quotas societárias (equity).
+        Fica desde logo pactuado que a incubadora do projeto (ASPPIBRA) atua estritamente sob
+        natureza associativa de fins não econômicos, de modo que a presente parceria opera na
+        modalidade &quot;sandbox&quot; (teste/incubação). O ingresso neste ambiente de Governança
+        Digital gera métricas auditáveis e pontuação institucional, não implicando, em nenhuma
+        hipótese atual, promessa de distribuição de lucros, transferência de propriedade intelectual
+        ou emissão de quotas societárias (equity).
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: SISTEMA CONTRATUAL E PROVA ELETRÔNICA</SectionTitle>
@@ -70,8 +90,16 @@ export function ContratoParceriaContent() {
       <Clause text="10.2. FORO CONTRATUAL: Inexistindo a aceitação autônoma para via arbitral, elegem as Partes o foro material da Comarca da sede da ASPPIBRA para dirimir quaisquer contenciosos residuais emergentes deste contrato, não obstante privilégios preexistentes." />
 
       <SectionTitle>ASSINATURAS E VALIDAÇÃO DIGITAL</SectionTitle>
-      <DigitalSignature title="ASSINATURA DIGITAL - ASPPIBRA" name="Assinatura eletrônica do Representante Legal" color="success" />
-      <DigitalSignature title="ASSINATURA DIGITAL - PARCEIRA" name="Assinatura eletrônica autenticada via Plataforma FFC" color="info" />
+      <DigitalSignature
+        title="ASSINATURA DIGITAL - ASPPIBRA"
+        name="Assinatura eletrônica do Representante Legal"
+        color="success"
+      />
+      <DigitalSignature
+        title="ASSINATURA DIGITAL - PARCEIRA"
+        name="Assinatura eletrônica autenticada via Plataforma FFC"
+        color="info"
+      />
 
       <br />
       <br />

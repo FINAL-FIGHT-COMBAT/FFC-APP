@@ -6,7 +6,8 @@ import { PolicyView } from 'src/sections/legal/_view';
 
 export const metadata = constructMetadata({
   title: 'Metodologia | FFC',
-  description: 'Conheça os métodos técnicos e esportivos que fundamentam nosso ranking e sistema de combate.',
+  description:
+    'Conheça os métodos técnicos e esportivos que fundamentam nosso ranking e sistema de combate.',
 });
 
 const CONTENT = `
@@ -22,10 +23,10 @@ const CONTENT = `
 
 export default function MethodologyPage() {
   return (
-    <PolicyView 
-      title="Metodologia" 
-      subtitle="A base técnica e esportiva do ecossistema FFC." 
-      content={CONTENT} 
+    <PolicyView
+      title="Metodologia"
+      subtitle="A base técnica e esportiva do ecossistema FFC."
+      content={CONTENT}
     />
   );
 }

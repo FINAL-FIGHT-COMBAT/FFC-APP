@@ -59,8 +59,6 @@ export function ChavesView() {
         }}
       >
         <Container maxWidth={false} sx={{ maxWidth: 1600 }}>
-
-
           {/* Fight Card Pyramid Wrapper with Horizontal Scroll */}
           <Box
             sx={{
@@ -86,7 +84,6 @@ export function ChavesView() {
                 gap: 8, // Space between rows (levels of the pyramid)
               }}
             >
-
               {/* LEVEL 4: THE GRAND FINAL */}
               <Stack alignItems="center" spacing={4}>
                 {/* Glowing Trophy Box */}
@@ -102,7 +99,11 @@ export function ChavesView() {
                     boxShadow: `0 0 60px ${alpha(theme.palette.warning.main, 0.2)}`,
                   }}
                 >
-                  <Iconify icon="solar:cup-star-bold" width={48} sx={{ color: theme.palette.warning.main, mb: 1 }} />
+                  <Iconify
+                    icon="solar:cup-star-bold"
+                    width={48}
+                    sx={{ color: theme.palette.warning.main, mb: 1 }}
+                  />
                   <Typography
                     variant="h5"
                     sx={{
@@ -141,16 +142,42 @@ export function ChavesView() {
 
               {/* LEVEL 2B: QUARTER FINALS (PARTE 2) */}
               <Stack direction="row" spacing={6}>
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="QUARTAS DE FINAL 1" />
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="QUARTAS DE FINAL 2" />
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="REPESCAGEM 2" subtitle="QUARTAS DE FINAL" />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="QUARTAS DE FINAL 1"
+                />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="QUARTAS DE FINAL 2"
+                />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="REPESCAGEM 2"
+                  subtitle="QUARTAS DE FINAL"
+                />
               </Stack>
 
               {/* LEVEL 2A: QUARTER FINALS (PARTE 1) */}
               <Stack direction="row" spacing={6}>
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="QUARTAS DE FINAL 3" />
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="QUARTAS DE FINAL 4" />
-                <BracketMatch player1={{ name: '' }} player2={{ name: '' }} matchTitle="REPESCAGEM 1" subtitle="QUARTAS DE FINAL" />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="QUARTAS DE FINAL 3"
+                />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="QUARTAS DE FINAL 4"
+                />
+                <BracketMatch
+                  player1={{ name: '' }}
+                  player2={{ name: '' }}
+                  matchTitle="REPESCAGEM 1"
+                  subtitle="QUARTAS DE FINAL"
+                />
               </Stack>
 
               {/* LEVEL 1B: ROUND OF 16 (PARTE 2) */}
@@ -167,9 +194,7 @@ export function ChavesView() {
                 <BracketMatch {...getMatch(12, 13)} matchTitle="OITAVAS 7" isSmall />
                 <BracketMatch {...getMatch(14, 15)} matchTitle="OITAVAS 8" isSmall />
               </Stack>
-
             </Box>
-
           </Box>
         </Container>
       </Box>

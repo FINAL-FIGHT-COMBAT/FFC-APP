@@ -6,7 +6,8 @@ import { PolicyView } from 'src/sections/legal/_view';
 
 export const metadata = constructMetadata({
   title: 'Política Editorial | FFC',
-  description: 'Conheça nossos padrões de integridade, transparência e governança de conteúdo jornalístico e técnico.',
+  description:
+    'Conheça nossos padrões de integridade, transparência e governança de conteúdo jornalístico e técnico.',
 });
 
 const CONTENT = `
@@ -22,10 +23,10 @@ const CONTENT = `
 
 export default function EditorialPolicyPage() {
   return (
-    <PolicyView 
-      title="Política Editorial" 
-      subtitle="O padrão de excelência e transparência da FFC." 
-      content={CONTENT} 
+    <PolicyView
+      title="Política Editorial"
+      subtitle="O padrão de excelência e transparência da FFC."
+      content={CONTENT}
     />
   );
 }

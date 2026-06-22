@@ -7,8 +7,10 @@ const AVATAR_PATH = '/assets/images/mock/avatar';
 const FALLBACK_POST = {
   title: 'Cobertura Oficial FFC em Breve',
   slug: 'cobertura-oficial-ffc',
-  description: 'Acompanhe as atualizações, resultados e bastidores oficiais do Final Fight Combat. Em breve novos conteúdos.',
-  content: '<p>O portal de notícias do FFC está sendo preparado. Em breve, publicaremos conteúdos exclusivos, análises táticas e toda a cobertura do evento.</p>',
+  description:
+    'Acompanhe as atualizações, resultados e bastidores oficiais do Final Fight Combat. Em breve novos conteúdos.',
+  content:
+    '<p>O portal de notícias do FFC está sendo preparado. Em breve, publicaremos conteúdos exclusivos, análises táticas e toda a cobertura do evento.</p>',
   coverUrl: '/assets/images/blog/news-fallback.png',
   category: 'Notícias',
   status: 'published' as const,

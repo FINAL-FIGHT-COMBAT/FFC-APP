@@ -36,9 +36,7 @@ export function PostCategoryItem({ category, posts }: Props) {
     slidesToShow: { xs: 1, sm: 2 },
   });
 
-  const viewPosts = posts.filter(
-    (post) => post.category.toLowerCase() === category.toLowerCase()
-  );
+  const viewPosts = posts.filter((post) => post.category.toLowerCase() === category.toLowerCase());
 
   // Se não houver posts, o grid não renderizará a seção.
   if (viewPosts.length === 0) return null;
@@ -131,7 +129,10 @@ export function PostCategoryItem({ category, posts }: Props) {
           const ffcColors: any[] = ['warning', 'info', 'error', 'primary'];
 
           return (
-            <Grid key={`${categoryId}-list-${post.id}-${index}`} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+            <Grid
+              key={`${categoryId}-list-${post.id}-${index}`}
+              size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
+            >
               <m.div variants={varFade('inUp')} style={{ height: '100%' }}>
                 <CyberCard>
                   {/* Badge secundário para lista */}
@@ -149,8 +150,16 @@ export function PostCategoryItem({ category, posts }: Props) {
                         letterSpacing: '0.05em',
                         textTransform: 'uppercase',
                         borderRadius: 0.75,
-                        bgcolor: alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.15),
-                        color: theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].light,
+                        bgcolor: alpha(
+                          theme.palette[
+                            ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'
+                          ].main,
+                          0.15
+                        ),
+                        color:
+                          theme.palette[
+                            ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'
+                          ].light,
                         border: `1px solid ${alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.5)}`,
                         backdropFilter: 'blur(8px)',
                         boxShadow: `0 0 10px ${alpha(theme.palette[ffcColors[index] as 'success' | 'warning' | 'info' | 'error' | 'primary'].main, 0.2)}`,
@@ -159,9 +168,9 @@ export function PostCategoryItem({ category, posts }: Props) {
                       {['Resultados', 'Luta da Noite', 'Performance', 'Bônus'][index] || 'Destaque'}
                     </Label>
                   )}
-                  <PostCard 
-                    post={post} 
-                    detailsHref={paths.post.details(post.slug || kebabCase(post.title))} 
+                  <PostCard
+                    post={post}
+                    detailsHref={paths.post.details(post.slug || kebabCase(post.title))}
                   />
                 </CyberCard>
               </m.div>

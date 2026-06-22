@@ -1,21 +1,16 @@
-import {
-  Clause,
-  ABNTText,
-  SectionTitle,
-  DocumentTitle,
-} from 'src/components/abnt-document';
+import { Clause, ABNTText, SectionTitle, DocumentTitle } from 'src/components/abnt-document';
 
 export function GuiaPesagemContent() {
   return (
     <>
-      <DocumentTitle>
-        GUIA OFICIAL DE PESAGEM E ELEGIBILIDADE TÉCNICA
-      </DocumentTitle>
-      <DocumentTitle>
-        FINAL FIGHT COMBAT (FFC)
-      </DocumentTitle>
+      <DocumentTitle>GUIA OFICIAL DE PESAGEM E ELEGIBILIDADE TÉCNICA</DocumentTitle>
+      <DocumentTitle>FINAL FIGHT COMBAT (FFC)</DocumentTitle>
       <ABNTText>
-        O presente Guia de Pesagem Oficial estabelece os protocolos técnicos, logísticos, sanitários e de vestimenta obrigatórios para o processo de aferição de peso do evento FFC. A inobservância destas regras importará sanções imediatas que incluem a perda da vaga por W.O., eliminação sistêmica e o cancelamento das obrigações contratuais assumidas pela Organização.
+        O presente Guia de Pesagem Oficial estabelece os protocolos técnicos, logísticos, sanitários
+        e de vestimenta obrigatórios para o processo de aferição de peso do evento FFC. A
+        inobservância destas regras importará sanções imediatas que incluem a perda da vaga por
+        W.O., eliminação sistêmica e o cancelamento das obrigações contratuais assumidas pela
+        Organização.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: PROTOCOLO DA PESAGEM OFICIAL</SectionTitle>

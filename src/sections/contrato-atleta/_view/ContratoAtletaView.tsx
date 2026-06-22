@@ -19,10 +19,14 @@ export function ContratoAtletaView() {
       <HomeBackground />
       <DocumentDataProvider data={mockData}>
         <PdfViewerLayout documentTitle="Contrato_Atleta_FFC">
-        <A4Page pageNumber={1} headerContent={<DefaultHeader />} footerContent={<DefaultFooter />}>
-          <ContratoAtletaContent />
-        </A4Page>
-      </PdfViewerLayout>
+          <A4Page
+            pageNumber={1}
+            headerContent={<DefaultHeader />}
+            footerContent={<DefaultFooter />}
+          >
+            <ContratoAtletaContent />
+          </A4Page>
+        </PdfViewerLayout>
       </DocumentDataProvider>
     </>
   );

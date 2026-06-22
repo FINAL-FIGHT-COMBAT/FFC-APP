@@ -1,21 +1,16 @@
-import {
-  Clause,
-  ABNTText,
-  SectionTitle,
-  DocumentTitle,
-} from 'src/components/abnt-document';
+import { Clause, ABNTText, SectionTitle, DocumentTitle } from 'src/components/abnt-document';
 
 export function RegrasCornerContent() {
   return (
     <>
-      <DocumentTitle>
-        MANUAL DE CONDUTA DO TÉCNICO E REGRAS DE CÓRNER
-      </DocumentTitle>
-      <DocumentTitle>
-        FINAL FIGHT COMBAT (FFC)
-      </DocumentTitle>
+      <DocumentTitle>MANUAL DE CONDUTA DO TÉCNICO E REGRAS DE CÓRNER</DocumentTitle>
+      <DocumentTitle>FINAL FIGHT COMBAT (FFC)</DocumentTitle>
       <ABNTText>
-        Este manual disciplina a atuação, os limites espaciais, o código de vestimenta e o regime punitivo aplicável a todos os técnicos, head coaches e membros de estafe atuantes no córner dos atletas no âmbito do Final Fight Combat. O objetivo é assegurar o decoro desportivo, a integridade da equipe de arbitragem e a estrita conformidade com os mais elevados padrões das artes marciais (Judô, Jiu-Jitsu e Grappling Internacional).
+        Este manual disciplina a atuação, os limites espaciais, o código de vestimenta e o regime
+        punitivo aplicável a todos os técnicos, head coaches e membros de estafe atuantes no córner
+        dos atletas no âmbito do Final Fight Combat. O objetivo é assegurar o decoro desportivo, a
+        integridade da equipe de arbitragem e a estrita conformidade com os mais elevados padrões
+        das artes marciais (Judô, Jiu-Jitsu e Grappling Internacional).
       </ABNTText>
 
       <SectionTitle>CAPÍTULO I: ELEGIBILIDADE E CREDENCIAMENTO TÉCNICO</SectionTitle>

@@ -154,38 +154,38 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                       '& .MuiAccordionDetails-root': { padding: FAQ_PADDING },
                     }}
                   >
-                  <AccordionSummary
-                    expandIcon={
-                      <Iconify
-                        icon="solar:double-alt-arrow-down-bold-duotone"
-                        width={20}
-                        sx={{ color: isOpen ? 'info.main' : 'inherit', transition: 'color 0.3s' }}
-                      />
-                    }
-                  >
-                    <Typography
-                      component="span"
+                    <AccordionSummary
+                      expandIcon={
+                        <Iconify
+                          icon="solar:double-alt-arrow-down-bold-duotone"
+                          width={20}
+                          sx={{ color: isOpen ? 'info.main' : 'inherit', transition: 'color 0.3s' }}
+                        />
+                      }
+                    >
+                      <Typography
+                        component="span"
+                        sx={{
+                          fontFamily: "'Orbitron', sans-serif",
+                          fontWeight: 700,
+                          fontSize: { xs: 15, md: 16 },
+                          letterSpacing: '0.03em',
+                          color: isOpen ? 'common.white' : alpha(theme.palette.common.white, 0.75),
+                        }}
+                      >
+                        {item.question}
+                      </Typography>
+                    </AccordionSummary>
+
+                    <AccordionDetails
                       sx={{
-                        fontFamily: "'Orbitron', sans-serif",
-                        fontWeight: 700,
-                        fontSize: { xs: 15, md: 16 },
-                        letterSpacing: '0.03em',
-                        color: isOpen ? 'common.white' : alpha(theme.palette.common.white, 0.75),
+                        color: alpha(theme.palette.common.white, 0.85),
+                        lineHeight: 1.75,
+                        fontSize: 15,
                       }}
                     >
-                      {item.question}
-                    </Typography>
-                  </AccordionSummary>
-
-                  <AccordionDetails
-                    sx={{
-                      color: alpha(theme.palette.common.white, 0.85),
-                      lineHeight: 1.75,
-                      fontSize: 15,
-                    }}
-                  >
-                    {item.answer}
-                  </AccordionDetails>
+                      {item.answer}
+                    </AccordionDetails>
                   </Accordion>
                 </CyberCard>
               );

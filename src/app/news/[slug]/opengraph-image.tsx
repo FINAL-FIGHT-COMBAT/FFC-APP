@@ -51,117 +51,121 @@ export default async function Image({ params }: Props) {
   const coverDataUrl = coverUrl ? await fetchImageAsDataUrl(coverUrl) : null;
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        position: 'relative',
+        fontFamily: 'sans-serif',
+        backgroundColor: darkBg,
+        overflow: 'hidden',
+      }}
+    >
+      {/* Imagem de capa com overlay */}
+      {coverDataUrl && (
+        <div style={{ display: 'flex', position: 'absolute', inset: 0 }}>
+          <img
+            src={coverDataUrl}
+            alt=""
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              opacity: 0.5,
+            }}
+          />
+          {/* Gradient Overlay */}
+          <div
+            style={{
+              display: 'flex',
+              position: 'absolute',
+              inset: 0,
+              background: `linear-gradient(to right, ${darkBg} 40%, transparent 100%)`,
+            }}
+          />
+        </div>
+      )}
+
+      {/* Conteúdo */}
       <div
         style={{
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: '60px',
           width: '100%',
           height: '100%',
-          display: 'flex',
-          position: 'relative',
-          fontFamily: 'sans-serif',
-          backgroundColor: darkBg,
-          overflow: 'hidden',
+          zIndex: 10,
         }}
       >
-        {/* Imagem de capa com overlay */}
-        {coverDataUrl && (
-          <div style={{ display: 'flex', position: 'absolute', inset: 0 }}>
-            <img
-              src={coverDataUrl}
-              alt=""
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                opacity: 0.5,
-              }}
-            />
-            {/* Gradient Overlay */}
-            <div
-              style={{
-                display: 'flex',
-                position: 'absolute',
-                inset: 0,
-                background: `linear-gradient(to right, ${darkBg} 40%, transparent 100%)`,
-              }}
-            />
-          </div>
-        )}
-
-        {/* Conteúdo */}
+        {/* Badge de categoria */}
         <div
           style={{
-            position: 'relative',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            padding: '60px',
-            width: '100%',
-            height: '100%',
-            zIndex: 10,
+            width: 'fit-content',
+            backgroundColor: primaryColor,
+            color: '#000',
+            padding: '8px 20px',
+            borderRadius: '6px',
+            fontSize: '20px',
+            fontWeight: 800,
+            textTransform: 'uppercase',
+            letterSpacing: '1px',
+            marginBottom: '40px',
           }}
         >
-          {/* Badge de categoria */}
-          <div
-            style={{
-              display: 'flex',
-              width: 'fit-content',
-              backgroundColor: primaryColor,
-              color: '#000',
-              padding: '8px 20px',
-              borderRadius: '6px',
-              fontSize: '20px',
-              fontWeight: 800,
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
-              marginBottom: '40px',
-            }}
-          >
-            {category}
-          </div>
-
-          {/* Título */}
-          <div
-            style={{
-              display: 'flex',
-              fontSize: title.length > 50 ? '54px' : '72px',
-              fontWeight: 900,
-              color: '#FFFFFF',
-              lineHeight: 1.1,
-              maxWidth: '80%',
-              marginBottom: '20px',
-            }}
-          >
-            {title}
-          </div>
-
-          {/* Rodapé */}
-          <div style={{ display: 'flex', alignItems: 'center', marginTop: '40px' }}>
-            <div
-              style={{ width: '4px', height: '24px', backgroundColor: primaryColor, marginRight: '12px', display: 'flex' }}
-            />
-            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '24px', fontWeight: 500 }}>
-              {siteDomain}
-            </span>
-          </div>
+          {category}
         </div>
 
-        {/* Borda esquerda */}
+        {/* Título */}
         <div
           style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: 8,
-            backgroundColor: primaryColor,
             display: 'flex',
+            fontSize: title.length > 50 ? '54px' : '72px',
+            fontWeight: 900,
+            color: '#FFFFFF',
+            lineHeight: 1.1,
+            maxWidth: '80%',
+            marginBottom: '20px',
           }}
-        />
+        >
+          {title}
+        </div>
+
+        {/* Rodapé */}
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: '40px' }}>
+          <div
+            style={{
+              width: '4px',
+              height: '24px',
+              backgroundColor: primaryColor,
+              marginRight: '12px',
+              display: 'flex',
+            }}
+          />
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '24px', fontWeight: 500 }}>
+            {siteDomain}
+          </span>
+        </div>
       </div>
-    ),
+
+      {/* Borda esquerda */}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: 8,
+          backgroundColor: primaryColor,
+          display: 'flex',
+        }}
+      />
+    </div>,
     { ...size }
   );
 }

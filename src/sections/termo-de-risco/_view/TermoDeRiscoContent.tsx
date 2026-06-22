@@ -1,4 +1,9 @@
-import { Clause, SectionTitle, DocumentTitle, DigitalSignature } from 'src/components/abnt-document';
+import {
+  Clause,
+  SectionTitle,
+  DocumentTitle,
+  DigitalSignature,
+} from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 

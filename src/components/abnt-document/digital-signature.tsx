@@ -116,7 +116,10 @@ export function DigitalSignature({ title, name, field, color = 'info' }: Digital
 
       {isSigned ? (
         <Stack spacing={1}>
-          <Typography variant="body2" sx={{ color: '#000000', fontSize: '11pt', fontWeight: 'bold' }}>
+          <Typography
+            variant="body2"
+            sx={{ color: '#000000', fontSize: '11pt', fontWeight: 'bold' }}
+          >
             {sigObj?.signerName || name}
           </Typography>
 
@@ -125,7 +128,13 @@ export function DigitalSignature({ title, name, field, color = 'info' }: Digital
               {sigObj?.signedAt && (
                 <Typography
                   variant="caption"
-                  sx={{ color: '#637381', fontSize: '8pt', display: 'flex', alignItems: 'center', gap: 0.5 }}
+                  sx={{
+                    color: '#637381',
+                    fontSize: '8pt',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5,
+                  }}
                 >
                   <Iconify icon={'solar:calendar-date-bold' as any} width={12} />
                   <strong>Data/Hora:</strong> {sigObj.signedAt}
@@ -134,7 +143,13 @@ export function DigitalSignature({ title, name, field, color = 'info' }: Digital
               {sigObj?.ip && (
                 <Typography
                   variant="caption"
-                  sx={{ color: '#637381', fontSize: '8pt', display: 'flex', alignItems: 'center', gap: 0.5 }}
+                  sx={{
+                    color: '#637381',
+                    fontSize: '8pt',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5,
+                  }}
                 >
                   <Iconify icon={'solar:laptop-bold' as any} width={12} />
                   <strong>IP de Origem:</strong> {sigObj.ip}
@@ -143,7 +158,13 @@ export function DigitalSignature({ title, name, field, color = 'info' }: Digital
               {sigObj?.deviceId && (
                 <Typography
                   variant="caption"
-                  sx={{ color: '#637381', fontSize: '8pt', display: 'flex', alignItems: 'center', gap: 0.5 }}
+                  sx={{
+                    color: '#637381',
+                    fontSize: '8pt',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 0.5,
+                  }}
                 >
                   <Iconify icon={'solar:ssd-round-bold' as any} width={12} />
                   <strong>Dispositivo:</strong> {sigObj.deviceId}
@@ -176,7 +197,10 @@ export function DigitalSignature({ title, name, field, color = 'info' }: Digital
         </Stack>
       ) : (
         <Stack spacing={1}>
-          <Typography variant="body2" sx={{ color: '#000000', fontSize: '11pt', fontWeight: 'bold' }}>
+          <Typography
+            variant="body2"
+            sx={{ color: '#000000', fontSize: '11pt', fontWeight: 'bold' }}
+          >
             {name}
           </Typography>
           <Typography

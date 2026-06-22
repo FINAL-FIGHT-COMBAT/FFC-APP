@@ -32,9 +32,10 @@ export function PostFeatured({ posts, sx }: { posts: IPostItem[]; sx?: SxProps<T
   const theme = useTheme();
 
   // Filtrar posts em destaque ou pegar os primeiros 4 como fallback
-  const featuredPosts = posts.filter((post) => post.featured).length > 0
-    ? posts.filter((post) => post.featured)
-    : posts.slice(0, 4);
+  const featuredPosts =
+    posts.filter((post) => post.featured).length > 0
+      ? posts.filter((post) => post.featured)
+      : posts.slice(0, 4);
 
   const carousel = useCarousel(
     {

@@ -22,10 +22,10 @@ const CONTENT = `
 
 export default function FactCheckingPage() {
   return (
-    <PolicyView 
-      title="Verificação de Fatos" 
-      subtitle="Como garantimos a veracidade absoluta dos nossos dados." 
-      content={CONTENT} 
+    <PolicyView
+      title="Verificação de Fatos"
+      subtitle="Como garantimos a veracidade absoluta dos nossos dados."
+      content={CONTENT}
     />
   );
 }

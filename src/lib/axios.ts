@@ -53,27 +53,27 @@ axiosInstance.interceptors.response.use(
 
     // 🕵️ MONITORAMENTO DE DEBUG (PARA TESTES EM PRODUÇÃO)
     if (typeof window !== 'undefined') {
-        // Tenta fazer o parse do JSON apenas se for uma string válida
-        let requestData = error?.config?.data;
-        if (typeof requestData === 'string') {
-          try {
-            requestData = JSON.parse(requestData);
-          } catch (e) {
-            // Mantém como string se não for JSON
-          }
-        } else if (requestData instanceof FormData) {
-          requestData = '[FormData]';
+      // Tenta fazer o parse do JSON apenas se for uma string válida
+      let requestData = error?.config?.data;
+      if (typeof requestData === 'string') {
+        try {
+          requestData = JSON.parse(requestData);
+        } catch (e) {
+          // Mantém como string se não for JSON
         }
+      } else if (requestData instanceof FormData) {
+        requestData = '[FormData]';
+      }
 
-        const debugLog = {
-          timestamp: new Date().toISOString(),
-          url: error?.config?.url || 'URL Indisponível',
-          method: error?.config?.method || 'N/A',
-          status: status || 'Network Error',
-          requestData,
-          responseData: error?.response?.data || null,
-          error: error?.message || 'Erro de conexão ou servidor offline',
-        };
+      const debugLog = {
+        timestamp: new Date().toISOString(),
+        url: error?.config?.url || 'URL Indisponível',
+        method: error?.config?.method || 'N/A',
+        status: status || 'Network Error',
+        requestData,
+        responseData: error?.response?.data || null,
+        error: error?.message || 'Erro de conexão ou servidor offline',
+      };
 
       // 🔍 SILENCIAR ERROS CONHECIDOS (MOCK PHASE)
       const isExpectedMockError = status === 404 && debugLog.url.includes('/comments');
@@ -104,7 +104,7 @@ axiosInstance.interceptors.response.use(
      */
     if (status === 401) {
       console.warn('🚨 Token inválido ou expirado. Executando renovação de segurança...');
-      
+
       if (typeof window !== 'undefined') {
         localStorage.removeItem('daoAccessToken');
         window.dispatchEvent(new CustomEvent('onTokenExpired'));

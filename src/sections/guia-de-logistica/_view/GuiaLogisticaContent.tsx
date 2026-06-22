@@ -14,35 +14,58 @@ export function GuiaLogisticaContent() {
       <SectionTitle>CAPÍTULO II: DA HOSPEDAGEM OFICIAL (HOTEL DO EVENTO)</SectionTitle>
       <Clause text="2.1. ELEGIBILIDADE E COBERTURA:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.1.1. Card Principal e Atletas Contratados:</strong> A Organização FFC cobre os custos de hospedagem (diárias regulamentares) estritamente para os atletas do Card Principal e o número de córneres previstos em seus respectivos contratos individuais.
+        <strong>2.1.1. Card Principal e Atletas Contratados:</strong> A Organização FFC cobre os
+        custos de hospedagem (diárias regulamentares) estritamente para os atletas do Card Principal
+        e o número de córneres previstos em seus respectivos contratos individuais.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.1.2. Card Preliminar e Seletivas:</strong> Atletas das fases preliminares e seletivas abertas são inteiramente responsáveis por seus custos de hospedagem, salvo em etapas específicas onde o edital preveja pacotes subsidiados ou descontos em hotéis parceiros conveniados via aplicativo.
+        <strong>2.1.2. Card Preliminar e Seletivas:</strong> Atletas das fases preliminares e
+        seletivas abertas são inteiramente responsáveis por seus custos de hospedagem, salvo em
+        etapas específicas onde o edital preveja pacotes subsidiados ou descontos em hotéis
+        parceiros conveniados via aplicativo.
       </ABNTText>
 
       <Clause text="2.2. REGRAS DE OCUPAÇÃO E EXTRAS (INCIDENTALS):" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.2.1. Acomodação:</strong> Os quartos fornecidos pela organização seguem o padrão duplo compartilhado entre atletas da mesma equipe ou categoria, exceto para os protagonistas das lutas principais (Main Event), que farão jus a quarto privativo de acordo com sua previsão contratual.
+        <strong>2.2.1. Acomodação:</strong> Os quartos fornecidos pela organização seguem o padrão
+        duplo compartilhado entre atletas da mesma equipe ou categoria, exceto para os protagonistas
+        das lutas principais (Main Event), que farão jus a quarto privativo de acordo com sua
+        previsão contratual.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>2.2.2. Custos Extras Proibidos:</strong> A cobertura do FFC limita-se estritamente ao valor da diária de hospedagem e café da manhã (quando incluso). Quaisquer despesas extras — incluindo frigobar, serviço de quarto, lavanderia, chamadas telefônicas, canais de pay-per-view ou danos ao mobiliário do hotel — são de responsabilidade exclusiva do hóspede. O app FFC reterá os bônus da aba &apos;Carteira&apos; caso o hotel reporte inadimplência ou danos causados pelo atleta ou sua equipe.
+        <strong>2.2.2. Custos Extras Proibidos:</strong> A cobertura do FFC limita-se estritamente
+        ao valor da diária de hospedagem e café da manhã (quando incluso). Quaisquer despesas extras
+        — incluindo frigobar, serviço de quarto, lavanderia, chamadas telefônicas, canais de
+        pay-per-view ou danos ao mobiliário do hotel — são de responsabilidade exclusiva do hóspede.
+        O app FFC reterá os bônus da aba &apos;Carteira&apos; caso o hotel reporte inadimplência ou
+        danos causados pelo atleta ou sua equipe.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO III: DAS PASSAGENS E TRANSPORTE DE LONGO CURSO</SectionTitle>
       <Clause text="3.1. EMISSÃO DE BILHETES AÉREOS OU RODOVIÁRIOS:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.1.1. Prazos de Documentação:</strong> Atletas com direito a passagens aéreas cobertas contratualmente devem enviar cópia legível de seus documentos de identidade e dados de embarque até o limite de 20 dias antes da etapa através da central de suporte do app. O atraso no envio desobriga o FFC de arcar com tarifas inflacionadas de última hora.
+        <strong>3.1.1. Prazos de Documentação:</strong> Atletas com direito a passagens aéreas
+        cobertas contratualmente devem enviar cópia legível de seus documentos de identidade e dados
+        de embarque até o limite de 20 dias antes da etapa através da central de suporte do app. O
+        atraso no envio desobriga o FFC de arcar com tarifas inflacionadas de última hora.
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.1.2. Alterações de Bilhetes:</strong> Uma vez emitido o bilhete eletrônico pela agência parceira do FFC, qualquer solicitação de alteração de data, horário ou cancelamento por conveniência pessoal do atleta gerará custos que serão repassados integralmente ao competidor, com desconto automático em suas bolsas de participação.
+        <strong>3.1.2. Alterações de Bilhetes:</strong> Uma vez emitido o bilhete eletrônico pela
+        agência parceira do FFC, qualquer solicitação de alteração de data, horário ou cancelamento
+        por conveniência pessoal do atleta gerará custos que serão repassados integralmente ao
+        competidor, com desconto automático em suas bolsas de participação.
       </ABNTText>
 
       <Clause text="3.2. POLÍTICA DE BAGAGEM E EQUIPAMENTO MARCIAL:" />
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.2.1. Franquia Padrão:</strong> O FFC garante apenas a franquia de bagagem padrão estipulada pela companhia aérea (geralmente uma mala de mão e uma mochila).
+        <strong>3.2.1. Franquia Padrão:</strong> O FFC garante apenas a franquia de bagagem padrão
+        estipulada pela companhia aérea (geralmente uma mala de mão e uma mochila).
       </ABNTText>
       <ABNTText indent={false} sx={{ pl: '1.25cm' }}>
-        <strong>3.2.2. Excesso de Bagagem:</strong> Custos decorrentes de excesso de peso causados por múltiplos kimonos pesados, materiais de treino, proteções estruturais ou equipamentos de grande porte deverão ser pagos diretamente pelo atleta no balcão de check-in da companhia aérea.
+        <strong>3.2.2. Excesso de Bagagem:</strong> Custos decorrentes de excesso de peso causados
+        por múltiplos kimonos pesados, materiais de treino, proteções estruturais ou equipamentos de
+        grande porte deverão ser pagos diretamente pelo atleta no balcão de check-in da companhia
+        aérea.
       </ABNTText>
 
       <SectionTitle>CAPÍTULO IV: DO TRANSPORTE INTERNO (TRANSLADOS E SHUTTLES)</SectionTitle>

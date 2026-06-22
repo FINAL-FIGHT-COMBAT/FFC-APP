@@ -21,29 +21,43 @@ const HomeAthletes = dynamic(
   () => import('../_components/HomeAthletes').then((m) => m.HomeAthletes),
   { ssr: false }
 );
-const HomePrizes = dynamic(
-  () => import('../_components/HomePrizes').then((m) => m.HomePrizes),
-  { ssr: false }
-);
+const HomePrizes = dynamic(() => import('../_components/HomePrizes').then((m) => m.HomePrizes), {
+  ssr: false,
+});
 
-const HomeCommunity = dynamic(() => import('../_components/HomeCommunity').then((m) => m.HomeCommunity), {
+const HomeCommunity = dynamic(
+  () => import('../_components/HomeCommunity').then((m) => m.HomeCommunity),
+  {
+    ssr: false,
+  }
+);
+const HomeTeam = dynamic(() => import('../_components/HomeTeam').then((m) => m.HomeTeam), {
   ssr: false,
 });
-const HomeTeam = dynamic(() => import('../_components/HomeTeam').then((m) => m.HomeTeam), { ssr: false });
-const HomeLatestNews = dynamic(() => import('../_components/HomeLatestNews').then((m) => m.HomeLatestNews), {
-  ssr: false,
-});
+const HomeLatestNews = dynamic(
+  () => import('../_components/HomeLatestNews').then((m) => m.HomeLatestNews),
+  {
+    ssr: false,
+  }
+);
 const HomeRoadmap = dynamic(() => import('../_components/HomeRoadmap').then((m) => m.HomeRoadmap), {
   ssr: false,
 });
 const HomeFAQs = dynamic(() => import('../_components/HomeFaqs').then((m) => m.HomeFAQs), {
- ssr: false });
-const HomeCtaBanner = dynamic(() => import('../_components/HomeCtaBanner').then((m) => m.CtaBanner), {
   ssr: false,
 });
-const HomeSponsors = dynamic(() => import('../_components/HomeSponsors').then((m) => m.HomeSponsors), {
-  ssr: false,
-});
+const HomeCtaBanner = dynamic(
+  () => import('../_components/HomeCtaBanner').then((m) => m.CtaBanner),
+  {
+    ssr: false,
+  }
+);
+const HomeSponsors = dynamic(
+  () => import('../_components/HomeSponsors').then((m) => m.HomeSponsors),
+  {
+    ssr: false,
+  }
+);
 const HomeCountdownDialog = dynamic(() => import('../_components/HomeCountdownDialog'), {
   ssr: false,
 });

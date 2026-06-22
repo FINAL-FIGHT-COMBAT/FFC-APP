@@ -27,11 +27,14 @@ const PRIZES = [
     isMain: true,
     prizeMoney: 'R$ 00.000', // Edite o valor aqui
     items: [
-      { text: 'Medalha Exclusiva FFC (Ouro, Prata, Bronze)', icon: 'solar:medal-ribbons-star-bold' },
+      {
+        text: 'Medalha Exclusiva FFC (Ouro, Prata, Bronze)',
+        icon: 'solar:medal-ribbons-star-bold',
+      },
       { text: 'Kit de Suplementação Oficial', icon: 'solar:box-minimalistic-bold' },
       { text: 'Vaga Garantida na Próxima Edição', icon: 'solar:ticket-bold' },
       { text: 'Destaque nas Redes Sociais do FFC', icon: 'solar:star-bold' },
-    ]
+    ],
   },
   {
     title: 'GRAND PRIX',
@@ -46,8 +49,8 @@ const PRIZES = [
       { text: 'Premiação em Dinheiro (Pix na hora)', icon: 'solar:wad-of-money-bold' },
       { text: 'Troféu Exclusivo de Campeão Absoluto', icon: 'solar:cup-star-bold' },
       { text: 'Contrato para Lutas Casadas Futuras', icon: 'solar:document-bold' },
-    ]
-  }
+    ],
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -67,10 +70,12 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 1 }}>
-          
           {/* ── HEADER ── */}
           <m.div variants={varFade('inUp')}>
-            <Stack spacing={2} sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}>
+            <Stack
+              spacing={2}
+              sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}
+            >
               <Typography
                 variant="h2"
                 sx={{
@@ -82,11 +87,15 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                   lineHeight: 1.1,
                 }}
               >
-                PREMIAÇÃO <Box component="span" sx={{ color: '#EAB308' }}>OFICIAL</Box>
+                PREMIAÇÃO{' '}
+                <Box component="span" sx={{ color: '#EAB308' }}>
+                  OFICIAL
+                </Box>
               </Typography>
-              
+
               <Typography sx={{ color: alpha('#fff', 0.6), maxWidth: 600, mx: 'auto' }}>
-                Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames do Final Fight Combat.
+                Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames
+                do Final Fight Combat.
               </Typography>
             </Stack>
           </m.div>
@@ -96,14 +105,14 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
             {PRIZES.map((prize, index) => (
               <Grid key={prize.title} size={{ xs: 12, md: 6 }}>
                 <m.div variants={varFade('inUp', { distance: 40 })} style={{ height: '100%' }}>
-                  <Box 
-                    sx={{ 
-                      position: 'relative', 
+                  <Box
+                    sx={{
+                      position: 'relative',
                       height: '100%',
                       transition: theme.transitions.create(['transform']),
                       '&:hover': {
                         transform: 'translateY(-8px)',
-                      }
+                      },
                     }}
                   >
                     {/* Badge "Main Event" para o GP movido para fora do CyberCard para evitar o overflow: hidden */}
@@ -141,93 +150,138 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                         transition: theme.transitions.create(['box-shadow']),
                         '&:hover': {
                           boxShadow: `0 0 25px 0 ${alpha(theme.palette.info.main, 0.2)}`,
-                        }
+                        },
                       }}
                     >
-
-                    {/* Icon Header */}
-                    <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 3 }}>
-                      <Box
-                        sx={{
-                          width: 64,
-                          height: 64,
-                          borderRadius: 3,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          bgcolor: alpha(prize.accentColor, 0.1),
-                          color: prize.accentColor,
-                        }}
-                      >
-                        <Iconify icon={prize.icon as any} width={32} />
-                      </Box>
-                      <Box>
-                        <Typography sx={{ fontSize: 12, fontWeight: 700, color: alpha(prize.accentColor, 0.8), letterSpacing: '0.1em', textTransform: 'uppercase', mb: 0.5 }}>
-                          {prize.subtitle}
-                        </Typography>
-                        <Typography sx={{ fontSize: '1.75rem', fontWeight: 900, color: '#fff', fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', lineHeight: 1 }}>
-                          {prize.title}
-                        </Typography>
-                      </Box>
-                    </Stack>
-
-                    <Typography sx={{ color: alpha('#fff', 0.5), fontSize: '0.95rem', mb: 4 }}>
-                      {prize.description}
-                    </Typography>
-
-                    {/* Prize Money Highlight (Apenas GP) */}
-                    {prize.prizeMoney && (
-                      <Box
-                        sx={{
-                          mb: 4,
-                          py: 3,
-                          textAlign: 'center',
-                          borderRadius: 2,
-                          bgcolor: alpha(prize.accentColor, 0.05),
-                          border: `1px dashed ${alpha(prize.accentColor, 0.3)}`,
-                        }}
-                      >
-                        <Typography sx={{ fontSize: 12, color: alpha(prize.accentColor, 0.8), letterSpacing: '0.1em', textTransform: 'uppercase', mb: 1 }}>
-                          PRÊMIO TOTAL
-                        </Typography>
-                        <Typography sx={{ fontSize: '3rem', fontWeight: 900, color: prize.accentColor, fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif', lineHeight: 1 }}>
-                          {prize.prizeMoney}
-                        </Typography>
-                      </Box>
-                    )}
-
-                    {/* Lista de Prêmios */}
-                    <Stack spacing={2} sx={{ mt: 'auto' }}>
-                      <Typography sx={{ fontSize: 11, fontWeight: 800, color: alpha('#fff', 0.3), letterSpacing: '0.1em', textTransform: 'uppercase', mb: 1 }}>
-                        O que inclui:
-                      </Typography>
-                      {prize.items.map((item, i) => (
-                        <Stack key={i} direction="row" alignItems="center" spacing={1.5}>
-                          <Box
+                      {/* Icon Header */}
+                      <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 3 }}>
+                        <Box
+                          sx={{
+                            width: 64,
+                            height: 64,
+                            borderRadius: 3,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            bgcolor: alpha(prize.accentColor, 0.1),
+                            color: prize.accentColor,
+                          }}
+                        >
+                          <Iconify icon={prize.icon as any} width={32} />
+                        </Box>
+                        <Box>
+                          <Typography
                             sx={{
-                              width: 24, height: 24, borderRadius: '50%',
-                              display: 'flex', alignItems: 'center', justifyContent: 'center',
-                              bgcolor: alpha(prize.accentColor, 0.1),
-                              color: prize.accentColor,
-                              flexShrink: 0
+                              fontSize: 12,
+                              fontWeight: 700,
+                              color: alpha(prize.accentColor, 0.8),
+                              letterSpacing: '0.1em',
+                              textTransform: 'uppercase',
+                              mb: 0.5,
                             }}
                           >
-                            <Iconify icon={item.icon as any} width={14} />
-                          </Box>
-                          <Typography sx={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500 }}>
-                            {item.text}
+                            {prize.subtitle}
                           </Typography>
-                        </Stack>
-                      ))}
-                    </Stack>
+                          <Typography
+                            sx={{
+                              fontSize: '1.75rem',
+                              fontWeight: 900,
+                              color: '#fff',
+                              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                              lineHeight: 1,
+                            }}
+                          >
+                            {prize.title}
+                          </Typography>
+                        </Box>
+                      </Stack>
 
-                  </CyberCard>
+                      <Typography sx={{ color: alpha('#fff', 0.5), fontSize: '0.95rem', mb: 4 }}>
+                        {prize.description}
+                      </Typography>
+
+                      {/* Prize Money Highlight (Apenas GP) */}
+                      {prize.prizeMoney && (
+                        <Box
+                          sx={{
+                            mb: 4,
+                            py: 3,
+                            textAlign: 'center',
+                            borderRadius: 2,
+                            bgcolor: alpha(prize.accentColor, 0.05),
+                            border: `1px dashed ${alpha(prize.accentColor, 0.3)}`,
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontSize: 12,
+                              color: alpha(prize.accentColor, 0.8),
+                              letterSpacing: '0.1em',
+                              textTransform: 'uppercase',
+                              mb: 1,
+                            }}
+                          >
+                            PRÊMIO TOTAL
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: '3rem',
+                              fontWeight: 900,
+                              color: prize.accentColor,
+                              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                              lineHeight: 1,
+                            }}
+                          >
+                            {prize.prizeMoney}
+                          </Typography>
+                        </Box>
+                      )}
+
+                      {/* Lista de Prêmios */}
+                      <Stack spacing={2} sx={{ mt: 'auto' }}>
+                        <Typography
+                          sx={{
+                            fontSize: 11,
+                            fontWeight: 800,
+                            color: alpha('#fff', 0.3),
+                            letterSpacing: '0.1em',
+                            textTransform: 'uppercase',
+                            mb: 1,
+                          }}
+                        >
+                          O que inclui:
+                        </Typography>
+                        {prize.items.map((item, i) => (
+                          <Stack key={i} direction="row" alignItems="center" spacing={1.5}>
+                            <Box
+                              sx={{
+                                width: 24,
+                                height: 24,
+                                borderRadius: '50%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                bgcolor: alpha(prize.accentColor, 0.1),
+                                color: prize.accentColor,
+                                flexShrink: 0,
+                              }}
+                            >
+                              <Iconify icon={item.icon as any} width={14} />
+                            </Box>
+                            <Typography
+                              sx={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500 }}
+                            >
+                              {item.text}
+                            </Typography>
+                          </Stack>
+                        ))}
+                      </Stack>
+                    </CyberCard>
                   </Box>
                 </m.div>
               </Grid>
             ))}
           </Grid>
-          
         </Container>
       </MotionViewport>
     </Box>

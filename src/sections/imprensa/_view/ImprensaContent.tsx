@@ -1,4 +1,9 @@
-import { Clause, SectionTitle, DocumentTitle, DigitalSignature } from 'src/components/abnt-document';
+import {
+  Clause,
+  SectionTitle,
+  DocumentTitle,
+  DigitalSignature,
+} from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +17,9 @@ export function ImprensaContent() {
       <Clause text="1.2. MUTABILIDADE DAS REGRAS DE MÍDIA: Devido a contratos de exclusividade de transmissão, limitações físicas de espaço nas arenas e leis de segurança, este regulamento de imprensa não é definitivo. O FFC reserva-se o direito de alterar as zonas de acesso, cotas de fotografia e regras de captação sempre que necessário, visando o cumprimento da legislação brasileira e a boa-fé. As atualizações entram em vigor imediatamente após sua publicação neste portal." />
       <Clause text="1.3. SOLICITAÇÃO VIA APP: O pedido de credenciamento deve ser realizado individualmente pela aba 'Imprensa' no aplicativo oficial FFC, com antecedência mínima de 10 dias úteis antes da etapa. Caso aprovado, o profissional receberá um QR Code exclusivo que servirá como sua credencial digital de acesso à arena." />
 
-      <SectionTitle>CAPÍTULO II: DAS REGRAS DE CAPTAÇÃO E DIREITOS AUTORAIS (COPYRIGHT)</SectionTitle>
+      <SectionTitle>
+        CAPÍTULO II: DAS REGRAS DE CAPTAÇÃO E DIREITOS AUTORAIS (COPYRIGHT)
+      </SectionTitle>
       <Clause text="2.1. VETO ABSOLUTO A TRANSMISSÕES AO VIVO (LIVE STREAMING): É terminantemente proibida a transmissão ao vivo, em áudio ou vídeo, de qualquer combate, bastidores ou pesagem oficial por parte de profissionais credenciados em suas redes sociais pessoais ou canais de terceiros. A exclusividade de geração de imagens pertence ao sinal oficial de streaming do FFC." />
       <Clause text="2.2. LIMITAÇÃO DE CAPTAÇÃO DE VÍDEO: Cinegrafistas e jornalistas de veículos de imprensa estão autorizados a captar um tempo máximo acumulado de 60 segundos de imagens brutas (raw footage) por combate, estritamente para fins de reportagem jornalística e cobertura editorial pós-evento." />
       <Clause text="2.3. FOTOGRAFIA OFICIAL E USO DE FLASH: Fotógrafos credenciados devem atuar exclusivamente nas áreas delimitadas pela organização. É absolutamente proibido o uso de flash eletrônico direcionado ao tatame ou ao cage durante o transcorrer dos rounds, sob risco de atrapalhar a visão dos atletas e causar acidentes de combate." />

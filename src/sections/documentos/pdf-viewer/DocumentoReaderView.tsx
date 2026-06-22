@@ -25,7 +25,16 @@ export function DocumentoReaderView({ documentId }: Props) {
 
   if (!document) {
     return (
-      <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: '#323639', flexDirection: 'column' }}>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: '#323639',
+          flexDirection: 'column',
+        }}
+      >
         <Typography sx={{ color: '#fff' }}>Documento não encontrado.</Typography>
         <Typography sx={{ color: '#aaa', mt: 2 }}>ID recebido: {String(documentId)}</Typography>
       </Box>
@@ -68,20 +77,27 @@ export function DocumentoReaderView({ documentId }: Props) {
       >
         <Stack direction="row" alignItems="center" spacing={1}>
           <IconButton onClick={() => router.back()} sx={{ color: '#fff' }}>
-            <Iconify icon={"solar:arrow-left-bold-duotone" as any} />
+            <Iconify icon={'solar:arrow-left-bold-duotone' as any} />
           </IconButton>
-          <Typography sx={{ color: '#fff', fontSize: 14, fontWeight: 500, display: { xs: 'none', sm: 'block' } }}>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: 14,
+              fontWeight: 500,
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
             {document.title}.pdf
           </Typography>
         </Stack>
 
         <Stack direction="row" alignItems="center" spacing={1}>
           <IconButton onClick={handlePrint} sx={{ color: '#fff' }}>
-            <Iconify icon={"solar:printer-bold-duotone" as any} />
+            <Iconify icon={'solar:printer-bold-duotone' as any} />
           </IconButton>
-          <Button 
-            variant="contained" 
-            size="small" 
+          <Button
+            variant="contained"
+            size="small"
             onClick={handlePrint}
             sx={{ bgcolor: '#8ab4f8', color: '#202124', '&:hover': { bgcolor: '#9fbff0' } }}
           >
@@ -100,10 +116,16 @@ export function DocumentoReaderView({ documentId }: Props) {
           p: { xs: 4, md: 8 },
           boxShadow: '0 4px 10px rgba(0,0,0,0.5)',
           color: '#000',
-          
+
           // Estilo global resetado para não parecer com o app (Formato Formal de Documento)
           fontFamily: '"Times New Roman", Times, serif',
-          '& h1': { fontSize: 24, fontWeight: 'bold', mb: 4, textAlign: 'center', textTransform: 'uppercase' },
+          '& h1': {
+            fontSize: 24,
+            fontWeight: 'bold',
+            mb: 4,
+            textAlign: 'center',
+            textTransform: 'uppercase',
+          },
           '& h2': { fontSize: 18, fontWeight: 'bold', mt: 4, mb: 2 },
           '& p': { fontSize: 14, lineHeight: 1.6, mb: 2, textAlign: 'justify' },
           '& ul': { fontSize: 14, lineHeight: 1.6, mb: 2, pl: 4 },
@@ -114,7 +136,12 @@ export function DocumentoReaderView({ documentId }: Props) {
         {document.content.split('\n').map((line, index) => {
           if (line.startsWith('# ')) return <h1 key={index}>{line.replace('# ', '')}</h1>;
           if (line.startsWith('## ')) return <h2 key={index}>{line.replace('## ', '')}</h2>;
-          if (line.startsWith('- ')) return <li key={index} style={{ marginLeft: 20 }}>{line.replace('- ', '')}</li>;
+          if (line.startsWith('- '))
+            return (
+              <li key={index} style={{ marginLeft: 20 }}>
+                {line.replace('- ', '')}
+              </li>
+            );
           if (line.trim() === '') return null;
           return <p key={index}>{line}</p>;
         })}

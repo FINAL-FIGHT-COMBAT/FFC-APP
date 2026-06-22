@@ -45,20 +45,20 @@ export function ResponsiveCarouselGrid<T>({
       </Box>
 
       {/* ── DESKTOP: GRID ── */}
-      <Box 
-        sx={{ 
-          display: { xs: 'none', md: 'grid' }, 
-          gridTemplateColumns: gridColumns, 
-          gap: gridGap 
+      <Box
+        sx={{
+          display: { xs: 'none', md: 'grid' },
+          gridTemplateColumns: gridColumns,
+          gap: gridGap,
         }}
       >
         {data.map((item, index) => (
-          <Box 
-            key={index} 
-            sx={{ 
+          <Box
+            key={index}
+            sx={{
               height: '100%',
               minWidth: 0, // 🟢 PREVINE QUE O CONTEÚDO ESTOURE A COLUNA DO CSS GRID
-              ...(getGridItemProps ? getGridItemProps(item, index) : {})
+              ...(getGridItemProps ? getGridItemProps(item, index) : {}),
             }}
           >
             {renderItem(item, index)}

@@ -113,45 +113,46 @@ export function PostCommunity({ communities }: Props) {
         position: 'relative',
       }}
     >
-        <Stack spacing={6}>
-          <Stack spacing={1} sx={{ textAlign: 'center' }}>
-            <m.div variants={varFade('inDown')}>
-              <Typography
-                variant="h2"
-                sx={{
-                  fontWeight: 900,
-                  fontFamily: "'Orbitron', sans-serif",
-                  textTransform: 'uppercase',
-                  color: 'common.white',
-                  letterSpacing: '0.05em',
-                  textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
-                }}
-              >
-                Ligas e Academias Parceiras
-              </Typography>
-            </m.div>
+      <Stack spacing={6}>
+        <Stack spacing={1} sx={{ textAlign: 'center' }}>
+          <m.div variants={varFade('inDown')}>
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 900,
+                fontFamily: "'Orbitron', sans-serif",
+                textTransform: 'uppercase',
+                color: 'common.white',
+                letterSpacing: '0.05em',
+                textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.35)}`,
+              }}
+            >
+              Ligas e Academias Parceiras
+            </Typography>
+          </m.div>
 
-            <m.div variants={varFade('inUp')}>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: 'grey.400',
-                  maxWidth: 600,
-                  mx: 'auto',
-                  fontFamily: "'Public Sans', sans-serif",
-                }}
-              >
-                Acompanhamos e interagimos com os maiores nomes do MMA global, desde as bases até o topo do ranking.
-              </Typography>
-            </m.div>
-          </Stack>
-
-          <Stack spacing={2}>
-            <m.div variants={varFade('inRight')}>{renderMarqueeRow(false)}</m.div>
-
-            <m.div variants={varFade('inLeft')}>{renderMarqueeRow(true)}</m.div>
-          </Stack>
+          <m.div variants={varFade('inUp')}>
+            <Typography
+              variant="body1"
+              sx={{
+                color: 'grey.400',
+                maxWidth: 600,
+                mx: 'auto',
+                fontFamily: "'Public Sans', sans-serif",
+              }}
+            >
+              Acompanhamos e interagimos com os maiores nomes do MMA global, desde as bases até o
+              topo do ranking.
+            </Typography>
+          </m.div>
         </Stack>
+
+        <Stack spacing={2}>
+          <m.div variants={varFade('inRight')}>{renderMarqueeRow(false)}</m.div>
+
+          <m.div variants={varFade('inLeft')}>{renderMarqueeRow(true)}</m.div>
+        </Stack>
+      </Stack>
     </Box>
   );
 }
