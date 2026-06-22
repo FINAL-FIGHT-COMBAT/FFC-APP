@@ -222,8 +222,8 @@ export default function HomeCountdownDialog({
       {...other}
       PaperProps={{
         sx: {
-          width: 440,
-          height: 640,
+          width: { xs: 340, sm: 440 },
+          height: { xs: 'auto', sm: 640 },
           maxWidth: 'calc(100% - 32px)',
           overflow: 'hidden',
           // Padrão Global CyberCard
@@ -269,7 +269,8 @@ export default function HomeCountdownDialog({
 
       <DialogContent
         sx={{
-          p: 4,
+          p: { xs: 2.5, sm: 4 },
+          py: { xs: 4, sm: 4 },
           textAlign: 'center',
           height: '100%',
           display: 'flex',
@@ -360,8 +361,12 @@ export default function HomeCountdownDialog({
 
                 <Typography
                   id="countdown-dialog-title"
-                  variant="h3"
-                  sx={{ mb: 2, fontWeight: 900, letterSpacing: -1 }}
+                  sx={{
+                    mb: 2,
+                    fontWeight: 900,
+                    letterSpacing: -1,
+                    fontSize: { xs: '1.8rem', sm: '2.5rem' },
+                  }}
                 >
                   GARANTA SEU{' '}
                   <Box
@@ -473,9 +478,9 @@ export default function HomeCountdownDialog({
 
                   <Box
                     sx={{
-                      width: 220,
-                      height: 220,
-                      p: 3,
+                      width: { xs: 190, sm: 220 },
+                      height: { xs: 190, sm: 220 },
+                      p: { xs: 2, sm: 3 },
                       borderRadius: 3,
                       textAlign: 'center',
                       border: `1px solid ${selectedTier.color}`,
@@ -512,7 +517,14 @@ export default function HomeCountdownDialog({
                     >
                       {selectedTier.label}
                     </Typography>
-                    <Typography variant="h3" sx={{ my: 2, fontWeight: 900, letterSpacing: -1 }}>
+                    <Typography
+                      sx={{
+                        my: { xs: 1, sm: 2 },
+                        fontWeight: 900,
+                        letterSpacing: -1,
+                        fontSize: { xs: '1.5rem', sm: '2.2rem' },
+                      }}
+                    >
                       R$ {selectedTier.price}
                     </Typography>
                     <Box
@@ -698,8 +710,8 @@ function TimeBlock({ label, value, isLast }: { label: string; value: string; isL
     <Stack spacing={1} alignItems="center" sx={{ position: 'relative' }}>
       <Box
         sx={{
-          width: 72,
-          height: 80,
+          width: { xs: 58, sm: 72 },
+          height: { xs: 68, sm: 80 },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -711,12 +723,24 @@ function TimeBlock({ label, value, isLast }: { label: string; value: string; isL
           backdropFilter: 'blur(8px)',
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 800, color: 'common.white', lineHeight: 1 }}>
+        <Typography
+          sx={{
+            fontWeight: 800,
+            color: 'common.white',
+            lineHeight: 1,
+            fontSize: { xs: '1.4rem', sm: '1.85rem' },
+          }}
+        >
           {value}
         </Typography>
         <Typography
           variant="caption"
-          sx={{ color: 'grey.600', fontWeight: 800, fontSize: '0.65rem', mt: 0.5 }}
+          sx={{
+            color: 'grey.600',
+            fontWeight: 800,
+            fontSize: { xs: '0.55rem', sm: '0.65rem' },
+            mt: 0.5,
+          }}
         >
           {label}
         </Typography>
@@ -726,8 +750,8 @@ function TimeBlock({ label, value, isLast }: { label: string; value: string; isL
           variant="h4"
           sx={{
             position: 'absolute',
-            right: -12,
-            top: 20,
+            right: { xs: -10, sm: -12 },
+            top: { xs: 16, sm: 20 },
             color: 'rgba(255,255,255,0.1)',
             fontWeight: 300,
           }}

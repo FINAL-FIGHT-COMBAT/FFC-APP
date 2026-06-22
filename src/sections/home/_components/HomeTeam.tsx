@@ -105,11 +105,11 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
         {/* HEADER: TAG + TÍTULO E BOTÃO NA DIREITA */}
         <Stack
           direction={{ xs: 'column', md: 'row' }}
-          alignItems={{ md: 'flex-end' }}
+          alignItems={{ xs: 'flex-start', md: 'flex-end' }}
           justifyContent="space-between"
-          sx={{ mb: 8, gap: 3 }}
+          sx={{ mb: 8, gap: 4 }}
         >
-          <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+          <Box sx={{ textAlign: 'left' }}>
             {/* TAG "TEAM" */}
             <m.div variants={varFade('inUp')}>
               <Box
@@ -119,7 +119,7 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
                   borderRadius: 2,
                   px: 1.5,
                   py: 0.5,
-                  mb: 4,
+                  mb: 2,
                 }}
               >
                 <Typography
@@ -137,15 +137,33 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
                 </Typography>
               </Box>
             </m.div>
+
+            {/* TÍTULO DA SEÇÃO */}
+            <m.div variants={varFade('inUp')}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontFamily: "'Orbitron', sans-serif",
+                  fontWeight: 900,
+                  fontSize: { xs: '2.2rem', md: '3rem' },
+                  lineHeight: 1.1,
+                  textTransform: 'uppercase',
+                  color: 'common.white',
+                }}
+              >
+                {t('team.title', { defaultValue: 'NOSSA EQUIPE' })}
+              </Typography>
+            </m.div>
           </Box>
 
           {/* BOTÃO ATUALIZADO: "REATIVA & CRYSTAL" */}
-          <m.div variants={varFade('inRight')}>
+          <m.div variants={varFade('inRight')} style={{ width: '100%', display: 'contents' }}>
             <CyberButton
               component={RouterLink}
               href={paths.team}
               endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
               glowColor="info"
+              sx={{ width: { xs: '100%', sm: 'auto' } }}
             >
               {t('team.button')}
             </CyberButton>

@@ -18,7 +18,7 @@ export const paths = {
   pricing: '/pricing',
   payment: '/payment',
   about: '/about-us',
-  contact: '/contact-us',
+  contact: '/contact',
   team: '/team',
   documentos: '/documentos',
   pdfViewer: (id: string) => `/pdf-viewer/${id}`,

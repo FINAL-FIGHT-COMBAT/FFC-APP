@@ -500,12 +500,13 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
             </m.div>
 
             {/* BOTÃO: VER TODAS AS CHAVES */}
-            <m.div variants={varFade('inRight')}>
+            <m.div variants={varFade('inRight')} style={{ width: '100%', display: 'contents' }}>
               <CyberButton
                 component={RouterLink}
                 href={paths.chaves}
                 endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
                 glowColor="info"
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
                 VER TODAS AS CHAVES
               </CyberButton>

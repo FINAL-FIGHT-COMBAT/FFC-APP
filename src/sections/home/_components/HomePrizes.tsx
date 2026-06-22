@@ -225,7 +225,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                           </Typography>
                           <Typography
                             sx={{
-                              fontSize: '3rem',
+                              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
                               fontWeight: 900,
                               color: prize.accentColor,
                               fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',

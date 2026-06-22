@@ -386,6 +386,13 @@ function SegmentedControl({
         borderRadius: 1.5,
         p: '4px',
         gap: '2px',
+        maxWidth: '100%',
+        overflowX: 'auto',
+        msOverflowStyle: 'none',
+        scrollbarWidth: 'none',
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
       }}
     >
       {options.map((opt) => {
@@ -526,12 +533,15 @@ export function Categorias({ sx, ...other }: BoxProps) {
 
               {/* Linha 2: Faixas (esquerda) + Gênero (direita) — largura total */}
               <Stack
-                direction="row"
-                alignItems="center"
+                direction={{ xs: 'column', md: 'row' }}
+                alignItems={{ xs: 'stretch', md: 'center' }}
                 justifyContent="space-between"
+                spacing={2}
                 sx={{ width: '100%' }}
               >
-                <FaixaSelector selected={selectedFaixa} onChange={setSelectedFaixa} />
+                <Box sx={{ maxWidth: '100%', overflow: 'hidden' }}>
+                  <FaixaSelector selected={selectedFaixa} onChange={setSelectedFaixa} />
+                </Box>
 
                 <SegmentedControl
                   options={[

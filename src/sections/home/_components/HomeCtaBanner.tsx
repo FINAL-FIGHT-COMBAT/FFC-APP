@@ -89,29 +89,35 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
         <Box
           sx={{
             display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
             alignItems: 'center',
-            gap: 1.5,
+            gap: { xs: 1, sm: 1.5 },
             mt: 0.5,
           }}
         >
-          <Iconify
-            icon="solar:calendar-date-bold"
-            width={16}
-            sx={{ color: alpha(theme.palette.warning.main, 0.8) }}
-          />
+          <Stack direction="row" alignItems="center" spacing={1.5}>
+            <Iconify
+              icon="solar:calendar-date-bold"
+              width={16}
+              sx={{ color: alpha(theme.palette.warning.main, 0.8) }}
+            />
+            <Box
+              component="span"
+              sx={{
+                fontFamily: "'Orbitron', sans-serif",
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: '0.15em',
+                color: alpha(theme.palette.warning.main, 0.9),
+              }}
+            >
+              {t('cta.event_date') || '20 DE DEZEMBRO'}
+            </Box>
+          </Stack>
           <Box
             component="span"
-            sx={{
-              fontFamily: "'Orbitron', sans-serif",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '0.15em',
-              color: alpha(theme.palette.warning.main, 0.9),
-            }}
+            sx={{ color: alpha('#fff', 0.2), fontSize: 12, display: { xs: 'none', sm: 'inline' } }}
           >
-            {t('cta.event_date') || '20 DE DEZEMBRO'}
-          </Box>
-          <Box component="span" sx={{ color: alpha('#fff', 0.2), fontSize: 12 }}>
             ·
           </Box>
           <Box

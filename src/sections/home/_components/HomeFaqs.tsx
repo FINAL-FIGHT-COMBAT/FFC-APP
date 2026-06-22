@@ -48,7 +48,10 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const FAQ_PADDING = theme.spacing(2.5, 4);
+  const FAQ_PADDING = {
+    xs: theme.spacing(2, 2),
+    md: theme.spacing(2.5, 4),
+  };
 
   return (
     <Box
