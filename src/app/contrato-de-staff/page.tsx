@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ContratoStaffView } from 'src/sections/contrato-de-staff/_view';
 
 // ----------------------------------------------------------------------

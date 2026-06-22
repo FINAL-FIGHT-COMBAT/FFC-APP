@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { GuiaAntidopingView } from 'src/sections/guia-antidoping/_view';
 
 // ----------------------------------------------------------------------

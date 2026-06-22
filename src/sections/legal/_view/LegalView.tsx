@@ -2,7 +2,8 @@
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { DefaultHeader, PdfViewerLayout, A4Page } from 'src/components/abnt-document';
+
+import { A4Page, DefaultHeader, PdfViewerLayout } from 'src/components/abnt-document';
 
 // ----------------------------------------------------------------------
 

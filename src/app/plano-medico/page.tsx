@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { PlanoMedicoView } from 'src/sections/plano-medico/_view';
 
 // ----------------------------------------------------------------------

@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { CronogramaView } from 'src/sections/cronograma/_view';
 
 // ----------------------------------------------------------------------

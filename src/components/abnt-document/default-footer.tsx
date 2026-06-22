@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+
 import { Iconify } from 'src/components/iconify';
 
 export function DefaultFooter() {

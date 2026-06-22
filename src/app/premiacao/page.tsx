@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { TabelaPremiacaoView } from 'src/sections/tabela-premiacao/_view';
 
 export const metadata = constructMetadata({

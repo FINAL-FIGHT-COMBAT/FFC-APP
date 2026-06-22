@@ -1,19 +1,19 @@
 'use client';
 
+import type { IDocumentConfig } from 'src/_mock/_documents';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { HomeBackground } from 'src/components/background';
 import {
   A4Page,
+  ABNTText,
   DefaultHeader,
   DefaultFooter,
-  PdfViewerLayout,
   DocumentTitle,
-  ABNTText,
+  PdfViewerLayout,
 } from 'src/components/abnt-document';
-
-import type { IDocumentConfig } from 'src/_mock/_documents';
 
 // ----------------------------------------------------------------------
 

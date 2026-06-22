@@ -1,9 +1,9 @@
 import {
   Clause,
+  DataTag,
   ABNTText,
   SectionTitle,
   DocumentTitle,
-  DataTag,
   DigitalSignature,
 } from 'src/components/abnt-document';
 

@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ContratoAtletaSeletivaView } from 'src/sections/contrato-atleta-seletiva/_view';
 
 // ----------------------------------------------------------------------

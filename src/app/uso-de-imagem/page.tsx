@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { UsoDeImagemView } from 'src/sections/uso-de-imagem/_view';
 
 // ----------------------------------------------------------------------

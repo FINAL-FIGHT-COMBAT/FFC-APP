@@ -1,21 +1,21 @@
 'use client';
 
+import type { IDocumentConfig } from 'src/_mock/_documents';
+
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
+
+import { DOCUMENTS, DOCUMENT_CATEGORIES } from 'src/_mock/_documents';
 
 import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
 import { StandardPageWrapper } from 'src/components/standard-page';
-
-import { DOCUMENTS, DOCUMENT_CATEGORIES } from 'src/_mock/_documents';
-import type { IDocumentConfig } from 'src/_mock/_documents';
 
 // ----------------------------------------------------------------------
 

@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { RegulamentoFFCView } from 'src/sections/regulamento-ffc/_view';
 
 export const metadata = constructMetadata({

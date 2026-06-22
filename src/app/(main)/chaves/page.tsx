@@ -1,7 +1,8 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
 
-import { ChavesView } from 'src/sections/chaves/_view';
 import { SportsEventSchema } from 'src/components/seo/sports-event-schema';
+
+import { ChavesView } from 'src/sections/chaves/_view';
 
 // ----------------------------------------------------------------------
 

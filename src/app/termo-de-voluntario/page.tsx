@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { TermoVoluntarioView } from 'src/sections/termo-de-voluntario/_view';
 
 // ----------------------------------------------------------------------

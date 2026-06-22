@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { GuiaPesagemView } from 'src/sections/guia-pesagem/_view';
 
 export const metadata = constructMetadata({

@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ArbitragemLegalView } from 'src/sections/arbitragem-legal/_view';
 
 // ----------------------------------------------------------------------

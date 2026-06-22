@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { RegrasCornerView } from 'src/sections/regras-corner/_view';
 
 export const metadata = constructMetadata({

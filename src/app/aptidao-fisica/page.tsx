@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { AptidaoFisicaView } from 'src/sections/aptidao-fisica/_view';
 
 // ----------------------------------------------------------------------

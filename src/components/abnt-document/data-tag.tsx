@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
-import { alpha, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
+
 import { useDocumentData } from './document-context';
 
 type DataTagProps = {

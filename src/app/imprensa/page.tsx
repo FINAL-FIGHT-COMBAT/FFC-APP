@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ImprensaView } from 'src/sections/imprensa/_view';
 
 // ----------------------------------------------------------------------

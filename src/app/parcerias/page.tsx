@@ -1,4 +1,5 @@
 import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { ContratoParceriaView } from 'src/sections/contrato-parceria/_view';
 
 export const metadata = constructMetadata({

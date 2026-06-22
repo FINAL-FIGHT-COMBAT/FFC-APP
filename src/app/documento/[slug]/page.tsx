@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 
-import { constructMetadata } from 'src/lib/seo/metadata';
 import { DOCUMENTS } from 'src/_mock/_documents';
+import { constructMetadata } from 'src/lib/seo/metadata';
+
 import { EmBreveDocumentView } from 'src/sections/documentos/_view';
 
 // ----------------------------------------------------------------------
