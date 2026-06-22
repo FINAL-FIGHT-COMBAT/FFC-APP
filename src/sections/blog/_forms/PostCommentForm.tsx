@@ -1,6 +1,6 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 FFC – Final Fight Combat.
+ * Project: FFC Portal & Documents App
  * Role: Post Comment Form (User Interaction)
  * Version: 1.4.9 - Refactored: UX, Accessibility & Error Handling
  */
@@ -80,10 +80,10 @@ export function PostCommentForm({ postId }: { postId: string }) {
         {/* 📝 CAMPO DE TEXTO: Suporta múltiplas linhas para comentários detalhados */}
         <Field.Text
           name="comment"
-          placeholder="Escreva seu comentário sobre este projeto RWA..."
+          placeholder="Escreva seu comentário sobre este post..."
           multiline
           rows={4}
-          helperText="Mantenha o tom profissional e focado em governança agroecológica."
+          helperText="Mantenha o tom respeitoso e focado no esporte."
         />
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>

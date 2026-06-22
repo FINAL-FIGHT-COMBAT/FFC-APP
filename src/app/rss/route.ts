@@ -22,9 +22,9 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-      <title>ASPPIBRA DAO - Blog Mundo Digital</title>
+      <title>FFC – Final Fight Combat - Blog</title>
       <link>${CONFIG.siteUrl}/news</link>
-      <description>Últimas novidades e análises sobre o ecossistema RWA, DeFi e Governança ASPPIBRA.</description>
+      <description>Últimas novidades, chaves de lutas, resultados e análises do Final Fight Combat.</description>
       <language>pt-br</language>
       ${items}
     </channel>

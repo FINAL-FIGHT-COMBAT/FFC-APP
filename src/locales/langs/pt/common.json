@@ -7,13 +7,13 @@
   "hero": {
     "_comment": "Seção principal (above the fold). Contém proposta de valor, headline modular e CTAs primários.",
     "badge": "Gênesis",
-    "title": "Mundo Digital",
+    "title": "Portal do Atleta",
     "title_bridge": "O Ecossistema",
-    "title_highlight": "Interplanetário",
-    "description": "A ponte definitiva entre o mundo físico e o digital. Infraestrutura baseada em blockchain que conecta RWA ao DeFi com IA sobre uma rede descentralizada e sem fronteiras.",
+    "title_highlight": "FFC",
+    "description": "A plataforma oficial de lutas e governança do Final Fight Combat. Conectamos atletas, equipes e fãs em um ecossistema digital seguro com inscrições online, chaves em tempo real e benefícios exclusivos.",
     "buttons": {
       "_comment": "CTAs primários do topo da página.",
-      "whitepaper": "Whitepaper",
+      "whitepaper": "Regulamento",
       "ecossistema": "Ecossistema"
     }
   },
@@ -23,24 +23,24 @@
     "title": "Infraestrutura",
     "title_bridge": "Digital de",
     "title_highlight": "Nova Geração",
-    "description": "Arquiteturas seguras e interoperáveis projetadas para escalar governança técnica, eficiência operacional e impacto econômico na era Web3.",
+    "description": "Arquiteturas integradas projetadas para escalar credenciamento de atletas, gestão de chaves em tempo real e eficiência nas etapas esportivas do FFC.",
     "items": {
       "_comment": "Pilares do ecossistema exibidos como cards ou grid.",
       "tech": {
-        "title": "Tecnologia de Base",
-        "description": "Blockchain, IA e protocolos Web3 aplicados à digitalização e segurança de processos críticos."
+        "title": "Plataforma de Lutas",
+        "description": "Inscrições seguras, acompanhamento de chaves ao vivo e credenciamento oficial de atletas e corners."
       },
       "gov": {
-        "title": "Governança Digital",
-        "description": "Identidade soberana, credenciais verificáveis e rastreabilidade total on-chain."
+        "title": "Governança Esportiva",
+        "description": "Transparência e regras claras com pontuação institucional unificada no ranking oficial."
       },
       "business": {
-        "title": "Inovação & Eficiência",
-        "description": "Arquitetura escalável orientada à viabilidade econômica e otimização de ativos."
+        "title": "Eventos & Ingressos",
+        "description": "Estrutura moderna para venda de ingressos, bilheteria integrada e ativação de patrocinadores."
       },
       "rwa": {
-        "title": "Ativos Digitais (RWA)",
-        "description": "Tokenização de ativos reais conectando a liquidez do DeFi ao valor do mundo físico."
+        "title": "Sinergia Sandbox",
+        "description": "Fase de incubação para equipes e academias parceiras pontuarem no desenvolvimento do ecossistema FFC."
       }
     },
     "cta": {
@@ -92,17 +92,17 @@
     "title": "Potencial de",
     "title_bridge": "Mercado &",
     "title_highlight": "Escalabilidade",
-    "description": "A ASPPIBRA-DAO provê infraestrutura para gestão de ativos de alto valor, como cadeias de café agroecológico, garantindo segurança jurídica e liquidez on-chain por meio de governança descentralizada.",
+    "description": "O Final Fight Combat provê infraestrutura para a gestão completa de eventos esportivos, garantindo pontuações justas, regras claras e engajamento da comunidade por meio de tecnologia digital moderna.",
     "metrics": {
       "_comment": "Indicadores de escala do ecossistema. Ideal para dados dinâmicos.",
-      "members": "Network Stewards",
-      "area": "Hectares Geridos",
-      "aum": "Ativos Sob Soberania"
+      "members": "Atletas Inscritos",
+      "area": "Academias Filiadas",
+      "aum": "Etapas Realizadas"
     },
     "hub": {
       "_comment": "Bloco institucional de sinergia e integração de parceiros.",
-      "title": "Sinergia de Rede",
-      "description": "Governança que integra corporações, cooperativas e produtores em um ecossistema de liquidez global orientado à valorização de ativos reais tangíveis."
+      "title": "Sinergia Marcial",
+      "description": "Governança que integra academias, patrocinadores e espectadores em um ecossistema esportivo moderno orientado à valorização e desenvolvimento de lutadores profissionais."
     },
     "buttons": {
       "_comment": "Chaves sincronizadas com as chamadas t() do componente HomeCommunity.",
@@ -182,12 +182,12 @@
     "title": "Roteiro do",
     "title_bridge": "Nosso",
     "title_highlight": "Projeto",
-    "description": "Nossa jornada é guiada pela transparência e pelo compromisso de levar o produtor rural para o centro da nova economia digital através da Web3.",
+    "description": "Nossa jornada é guiada pela transparência e pelo compromisso de elevar o esporte e os lutadores ao centro da governança e profissionalização digital.",
     "phases": {
       "p1": {
         "label": "Fase 01",
         "time": "Jun–Jul 2026",
-        "title": "Setup Digital & Lista de Espera",
+        "title": "Setup Esportivo & Lista de Espera",
         "description": "Homologação do sistema próprio, fechamento do ginásio e lançamento da campanha Save The Date para captação estratégica de equipes e atletas."
       },
       "p2": {
@@ -217,20 +217,20 @@
     "heading_highlight": "Respostas",
     "items": [
       {
-        "question": "Como posso obter atualizações sobre o projeto?",
-        "answer": "Atualizações sobre governança da DAO e tokenização RWA são publicadas em nossos canais oficiais no Discord e Telegram."
+        "question": "Como posso obter atualizações sobre o FFC?",
+        "answer": "As atualizações oficiais sobre as próximas etapas, chaves, cronograma e venda de ingressos são publicadas no portal oficial e em nossas redes sociais."
       },
       {
-        "question": "Qual o papel da ASPPIBRA-DAO na agroecologia?",
-        "answer": "Atuamos na digitalização de processos e rastreabilidade para produtores rurais, como cadeias de café agroecológico em Paraty, promovendo transparência e valorização do produto."
+        "question": "Qual o papel do FFC no desenvolvimento de atletas?",
+        "answer": "Atuamos fornecendo uma plataforma transparente de ranking, segurança nas chaves de lutas e visibilidade profissional para atletas em todo o Brasil."
       },
       {
-        "question": "O projeto possui conformidade jurídica?",
-        "answer": "Sim. A Fase 01 do roadmap estabelece a estrutura jurídica e o compliance institucional para garantir segurança regulatória e operacional."
+        "question": "O evento possui suporte médico e seguros?",
+        "answer": "Sim. Todas as etapas do FFC contam com equipe médica especializada de pronto atendimento, ambulância no local e seguro atleta ativo para os competidores confirmados."
       },
       {
-        "question": "Como funciona a segurança dos ativos?",
-        "answer": "A segurança é baseada em contratos inteligentes auditáveis, garantindo imutabilidade, transparência e soberania das transações de ativos tokenizados."
+        "question": "Como funciona a segurança do credenciamento?",
+        "answer": "O credenciamento é feito de forma digital e criptografada via aplicativo oficial, assegurando que apenas atletas devidamente inscritos e regulares subam ao decágono."
       }
     ]
   },
@@ -246,26 +246,28 @@
     "button": "INSCREVER-SE AGORA"
   },
   "about": {
+    "title": "Sobre a FFC",
+    "subtitle": "Conectando o esporte, a tecnologia e a comunidade do combate nacional.",
     "mission": {
       "title": "Nossa Missão",
-      "content": "Empoderar o produtor rural através da digitalização de ativos, garantindo que o valor gerado pela terra seja rastreável, soberano e conectado à liquidez global."
+      "content": "Elevar o nível profissional do combate no Brasil, oferecendo uma infraestrutura digital justa, chaves transparentes e visibilidade nacional para os atletas."
     },
     "vision": {
       "title": "Nossa Visão",
-      "content": "Ser a infraestrutura de referência mundial para a tokenização de ativos reais (RWA) no setor agroecológico, unindo sustentabilidade e DeFi."
+      "content": "Ser a principal e mais inovadora plataforma esportiva de artes marciais do país, unindo entretenimento de ponta e governança digital."
     },
     "values": [
       {
-        "title": "Soberania",
-        "description": "Garantimos que o controle dos ativos permaneça nas mãos de quem os produz."
-      },
-      {
         "title": "Transparência",
-        "description": "Toda transação e governança é auditável on-chain em tempo real."
+        "description": "Toda pontuação, chaveamento e arbitragem é transparente e auditável em tempo real."
       },
       {
-        "title": "Sustentabilidade",
-        "description": "Focamos em modelos econômicos que regeneram a terra e fortalecem comunidades."
+        "title": "Profissionalismo",
+        "description": "Estrutura profissional de suporte, arbitragem qualificada e integridade física dos competidores."
+      },
+      {
+        "title": "Inclusão",
+        "description": "Oportunidade para academias e atletas de todas as regiões crescerem no ecossistema FFC."
       }
     ]
   }

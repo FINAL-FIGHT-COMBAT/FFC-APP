@@ -10,7 +10,7 @@ type Props = {
  * LAYOUT DA HOME (PÁGINAS PÚBLICAS)
  * Este layout envolve a Landing Page e outras páginas externas,
  * injetando o Header (Navegação), Footer e a estrutura de visualização principal
- * configurada para atrair investidores e parceiros do ecossistema ASPPIBRA.
+ * configurada para o portal oficial do Final Fight Combat.
  */
 export default function Layout({ children }: Props) {
   return (

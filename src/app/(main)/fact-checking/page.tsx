@@ -5,19 +5,19 @@ import { PolicyView } from 'src/sections/legal/_view';
 // ----------------------------------------------------------------------
 
 export const metadata = constructMetadata({
-  title: 'Verificação de Fatos | ASPPIBRA DAO',
-  description: 'Saiba como validamos informações on-chain e dados do mundo real (RWA).',
+  title: 'Verificação de Fatos | FFC',
+  description: 'Saiba como validamos informações esportivas, resultados de combates e rankings.',
 });
 
 const CONTENT = `
-  <h2>1. Verificação On-Chain</h2>
-  <p>Dados financeiros e de governança são validados diretamente através de exploradores de bloco e oráculos descentralizados.</p>
+  <h2>1. Verificação de Resultados</h2>
+  <p>Os resultados das lutas e pontuações do ranking são validados diretamente pela mesa de arbitragem oficial e publicados após homologação técnica.</p>
   
   <h2>2. Fontes Primárias</h2>
-  <p>Priorizamos o uso de documentos oficiais, dados de satélite para o agronegócio e relatórios de auditoria assinados digitalmente.</p>
+  <p>Priorizamos o uso de súmulas oficiais assinadas pelos árbitros das lutas, atestados médicos homologados e gravações em vídeo de alta definição para auditoria esportiva.</p>
   
   <h2>3. Processo de Revisão</h2>
-  <p>Cada artigo técnico passa por uma revisão de pares (Peer-Review) realizada por especialistas seniores da DAO antes da publicação.</p>
+  <p>Cada contestação ou atualização de ranking passa por uma revisão da comissão técnica e conselho de arbitragem do FFC antes de qualquer alteração.</p>
 `;
 
 export default function FactCheckingPage() {

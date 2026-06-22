@@ -23,7 +23,7 @@ export function ContactView() {
           <Box sx={{ textAlign: 'center', mb: 8 }}>
             <Typography variant="h1" sx={{ mb: 2 }}>Entre em Contato</Typography>
             <Typography variant="h5" sx={{ color: 'text.secondary' }}>
-              Estamos prontos para ouvir suas propostas e tirar suas dúvidas sobre a governança ASPPIBRA.
+              Estamos prontos para ouvir suas propostas e tirar suas dúvidas sobre o ecossistema FFC.
             </Typography>
           </Box>
 
@@ -53,16 +53,16 @@ export function ContactView() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Stack spacing={4}>
                 <Box>
-                  <Typography variant="h4" sx={{ mb: 1 }}>Escritório Paraty</Typography>
+                  <Typography variant="h4" sx={{ mb: 1 }}>Sede FFC</Typography>
                   <Typography variant="body1" color="text.secondary">
-                    Centro Histórico, Paraty - RJ, Brasil<br />
-                    Atendimento à Governança Local.
+                    São Paulo - SP, Brasil<br />
+                    Suporte administrativo e institucional.
                   </Typography>
                 </Box>
                 <Box>
                   <Typography variant="h4" sx={{ mb: 1 }}>E-mail Institucional</Typography>
                   <Typography variant="body1" color="text.secondary">
-                    contato@asppibra.com
+                    contato@finalfightcombat.com.br
                   </Typography>
                 </Box>
                 <Box>

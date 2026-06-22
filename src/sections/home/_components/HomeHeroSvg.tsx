@@ -13,7 +13,7 @@ import { varFade } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
-// Infraestrutura e Protocolos auditados para o ecossistema RWA/ASPPIBRA
+// Infraestrutura e Protocolos para o ecossistema FFC
 const PLATFORMS = [
   { name: 'Cloudflare Edge', icon: 'logos:cloudflare' },
   { name: 'Bitcoin Network', icon: 'logos:bitcoin' },

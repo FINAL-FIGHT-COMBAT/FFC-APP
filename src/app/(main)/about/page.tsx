@@ -5,21 +5,20 @@ import { AboutView } from 'src/sections/about/_view';
 // ----------------------------------------------------------------------
 
 export const metadata = constructMetadata({
-  title: 'Sobre Nós | ASPPIBRA DAO',
+  title: 'Sobre Nós | FFC',
   description:
-    'Conheça a história, a missão e a equipe por trás da ASPPIBRA-DAO e do Ecossistema Mundo Digital.',
+    'Conheça a história, a missão e a equipe por trás da plataforma FFC – Final Fight Combat.',
 });
 
 export default function AboutPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'ASPPIBRA-DAO',
-    url: 'https://asppibra-dao.org/about',
-    logo: 'https://www.ffc.com/logo/android-chrome-512x512.png',
+    name: 'FFC',
+    url: 'https://www.finalfightcombat.xyz/about',
+    logo: 'https://www.finalfightcombat.xyz/logo/android-chrome-512x512.png',
     sameAs: [
-      'https://twitter.com/asppibra',
-      'https://linkedin.com/company/asppibra'
+      'https://www.instagram.com/ffc.combat/',
     ]
   };
 

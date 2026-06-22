@@ -116,9 +116,9 @@ export function Footer({
                 fontFamily: '"Public Sans", sans-serif',
               }}
             >
-              A <strong>ASPPIBRA</strong> é a associação desenvolvedora deste ecossistema,
-              redefinindo ativos reais no mundo digital com governança descentralizada,
-              transparência e inovação através de tecnologia Web3.
+              O <strong>FINAL FIGHT COMBAT (FFC)</strong> é o principal ecossistema de lutas
+              e governança esportiva digital, elevando a transparência, o profissionalismo
+              e a inovação no cenário nacional de artes marciais.
             </Typography>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
@@ -280,7 +280,7 @@ export function Footer({
           }}
         >
           <Typography variant="caption" sx={{ color: 'grey.600', fontSize: '0.8rem' }}>
-            © 2026 code by <strong>ASPPIBRA-DAO</strong>. Todos os direitos reservados.
+            © 2026 <strong>FFC – Final Fight Combat</strong>. Todos os direitos reservados.
           </Typography>
 
           <Box sx={{ display: 'flex', gap: 4 }}>

@@ -5,8 +5,8 @@ import { EcosystemView } from 'src/sections/ecosystem/_view';
 // ----------------------------------------------------------------------
 
 export const metadata = constructMetadata({
-  title: 'Ecossistema | ASPPIBRA DAO',
-  description: 'Conheça a infraestrutura que conecta ativos reais do agronegócio à liquidez global da Web3.',
+  title: 'Ecossistema | FFC',
+  description: 'Conheça a infraestrutura esportiva completa que integra chaves de lutas, rankings, credenciamentos e comunidade do combate.',
 });
 
 export default function EcosystemPage() {

@@ -18,29 +18,29 @@ export function EcosystemView() {
       <Box component="main" sx={{ position: 'relative', zIndex: 1, py: 12 }}>
         <Container>
           <Box sx={{ mb: 10, textAlign: 'center' }}>
-            <Typography variant="h1" sx={{ mb: 3 }}>Ecossistema ASPPIBRA</Typography>
+            <Typography variant="h1" sx={{ mb: 3 }}>Ecossistema FFC</Typography>
             <Typography variant="h4" sx={{ color: 'text.secondary', maxWidth: 800, mx: 'auto' }}>
-              Uma infraestrutura completa que conecta o mundo físico à liquidez global da Web3.
+              Uma infraestrutura esportiva completa que integra atletas, academias e apoiadores.
             </Typography>
           </Box>
 
           <Grid container spacing={4}>
             <Grid size={{ xs: 12, md: 4 }}>
               <Box sx={{ p: 4, borderRadius: 3, bgcolor: (theme) => alpha(theme.palette.primary.main, 0.05), border: (theme) => `1px solid ${theme.palette.primary.main}` }}>
-                <Typography variant="h3" color="primary.main" sx={{ mb: 2 }}>RWA Tokenization</Typography>
-                <Typography variant="body1">Transformação de ativos reais do agronegócio em representações digitais fracionadas e líquidas.</Typography>
+                <Typography variant="h3" color="primary.main" sx={{ mb: 2 }}>Gestão de Lutas</Typography>
+                <Typography variant="body1">Inscrições simplificadas, cronograma de etapas e acompanhamento de chaves ao vivo via painel digital.</Typography>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Box sx={{ p: 4, borderRadius: 3, bgcolor: (theme) => alpha(theme.palette.secondary.main, 0.05), border: (theme) => `1px solid ${theme.palette.secondary.main}` }}>
-                <Typography variant="h3" color="secondary.main" sx={{ mb: 2 }}>DAO Governance</Typography>
-                <Typography variant="body1">Decisões democráticas e transparentes tomadas pelos detentores de governança on-chain.</Typography>
+                <Typography variant="h3" color="secondary.main" sx={{ mb: 2 }}>Ranking Unificado</Typography>
+                <Typography variant="body1">Pontuação institucional clara e transparente para todas as academias e lutadores afiliados.</Typography>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Box sx={{ p: 4, borderRadius: 3, bgcolor: (theme) => alpha(theme.palette.info.main, 0.05), border: (theme) => `1px solid ${theme.palette.info.main}` }}>
-                <Typography variant="h3" color="info.main" sx={{ mb: 2 }}>DeFi Integration</Typography>
-                <Typography variant="body1">Conexão direta com protocolos de empréstimo e liquidez no ecossistema Arbitrum/Polygon.</Typography>
+                <Typography variant="h3" color="info.main" sx={{ mb: 2 }}>SocialFi & Fãs</Typography>
+                <Typography variant="body1">Engajamento de torcedores, venda direta de ingressos e ativações interativas da comunidade.</Typography>
               </Box>
             </Grid>
           </Grid>

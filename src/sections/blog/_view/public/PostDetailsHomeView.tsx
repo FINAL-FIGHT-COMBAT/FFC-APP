@@ -121,7 +121,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
             description,
             coverUrl,
             createdAt: createdAt ? String(createdAt) : new Date().toISOString(),
-            authorName: author?.name || 'ASPPIBRA Editorial',
+            authorName: author?.name || 'FFC Editorial',
             url: `/post/${post.slug || ''}`,
           })}
         />

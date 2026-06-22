@@ -1,6 +1,6 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 FFC – Final Fight Combat.
+ * Project: FFC Portal & Documents App
  * Role: Post Comment List (Recursive Display)
  * Version: 1.4.7 - Fix: Data safety, Null-pointer prevention & UX logic
  */

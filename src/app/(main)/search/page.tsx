@@ -3,7 +3,7 @@ import { constructMetadata } from 'src/lib/seo/metadata';
 export const metadata = constructMetadata({
   title: 'Busca Semântica do Ecossistema',
   description:
-    'Rastreie dados on-chain, propostas de governança DAO e relatórios do portal usando nosso motor nativo.',
+    'Rastreie chaves de lutas, rankings de atletas e documentos oficiais do portal usando nosso motor nativo.',
 });
 
 export default async function SearchActionPage({
@@ -25,7 +25,7 @@ export default async function SearchActionPage({
         </p>
         <p className="text-sm text-gray-500 mt-4 italic">
           A injeção do SearchAction do Schema.org apontará as procuras do Google Search Box
-          nativamente para esta rota da ASPPIBRA.
+          nativamente para esta rota da FFC.
         </p>
       </div>
     </div>

@@ -1,8 +1,7 @@
 /**
- * Twitter/X Card Image Generator — ASPPIBRA Portal
+ * Twitter/X Card Image Generator — FFC Portal
  * Usa pré-fetch de ArrayBuffer para compatibilidade com Satori.
  */
-
 import { ImageResponse } from 'next/og';
 
 import { CONFIG } from 'src/global-config';
@@ -42,7 +41,7 @@ export default async function Image({ params }: Props) {
 
   const { post } = await getPost(slug);
 
-  const title = post?.title || 'ASPPIBRA DAO';
+  const title = post?.title || 'FFC';
   const category = post?.category || 'Portal';
   const coverUrl = post?.coverUrl || CONFIG.assets.fallback.banner;
   const siteDomain = CONFIG.siteUrl.replace('https://www.', '').replace('https://', '');
@@ -67,7 +66,6 @@ export default async function Image({ params }: Props) {
         {/* Imagem de capa com overlay */}
         {coverDataUrl && (
           <div style={{ display: 'flex', position: 'absolute', inset: 0 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={coverDataUrl}
               alt=""
@@ -145,7 +143,7 @@ export default async function Image({ params }: Props) {
               style={{ width: '4px', height: '24px', backgroundColor: primaryColor, marginRight: '12px', display: 'flex' }}
             />
             <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '24px', fontWeight: 500 }}>
-              asppibra.com
+              {siteDomain}
             </span>
           </div>
         </div>

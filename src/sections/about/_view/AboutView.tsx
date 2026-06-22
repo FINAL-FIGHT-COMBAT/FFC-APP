@@ -29,10 +29,10 @@ export function AboutView() {
           {/* HERO SECTION */}
           <Box sx={{ textAlign: 'center', mb: 10 }}>
             <Typography variant="h1" sx={{ mb: 3, fontWeight: 900 }}>
-              Sobre a <Box component="span" sx={{ color: 'primary.main' }}>ASPPIBRA DAO</Box>
+              Sobre a <Box component="span" sx={{ color: 'primary.main' }}>{t('about.title') || 'FFC'}</Box>
             </Typography>
             <Typography variant="h4" sx={{ color: 'text.secondary', maxWidth: 800, mx: 'auto' }}>
-              Transformando a relação entre a terra e o capital através da tecnologia Blockchain.
+              {t('about.subtitle') || 'Conectando o esporte, a tecnologia e a comunidade do combate nacional.'}
             </Typography>
           </Box>
 

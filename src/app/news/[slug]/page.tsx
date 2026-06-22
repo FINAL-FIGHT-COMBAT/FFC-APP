@@ -1,6 +1,6 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 FFC – Final Fight Combat.
+ * Project: FFC Portal & Documents App
  * Role: Public Blog Post Detail Page
  * Version: 2.1 - Elite Infrastructure Refactoring
  */
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
       publishedTime: post.createdAt ? new Date(post.createdAt).toISOString() : undefined,
       modifiedTime: post.createdAt ? new Date(post.createdAt).toISOString() : undefined,
-      authors: post.author?.name ? [post.author.name] : ['ASPPIBRA Editorial'],
+      authors: post.author?.name ? [post.author.name] : ['FFC Editorial'],
       section: post.category || 'Notícias',
       tags: Array.isArray(post.tags) ? post.tags : [],
     },
@@ -85,8 +85,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      site: '@asppibra',
-      creator: '@asppibra',
+      site: '@ffc.combat',
+      creator: '@ffc.combat',
       images: [
         {
           url: ogImageUrl,

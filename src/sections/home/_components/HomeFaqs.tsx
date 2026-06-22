@@ -126,8 +126,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
         {/* 7. Limitação de Caracteres / MaxWidth Descrição */}
         <m.div variants={varFade('inUp')}>
           <Typography sx={{ mt: 3, mx: 'auto', maxWidth: 640, color: 'text.secondary' }}>
-            Tudo o que você precisa saber sobre a infraestrutura digital e governança da
-            ASPPIBRA-DAO.
+            Tudo o que você precisa saber sobre a infraestrutura digital e governança do FFC.
           </Typography>
         </m.div>
 

@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   return constructMetadata({
     title: `Postagens sobre a Tag "${slug.replace(/-/g, ' ').toUpperCase()}"`,
-    description: `Aprofunde-se no cluster de conteúdo focado na tecnologia ${slug.replace(/-/g, ' ')} aplicado ao protocolo ASPPIBRA-DAO.`,
+    description: `Aprofunde-se no cluster de conteúdo focado na temática ${slug.replace(/-/g, ' ')} aplicado ao ecossistema FFC.`,
   });
 }
 

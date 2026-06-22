@@ -5,8 +5,8 @@ import { TeamView } from 'src/sections/team/_view';
 // ----------------------------------------------------------------------
 
 export const metadata = constructMetadata({
-  title: 'Nossa Equipe | ASPPIBRA DAO',
-  description: 'Conheça os especialistas e arquitetos por trás da governança ASPPIBRA DAO e do ecossistema RWA.',
+  title: 'Nossa Equipe | FFC',
+  description: 'Conheça os diretores, coordenadores e organizadores por trás do Final Fight Combat.',
 });
 
 export default function TeamPage() {

@@ -5,9 +5,9 @@ import { ContactView } from 'src/sections/contact/_view';
 // ----------------------------------------------------------------------
 
 export const metadata = constructMetadata({
-  title: 'Contato | ASPPIBRA DAO',
+  title: 'Contato | FFC',
   description:
-    'Fale com a nossa equipe de governança e suporte técnico. Estamos prontos para ajudar produtores e investidores RWA.',
+    'Fale com a nossa equipe do Final Fight Combat. Tire suas dúvidas sobre inscrições, ingressos, chaves e credenciamento de lutas.',
 });
 
 export default function ContactPage() {

@@ -54,7 +54,7 @@ export function generateArticleSchema(data: {
     author: [{ '@type': 'Person', name: data.authorName }],
     publisher: {
       '@type': 'Organization',
-      name: 'ASPPIBRA',
+      name: 'FFC',
       logo: { '@type': 'ImageObject', url: `${CONFIG.siteUrl}/logo/logo_single.png` },
     },
     mainEntityOfPage: {

@@ -8,7 +8,7 @@ export const contentType = 'image/png';
 
 export function OGImage({
   title,
-  description = 'A ponte definitiva entre RWA e DeFi.',
+  description = 'Portal de Documentos e Regulamentos Oficiais FFC.',
 }: {
   title: string;
   description?: string;
@@ -67,7 +67,7 @@ export function OGImage({
             letterSpacing: '4px',
           }}
         >
-          ASPPIBRA-DAO
+          FINAL FIGHT COMBAT
         </div>
       </div>
     </div>,
