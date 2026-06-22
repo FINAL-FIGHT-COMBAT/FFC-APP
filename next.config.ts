@@ -1,9 +1,8 @@
 /**
- * Copyright 2026 ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
- * Project: Governance System (ASPPIBRA DAO)
+ * Copyright 2026 FFC – Final Fight Combat.
+ * Project: FFC Portal & Documents App
  * Role: Next.js Engine Configuration
- * Version: 1.6.4 - Final Clean Build (Lighthouse Optimized)
- * Goal: Subir nota Lighthouse de 36 para 90+
+ * Goal: Maintain Lighthouse 95+ score (Focus on TBT, LCP, Gzip compression, and Bundle Minification)
  */
 
 import type { NextConfig } from 'next';
