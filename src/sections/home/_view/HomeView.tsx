@@ -9,7 +9,6 @@ import { useBoolean } from 'src/hooks/use-boolean';
 
 // ✅ NOVA ARQUITETURA: Importação do Background Modular Global
 import { HomeBackground } from 'src/components/background';
-import { LazyRender } from 'src/components/animate/lazy-render';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 
 // Componentes Críticos (Immediate Loading para LCP)
@@ -81,45 +80,25 @@ export function HomeView() {
         <HomeHero />
 
         <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
-          <LazyRender minHeight={900}>
-            <HomeAthletes />
-          </LazyRender>
+          <HomeAthletes />
 
-          <LazyRender minHeight={800}>
-            <Categorias />
-          </LazyRender>
+          <Categorias />
 
-          <LazyRender minHeight={900}>
-            <HomeRoadmap />
-          </LazyRender>
+          <HomeRoadmap />
 
-          <LazyRender minHeight={600}>
-            <HomePrizes />
-          </LazyRender>
+          <HomePrizes />
 
-          <LazyRender minHeight={800}>
-            <HomeCommunity />
-          </LazyRender>
+          <HomeCommunity />
 
-          <LazyRender minHeight={600}>
-            <HomeSponsors />
-          </LazyRender>
+          <HomeSponsors />
 
-          <LazyRender minHeight={800}>
-            <HomeLatestNews />
-          </LazyRender>
+          <HomeLatestNews />
 
-          <LazyRender minHeight={800}>
-            <HomeTeam />
-          </LazyRender>
+          <HomeTeam />
 
-          <LazyRender minHeight={600}>
-            <HomeFAQs />
-          </LazyRender>
+          <HomeFAQs />
 
-          <LazyRender minHeight={400}>
-            <HomeCtaBanner />
-          </LazyRender>
+          <HomeCtaBanner />
         </Stack>
       </Box>
 
