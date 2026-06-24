@@ -1,0 +1,113 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+
+import { useBoolean } from 'src/hooks/use-boolean';
+
+// ✅ NOVA ARQUITETURA: Importação do Background Modular Global
+import { HomeBackground } from 'src/components/background';
+import { BackToTopButton } from 'src/components/animate/back-to-top-button';
+
+// Componentes Críticos (Immediate Loading para LCP)
+import { HomeHero } from '../_components/HomeHero';
+import { Categorias } from '../_components/Categorias';
+
+// ✅ Lazy Loading Otimizado para Produção (SSR: false para componentes com Browser APIs)
+const HomeAthletes = dynamic(
+  () => import('../_components/HomeAthletes').then((m) => m.HomeAthletes),
+  { ssr: false }
+);
+const HomePrizes = dynamic(() => import('../_components/HomePrizes').then((m) => m.HomePrizes), {
+  ssr: false,
+});
+
+const HomeCommunity = dynamic(
+  () => import('../_components/HomeCommunity').then((m) => m.HomeCommunity),
+  {
+    ssr: false,
+  }
+);
+const HomeTeam = dynamic(() => import('../_components/HomeTeam').then((m) => m.HomeTeam), {
+  ssr: false,
+});
+const HomeLatestNews = dynamic(
+  () => import('../_components/HomeLatestNews').then((m) => m.HomeLatestNews),
+  {
+    ssr: false,
+  }
+);
+const HomeRoadmap = dynamic(() => import('../_components/HomeRoadmap').then((m) => m.HomeRoadmap), {
+  ssr: false,
+});
+const HomeFAQs = dynamic(() => import('../_components/HomeFaqs').then((m) => m.HomeFAQs), {
+  ssr: false,
+});
+const HomeCtaBanner = dynamic(
+  () => import('../_components/HomeCtaBanner').then((m) => m.CtaBanner),
+  {
+    ssr: false,
+  }
+);
+const HomeSponsors = dynamic(
+  () => import('../_components/HomeSponsors').then((m) => m.HomeSponsors),
+  {
+    ssr: false,
+  }
+);
+const HomeCountdownDialog = dynamic(() => import('../_components/HomeCountdownDialog'), {
+  ssr: false,
+});
+
+// ----------------------------------------------------------------------
+
+export function HomeView() {
+  const countdown = useBoolean(true);
+
+  // DATA ALVO: Sincronizado com o evento principal (HomeHero)
+  const TARGET_DATE = new Date('2026-07-12T08:00:00');
+
+  return (
+    <>
+      <BackToTopButton />
+
+      {/* 🌌 FUNDO ÚNICO E MODULAR */}
+      <HomeBackground />
+
+      <Box component="main" sx={{ position: 'relative', zIndex: 1 }}>
+        <HomeHero />
+
+        <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
+          <HomeAthletes />
+
+          <Categorias />
+
+          <HomeRoadmap />
+
+          <HomePrizes />
+
+          <HomeCommunity />
+
+          <HomeSponsors />
+
+          <HomeLatestNews />
+
+          <HomeTeam />
+
+          <HomeFAQs />
+
+          <HomeCtaBanner />
+        </Stack>
+      </Box>
+
+      {/* Dialog de contagem regressiva — Lançamento Alpha */}
+      <HomeCountdownDialog
+        open={countdown.value}
+        onClose={countdown.onFalse}
+        targetDate={TARGET_DATE}
+      />
+    </>
+  );
+}

@@ -1,0 +1,274 @@
+{
+  "_comment": "Configuração de conteúdo da landing page — versão PT-BR. Estruturado por blocos de UI para facilitar i18n, CMS e componentização.",
+  "demo": {
+    "_comment": "Configurações globais de idioma e ambiente de demonstração.",
+    "lang": "Português"
+  },
+  "hero": {
+    "_comment": "Seção principal (above the fold). Contém proposta de valor, headline modular e CTAs primários.",
+    "badge": "Gênesis",
+    "title": "Portal do Atleta",
+    "title_bridge": "O Ecossistema",
+    "title_highlight": "FFC",
+    "description": "A plataforma oficial de lutas e governança do Final Fight Combat. Conectamos atletas, equipes e fãs em um ecossistema digital seguro com inscrições online, chaves em tempo real e benefícios exclusivos.",
+    "buttons": {
+      "_comment": "CTAs primários do topo da página.",
+      "whitepaper": "Regulamento",
+      "ecossistema": "Ecossistema"
+    }
+  },
+  "ecosystem": {
+    "_comment": "Seção de apresentação da arquitetura do ecossistema. Estruturada em pilares tecnológicos e operacionais.",
+    "badge": "Ecossistema",
+    "title": "Infraestrutura",
+    "title_bridge": "Digital de",
+    "title_highlight": "Nova Geração",
+    "description": "Arquiteturas integradas projetadas para escalar credenciamento de atletas, gestão de chaves em tempo real e eficiência nas etapas esportivas do FFC.",
+    "items": {
+      "_comment": "Pilares do ecossistema exibidos como cards ou grid.",
+      "tech": {
+        "title": "Plataforma de Lutas",
+        "description": "Inscrições seguras, acompanhamento de chaves ao vivo e credenciamento oficial de atletas e corners."
+      },
+      "gov": {
+        "title": "Governança Esportiva",
+        "description": "Transparência e regras claras com pontuação institucional unificada no ranking oficial."
+      },
+      "business": {
+        "title": "Eventos & Ingressos",
+        "description": "Estrutura moderna para venda de ingressos, bilheteria integrada e ativação de patrocinadores."
+      },
+      "rwa": {
+        "title": "Sinergia Sandbox",
+        "description": "Fase de incubação para equipes e academias parceiras pontuarem no desenvolvimento do ecossistema FFC."
+      }
+    },
+    "cta": {
+      "_comment": "CTA secundário da seção de ecossistema.",
+      "label": "Explorar Ecossistema",
+      "target": "ecosystem"
+    }
+  },
+  "integrations": {
+    "_comment": "Seção de telemetria e conectividade global. Exibe métricas em tempo real da rede, blockchain e infraestrutura.",
+    "badge": "Conectividade",
+    "title": "Sistema de",
+    "title_bridge": "Rede e Ativos",
+    "title_highlight": "Global",
+    "panels": {
+      "_comment": "Painéis visuais estilo dashboard.",
+      "chain": {
+        "title": "ESTADO_DA_CHAIN",
+        "label": "BLOCKCHAIN_LEDGER"
+      },
+      "power": {
+        "title": "PODER_DE_CÁLCULO",
+        "label": "BLOCKCHAIN_MINING"
+      },
+      "network": {
+        "title": "CONSOLA_DE_REDE",
+        "label": "NETWORK_TRAFFIC"
+      },
+      "latency": {
+        "title": "LATÊNCIA_GLOBAL",
+        "label": "NETWORK_TOPOLOGY"
+      }
+    },
+    "metrics": {
+      "_comment": "Métricas exibidas dentro dos painéis.",
+      "block": "ÚLTIMO BLOCO",
+      "consensus": "CONSENSO",
+      "hashrate": "HASH_RATE",
+      "tps": "TPS_ATUAL",
+      "traffic": "TRÁFEGO",
+      "key": "CHAVE",
+      "ping": "PING_MÉDIO",
+      "downstream": "DOWNSTREAM"
+    }
+  },
+  "community": {
+    "_comment": "Seção de capital social, governança e escala de ativos sob gestão.",
+    "badge": "Comunidade",
+    "title": "Potencial de",
+    "title_bridge": "Mercado &",
+    "title_highlight": "Escalabilidade",
+    "description": "O Final Fight Combat provê infraestrutura para a gestão completa de eventos esportivos, garantindo pontuações justas, regras claras e engajamento da comunidade por meio de tecnologia digital moderna.",
+    "metrics": {
+      "_comment": "Indicadores de escala do ecossistema. Ideal para dados dinâmicos.",
+      "members": "Atletas Inscritos",
+      "area": "Academias Filiadas",
+      "aum": "Etapas Realizadas"
+    },
+    "hub": {
+      "_comment": "Bloco institucional de sinergia e integração de parceiros.",
+      "title": "Sinergia Marcial",
+      "description": "Governança que integra academias, patrocinadores e espectadores em um ecossistema esportivo moderno orientado à valorização e desenvolvimento de lutadores profissionais."
+    },
+    "buttons": {
+      "_comment": "Chaves sincronizadas com as chamadas t() do componente HomeCommunity.",
+      "governance": "Acessar Governança",
+      "data": "Dados On-chain"
+    }
+  },
+  "team": {
+    "_comment": "Seção de apresentação da equipe e conselho da DAO.",
+    "badge": "Time",
+    "button": "Ver Todos os Membros",
+    "members": [
+      {
+        "id": "member-1",
+        "name": "Orgelio André Correia",
+        "role": "Coordenador",
+        "avatarUrl": "/assets/images/avatars/team/orgelio-andre-correia.webp"
+      },
+      {
+        "id": "member-2",
+        "name": "Sandro Antunes",
+        "role": "CEO",
+        "avatarUrl": "/assets/images/avatars/team/sandro-antunes.webp"
+      },
+      {
+        "id": "member-3",
+        "name": "Ana Carolina",
+        "role": "Coordenadora",
+        "avatarUrl": "/assets/images/avatars/team/ana-carolina.webp"
+      },
+      {
+        "id": "member-4",
+        "name": "Roberto Chamberlain",
+        "role": "Coordenador",
+        "avatarUrl": "/assets/images/avatars/team/roberto-chamberlain-barbosa.webp"
+      }
+    ]
+  },
+  "news": {
+    "_comment": "Seção de blog e atualizações do ecossistema.",
+    "badge": "Últimas Notícias",
+    "title": "Novidades",
+    "title_bridge": "&",
+    "title_highlight": "Atualizações",
+    "description": "Acompanhe as atualizações, resultados e bastidores oficiais do Final Fight Combat.",
+    "button_view_all": "Ver Tudo",
+    "items": [
+      {
+        "id": "post-1",
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-15T12:00:00Z"
+      },
+      {
+        "id": "post-2",
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-14T12:00:00Z"
+      },
+      {
+        "id": "post-3",
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-13T12:00:00Z"
+      },
+      {
+        "id": "post-4",
+        "title": "Cobertura Oficial FFC em Breve",
+        "coverUrl": "/assets/images/blog/news-fallback.png",
+        "createdAt": "2026-06-12T12:00:00Z"
+      }
+    ]
+  },
+  "roadmap": {
+    "_comment": "Cronograma estratégico de evolução da ASPPIBRA-DAO.",
+    "badge": "Roadmap",
+    "title": "Roteiro do",
+    "title_bridge": "Nosso",
+    "title_highlight": "Projeto",
+    "description": "Nossa jornada é guiada pela transparência e pelo compromisso de elevar o esporte e os lutadores ao centro da governança e profissionalização digital.",
+    "phases": {
+      "p1": {
+        "label": "Fase 01",
+        "time": "Jun–Jul 2026",
+        "title": "Setup Esportivo & Lista de Espera",
+        "description": "Homologação do sistema próprio, fechamento do ginásio e lançamento da campanha Save The Date para captação estratégica de equipes e atletas."
+      },
+      "p2": {
+        "label": "Fase 02",
+        "time": "Ago 2026",
+        "title": "Lançamento & Lote Early Bird",
+        "description": "Inscrições abertas com valores exclusivos do Lote Promocional. Garanta sua vaga com antecedência e aproveite o menor preço da competição."
+      },
+      "p3": {
+        "label": "Fase 03",
+        "time": "Nov 2026",
+        "title": "Reta Final & Fechamento",
+        "description": "Encerramento das inscrições com o Lote Final. Divulgação das chaves e cronograma oficial para todos os atletas confirmados."
+      },
+      "p4": {
+        "label": "Fase 04",
+        "time": "Dez 2026",
+        "title": "Dia D — A Seletiva",
+        "description": "Oito áreas de luta, chaves definidas e sistema em tempo real. Uma experiência de alto nível para cada atleta que subir ao tatame."
+      }
+    }
+  },
+  "faqs": {
+    "_comment": "Bloco de perguntas frequentes. Estrutura compatível com componentes accordion.",
+    "title": "FAQs",
+    "heading": "Temos as",
+    "heading_highlight": "Respostas",
+    "items": [
+      {
+        "question": "Como posso obter atualizações sobre o FFC?",
+        "answer": "As atualizações oficiais sobre as próximas etapas, chaves, cronograma e venda de ingressos são publicadas no portal oficial e em nossas redes sociais."
+      },
+      {
+        "question": "Qual o papel do FFC no desenvolvimento de atletas?",
+        "answer": "Atuamos fornecendo uma plataforma transparente de ranking, segurança nas chaves de lutas e visibilidade profissional para atletas em todo o Brasil."
+      },
+      {
+        "question": "O evento possui suporte médico e seguros?",
+        "answer": "Sim. Todas as etapas do FFC contam com equipe médica especializada de pronto atendimento, ambulância no local e seguro atleta ativo para os competidores confirmados."
+      },
+      {
+        "question": "Como funciona a segurança do credenciamento?",
+        "answer": "O credenciamento é feito de forma digital e criptografada via aplicativo oficial, assegurando que apenas atletas devidamente inscritos e regulares subam ao decágono."
+      }
+    ]
+  },
+  "cta": {
+    "_comment": "Banner CTA Final — FFC.",
+    "badge": "Final Fight Combat",
+    "title": "PREPARE-SE PARA",
+    "title_bridge": "O CONFRONTO",
+    "title_highlight": "FINAL",
+    "description": "Inscrições abertas e venda de ingressos limitados.",
+    "event_date": "20 DE DEZEMBRO",
+    "event_venue": "GINÁSIO DO IBIRAPUERA",
+    "button": "INSCREVER-SE AGORA"
+  },
+  "about": {
+    "title": "Sobre a FFC",
+    "subtitle": "Conectando o esporte, a tecnologia e a comunidade do combate nacional.",
+    "mission": {
+      "title": "Nossa Missão",
+      "content": "Elevar o nível profissional do combate no Brasil, oferecendo uma infraestrutura digital justa, chaves transparentes e visibilidade nacional para os atletas."
+    },
+    "vision": {
+      "title": "Nossa Visão",
+      "content": "Ser a principal e mais inovadora plataforma esportiva de artes marciais do país, unindo entretenimento de ponta e governança digital."
+    },
+    "values": [
+      {
+        "title": "Transparência",
+        "description": "Toda pontuação, chaveamento e arbitragem é transparente e auditável em tempo real."
+      },
+      {
+        "title": "Profissionalismo",
+        "description": "Estrutura profissional de suporte, arbitragem qualificada e integridade física dos competidores."
+      },
+      {
+        "title": "Inclusão",
+        "description": "Oportunidade para academias e atletas de todas as regiões crescerem no ecossistema FFC."
+      }
+    ]
+  }
+}

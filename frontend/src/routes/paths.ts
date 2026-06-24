@@ -1,0 +1,135 @@
+import { kebabCase } from 'es-toolkit';
+
+// ----------------------------------------------------------------------
+
+const MOCK_ID = 'e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1';
+const MOCK_TITLE = 'Ativos Reais e Blockchain';
+
+const ROOTS = {
+  AUTH: '/auth',
+  DASHBOARD: '/dashboard',
+};
+
+// ----------------------------------------------------------------------
+
+export const paths = {
+  comingSoon: '/coming-soon',
+  maintenance: '/maintenance',
+  pricing: '/pricing',
+  payment: '/payment',
+  about: '/about-us',
+  contact: '/contact',
+  team: '/team',
+  documentos: '/documentos',
+  pdfViewer: (id: string) => `/pdf-viewer/${id}`,
+  chaves: '/chaves',
+  inscricao: '/inscricao',
+  regulamento: '/regulamento',
+  pesagem: '/pesagem',
+  premiacao: '/premiacao',
+  corner: '/corner',
+  parcerias: '/parcerias',
+  contratoAtleta: '/contrato-atleta',
+  aptidaoFisica: '/aptidao-fisica',
+  termoRisco: '/termo-de-risco',
+  guiaAntidoping: '/guia-antidoping',
+  planoMedico: '/plano-medico',
+  usoImagem: '/uso-de-imagem',
+  arbitragemLegal: '/arbitragem-legal',
+  cronograma: '/cronograma',
+  guiaLogistica: '/guia-de-logistica',
+  imprensa: '/imprensa',
+  termoVoluntario: '/termo-de-voluntario',
+  contratoStaff: '/contrato-de-staff',
+  contratoAtletaSeletiva: '/contrato-atleta-seletiva',
+  ecosystem: '/ecosystem',
+  privacy: '/privacidade',
+  terms: '/termos',
+  cookies: '/cookies',
+  faqs: '/faqs',
+  page403: '/error/403',
+  page404: '/error/404',
+  page500: '/error/500',
+  components: '/components',
+  docs: 'https://docs.minimals.cc/',
+  changelog: 'https://docs.minimals.cc/changelog/',
+  zoneStore: 'https://mui.com/store/items/zone-landing-page/',
+  minimalStore: 'https://mui.com/store/items/minimal-dashboard/',
+  freeUI: 'https://mui.com/store/items/minimal-dashboard-free/',
+  figmaUrl: 'https://www.figma.com/design/WadcoP3CSejUDj7YZc87xj/%5BPreview%5D-Minimal-Web.v7.3.0',
+
+  // PORTAL DE NOTÍCIAS — NEWS (Public, SEO-friendly, Internationalizado)
+  news: {
+    root: `/news`,
+    details: (slug: string) => `/news/${slug}`,
+    category: (slug: string) => `/news/category/${slug}`,
+    demo: { details: `/news/${kebabCase(MOCK_TITLE)}` },
+  },
+
+  // RETROCOMPATIBILIDADE: Alias post → news (usado internamente)
+  post: {
+    root: `/news`,
+    details: (slug: string) => `/news/${slug}`,
+    category: (slug: string) => `/news/category/${slug}`,
+    demo: { details: `/news/${kebabCase(MOCK_TITLE)}` },
+  },
+
+  // AUTH
+  auth: {
+    signIn: `${ROOTS.AUTH}/sign-in`,
+    signUp: `${ROOTS.AUTH}/sign-up`,
+    reset: `${ROOTS.AUTH}/reset`,
+    update: `${ROOTS.AUTH}/update`,
+    updatePassword: `${ROOTS.AUTH}/update`,
+    verify: `${ROOTS.AUTH}/verify`,
+    oauthCallback: `${ROOTS.AUTH}/oauth/callback`,
+  },
+
+  // DASHBOARD
+  dashboard: {
+    root: ROOTS.DASHBOARD,
+    fileManager: `${ROOTS.DASHBOARD}/file-manager`,
+    general: {
+      app: `${ROOTS.DASHBOARD}/app`,
+      banking: `${ROOTS.DASHBOARD}/banking`,
+      file: `${ROOTS.DASHBOARD}/file`,
+    },
+    user: {
+      root: `${ROOTS.DASHBOARD}/user`,
+      new: `${ROOTS.DASHBOARD}/user/new`,
+      list: `${ROOTS.DASHBOARD}/user/list`,
+      cards: `${ROOTS.DASHBOARD}/user/cards`,
+      profile: `${ROOTS.DASHBOARD}/user/profile`,
+      account: `${ROOTS.DASHBOARD}/user/account`,
+      idCard: `${ROOTS.DASHBOARD}/user/id-card`,
+      edit: (id: string) => `${ROOTS.DASHBOARD}/user/${id}/edit`,
+      demo: { edit: `${ROOTS.DASHBOARD}/user/${MOCK_ID}/edit` },
+    },
+    invoice: {
+      root: `${ROOTS.DASHBOARD}/invoice`,
+      new: `${ROOTS.DASHBOARD}/invoice/new`,
+      details: (id: string) => `${ROOTS.DASHBOARD}/invoice/${id}`,
+      edit: (id: string) => `${ROOTS.DASHBOARD}/invoice/${id}/edit`,
+      demo: {
+        details: `${ROOTS.DASHBOARD}/invoice/${MOCK_ID}`,
+        edit: `${ROOTS.DASHBOARD}/invoice/${MOCK_ID}/edit`,
+      },
+    },
+    post: {
+      root: `${ROOTS.DASHBOARD}/post`,
+      new: `${ROOTS.DASHBOARD}/post/new`,
+      details: (title: string) => `${ROOTS.DASHBOARD}/post/${kebabCase(title)}`,
+      edit: (title: string) => `${ROOTS.DASHBOARD}/post/${kebabCase(title)}/edit`,
+      demo: {
+        details: `${ROOTS.DASHBOARD}/post/${kebabCase(MOCK_TITLE)}`,
+        edit: `${ROOTS.DASHBOARD}/post/${kebabCase(MOCK_TITLE)}/edit`,
+      },
+    },
+    // DAO SECTIONS
+    governance: `${ROOTS.DASHBOARD}/governance`,
+    treasury: `${ROOTS.DASHBOARD}/treasury`,
+    bounties: `${ROOTS.DASHBOARD}/bounties`,
+    // ASSINATURA DIGITAL (IPFS/FaceID)
+    assinatura: (id: string) => `${ROOTS.DASHBOARD}/assinatura/${id}`,
+  },
+};

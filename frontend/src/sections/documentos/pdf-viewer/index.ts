@@ -1,0 +1,1 @@
+export { DocumentoReaderView } from './DocumentoReaderView';

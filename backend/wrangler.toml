@@ -1,0 +1,62 @@
+name = "ffc-core-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+FRONTEND_URL = "https://www.finalfightcombat.xyz"
+JWT_EXPIRE_IN = "24h"
+
+# Custom Domain — Produção
+routes = [
+  { pattern = "api.finalfightcombat.xyz", custom_domain = true }
+]
+
+
+
+[observability]
+enabled = false
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = false
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = true
+persist = true
+head_sampling_rate = 1
+
+# Servir arquivos estáticos do Dashboard Frontend nativo (CSS, JS, Imagens, Mocks)
+[assets]
+directory = "public"
+
+# ==============================================================
+# Cloudflare Workers Configuration
+# ==============================================================
+
+# Database
+[[d1_databases]]
+binding = "DB"
+database_name = "ffc-core-d1-prod"
+database_id = "7ddcd77d-bdc6-4041-98a3-106264c0ecc1"
+migrations_dir = "migrations"
+
+# Storage
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "ffc-assets-prod"
+
+# Caching and Auth Speed (Nonces, Metrics)
+[[kv_namespaces]]
+binding = "KV_AUTH"
+id = "50298686512b4645aca2bc922aae2d5c"
+
+[[kv_namespaces]]
+binding = "KV_CACHE"
+id = "5241bc3aa57f489b801c498959298d13"
+
+[ai]
+binding = "AI"

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "FinalFightCombat",
+  "name_for_human": "Final Fight Combat (FFC)",
+  "description_for_model": "Plugin for accessing public FFC championship data, categories by belt and weight, and registration information from the Final Fight Combat ecosystem.",
+  "description_for_human": "Explore FFC championships, belt categories and athlete registrations.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.ffc.com/openapi.yaml"
+  },
+  "logo_url": "https://www.ffc.com/logo/logo-512x512.png",
+  "contact_email": "support@ffc.com",
+  "legal_info_url": "https://www.ffc.com/terms"
+}

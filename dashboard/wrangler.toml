@@ -1,0 +1,2 @@
+name = "ffc-dashboard"
+pages_build_output_dir = "./dist"

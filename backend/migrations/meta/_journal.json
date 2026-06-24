@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1774843068988,
+      "tag": "0000_glamorous_lockjaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1774845884082,
+      "tag": "0001_steady_enchantress",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1774871758337,
+      "tag": "0002_condemned_viper",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1775840930808,
+      "tag": "0003_marvelous_shockwave",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1776990997329,
+      "tag": "0004_overjoyed_triathlon",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1777041443917,
+      "tag": "0005_melted_meltdown",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1778067981430,
+      "tag": "0006_wooden_switch",
+      "breakpoints": true
+    }
+  ]
+}

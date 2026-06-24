@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Final Fight Combat",
+  "url": "https://www.ffc.com",
+  "description": "Plataforma oficial de inscrições e campeonatos de Jiu-Jitsu Brasileiro — Final Fight Combat.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.ffc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}

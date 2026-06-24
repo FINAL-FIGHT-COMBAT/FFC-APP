@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Final Fight Combat (FFC)",
+  "url": "https://www.ffc.com",
+  "logo": "https://www.ffc.com/logo/logo-512x512.png",
+  "description": "Plataforma oficial de inscrições e gestão de campeonatos de Jiu-Jitsu Brasileiro — categorias por faixa e peso segundo tabela CBJJ oficial.",
+  "sameAs": [
+    "https://twitter.com/ffc",
+    "https://www.instagram.com/ffc",
+    "https://www.facebook.com/ffc",
+    "https://github.com/FINAL-FIGHT-COMBAT"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contact@ffc.com",
+    "contactType": "customer service",
+    "availableLanguage": ["Portuguese", "English"]
+  }
+}

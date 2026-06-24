@@ -1,0 +1,265 @@
+{
+  "_comment": "Landing page content configuration — EN version. Structured by UI blocks to facilitate i18n, CMS, and componentization.",
+  "demo": {
+    "_comment": "Global language and demo environment settings.",
+    "lang": "English"
+  },
+  "hero": {
+    "_comment": "Main section (above the fold). Contains value proposition, modular headline, and primary CTAs.",
+    "badge": "Genesis",
+    "title": "Athlete Portal",
+    "title_bridge": "The FFC",
+    "title_highlight": "Ecosystem",
+    "description": "The official fight and governance platform of Final Fight Combat. We connect athletes, teams, and fans in a secure digital ecosystem with online registrations, real-time brackets, and exclusive benefits.",
+    "buttons": {
+      "_comment": "Primary CTAs at the top of the page.",
+      "whitepaper": "Rules",
+      "ecossistema": "Ecosystem"
+    }
+  },
+  "ecosystem": {
+    "_comment": "Ecosystem architecture presentation section. Structured into technological and operational pillars.",
+    "badge": "Ecosystem",
+    "title": "Next-Gen",
+    "title_bridge": "Digital",
+    "title_highlight": "Infrastructure",
+    "description": "Integrated architectures designed to scale athlete credentials, real-time bracket management, and efficiency in FFC sporting events.",
+    "items": {
+      "_comment": "Ecosystem pillars displayed as cards or grid.",
+      "tech": {
+        "title": "Fight Platform",
+        "description": "Secure registration, live bracket tracking, and official credentials for athletes and corners."
+      },
+      "gov": {
+        "title": "Sports Governance",
+        "description": "Transparency and clear rules with unified institutional points in the official ranking."
+      },
+      "business": {
+        "title": "Events & Tickets",
+        "description": "Modern structure for ticket sales, integrated ticketing, and sponsor activations."
+      },
+      "rwa": {
+        "title": "Sandbox Synergy",
+        "description": "Incubation phase for partner teams and gyms to earn points in the development of the FFC ecosystem."
+      }
+    },
+    "cta": {
+      "_comment": "Secondary CTA for the ecosystem section.",
+      "label": "Explore Ecosystem",
+      "target": "ecosystem"
+    }
+  },
+  "integrations": {
+    "_comment": "Telemetry and global connectivity section. Displays real-time network, blockchain, and infrastructure metrics.",
+    "badge": "Connectivity",
+    "title": "Global",
+    "title_bridge": "Network & Asset",
+    "title_highlight": "System",
+    "panels": {
+      "_comment": "Dashboard-style visual panels.",
+      "chain": {
+        "title": "CHAIN_STATE",
+        "label": "BLOCKCHAIN_LEDGER"
+      },
+      "power": {
+        "title": "COMPUTING_POWER",
+        "label": "BLOCKCHAIN_MINING"
+      },
+      "network": {
+        "title": "NETWORK_CONSOLE",
+        "label": "NETWORK_TRAFFIC"
+      },
+      "latency": {
+        "title": "GLOBAL_LATENCY",
+        "label": "NETWORK_TOPOLOGY"
+      }
+    },
+    "metrics": {
+      "_comment": "Metrics displayed within the panels.",
+      "block": "LAST BLOCK",
+      "consensus": "CONSENSUS",
+      "hashrate": "HASH_RATE",
+      "tps": "CURRENT_TPS",
+      "traffic": "TRAFFIC",
+      "key": "KEY",
+      "ping": "AVG_PING",
+      "downstream": "DOWNSTREAM"
+    }
+  },
+  "community": {
+    "_comment": "Social capital, governance, and assets under management scale section.",
+    "badge": "Community",
+    "title": "Market Potential",
+    "title_bridge": "&",
+    "title_highlight": "Scalability",
+    "description": "Final Fight Combat provides infrastructure for complete management of sporting events, ensuring fair scoring, clear rules, and community engagement through modern digital technology.",
+    "metrics": {
+      "_comment": "Ecosystem scale indicators. Ideal for dynamic data.",
+      "members": "Registered Athletes",
+      "area": "Affiliated Gyms",
+      "aum": "Completed Events"
+    },
+    "hub": {
+      "_comment": "Institutional block for synergy and partner integration.",
+      "title": "Network Synergy",
+      "description": "Governance that integrates gyms, sponsors, and spectators in a modern sports ecosystem oriented towards the development and promotion of professional fighters."
+    },
+    "buttons": {
+      "_comment": "Keys synchronized with t() calls from the HomeCommunity component.",
+      "governance": "Access Governance",
+      "data": "On-chain Data"
+    }
+  },
+  "team": {
+    "_comment": "Section for team presentation and DAO council.",
+    "badge": "Team",
+    "button": "View All Members",
+    "members": [
+      {
+        "id": "member-1",
+        "name": "Orgelio André Correia",
+        "role": "Coordinator",
+        "avatarUrl": "/assets/images/avatars/team/orgelio-andre-correia.webp"
+      },
+      {
+        "id": "member-2",
+        "name": "Sandro Antunes",
+        "role": "CEO",
+        "avatarUrl": "/assets/images/avatars/team/sandro-antunes.webp"
+      },
+      {
+        "id": "member-3",
+        "name": "Ana Carolina",
+        "role": "Coordinator",
+        "avatarUrl": "/assets/images/avatars/team/ana-carolina.webp"
+      },
+      {
+        "id": "member-4",
+        "name": "Roberto Chamberlain",
+        "role": "Coordinator",
+        "avatarUrl": "/assets/images/avatars/team/roberto-chamberlain-barbosa.webp"
+      }
+    ]
+  },
+  "news": {
+    "_comment": "Blog and ecosystem updates section.",
+    "badge": "Latest News",
+    "title": "News",
+    "title_bridge": "&",
+    "title_highlight": "Updates",
+    "description": "Stay up to date with news, technical announcements, and strategic analysis from the FFC ecosystem.",
+    "button_view_all": "View All",
+    "posts": {
+      "post1": {
+        "category": "New Features",
+        "title": "Portal Launch: Faster and More Secure",
+        "description": "We have enhanced our infrastructure to ensure decentralized data flow and full on-chain auditability."
+      },
+      "post2": {
+        "category": "Partnership",
+        "title": "Strategic Partnership: Academies and Web3",
+        "description": "Integrating martial arts schools into our sports ecosystem via digital governance."
+      },
+      "post3": {
+        "category": "Analysis",
+        "title": "The Future of Professional Combat",
+        "description": "How FFC uses unified rankings to manage athlete progression and transparency."
+      }
+    }
+  },
+  "roadmap": {
+    "_comment": "Strategic evolution timeline of ASPPIBRA-DAO.",
+    "badge": "Roadmap",
+    "title": "Our",
+    "title_bridge": "Project",
+    "title_highlight": "Timeline",
+    "description": "Our journey is guided by transparency and a commitment to placing the sport and fighters at the center of digital governance and professionalization.",
+    "phases": {
+      "p1": {
+        "label": "Phase 01",
+        "time": "Jun–Jul 2026",
+        "title": "Digital Setup & Waiting List",
+        "description": "System validation, venue contract and Save The Date campaign launch for strategic recruitment of teams and athletes."
+      },
+      "p2": {
+        "label": "Phase 02",
+        "time": "Aug 2026",
+        "title": "Launch & Early Bird Round",
+        "description": "Registrations open at exclusive Early Bird prices. Secure your spot early and take advantage of the best pricing available for the competition."
+      },
+      "p3": {
+        "label": "Phase 03",
+        "time": "Nov 2026",
+        "title": "Final Stretch & Closing",
+        "description": "Enrollment closes with the Final Round. Brackets and official schedule released for all confirmed athletes."
+      },
+      "p4": {
+        "label": "Phase 04",
+        "time": "Dec 2026",
+        "title": "D-Day — The Qualifier",
+        "description": "Eight competition areas, defined brackets and a live system. A premium experience for every athlete stepping onto the mat."
+      }
+    }
+  },
+  "faqs": {
+    "_comment": "Frequently asked questions block. Compatible with accordion components.",
+    "title": "FAQs",
+    "heading": "We Have the",
+    "heading_highlight": "Answers",
+    "items": [
+      {
+        "question": "How can I get updates about FFC?",
+        "answer": "Official updates about upcoming events, tickets, and schedules are published on the website and our official channels."
+      },
+      {
+        "question": "What is the role of FFC in athlete development?",
+        "answer": "We provide a transparent ranking platform, security in fight brackets, and professional visibility for athletes across Brazil."
+      },
+      {
+        "question": "Does the event have medical support and insurance?",
+        "answer": "Yes. All FFC stages have a specialized medical response team, on-site ambulance, and active athlete insurance for confirmed competitors."
+      },
+      {
+        "question": "How does credentials security work?",
+        "answer": "Credentials are done digitally and securely via the official app, ensuring only properly registered and compliant athletes enter the arena."
+      }
+    ]
+  },
+  "cta": {
+    "_comment": "CTA Final Banner — FFC.",
+    "badge": "Final Fight Combat",
+    "title": "GET READY FOR",
+    "title_bridge": "THE FINAL",
+    "title_highlight": "CONFRONTATION",
+    "description": "Open registrations and limited ticket sales.",
+    "event_date": "DECEMBER 20TH",
+    "event_venue": "IBIRAPUERA GYMNASIUM",
+    "button": "REGISTER NOW"
+  },
+  "about": {
+    "title": "About FFC",
+    "subtitle": "Connecting sports, technology, and the national combat community.",
+    "mission": {
+      "title": "Our Mission",
+      "content": "To elevate the professional level of combat sports in Brazil by offering a fair digital infrastructure, transparent brackets, and national visibility for athletes."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To be the leading and most innovative martial arts sports platform in the country, merging premium entertainment with digital governance."
+    },
+    "values": [
+      {
+        "title": "Transparency",
+        "description": "All scoring, brackets, and refereeing are transparent and auditable in real-time."
+      },
+      {
+        "title": "Professionalism",
+        "description": "Professional support structures, qualified refereeing, and physical integrity for competitors."
+      },
+      {
+        "title": "Inclusion",
+        "description": "Opportunities for gyms and athletes from all regions to grow within the FFC ecosystem."
+      }
+    ]
+  }
+}

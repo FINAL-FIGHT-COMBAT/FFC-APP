@@ -1,0 +1,3 @@
+export function Searchbar() {
+  return <div>Search</div>;
+}
