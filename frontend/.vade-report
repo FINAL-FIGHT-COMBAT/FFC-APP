@@ -1,0 +1,53 @@
+# Vercel Speed Insights Configuration Report
+
+## Summary
+Verified and optimized Vercel Speed Insights installation for the FFC Frontend application.
+
+## Current Status
+The project **already had** Vercel Speed Insights properly installed and configured:
+- Package `@vercel/speed-insights` version 2.0.0 was present in package.json
+- The `<SpeedInsights />` component was already imported and rendered in the root layout
+- The component was correctly placed in the body section alongside `<Analytics />`
+
+## Changes Made
+
+### Modified Files
+**frontend/src/app/layout.tsx**
+- Fixed import ordering to comply with ESLint's `perfectionist/sort-imports` rule
+- Moved `@vercel/analytics/react` and `@vercel/speed-insights/next` imports to appear before `@mui` imports
+- Added proper spacing between import groups as required by the linter
+
+### Implementation Details
+According to the official Vercel Speed Insights documentation (fetched from https://vercel.com/docs/speed-insights/quickstart), the correct Next.js implementation requires:
+
+1. ✅ Install package: `@vercel/speed-insights` - Already installed (v2.0.0)
+2. ✅ Import component: `import { SpeedInsights } from '@vercel/speed-insights/next'` - Already present
+3. ✅ Add to layout: `<SpeedInsights />` component in root layout body - Already implemented
+4. ✅ Deploy to Vercel and enable Speed Insights in dashboard - Ready for deployment
+
+### Verification Steps Completed
+1. ✅ Installed all dependencies with `pnpm install`
+2. ✅ Verified build completes successfully with `pnpm build`
+3. ✅ Fixed linting errors with import reordering
+4. ✅ Confirmed all tests pass with `pnpm test`
+5. ✅ Verified no additional configuration needed for Next.js 16.2.9
+
+## Framework Configuration
+- **Framework**: Next.js 16.2.9
+- **Package Manager**: pnpm
+- **Runtime**: Node.js (configured for v24.x, running on v22.x in dev)
+- **App Router**: Using Next.js App Router with root layout at `src/app/layout.tsx`
+
+## Notes
+- Speed Insights is correctly positioned in the component tree within the AppRouterCacheProvider
+- The component will automatically track Core Web Vitals and performance metrics
+- No additional environment variables or configuration files are needed
+- Speed Insights must be enabled in the Vercel dashboard after deployment to collect data
+
+## Next Steps
+After deployment to Vercel:
+1. Navigate to the Vercel dashboard
+2. Select the FFC project
+3. Go to Speed Insights section
+4. Click "Enable" to start collecting performance data
+5. Monitor performance metrics through the dashboard
