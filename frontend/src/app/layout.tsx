@@ -39,6 +39,9 @@ import { JsonLd } from 'src/components/seo/json-ld';
 import { detectSettings } from 'src/components/settings/server';
 import { defaultSettings, SettingsProvider } from 'src/components/settings';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import App from './app';
 
 // ----------------------------------------------------------------------
@@ -230,6 +233,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <LocalizationProvider>
                 <AppRouterCacheProvider options={{ key: 'css' }}>
                   <App>{children}</App>
+                  <Analytics />
+                  <SpeedInsights />
                 </AppRouterCacheProvider>
               </LocalizationProvider>
             </SettingsProvider>
