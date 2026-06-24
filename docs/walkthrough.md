@@ -182,3 +182,29 @@ Realizamos a limpeza e alinhamento de infraestrutura de controle de versão (Git
 
 ### 5. Primeiro Commit Mestre
 *   Executamos com sucesso o `git add .` e efetuamos o **primeiro commit local oficial do monorepo consolidado**, totalmente limpo de dependências e de variáveis de ambiente.
+
+---
+
+## 📈 Etapa 5: Monitoramento do Frontend (Analytics & Speed Insights) (Concluída)
+
+Adicionamos a integração oficial dos serviços de monitoramento de performance e tráfego da Vercel no Next.js frontend, além de configurar as novas credenciais da plataforma.
+
+### 1. Integração do Vercel Speed Insights & Analytics
+*   **Instalação de Pacotes**:
+    *   Instalamos a dependência `@vercel/speed-insights` utilizando o **pnpm** no projeto `@ffc/frontend`.
+*   **Código do Layout**:
+    *   [MODIFY] [layout.tsx](file:///home/sandro/FFC/frontend/src/app/layout.tsx):
+        *   Importamos os componentes oficiais:
+            ```tsx
+            import { Analytics } from '@vercel/analytics/next';
+            import { SpeedInsights } from '@vercel/speed-insights/next';
+            ```
+        *   Instanciamos `<Analytics />` e `<SpeedInsights />` dentro de `AppRouterCacheProvider` para garantir o rastreio sem interferir na hidratação dos componentes do Next.js.
+
+### 2. Atualização das Novas Credenciais Locais da Vercel
+*   [MODIFY] [.env.local (Frontend)](file:///home/sandro/FFC/frontend/.env.local) & [.dev.vars (Backend)](file:///home/sandro/FFC/backend/.dev.vars):
+    *   Salvamos com segurança e de forma ignorada pelo Git as credenciais dedicadas da nova conta da Vercel (`VERCEL_TOKEN` e `VERCEL_ORG_ID`), permitindo o controle de deploys manuais localmente.
+
+### 3. Deploys e Commits Finais do Monorepo
+*   Testamos a compilação local com sucesso absoluto (`pnpm build`).
+*   Enviamos todos os commits atualizados para a branch `main` do repositório remoto no GitHub (`FINAL-FIGHT-COMBAT/FFC-APP.git`), disparando o deploy na Vercel.
