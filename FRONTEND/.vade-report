@@ -1,0 +1,71 @@
+# Vercel Speed Insights Installation Report
+
+## Summary
+Successfully verified and configured Vercel Speed Insights for the FFC App project.
+
+## What Was Done
+
+### 1. Documentation Review
+- Fetched the latest official Vercel Speed Insights documentation from https://vercel.com/docs/speed-insights/quickstart
+- Confirmed framework-specific instructions for Next.js App Router (13.5+)
+
+### 2. Package Installation
+- The `@vercel/speed-insights` package (v2.0.0) was already present in package.json
+- Ran `pnpm install` to ensure all dependencies were properly installed
+- Verified the package is now correctly available in node_modules
+
+### 3. Code Configuration
+- The SpeedInsights component was already imported and configured in the root layout file
+- Fixed import ordering to comply with ESLint perfectionist/sort-imports rules
+- Moved Vercel imports (@vercel/analytics/next and @vercel/speed-insights/next) to appear before MUI imports
+
+### Files Modified
+- **FRONTEND/src/app/layout.tsx**: Reordered imports to satisfy linter requirements
+  - Moved `import { Analytics } from '@vercel/analytics/next'` and `import { SpeedInsights } from '@vercel/speed-insights/next'` to come before MUI imports
+  - The `<SpeedInsights />` component was already properly placed in the root layout before body closing tag
+
+### 4. Testing & Verification
+- ✅ **Build**: Successfully completed production build with no errors
+- ✅ **Linter**: Fixed import ordering issue; no new errors introduced (20 pre-existing warnings remain in other files)
+- ✅ **Tests**: All tests pass (1/1 test passed)
+- ✅ **Lock Files**: pnpm-lock.yaml is up to date
+
+## Implementation Details
+
+According to the official Vercel documentation, for Next.js 13.5+ with App Router:
+1. The SpeedInsights component should be imported from '@vercel/speed-insights/next'
+2. It should be placed in the root layout file
+3. It should be rendered inside the body tag
+
+The implementation follows these guidelines perfectly:
+```tsx
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <body>
+        {/* ... other components ... */}
+        <SpeedInsights />
+      </body>
+    </html>
+  );
+}
+```
+
+## Next Steps
+
+To enable Speed Insights on Vercel:
+1. Navigate to your Vercel dashboard
+2. Select "Speed Insights" from the sidebar
+3. Choose your project
+4. Click the "Enable" button
+5. Deploy the application
+6. Verify the `/_vercel/speed-insights/*` routes are accessible after deployment
+7. Monitor performance metrics in the Speed Insights dashboard
+
+## Notes
+- The package was already installed but dependencies needed to be downloaded
+- Import order was adjusted to satisfy ESLint rules (perfectionist/sort-imports)
+- No functional changes were required; the implementation was already correct
+- The configuration follows Vercel's latest documentation as of the fetch date
