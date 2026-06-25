@@ -1,7 +1,7 @@
 import type { DialogProps } from '@mui/material';
 
 import { m, AnimatePresence } from 'framer-motion';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
@@ -16,6 +16,8 @@ import DialogContent from '@mui/material/DialogContent';
 import { alpha, useTheme, keyframes } from '@mui/material/styles';
 
 import { Iconify } from 'src/components/iconify';
+
+import { useTranslate } from 'src/locales';
 
 // Removida importação estática da fonte orbitron para evitar Render Blocking
 
@@ -32,48 +34,6 @@ interface Tier {
   limit: number;
 }
 
-const SEED_TIERS: Tier[] = [
-  {
-    id: 'arquibancada',
-    label: 'ARQUIBANCADA',
-    price: '90',
-    color: '#00B8D9', // info.main aprox
-    benefits: 'Visão panorâmica do evento',
-    limit: 2500,
-  },
-  {
-    id: 'premium',
-    label: 'CADEIRA PREMIUM',
-    price: '150',
-    color: '#36B37E', // success
-    benefits: 'Assento marcado + Bares exclusivos',
-    limit: 800,
-  },
-  {
-    id: 'vip',
-    label: 'ÁREA VIP',
-    price: '350',
-    color: '#FFAB00', // warning.main
-    benefits: 'Open bar + Pôster autografado',
-    limit: 300,
-  },
-  {
-    id: 'octagon',
-    label: 'OCTAGON SIDE',
-    price: '800',
-    color: '#FF5630', // error.main
-    benefits: 'Visão colada na grade + Meet & Greet',
-    limit: 50,
-  },
-  {
-    id: 'camarote',
-    label: 'CAMAROTE (10X)',
-    price: '5.000',
-    color: '#B9F2FF', // diamond/ice
-    benefits: 'Espaço privativo + Open Food Premium',
-    limit: 10,
-  },
-];
 
 interface Props extends DialogProps {
   targetDate: Date;
@@ -149,6 +109,53 @@ export default function HomeCountdownDialog({
   ...other
 }: Props) {
   const theme = useTheme();
+  const { t } = useTranslate();
+
+  const tiers = useMemo(
+    () => [
+      {
+        id: 'arquibancada',
+        label: t('ticket_dialog.tiers.arquibancada.label', 'ARQUIBANCADA'),
+        price: '90',
+        color: '#00B8D9', // info.main aprox
+        benefits: t('ticket_dialog.tiers.arquibancada.benefits', 'Visão panorâmica do evento'),
+        limit: 2500,
+      },
+      {
+        id: 'premium',
+        label: t('ticket_dialog.tiers.premium.label', 'CADEIRA PREMIUM'),
+        price: '150',
+        color: '#36B37E', // success
+        benefits: t('ticket_dialog.tiers.premium.benefits', 'Assento marcado + Bares exclusivos'),
+        limit: 800,
+      },
+      {
+        id: 'vip',
+        label: t('ticket_dialog.tiers.vip.label', 'ÁREA VIP'),
+        price: '350',
+        color: '#FFAB00', // warning.main
+        benefits: t('ticket_dialog.tiers.vip.benefits', 'Open bar + Pôster autografado'),
+        limit: 300,
+      },
+      {
+        id: 'octagon',
+        label: t('ticket_dialog.tiers.octagon.label', 'OCTAGON SIDE'),
+        price: '800',
+        color: '#FF5630', // error.main
+        benefits: t('ticket_dialog.tiers.octagon.benefits', 'Visão colada na grade + Meet & Greet'),
+        limit: 50,
+      },
+      {
+        id: 'camarote',
+        label: t('ticket_dialog.tiers.camarote.label', 'CAMAROTE (10X)'),
+        price: '5.000',
+        color: '#B9F2FF', // diamond/ice
+        benefits: t('ticket_dialog.tiers.camarote.benefits', 'Espaço privativo + Open Food Premium'),
+        limit: 10,
+      },
+    ],
+    [t]
+  );
 
   const [viewMode, setViewMode] = useState<ViewMode>('COUNTDOWN');
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -156,7 +163,7 @@ export default function HomeCountdownDialog({
   const [copied, setCopied] = useState(false);
 
   const countdown = useCountdown(targetDate, viewMode === 'COUNTDOWN');
-  const selectedTier = SEED_TIERS[selectedIdx];
+  const selectedTier = tiers[selectedIdx];
 
   const onCopy = async (text: string) => {
     try {
@@ -327,7 +334,7 @@ export default function HomeCountdownDialog({
                     >
                       FFC GP:{' '}
                       <Box component="span" sx={{ color: 'common.white' }}>
-                        R$ 100K
+                        {t('ticket_dialog.badge_prizepool', 'R$ 100K')}
                       </Box>
                     </Typography>
                   </Stack>
@@ -354,7 +361,7 @@ export default function HomeCountdownDialog({
                         color: theme.palette.warning.main,
                       }}
                     >
-                      PREMIAÇÃO
+                      {t('ticket_dialog.badge_prizepool_label', 'PREMIAÇÃO')}
                     </Typography>
                   </Box>
                 </Stack>
@@ -368,7 +375,7 @@ export default function HomeCountdownDialog({
                     fontSize: { xs: '1.8rem', sm: '2.5rem' },
                   }}
                 >
-                  GARANTA SEU{' '}
+                  {t('ticket_dialog.title', 'GARANTA SEU')}{' '}
                   <Box
                     component="span"
                     sx={{
@@ -376,7 +383,7 @@ export default function HomeCountdownDialog({
                       textShadow: `0 0 20px ${alpha(theme.palette.warning.main, 0.5)}`,
                     }}
                   >
-                    LUGAR
+                    {t('ticket_dialog.title_highlight', 'LUGAR')}
                   </Box>
                 </Typography>
 
@@ -391,16 +398,14 @@ export default function HomeCountdownDialog({
                     px: 1,
                   }}
                 >
-                  Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando
-                  rapidamente. Garanta seu <strong>assento no evento principal</strong> da{' '}
-                  <strong>FFC 10</strong> e prepare-se para a guerra.
+                  {t('ticket_dialog.description', 'Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando rapidamente. Garanta seu assento no evento principal da FFC 10 e prepare-se para a guerra.')}
                 </Typography>
 
                 <Stack direction="row" justifyContent="center" spacing={1.5} sx={{ mb: 4 }}>
-                  <TimeBlock label="DIAS" value={countdown.days} />
-                  <TimeBlock label="HORAS" value={countdown.hours} />
-                  <TimeBlock label="MIN" value={countdown.minutes} />
-                  <TimeBlock label="SEG" value={countdown.seconds} isLast />
+                  <TimeBlock label={t('ticket_dialog.days', 'DIAS')} value={countdown.days} />
+                  <TimeBlock label={t('ticket_dialog.hours', 'HORAS')} value={countdown.hours} />
+                  <TimeBlock label={t('ticket_dialog.minutes', 'MIN')} value={countdown.minutes} />
+                  <TimeBlock label={t('ticket_dialog.seconds', 'SEG')} value={countdown.seconds} isLast />
                 </Stack>
               </Box>
 
@@ -410,7 +415,7 @@ export default function HomeCountdownDialog({
                   onClick={() => setViewMode('TIERS')}
                   sx={getCrystalButtonStyle(theme.palette.warning.main)}
                 >
-                  COMPRAR INGRESSO
+                  {t('ticket_dialog.btn_buy', 'COMPRAR INGRESSO')}
                 </Button>
                 <Box
                   sx={{
@@ -424,7 +429,7 @@ export default function HomeCountdownDialog({
                     variant="caption"
                     sx={{ color: alpha('#FFAB00', 0.8), fontWeight: 700 }}
                   >
-                    ⚠️ Lotes virando em breve!
+                    {t('ticket_dialog.warning_lots', '⚠️ Lotes virando em breve!')}
                   </Typography>
                 </Box>
               </Stack>
@@ -450,10 +455,10 @@ export default function HomeCountdownDialog({
                 }}
               >
                 <Typography variant="h4" sx={{ mb: 1, fontWeight: 900 }}>
-                  SETORES DO EVENTO
+                  {t('ticket_dialog.sectors_title', 'SETORES DO EVENTO')}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'grey.500', mb: 4 }}>
-                  Arraste para escolher seu assento
+                  {t('ticket_dialog.sectors_subtitle', 'Arraste para escolher seu assento')}
                 </Typography>
 
                 <Stack
@@ -509,7 +514,7 @@ export default function HomeCountdownDialog({
                         whiteSpace: 'nowrap',
                       }}
                     >
-                      APENAS {selectedTier.limit} VAGAS
+                      {t('ticket_dialog.only_spots', 'APENAS {{count}} VAGAS', { count: selectedTier.limit })}
                     </Box>
                     <Typography
                       variant="overline"
@@ -543,9 +548,9 @@ export default function HomeCountdownDialog({
 
                   <IconButton
                     onClick={() =>
-                      setSelectedIdx((prev) => Math.min(SEED_TIERS.length - 1, prev + 1))
+                      setSelectedIdx((prev) => Math.min(tiers.length - 1, prev + 1))
                     }
-                    disabled={selectedIdx === SEED_TIERS.length - 1}
+                    disabled={selectedIdx === tiers.length - 1}
                     sx={{
                       color: 'common.white',
                       bgcolor: alpha('#fff', 0.05),
@@ -558,7 +563,7 @@ export default function HomeCountdownDialog({
                 </Stack>
 
                 <Stack direction="row" justifyContent="center" spacing={1} sx={{ mb: 4 }}>
-                  {SEED_TIERS.map((_, index) => (
+                  {tiers.map((_, index) => (
                     <Box
                       key={index}
                       sx={{
@@ -579,7 +584,7 @@ export default function HomeCountdownDialog({
                   onClick={() => setViewMode('CHECKOUT')}
                   sx={getCrystalButtonStyle(selectedTier.color)} // Dinâmico com a cor do plano!
                 >
-                  PAGAR R$ {selectedTier.price}
+                  {t('ticket_dialog.btn_pay', 'PAGAR R$ {{price}}', { price: selectedTier.price })}
                 </Button>
                 <Button
                   onClick={() => setViewMode('COUNTDOWN')}
@@ -592,7 +597,7 @@ export default function HomeCountdownDialog({
                     '&:hover': { color: 'common.white', bgcolor: 'transparent' },
                   }}
                 >
-                  Voltar
+                  {t('ticket_dialog.btn_back', 'Voltar')}
                 </Button>
               </Stack>
             </m.div>
@@ -617,10 +622,10 @@ export default function HomeCountdownDialog({
                 }}
               >
                 <Typography variant="h4" sx={{ mb: 1, fontWeight: 900 }}>
-                  CHECKOUT
+                  {t('ticket_dialog.checkout_title', 'CHECKOUT')}
                 </Typography>
                 <Typography variant="subtitle2" sx={{ color: selectedTier.color, mb: 3 }}>
-                  Setor: {selectedTier.label}
+                  {t('ticket_dialog.checkout_sector', 'Setor: {{sector}}', { sector: selectedTier.label })}
                 </Typography>
 
                 <Tabs
@@ -637,8 +642,8 @@ export default function HomeCountdownDialog({
                     },
                   }}
                 >
-                  <Tab label="PIX" />
-                  <Tab label="CRIPTO" />
+                  <Tab label={t('ticket_dialog.tab_pix', 'PIX')} />
+                  <Tab label={t('ticket_dialog.tab_crypto', 'CRIPTO')} />
                 </Tabs>
 
                 <Box
@@ -667,7 +672,7 @@ export default function HomeCountdownDialog({
               </Box>
 
               <Stack spacing={1} sx={{ mt: 'auto' }}>
-                <Tooltip title={copied ? 'Copiado!' : 'Copiar código'}>
+                <Tooltip title={copied ? t('ticket_dialog.copied', 'Copiado!') : t('ticket_dialog.copy_code', 'Copiar código')}>
                   <Button
                     fullWidth
                     onClick={() => onCopy(paymentTab === 0 ? pixCode : walletAddress)}
@@ -676,7 +681,7 @@ export default function HomeCountdownDialog({
                     }
                     sx={getCrystalButtonStyle(theme.palette.warning.main)}
                   >
-                    {paymentTab === 0 ? 'PIX COPIA E COLA' : 'COPIAR ENDEREÇO'}
+                    {paymentTab === 0 ? t('ticket_dialog.btn_copy_pix', 'PIX COPIA E COLA') : t('ticket_dialog.btn_copy_address', 'COPIAR ENDEREÇO')}
                   </Button>
                 </Tooltip>
                 <Button
@@ -690,7 +695,7 @@ export default function HomeCountdownDialog({
                     '&:hover': { color: 'common.white', bgcolor: 'transparent' },
                   }}
                 >
-                  Alterar Setor
+                  {t('ticket_dialog.btn_change_sector', 'Alterar Setor')}
                 </Button>
               </Stack>
             </m.div>

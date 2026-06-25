@@ -89,7 +89,7 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
       component="section"
       sx={[
         {
-          py: { xs: 10, md: 15 },
+          py: { xs: 8, md: 15 },
           position: 'relative',
           overflow: 'hidden',
           bgcolor: 'transparent',
@@ -100,44 +100,19 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
     >
       <MotionViewport>
         <Container sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-          {/* Badge Padronizada */}
-          <m.div variants={varFade('inUp')}>
-            <Box
-              sx={{
-                display: 'inline-block',
-                border: `1px solid ${theme.palette.info.main}`,
-                borderRadius: 2,
-                px: 1.5,
-                py: 0.5,
-                mb: 5,
-              }}
-            >
-              <Typography
-                component="span"
-                sx={{
-                  fontFamily: "'Orbitron', sans-serif",
-                  fontWeight: 700,
-                  fontSize: 12,
-                  letterSpacing: '0.22em',
-                  textTransform: 'uppercase',
-                  color: 'info.main',
-                }}
-              >
-                {t('roadmap.badge')}
-              </Typography>
-            </Box>
-          </m.div>
+
 
           {/* Título Scifi */}
           <m.div variants={varFade('inUp')}>
             <Typography
               component="h2"
+              variant="h2"
               sx={{
-                fontFamily: "'Orbitron', sans-serif",
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                 fontWeight: 900,
-                fontSize: { xs: '2.2rem', md: '3rem' },
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
                 letterSpacing: '0.08em',
-                lineHeight: 1.2,
+                lineHeight: 1.15,
                 textTransform: 'uppercase',
               }}
             >

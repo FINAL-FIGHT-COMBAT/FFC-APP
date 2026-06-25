@@ -21,6 +21,8 @@ import { CyberButton } from 'src/components/cyber-button';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
+import { useTranslate } from 'src/locales';
+
 // ----------------------------------------------------------------------
 
 type Athlete = {
@@ -375,6 +377,7 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
 // ----------------------------------------------------------------------
 
 export function HomeAthletes({ sx, ...other }: BoxProps) {
+  const { t } = useTranslate();
   const carousel = useCarousel({
     align: 'start',
     slideSpacing: '24px',
@@ -402,80 +405,24 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
           >
             <m.div variants={varFade('inUp')}>
               <Stack sx={{ alignItems: 'flex-start', textAlign: 'left' }}>
-                {/* Badge */}
-                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
-                  <Box
-                    sx={{
-                      border: '1px solid rgba(234,179,8,0.6)',
-                      borderRadius: 2,
-                      px: 1.5,
-                      py: 0.5,
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                        fontWeight: 700,
-                        fontSize: 11,
-                        letterSpacing: '0.25em',
-                        textTransform: 'uppercase',
-                        color: '#EAB308',
-                      }}
-                    >
-                      GRAND PRIX
-                    </Typography>
-                  </Box>
-                  <Box
-                    sx={{
-                      border: '1px solid rgba(239,68,68,0.5)',
-                      borderRadius: 2,
-                      px: 1.5,
-                      py: 0.5,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 0.75,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        width: 6,
-                        height: 6,
-                        borderRadius: '50%',
-                        bgcolor: '#EF4444',
-                        animation: `${pulseKeyframe} 1.5s infinite`,
-                      }}
-                    />
-                    <Typography
-                      sx={{
-                        fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                        fontWeight: 700,
-                        fontSize: 11,
-                        letterSpacing: '0.25em',
-                        textTransform: 'uppercase',
-                        color: '#EF4444',
-                      }}
-                    >
-                      AO VIVO
-                    </Typography>
-                  </Box>
-                </Stack>
 
                 {/* Título */}
                 <Typography
+                  component="h2"
                   variant="h2"
                   sx={{
                     fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                     fontWeight: 900,
-                    fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3rem' },
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
                     color: '#fff',
-                    lineHeight: 1.1,
+                    lineHeight: 1.15,
                     textTransform: 'uppercase',
                     mb: 2,
                   }}
                 >
-                  Atletas e{' '}
-                  <Box component="span" sx={{ color: '#EAB308' }}>
-                    Convidados
+                  {t('athletes.title', 'Atletas e')}{' '}
+                  <Box component="span" sx={{ color: 'warning.main' }}>
+                    {t('athletes.title_highlight', 'Convidados')}
                   </Box>
                 </Typography>
 
@@ -487,12 +434,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                     lineHeight: 1.7,
                   }}
                 >
-                  Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo
-                  <Box component="span" sx={{ color: '#EAB308', fontWeight: 700 }}>
-                    {' '}
-                    prêmio em dinheiro
-                  </Box>
-                  . Não perca!
+                  {t('athletes.description', 'Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo prêmio em dinheiro. Não perca!')}
                 </Typography>
               </Stack>
             </m.div>
@@ -506,7 +448,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                 glowColor="info"
                 sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
-                VER TODAS AS CHAVES
+                {t('athletes.button_brackets', 'VER TODAS AS CHAVES')}
               </CyberButton>
             </m.div>
           </Stack>

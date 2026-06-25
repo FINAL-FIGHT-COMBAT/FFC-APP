@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
@@ -12,34 +13,41 @@ import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
 import { varFade, MotionViewport } from 'src/components/animate';
 
+import { useTranslate } from 'src/locales';
+
 import { SectionTitle } from './HomeSectionTitle';
-
-// ----------------------------------------------------------------------
-
-const MASTER_SPONSOR = {
-  name: 'Patrocinador Master',
-  tier: 'Master',
-  icon: 'solar:crown-star-bold-duotone',
-};
-
-const SECONDARY_SPONSORS = [
-  { name: 'Marca Parceira 1', tier: 'Ouro', icon: 'solar:medal-star-bold-duotone' },
-  { name: 'Marca Parceira 2', tier: 'Ouro', icon: 'solar:medal-star-bold-duotone' },
-  { name: 'Marca Parceira 3', tier: 'Prata', icon: 'solar:shield-star-bold-duotone' },
-  { name: 'Marca Parceira 4', tier: 'Prata', icon: 'solar:shield-star-bold-duotone' },
-];
 
 // ----------------------------------------------------------------------
 
 export function HomeSponsors() {
   const theme = useTheme();
+  const { t } = useTranslate();
+
+  const masterSponsor = useMemo(
+    () => ({
+      name: t('sponsors.master_sponsor_name', 'Patrocinador Master'),
+      tier: t('sponsors.master_tier', 'Master'),
+      icon: 'solar:crown-star-bold-duotone',
+    }),
+    [t]
+  );
+
+  const secondarySponsors = useMemo(
+    () => [
+      { name: t('sponsors.secondary_sponsor_1_name', 'Marca Parceira 1'), tier: t('sponsors.gold_tier', 'Ouro'), icon: 'solar:medal-star-bold-duotone' },
+      { name: t('sponsors.secondary_sponsor_2_name', 'Marca Parceira 2'), tier: t('sponsors.gold_tier', 'Ouro'), icon: 'solar:medal-star-bold-duotone' },
+      { name: t('sponsors.secondary_sponsor_3_name', 'Marca Parceira 3'), tier: t('sponsors.silver_tier', 'Prata'), icon: 'solar:shield-star-bold-duotone' },
+      { name: t('sponsors.secondary_sponsor_4_name', 'Marca Parceira 4'), tier: t('sponsors.silver_tier', 'Prata'), icon: 'solar:shield-star-bold-duotone' },
+    ],
+    [t]
+  );
 
   return (
     <Box
       component="section"
       sx={{
         position: 'relative',
-        py: { xs: 10, md: 15 },
+        py: { xs: 8, md: 15 },
         bgcolor: 'transparent',
         overflow: 'hidden',
       }}
@@ -47,20 +55,20 @@ export function HomeSponsors() {
       <Container component={MotionViewport}>
         <m.div variants={varFade('inUp')}>
           <SectionTitle
-            caption="Apoiadores"
-            title="PATROCINADORES OFICIAIS"
-            description="Empresas e marcas que fortalecem o esporte e tornam o Final Fight Combat o maior evento do Brasil."
-            sx={{ mb: { xs: 6, md: 10 } }}
+            title={t('sponsors.title', 'PATROCINADORES')}
+            txtGradient={t('sponsors.title_highlight', 'OFICIAIS')}
+            description={t('sponsors.description', 'Empresas e marcas que fortalecem o esporte e tornam o Final Fight Combat o maior evento do Brasil.')}
+            sx={{ mb: { xs: 6, md: 10 }, alignItems: 'center', textAlign: 'center' }}
             slotProps={{
               title: {
                 sx: {
                   color: 'common.white',
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   textTransform: 'uppercase',
+                  lineHeight: 1.15,
                 },
               },
-              caption: { sx: { color: 'warning.main', fontWeight: 700, letterSpacing: 2 } },
-              description: { sx: { color: 'grey.400' } },
+              description: { sx: { color: 'grey.400', maxWidth: 600, mx: 'auto' } },
             }}
           />
         </m.div>
@@ -100,11 +108,11 @@ export function HomeSponsors() {
                 variant="overline"
                 sx={{ color: theme.palette.warning.main, mb: 2, letterSpacing: 2 }}
               >
-                Cota {MASTER_SPONSOR.tier}
+                {t('sponsors.tier_label', 'Cota')} {masterSponsor.tier}
               </Typography>
 
               <Iconify
-                icon={MASTER_SPONSOR.icon as any}
+                icon={masterSponsor.icon as any}
                 width={80}
                 sx={{ color: theme.palette.warning.main, mb: 3 }}
               />
@@ -117,7 +125,7 @@ export function HomeSponsors() {
                   textTransform: 'uppercase',
                 }}
               >
-                {MASTER_SPONSOR.name}
+                {masterSponsor.name}
               </Typography>
             </CyberCard>
           </m.div>
@@ -125,7 +133,7 @@ export function HomeSponsors() {
           {/* Secondary Sponsors Marquee */}
           <Box sx={{ mt: 4 }}>
             <Marquee duration={50} reverse>
-              {SECONDARY_SPONSORS.map((sponsor, index) => (
+              {secondarySponsors.map((sponsor, index) => (
                 <Box key={index} sx={{ width: 280 }}>
                   <CyberCard
                     sx={{
@@ -151,7 +159,7 @@ export function HomeSponsors() {
                         fontWeight: 700,
                       }}
                     >
-                      Cota {sponsor.tier}
+                      {t('sponsors.tier_label', 'Cota')} {sponsor.tier}
                     </Typography>
 
                     <Iconify
@@ -179,7 +187,7 @@ export function HomeSponsors() {
         <Stack alignItems="center" sx={{ mt: 8 }}>
           <m.div variants={varFade('inUp')}>
             <CyberButton href="#contato" glowColor="warning">
-              SEJA UM PATROCINADOR
+              {t('sponsors.btn_become_sponsor', 'SEJA UM PATROCINADOR')}
             </CyberButton>
           </m.div>
         </Stack>

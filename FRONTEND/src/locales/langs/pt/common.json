@@ -113,6 +113,8 @@
   "team": {
     "_comment": "Seção de apresentação da equipe e conselho da DAO.",
     "badge": "Time",
+    "title": "Nossa",
+    "title_highlight": "Equipe",
     "button": "Ver Todos os Membros",
     "members": [
       {
@@ -213,6 +215,7 @@
   "faqs": {
     "_comment": "Bloco de perguntas frequentes. Estrutura compatível com componentes accordion.",
     "title": "FAQs",
+    "description": "Tudo o que você precisa saber sobre a infraestrutura digital e governança do FFC.",
     "heading": "Temos as",
     "heading_highlight": "Respostas",
     "items": [
@@ -270,5 +273,162 @@
         "description": "Oportunidade para academias e atletas de todas as regiões crescerem no ecossistema FFC."
       }
     ]
+  },
+  "hero_home": {
+    "countdown": {
+      "days": "Dias",
+      "hours": "Horas",
+      "minutes": "Minutos",
+      "seconds": "Segundos"
+    },
+    "stats": {
+      "athletes": "ATLETAS",
+      "mats": "TATAMES",
+      "modalities": "MODALIDADES",
+      "prizes": "EM PRÊMIOS"
+    },
+    "buttons": {
+      "subscribe": "INSCREVA-SE AGORA",
+      "documents": "DOCUMENTOS"
+    }
+  },
+  "athletes": {
+    "badge_gp": "GRAND PRIX",
+    "badge_live": "AO VIVO",
+    "title": "Atletas e",
+    "title_highlight": "Convidados",
+    "description": "Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo prêmio em dinheiro. Não perca!",
+    "button_brackets": "VER TODAS AS CHAVES"
+  },
+  "categories": {
+    "badge": "CATEGORIAS",
+    "title": "CATEGORIAS E",
+    "title_highlight": "PESOS",
+    "gender_male": "Masculinas",
+    "gender_female": "Femininas",
+    "occupied_slots": "Vagas Ocupadas",
+    "status_available": "DISPONÍVEL",
+    "status_soldout": "ESGOTADO",
+    "btn_register": "INSCREVER VIA APP",
+    "btn_waitlist": "LISTA DE ESPERA",
+    "belts": {
+      "white": "Branca",
+      "blue": "Azul",
+      "purple": "Roxa",
+      "brown": "Marrom",
+      "black": "Preta"
+    },
+    "weights": {
+      "galo": "GALO",
+      "pluma": "PLUMA",
+      "pena": "PENA",
+      "leve": "LEVE",
+      "medio": "MÉDIO",
+      "meio_pesado": "MEIO-PESADO",
+      "pesado": "PESADO",
+      "super_pesado": "SUPER-PESADO",
+      "absoluto": "ABSOLUTO"
+    }
+  },
+  "prizes": {
+    "title": "PREMIAÇÃO",
+    "title_highlight": "OFICIAL",
+    "description": "Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames do Final Fight Combat.",
+    "label_total_prize": "PRÊMIO TOTAL",
+    "label_includes": "O que inclui:",
+    "selectives": {
+      "title": "SELETIVAS",
+      "subtitle": "Categorias de Peso",
+      "description": "A premiação para os campeões de cada categoria de peso nas seletivas abertas.",
+      "prizepool": "Inscrições + Kit",
+      "items": [
+        "Medalha Exclusiva FFC (Ouro, Prata, Bronze)",
+        "Kit de Suplementação Oficial",
+        "Vaga Garantida na Próxima Edição",
+        "Destaque nas Redes Sociais do FFC"
+      ]
+    },
+    "gp": {
+      "title": "GRAND PRIX",
+      "subtitle": "Absoluto Convidados",
+      "description": "O prêmio máximo disputado apenas pelos atletas de elite convidados para o GP.",
+      "prizepool": "R$ 100.000",
+      "items": [
+        "Cinturão de Campeão GP FFC",
+        "Premiação em Dinheiro (Pix na hora)",
+        "Troféu Exclusivo de Campeão Absoluto",
+        "Contrato para Lutas Casadas Futuras"
+      ]
+    }
+  },
+  "community_section": {
+    "badge": "REDE DE APOIO",
+    "title": "ACADEMIAS",
+    "title_highlight": "PARCEIRAS",
+    "description": "O Final Fight Combat tem o orgulho de contar com o apoio das maiores e mais respeitadas equipes de Jiu-Jitsu do mundo. Juntos, fortalecemos o esporte.",
+    "btn_register_gym": "CADASTRE SUA ACADEMIA"
+  },
+  "sponsors": {
+    "badge": "Apoiadores",
+    "title": "PATROCINADORES",
+    "title_highlight": "OFICIAIS",
+    "description": "Empresas e marcas que fortalecem o esporte e tornam o Final Fight Combat o maior evento do Brasil.",
+    "tier_label": "Cota",
+    "master_tier": "Master",
+    "gold_tier": "Ouro",
+    "silver_tier": "Prata",
+    "master_sponsor_name": "Patrocinador Master",
+    "secondary_sponsor_1_name": "Marca Parceira 1",
+    "secondary_sponsor_2_name": "Marca Parceira 2",
+    "secondary_sponsor_3_name": "Marca Parceira 3",
+    "secondary_sponsor_4_name": "Marca Parceira 4",
+    "btn_become_sponsor": "SEJA UM PATROCINADOR"
+  },
+  "ticket_dialog": {
+    "badge_prizepool": "R$ 100K",
+    "badge_prizepool_label": "PREMIAÇÃO",
+    "title": "GARANTA SEU",
+    "title_highlight": "LUGAR",
+    "description": "Os ingressos para o maior Grand Prix de MMA da América Latina estão esgotando rapidamente. Garanta seu assento no evento principal da FFC 10 e prepare-se para a guerra.",
+    "btn_buy": "COMPRAR INGRESSO",
+    "warning_lots": "⚠️ Lotes virando em breve!",
+    "sectors_title": "SETORES DO EVENTO",
+    "sectors_subtitle": "Arraste para escolher seu assento",
+    "only_spots": "APENAS {{count}} VAGAS",
+    "btn_pay": "PAGAR R$ {{price}}",
+    "btn_back": "Voltar",
+    "checkout_title": "CHECKOUT",
+    "checkout_sector": "Setor: {{sector}}",
+    "tab_pix": "PIX",
+    "tab_crypto": "CRIPTO",
+    "btn_copy_pix": "PIX COPIA E COLA",
+    "btn_copy_address": "COPIAR ENDEREÇO",
+    "btn_change_sector": "Alterar Setor",
+    "days": "DIAS",
+    "hours": "HORAS",
+    "minutes": "MIN",
+    "seconds": "SEG",
+    "tiers": {
+      "arquibancada": {
+        "label": "ARQUIBANCADA",
+        "benefits": "Visão panorâmica do evento"
+      },
+      "premium": {
+        "label": "CADEIRA PREMIUM",
+        "benefits": "Assento marcado + Bares exclusivos"
+      },
+      "vip": {
+        "label": "ÁREA VIP",
+        "benefits": "Open bar + Pôster autografado"
+      },
+      "octagon": {
+        "label": "OCTAGON SIDE",
+        "benefits": "Visão colada na grade + Meet & Greet"
+      },
+      "camarote": {
+        "label": "CAMAROTE (10X)",
+        "benefits": "Espaço privativo + Open Food Premium"
+      }
+    }
   }
 }

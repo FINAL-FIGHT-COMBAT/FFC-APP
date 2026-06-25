@@ -93,6 +93,7 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
           position: 'relative',
           overflow: 'hidden',
           bgcolor: 'transparent',
+          py: { xs: 8, md: 15 },
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
@@ -100,7 +101,7 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
     >
       <Container
         component={MotionViewport}
-        sx={{ position: 'relative', zIndex: 1, py: { xs: 10, md: 15 } }}
+        sx={{ position: 'relative', zIndex: 1 }}
       >
         {/* HEADER: TAG + TÍTULO E BOTÃO NA DIREITA */}
         <Stack
@@ -110,48 +111,26 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
           sx={{ mb: 8, gap: 4 }}
         >
           <Box sx={{ textAlign: 'left' }}>
-            {/* TAG "TEAM" */}
-            <m.div variants={varFade('inUp')}>
-              <Box
-                sx={{
-                  display: 'inline-block',
-                  border: `1px solid ${theme.palette.info.main}`,
-                  borderRadius: 2,
-                  px: 1.5,
-                  py: 0.5,
-                  mb: 2,
-                }}
-              >
-                <Typography
-                  component="span"
-                  sx={{
-                    fontFamily: "'Orbitron', sans-serif",
-                    fontWeight: 700,
-                    fontSize: 12,
-                    letterSpacing: '0.2em',
-                    textTransform: 'uppercase',
-                    color: 'info.main',
-                  }}
-                >
-                  {t('team.badge')}
-                </Typography>
-              </Box>
-            </m.div>
 
             {/* TÍTULO DA SEÇÃO */}
             <m.div variants={varFade('inUp')}>
               <Typography
+                component="h2"
                 variant="h2"
                 sx={{
-                  fontFamily: "'Orbitron', sans-serif",
+                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
-                  fontSize: { xs: '2.2rem', md: '3rem' },
-                  lineHeight: 1.1,
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
+                  lineHeight: 1.15,
                   textTransform: 'uppercase',
-                  color: 'common.white',
                 }}
               >
-                {t('team.title', { defaultValue: 'NOSSA EQUIPE' })}
+                <Box component="span" sx={{ color: 'common.white' }}>
+                  {t('team.title') || 'NOSSA'}
+                </Box>{' '}
+                <Box component="span" sx={{ color: 'warning.main' }}>
+                  {t('team.title_highlight') || 'EQUIPE'}
+                </Box>
               </Typography>
             </m.div>
           </Box>

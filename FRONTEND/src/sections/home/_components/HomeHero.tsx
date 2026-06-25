@@ -18,6 +18,8 @@ import { RouterLink } from 'src/routes/components';
 import { CyberButton } from 'src/components/cyber-button';
 import { Iconify, type IconifyName } from 'src/components/iconify';
 
+import { useTranslate } from 'src/locales';
+
 // ----------------------------------------------------------------------
 
 // ⏱ Data do evento — ajuste conforme necessário
@@ -129,7 +131,15 @@ function CountdownBlock({ value, label }: { value: number; label: string }) {
 
 export function HomeHero({ sx, ...other }: BoxProps) {
   const theme = useTheme();
+  const { t } = useTranslate();
   const timeLeft = useCountdown(EVENT_DATE);
+
+  const statsData = [
+    { value: '+300', label: t('hero_home.stats.athletes', 'ATLETAS'), icon: 'solar:users-group-rounded-bold' as const },
+    { value: '8', label: t('hero_home.stats.mats', 'TATAMES'), icon: 'mingcute:location-fill' as const },
+    { value: '2', label: t('hero_home.stats.modalities', 'MODALIDADES'), icon: 'eva:award-fill' as const },
+    { value: 'R$ 100K', label: t('hero_home.stats.prizes', 'EM PRÊMIOS'), icon: 'solar:cup-star-bold' as const },
+  ];
 
   return (
     <Box
@@ -180,7 +190,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             {/* Título */}
             <Box sx={{ textAlign: 'center' }}>
               <Typography
-                component="h1"
+                component="span"
                 sx={{
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
@@ -217,10 +227,10 @@ export function HomeHero({ sx, ...other }: BoxProps) {
 
             {/* Countdown */}
             <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 3.5 }}>
-              <CountdownBlock value={timeLeft.dias} label="Dias" />
-              <CountdownBlock value={timeLeft.horas} label="Horas" />
-              <CountdownBlock value={timeLeft.minutos} label="Minutos" />
-              <CountdownBlock value={timeLeft.segundos} label="Segundos" />
+              <CountdownBlock value={timeLeft.dias} label={t('hero_home.countdown.days', 'Dias')} />
+              <CountdownBlock value={timeLeft.horas} label={t('hero_home.countdown.hours', 'Horas')} />
+              <CountdownBlock value={timeLeft.minutos} label={t('hero_home.countdown.minutes', 'Minutos')} />
+              <CountdownBlock value={timeLeft.segundos} label={t('hero_home.countdown.seconds', 'Segundos')} />
             </Stack>
 
             {/* Botões CTA */}
@@ -237,7 +247,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 glowColor="primary"
                 sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
-                INSCREVA-SE AGORA
+                {t('hero_home.buttons.subscribe', 'INSCREVA-SE AGORA')}
               </CyberButton>
 
               {/* Secundário — Outline */}
@@ -247,7 +257,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
                 glowColor="info"
                 sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
-                DOCUMENTOS
+                {t('hero_home.buttons.documents', 'DOCUMENTOS')}
               </CyberButton>
             </Stack>
           </Stack>
@@ -279,7 +289,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
               />
             }
           >
-            {STATS.map((stat) => (
+            {statsData.map((stat) => (
               <Stack
                 key={stat.label}
                 alignItems="center"

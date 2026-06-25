@@ -71,44 +71,22 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
           {/* HEADER: TÍTULO À ESQUERDA + BOTÃO À DIREITA */}
           <Stack
             direction={{ xs: 'column', md: 'row' }}
-            alignItems={{ md: 'flex-end' }}
+            alignItems={{ xs: 'flex-start', md: 'flex-end' }}
             justifyContent="space-between"
-            sx={{ mb: 10, gap: 3 }}
+            sx={{ mb: 10, gap: 4 }}
           >
-            <Box>
-              <m.div variants={varFade('inUp')}>
-                <Box
-                  sx={{
-                    display: 'inline-block',
-                    border: `1px solid ${theme.palette.info.main}`,
-                    borderRadius: 2,
-                    px: 1.5,
-                    py: 0.5,
-                    mb: 4,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: "'Orbitron', sans-serif",
-                      fontWeight: 700,
-                      fontSize: 12,
-                      letterSpacing: '0.2em',
-                      textTransform: 'uppercase',
-                      color: 'info.main',
-                    }}
-                  >
-                    {t('news.badge')}
-                  </Typography>
-                </Box>
-              </m.div>
+            <Box sx={{ textAlign: 'left' }}>
+
 
               <m.div variants={varFade('inUp')}>
                 <Typography
+                  component="h2"
+                  variant="h2"
                   sx={{
-                    fontFamily: "'Orbitron', sans-serif",
+                    fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                     fontWeight: 900,
-                    fontSize: { xs: '2.2rem', md: '3rem' },
-                    lineHeight: 1.1,
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
+                    lineHeight: 1.15,
                     textTransform: 'uppercase',
                   }}
                 >
@@ -130,12 +108,13 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
             </Box>
 
             {/* BOTÃO CRYSTAL ATUALIZADO */}
-            <m.div variants={varFade('inRight')}>
+            <m.div variants={varFade('inRight')} style={{ width: '100%', display: 'contents' }}>
               <CyberButton
                 component={RouterLink}
                 href={paths.post.root}
                 endIcon={<Iconify icon="solar:double-alt-arrow-right-bold-duotone" />}
                 glowColor="info"
+                sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
                 {t('news.button_view_all')}
               </CyberButton>

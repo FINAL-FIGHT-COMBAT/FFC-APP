@@ -4,7 +4,7 @@ import type { BoxProps } from '@mui/material/Box';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { alpha } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
@@ -15,6 +15,8 @@ import { Iconify } from 'src/components/iconify';
 import { Marquee } from 'src/components/marquee';
 import { CyberCard } from 'src/components/cyber-card';
 import { CyberButton } from 'src/components/cyber-button';
+
+import { useTranslate } from 'src/locales';
 
 // ----------------------------------------------------------------------
 
@@ -36,6 +38,9 @@ const ACADEMIES = [
 // ----------------------------------------------------------------------
 
 export function HomeCommunity({ sx, ...other }: BoxProps) {
+  const theme = useTheme();
+  const { t } = useTranslate();
+
   const renderCard = (academy: typeof ACADEMIES[number]) => (
     <Box key={academy.name} sx={{ width: { xs: 240, md: 280 }, flexShrink: 0 }}>
       <CyberCard
@@ -55,8 +60,8 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            bgcolor: alpha('#3B82F6', 0.1),
-            color: '#3B82F6',
+            bgcolor: alpha(theme.palette.info.main, 0.1),
+            color: theme.palette.info.main,
             flexShrink: 0,
           }}
         >
@@ -112,51 +117,27 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
           spacing={2}
           sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}
         >
-          <Box
-            sx={{
-              display: 'inline-block',
-              border: `1px solid #3B82F6`,
-              borderRadius: 2,
-              px: 1.5,
-              py: 0.5,
-              mb: 2,
-            }}
-          >
-            <Typography
-              component="span"
-              sx={{
-                fontFamily: "'Orbitron', sans-serif",
-                fontWeight: 700,
-                fontSize: 11,
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color: '#3B82F6',
-              }}
-            >
-              REDE DE APOIO
-            </Typography>
-          </Box>
 
           <Typography
             component="h2"
+            variant="h2"
             sx={{
-              fontFamily: "'Orbitron', sans-serif",
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
               fontWeight: 900,
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
               color: '#fff',
               textTransform: 'uppercase',
-              lineHeight: 1.1,
+              lineHeight: 1.15,
             }}
           >
-            ACADEMIAS{' '}
-            <Box component="span" sx={{ color: '#3B82F6' }}>
-              PARCEIRAS
+            {t('community_section.title', 'ACADEMIAS')}{' '}
+            <Box component="span" sx={{ color: 'warning.main' }}>
+              {t('community_section.title_highlight', 'PARCEIRAS')}
             </Box>
           </Typography>
 
           <Typography sx={{ color: alpha('#fff', 0.6), maxWidth: 600, mx: 'auto', mt: 2 }}>
-            O Final Fight Combat tem o orgulho de contar com o apoio das maiores e mais
-            respeitadas equipes de Jiu-Jitsu do mundo. Juntos, fortalecemos o esporte.
+            {t('community_section.description', 'O Final Fight Combat tem o orgulho de contar com o apoio das maiores e mais respeitadas equipes de Jiu-Jitsu do mundo. Juntos, fortalecemos o esporte.')}
           </Typography>
         </Stack>
 
@@ -186,7 +167,7 @@ export function HomeCommunity({ sx, ...other }: BoxProps) {
             endIcon={<Iconify icon="solar:users-group-rounded-bold" />}
             glowColor="success"
           >
-            CADASTRE SUA ACADEMIA
+            {t('community_section.btn_register_gym', 'CADASTRE SUA ACADEMIA')}
           </CyberButton>
         </Stack>
       </Container>

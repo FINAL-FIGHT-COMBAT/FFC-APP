@@ -63,21 +63,31 @@ export function SectionTitle({
         component={m.h2}
         variant="h2"
         variants={slotProps?.title?.variants ?? varFade('inUp', { distance: 24 })}
-        sx={slotProps?.title?.sx}
+        sx={[
+          {
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+            fontWeight: 900,
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
+            lineHeight: 1.15,
+            textTransform: 'uppercase',
+          },
+          ...(Array.isArray(slotProps?.title?.sx)
+            ? slotProps.title.sx
+            : [slotProps?.title?.sx]),
+        ]}
       >
         {`${title} `}
-        <Box
-          component="span"
-          sx={(theme) => ({
-            opacity: 0.4,
-            display: 'inline-block',
-            ...theme.mixins.textGradient(
-              `to right, ${theme.vars.palette.text.primary}, ${varAlpha(theme.vars.palette.text.primaryChannel, 0.2)}`
-            ),
-          })}
-        >
-          {txtGradient}
-        </Box>
+        {txtGradient && (
+          <Box
+            component="span"
+            sx={{
+              color: 'warning.main',
+              display: 'inline-block',
+            }}
+          >
+            {txtGradient}
+          </Box>
+        )}
       </Typography>
 
       {description && (
@@ -107,8 +117,16 @@ export function SectionCaption({ title, variants, sx, ...other }: TextProps) {
       variants={variants ?? varFade('inUp', { distance: 24 })}
       sx={[
         {
+          display: 'inline-block',
+          alignSelf: 'flex-start',
+          border: '1px solid var(--mui-palette-info-main, #3B82F6)',
+          borderRadius: 2,
+          px: 1.5,
+          py: 0.5,
           typography: 'overline',
-          color: 'text.disabled',
+          color: 'info.main',
+          fontWeight: 700,
+          letterSpacing: '0.2em',
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}

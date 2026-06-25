@@ -47,14 +47,15 @@ export function CtaBanner({ sx, ...other }: BoxProps) {
       <Stack spacing={2}>
         <Typography
           component={m.h2}
+          variant="h2"
           variants={varFade('inDown', { distance: 24 })}
           sx={{
             m: 0,
             color: 'common.white',
-            fontFamily: "'Orbitron', sans-serif",
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
             fontWeight: 900,
-            fontSize: { xs: '2.2rem', md: '3.5rem' },
-            lineHeight: 1.1,
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
+            lineHeight: 1.15,
             textTransform: 'uppercase',
           }}
         >

@@ -19,6 +19,8 @@ import { CyberButton } from 'src/components/cyber-button';
 import { varFade, MotionViewport } from 'src/components/animate';
 import { ResponsiveCarouselGrid } from 'src/components/responsive-carousel-grid';
 
+import { useTranslate } from 'src/locales';
+
 // ----------------------------------------------------------------------
 
 // Cores oficiais das faixas BJJ — Branca → Azul → Roxa → Marrom → Preta
@@ -163,18 +165,27 @@ type Genero = 'M' | 'F';
 // ----------------------------------------------------------------------
 
 type CardProps = {
+  id?: string;
   peso: string;
   faixa: string;
   slot: SlotData;
   genero: string;
 };
 
-function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
+function CategoryCard({ id, peso, faixa, slot, genero }: CardProps) {
   const theme = useTheme();
+  const { t } = useTranslate();
   const isDisponivel = slot.status === 'disponivel';
   const progressPercent = Math.round((slot.vagasOcupadas / slot.vagasTotal) * 100);
   const faixaCfg = FAIXA_CONFIG[faixa];
   const isFaixaPreta = faixa === 'Preta';
+
+  const beltKeyMap: Record<string, string> = { Branca: 'white', Azul: 'blue', Roxa: 'purple', Marrom: 'brown', Preta: 'black' };
+  const translatedFaixa = t(`categories.belts.${beltKeyMap[faixa] || 'white'}`, faixa);
+
+  const weightNameKey = id ? id.replace(/^[mf]-/, '').replace(/-/g, '_') : '';
+  const weightLimit = peso.includes(' (') ? peso.substring(peso.indexOf(' (')) : '';
+  const translatedPeso = weightNameKey ? (t(`categories.weights.${weightNameKey}`, weightNameKey.toUpperCase()) + weightLimit) : peso;
 
   return (
     <CyberCard
@@ -197,19 +208,17 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
         justifyContent="space-between"
         sx={{ px: 2, pt: 2, pb: 1.5 }}
       >
-        <Box sx={{ px: 1.2, py: 0.35, borderRadius: 0.75, bgcolor: '#2563EB' }}>
-          <Typography
-            sx={{
-              fontSize: 10,
-              fontWeight: 800,
-              letterSpacing: '0.1em',
-              color: '#fff',
-              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-            }}
-          >
-            BJJ
-          </Typography>
-        </Box>
+        <Typography
+          sx={{
+            fontSize: 10,
+            fontWeight: 800,
+            color: 'info.main',
+            letterSpacing: '0.15em',
+            fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+          }}
+        >
+          GI (KIMONO)
+        </Typography>
 
         <Stack direction="row" alignItems="center" spacing={0.75}>
           <Box
@@ -232,7 +241,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
               textTransform: 'uppercase',
             }}
           >
-            {faixa}
+            {translatedFaixa}
           </Typography>
         </Stack>
       </Stack>
@@ -250,7 +259,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
             mb: 0.5,
           }}
         >
-          {peso}
+          {translatedPeso}
         </Typography>
         <Typography
           sx={{
@@ -282,7 +291,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
               fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
             }}
           >
-            Vagas Ocupadas
+            {t('categories.occupied_slots', 'Vagas Ocupadas')}
           </Typography>
           <Typography
             sx={{
@@ -346,7 +355,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
               fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
             }}
           >
-            {isDisponivel ? 'DISPONÍVEL' : 'ESGOTADO'}
+            {isDisponivel ? t('categories.status_available', 'DISPONÍVEL') : t('categories.status_soldout', 'ESGOTADO')}
           </Typography>
         </Stack>
       </Stack>
@@ -359,7 +368,7 @@ function CategoryCard({ peso, faixa, slot, genero }: CardProps) {
           disabled={!isDisponivel}
           sx={{ height: 44, fontSize: 11 }}
         >
-          {isDisponivel ? 'INSCREVER VIA APP' : 'LISTA DE ESPERA'}
+          {isDisponivel ? t('categories.btn_register', 'INSCREVER VIA APP') : t('categories.btn_waitlist', 'LISTA DE ESPERA')}
         </CyberButton>
       </Box>
     </CyberCard>
@@ -455,9 +464,11 @@ function FaixaSelector({
   selected: string;
   onChange: (f: string) => void;
 }) {
+  const { t } = useTranslate();
+  const beltKeyMap: Record<string, string> = { Branca: 'white', Azul: 'blue', Roxa: 'purple', Marrom: 'brown', Preta: 'black' };
   const options = FAIXAS_ORDER.map((faixa) => ({
     value: faixa,
-    label: faixa,
+    label: t(`categories.belts.${beltKeyMap[faixa] || 'white'}`, faixa),
     dot: { bg: FAIXA_CONFIG[faixa].bg, border: FAIXA_CONFIG[faixa].border },
   }));
   return <SegmentedControl options={options} selected={selected} onChange={onChange} />;
@@ -466,6 +477,7 @@ function FaixaSelector({
 // ----------------------------------------------------------------------
 
 export function Categorias({ sx, ...other }: BoxProps) {
+  const { t } = useTranslate();
   const [selectedGenero, setSelectedGenero] = useState<Genero>('M');
   const [selectedFaixa, setSelectedFaixa] = useState<string>('Branca');
 
@@ -477,7 +489,7 @@ export function Categorias({ sx, ...other }: BoxProps) {
 
   const pesoList = selectedGenero === 'M' ? PESO_MASCULINO : PESO_FEMININO;
   const faixaSource = selectedGenero === 'M' ? FAIXA_DATA : FAIXA_DATA_F;
-  const generoLabel = selectedGenero === 'M' ? 'Categoria Masculina' : 'Categoria Feminina';
+  const generoLabel = selectedGenero === 'M' ? t('categories.gender_male', 'Masculina') : t('categories.gender_female', 'Feminina');
 
   const currentCards = useMemo(
     () =>
@@ -503,32 +515,26 @@ export function Categorias({ sx, ...other }: BoxProps) {
           {/* ── HEADER ── */}
           <m.div variants={varFade('inUp')}>
             <Stack sx={{ mb: 4 }}>
-              {/* Linha 1: Badge — tamanho natural */}
-              <Box
+
+              {/* Título de Seção Padronizado */}
+              <Typography
+                component="h2"
+                variant="h2"
                 sx={{
-                  alignSelf: 'flex-start',
-                  display: 'inline-block',
-                  border: `1px solid rgba(234,179,8,0.6)`,
-                  borderRadius: 2,
-                  px: 1.5,
-                  py: 0.5,
-                  mb: 2,
+                  fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                  fontWeight: 900,
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
+                  color: '#fff',
+                  lineHeight: 1.15,
+                  textTransform: 'uppercase',
+                  mb: 3,
                 }}
               >
-                <Typography
-                  component="span"
-                  sx={{
-                    fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
-                    fontWeight: 700,
-                    fontSize: 11,
-                    letterSpacing: '0.25em',
-                    textTransform: 'uppercase',
-                    color: '#EAB308',
-                  }}
-                >
-                  CATEGORIAS
-                </Typography>
-              </Box>
+                {t('categories.title', 'CATEGORIAS E')}{' '}
+                <Box component="span" sx={{ color: 'warning.main' }}>
+                  {t('categories.title_highlight', 'PESOS')}
+                </Box>
+              </Typography>
 
               {/* Linha 2: Faixas (esquerda) + Gênero (direita) — largura total */}
               <Stack
@@ -544,8 +550,8 @@ export function Categorias({ sx, ...other }: BoxProps) {
 
                 <SegmentedControl
                   options={[
-                    { value: 'M', label: 'Masculinas' },
-                    { value: 'F', label: 'Femininas' },
+                    { value: 'M', label: t('categories.gender_male', 'Masculinas') },
+                    { value: 'F', label: t('categories.gender_female', 'Femininas') },
                   ]}
                   selected={selectedGenero}
                   onChange={(v) => setSelectedGenero(v as Genero)}
@@ -570,6 +576,7 @@ export function Categorias({ sx, ...other }: BoxProps) {
                 gridGap={2.5}
                 renderItem={(card: any) => (
                   <CategoryCard
+                    id={card.id}
                     peso={card.peso}
                     faixa={selectedFaixa}
                     slot={card.slot}

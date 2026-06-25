@@ -2,6 +2,7 @@
 
 import type { BoxProps } from '@mui/material/Box';
 
+import { useMemo } from 'react';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
@@ -15,48 +16,52 @@ import { Iconify } from 'src/components/iconify';
 import { CyberCard } from 'src/components/cyber-card';
 import { varFade, MotionViewport } from 'src/components/animate';
 
-// ----------------------------------------------------------------------
-
-const PRIZES = [
-  {
-    title: 'SELETIVAS',
-    subtitle: 'Categorias de Peso',
-    description: 'A premiação para os campeões de cada categoria de peso nas seletivas abertas.',
-    accentColor: '#3B82F6', // Azul
-    icon: 'solar:medal-ribbons-star-bold',
-    isMain: true,
-    prizeMoney: 'R$ 00.000', // Edite o valor aqui
-    items: [
-      {
-        text: 'Medalha Exclusiva FFC (Ouro, Prata, Bronze)',
-        icon: 'solar:medal-ribbons-star-bold',
-      },
-      { text: 'Kit de Suplementação Oficial', icon: 'solar:box-minimalistic-bold' },
-      { text: 'Vaga Garantida na Próxima Edição', icon: 'solar:ticket-bold' },
-      { text: 'Destaque nas Redes Sociais do FFC', icon: 'solar:star-bold' },
-    ],
-  },
-  {
-    title: 'GRAND PRIX',
-    subtitle: 'Absoluto Convidados',
-    description: 'O prêmio máximo disputado apenas pelos atletas de elite convidados para o GP.',
-    accentColor: '#EAB308', // Dourado
-    icon: 'solar:cup-star-bold',
-    isMain: true,
-    prizeMoney: 'R$ 100.000',
-    items: [
-      { text: 'Cinturão de Campeão GP FFC', icon: 'solar:shield-check-bold' },
-      { text: 'Premiação em Dinheiro (Pix na hora)', icon: 'solar:wad-of-money-bold' },
-      { text: 'Troféu Exclusivo de Campeão Absoluto', icon: 'solar:cup-star-bold' },
-      { text: 'Contrato para Lutas Casadas Futuras', icon: 'solar:document-bold' },
-    ],
-  },
-];
+import { useTranslate } from 'src/locales';
 
 // ----------------------------------------------------------------------
 
 export function HomePrizes({ sx, ...other }: BoxProps) {
   const theme = useTheme();
+  const { t } = useTranslate();
+
+  const prizesData = useMemo(
+    () => [
+      {
+        title: t('prizes.selectives.title', 'SELETIVAS'),
+        subtitle: t('prizes.selectives.subtitle', 'Categorias de Peso'),
+        description: t('prizes.selectives.description', 'A premiação para os campeões de cada categoria de peso nas seletivas abertas.'),
+        accentColor: theme.palette.info.main, // Azul
+        icon: 'solar:medal-ribbons-star-bold',
+        isMain: true,
+        prizeMoney: t('prizes.selectives.prizepool', 'Inscrições + Kit'),
+        items: [
+          {
+            text: t('prizes.selectives.items.0', 'Medalha Exclusiva FFC (Ouro, Prata, Bronze)'),
+            icon: 'solar:medal-ribbons-star-bold',
+          },
+          { text: t('prizes.selectives.items.1', 'Kit de Suplementação Oficial'), icon: 'solar:box-minimalistic-bold' },
+          { text: t('prizes.selectives.items.2', 'Vaga Garantida na Próxima Edição'), icon: 'solar:ticket-bold' },
+          { text: t('prizes.selectives.items.3', 'Destaque nas Redes Sociais do FFC'), icon: 'solar:star-bold' },
+        ],
+      },
+      {
+        title: t('prizes.gp.title', 'GRAND PRIX'),
+        subtitle: t('prizes.gp.subtitle', 'Absoluto Convidados'),
+        description: t('prizes.gp.description', 'O prêmio máximo disputado apenas pelos atletas de elite convidados para o GP.'),
+        accentColor: '#EAB308', // Dourado
+        icon: 'solar:cup-star-bold',
+        isMain: true,
+        prizeMoney: t('prizes.gp.prizepool', 'R$ 100.000'),
+        items: [
+          { text: t('prizes.gp.items.0', 'Cinturão de Campeão GP FFC'), icon: 'solar:shield-check-bold' },
+          { text: t('prizes.gp.items.1', 'Premiação em Dinheiro (Pix na hora)'), icon: 'solar:wad-of-money-bold' },
+          { text: t('prizes.gp.items.2', 'Troféu Exclusivo de Campeão Absoluto'), icon: 'solar:cup-star-bold' },
+          { text: t('prizes.gp.items.3', 'Contrato para Lutas Casadas Futuras'), icon: 'solar:document-bold' },
+        ],
+      },
+    ],
+    [t, theme.palette.info.main]
+  );
 
   return (
     <Box
@@ -77,32 +82,32 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
               sx={{ mb: { xs: 6, md: 10 }, textAlign: 'center', alignItems: 'center' }}
             >
               <Typography
+                component="h2"
                 variant="h2"
                 sx={{
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
                   color: '#fff',
                   textTransform: 'uppercase',
-                  lineHeight: 1.1,
+                  lineHeight: 1.15,
                 }}
               >
-                PREMIAÇÃO{' '}
-                <Box component="span" sx={{ color: '#EAB308' }}>
-                  OFICIAL
+                {t('prizes.title', 'PREMIAÇÃO')}{' '}
+                <Box component="span" sx={{ color: 'warning.main' }}>
+                  {t('prizes.title_highlight', 'OFICIAL')}
                 </Box>
               </Typography>
 
               <Typography sx={{ color: alpha('#fff', 0.6), maxWidth: 600, mx: 'auto' }}>
-                Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames
-                do Final Fight Combat.
+                {t('prizes.description', 'Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames do Final Fight Combat.')}
               </Typography>
             </Stack>
           </m.div>
 
           {/* ── CARDS DE PREMIAÇÃO ── */}
           <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-            {PRIZES.map((prize, index) => (
+            {prizesData.map((prize, index) => (
               <Grid key={prize.title} size={{ xs: 12, md: 6 }}>
                 <m.div variants={varFade('inUp', { distance: 40 })} style={{ height: '100%' }}>
                   <Box
@@ -221,7 +226,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                               mb: 1,
                             }}
                           >
-                            PRÊMIO TOTAL
+                            {t('prizes.label_total_prize', 'PRÊMIO TOTAL')}
                           </Typography>
                           <Typography
                             sx={{
@@ -249,7 +254,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                             mb: 1,
                           }}
                         >
-                          O que inclui:
+                          {t('prizes.label_includes', 'O que inclui:')}
                         </Typography>
                         {prize.items.map((item, i) => (
                           <Stack key={i} direction="row" alignItems="center" spacing={1.5}>

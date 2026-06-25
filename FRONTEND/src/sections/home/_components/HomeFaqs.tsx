@@ -74,50 +74,24 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
         component={MotionViewport}
         sx={{ position: 'relative', zIndex: 9, textAlign: 'center' }}
       >
-        {/* BADGE / PÍLULA PADRONIZADA */}
-        <m.div variants={varFade('inUp')}>
-          <Box
-            sx={{
-              display: 'inline-block',
-              border: `1px solid ${theme.palette.info.main}`,
-              borderRadius: 2, // borderRadius: 2 padrão
-              px: 1.5,
-              py: 0.5,
-              mb: 5,
-              boxShadow: `0 0 12px ${alpha(theme.palette.info.main, 0.4)}`,
-            }}
-          >
-            <Typography
-              component="span"
-              sx={{
-                fontFamily: "'Orbitron', sans-serif",
-                fontWeight: 700,
-                fontSize: 12,
-                letterSpacing: '0.25em',
-                textTransform: 'uppercase',
-                color: 'info.main',
-              }}
-            >
-              {t('faqs.badge') || 'FAQs'}
-            </Typography>
-          </Box>
-        </m.div>
+
 
         {/* 2° Hierarquia de Tipografia (Título Tri-colorido) */}
         <m.div variants={varFade('inUp')}>
           <Typography
             component="h2"
+            variant="h2"
             sx={{
-              fontFamily: "'Orbitron', sans-serif",
+              fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
               fontWeight: 900,
-              fontSize: { xs: '2.2rem', md: '3rem' },
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
               letterSpacing: '0.05em',
-              lineHeight: 1.2,
+              lineHeight: 1.15,
               textTransform: 'uppercase',
             }}
           >
             <Box component="span" sx={{ color: 'common.white' }}>
-              {t('faqs.title') || 'TEMOS AS'}
+              {t('faqs.heading') || 'TEMOS AS'}
             </Box>
             <br />
             <Box component="span" sx={{ color: 'warning.main' }}>
@@ -129,7 +103,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
         {/* 7. Limitação de Caracteres / MaxWidth Descrição */}
         <m.div variants={varFade('inUp')}>
           <Typography sx={{ mt: 3, mx: 'auto', maxWidth: 640, color: 'text.secondary' }}>
-            Tudo o que você precisa saber sobre a infraestrutura digital e governança do FFC.
+            {t('faqs.description') || 'Tudo o que você precisa saber sobre a infraestrutura digital e governança do FFC.'}
           </Typography>
         </m.div>
 
