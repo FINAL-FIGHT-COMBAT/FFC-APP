@@ -414,7 +414,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                     fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                     fontWeight: 900,
                     fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
-                    color: '#fff',
+                    color: 'common.white',
                     lineHeight: 1.15,
                     textTransform: 'uppercase',
                     mb: 2,
@@ -429,7 +429,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                 <Typography
                   sx={{
                     fontSize: '1rem',
-                    color: alpha('#fff', 0.5),
+                    color: 'text.secondary',
                     maxWidth: 560,
                     lineHeight: 1.7,
                   }}

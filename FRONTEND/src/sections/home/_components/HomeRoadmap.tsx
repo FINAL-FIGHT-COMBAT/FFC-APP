@@ -111,7 +111,6 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                 fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                 fontWeight: 900,
                 fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
-                letterSpacing: '0.08em',
                 lineHeight: 1.15,
                 textTransform: 'uppercase',
               }}
@@ -139,10 +138,9 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                 mt: 3,
                 mx: 'auto',
                 maxWidth: 560,
-                fontFamily: "'Public Sans', sans-serif",
-                fontSize: { xs: 16, md: 18 },
+                fontSize: '1rem',
                 lineHeight: 1.7,
-                color: '#919EAB',
+                color: 'text.secondary',
               }}
             >
               {t('roadmap.description')}
@@ -211,13 +209,12 @@ export function HomeRoadmap({ sx, ...other }: BoxProps) {
                         {item.title}
                       </Typography>
 
-                      {/* Description: Public Sans */}
+                      {/* Description */}
                       <Typography
                         sx={{
-                          fontFamily: "'Public Sans', sans-serif",
-                          fontSize: 15,
+                          fontSize: '0.9375rem',
                           lineHeight: 1.75,
-                          color: '#919EAB',
+                          color: 'text.secondary',
                           zIndex: 3,
                           position: 'relative',
                           flexGrow: 1,

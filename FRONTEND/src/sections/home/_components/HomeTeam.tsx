@@ -133,6 +133,20 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
                 </Box>
               </Typography>
             </m.div>
+
+            <m.div variants={varFade('inUp')}>
+              <Typography
+                sx={{
+                  mt: 2,
+                  fontSize: '1rem',
+                  color: 'text.secondary',
+                  lineHeight: 1.7,
+                  maxWidth: 560,
+                }}
+              >
+                {t('team.description', 'Conheça as pessoas por trás do maior evento de Jiu-Jitsu do Brasil. Profissionais apaixonados pelo esporte e pela comunidade.')}
+              </Typography>
+            </m.div>
           </Box>
 
           {/* BOTÃO ATUALIZADO: "REATIVA & CRYSTAL" */}

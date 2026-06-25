@@ -85,7 +85,6 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
               fontWeight: 900,
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
-              letterSpacing: '0.05em',
               lineHeight: 1.15,
               textTransform: 'uppercase',
             }}

@@ -115,6 +115,7 @@
     "badge": "Equipo",
     "title": "Nuestro",
     "title_highlight": "Equipo",
+    "description": "Conoce a las personas detrás del mayor evento de Jiu-Jitsu de Brasil. Profesionales apasionados por el deporte y la comunidad.",
     "button": "Ver Todos los Miembros",
     "members": [
       {
@@ -293,6 +294,7 @@
     "badge": "CATEGORÍAS",
     "title": "CATEGORÍAS Y",
     "title_highlight": "PESOS",
+    "description": "Elige tu faja y categoría. Las divisiones están organizadas por peso y género para garantizar combates justos y equilibrados.",
     "gender_male": "Masculino",
     "gender_female": "Femenino",
     "occupied_slots": "Cupos Ocupados",

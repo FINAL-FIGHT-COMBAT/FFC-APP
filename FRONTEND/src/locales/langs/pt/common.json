@@ -115,6 +115,7 @@
     "badge": "Time",
     "title": "Nossa",
     "title_highlight": "Equipe",
+    "description": "Conheça as pessoas por trás do maior evento de Jiu-Jitsu do Brasil. Profissionais apaixonados pelo esporte e pela comunidade.",
     "button": "Ver Todos os Membros",
     "members": [
       {
@@ -304,6 +305,7 @@
     "badge": "CATEGORIAS",
     "title": "CATEGORIAS E",
     "title_highlight": "PESOS",
+    "description": "Escolha sua faixa e categoria. As divisões estão organizadas por peso e gênero para garantir combates justos e equilibrados.",
     "gender_male": "Masculinas",
     "gender_female": "Femininas",
     "occupied_slots": "Vagas Ocupadas",

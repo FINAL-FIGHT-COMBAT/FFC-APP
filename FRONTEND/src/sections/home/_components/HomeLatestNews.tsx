@@ -76,8 +76,6 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
             sx={{ mb: 10, gap: 4 }}
           >
             <Box sx={{ textAlign: 'left' }}>
-
-
               <m.div variants={varFade('inUp')}>
                 <Typography
                   component="h2"
@@ -103,6 +101,20 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
                   <Box component="span" sx={{ color: 'warning.main' }}>
                     {t('news.title_highlight')}
                   </Box>
+                </Typography>
+              </m.div>
+
+              <m.div variants={varFade('inUp')}>
+                <Typography
+                  sx={{
+                    mt: 2,
+                    fontSize: '1rem',
+                    color: 'text.secondary',
+                    lineHeight: 1.7,
+                    maxWidth: 560,
+                  }}
+                >
+                  {t('news.description', 'Fique por dentro de tudo o que acontece no mundo do Jiu-Jitsu e do Final Fight Combat.')}
                 </Typography>
               </m.div>
             </Box>

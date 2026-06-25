@@ -68,7 +68,7 @@ export function HomeSponsors() {
                   lineHeight: 1.15,
                 },
               },
-              description: { sx: { color: 'grey.400', maxWidth: 600, mx: 'auto' } },
+              description: { sx: { color: 'text.secondary', maxWidth: 600, mx: 'auto' } },
             }}
           />
         </m.div>

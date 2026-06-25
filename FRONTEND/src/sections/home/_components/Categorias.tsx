@@ -524,16 +524,28 @@ export function Categorias({ sx, ...other }: BoxProps) {
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
                   fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
-                  color: '#fff',
+                  color: 'common.white',
                   lineHeight: 1.15,
                   textTransform: 'uppercase',
-                  mb: 3,
+                  mb: 1.5,
                 }}
               >
                 {t('categories.title', 'CATEGORIAS E')}{' '}
                 <Box component="span" sx={{ color: 'warning.main' }}>
                   {t('categories.title_highlight', 'PESOS')}
                 </Box>
+              </Typography>
+
+              {/* Descrição da seção */}
+              <Typography
+                sx={{
+                  fontSize: '1rem',
+                  color: 'text.secondary',
+                  lineHeight: 1.7,
+                  mb: 3,
+                }}
+              >
+                {t('categories.description', 'Escolha sua faixa e categoria. As divisões estão organizadas por peso e gênero para garantir combates justos e equilibrados.')}
               </Typography>
 
               {/* Linha 2: Faixas (esquerda) + Gênero (direita) — largura total */}

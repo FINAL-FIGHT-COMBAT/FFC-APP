@@ -115,6 +115,7 @@
     "badge": "Team",
     "title": "Our",
     "title_highlight": "Team",
+    "description": "Meet the people behind Brazil's biggest Jiu-Jitsu event. Passionate professionals dedicated to the sport and the community.",
     "button": "View All Members",
     "members": [
       {
@@ -295,6 +296,7 @@
     "badge": "CATEGORIES",
     "title": "CATEGORIES AND",
     "title_highlight": "WEIGHTS",
+    "description": "Choose your belt and category. Divisions are organized by weight and gender to ensure fair and balanced matches.",
     "gender_male": "Male",
     "gender_female": "Female",
     "occupied_slots": "Filled Slots",

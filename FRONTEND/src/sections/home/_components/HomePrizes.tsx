@@ -88,7 +88,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                   fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
                   fontWeight: 900,
                   fontSize: { xs: '2rem', sm: '2.5rem', md: '3.2rem' },
-                  color: '#fff',
+                  color: 'common.white',
                   textTransform: 'uppercase',
                   lineHeight: 1.15,
                 }}
@@ -99,7 +99,7 @@ export function HomePrizes({ sx, ...other }: BoxProps) {
                 </Box>
               </Typography>
 
-              <Typography sx={{ color: alpha('#fff', 0.6), maxWidth: 600, mx: 'auto' }}>
+              <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}>
                 {t('prizes.description', 'Reconhecimento para os verdadeiros guerreiros. Veja o que está em jogo nos tatames do Final Fight Combat.')}
               </Typography>
             </Stack>
