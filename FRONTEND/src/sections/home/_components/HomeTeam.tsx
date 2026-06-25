@@ -106,11 +106,11 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
         {/* HEADER: TAG + TÍTULO E BOTÃO NA DIREITA */}
         <Stack
           direction={{ xs: 'column', md: 'row' }}
-          alignItems={{ xs: 'flex-start', md: 'flex-end' }}
+          alignItems={{ xs: 'center', md: 'flex-end' }}
           justifyContent="space-between"
           sx={{ mb: 8, gap: 4 }}
         >
-          <Box sx={{ textAlign: 'left' }}>
+          <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
 
             {/* TÍTULO DA SEÇÃO */}
             <m.div variants={varFade('inUp')}>
@@ -142,6 +142,7 @@ export function HomeTeam({ sx, ...other }: BoxProps) {
                   color: 'text.secondary',
                   lineHeight: 1.7,
                   maxWidth: 560,
+                  mx: { xs: 'auto', md: 0 },
                 }}
               >
                 {t('team.description', 'Conheça as pessoas por trás do maior evento de Jiu-Jitsu do Brasil. Profissionais apaixonados pelo esporte e pela comunidade.')}

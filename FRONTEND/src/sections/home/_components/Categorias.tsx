@@ -514,7 +514,7 @@ export function Categorias({ sx, ...other }: BoxProps) {
         <Container sx={{ position: 'relative', zIndex: 1 }}>
           {/* ── HEADER ── */}
           <m.div variants={varFade('inUp')}>
-            <Stack sx={{ mb: 4 }}>
+            <Stack sx={{ mb: 4, textAlign: { xs: 'center', md: 'left' }, alignItems: { xs: 'center', md: 'flex-start' } }}>
 
               {/* Título de Seção Padronizado */}
               <Typography
@@ -543,6 +543,8 @@ export function Categorias({ sx, ...other }: BoxProps) {
                   color: 'text.secondary',
                   lineHeight: 1.7,
                   mb: 3,
+                  maxWidth: 560,
+                  mx: { xs: 'auto', md: 0 },
                 }}
               >
                 {t('categories.description', 'Escolha sua faixa e categoria. As divisões estão organizadas por peso e gênero para garantir combates justos e equilibrados.')}

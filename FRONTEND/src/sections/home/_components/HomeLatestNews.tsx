@@ -71,11 +71,11 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
           {/* HEADER: TÍTULO À ESQUERDA + BOTÃO À DIREITA */}
           <Stack
             direction={{ xs: 'column', md: 'row' }}
-            alignItems={{ xs: 'flex-start', md: 'flex-end' }}
+            alignItems={{ xs: 'center', md: 'flex-end' }}
             justifyContent="space-between"
             sx={{ mb: 10, gap: 4 }}
           >
-            <Box sx={{ textAlign: 'left' }}>
+            <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               <m.div variants={varFade('inUp')}>
                 <Typography
                   component="h2"
@@ -112,6 +112,7 @@ export function HomeLatestNews({ sx, ...other }: BoxProps) {
                     color: 'text.secondary',
                     lineHeight: 1.7,
                     maxWidth: 560,
+                    mx: { xs: 'auto', md: 0 },
                   }}
                 >
                   {t('news.description', 'Fique por dentro de tudo o que acontece no mundo do Jiu-Jitsu e do Final Fight Combat.')}

@@ -233,22 +233,48 @@ export default function HomeCountdownDialog({
           height: { xs: 'auto', sm: 640 },
           maxWidth: 'calc(100% - 32px)',
           overflow: 'hidden',
-          // Padrão Global CyberCard
-          bgcolor: alpha('#020817', 0.6),
+          // ✅ Padrão unificado com CyberCard
+          bgcolor: alpha('#020817', 0.8),
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           border: 'none',
-          boxShadow: `0 30px 60px -15px ${alpha('#000', 0.8)}, 0 0 40px ${alpha(theme.palette.warning.main, 0.15)}`,
+          // Sombra externa + glow dourado
+          boxShadow: `
+            0 30px 60px -15px ${alpha('#000', 0.8)},
+            0 0 40px ${alpha(theme.palette.warning.main, 0.15)},
+            inset 0 1px 1px ${alpha(theme.palette.common.white, 0.15)},
+            inset 0 -1px 1px ${alpha('#000', 0.4)}
+          `,
+          // ✅ BORDA MAGNÉTICA — idêntica ao CyberCard (180deg, 1.5px, info → white → warning)
           '&::before': {
             content: '""',
             position: 'absolute',
             inset: 0,
             borderRadius: 'inherit',
-            padding: '2px', // Borda
-            background: `linear-gradient(135deg, ${alpha(theme.palette.warning.main, 0.8)}, transparent 50%, ${alpha(theme.palette.info.main, 0.6)})`,
+            padding: '1.5px',
+            background: `linear-gradient(180deg,
+              ${theme.palette.info.main} 0%,
+              ${alpha(theme.palette.common.white, 0.05)} 50%,
+              ${theme.palette.warning.main} 100%
+            )`,
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
             maskComposite: 'exclude',
+            zIndex: 0,
+            pointerEvents: 'none',
+          },
+          // ✅ REFLEXO GLOSSY — idêntico ao CyberCard
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 'inherit',
+            background: `linear-gradient(135deg,
+              ${alpha(theme.palette.common.white, 0.15)} 0%,
+              ${alpha(theme.palette.common.white, 0)} 40%,
+              ${alpha(theme.palette.common.white, 0)} 100%
+            )`,
+            pointerEvents: 'none',
             zIndex: 0,
           },
           color: 'common.white',

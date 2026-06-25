@@ -399,12 +399,12 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
           {/* ── HEADER ── */}
           <Stack
             direction={{ xs: 'column', md: 'row' }}
-            alignItems={{ md: 'flex-end' }}
+            alignItems={{ xs: 'center', md: 'flex-end' }}
             justifyContent="space-between"
             sx={{ mb: 8, gap: 4 }}
           >
             <m.div variants={varFade('inUp')}>
-              <Stack sx={{ alignItems: 'flex-start', textAlign: 'left' }}>
+              <Stack sx={{ alignItems: { xs: 'center', md: 'flex-start' }, textAlign: { xs: 'center', md: 'left' } }}>
 
                 {/* Título */}
                 <Typography
@@ -432,6 +432,7 @@ export function HomeAthletes({ sx, ...other }: BoxProps) {
                     color: 'text.secondary',
                     maxWidth: 560,
                     lineHeight: 1.7,
+                    mx: { xs: 'auto', md: 0 },
                   }}
                 >
                   {t('athletes.description', 'Os maiores nomes do Jiu-Jitsu Brasileiro se enfrentam no GP pelo prêmio em dinheiro. Não perca!')}
