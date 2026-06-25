@@ -188,7 +188,6 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
   });
 
   const {
-    reset,
     handleSubmit,
     watch,
     setValue,
@@ -231,7 +230,7 @@ function FormularioAtleta({ onSuccess }: { onSuccess: () => void }) {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.info('CADASTRO DE ATLETA', data);
       onSuccess();
-    } catch (error) {
+    } catch {
       toast.error('Erro ao enviar. Tente novamente.');
     }
   });
@@ -348,7 +347,6 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
   });
 
   const {
-    reset,
     handleSubmit,
     watch,
     setValue,
@@ -391,7 +389,7 @@ function FormularioAcademia({ onSuccess }: { onSuccess: () => void }) {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.info('CADASTRO DE ACADEMIA', data);
       onSuccess();
-    } catch (error) {
+    } catch {
       toast.error('Erro ao enviar cadastro. Tente novamente.');
     }
   });

@@ -4,9 +4,9 @@ import type { BoxProps } from '@mui/material/Box';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import { alpha } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { alpha, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
@@ -36,8 +36,6 @@ const ACADEMIES = [
 // ----------------------------------------------------------------------
 
 export function HomeCommunity({ sx, ...other }: BoxProps) {
-  const theme = useTheme();
-
   const renderCard = (academy: typeof ACADEMIES[number]) => (
     <Box key={academy.name} sx={{ width: { xs: 240, md: 280 }, flexShrink: 0 }}>
       <CyberCard

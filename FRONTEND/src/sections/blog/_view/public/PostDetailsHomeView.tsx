@@ -73,7 +73,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
 
   const tags = post?.tags ?? [];
   const favoritePeople = post?.favoritePerson ?? [];
-  const { comments, commentsEmpty } = useGetPostComments(post?.id || '');
+  const { comments } = useGetPostComments(post?.id || '');
 
   const handleToggleFavorite = useCallback(async () => {
     try {
@@ -107,7 +107,7 @@ export function PostDetailsHomeView({ post, latestPosts }: Props) {
     }
 
     return base;
-  }, [title]);
+  }, [title, post?.slug]);
 
   return (
     <Box sx={{ bgcolor: 'transparent', minHeight: '100vh', position: 'relative', zIndex: 1 }}>

@@ -31,7 +31,6 @@ const FAIXA_CONFIG: Record<string, { bg: string; border?: string; glow: string; 
 };
 
 const FAIXAS_ORDER = ['Branca', 'Azul', 'Roxa', 'Marrom', 'Preta'] as const;
-type Faixa = (typeof FAIXAS_ORDER)[number];
 
 // 9 categorias de peso — Adulto Masculino (CBJJ + Absoluto)
 const PESO_MASCULINO = [

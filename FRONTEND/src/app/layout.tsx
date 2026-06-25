@@ -25,6 +25,9 @@ const orbitron = Orbitron({
   display: 'swap',
 });
 
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
@@ -38,9 +41,6 @@ import { themeConfig, primary as primaryColor } from 'src/theme';
 import { JsonLd } from 'src/components/seo/json-ld';
 import { detectSettings } from 'src/components/settings/server';
 import { defaultSettings, SettingsProvider } from 'src/components/settings';
-
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import App from './app';
 
@@ -166,10 +166,7 @@ async function getAppConfig() {
       i18nLang: lang,
       cookieSettings: settings || defaultSettings,
     };
-  } catch (_error) {
-    /**
-     * ✅ FIX LINT: Uso do prefixo '_' para indicar variável intencionalmente não utilizada.
-     */
+  } catch {
     return {
       lang: 'pt' as LanguageCode,
       dir: 'ltr',

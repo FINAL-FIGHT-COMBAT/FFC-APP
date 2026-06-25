@@ -375,8 +375,6 @@ function AthleteCard({ athlete }: { athlete: Athlete }) {
 // ----------------------------------------------------------------------
 
 export function HomeAthletes({ sx, ...other }: BoxProps) {
-  const theme = useTheme();
-
   const carousel = useCarousel({
     align: 'start',
     slideSpacing: '24px',

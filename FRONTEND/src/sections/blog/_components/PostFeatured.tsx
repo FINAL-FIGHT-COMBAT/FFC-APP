@@ -46,6 +46,7 @@ export function PostFeatured({ posts, sx }: { posts: IPostItem[]; sx?: SxProps<T
 
   // 🛠 SOLUÇÃO PARA O ERRO: Extraímos _dotCount para não vazar para o DOM
   const { dotCount: _dotCount, ...dotsProps } = carousel.dots;
+  void _dotCount;
 
   return (
     <Box sx={{ position: 'relative', overflow: 'hidden', bgcolor: 'transparent', ...sx }}>

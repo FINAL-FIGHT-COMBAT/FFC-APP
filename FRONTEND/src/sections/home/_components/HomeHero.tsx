@@ -24,7 +24,6 @@ import { Iconify, type IconifyName } from 'src/components/iconify';
 const EVENT_DATE = new Date('2026-07-12T08:00:00');
 
 const GOLD = '#EAB308';
-const GOLD_DARK = '#CA8A04';
 
 const mdKey: Breakpoint = 'md';
 

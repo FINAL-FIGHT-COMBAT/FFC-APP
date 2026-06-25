@@ -32,14 +32,6 @@ export function BracketMatch({
   // Se não passar player2, renderiza um "AGUARDANDO" genérico
   const p2 = player2 || { name: 'A DEFINIR' };
 
-  const name1 = player1.name || 'A DEFINIR';
-  const name2 = p2.name || 'A DEFINIR';
-  const displayTitle =
-    matchTitle ||
-    (name1 === 'A DEFINIR' || name2 === 'A DEFINIR'
-      ? 'AGUARDANDO OPONENTES'
-      : `${name1} VS ${name2}`);
-
   const cardWidth = isFinal ? 200 : isSmall ? 115 : 140;
   const cardHeight = isFinal ? 280 : isSmall ? 155 : 190;
 

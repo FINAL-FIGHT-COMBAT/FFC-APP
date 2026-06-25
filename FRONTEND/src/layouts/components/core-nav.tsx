@@ -6,15 +6,12 @@ import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-import { useRouter } from 'src/routes/hooks';
-
 import { Iconify } from 'src/components/iconify';
 import { useSettingsContext } from 'src/components/settings';
 
 // ----------------------------------------------------------------------
 
 export function CoreNav() {
-  const router = useRouter();
   const open = useBoolean();
   const settings = useSettingsContext();
 

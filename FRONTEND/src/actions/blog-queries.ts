@@ -95,7 +95,7 @@ export async function getLatestPosts(paramSlug: string) {
     const latestPosts = posts.filter((p: any) => p.slug !== paramSlug);
 
     return { latestPosts };
-  } catch (error) {
+  } catch {
     return { latestPosts: BLOG_MOCK.slice(0, 4) };
   }
 }
@@ -109,7 +109,7 @@ export async function getPostsByCategory(categoryName: string) {
     const { posts } = await getPosts({ category: categoryName });
 
     return { posts };
-  } catch (error) {
+  } catch {
     return { posts: BLOG_MOCK.filter((p) => p.category === categoryName) };
   }
 }

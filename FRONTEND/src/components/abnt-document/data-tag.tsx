@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
 
 import { useDocumentData } from './document-context';
 
@@ -9,7 +8,6 @@ type DataTagProps = {
 };
 
 export function DataTag({ text = 'PREENCHIMENTO AUTOMÁTICO', field }: DataTagProps) {
-  const theme = useTheme();
   const contextData = useDocumentData();
 
   const lookupField = field || text;

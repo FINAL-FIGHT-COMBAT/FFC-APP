@@ -58,7 +58,7 @@ axiosInstance.interceptors.response.use(
       if (typeof requestData === 'string') {
         try {
           requestData = JSON.parse(requestData);
-        } catch (e) {
+        } catch {
           // Mantém como string se não for JSON
         }
       } else if (requestData instanceof FormData) {
