@@ -67,7 +67,7 @@ export function HomeView() {
   const countdown = useBoolean(true);
 
   // DATA ALVO: Sincronizado com o evento principal (HomeHero)
-  const TARGET_DATE = new Date('2026-07-12T08:00:00');
+  const TARGET_DATE = new Date('2026-08-16T08:00:00');
 
   return (
     <>
@@ -80,23 +80,23 @@ export function HomeView() {
         <HomeHero />
 
         <Stack sx={{ position: 'relative', bgcolor: 'transparent' }}>
-          <HomeAthletes />
+          <HomePrizes />
 
           <Categorias />
 
-          <HomeRoadmap />
-
-          <HomePrizes />
+          <HomeAthletes />
 
           <HomeCommunity />
 
           <HomeSponsors />
 
+          <HomeFAQs />
+
+          <HomeRoadmap />
+
           <HomeLatestNews />
 
           <HomeTeam />
-
-          <HomeFAQs />
 
           <HomeCtaBanner />
         </Stack>

@@ -23,7 +23,7 @@ import { useTranslate } from 'src/locales';
 // ----------------------------------------------------------------------
 
 // ⏱ Data do evento — ajuste conforme necessário
-const EVENT_DATE = new Date('2026-07-12T08:00:00');
+const EVENT_DATE = new Date('2026-08-16T08:00:00');
 
 const GOLD = '#EAB308';
 

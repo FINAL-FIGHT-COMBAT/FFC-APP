@@ -233,19 +233,12 @@ export default function HomeCountdownDialog({
           height: { xs: 'auto', sm: 640 },
           maxWidth: 'calc(100% - 32px)',
           overflow: 'hidden',
-          // ✅ Padrão unificado com CyberCard
           bgcolor: alpha('#020817', 0.8),
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
           border: 'none',
-          // Sombra externa + glow dourado
-          boxShadow: `
-            0 30px 60px -15px ${alpha('#000', 0.8)},
-            0 0 40px ${alpha(theme.palette.warning.main, 0.15)},
-            inset 0 1px 1px ${alpha(theme.palette.common.white, 0.15)},
-            inset 0 -1px 1px ${alpha('#000', 0.4)}
-          `,
-          // ✅ BORDA MAGNÉTICA — idêntica ao CyberCard (180deg, 1.5px, info → white → warning)
+          boxShadow: `0 30px 60px -15px ${alpha('#000', 0.8)}`,
+          // Borda do tema: gradiente ciano (topo) → âmbar (base)
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -260,20 +253,6 @@ export default function HomeCountdownDialog({
             WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
             WebkitMaskComposite: 'xor',
             maskComposite: 'exclude',
-            zIndex: 0,
-            pointerEvents: 'none',
-          },
-          // ✅ REFLEXO GLOSSY — idêntico ao CyberCard
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            inset: 0,
-            borderRadius: 'inherit',
-            background: `linear-gradient(135deg,
-              ${alpha(theme.palette.common.white, 0.15)} 0%,
-              ${alpha(theme.palette.common.white, 0)} 40%,
-              ${alpha(theme.palette.common.white, 0)} 100%
-            )`,
             pointerEvents: 'none',
             zIndex: 0,
           },
