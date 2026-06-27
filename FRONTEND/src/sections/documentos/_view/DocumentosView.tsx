@@ -61,6 +61,74 @@ export function DocumentosView() {
           </Typography>
         </Stack>
 
+        {/* Documento em Destaque — Whitepaper */}
+        <CyberCard
+          sx={{
+            p: { xs: 3, md: 5 },
+            mb: { xs: 6, md: 10 },
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { xs: 'flex-start', md: 'center' },
+            gap: 4,
+          }}
+        >
+          {/* Ícone */}
+          <Box
+            sx={{
+              width: { xs: 56, md: 80 },
+              height: { xs: 56, md: 80 },
+              borderRadius: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              bgcolor: alpha(theme.palette.primary.main, 0.12),
+              color: theme.palette.primary.main,
+              flexShrink: 0,
+            }}
+          >
+            <Iconify icon={"solar:star-bold" as any} width={40} />
+          </Box>
+
+          {/* Texto */}
+          <Box flexGrow={1}>
+            <Typography
+              variant="overline"
+              sx={{ color: 'primary.main', fontWeight: 800, letterSpacing: 2, mb: 0.5, display: 'block' }}
+            >
+              📘 Documento em Destaque
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                color: 'common.white',
+                fontFamily: 'var(--font-orbitron), "Orbitron", sans-serif',
+                fontWeight: 900,
+                textTransform: 'uppercase',
+                mb: 1.5,
+                fontSize: { xs: '1.1rem', md: '1.35rem' },
+              }}
+            >
+              Whitepaper Oficial do Ecossistema FFC
+            </Typography>
+            <Typography sx={{ color: 'text.secondary', lineHeight: 1.7, maxWidth: 680 }}>
+              Conheça a visão estratégica, a governança, a plataforma tecnológica e o programa de incubação
+              que conecta federações, academias, atletas, patrocinadores e parceiros em um único ecossistema colaborativo.
+            </Typography>
+          </Box>
+
+          {/* Botão */}
+          <Box sx={{ flexShrink: 0, width: { xs: '100%', md: 'auto' } }}>
+            <CyberButton
+              href="/pdf-viewer/whitepaper"
+              glowColor="primary"
+              endIcon={<Iconify icon="solar:eye-bold" />}
+              sx={{ width: { xs: '100%', md: 200 }, height: 48 }}
+            >
+              Ler Documento
+            </CyberButton>
+          </Box>
+        </CyberCard>
+
         {/* Categories Loop */}
         {DOCUMENT_CATEGORIES.map((cat) => {
           const categoryDocs = DOCUMENTS.filter((d) => d.category === cat.id);
