@@ -1,29 +1,21 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { useDocumentData } from './document-context';
-
 type DefaultHeaderProps = {
-  title?: string;
   logoUrl?: string;
 };
 
 export function DefaultHeader({
-  title,
   logoUrl = '/logo/android-chrome-512x512.png',
 }: DefaultHeaderProps = {}) {
-  const data = useDocumentData();
-
-  const displayTitle = title || (data?.documentTitle as string) || '';
-
   return (
     <Box
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderBottom: '1px solid #000', // Linha mais fina/sutil
-        pb: 0, // Sem nenhum recuo extra, o mais colado possível
+        borderBottom: '1px solid #000',
+        pb: 0,
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -44,14 +36,6 @@ export function DefaultHeader({
           >
             FFC - FINAL FIGHT COMBAT
           </Typography>
-          {displayTitle && (
-            <Typography
-              variant="caption"
-              sx={{ color: 'text.secondary', display: 'block', fontSize: '9pt', mt: 0.5 }}
-            >
-              {displayTitle}
-            </Typography>
-          )}
         </Box>
       </Box>
     </Box>
