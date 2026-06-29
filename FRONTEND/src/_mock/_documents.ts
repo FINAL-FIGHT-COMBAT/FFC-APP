@@ -4,23 +4,110 @@ export const MOCK_PDF_DOCUMENTS: Record<string, { title: string; content: string
     content: `
 # PROGRAMA DE INCUBAÇÃO E GOVERNANÇA DO ECOSSISTEMA FINAL FIGHT COMBAT (FFC)
 
-## APRESENTAÇÃO
+## APRESENTAÇÃO E CONCEITO DO PROJETO
 
-O mercado das artes marciais e esportes de combate é composto por milhares de atletas, academias, federações, organizadores de eventos, patrocinadores e empresas que atuam de forma descentralizada, muitas vezes sem integração tecnológica, compartilhamento de informações ou mecanismos unificados de crescimento.
+O mercado das artes marciais e esportes de combate é caracterizado por uma forte descentralização. Milhares de atletas, academias, federações, organizadores de eventos, patrocinadores e empresas atuam de forma isolada, sem integração tecnológica, compartilhamento estruturado de dados ou mecanismos unificados de valorização de seus ativos.
 
-O Final Fight Combat (FFC) nasce com o propósito de conectar esse ecossistema por meio de uma infraestrutura tecnológica capaz de integrar organizações, gerar inteligência de mercado, ampliar oportunidades comerciais e construir ativos digitais de alto valor para todos os participantes.
+O Final Fight Combat (FFC) nasce não como um evento isolado ou uma liga desportiva tradicional, mas como uma **infraestrutura tecnológica e institucional integrada**. O propósito central do FFC é conectar todo este ecossistema por meio de uma plataforma digital proprietária capaz de centralizar dados, gerar inteligência de mercado, unificar rankings e consolidar ativos de alto valor intangível e tangível para todos os envolvidos.
 
-O FFC é um projeto de desenvolvimento tecnológico, esportivo e comercial incubado pela ASPPIBRA – Associação dos Proprietários e Possuidores de Imóveis no Brasil.
+O projeto é inteiramente desenvolvido sob um **Programa de Incubação Tecnológica, Esportiva e Comercial liderado pela ASPPIBRA** (Associação dos Proprietários e Possuidores de Imóveis no Brasil). Esta associação disponibiliza a governança institucional e a infraestrutura tecnológica inicial necessárias para que o software do ecossistema FFC seja validado de forma transparente, segura e escalável antes de qualquer fase de comercialização societária ou atração de parcerias corporativas de grande porte.
 
-A presente fase tem como objetivo estruturar, validar e expandir um ecossistema digital integrado para o mercado das artes marciais e esportes de combate, conectando atletas, academias, federações, organizadores de eventos, patrocinadores, empresas e futuros investidores em uma única plataforma tecnológica.
+### A Filosofia Central: O Ativo é o Ecossistema
 
-A estratégia central consiste na implementação, validação e expansão do software proprietário do ecossistema FFC, criando uma base sólida de usuários, dados, operações, eventos, indicadores e ativos digitais capazes de sustentar a futura estruturação empresarial do projeto.
+Diferente de modelos de negócios tradicionais focados apenas em eventos físicos, **o ativo principal do FFC não são os campeonatos ou combates em si**. O verdadeiro ativo de valor construído pelo FFC é:
 
-O propósito desta incubação é transformar o FFC em uma plataforma escalável, auditável e atrativa para investidores estratégicos, fundos de investimento e parceiros institucionais, gerando valor econômico para todo o ecossistema construído de forma colaborativa.
+1. A **Plataforma Tecnológica Proprietária** (código, funcionalidades e dados integrados).
+2. O **Ecossistema Colaborativo** (a rede unificada de academias, federações, atletas e empresas).
+3. A **Base de Dados Unificada e Higienizada** (histórico de performance, engajamento e métricas de audiência).
+4. Os **Resultados Auditáveis** produzidos coletivamente e atrelados ao crescimento da plataforma.
 
-## MISSÃO DO PROJETO
+## DESAFIOS ESTRUTURAIS DO MERCADO
 
-Promover a integração tecnológica, institucional e comercial do mercado das artes marciais e esportes de combate, criando um ambiente colaborativo capaz de gerar crescimento sustentável, oportunidades econômicas, inovação e desenvolvimento para todos os participantes do ecossistema.
+O mercado das artes marciais enfrenta desafios históricos que limitam o seu crescimento e profissionalização:
+
+- **Fragmentação Institucional:** Entidades e ligas atuam de forma isolada, gerando dispersão de público e atletas.
+- **Falta de Integração Tecnológica:** Ausência de uma plataforma central que conecte dados operacionais de forma eficiente.
+- **Duplicação de Esforços Administrativos:** Processos repetitivos de cadastro, pesagem e arbitragem sem padrões digitais.
+- **Dificuldade na Atração de Patrocinadores Nacionais:** Marcas encontram barreiras para negociar com centenas de organizações locais dispersas.
+- **Ausência de Métricas Auditáveis:** Dificuldade em comprovar audiência, transações e engajamento real de forma transparente.
+- **Baixa Interoperabilidade:** Sistemas independentes incapazes de trocar informações ou consolidar rankings oficiais.
+- **Falta de Inteligência de Mercado Consolidada:** Ausência de dados de comportamento e performance para tomadas de decisão estratégicas.
+
+O FFC surge como a resposta definitiva a esses desafios, unificando o setor sob uma infraestrutura digital comum.
+
+## PAPEL INSTITUCIONAL DA ASPPIBRA
+
+A ASPPIBRA (Associação dos Proprietários e Possuidores de Imóveis no Brasil) atua como a **entidade incubadora e fomentadora oficial do ecossistema FFC** nesta fase inicial. As responsabilidades e garantias oferecidas pela associação incluem:
+
+- **Fomento Tecnológico Neutro:** Disponibilização da infraestrutura digital e apoio financeiro de desenvolvimento inicial, garantindo a isenção de interesses comerciais imediatos.
+- **Governança de Compliance:** Supervisão dos critérios éticos e jurídicos do projeto, assegurando a conformidade das regras gerais estabelecidas no Whitepaper.
+- **Neutralidade Administrativa:** Arbitragem de eventuais conflitos entre entidades participantes de forma independente e imparcial durante toda a vigência do Programa de Incubação.
+- **Custódia Segura de Dados:** Garantia de que a base de dados coletada sob o IRE será preservada de forma íntegra e inviolável para auditoria externa.
+
+## METAS DA FASE DE INCUBAÇÃO
+
+Para balizar o sucesso operacional e atestar a tração tecnológica da plataforma durante a incubação, o ecossistema FFC estabelece as seguintes metas quantitativas:
+
+- **100** academias ativas integradas ao software de gestão.
+- **20** federações e ligas homologadas utilizando o sistema de rankings.
+- **10.000** atletas cadastrados com prontuário e histórico digital.
+- **50** eventos operados e processados sob a plataforma FFC.
+- **100.000** usuários registrados e engajados no ecossistema digital.
+
+## TIMELINE ESTIMADA E GATILHOS DE EVOLUÇÃO
+
+O desenvolvimento temporal do projeto segue um cronograma estratégico com marcos definidos para cada fase:
+
+- **2026 (Incubação):** Lançamento do software, homologação dos primeiros parceiros e emissão dos IREs fundadores.
+- **2027 (Expansão):** Ampliação da base de atletas e eventos nacionais operados de forma integrada.
+- **2028 (Auditoria):** Contratação de auditoria independente e homologação do banco de dados auditado.
+- **2028 (Valuation):** Emissão do laudo de avaliação formal da tecnologia e dos ativos intangíveis do ecossistema.
+- **2029 (Estruturação):** Discussão e eventual constituição formal da holding comercial e definição societária baseada no IRE.
+
+## PARCEIROS FUNDADORES DO ECOSSISTEMA
+
+As organizações que aderirem ao Programa de Incubação durante a fase inicial do projeto poderão ser reconhecidas como **Parceiros Fundadores do Ecossistema FFC**.
+
+Além do prestígio de participar da fundação da plataforma desportiva, os Parceiros Fundadores contarão com os seguintes benefícios exclusivos:
+
+- **Prioridade na Homologação:** Preferência na aprovação de seus eventos operados e datas oficiais dentro do calendário nacional do ecossistema.
+- **Participação Ampliada nos Comitês:** Assento prioritário nos comitês desportivos, de arbitragem e comissões técnicas do Conselho de Governança.
+- **Acesso Antecipado a Funcionalidades (Beta):** Direito de testar e implementar novos recursos de software, rankings e ferramentas financeiras antes da abertura pública geral.
+
+O reconhecimento como Parceiro Fundador representa a participação histórica na construção da infraestrutura tecnológica e institucional que dará origem ao futuro ecossistema empresarial do FFC.
+
+## MISSÃO DO ECOSSISTEMA
+
+Promover a integração tecnológica, institucional e comercial do mercado das artes marciais e esportes de combate, criando um ambiente digital colaborativo de governança transparente, capaz de gerar valor econômico sustentável, inteligência de mercado e oportunidades comerciais de forma equitativa para todos os participantes do ecossistema.
+
+## POR QUE A TECNOLOGIA TEM VALOR
+
+A plataforma tecnológica do FFC não é apenas um utilitário operacional; ela é o motor de geração de valor do ecossistema porque:
+
+- Centraliza dados de mercado estruturados de forma inédita.
+- Integra organizações independentes sob uma única arquitetura de software.
+- Gera indicadores operacionais auditáveis eletronicamente.
+- Cria um histórico rastreável e imutável de performance e engajamento.
+- Produz inteligência de mercado de alto valor comercial para parceiros e marcas.
+- Reduz custos operacionais e administrativos através de automação de processos.
+
+## PRINCÍPIO DA TRANSPARÊNCIA E RASTREABILIDADE
+
+O ecossistema FFC é regido pela clareza de suas transações e dados. Todas as interações operacionais, inscrições, filiações e pontuações geradas no ecossistema são processadas por meio de algoritmos transparentes e de conhecimento público.
+
+A rastreabilidade assegura que cada ação contribuidora realizada por qualquer participante seja atribuída de forma indelével ao seu respectivo identificador digital, garantindo que o mérito histórico de construção da plataforma seja preservado de forma eletrônica e auditável.
+
+## MATRIZ DE INDICADORES AUDITÁVEIS
+
+Para fundamentar o valuation técnico do ecossistema FFC e assegurar a transparência na transição societária, a empresa de auditoria externa avaliará rigorosamente os seguintes indicadores atrelados ao IRE de cada parceiro:
+
+- **Atletas Ativos:** Volume total de competidores cadastrados com prontuário médico e histórico oficial de lutas validado.
+- **Eventos Operados:** Quantidade de etapas desportivas integradas e geridas pelo software proprietário.
+- **Patrocínios e Recursos Captados:** Aportes comerciais e contratos de publicidade registrados e operacionalizados na plataforma.
+- **Usuários Cadastrados:** Base unificada de torcedores, apoiadores e praticantes cadastrados de forma higienizada.
+- **Volume Transacional Processado:** Fluxo financeiro bruto de inscrições, taxas e ingressos gerados sob o software FFC.
+- **Métricas de Engajamento e Retenção:** Tempo de uso do aplicativo, interações digitais e fidelidade de usuários ativos.
+- **Participação Institucional:** Frequência de contribuição do parceiro em comitês consultivos e reuniões da governança.
 
 ## BENEFÍCIOS DA ADESÃO AO ECOSSISTEMA FFC
 
@@ -41,185 +128,120 @@ Entre os benefícios previstos estão:
 - Acesso a métricas auditáveis de desempenho
 - Participação na construção de um ativo coletivo de alto potencial de valorização
 
-## PLATAFORMA TECNOLÓGICA FFC
+## BENEFÍCIOS PARA PATROCINADORES
 
-O software do ecossistema FFC foi concebido para funcionar como uma infraestrutura digital integrada para o mercado esportivo.
+A unificação digital do ecossistema FFC abre canais de marketing e ativação de alto impacto para marcas e patrocinadores:
 
-Entre suas funcionalidades previstas estão:
+- Acesso simultâneo a múltiplas organizações e federações em uma única negociação.
+- Exposição de marca de alcance nacional e segmentada por público de interesse.
+- Dados de audiência consolidados e centralizados para comprovação de ROI.
+- Relatórios de engajamento auditáveis por consultorias externas.
+- Ativação de marca dinâmica e contextual dentro do aplicativo e transmissões oficiais.
+- Crescimento conjunto e posicionamento premium associado ao ecossistema de combate.
 
-- Cadastro de atletas
-- Cadastro de academias e federações
-- Gestão de eventos
-- Processamento de inscrições
-- Controle de categorias e rankings
-- Emissão de relatórios gerenciais
-- Monitoramento de indicadores de desempenho
-- Integração entre organizações parceiras
-- Ferramentas de comunicação institucional
-- Governança digital
-- Auditoria de resultados
-- Base de dados unificada do ecossistema
+## PLATAFORMA TECNOLÓGICA E SOFTWARE PROPRIETÁRIO
 
-## FASE 1 – INCUBAÇÃO E EXPANSÃO DO ECOSSISTEMA
+O centro operacional da proposta é a validação, expansão e estabilização do software proprietário do FFC. Esta plataforma atua como o sistema nervoso do ecossistema, provendo funcionalidades integradas que resolvem as principais dores do mercado:
 
-Durante a fase de incubação, a ASPPIBRA atuará como incubadora institucional do projeto, disponibilizando infraestrutura tecnológica, governança digital, monitoramento operacional e ferramentas de crescimento.
+- Cadastro de atletas e prontuário digital unificado com histórico de pesagens, exames médicos e contatos
+- Cadastro e presença institucional centralizada para academias e federações
+- Gestão de eventos e processamento centralizado de inscrições, categorias e taxas
+- Controle de rankings unificados e consolidação automatizada de combates
+- Emissão de relatórios gerenciais e monitoramento de indicadores de desempenho
+- Ferramentas de comunicação institucional e governança digital
+- Auditoria de resultados e base de dados unificada do ecossistema
 
-Academias, federações, empresas e demais organizações poderão aderir ao Programa de Incubação e Governança Digital mediante contribuição institucional de adesão e aceitação dos termos do programa.
+## CARÁTER NÃO-COMPETITIVO: INTEGRAÇÃO INSTITUCIONAL
 
-Ao ingressar no ecossistema, cada parceiro receberá uma Chave Única de Referência (CUR), que funcionará como sua identidade digital permanente dentro da plataforma.
+É premissa fundamental do FFC que **o projeto não concorre com os campeonatos, rankings ou eventos existentes promovidos pelas federações, ligas e academias parceiras**.
 
-A CUR permitirá o rastreamento integral das contribuições realizadas pelo parceiro ao longo do programa, formando um histórico digital auditável, transparente e verificável.
+O FFC atua exclusivamente como **integrador do ecossistema**. Cada entidade participante permanece com total autonomia jurídica, técnica e financeira para realizar suas próprias atividades e campeonatos independentes. O papel da plataforma FFC é fornecer a infraestrutura tecnológica para apoiar a operação dessas entidades, potencializando sua visibilidade, alcance comercial e valorização de seus ativos através do esforço colaborativo e da centralização de dados.
 
-## CHAVE ÚNICA DE REFERÊNCIA (CUR)
+## ID DE REFERÊNCIA DO ECOSSISTEMA (IRE)
 
-A Chave Única de Referência representa o principal mecanismo de rastreabilidade do ecossistema FFC.
+Como garantia de transparência, rastreabilidade e meritocracia, cada federação, academia, empresa ou organizadora que adere ao Programa de Incubação recebe um **ID de Referência do Ecossistema (IRE)**.
 
-Por meio dela serão vinculados:
+O IRE funciona como a identidade digital permanente e exclusiva de cada parceiro dentro da plataforma tecnológica FFC. Por meio do IRE, o software monitora e registra todas as contribuições e indicadores gerados pelo parceiro para o ecossistema, incluindo:
 
-- Atletas cadastrados
-- Inscrições realizadas
-- Eventos organizados
-- Patrocínios captados
-- Usuários incorporados ao sistema
-- Receitas geradas
-- Participações institucionais
-- Indicadores de desempenho
-- Contribuições estratégicas
+- Atletas cadastrados e indicados
+- Inscrições realizadas em eventos da plataforma
+- Eventos operados ou apoiados sob o software FFC
+- Patrocínios, parcerias e recursos comerciais captados
+- Usuários e tráfego digital incorporados ao sistema
+- Indicadores de governança e tempo de permanência ativa na incubação
 
-Esse mecanismo permitirá identificar de forma objetiva a contribuição efetiva de cada parceiro para o crescimento do ecossistema.
+Este histórico digital, imutável e atrelado ao IRE, servirá como base fática e de mérito para a auditoria de resultados e a elegibilidade para eventual participação societária futura.
 
-## FASE 2 – MONITORAMENTO E ACÚMULO DE INDICADORES
+## CONSELHO DE GOVERNANÇA CONSULTIVA
 
-Durante a incubação, o sistema registrará automaticamente indicadores relacionados à participação e ao desempenho dos parceiros.
+O modelo de governança do FFC baseia-se na transparência e participação ativa dos parceiros. Durante a fase de incubação conduzida pela ASPPIBRA, institui-se um comitê consultivo tripartite formado por:
 
-Entre os indicadores monitorados poderão estar:
+- Representantes eleitos das federações homologadas
+- Representantes de academias de referência desportiva
+- Especialistas técnicos e de compliance indicados pela incubadora
 
-- Quantidade de atletas cadastrados
-- Quantidade de inscrições processadas
-- Quantidade de eventos realizados ou apoiados
-- Patrocínios captados
-- Receita gerada para o ecossistema
-- Crescimento da base de usuários
-- Alcance digital
-- Participação institucional
-- Contribuições técnicas e estratégicas
-- Tempo de permanência no programa
+Para assegurar a lisura de suas deliberações, o conselho atuará sob as seguintes regras:
 
-Exemplos práticos de métricas auditáveis: 500 atletas cadastrados; 3.000 inscrições processadas; 15 eventos realizados; R$ 100.000,00 em patrocínios captados; 20.000 usuários alcançados digitalmente. Todos os registros permanecerão vinculados à CUR do parceiro.
+- **Reuniões Periódicas:** Encontros bimestrais ordinários ou extraordinários quando convocados para análise de indicadores.
+- **Papel Consultivo e Fiscalizador:** Supervisão das regras de pontuação de software, controle de integridade contra fraudes de dados e homologação da empresa auditora externa.
+- **Transparência de Decisões:** Divulgação imediata das pautas aprovadas na intranet digital do ecossistema.
+- **Registro das Deliberações:** Lavratura eletrônica de atas e decisões em livro digital auditável disponível a todos os integrantes com IRE válido.
 
-## EVENTOS INTEGRADORES DO ECOSSISTEMA
+## POR QUE INGRESSAR AGORA
 
-O FFC não foi criado para substituir, competir ou interferir nos eventos promovidos pelas federações, ligas, academias e organizações parceiras.
+A adesão ao ecossistema FFC durante o Programa de Incubação inicial oferece vantagens exclusivas e estratégicas aos pioneiros:
 
-Ao contrário, sua proposta consiste em fortalecer o mercado por meio da integração institucional e tecnológica.
+- **Vagas Limitadas de Homologação:** O primeiro lote de emissão do ID de Referência do Ecossistema (IRE) é restrito a parceiros selecionados.
+- **Reconhecimento como Parceiro Fundador:** Reconhecimento permanente como participante da fase fundadora e construtor da infraestrutura tecnológica original.
+- **Janela de Peso Estratégico:** Registro precoce de métricas operacionais no IRE, compondo um histórico de contribuição mais robusto antes da abertura geral do sistema.
+- **Influência Direta na Governança:** Voz ativa nos comitês técnicos consultivos e na formatação das regras operacionais da plataforma.
+- **Blindagem Contra Custos de Migração:** Suporte técnico e integração gratuita oferecidos exclusivamente durante a fase de incubação inicial.
 
-Cada organização continuará livre para realizar seus próprios campeonatos, rankings, graduações, eventos e atividades.
+## ROADMAP DA PROPOSTA: DO CÓDIGO À ESTRUTURAÇÃO EMPRESARIAL
 
-Os eventos oficiais do FFC funcionarão como eventos integradores do ecossistema, reunindo organizações parceiras em iniciativas coletivas destinadas a ampliar a participação dos atletas, fortalecer a visibilidade do esporte e potencializar oportunidades comerciais.
+A proposta segue uma sequência lógica de cinco fases estruturadas para mitigar riscos, validar o produto e garantir a justa remuneração dos participantes:
 
-O calendário das etapas oficiais será construído de forma colaborativa, mediante consulta prévia às organizações participantes, buscando:
+### FASE 1 – INCUBAÇÃO INSTITUCIONAL E IMPLEMENTAÇÃO
 
-- Evitar conflitos de datas
-- Maximizar a participação dos atletas
-- Aumentar a presença de público
-- Atrair patrocinadores
-- Fortalecer a cooperação institucional
-- Gerar melhores resultados para auditoria e valuation
+Liderada pela ASPPIBRA, esta fase foca no desenvolvimento, implementação e testes iniciais do software. Os primeiros parceiros de teste são integrados e recebem seus respectivos IREs para início do rastreamento de dados em ambiente controlado.
 
-## CONSELHO DE GOVERNANÇA DO ECOSSISTEMA
+### FASE 2 – OPERAÇÃO E MONITORAMENTO DE DADOS
 
-O modelo de governança do FFC será baseado na participação colaborativa dos parceiros institucionais.
+Expansão do uso do software para eventos reais integrados, coletando métricas reais de volume transacional, novos usuários, tráfego e base de atletas. Todas as contribuições operacionais são registradas sob os respectivos IREs dos parceiros.
 
-A estrutura poderá contar com representantes de:
+### FASE 3 – AUDITORIA INDEPENDENTE DE RESULTADOS
 
-- Federações
-- Academias
-- Organizadores de eventos
-- Patrocinadores
-- Parceiros estratégicos
-- Instituições apoiadoras
+Ao término do período de incubação técnica, uma empresa de auditoria independente e especializada será contratada para auditar as métricas de banco de dados, a tecnologia, as transações e o histórico de dados atrelados aos IREs. Esta auditoria validará a integridade operacional e comercial do ecossistema.
 
-O conselho terá papel consultivo e colaborativo na definição de diretrizes para expansão do ecossistema.
+### FASE 4 – VALUATION DO ECOSSISTEMA TECNOLÓGICO
 
-## FASE 3 – AUDITORIA INDEPENDENTE E VALUATION
+Com o relatório emitido pela auditoria independente, será gerado o valuation (avaliação de valor de mercado) formal do ecossistema. Este valuation levará em consideração a base de dados unificada, a tecnologia desenvolvida, os contratos comerciais consolidados, o tráfego da plataforma e a rede de parceiros ativos.
 
-Ao término da fase de incubação será contratada empresa independente especializada para realizar auditoria técnica, operacional, financeira e estratégica do projeto.
+### FASE 5 – ESTRUTURAÇÃO EMPRESARIAL E ELEGIBILIDADE SOCIETÁRIA
 
-A auditoria terá como finalidade:
+Somente após a emissão do valuation, e comprovada a viabilidade econômica do ecossistema, iniciar-se-á a discussão e eventual constituição formal de uma entidade empresarial (Holding, S.A., LTDA ou SPE) destinada à exploração comercial do ecossistema FFC.
 
-- Validar os indicadores registrados pelo sistema
-- Verificar a efetiva contribuição dos participantes
-- Avaliar a tecnologia desenvolvida
-- Avaliar a força da marca
-- Avaliar contratos firmados
-- Avaliar receitas geradas
-- Avaliar a base de usuários
-- Avaliar os ativos construídos
-- Avaliar o potencial de expansão do negócio
+Os indicadores de contribuição historicamente rastreados sob o **ID de Referência do Ecossistema (IRE)** de cada parceiro serão utilizados como critério objetivo de elegibilidade para eventual participação societária futura na nova estrutura empresarial.
 
-Com base nessas informações será realizado o valuation do ecossistema FFC, determinando seu valor econômico estimado de mercado.
-
-## ESTRATÉGIA DE VALORIZAÇÃO
-
-O valor econômico do ecossistema será construído a partir da combinação de diversos ativos estratégicos, incluindo:
-
-- Quantidade de atletas cadastrados
-- Quantidade de organizações participantes
-- Volume de eventos realizados
-- Receitas processadas
-- Contratos comerciais
-- Patrocínios captados
-- Alcance digital
-- Tecnologia desenvolvida
-- Base de usuários
-- Capacidade de expansão nacional e internacional
-
-## FASE 4 – ESTRUTURAÇÃO EMPRESARIAL
-
-Após a auditoria e validação da viabilidade econômica do projeto, poderá ser iniciada a constituição de uma entidade empresarial destinada à exploração comercial do ecossistema.
-
-A estrutura futura poderá assumir formatos como:
-
-- Sociedade Limitada (LTDA)
-- Sociedade Anônima (S.A.)
-- Holding
-- Sociedade de Propósito Específico (SPE)
-- Outros modelos considerados adequados à estratégia de expansão
-
-A definição dependerá das conclusões da auditoria, do valuation realizado e das condições de mercado existentes no momento da formalização.
-
-## FASE 5 – ELEGIBILIDADE PARA PARTICIPAÇÃO SOCIETÁRIA FUTURA
-
-Os indicadores acumulados durante a fase de incubação poderão ser considerados como critérios de elegibilidade para eventual participação em futura estrutura empresarial que venha a ser constituída.
-
-A avaliação poderá considerar:
-
-- Contribuição institucional
-- Crescimento efetivamente gerado
-- Quantidade de atletas incorporados ao sistema
-- Participação em eventos estratégicos
-- Captação de patrocinadores
-- Tempo de participação
-- Comprometimento institucional
-- Indicadores auditados de desempenho
-
-A eventual participação societária futura dependerá exclusivamente da conclusão da fase de incubação; da realização da auditoria independente; do valuation do projeto; da constituição formal da entidade empresarial; e da assinatura dos respectivos instrumentos societários.
-
-A participação no programa de incubação não constitui promessa, garantia ou obrigação imediata de distribuição de ações, quotas, lucros ou quaisquer direitos societários.
+*Nota jurídica: O ingresso no programa de incubação sob a égie da ASPPIBRA não configura garantia imediata, promessa ou obrigação de distribuição de quotas, ações ou lucros no presente. Qualquer participação societária futura fica estritamente condicionada à conclusão com êxito de todas as etapas de validação tecnológica, auditoria independente de dados, valuation formal e a assinatura dos devidos instrumentos de governança societária correspondentes.*
 
 ## VISÃO DE LONGO PRAZO
 
 O objetivo estratégico do FFC é construir um dos maiores ecossistemas tecnológicos e esportivos voltados às artes marciais e esportes de combate.
 
-À medida que o projeto atingir maturidade empresarial, poderão surgir oportunidades decorrentes da entrada de investidores estratégicos, fundos de investimento, expansão corporativa, parcerias comerciais e outros mecanismos compatíveis com a legislação vigente.
+À medida que o projeto atingir maturidade empresarial, poderão surgir oportunidades decorrentes da entrada de parceiros estratégicos, fundos institucionais e corporativos, expansão comercial e outros mecanismos compatíveis com a legislação de mercado vigente.
 
-A eventual geração de liquidez dependerá exclusivamente do sucesso do projeto, da evolução do ecossistema, das condições de mercado, do interesse de investidores e dos resultados apurados por auditoria independente.
+A eventual consolidação de valor e liquidez do ecossistema dependerá exclusivamente do sucesso operacional do projeto, do crescimento de uso da plataforma, das condições gerais de mercado e dos relatórios de auditoria de resultados emitidos ao término da incubação.
 
 O crescimento do valor econômico do ecossistema deverá refletir a contribuição efetiva dos participantes que ajudaram a construir essa estrutura durante a fase de incubação, observados os critérios técnicos, jurídicos, financeiros e de governança estabelecidos pelo programa.
 
+## COMO INGRESSAR NA INCUBADORA FFC
+
+O ingresso de novos parceiros no Programa de Incubação e Governança do Ecossistema FFC é limitado e segue critérios de relevância institucional. Para solicitar a emissão do seu ID de Referência do Ecossistema (IRE), a organização interessada deve preencher a ficha de homologação inicial junto à ASPPIBRA, concordando com as diretrizes deste Whitepaper e ativando a integração tecnológica padrão do ecossistema.
+
 ## CONCLUSÃO
 
-O FFC não busca substituir projetos existentes. Busca conectar, integrar e fortalecer iniciativas já consolidadas, criando uma infraestrutura tecnológica comum capaz de gerar benefícios para atletas, academias, federações, patrocinadores, empresas, investidores e toda a comunidade das artes marciais.
+O FFC não busca substituir projetos existentes. Busca conectar, integrar e fortalecer iniciativas já consolidadas, criando uma infraestrutura tecnológica comum capaz de gerar benefícios para atletas, academias, federações, patrocinadores, empresas, parceiros de fomento e toda a comunidade das artes marciais.
 
 O sucesso do projeto será resultado da colaboração entre organizações independentes que compartilham o objetivo comum de fortalecer o esporte, ampliar oportunidades e construir um ecossistema sustentável, escalável e de alto valor para todos os participantes.
     `,
@@ -316,7 +338,7 @@ export const DOCUMENTS: IDocumentConfig[] = [
     slug: 'auditoria',
     title: 'Política de Auditoria e Indicadores',
     category: 'institucional',
-    description: 'CUR, métricas, indicadores e auditoria independente do ecossistema.',
+    description: 'IRE, métricas, indicadores e auditoria independente do ecossistema.',
     size: 'Em Desenvolvimento',
     type: 'model',
     icon: 'solar:chart-bold',
@@ -486,9 +508,9 @@ export const DOCUMENTS: IDocumentConfig[] = [
   },
   {
     slug: 'contrato-de-parceria',
-    title: 'Contrato de Parceria',
+    title: 'Contrato de Adesão e Integração FFC',
     category: 'contratos',
-    description: 'Acordo comercial para empresas e academias parceiras.',
+    description: 'Contrato de Adesão ao Programa de Incubação, Governança e Integração do Ecossistema FFC.',
     size: '2.0 MB',
     type: 'model',
     icon: 'solar:handshake-bold',
